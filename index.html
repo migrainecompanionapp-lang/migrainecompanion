@@ -60,19 +60,59 @@
         .download-btn .btn-text small { font-size: 0.7rem; color: var(--text-light); }
         .download-btn .btn-text strong { display: block; font-size: 1rem; font-weight: 600; }
         
-        .poetry { padding: 100px 0; text-align: center; background: var(--charcoal); border-top: 1px solid rgba(139, 122, 168, 0.1); border-bottom: 1px solid rgba(139, 122, 168, 0.1); position: relative; overflow: hidden; min-height: 400px; display: flex; align-items: center; justify-content: center; }
-        .poetry::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-size: cover; background-position: center top; opacity: 0.4; z-index: 0; }
-        .poetry-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; font-style: italic; color: #ffffff; max-width: 600px; margin: 0 auto; line-height: 1.9; position: relative; z-index: 1; text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.5); }
-        .poetry-1::before { background-image: url('images/mi-garden.png'); background-position: center center; }
-        .poetry-2::before { background-image: url('images/mi-meditation.png'); background-position: center 30%; }
-        .poetry-3::before { background-image: url('images/mi-prediction.png'); background-position: center 20%; }
-        .poetry-4::before { background-image: url('images/mi-stones.png'); background-position: center 40%; }
-        .poetry-gold .poetry-text { color: var(--gold); }
+        /* POETRY - LARGE WITH MI VISIBLE */
+        .poetry { 
+            min-height: 550px; 
+            text-align: center; 
+            background: var(--charcoal); 
+            position: relative; 
+            overflow: hidden; 
+            display: flex; 
+            align-items: flex-end; 
+            justify-content: center;
+            padding-bottom: 60px;
+        }
+        .poetry::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; right: 0; bottom: 0; 
+            background-size: contain; 
+            background-position: center top; 
+            background-repeat: no-repeat;
+            opacity: 0.85; 
+            z-index: 0; 
+        }
+        .poetry::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--charcoal) 0%, transparent 100%);
+            z-index: 1;
+        }
+        .poetry-text { 
+            font-family: 'Cormorant Garamond', Georgia, serif; 
+            font-size: 1.6rem; 
+            font-style: italic; 
+            color: #ffffff; 
+            max-width: 650px; 
+            margin: 0 auto; 
+            line-height: 1.8; 
+            position: relative; 
+            z-index: 2; 
+            text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 40px rgba(0,0,0,0.7);
+            padding: 0 20px;
+        }
+        .poetry-1::before { background-image: url('images/mi-garden.png'); }
+        .poetry-2::before { background-image: url('images/mi-prediction.png'); }
+        .poetry-3::before { background-image: url('images/mi-meditation.png'); }
+        .poetry-4::before { background-image: url('images/mi-stones.png'); }
+        .poetry-gold .poetry-text { color: var(--gold); text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 30px rgba(197, 160, 89, 0.3); }
         
         section { scroll-margin-top: 80px; }
         .section-title { text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
         .section-subtitle { text-align: center; color: var(--text-light); max-width: 600px; margin: 0 auto 50px; font-size: 1.05rem; line-height: 1.6; }
-        
+        /* THERAPY CARDS */
         .different { padding: 80px 0; background: var(--malachite); }
         .therapy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
         .therapy-card { background: var(--charcoal); border: 1px solid rgba(139, 122, 168, 0.15); border-radius: 20px; padding: 32px; transition: all 0.3s ease; }
@@ -83,6 +123,7 @@
         .therapy-note p { color: var(--text); font-size: 0.95rem; }
         .therapy-note strong { color: var(--gold); }
         
+        /* SCREENSHOTS */
         .screenshots { padding: 80px 0; background: var(--charcoal); position: relative; overflow: hidden; }
         .screenshots::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('images/mystic-garden-bg.png') center center / cover no-repeat; opacity: 0.08; z-index: 0; }
         .screenshots .container { position: relative; z-index: 1; }
@@ -96,6 +137,7 @@
         .screenshot-card h3 { margin-top: 20px; font-size: 1.1rem; color: #ffffff; font-weight: 700; }
         .screenshot-card p { margin-top: 8px; font-size: 0.9rem; color: var(--text-light); line-height: 1.5; }
         
+        /* SCIENCE */
         .science { padding: 80px 0; background: var(--malachite); }
         .science-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
         .science-text h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 24px; color: #ffffff; }
@@ -107,6 +149,7 @@
         .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--gold); margin-bottom: 6px; }
         .stat-label { font-size: 0.85rem; color: var(--text-light); }
         
+        /* ACCORDION */
         .factors-accordion { margin-top: 70px; }
         .factors-title { text-align: center; font-size: 1.5rem; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
         .factors-intro { text-align: center; color: var(--text-dark); font-size: 0.95rem; margin-bottom: 35px; }
@@ -126,6 +169,7 @@
         .factor-detail span { color: var(--text-light); font-size: 0.88rem; }
         .factor-detail.critical strong { color: var(--gold); }
         
+        /* FEATURES */
         .features { padding: 80px 0; background: var(--charcoal); }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
         .feature-card { background: var(--malachite); border: 1px solid rgba(139, 122, 168, 0.12); border-radius: 18px; padding: 28px; transition: all 0.3s ease; }
@@ -134,6 +178,7 @@
         .feature-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #ffffff; font-weight: 700; }
         .feature-card p { color: var(--text-light); line-height: 1.6; font-size: 0.92rem; }
         
+        /* CTA */
         .cta { padding: 100px 0; text-align: center; position: relative; overflow: hidden; }
         .cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('images/mi-garden.png') center center / cover no-repeat; opacity: 0.25; z-index: 0; }
         .cta::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(139, 122, 168, 0.2) 0%, var(--malachite) 70%); z-index: 1; }
@@ -141,6 +186,7 @@
         .cta h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 14px; color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .cta p { color: var(--text); margin-bottom: 40px; font-size: 1.1rem; }
         
+        /* FOOTER */
         footer { padding: 50px 0; background: var(--charcoal); border-top: 1px solid rgba(139, 122, 168, 0.12); }
         .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
         .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
@@ -148,6 +194,7 @@
         .footer-links a:hover { color: var(--lavender); }
         .copyright { color: var(--text-dark); font-size: 0.85rem; }
         
+        /* FIREFLIES */
         .fireflies { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .firefly { position: absolute; width: 6px; height: 6px; background: radial-gradient(circle, rgba(197, 160, 89, 0.8) 0%, transparent 70%); border-radius: 50%; animation: firefly-float 8s ease-in-out infinite; opacity: 0; }
         @keyframes firefly-float { 0%, 100% { opacity: 0; transform: translate(0, 0); } 25% { opacity: 0.6; } 50% { opacity: 0.3; transform: translate(30px, -50px); } 75% { opacity: 0.6; } }
@@ -160,6 +207,7 @@
         .firefly:nth-child(7) { left: 30%; top: 85%; animation-delay: 6s; }
         .firefly:nth-child(8) { left: 70%; top: 15%; animation-delay: 7s; }
         
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .nav { display: none; }
             .mobile-menu-btn { display: block; }
@@ -169,8 +217,8 @@
             .download-buttons { flex-direction: column; align-items: center; }
             .download-btn { width: 100%; max-width: 280px; justify-content: center; }
             .science-content { grid-template-columns: 1fr; }
-            .poetry-text { font-size: 1.2rem; padding: 0 20px; }
-            .poetry { min-height: 350px; }
+            .poetry { min-height: 450px; }
+            .poetry-text { font-size: 1.3rem; }
             .footer-content { flex-direction: column; text-align: center; }
         }
     </style>
@@ -214,6 +262,7 @@
             </div>
         </section>
 
+        <!-- POETRY 1: Mi в саду — про сад -->
         <div class="poetry poetry-1">
             <p class="poetry-text">Within the garden, Mi takes form,<br>A creature named, no longer storm.<br>We do not fight Mi in the dark,<br>We bring it gently to the mark.</p>
         </div>
@@ -232,10 +281,10 @@
             </div>
         </section>
 
+        <!-- POETRY 2: Mi у озера — про предсказание -->
         <div class="poetry poetry-gold poetry-2">
             <p class="poetry-text">Mi whispers signs the mind can read,<br>Before the pain outgrows its seed.<br>It leaves its marks before the ache,<br>So mind may choose the paths to take.</p>
         </div>
-
         <section class="different" id="different">
             <div class="container">
                 <h2 class="section-title">What Makes Us Different</h2>
@@ -249,8 +298,9 @@
             </div>
         </section>
 
+        <!-- POETRY 3: Mi медитирует — цитата Michael White -->
         <div class="poetry poetry-3">
-            <p class="poetry-text">"The problem is the problem.<br>The person is not the problem."<br><span style="font-size: 0.85em; color: var(--text-dark); font-style: normal;">— Michael White</span></p>
+            <p class="poetry-text">"The problem is the problem.<br>The person is not the problem."<br><span style="font-size: 0.85em; color: var(--text-light); font-style: normal;">— Michael White</span></p>
         </div>
 
         <section class="science" id="science">
@@ -286,6 +336,7 @@
             </div>
         </section>
 
+        <!-- POETRY 4: Mi у камней — про аналитику/графики -->
         <div class="poetry poetry-gold poetry-4">
             <p class="poetry-text">Each chart a leaf, each line a root,<br>From knowing pain, we gather fruit.<br>Charts bloom like petals kissed by light,<br>Mi breath reveals the hidden night.</p>
         </div>
