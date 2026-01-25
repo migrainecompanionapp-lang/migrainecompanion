@@ -8,7 +8,7 @@
     <!-- SEO Meta Tags -->
     <meta name="description" content="Track migraines with Mi, your gentle companion. AI-powered predictions, food trigger detection, mood tracking — built on narrative therapy. No judgment, just understanding. Free migraine diary app for iOS &amp; Android.">
     <meta name="keywords" content="migraine tracker, migraine app, headache diary, migraine journal, chronic migraine, migraine triggers, migraine prevention, narrative therapy, Mi companion">
-    <meta name="author" content="Rustam">
+    <meta name="author" content="Rustam Iuldashov, Marina Mochalova">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph -->
@@ -40,7 +40,10 @@
         "applicationCategory": "HealthApplication",
         "description": "Therapeutic migraine tracking app with AI predictions and narrative therapy approach",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "author": { "@type": "Person", "name": "Rustam" }
+        "author": [
+            { "@type": "Person", "name": "Rustam Iuldashov", "jobTitle": "Creator & Developer" },
+            { "@type": "Person", "name": "Marina Mochalova", "jobTitle": "Designer" }
+        ]
     }
     </script>
     
@@ -225,12 +228,15 @@
         .story-quote p { margin-bottom: 22px; }
         .story-highlight { background: linear-gradient(90deg, rgba(213, 176, 105, 0.2), transparent); padding: 24px 28px; border-left: 3px solid var(--antique-gold); border-radius: 0 14px 14px 0; margin: 36px 0; }
         .story-highlight p { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; font-style: italic; font-weight: 500; line-height: 1.75; margin: 0; color: var(--antique-gold); }
-        .story-author { display: flex; align-items: center; gap: 22px; margin-top: 44px; padding-top: 34px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-        .author-avatar { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--lavender), var(--antique-gold)); padding: 3px; }
+        .story-authors { display: flex; align-items: flex-start; gap: 40px; margin-top: 44px; padding-top: 34px; border-top: 1px solid rgba(255, 255, 255, 0.1); flex-wrap: wrap; }
+        .story-author { display: flex; align-items: center; gap: 18px; flex: 1; min-width: 280px; }
+        .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--lavender), var(--antique-gold)); padding: 3px; flex-shrink: 0; }
+        .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
         .author-avatar-placeholder { width: 100%; height: 100%; border-radius: 50%; background: var(--charcoal); display: flex; align-items: center; justify-content: center; font-size: 1.9rem; }
-        .author-info h4 { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.1px; margin-bottom: 5px; color: #ffffff; }
-        .author-info p { font-size: 0.98rem; font-weight: 500; color: var(--text-light); }
-        .author-flag { font-size: 1.6rem; margin-left: auto; }
+        .author-info h4 { font-size: 1.15rem; font-weight: 700; letter-spacing: 0.1px; margin-bottom: 4px; color: #ffffff; }
+        .author-info p { font-size: 0.95rem; font-weight: 600; color: var(--antique-gold); margin-bottom: 4px; }
+        .author-tagline { font-size: 0.85rem; font-weight: 500; color: var(--text-light); line-height: 1.4; display: block; }
+        .author-flag { font-size: 2rem; margin-left: auto; align-self: center; }
         
         /* CTA */
         .cta { padding: 110px 0; text-align: center; position: relative; overflow: hidden; }
@@ -606,11 +612,22 @@
                                 <p>Mi isn't just a cute character. Mi is how I learned to live with my migraine — not as an enemy to fight, but as a companion to understand.</p>
                                 <p>If you're reading this, you probably know what it's like. The invisible pain. The canceled plans. The fear of the next attack. I see you. Mi sees you too.</p>
                             </div>
-                            <div class="story-author">
-                                <div class="author-avatar"><div class="author-avatar-placeholder">💜</div></div>
-                                <div class="author-info">
-                                    <h4>Rustam</h4>
-                                    <p>Creator of MIgraine Companion</p>
+                            <div class="story-authors">
+                                <div class="story-author">
+                                    <div class="author-avatar"><img src="images/rustam.jpg" alt="Rustam Iuldashov — Creator & Developer of MIgraine Companion"></div>
+                                    <div class="author-info">
+                                        <h4>Rustam Iuldashov</h4>
+                                        <p>Creator & Developer</p>
+                                        <span class="author-tagline">30 years living with migraine. Built what I wished existed.</span>
+                                    </div>
+                                </div>
+                                <div class="story-author">
+                                    <div class="author-avatar"><img src="images/marina.jpg" alt="Marina Mochalova — Designer of MIgraine Companion"></div>
+                                    <div class="author-info">
+                                        <h4>Marina Mochalova</h4>
+                                        <p>Designer</p>
+                                        <span class="author-tagline">Gave Mi a face and the garden its magic.</span>
+                                    </div>
                                 </div>
                                 <span class="author-flag">🇺🇦</span>
                             </div>
