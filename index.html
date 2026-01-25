@@ -32,7 +32,7 @@
         .header-content { display: flex; justify-content: space-between; align-items: center; }
         .logo { display: flex; align-items: center; gap: 10px; font-size: 1.3rem; font-weight: 700; color: #ffffff; text-decoration: none; }
         .logo img { width: 36px; height: 36px; border-radius: 8px; }
-        .logo span { color: var(--lavender); }
+        .logo span { color: var(--lavender); margin: 0; padding: 0; display: inline; letter-spacing: normal; }
         .nav { display: flex; gap: 28px; align-items: center; }
         .nav a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
         .nav a:hover { color: var(--lavender); }
@@ -107,7 +107,6 @@
         .poetry-2::before { background-image: url('images/mi-prediction.png'); }
         .poetry-3::before { background-image: url('images/mi-meditation.png'); }
         .poetry-4::before { background-image: url('images/mi-stones.png'); }
-        .poetry-gold .poetry-text { color: var(--gold); text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 30px rgba(197, 160, 89, 0.3); }
         
         section { scroll-margin-top: 80px; }
         .section-title { text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
@@ -281,10 +280,11 @@
             </div>
         </section>
 
-        <!-- POETRY 2: Mi у озера — про предсказание -->
-        <div class="poetry poetry-gold poetry-2">
-            <p class="poetry-text">Mi whispers signs the mind can read,<br>Before the pain outgrows its seed.<br>It leaves its marks before the ache,<br>So mind may choose the paths to take.</p>
+        <!-- POETRY 2: Michael White (ПОМЕНЯЛИ МЕСТАМИ) -->
+        <div class="poetry poetry-3">
+            <p class="poetry-text">"The problem is the problem.<br>The person is not the problem."<br><span style="font-size: 0.85em; color: var(--text-light); font-style: normal;">— Michael White</span></p>
         </div>
+
         <section class="different" id="different">
             <div class="container">
                 <h2 class="section-title">What Makes Us Different</h2>
@@ -298,9 +298,9 @@
             </div>
         </section>
 
-        <!-- POETRY 3: Mi медитирует — цитата Michael White -->
-        <div class="poetry poetry-3">
-            <p class="poetry-text">"The problem is the problem.<br>The person is not the problem."<br><span style="font-size: 0.85em; color: var(--text-light); font-style: normal;">— Michael White</span></p>
+        <!-- POETRY 3: Mi whispers (ПОМЕНЯЛИ МЕСТАМИ) -->
+        <div class="poetry poetry-2">
+            <p class="poetry-text">Mi whispers signs the mind can read,<br>Before the pain outgrows its seed.<br>It leaves its marks before the ache,<br>So mind may choose the paths to take.</p>
         </div>
 
         <section class="science" id="science">
@@ -337,7 +337,7 @@
         </section>
 
         <!-- POETRY 4: Mi у камней — про аналитику/графики -->
-        <div class="poetry poetry-gold poetry-4">
+        <div class="poetry poetry-4">
             <p class="poetry-text">Each chart a leaf, each line a root,<br>From knowing pain, we gather fruit.<br>Charts bloom like petals kissed by light,<br>Mi breath reveals the hidden night.</p>
         </div>
 
