@@ -15,9 +15,18 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --bg: #0d0d0d;
+            --text: #a0a0a0;
+            --text-light: #888;
+            --text-dark: #666;
+        }
+        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0d0d0d;
+            background: var(--bg);
             color: #ffffff;
             min-height: 100vh;
             line-height: 1.4;
@@ -29,7 +38,6 @@
             padding: 0 24px;
         }
         
-        /* Header */
         header {
             padding: 16px 0;
             position: fixed;
@@ -38,7 +46,7 @@
             z-index: 100;
             background: rgba(13, 13, 13, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
         }
         
         .header-content {
@@ -56,10 +64,9 @@
         }
         
         .logo span {
-            color: #C5A059;
+            color: var(--lavender);
         }
         
-        /* Navigation */
         .nav {
             display: flex;
             gap: 32px;
@@ -67,7 +74,7 @@
         }
         
         .nav a {
-            color: #888;
+            color: var(--text-light);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
@@ -75,7 +82,7 @@
         }
         
         .nav a:hover {
-            color: #C5A059;
+            color: var(--lavender);
         }
         
         .nav-cta {
@@ -83,28 +90,26 @@
             border: 1px solid rgba(197, 160, 89, 0.3);
             padding: 8px 16px;
             border-radius: 8px;
-            color: #C5A059 !important;
+            color: var(--gold) !important;
         }
         
         .nav-cta:hover {
             background: rgba(197, 160, 89, 0.25);
         }
         
-        /* Mobile menu */
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            color: #C5A059;
+            color: var(--lavender);
             font-size: 1.5rem;
             cursor: pointer;
         }
         
-        /* Hero Section */
         .hero {
             padding: 140px 0 80px;
             text-align: center;
-            background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.08) 0%, transparent 60%);
+            background: radial-gradient(ellipse at top, rgba(139, 122, 168, 0.1) 0%, transparent 60%);
         }
         
         .hero h1 {
@@ -116,19 +121,19 @@
         }
         
         .hero h1 span {
-            color: #C5A059;
+            color: var(--lavender);
         }
         
         .hero .subtitle {
             font-size: 1.2rem;
-            color: #C5A059;
+            color: var(--lavender);
             margin-bottom: 12px;
             font-weight: 600;
         }
         
         .hero .description {
             font-size: 1.05rem;
-            color: #a0a0a0;
+            color: var(--text);
             max-width: 580px;
             margin: 0 auto 36px;
             line-height: 1.6;
@@ -147,8 +152,8 @@
             align-items: center;
             gap: 12px;
             padding: 14px 24px;
-            background: rgba(197, 160, 89, 0.1);
-            border: 1px solid rgba(197, 160, 89, 0.3);
+            background: rgba(139, 122, 168, 0.1);
+            border: 1px solid rgba(139, 122, 168, 0.3);
             border-radius: 12px;
             color: #ffffff;
             text-decoration: none;
@@ -156,8 +161,8 @@
         }
         
         .download-btn:hover {
-            background: rgba(197, 160, 89, 0.2);
-            border-color: rgba(197, 160, 89, 0.5);
+            background: rgba(139, 122, 168, 0.2);
+            border-color: rgba(139, 122, 168, 0.5);
             transform: translateY(-2px);
         }
         
@@ -168,7 +173,7 @@
         
         .download-btn.disabled:hover {
             transform: none;
-            background: rgba(197, 160, 89, 0.1);
+            background: rgba(139, 122, 168, 0.1);
         }
         
         .download-btn svg {
@@ -182,7 +187,7 @@
         
         .download-btn .btn-text small {
             font-size: 0.7rem;
-            color: #888;
+            color: var(--text-light);
             font-weight: 500;
         }
         
@@ -192,7 +197,6 @@
             font-weight: 600;
         }
         
-        /* Section styles */
         section {
             scroll-margin-top: 80px;
         }
@@ -208,7 +212,7 @@
         
         .section-subtitle {
             text-align: center;
-            color: #888;
+            color: var(--text-light);
             max-width: 600px;
             margin: 0 auto 50px;
             font-size: 1rem;
@@ -216,10 +220,9 @@
             font-weight: 500;
         }
         
-        /* Different Section */
         .different {
             padding: 80px 0;
-            background: rgba(197, 160, 89, 0.03);
+            background: rgba(139, 122, 168, 0.03);
         }
         
         .therapy-grid {
@@ -230,7 +233,7 @@
         
         .therapy-card {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(197, 160, 89, 0.15);
+            border: 1px solid rgba(139, 122, 168, 0.15);
             border-radius: 16px;
             padding: 28px;
         }
@@ -238,12 +241,12 @@
         .therapy-card h3 {
             font-size: 1.1rem;
             margin-bottom: 12px;
-            color: #C5A059;
+            color: var(--lavender);
             font-weight: 700;
         }
         
         .therapy-card p {
-            color: #a0a0a0;
+            color: var(--text);
             line-height: 1.6;
             font-weight: 500;
             font-size: 0.95rem;
@@ -253,22 +256,21 @@
             text-align: center;
             margin-top: 40px;
             padding: 20px;
-            background: rgba(197, 160, 89, 0.08);
+            background: rgba(139, 122, 168, 0.08);
             border-radius: 12px;
-            border: 1px solid rgba(197, 160, 89, 0.15);
+            border: 1px solid rgba(139, 122, 168, 0.15);
         }
         
         .therapy-note p {
-            color: #a0a0a0;
+            color: var(--text);
             font-size: 0.9rem;
             font-weight: 500;
         }
         
         .therapy-note strong {
-            color: #C5A059;
+            color: var(--lavender);
         }
         
-        /* Features Section */
         .features {
             padding: 80px 0;
         }
@@ -289,7 +291,7 @@
         
         .feature-card:hover {
             background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(197, 160, 89, 0.25);
+            border-color: rgba(139, 122, 168, 0.25);
         }
         
         .feature-icon {
@@ -305,23 +307,22 @@
         }
         
         .feature-card p {
-            color: #888;
+            color: var(--text-light);
             line-height: 1.5;
             font-size: 0.9rem;
             font-weight: 500;
         }
         
-        /* Quote Section */
         .quote-section {
             padding: 60px 0;
             text-align: center;
-            background: rgba(197, 160, 89, 0.05);
+            background: rgba(197, 160, 89, 0.04);
         }
         
         .quote {
             font-size: 1.3rem;
             font-style: italic;
-            color: #C5A059;
+            color: var(--gold);
             max-width: 600px;
             margin: 0 auto 16px;
             font-weight: 500;
@@ -329,15 +330,14 @@
         }
         
         .quote-author {
-            color: #666;
+            color: var(--text-dark);
             font-size: 0.9rem;
             font-weight: 500;
         }
         
-        /* Blog Section */
         .blog {
             padding: 80px 0;
-            background: rgba(197, 160, 89, 0.03);
+            background: rgba(139, 122, 168, 0.03);
         }
         
         .blog-grid {
@@ -348,20 +348,20 @@
         
         .blog-card {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(197, 160, 89, 0.12);
+            border: 1px solid rgba(139, 122, 168, 0.12);
             border-radius: 16px;
             padding: 24px;
             transition: all 0.3s ease;
         }
         
         .blog-card:hover {
-            border-color: rgba(197, 160, 89, 0.3);
+            border-color: rgba(139, 122, 168, 0.3);
         }
         
         .blog-tag {
             display: inline-block;
             background: rgba(197, 160, 89, 0.15);
-            color: #C5A059;
+            color: var(--gold);
             font-size: 0.75rem;
             font-weight: 600;
             padding: 4px 10px;
@@ -377,7 +377,7 @@
         }
         
         .blog-card p {
-            color: #888;
+            color: var(--text-light);
             font-size: 0.9rem;
             line-height: 1.5;
             font-weight: 500;
@@ -385,13 +385,12 @@
         
         .blog-coming {
             text-align: center;
-            color: #666;
+            color: var(--text-dark);
             font-size: 0.9rem;
             margin-top: 30px;
             font-weight: 500;
         }
         
-        /* CTA Section */
         .cta {
             padding: 80px 0;
             text-align: center;
@@ -406,15 +405,14 @@
         }
         
         .cta p {
-            color: #888;
+            color: var(--text-light);
             margin-bottom: 32px;
             font-weight: 500;
         }
         
-        /* Footer */
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(197, 160, 89, 0.12);
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
         }
         
         .footer-content {
@@ -432,7 +430,7 @@
         }
         
         .footer-links a {
-            color: #888;
+            color: var(--text-light);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
@@ -440,7 +438,7 @@
         }
         
         .footer-links a:hover {
-            color: #C5A059;
+            color: var(--lavender);
         }
         
         .copyright {
@@ -449,43 +447,15 @@
             font-weight: 500;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .download-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .download-btn {
-                width: 100%;
-                max-width: 260px;
-                justify-content: center;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
+            .nav { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero h1 { font-size: 2rem; }
+            .hero .subtitle { font-size: 1.1rem; }
+            .section-title { font-size: 1.5rem; }
+            .download-buttons { flex-direction: column; align-items: center; }
+            .download-btn { width: 100%; max-width: 260px; justify-content: center; }
+            .footer-content { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
