@@ -69,7 +69,7 @@
         
         .nav {
             display: flex;
-            gap: 32px;
+            gap: 28px;
             align-items: center;
         }
         
@@ -313,6 +313,90 @@
             font-weight: 500;
         }
         
+        /* Science Section */
+        .science {
+            padding: 80px 0;
+            background: rgba(197, 160, 89, 0.03);
+        }
+        
+        .science-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .science-text h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        
+        .science-text p {
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+        
+        .science-text strong {
+            color: var(--gold);
+        }
+        
+        .science-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .factors-list {
+            margin-top: 24px;
+        }
+        
+        .factors-list h4 {
+            font-size: 0.95rem;
+            color: var(--lavender);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .factor-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .factor-tag {
+            background: rgba(139, 122, 168, 0.15);
+            border: 1px solid rgba(139, 122, 168, 0.25);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text);
+        }
+        
         .quote-section {
             padding: 60px 0;
             text-align: center;
@@ -456,6 +540,14 @@
             .download-buttons { flex-direction: column; align-items: center; }
             .download-btn { width: 100%; max-width: 260px; justify-content: center; }
             .footer-content { flex-direction: column; text-align: center; }
+            .science-content { grid-template-columns: 1fr; }
+            .science-stats { grid-template-columns: repeat(4, 1fr); }
+            .stat-card { padding: 12px; }
+            .stat-number { font-size: 1.5rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .science-stats { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -465,8 +557,10 @@
             <a href="#" class="logo">M<span>I</span>graine Companion</a>
             <nav class="nav">
                 <a href="#different">Approach</a>
+                <a href="#science">Science</a>
                 <a href="#features">Features</a>
                 <a href="#blog">Blog</a>
+                <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
                 <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="nav-cta" target="_blank">Download</a>
             </nav>
             <button class="mobile-menu-btn">☰</button>
@@ -529,6 +623,58 @@
             <div class="container">
                 <p class="quote">"The problem is the problem. The person is not the problem."</p>
                 <p class="quote-author">— Michael White, co-founder of narrative therapy</p>
+            </div>
+        </section>
+
+        <section class="science" id="science">
+            <div class="container">
+                <h2 class="section-title">The Science Behind Mi's Predictions</h2>
+                <p class="section-subtitle">Not just "AI" — a real logistic regression model trained on your personal data.</p>
+                
+                <div class="science-content">
+                    <div class="science-text">
+                        <h2>How Mi Knows When a Storm Is Coming</h2>
+                        <p>Mi uses <strong>logistic regression</strong> — a proven statistical method used in medical research — to calculate your personal migraine probability.</p>
+                        <p>The model analyzes <strong>40+ factors simultaneously</strong>: weather changes, food triggers, sleep quality, hormonal cycles, stress levels, and your attack history.</p>
+                        <p>But here's what makes it powerful: Mi detects <strong>critical interactions</strong>. Skipped meal alone? Moderate risk. Skipped meal + high stress + poor sleep? Mi knows this combination is dangerous and alerts you immediately.</p>
+                        <p>The more you use the app, the smarter Mi becomes. Your personal trigger patterns emerge from your own data — not generic statistics.</p>
+                        
+                        <div class="factors-list">
+                            <h4>Factors Mi Analyzes:</h4>
+                            <div class="factor-tags">
+                                <span class="factor-tag">Barometric pressure</span>
+                                <span class="factor-tag">Sleep duration</span>
+                                <span class="factor-tag">Food triggers</span>
+                                <span class="factor-tag">Menstrual cycle</span>
+                                <span class="factor-tag">Skipped meals</span>
+                                <span class="factor-tag">Stress levels</span>
+                                <span class="factor-tag">Weather changes</span>
+                                <span class="factor-tag">Medication timing</span>
+                                <span class="factor-tag">Wake-up patterns</span>
+                                <span class="factor-tag">Caffeine intake</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="science-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">40+</div>
+                            <div class="stat-label">Risk factors analyzed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24h</div>
+                            <div class="stat-label">Prediction window</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">7+</div>
+                            <div class="stat-label">Critical interactions</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Learning from your data</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -631,7 +777,8 @@
             <div class="footer-links">
                 <a href="https://sites.google.com/view/migrainecompanion/privacy-policy" target="_blank">Privacy Policy</a>
                 <a href="https://sites.google.com/view/migrainecompanion/terms-of-use" target="_blank">Terms of Use</a>
-                <a href="https://sites.google.com/view/migrainecompanion/contact" target="_blank">Contact</a>
+                <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
+                <a href="mailto:migrainecompanion.app@gmail.com">Contact</a>
             </div>
             <p class="copyright">© 2026 MIgraine Companion. All rights reserved.</p>
         </div>
