@@ -31,14 +31,14 @@
         
         /* Header */
         header {
-            padding: 20px 0;
+            padding: 16px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            background: rgba(13, 13, 13, 0.9);
+            background: rgba(13, 13, 13, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(91, 75, 112, 0.2);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
         }
         
         .header-content {
@@ -48,21 +48,63 @@
         }
         
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: -0.3px;
+            text-decoration: none;
         }
         
         .logo span {
-            color: #8b7aa8;
+            color: #C5A059;
+        }
+        
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover {
+            color: #C5A059;
+        }
+        
+        .nav-cta {
+            background: rgba(197, 160, 89, 0.15);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: #C5A059 !important;
+        }
+        
+        .nav-cta:hover {
+            background: rgba(197, 160, 89, 0.25);
+        }
+        
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #C5A059;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         
         /* Hero Section */
         .hero {
             padding: 140px 0 80px;
             text-align: center;
-            background: radial-gradient(ellipse at top, rgba(91, 75, 112, 0.15) 0%, transparent 60%);
+            background: radial-gradient(ellipse at top, rgba(197, 160, 89, 0.08) 0%, transparent 60%);
         }
         
         .hero h1 {
@@ -74,12 +116,12 @@
         }
         
         .hero h1 span {
-            color: #8b7aa8;
+            color: #C5A059;
         }
         
         .hero .subtitle {
             font-size: 1.2rem;
-            color: #8b7aa8;
+            color: #C5A059;
             margin-bottom: 12px;
             font-weight: 600;
         }
@@ -105,8 +147,8 @@
             align-items: center;
             gap: 12px;
             padding: 14px 24px;
-            background: rgba(91, 75, 112, 0.2);
-            border: 1px solid rgba(91, 75, 112, 0.4);
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.3);
             border-radius: 12px;
             color: #ffffff;
             text-decoration: none;
@@ -114,8 +156,8 @@
         }
         
         .download-btn:hover {
-            background: rgba(91, 75, 112, 0.35);
-            border-color: rgba(139, 122, 168, 0.6);
+            background: rgba(197, 160, 89, 0.2);
+            border-color: rgba(197, 160, 89, 0.5);
             transform: translateY(-2px);
         }
         
@@ -126,7 +168,7 @@
         
         .download-btn.disabled:hover {
             transform: none;
-            background: rgba(91, 75, 112, 0.2);
+            background: rgba(197, 160, 89, 0.1);
         }
         
         .download-btn svg {
@@ -150,10 +192,9 @@
             font-weight: 600;
         }
         
-        /* Different Section */
-        .different {
-            padding: 80px 0;
-            background: rgba(91, 75, 112, 0.05);
+        /* Section styles */
+        section {
+            scroll-margin-top: 80px;
         }
         
         .section-title {
@@ -175,6 +216,12 @@
             font-weight: 500;
         }
         
+        /* Different Section */
+        .different {
+            padding: 80px 0;
+            background: rgba(197, 160, 89, 0.03);
+        }
+        
         .therapy-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -183,7 +230,7 @@
         
         .therapy-card {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(91, 75, 112, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.15);
             border-radius: 16px;
             padding: 28px;
         }
@@ -191,7 +238,7 @@
         .therapy-card h3 {
             font-size: 1.1rem;
             margin-bottom: 12px;
-            color: #8b7aa8;
+            color: #C5A059;
             font-weight: 700;
         }
         
@@ -206,9 +253,9 @@
             text-align: center;
             margin-top: 40px;
             padding: 20px;
-            background: rgba(91, 75, 112, 0.1);
+            background: rgba(197, 160, 89, 0.08);
             border-radius: 12px;
-            border: 1px solid rgba(91, 75, 112, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.15);
         }
         
         .therapy-note p {
@@ -217,13 +264,8 @@
             font-weight: 500;
         }
         
-        .therapy-note a {
-            color: #8b7aa8;
-            text-decoration: none;
-        }
-        
-        .therapy-note a:hover {
-            text-decoration: underline;
+        .therapy-note strong {
+            color: #C5A059;
         }
         
         /* Features Section */
@@ -247,7 +289,7 @@
         
         .feature-card:hover {
             background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(91, 75, 112, 0.3);
+            border-color: rgba(197, 160, 89, 0.25);
         }
         
         .feature-icon {
@@ -273,13 +315,13 @@
         .quote-section {
             padding: 60px 0;
             text-align: center;
-            background: rgba(91, 75, 112, 0.08);
+            background: rgba(197, 160, 89, 0.05);
         }
         
         .quote {
             font-size: 1.3rem;
             font-style: italic;
-            color: #8b7aa8;
+            color: #C5A059;
             max-width: 600px;
             margin: 0 auto 16px;
             font-weight: 500;
@@ -289,6 +331,63 @@
         .quote-author {
             color: #666;
             font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Blog Section */
+        .blog {
+            padding: 80px 0;
+            background: rgba(197, 160, 89, 0.03);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .blog-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(197, 160, 89, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            border-color: rgba(197, 160, 89, 0.3);
+        }
+        
+        .blog-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.15);
+            color: #C5A059;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .blog-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        
+        .blog-card p {
+            color: #888;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+        
+        .blog-coming {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 30px;
             font-weight: 500;
         }
         
@@ -315,7 +414,7 @@
         /* Footer */
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(91, 75, 112, 0.15);
+            border-top: 1px solid rgba(197, 160, 89, 0.12);
         }
         
         .footer-content {
@@ -341,7 +440,7 @@
         }
         
         .footer-links a:hover {
-            color: #8b7aa8;
+            color: #C5A059;
         }
         
         .copyright {
@@ -352,6 +451,14 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
@@ -385,12 +492,19 @@
 <body>
     <header>
         <div class="container header-content">
-            <div class="logo">M<span>I</span>graine Companion</div>
+            <a href="#" class="logo">M<span>I</span>graine Companion</a>
+            <nav class="nav">
+                <a href="#different">Approach</a>
+                <a href="#features">Features</a>
+                <a href="#blog">Blog</a>
+                <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="nav-cta" target="_blank">Download</a>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="container">
                 <h1>M<span>I</span>graine Companion</h1>
                 <p class="subtitle">Your Therapeutic Migraine Companion</p>
@@ -415,7 +529,7 @@
             </div>
         </section>
 
-        <section class="different">
+        <section class="different" id="different">
             <div class="container">
                 <h2 class="section-title">What Makes Us Different</h2>
                 <p class="section-subtitle">Most migraine apps are digital diaries. MIgraine Companion takes a fundamentally different approach — one rooted in narrative therapy.</p>
@@ -448,7 +562,7 @@
             </div>
         </section>
 
-        <section class="features">
+        <section class="features" id="features">
             <div class="container">
                 <h2 class="section-title">Features</h2>
                 <p class="section-subtitle">Everything you need to understand and live with your migraines.</p>
@@ -498,6 +612,33 @@
             </div>
         </section>
 
+        <section class="blog" id="blog">
+            <div class="container">
+                <h2 class="section-title">Blog</h2>
+                <p class="section-subtitle">Insights, tips, and stories about living with migraines.</p>
+                
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <span class="blog-tag">Narrative Therapy</span>
+                        <h3>Why We Don't Fight Migraines</h3>
+                        <p>The science behind companionization — and why treating your migraine as a companion works better than treating it as an enemy.</p>
+                    </div>
+                    <div class="blog-card">
+                        <span class="blog-tag">Self-Care</span>
+                        <h3>The 4-7-8 Breathing Technique</h3>
+                        <p>How this simple breathing exercise can help during migraine attacks — and why Mi loves it too.</p>
+                    </div>
+                    <div class="blog-card">
+                        <span class="blog-tag">Tips</span>
+                        <h3>Understanding Your Triggers</h3>
+                        <p>Mi's mood stones can reveal patterns you never noticed. Here's how to read them.</p>
+                    </div>
+                </div>
+                
+                <p class="blog-coming">More articles coming soon...</p>
+            </div>
+        </section>
+
         <section class="cta">
             <div class="container">
                 <h2>Begin Your Journey with Mi</h2>
@@ -520,7 +661,7 @@
             <div class="footer-links">
                 <a href="https://sites.google.com/view/migrainecompanion/privacy-policy" target="_blank">Privacy Policy</a>
                 <a href="https://sites.google.com/view/migrainecompanion/terms-of-use" target="_blank">Terms of Use</a>
-                <a href="mailto:migrainecompanion.app@gmail.com">Contact</a>
+                <a href="https://sites.google.com/view/migrainecompanion/contact" target="_blank">Contact</a>
             </div>
             <p class="copyright">© 2026 MIgraine Companion. All rights reserved.</p>
         </div>
