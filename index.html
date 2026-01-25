@@ -114,7 +114,9 @@
         .section-subtitle { text-align: center; color: var(--text-light); max-width: 600px; margin: 0 auto 50px; font-size: 1.05rem; line-height: 1.6; }
         /* THERAPY CARDS */
         .different { padding: 80px 0; background: var(--malachite); }
-        .therapy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .therapy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        @media (max-width: 900px) { .therapy-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .therapy-grid { grid-template-columns: 1fr; } }
         .therapy-card { background: var(--charcoal); border: 1px solid rgba(139, 122, 168, 0.15); border-radius: 20px; padding: 32px; transition: all 0.3s ease; }
         .therapy-card:hover { border-color: rgba(139, 122, 168, 0.4); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
         .therapy-card h3 { font-size: 1.15rem; margin-bottom: 14px; color: var(--lavender); font-weight: 700; }
@@ -295,9 +297,11 @@
                 <div class="therapy-grid">
                     <div class="therapy-card"><h3>🌙 Externalization</h3><p>Mi represents your migraine as something separate from you. You're not "a migraine sufferer" — you're a person who lives with Mi. This reduces self-blame and increases your sense of control.</p></div>
                     <div class="therapy-card"><h3>💜 Companionization</h3><p>Instead of fighting your migraine, you learn to understand it. Mi is not a villain to defeat. When you struggle, Mi struggles too. You're companions, not adversaries.</p></div>
-                    <div class="therapy-card"><h3>✨ Your Actions Matter</h3><p>Every action has a visible effect. Drink water — Mi calms down. Rest — Mi relaxes. You see the direct connection between self-care and your condition.</p></div>
+                    <div class="therapy-card"><h3>✨ Your Actions Matter</h3><p>Every action has a visible effect. Drink water — Mi calms down. Rest — Mi relaxes. Skip a meal — Mi grows restless. You see the direct connection between self-care and your condition.</p></div>
+                    <div class="therapy-card"><h3>💫 Sparkling Moments</h3><p>Your calm days aren't just statistics — they're proof that you can manage this. Each peaceful day is a "sparkling moment," evidence that the problem doesn't always win.</p></div>
+                    <div class="therapy-card"><h3>🛏️ Crisis Support</h3><p>When migraine strikes, Mi doesn't demand anything. Mi sleeps beside you, sends gentle reminders, asks how you're feeling. The app becomes comfort, not pressure.</p></div>
                 </div>
-                <div class="therapy-note"><p>Based on narrative therapy developed by <strong>Michael White</strong> and <strong>David Epston</strong> — a scientifically validated approach used for chronic pain, depression, and anxiety for over 40 years.</p></div>
+                <div class="therapy-note"><p>Based on narrative therapy developed by <strong>Michael White</strong> and <strong>David Epston</strong> — a scientifically validated approach used for chronic pain, depression, and anxiety for over <strong>40 years</strong>. You don't need a therapist to benefit. Mi is with you, in your pocket, ready whenever you need.</p></div>
             </div>
         </section>
 
