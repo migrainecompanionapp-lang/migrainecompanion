@@ -111,10 +111,14 @@
         .download-btn .btn-text small { font-size: 0.7rem; color: var(--text-light); }
         .download-btn .btn-text strong { display: block; font-size: 1rem; font-weight: 600; }
         
-        /* POETRY */
-        .poetry { padding: 60px 0; text-align: center; background: var(--charcoal); border-top: 1px solid rgba(139, 122, 168, 0.1); border-bottom: 1px solid rgba(139, 122, 168, 0.1); }
-        .poetry-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; font-style: italic; color: var(--lavender); max-width: 600px; margin: 0 auto; line-height: 1.8; }
-        .poetry-gold { background: linear-gradient(135deg, rgba(197, 160, 89, 0.08) 0%, rgba(45, 61, 53, 0.5) 100%); }
+        /* POETRY WITH BACKGROUNDS */
+        .poetry { padding: 80px 0; text-align: center; background: var(--charcoal); border-top: 1px solid rgba(139, 122, 168, 0.1); border-bottom: 1px solid rgba(139, 122, 168, 0.1); position: relative; overflow: hidden; }
+        .poetry::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-size: cover; background-position: center; opacity: 0.3; z-index: 0; }
+        .poetry-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.5rem; font-style: italic; color: #ffffff; max-width: 600px; margin: 0 auto; line-height: 1.9; position: relative; z-index: 1; text-shadow: 0 2px 15px rgba(0,0,0,0.7); }
+        .poetry-1::before { background-image: url('images/mi-meditation.png'); }
+        .poetry-2::before { background-image: url('images/mi-prediction.png'); }
+        .poetry-3::before { background-image: url('images/mi-stones.png'); }
+        .poetry-4::before { background-image: url('images/mi-garden.png'); }
         .poetry-gold .poetry-text { color: var(--gold); }
         
         /* SECTIONS */
@@ -188,11 +192,12 @@
         .feature-card p { color: var(--text-light); line-height: 1.6; font-size: 0.92rem; }
         
         /* CTA */
-        .cta { padding: 100px 0; text-align: center; background: var(--malachite); position: relative; overflow: hidden; }
-        .cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(139, 122, 168, 0.15) 0%, transparent 70%); z-index: 0; }
-        .cta .container { position: relative; z-index: 1; }
-        .cta h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 14px; color: #ffffff; }
-        .cta p { color: var(--text-light); margin-bottom: 40px; font-size: 1.1rem; }
+        .cta { padding: 100px 0; text-align: center; position: relative; overflow: hidden; }
+        .cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('images/mi-garden.png') center center / cover no-repeat; opacity: 0.25; z-index: 0; }
+        .cta::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(139, 122, 168, 0.2) 0%, var(--malachite) 70%); z-index: 1; }
+        .cta .container { position: relative; z-index: 2; }
+        .cta h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 14px; color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .cta p { color: var(--text); margin-bottom: 40px; font-size: 1.1rem; }
         
         /* FOOTER */
         footer { padding: 50px 0; background: var(--charcoal); border-top: 1px solid rgba(139, 122, 168, 0.12); }
@@ -275,7 +280,7 @@
             </div>
         </section>
 
-        <div class="poetry">
+        <div class="poetry poetry-1">
             <p class="poetry-text">Within the garden, Mi takes form,<br>A creature named, no longer storm.<br>We do not fight Mi in the dark,<br>We bring it gently to the mark.</p>
         </div>
 
@@ -293,7 +298,7 @@
             </div>
         </section>
 
-        <div class="poetry poetry-gold">
+        <div class="poetry poetry-gold poetry-2">
             <p class="poetry-text">Mi whispers signs the mind can read,<br>Before the pain outgrows its seed.<br>It leaves its marks before the ache,<br>So mind may choose the paths to take.</p>
         </div>
         <section class="different" id="different">
@@ -309,7 +314,7 @@
             </div>
         </section>
 
-        <div class="poetry">
+        <div class="poetry poetry-3">
             <p class="poetry-text">"The problem is the problem.<br>The person is not the problem."<br><span style="font-size: 0.85em; color: var(--text-dark); font-style: normal;">— Michael White</span></p>
         </div>
 
@@ -346,7 +351,7 @@
             </div>
         </section>
 
-        <div class="poetry poetry-gold">
+        <div class="poetry poetry-gold poetry-4">
             <p class="poetry-text">Each chart a leaf, each line a root,<br>From knowing pain, we gather fruit.<br>Charts bloom like petals kissed by light,<br>Mi breath reveals the hidden night.</p>
         </div>
 
