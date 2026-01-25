@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MIgraine Companion Blog — insights, tips, and stories about living with migraines and narrative therapy.">
+    <title>Blog | MIgraine Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --bg: #0d0d0d;
+            --text: #a0a0a0;
+            --text-light: #888;
+            --text-dark: #666;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.4;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        
+        .nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover, .nav a.active {
+            color: var(--lavender);
+        }
+        
+        .nav-cta {
+            background: rgba(197, 160, 89, 0.15);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: var(--gold) !important;
+        }
+        
+        .nav-cta:hover {
+            background: rgba(197, 160, 89, 0.25);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .blog-hero {
+            padding: 140px 0 60px;
+            text-align: center;
+            background: radial-gradient(ellipse at top, rgba(139, 122, 168, 0.1) 0%, transparent 60%);
+        }
+        
+        .blog-hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+            color: #ffffff;
+        }
+        
+        .blog-hero p {
+            font-size: 1.1rem;
+            color: var(--text);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .blog-content {
+            padding: 40px 0 80px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+        
+        .blog-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            border-color: rgba(139, 122, 168, 0.3);
+            transform: translateY(-4px);
+        }
+        
+        .blog-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.15);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .blog-card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        
+        .blog-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+        }
+        
+        .blog-date {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .blog-read-time {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .coming-soon-card {
+            background: rgba(139, 122, 168, 0.05);
+            border: 1px dashed rgba(139, 122, 168, 0.3);
+            border-radius: 16px;
+            padding: 40px 28px;
+            text-align: center;
+        }
+        
+        .coming-soon-card h3 {
+            font-size: 1.1rem;
+            color: var(--lavender);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .coming-soon-card p {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+        
+        .newsletter {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(197, 160, 89, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .newsletter h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .newsletter p {
+            color: var(--text);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-note {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--lavender);
+        }
+        
+        .copyright {
+            color: #555;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .mobile-menu-btn { display: block; }
+            .blog-hero h1 { font-size: 1.8rem; }
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <nav class="nav">
+                <a href="index.html#different">Approach</a>
+                <a href="index.html#science">Science</a>
+                <a href="index.html#features">Features</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
+                <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="nav-cta" target="_blank">Download</a>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <h1>Blog</h1>
+                <p>Insights, tips, and stories about living with migraines and finding peace with Mi.</p>
+            </div>
+        </section>
+
+        <section class="blog-content">
+            <div class="container">
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <span class="blog-tag">Narrative Therapy</span>
+                        <h2>Why We Don't Fight Migraines</h2>
+                        <p>The science behind companionization — and why treating your migraine as a companion works better than treating it as an enemy. Discover how externalization can reduce self-blame and increase your sense of control.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 5 min read</span>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <span class="blog-tag">Self-Care</span>
+                        <h2>The 4-7-8 Breathing Technique</h2>
+                        <p>How this simple breathing exercise can help during migraine attacks — and why Mi loves it too. Learn the science behind controlled breathing and its effect on your nervous system.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 4 min read</span>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <span class="blog-tag">Tips</span>
+                        <h2>Understanding Your Triggers</h2>
+                        <p>Mi's mood stones can reveal patterns you never noticed. Here's how to read them and use this information to prevent future attacks.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <span class="blog-tag">Science</span>
+                        <h2>How Mi's Predictions Work</h2>
+                        <p>A deep dive into the logistic regression model behind Mi's forecasts. Learn how 40+ factors combine to predict your personal migraine risk.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 8 min read</span>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <span class="blog-tag">Lifestyle</span>
+                        <h2>Sleep and Migraines: The Hidden Connection</h2>
+                        <p>Why wake-up migraines happen and what they might reveal about your sleep quality. Tips for better sleep hygiene that can reduce attack frequency.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 7 min read</span>
+                        </div>
+                    </article>
+                    
+                    <div class="coming-soon-card">
+                        <h3>✨ More articles coming soon</h3>
+                        <p>We're working on new content to help you on your journey with Mi.</p>
+                    </div>
+                </div>
+                
+                <div class="newsletter">
+                    <h3>Stay Updated</h3>
+                    <p>New articles and migraine management tips delivered to your inbox.</p>
+                    <p class="newsletter-note">Newsletter coming soon. For now, follow our updates in the app!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="https://sites.google.com/view/migrainecompanion/privacy-policy" target="_blank">Privacy Policy</a>
+                <a href="https://sites.google.com/view/migrainecompanion/terms-of-use" target="_blank">Terms of Use</a>
+                <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
+                <a href="mailto:migrainecompanion.app@gmail.com">Contact</a>
+            </div>
+            <p class="copyright">© 2026 MIgraine Companion. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
