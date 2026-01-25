@@ -4,590 +4,246 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="pXrsIwP11Hj14S7jZs3jZsiWY-nLsDmxKweO_h5Zi78" />
-    <meta name="description" content="MIgraine Companion — a therapeutic migraine app built on narrative therapy. Mi is your companion, not your enemy. Track, understand, and live with your migraines.">
+    <meta name="description" content="MIgraine Companion — a therapeutic migraine app built on narrative therapy. Mi is your companion, not your enemy.">
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
     <title>MIgraine Companion | Therapeutic Migraine App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0;400;0;500;1;400&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
+            --malachite: #2D3D35;
+            --malachite-light: #3D4D45;
+            --malachite-dark: #232D28;
+            --charcoal: #16181C;
+            --charcoal-light: #1B1E24;
             --lavender: #8b7aa8;
             --gold: #C5A059;
-            --bg: #0d0d0d;
-            --text: #a0a0a0;
-            --text-light: #888;
-            --text-dark: #666;
+            --text: #BDBDBD;
+            --text-light: #9E9E9E;
+            --text-dark: #757575;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--malachite);
             color: #ffffff;
             min-height: 100vh;
-            line-height: 1.4;
+            line-height: 1.5;
+            overflow-x: hidden;
         }
         
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         
+        /* HEADER */
         header {
             padding: 16px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            background: rgba(13, 13, 13, 0.95);
+            background: rgba(35, 45, 40, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.2);
         }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 1.3rem; font-weight: 700; color: #ffffff; text-decoration: none; }
+        .logo img { width: 36px; height: 36px; border-radius: 8px; }
+        .logo span { color: var(--lavender); }
+        .nav { display: flex; gap: 28px; align-items: center; }
+        .nav a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav a:hover { color: var(--lavender); }
+        .nav-cta { background: rgba(197, 160, 89, 0.2); border: 1px solid rgba(197, 160, 89, 0.4); padding: 8px 16px; border-radius: 8px; color: var(--gold) !important; }
+        .nav-cta:hover { background: rgba(197, 160, 89, 0.3); }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--lavender); font-size: 1.5rem; cursor: pointer; }
         
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: -0.3px;
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--lavender);
-        }
-        
-        .nav {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-        
-        .nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav a:hover {
-            color: var(--lavender);
-        }
-        
-        .nav-cta {
-            background: rgba(197, 160, 89, 0.15);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            padding: 8px 16px;
-            border-radius: 8px;
-            color: var(--gold) !important;
-        }
-        
-        .nav-cta:hover {
-            background: rgba(197, 160, 89, 0.25);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--lavender);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
+        /* HERO */
         .hero {
             padding: 140px 0 80px;
             text-align: center;
-            background: radial-gradient(ellipse at top, rgba(139, 122, 168, 0.1) 0%, transparent 60%);
-        }
-        
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.3px;
-            color: #ffffff;
-        }
-        
-        .hero h1 span {
-            color: var(--lavender);
-        }
-        
-        .hero .subtitle {
-            font-size: 1.2rem;
-            color: var(--lavender);
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        
-        .hero .description {
-            font-size: 1.05rem;
-            color: var(--text);
-            max-width: 580px;
-            margin: 0 auto 36px;
-            line-height: 1.6;
-            font-weight: 500;
-        }
-        
-        .download-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .download-btn {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 24px;
-            background: rgba(139, 122, 168, 0.1);
-            border: 1px solid rgba(139, 122, 168, 0.3);
-            border-radius: 12px;
-            color: #ffffff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .download-btn:hover {
-            background: rgba(139, 122, 168, 0.2);
-            border-color: rgba(139, 122, 168, 0.5);
-            transform: translateY(-2px);
-        }
-        
-        .download-btn.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        .download-btn.disabled:hover {
-            transform: none;
-            background: rgba(139, 122, 168, 0.1);
-        }
-        
-        .download-btn svg {
-            width: 26px;
-            height: 26px;
-        }
-        
-        .download-btn .btn-text {
-            text-align: left;
-        }
-        
-        .download-btn .btn-text small {
-            font-size: 0.7rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-        
-        .download-btn .btn-text strong {
-            display: block;
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-        
-        section {
-            scroll-margin-top: 80px;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.3px;
-            color: #ffffff;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 50px;
-            font-size: 1rem;
-            line-height: 1.6;
-            font-weight: 500;
-        }
-        
-        .different {
-            padding: 80px 0;
-            background: rgba(139, 122, 168, 0.03);
-        }
-        
-        .therapy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-        
-        .therapy-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(139, 122, 168, 0.15);
-            border-radius: 16px;
-            padding: 28px;
-        }
-        
-        .therapy-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-            color: var(--lavender);
-            font-weight: 700;
-        }
-        
-        .therapy-card p {
-            color: var(--text);
-            line-height: 1.6;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-        
-        .therapy-note {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: rgba(139, 122, 168, 0.08);
-            border-radius: 12px;
-            border: 1px solid rgba(139, 122, 168, 0.15);
-        }
-        
-        .therapy-note p {
-            color: var(--text);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        .therapy-note strong {
-            color: var(--lavender);
-        }
-        
-        .features {
-            padding: 80px 0;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-        
-        .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 16px;
-            padding: 26px;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(139, 122, 168, 0.25);
-        }
-        
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 16px;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.05rem;
-            margin-bottom: 10px;
-            color: #ffffff;
-            font-weight: 700;
-        }
-        
-        .feature-card p {
-            color: var(--text-light);
-            line-height: 1.5;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        .science {
-            padding: 80px 0;
-            background: rgba(197, 160, 89, 0.03);
-        }
-        
-        .science-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-        
-        .science-text h2 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-        
-        .science-text p {
-            color: var(--text);
-            line-height: 1.7;
-            margin-bottom: 16px;
-            font-size: 0.95rem;
-        }
-        
-        .science-text strong {
-            color: var(--gold);
-        }
-        
-        .science-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        
-        .stat-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(197, 160, 89, 0.15);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--gold);
-            margin-bottom: 4px;
-        }
-        
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-        
-        /* Factors Accordion */
-        .factors-accordion {
-            margin-top: 60px;
-        }
-        
-        .factors-title {
-            text-align: center;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-        
-        .factors-intro {
-            text-align: center;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-        }
-        
-        .accordion-item {
-            margin-bottom: 12px;
-            border: 1px solid rgba(139, 122, 168, 0.15);
-            border-radius: 12px;
+            position: relative;
             overflow: hidden;
-        }
-        
-        .accordion-header {
-            width: 100%;
-            padding: 18px 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border: none;
-            cursor: pointer;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: #ffffff;
-            font-family: inherit;
-            transition: background 0.3s;
         }
-        
-        .accordion-header:hover {
-            background: rgba(139, 122, 168, 0.1);
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('images/mystic-garden-bg.png') center center / cover no-repeat;
+            opacity: 0.35;
+            z-index: 0;
         }
-        
-        .accordion-icon {
-            font-size: 1.3rem;
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(35, 45, 40, 0.3) 0%, rgba(45, 61, 53, 0.7) 50%, var(--malachite) 100%);
+            z-index: 1;
         }
-        
-        .accordion-title {
-            font-size: 1rem;
-            font-weight: 600;
-            flex: 1;
-            text-align: left;
+        .hero-content { position: relative; z-index: 2; width: 100%; }
+        .hero-mi {
+            width: 180px; height: 180px; border-radius: 32px;
+            margin: 0 auto 30px;
+            box-shadow: 0 20px 60px rgba(139, 122, 168, 0.3);
+            animation: float 6s ease-in-out infinite;
         }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .hero h1 span { color: var(--lavender); }
+        .hero .subtitle { font-size: 1.3rem; color: var(--gold); margin-bottom: 20px; font-weight: 600; }
+        .hero .description { font-size: 1.1rem; color: var(--text); max-width: 550px; margin: 0 auto 40px; line-height: 1.7; }
         
-        .accordion-count {
-            font-size: 0.8rem;
-            color: var(--lavender);
-            background: rgba(139, 122, 168, 0.15);
-            padding: 4px 10px;
-            border-radius: 12px;
+        /* BUTTONS */
+        .download-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .download-btn {
+            display: flex; align-items: center; gap: 12px; padding: 14px 28px;
+            background: var(--charcoal); border: 1px solid rgba(139, 122, 168, 0.3);
+            border-radius: 14px; color: #ffffff; text-decoration: none; transition: all 0.3s ease;
         }
+        .download-btn:hover { background: var(--charcoal-light); border-color: var(--lavender); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(139, 122, 168, 0.2); }
+        .download-btn.disabled { opacity: 0.5; cursor: not-allowed; }
+        .download-btn.disabled:hover { transform: none; box-shadow: none; }
+        .download-btn svg { width: 28px; height: 28px; }
+        .download-btn .btn-text { text-align: left; }
+        .download-btn .btn-text small { font-size: 0.7rem; color: var(--text-light); }
+        .download-btn .btn-text strong { display: block; font-size: 1rem; font-weight: 600; }
         
-        .accordion-arrow {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            transition: transform 0.3s;
-        }
+        /* POETRY */
+        .poetry { padding: 60px 0; text-align: center; background: var(--charcoal); border-top: 1px solid rgba(139, 122, 168, 0.1); border-bottom: 1px solid rgba(139, 122, 168, 0.1); }
+        .poetry-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; font-style: italic; color: var(--lavender); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+        .poetry-gold { background: linear-gradient(135deg, rgba(197, 160, 89, 0.08) 0%, rgba(45, 61, 53, 0.5) 100%); }
+        .poetry-gold .poetry-text { color: var(--gold); }
         
-        .accordion-header.active .accordion-arrow {
-            transform: rotate(180deg);
-        }
+        /* SECTIONS */
+        section { scroll-margin-top: 80px; }
+        .section-title { text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
+        .section-subtitle { text-align: center; color: var(--text-light); max-width: 600px; margin: 0 auto 50px; font-size: 1.05rem; line-height: 1.6; }
+        /* THERAPY CARDS */
+        .different { padding: 80px 0; background: var(--malachite); }
+        .therapy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .therapy-card { background: var(--charcoal); border: 1px solid rgba(139, 122, 168, 0.15); border-radius: 20px; padding: 32px; transition: all 0.3s ease; }
+        .therapy-card:hover { border-color: rgba(139, 122, 168, 0.4); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+        .therapy-card h3 { font-size: 1.15rem; margin-bottom: 14px; color: var(--lavender); font-weight: 700; }
+        .therapy-card p { color: var(--text); line-height: 1.7; font-size: 0.95rem; }
+        .therapy-note { text-align: center; margin-top: 50px; padding: 24px; background: var(--charcoal); border-radius: 16px; border: 1px solid rgba(197, 160, 89, 0.2); }
+        .therapy-note p { color: var(--text); font-size: 0.95rem; }
+        .therapy-note strong { color: var(--gold); }
         
-        .accordion-content {
-            display: none;
-            padding: 0 20px 20px;
-            background: rgba(0, 0, 0, 0.2);
-        }
+        /* SCREENSHOTS */
+        .screenshots { padding: 80px 0; background: var(--charcoal); position: relative; overflow: hidden; }
+        .screenshots::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('images/mystic-garden-bg.png') center center / cover no-repeat; opacity: 0.08; z-index: 0; }
+        .screenshots .container { position: relative; z-index: 1; }
+        .screenshots-grid { display: flex; gap: 24px; overflow-x: auto; padding: 20px 0 40px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        .screenshots-grid::-webkit-scrollbar { height: 8px; }
+        .screenshots-grid::-webkit-scrollbar-track { background: var(--malachite-dark); border-radius: 4px; }
+        .screenshots-grid::-webkit-scrollbar-thumb { background: var(--lavender); border-radius: 4px; }
+        .screenshot-card { flex: 0 0 280px; scroll-snap-align: start; text-align: center; }
+        .screenshot-card img { width: 100%; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.4); transition: transform 0.3s ease; border: 2px solid rgba(139, 122, 168, 0.2); }
+        .screenshot-card:hover img { transform: scale(1.03); border-color: var(--lavender); }
+        .screenshot-card h3 { margin-top: 20px; font-size: 1.1rem; color: #ffffff; font-weight: 700; }
+        .screenshot-card p { margin-top: 8px; font-size: 0.9rem; color: var(--text-light); line-height: 1.5; }
         
-        .accordion-content.show {
-            display: block;
-        }
+        /* SCIENCE */
+        .science { padding: 80px 0; background: var(--malachite); }
+        .science-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+        .science-text h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 24px; color: #ffffff; }
+        .science-text p { color: var(--text); line-height: 1.8; margin-bottom: 18px; font-size: 1rem; }
+        .science-text strong { color: var(--gold); }
+        .science-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .stat-card { background: var(--charcoal); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 16px; padding: 28px 20px; text-align: center; transition: all 0.3s ease; }
+        .stat-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--gold); margin-bottom: 6px; }
+        .stat-label { font-size: 0.85rem; color: var(--text-light); }
         
-        .factor-detail {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
+        /* ACCORDION */
+        .factors-accordion { margin-top: 70px; }
+        .factors-title { text-align: center; font-size: 1.5rem; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
+        .factors-intro { text-align: center; color: var(--text-dark); font-size: 0.95rem; margin-bottom: 35px; }
+        .accordion-item { margin-bottom: 12px; border: 1px solid rgba(139, 122, 168, 0.15); border-radius: 14px; overflow: hidden; background: var(--charcoal); }
+        .accordion-header { width: 100%; padding: 20px 24px; background: transparent; border: none; cursor: pointer; display: flex; align-items: center; gap: 14px; color: #ffffff; font-family: inherit; transition: background 0.3s; }
+        .accordion-header:hover { background: rgba(139, 122, 168, 0.1); }
+        .accordion-icon { font-size: 1.4rem; }
+        .accordion-title { font-size: 1.05rem; font-weight: 600; flex: 1; text-align: left; }
+        .accordion-count { font-size: 0.8rem; color: var(--lavender); background: rgba(139, 122, 168, 0.15); padding: 5px 12px; border-radius: 20px; }
+        .accordion-arrow { font-size: 0.8rem; color: var(--text-light); transition: transform 0.3s; }
+        .accordion-header.active .accordion-arrow { transform: rotate(180deg); }
+        .accordion-content { display: none; padding: 0 24px 24px; background: rgba(0, 0, 0, 0.2); }
+        .accordion-content.show { display: block; }
+        .factor-detail { padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); display: flex; flex-direction: column; gap: 5px; }
+        .factor-detail:last-child { border-bottom: none; }
+        .factor-detail strong { color: #ffffff; font-size: 0.95rem; font-weight: 600; }
+        .factor-detail span { color: var(--text-light); font-size: 0.88rem; }
+        .factor-detail.critical strong { color: var(--gold); }
         
-        .factor-detail:last-child {
-            border-bottom: none;
-        }
+        /* FEATURES */
+        .features { padding: 80px 0; background: var(--charcoal); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .feature-card { background: var(--malachite); border: 1px solid rgba(139, 122, 168, 0.12); border-radius: 18px; padding: 28px; transition: all 0.3s ease; }
+        .feature-card:hover { border-color: rgba(139, 122, 168, 0.35); transform: translateY(-4px); box-shadow: 0 12px 35px rgba(0,0,0,0.25); }
+        .feature-icon { font-size: 2.2rem; margin-bottom: 18px; }
+        .feature-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #ffffff; font-weight: 700; }
+        .feature-card p { color: var(--text-light); line-height: 1.6; font-size: 0.92rem; }
         
-        .factor-detail strong {
-            color: #ffffff;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
+        /* CTA */
+        .cta { padding: 100px 0; text-align: center; background: var(--malachite); position: relative; overflow: hidden; }
+        .cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(139, 122, 168, 0.15) 0%, transparent 70%); z-index: 0; }
+        .cta .container { position: relative; z-index: 1; }
+        .cta h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 14px; color: #ffffff; }
+        .cta p { color: var(--text-light); margin-bottom: 40px; font-size: 1.1rem; }
         
-        .factor-detail span {
-            color: var(--text-light);
-            font-size: 0.85rem;
-        }
+        /* FOOTER */
+        footer { padding: 50px 0; background: var(--charcoal); border-top: 1px solid rgba(139, 122, 168, 0.12); }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+        .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--lavender); }
+        .copyright { color: var(--text-dark); font-size: 0.85rem; }
         
-        .factor-detail.critical strong {
-            color: var(--gold);
-        }
+        /* FIREFLIES */
+        .fireflies { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .firefly { position: absolute; width: 6px; height: 6px; background: radial-gradient(circle, rgba(197, 160, 89, 0.8) 0%, transparent 70%); border-radius: 50%; animation: firefly-float 8s ease-in-out infinite; opacity: 0; }
+        @keyframes firefly-float { 0%, 100% { opacity: 0; transform: translate(0, 0); } 25% { opacity: 0.6; } 50% { opacity: 0.3; transform: translate(30px, -50px); } 75% { opacity: 0.6; } }
+        .firefly:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .firefly:nth-child(2) { left: 20%; top: 60%; animation-delay: 1s; }
+        .firefly:nth-child(3) { left: 40%; top: 30%; animation-delay: 2s; }
+        .firefly:nth-child(4) { left: 60%; top: 70%; animation-delay: 3s; }
+        .firefly:nth-child(5) { left: 80%; top: 40%; animation-delay: 4s; }
+        .firefly:nth-child(6) { left: 90%; top: 80%; animation-delay: 5s; }
+        .firefly:nth-child(7) { left: 30%; top: 85%; animation-delay: 6s; }
+        .firefly:nth-child(8) { left: 70%; top: 15%; animation-delay: 7s; }
         
-        .factor-detail.critical span {
-            color: var(--text);
-        }
-        
-        .quote-section {
-            padding: 60px 0;
-            text-align: center;
-            background: rgba(197, 160, 89, 0.04);
-        }
-        
-        .quote {
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--gold);
-            max-width: 600px;
-            margin: 0 auto 16px;
-            font-weight: 500;
-            line-height: 1.5;
-        }
-        
-        .quote-author {
-            color: var(--text-dark);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        .cta {
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .cta h2 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            color: #ffffff;
-            letter-spacing: -0.3px;
-        }
-        
-        .cta p {
-            color: var(--text-light);
-            margin-bottom: 32px;
-            font-weight: 500;
-        }
-        
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid rgba(139, 122, 168, 0.12);
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--lavender);
-        }
-        
-        .copyright {
-            color: #555;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-        
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .nav { display: none; }
             .mobile-menu-btn { display: block; }
-            .hero h1 { font-size: 2rem; }
-            .hero .subtitle { font-size: 1.1rem; }
-            .section-title { font-size: 1.5rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-mi { width: 140px; height: 140px; }
+            .section-title { font-size: 1.6rem; }
             .download-buttons { flex-direction: column; align-items: center; }
-            .download-btn { width: 100%; max-width: 260px; justify-content: center; }
-            .footer-content { flex-direction: column; text-align: center; }
+            .download-btn { width: 100%; max-width: 280px; justify-content: center; }
             .science-content { grid-template-columns: 1fr; }
-            .science-stats { grid-template-columns: repeat(4, 1fr); }
-            .stat-card { padding: 12px; }
-            .stat-number { font-size: 1.5rem; }
-        }
-        
-        @media (max-width: 480px) {
-            .science-stats { grid-template-columns: repeat(2, 1fr); }
+            .poetry-text { font-size: 1.2rem; padding: 0 20px; }
+            .footer-content { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
+    <div class="fireflies">
+        <div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div>
+        <div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div>
+    </div>
+
     <header>
         <div class="container header-content">
-            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="index.html" class="logo">
+                <img src="images/mi-icon.png" alt="Mi">
+                M<span>I</span>graine Companion
+            </a>
             <nav class="nav">
+                <a href="#screenshots">App</a>
                 <a href="#different">Approach</a>
                 <a href="#science">Science</a>
                 <a href="#features">Features</a>
@@ -601,410 +257,112 @@
 
     <main>
         <section class="hero" id="home">
-            <div class="container">
+            <div class="container hero-content">
+                <img src="images/mi-icon.png" alt="Mi" class="hero-mi">
                 <h1>M<span>I</span>graine Companion</h1>
                 <p class="subtitle">Your Therapeutic Migraine Companion</p>
                 <p class="description">Built on narrative therapy principles. Mi is your companion, not your enemy. When you take care of yourself, Mi calms down. Together.</p>
-                
                 <div class="download-buttons">
                     <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                        <div class="btn-text">
-                            <small>Download on the</small>
-                            <strong>App Store</strong>
-                        </div>
+                        <div class="btn-text"><small>Download on the</small><strong>App Store</strong></div>
                     </a>
                     <div class="download-btn disabled">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-                        <div class="btn-text">
-                            <small>Coming soon on</small>
-                            <strong>Google Play</strong>
-                        </div>
+                        <div class="btn-text"><small>Coming soon on</small><strong>Google Play</strong></div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <div class="poetry">
+            <p class="poetry-text">Within the garden, Mi takes form,<br>A creature named, no longer storm.<br>We do not fight Mi in the dark,<br>We bring it gently to the mark.</p>
+        </div>
+
+        <section class="screenshots" id="screenshots">
+            <div class="container">
+                <h2 class="section-title">Discover Mi's Garden</h2>
+                <p class="section-subtitle">A therapeutic world where tracking migraines becomes an act of self-care.</p>
+                <div class="screenshots-grid">
+                    <div class="screenshot-card"><img src="images/screen-home.jpeg" alt="Home"><h3>Mi's Garden</h3><p>Your peaceful home with Mi and care tools.</p></div>
+                    <div class="screenshot-card"><img src="images/screen-monster.jpeg" alt="Monster"><h3>MIgraine Monster</h3><p>Care for Mi with 8 calming actions.</p></div>
+                    <div class="screenshot-card"><img src="images/screen-breathing.jpeg" alt="Breathing"><h3>Breathing Garden</h3><p>4-7-8 technique with nature sounds.</p></div>
+                    <div class="screenshot-card"><img src="images/screen-ai.jpeg" alt="AI"><h3>AI Risk Prediction</h3><p>24-hour forecast analyzing 43 factors.</p></div>
+                    <div class="screenshot-card"><img src="images/screen-journal.jpeg" alt="Journal"><h3>Food Diary</h3><p>Track meals and discover triggers.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="poetry poetry-gold">
+            <p class="poetry-text">Mi whispers signs the mind can read,<br>Before the pain outgrows its seed.<br>It leaves its marks before the ache,<br>So mind may choose the paths to take.</p>
+        </div>
         <section class="different" id="different">
             <div class="container">
                 <h2 class="section-title">What Makes Us Different</h2>
                 <p class="section-subtitle">Most migraine apps are digital diaries. MIgraine Companion takes a fundamentally different approach — one rooted in narrative therapy.</p>
-                
                 <div class="therapy-grid">
-                    <div class="therapy-card">
-                        <h3>🌙 Externalization</h3>
-                        <p>Mi represents your migraine as something separate from you. You're not "a migraine sufferer" — you're a person who lives with Mi. This reduces self-blame and increases your sense of control.</p>
-                    </div>
-                    <div class="therapy-card">
-                        <h3>💜 Companionization</h3>
-                        <p>Instead of fighting your migraine, you learn to understand it. Mi is not a villain to defeat. When you struggle, Mi struggles too. You're companions, not adversaries.</p>
-                    </div>
-                    <div class="therapy-card">
-                        <h3>✨ Your Actions Matter</h3>
-                        <p>Every action has a visible effect. Drink water — Mi calms down. Rest — Mi relaxes. You see the direct connection between self-care and your condition.</p>
-                    </div>
+                    <div class="therapy-card"><h3>🌙 Externalization</h3><p>Mi represents your migraine as something separate from you. You're not "a migraine sufferer" — you're a person who lives with Mi. This reduces self-blame and increases your sense of control.</p></div>
+                    <div class="therapy-card"><h3>💜 Companionization</h3><p>Instead of fighting your migraine, you learn to understand it. Mi is not a villain to defeat. When you struggle, Mi struggles too. You're companions, not adversaries.</p></div>
+                    <div class="therapy-card"><h3>✨ Your Actions Matter</h3><p>Every action has a visible effect. Drink water — Mi calms down. Rest — Mi relaxes. You see the direct connection between self-care and your condition.</p></div>
                 </div>
-                
-                <div class="therapy-note">
-                    <p>Based on narrative therapy developed by <strong>Michael White</strong> and <strong>David Epston</strong> — a scientifically validated approach used for chronic pain, depression, and anxiety for over 40 years.</p>
-                </div>
+                <div class="therapy-note"><p>Based on narrative therapy developed by <strong>Michael White</strong> and <strong>David Epston</strong> — a scientifically validated approach used for chronic pain, depression, and anxiety for over 40 years.</p></div>
             </div>
         </section>
 
-        <section class="quote-section">
-            <div class="container">
-                <p class="quote">"The problem is the problem. The person is not the problem."</p>
-                <p class="quote-author">— Michael White, co-founder of narrative therapy</p>
-            </div>
-        </section>
+        <div class="poetry">
+            <p class="poetry-text">"The problem is the problem.<br>The person is not the problem."<br><span style="font-size: 0.85em; color: var(--text-dark); font-style: normal;">— Michael White</span></p>
+        </div>
 
         <section class="science" id="science">
             <div class="container">
                 <h2 class="section-title">The Science Behind Mi's Predictions</h2>
                 <p class="section-subtitle">Not just "AI" — a real logistic regression model analyzing 43 personal factors.</p>
-                
                 <div class="science-content">
                     <div class="science-text">
                         <h2>How Mi Knows When a Storm Is Coming</h2>
                         <p>Mi uses <strong>logistic regression</strong> — a proven statistical method used in medical research — to calculate your personal migraine probability.</p>
                         <p>The model analyzes <strong>43 factors simultaneously</strong>: weather changes, food triggers, sleep quality, hormonal cycles, stress levels, and your attack history.</p>
-                        <p>But here's what makes it powerful: Mi detects <strong>critical interactions</strong>. Skipped meal alone? Moderate risk. Skipped meal + high stress + poor sleep? Mi knows this combination is dangerous and alerts you immediately.</p>
-                        <p>The more you use the app, the smarter Mi becomes. Your personal trigger patterns emerge from your own data — not generic statistics.</p>
+                        <p>But here's what makes it powerful: Mi detects <strong>critical interactions</strong>. Skipped meal alone? Moderate risk. Skipped meal + high stress + poor sleep? Mi knows this combination is dangerous.</p>
                     </div>
-                    
                     <div class="science-stats">
-                        <div class="stat-card">
-                            <div class="stat-number">43</div>
-                            <div class="stat-label">Risk factors analyzed</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">24h</div>
-                            <div class="stat-label">Prediction window</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">7</div>
-                            <div class="stat-label">Factor categories</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">∞</div>
-                            <div class="stat-label">Learning from your data</div>
-                        </div>
+                        <div class="stat-card"><div class="stat-number">43</div><div class="stat-label">Risk factors analyzed</div></div>
+                        <div class="stat-card"><div class="stat-number">24h</div><div class="stat-label">Prediction window</div></div>
+                        <div class="stat-card"><div class="stat-number">8</div><div class="stat-label">Factor categories</div></div>
+                        <div class="stat-card"><div class="stat-number">∞</div><div class="stat-label">Learning from your data</div></div>
                     </div>
                 </div>
-                
                 <div class="factors-accordion">
                     <h3 class="factors-title">All 43 Factors Mi Analyzes</h3>
                     <p class="factors-intro">Click each category to see the specific factors</p>
-                    
-                    <div class="accordion-item">
-                        <button class="accordion-header" onclick="toggleAccordion(this)">
-                            <span class="accordion-icon">🌦️</span>
-                            <span class="accordion-title">Weather Factors</span>
-                            <span class="accordion-count">8 factors</span>
-                            <span class="accordion-arrow">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="factor-detail">
-                                <strong>Low Pressure</strong>
-                                <span>Barometric pressure below 1000 hPa — a known migraine trigger</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>High Pressure</strong>
-                                <span>Barometric pressure above 1025 hPa</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Pressure Change</strong>
-                                <span>Rapid pressure changes within 24 hours</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>High Humidity</strong>
-                                <span>Humidity above 80%</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Low Humidity</strong>
-                                <span>Humidity below 30% — can cause dehydration</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Extreme Temperature</strong>
-                                <span>Below 0°C or above 30°C</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Temperature Change</strong>
-                                <span>Rapid temperature swings</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Strong Wind</strong>
-                                <span>Wind speed above 30 km/h</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <button class="accordion-header" onclick="toggleAccordion(this)">
-                            <span class="accordion-icon">🍽️</span>
-                            <span class="accordion-title">Food & Nutrition</span>
-                            <span class="accordion-count">10 factors</span>
-                            <span class="accordion-arrow">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="factor-detail">
-                                <strong>Trigger Foods Count</strong>
-                                <span>Number of known trigger foods consumed in 48h</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Skipped Meals</strong>
-                                <span>Missed meals in the past 48 hours</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Recent Skipped Meal</strong>
-                                <span>Meal skipped in the last 12 hours — high risk</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Stressed Eating</strong>
-                                <span>Eating while stressed affects digestion</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Caffeine Intake</strong>
-                                <span>Coffee, tea, energy drinks consumption</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Alcohol Intake</strong>
-                                <span>Wine and alcohol are common triggers</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Chocolate Trigger</strong>
-                                <span>Contains tyramine and phenylethylamine</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Cheese Trigger</strong>
-                                <span>Aged cheeses contain tyramine</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Stressed Meals Count</strong>
-                                <span>How many meals were eaten under stress</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Skipped + Stressed</strong>
-                                <span>Critical combination of both factors</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <button class="accordion-header" onclick="toggleAccordion(this)">
-                            <span class="accordion-icon">😴</span>
-                            <span class="accordion-title">Sleep Quality</span>
-                            <span class="accordion-count">9 factors</span>
-                            <span class="accordion-arrow">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="factor-detail">
-                                <strong>Sleep Deprivation</strong>
-                                <span>Less than 6 hours of sleep</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Severe Sleep Deprivation</strong>
-                                <span>Less than 4 hours — critical risk</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Oversleep</strong>
-                                <span>More than 9 hours can trigger migraines</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Poor Sleep Quality</strong>
-                                <span>Restless or interrupted sleep</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Fair Sleep Quality</strong>
-                                <span>Moderate sleep quality issues</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Irregular Sleep</strong>
-                                <span>Inconsistent sleep schedule</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Wake-up Migraine</strong>
-                                <span>Migraines that start upon waking</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Hidden Sleep Issues</strong>
-                                <span>Possible sleep apnea or bruxism</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Chronic Morning Migraine</strong>
-                                <span>Pattern of frequent wake-up migraines</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <button class="accordion-header" onclick="toggleAccordion(this)">
-                            <span class="accordion-icon">🌸</span>
-                            <span class="accordion-title">Hormonal Cycle</span>
-                            <span class="accordion-count">3 factors</span>
-                            <span class="accordion-arrow">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="factor-detail">
-                                <strong>Menstrual Phase</strong>
-                                <span>Days 1-5 of cycle — highest risk period</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Ovulation Phase</strong>
-                                <span>Days 12-16 — estrogen fluctuation</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>PMS Phase</strong>
-                                <span>Days 21-28 — pre-menstrual sensitivity</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <button class="accordion-header" onclick="toggleAccordion(this)">
-                            <span class="accordion-icon">📊</span>
-                            <span class="accordion-title">Attack History</span>
-                            <span class="accordion-count">3 factors</span>
-                            <span class="accordion-arrow">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="factor-detail">
-                                <strong>Recent Attacks Count</strong>
-                                <span>Number of attacks in the past 7 days</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Attack Yesterday</strong>
-                                <span>Having an attack increases next-day risk</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Danger Time Window</strong>
-                                <span>Current time matches your typical attack times</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <button class="accordion-header" onclick="toggleAccordion(this)">
-                            <span class="accordion-icon">😰</span>
-                            <span class="accordion-title">Stress Levels</span>
-                            <span class="accordion-count">2 factors</span>
-                            <span class="accordion-arrow">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="factor-detail">
-                                <strong>High Stress</strong>
-                                <span>Stress level above 7/10</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Moderate Stress</strong>
-                                <span>Stress level 4-7/10</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <button class="accordion-header" onclick="toggleAccordion(this)">
-                            <span class="accordion-icon">🕐</span>
-                            <span class="accordion-title">Time Patterns</span>
-                            <span class="accordion-count">4 factors</span>
-                            <span class="accordion-arrow">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="factor-detail">
-                                <strong>Monday Effect</strong>
-                                <span>Mondays show higher migraine frequency</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Weekend Pattern</strong>
-                                <span>Weekend relaxation can trigger attacks</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Morning Risk</strong>
-                                <span>5:00-10:00 — common attack window</span>
-                            </div>
-                            <div class="factor-detail">
-                                <strong>Evening Risk</strong>
-                                <span>18:00-22:00 — end-of-day fatigue</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <button class="accordion-header" onclick="toggleAccordion(this)">
-                            <span class="accordion-icon">⚡</span>
-                            <span class="accordion-title">Critical Interactions</span>
-                            <span class="accordion-count">4 factors</span>
-                            <span class="accordion-arrow">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="factor-detail critical">
-                                <strong>Stress + Sleep Deprivation</strong>
-                                <span>Combined effect is 3x worse than each alone</span>
-                            </div>
-                            <div class="factor-detail critical">
-                                <strong>Skipped Meal + Stress</strong>
-                                <span>Most dangerous combination for migraines</span>
-                            </div>
-                            <div class="factor-detail critical">
-                                <strong>Weather + Hormonal</strong>
-                                <span>Low pressure during menstruation</span>
-                            </div>
-                            <div class="factor-detail critical">
-                                <strong>Trigger Food + Poor Sleep</strong>
-                                <span>Reduced tolerance when sleep-deprived</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)"><span class="accordion-icon">🌦️</span><span class="accordion-title">Weather Factors</span><span class="accordion-count">8 factors</span><span class="accordion-arrow">▼</span></button><div class="accordion-content"><div class="factor-detail"><strong>Low Pressure</strong><span>Below 1000 hPa — known trigger</span></div><div class="factor-detail"><strong>High Pressure</strong><span>Above 1025 hPa</span></div><div class="factor-detail"><strong>Pressure Change</strong><span>Rapid changes within 24h</span></div><div class="factor-detail"><strong>High Humidity</strong><span>Above 80%</span></div><div class="factor-detail"><strong>Low Humidity</strong><span>Below 30%</span></div><div class="factor-detail"><strong>Extreme Temperature</strong><span>Below 0°C or above 30°C</span></div><div class="factor-detail"><strong>Temperature Change</strong><span>Rapid swings</span></div><div class="factor-detail"><strong>Strong Wind</strong><span>Above 30 km/h</span></div></div></div>
+                    <div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)"><span class="accordion-icon">🍽️</span><span class="accordion-title">Food & Nutrition</span><span class="accordion-count">10 factors</span><span class="accordion-arrow">▼</span></button><div class="accordion-content"><div class="factor-detail"><strong>Trigger Foods Count</strong><span>Known triggers in 48h</span></div><div class="factor-detail"><strong>Skipped Meals</strong><span>Missed meals in 48h</span></div><div class="factor-detail"><strong>Recent Skipped Meal</strong><span>In last 12h — high risk</span></div><div class="factor-detail"><strong>Stressed Eating</strong><span>Affects digestion</span></div><div class="factor-detail"><strong>Caffeine Intake</strong><span>Coffee, tea, energy drinks</span></div><div class="factor-detail"><strong>Alcohol Intake</strong><span>Common trigger</span></div><div class="factor-detail"><strong>Chocolate</strong><span>Contains tyramine</span></div><div class="factor-detail"><strong>Cheese</strong><span>Aged cheeses contain tyramine</span></div><div class="factor-detail"><strong>Stressed Meals Count</strong><span>Meals under stress</span></div><div class="factor-detail"><strong>Skipped + Stressed</strong><span>Critical combination</span></div></div></div>
+                    <div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)"><span class="accordion-icon">😴</span><span class="accordion-title">Sleep Quality</span><span class="accordion-count">9 factors</span><span class="accordion-arrow">▼</span></button><div class="accordion-content"><div class="factor-detail"><strong>Sleep Deprivation</strong><span>Less than 6 hours</span></div><div class="factor-detail"><strong>Severe Deprivation</strong><span>Less than 4 hours</span></div><div class="factor-detail"><strong>Oversleep</strong><span>More than 9 hours</span></div><div class="factor-detail"><strong>Poor Quality</strong><span>Restless sleep</span></div><div class="factor-detail"><strong>Fair Quality</strong><span>Moderate issues</span></div><div class="factor-detail"><strong>Irregular Sleep</strong><span>Inconsistent schedule</span></div><div class="factor-detail"><strong>Wake-up Migraine</strong><span>Starts upon waking</span></div><div class="factor-detail"><strong>Hidden Sleep Issues</strong><span>Possible apnea/bruxism</span></div><div class="factor-detail"><strong>Chronic Morning</strong><span>Frequent wake-up migraines</span></div></div></div>
+                    <div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)"><span class="accordion-icon">🌸</span><span class="accordion-title">Hormonal Cycle</span><span class="accordion-count">3 factors</span><span class="accordion-arrow">▼</span></button><div class="accordion-content"><div class="factor-detail"><strong>Menstrual Phase</strong><span>Days 1-5 — highest risk</span></div><div class="factor-detail"><strong>Ovulation Phase</strong><span>Days 12-16</span></div><div class="factor-detail"><strong>PMS Phase</strong><span>Days 21-28</span></div></div></div>
+                    <div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)"><span class="accordion-icon">📊</span><span class="accordion-title">Attack History</span><span class="accordion-count">3 factors</span><span class="accordion-arrow">▼</span></button><div class="accordion-content"><div class="factor-detail"><strong>Recent Attacks</strong><span>Count in past 7 days</span></div><div class="factor-detail"><strong>Attack Yesterday</strong><span>Increases next-day risk</span></div><div class="factor-detail"><strong>Danger Time Window</strong><span>Your typical attack times</span></div></div></div>
+                    <div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)"><span class="accordion-icon">😰</span><span class="accordion-title">Stress Levels</span><span class="accordion-count">2 factors</span><span class="accordion-arrow">▼</span></button><div class="accordion-content"><div class="factor-detail"><strong>High Stress</strong><span>Above 7/10</span></div><div class="factor-detail"><strong>Moderate Stress</strong><span>4-7/10</span></div></div></div>
+                    <div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)"><span class="accordion-icon">🕐</span><span class="accordion-title">Time Patterns</span><span class="accordion-count">4 factors</span><span class="accordion-arrow">▼</span></button><div class="accordion-content"><div class="factor-detail"><strong>Monday Effect</strong><span>Higher frequency</span></div><div class="factor-detail"><strong>Weekend Pattern</strong><span>Relaxation triggers</span></div><div class="factor-detail"><strong>Morning Risk</strong><span>5:00-10:00</span></div><div class="factor-detail"><strong>Evening Risk</strong><span>18:00-22:00</span></div></div></div>
+                    <div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)"><span class="accordion-icon">⚡</span><span class="accordion-title">Critical Interactions</span><span class="accordion-count">4 factors</span><span class="accordion-arrow">▼</span></button><div class="accordion-content"><div class="factor-detail critical"><strong>Stress + Sleep Deprivation</strong><span>3x worse combined</span></div><div class="factor-detail critical"><strong>Skipped Meal + Stress</strong><span>Most dangerous combo</span></div><div class="factor-detail critical"><strong>Weather + Hormonal</strong><span>Low pressure + menstruation</span></div><div class="factor-detail critical"><strong>Trigger Food + Poor Sleep</strong><span>Reduced tolerance</span></div></div></div>
                 </div>
             </div>
         </section>
+
+        <div class="poetry poetry-gold">
+            <p class="poetry-text">Each chart a leaf, each line a root,<br>From knowing pain, we gather fruit.<br>Charts bloom like petals kissed by light,<br>Mi breath reveals the hidden night.</p>
+        </div>
 
         <section class="features" id="features">
             <div class="container">
                 <h2 class="section-title">Features</h2>
                 <p class="section-subtitle">Everything you need to understand and live with your migraines.</p>
-                
                 <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🐱</div>
-                        <h3>Meet Mi</h3>
-                        <p>Your migraine companion. Mi reflects your state — calm when you're well, restless when storms approach.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎮</div>
-                        <h3>Therapeutic Games</h3>
-                        <p>Breathing Garden with 4-7-8 technique. MIgraine Monster to care for Mi. Calming activities during attacks.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔮</div>
-                        <h3>Mi's Mood Forecast</h3>
-                        <p>AI-powered 24-hour prediction. See when Mi might wake up — so you can prepare.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📔</div>
-                        <h3>Complete Journal</h3>
-                        <p>Migraine diary, food tracking, symptoms. Minimal effort — maximum insights.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">💎</div>
-                        <h3>Mood Stones</h3>
-                        <p>Cloudy, Restless, Stormy — your patterns visualized as beautiful glowing crystals.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📋</div>
-                        <h3>Clinical Reports</h3>
-                        <p>MIDAS assessment, CGRP tracking, PDF exports. Ready for your neurologist.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🌦️</div>
-                        <h3>Weather Impact</h3>
-                        <p>Track how barometric pressure and weather changes affect Mi's mood.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">💊</div>
-                        <h3>Medication Safety</h3>
-                        <p>Alerts before you reach risky limits. Prevent medication overuse.</p>
-                    </div>
+                    <div class="feature-card"><div class="feature-icon">🐱</div><h3>Meet Mi</h3><p>Your migraine companion. Mi reflects your state — calm when you're well, restless when storms approach.</p></div>
+                    <div class="feature-card"><div class="feature-icon">🎮</div><h3>Therapeutic Games</h3><p>Breathing Garden with 4-7-8 technique. MIgraine Monster to care for Mi.</p></div>
+                    <div class="feature-card"><div class="feature-icon">🔮</div><h3>Mi's Mood Forecast</h3><p>AI-powered 24-hour prediction. See when Mi might wake up.</p></div>
+                    <div class="feature-card"><div class="feature-icon">📔</div><h3>Complete Journal</h3><p>Migraine diary, food tracking, symptoms. Minimal effort — maximum insights.</p></div>
+                    <div class="feature-card"><div class="feature-icon">💎</div><h3>Mood Stones</h3><p>Cloudy, Restless, Stormy — patterns visualized as glowing crystals.</p></div>
+                    <div class="feature-card"><div class="feature-icon">📋</div><h3>Clinical Reports</h3><p>MIDAS assessment, CGRP tracking, PDF exports for your neurologist.</p></div>
+                    <div class="feature-card"><div class="feature-icon">🌦️</div><h3>Weather Impact</h3><p>Track how barometric pressure affects Mi's mood.</p></div>
+                    <div class="feature-card"><div class="feature-icon">💊</div><h3>Medication Safety</h3><p>Alerts before you reach risky limits. Prevent overuse headache.</p></div>
                 </div>
             </div>
         </section>
@@ -1016,10 +374,7 @@
                 <div class="download-buttons">
                     <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                        <div class="btn-text">
-                            <small>Download on the</small>
-                            <strong>App Store</strong>
-                        </div>
+                        <div class="btn-text"><small>Download on the</small><strong>App Store</strong></div>
                     </a>
                 </div>
             </div>
@@ -1042,16 +397,9 @@
     function toggleAccordion(button) {
         const content = button.nextElementSibling;
         const isOpen = content.classList.contains('show');
-        
-        // Close all
         document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('show'));
         document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
-        
-        // Open clicked if was closed
-        if (!isOpen) {
-            content.classList.add('show');
-            button.classList.add('active');
-        }
+        if (!isOpen) { content.classList.add('show'); button.classList.add('active'); }
     }
     </script>
 </body>
