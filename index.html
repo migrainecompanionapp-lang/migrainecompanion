@@ -709,7 +709,7 @@
     // ===== УМНЫЕ СВЕТЛЯЧКИ (35 штук, 70% внизу, реагируют на мышь) =====
     document.addEventListener('DOMContentLoaded', function() {
         const container = document.querySelector('.fireflies');
-        const fireflyCount = 35;
+        const fireflyCount = window.innerWidth <= 768 ? 18 : 35;
         const fireflies = [];
         
         for (let i = 0; i < fireflyCount; i++) {
