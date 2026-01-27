@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MIgraine Companion Blog — insights, tips, and stories about living with migraines and narrative therapy.">
     <title>Blog | MIgraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -29,6 +30,10 @@
             color: #ffffff;
             min-height: 100vh;
             line-height: 1.4;
+        }
+        
+        body.menu-open {
+            overflow: hidden;
         }
         
         .container {
@@ -60,6 +65,8 @@
             color: #ffffff;
             letter-spacing: -0.3px;
             text-decoration: none;
+            position: relative;
+            z-index: 101;
         }
         
         .logo span {
@@ -103,6 +110,8 @@
             color: var(--lavender);
             font-size: 1.5rem;
             cursor: pointer;
+            position: relative;
+            z-index: 101;
         }
         
         .blog-hero {
@@ -332,11 +341,54 @@
         }
         
         @media (max-width: 768px) {
-            .nav { display: none; }
-            .mobile-menu-btn { display: block; }
-            .blog-hero h1 { font-size: 2rem; }
-            .blog-hero { padding: 120px 0 60px; min-height: 320px; }
-            .footer-content { flex-direction: column; text-align: center; }
+            .nav {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(13, 13, 13, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 20px;
+                gap: 0;
+                border-bottom: 1px solid rgba(139, 122, 168, 0.2);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                z-index: 99;
+            }
+            
+            .nav.mobile-menu-active {
+                display: flex;
+            }
+            
+            .nav a {
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+                display: block;
+                width: 100%;
+            }
+            
+            .nav a:last-child {
+                border-bottom: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-hero {
+                padding: 120px 0 60px;
+                min-height: 320px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -352,7 +404,7 @@
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
                 <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="nav-cta" target="_blank">Download</a>
             </nav>
-            <button class="mobile-menu-btn">☰</button>
+            <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
         </div>
     </header>
 
@@ -455,5 +507,26 @@
             <p class="copyright">© 2026 MIgraine Companion. Made with 💜 in Ukraine.</p>
         </div>
     </footer>
+
+    <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    
+    if (mobileMenuBtn && nav) {
+        mobileMenuBtn.addEventListener('click', function() {
+            nav.classList.toggle('mobile-menu-active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Close menu when clicking on a link
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('mobile-menu-active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+    }
+    </script>
 </body>
 </html>
