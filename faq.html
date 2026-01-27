@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently Asked Questions about MIgraine Companion — your gentle migraine tracking app with AI predictions and narrative therapy.">
+    <meta name="keywords" content="migraine app FAQ, migraine tracker questions, Mi companion help, migraine app free">
+    <title>FAQ — Frequently Asked Questions | MIgraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --malachite: #2D3D35;
+            --charcoal: #16181C;
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --text: #BDBDBD;
+            --text-light: #9E9E9E;
+            --text-dark: #757575;
+            --paper: #F0EAD6;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: radial-gradient(circle at 50% 20%, #3D4D45 0%, #16181C 80%);
+            background-attachment: fixed;
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(35, 45, 40, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.2);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            z-index: 101;
+        }
+        
+        .logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+        
+        .logo em {
+            color: var(--lavender);
+            font-style: normal;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        
+        .nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.1px;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover {
+            color: var(--lavender);
+        }
+        
+        .nav-cta {
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: var(--gold) !important;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: relative;
+            z-index: 101;
+        }
+        
+        .faq-hero {
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .faq-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--paper);
+            text-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
+            margin-bottom: 16px;
+        }
+        
+        .faq-hero p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .faq-content {
+            padding: 60px 0 100px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .faq-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .faq-intro p {
+            font-size: 1.05rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 32px;
+        }
+        
+        .faq-contact {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 12px;
+            padding: 20px 24px;
+        }
+        
+        .faq-contact p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+        }
+        
+        .faq-contact a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .faq-contact a:hover {
+            color: var(--antique-gold);
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            align-items: start;
+        }
+        
+        .faq-category {
+            margin-bottom: 0;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .faq-category:hover {
+            border-color: rgba(197, 160, 89, 0.4);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-header {
+            width: 100%;
+            padding: 20px 22px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-family: inherit;
+            transition: background 0.3s;
+            text-align: left;
+        }
+        
+        .category-header:hover {
+            background: rgba(197, 160, 89, 0.05);
+        }
+        
+        .category-number {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--antique-gold), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            flex-shrink: 0;
+        }
+        
+        .category-title {
+            font-family: 'Cormorant Garamond', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--paper);
+            flex: 1;
+        }
+        
+        .category-arrow {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            transition: transform 0.3s;
+            margin-left: 4px;
+        }
+        
+        .category-header.active .category-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .category-content {
+            display: none;
+            padding: 0 22px 24px;
+            background: rgba(0, 0, 0, 0.15);
+            border-top: 1px solid rgba(197, 160, 89, 0.05);
+        }
+        
+        .category-content.show {
+            display: block;
+        }
+        
+        .faq-item {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        
+        .faq-answer {
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--text);
+        }
+        
+        .faq-answer p {
+            margin-bottom: 12px;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .faq-answer ul {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .faq-answer a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .faq-answer a:hover {
+            color: var(--antique-gold);
+        }
+        
+        footer {
+            padding: 56px 0;
+            background: var(--charcoal);
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 28px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--lavender);
+        }
+        
+        .copyright {
+            font-size: 0.88rem;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(35, 45, 40, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 20px;
+                gap: 0;
+                border-bottom: 1px solid rgba(139, 122, 168, 0.2);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                z-index: 99;
+            }
+            
+            .nav.mobile-menu-active {
+                display: flex;
+            }
+            
+            .nav a {
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+                display: block;
+                width: 100%;
+            }
+            
+            .nav a:last-child {
+                border-bottom: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .faq-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .faq-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .category-header {
+                padding: 16px 18px;
+            }
+            
+            .category-title {
+                font-size: 0.95rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="images/mi-icon.png" alt="Mi — your gentle migraine companion">
+                <span>M<em>I</em>graine Companion</span>
+            </a>
+            <nav class="nav">
+                <a href="index.html#screenshots">App</a>
+                <a href="index.html#how-it-works">How It Works</a>
+                <a href="index.html#different">Approach</a>
+                <a href="index.html#science">Science</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#story">Story</a>
+                <a href="blog.html">Blog</a>
+                <a href="faq.html" class="active">FAQ</a>
+                <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
+                <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="nav-cta" target="_blank">Download</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="faq-hero">
+            <div class="container">
+                <h1>Frequently Asked Questions</h1>
+                <p>Everything you need to know about MIgraine Companion and Mi, your gentle migraine companion.</p>
+            </div>
+        </section>
+
+        <section class="faq-content">
+            <div class="container">
+                <div class="faq-intro">
+                    <p>We've compiled answers to the most common questions about Migraine Companion. Can't find what you're looking for?</p>
+                    <div class="faq-contact">
+                        <p>Reach us at <a href="mailto:migrainecompanion.app@gmail.com">migrainecompanion.app@gmail.com</a> — we usually respond within 24 hours.</p>
+                    </div>
+                </div>
+
+                <div class="faq-grid">
+                    
+                    <!-- CATEGORY 1: About the App -->
+                    <div class="faq-category">
+                        <button class="category-header" onclick="toggleCategory(this)">
+                            <span class="category-number">1</span>
+                            <span class="category-title">About the App & Philosophy</span>
+                            <span class="category-arrow">▼</span>
+                        </button>
+                        <div class="category-content">
+                            <div class="faq-item">
+                                <div class="faq-question">What makes Migraine Companion different from other trackers?</div>
+                                <div class="faq-answer">
+                                    <p>We don't just count migraines — we use narrative therapy. Mi is your migraine represented as a companion. Instead of fighting, you learn to understand and care. This is a fundamentally different approach to living with chronic pain.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">What is "companionization"?</div>
+                                <div class="faq-answer">
+                                    <p>It's a narrative therapy technique: you externalize the problem. Mi is your migraine separate from you. You're not "a migraineur" — you're a person who lives with Mi. This reduces self-blame and increases your sense of control over the situation.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Do I need a therapist to use the app?</div>
+                                <div class="faq-answer">
+                                    <p>No. Narrative therapy is built into the app's design. Mi itself is a therapeutic tool. You get the benefits of a therapeutic approach simply by using the app every day.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CATEGORY 2: Pricing -->
+                    <div class="faq-category">
+                        <button class="category-header" onclick="toggleCategory(this)">
+                            <span class="category-number">2</span>
+                            <span class="category-title">Pricing & Access</span>
+                            <span class="category-arrow">▼</span>
+                        </button>
+                        <div class="category-content">
+                            <div class="faq-item">
+                                <div class="faq-question">Is the app free?</div>
+                                <div class="faq-answer">
+                                    <p>Yes. All essential features for managing migraine are free forever. This is not a trial or limited version. You can effectively track migraines, find triggers, and care for yourself — completely free.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">What's included in the free version?</div>
+                                <div class="faq-answer">
+                                    <p>Everything you need to live with migraine:</p>
+                                    <ul>
+                                        <li>Complete migraine journal and trigger tracking</li>
+                                        <li>Tracking 43 factors — food, sleep, weather, stress, hormones</li>
+                                        <li>Mi's mood stones — visualization of your state</li>
+                                        <li>Medication tracking with WHO safety limits</li>
+                                        <li>Food trigger detection with smart parsing</li>
+                                        <li>Weather sensitivity tracking</li>
+                                        <li>Calendar view</li>
+                                        <li>Basic data export to PDF</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">What is Premium subscription?</div>
+                                <div class="faq-answer">
+                                    <p>Premium is for those who want AI assistance and deep analytics. Includes four additional features:</p>
+                                    <ul>
+                                        <li>Mi's AI Forecast — personalized 24-hour migraine prediction based on machine learning</li>
+                                        <li>Therapeutic Games — Breathing Garden with 4-7-8 technique and Migraine Monster for narrative therapy practice</li>
+                                        <li>Advanced Reports — detailed reports with graphs, patterns, and insights</li>
+                                        <li>Clinical Reports — MIDAS assessment and CGRP tracking specifically for your neurologist</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Why are some features paid?</div>
+                                <div class="faq-answer">
+                                    <p>AI predictions require server resources and ongoing development. Therapeutic games and advanced analytics are for power users who want the maximum from the app.</p>
+                                    <p>But importantly: we don't hide core functionality behind a paywall. Migraine tracking, trigger detection, medication safety — all free. Unlike many competitors who limit even basic features with subscriptions.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Can I try Premium for free?</div>
+                                <div class="faq-answer">
+                                    <p>Yes. Premium is available with a free trial period — you can test all features risk-free and cancel anytime.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CATEGORY 3: Privacy -->
+                    <div class="faq-category">
+                        <button class="category-header" onclick="toggleCategory(this)">
+                            <span class="category-number">3</span>
+                            <span class="category-title">Privacy & Data</span>
+                            <span class="category-arrow">▼</span>
+                        </button>
+                        <div class="category-content">
+                            <div class="faq-item">
+                                <div class="faq-question">Is my data safe?</div>
+                                <div class="faq-answer">
+                                    <p>Absolutely. All data is stored locally on your device. We don't sell, share, or analyze your personal data. Your health information belongs only to you.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Can I sync between devices?</div>
+                                <div class="faq-answer">
+                                    <p>In development. Soon you'll be able to sync data via iCloud with full end-to-end encryption. Even we won't be able to read your data.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Can I export my data?</div>
+                                <div class="faq-answer">
+                                    <p>Yes. You can export a complete report in PDF format for your doctor or personal archive. Your data is always accessible and portable.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">What happens to my data if I delete the app?</div>
+                                <div class="faq-answer">
+                                    <p>All data is deleted from the device. We don't store copies on servers. We recommend exporting your data before deletion.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CATEGORY 4: Functionality -->
+                    <div class="faq-category">
+                        <button class="category-header" onclick="toggleCategory(this)">
+                            <span class="category-number">4</span>
+                            <span class="category-title">Functionality</span>
+                            <span class="category-arrow">▼</span>
+                        </button>
+                        <div class="category-content">
+                            <div class="faq-item">
+                                <div class="faq-question">Does the app work offline?</div>
+                                <div class="faq-answer">
+                                    <p>Yes. You don't need internet for core tracking. Internet is only required for:</p>
+                                    <ul>
+                                        <li>Weather data</li>
+                                        <li>Mi's AI forecast</li>
+                                        <li>Device synchronization (when available)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">How accurate is Mi's AI forecast?</div>
+                                <div class="faq-answer">
+                                    <p>Mi learns from your data over 2-4 weeks. Accuracy grows over time — usually reaches 70-85% after a month of regular use. The more data, the more accurate the forecast.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Can I add my own triggers?</div>
+                                <div class="faq-answer">
+                                    <p>Yes. Mi tracks 43 standard factors based on medical research, but you can add your unique triggers that are important specifically for you.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Does the app support Apple Health / Google Fit?</div>
+                                <div class="faq-answer">
+                                    <p>iOS — yes, full integration with Apple Health for syncing sleep, activity, and other health metrics.</p>
+                                    <p>Android — Google Fit integration will be added after the Android release.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">How much time does daily tracking take?</div>
+                                <div class="faq-answer">
+                                    <p>1-2 minutes per day. Mi doesn't require much effort — quick logging of food, sleep, mood. The app is designed not to be a burden in your life.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">What if I forget to log data?</div>
+                                <div class="faq-answer">
+                                    <p>It's okay. Mi understands — life with migraine is unpredictable. Just continue when you can. Even incomplete data helps find patterns.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CATEGORY 5: Scientific Basis -->
+                    <div class="faq-category">
+                        <button class="category-header" onclick="toggleCategory(this)">
+                            <span class="category-number">5</span>
+                            <span class="category-title">Scientific Basis</span>
+                            <span class="category-arrow">▼</span>
+                        </button>
+                        <div class="category-content">
+                            <div class="faq-item">
+                                <div class="faq-question">Is the app based on real science?</div>
+                                <div class="faq-answer">
+                                    <p>Yes. Narrative therapy is a scientifically validated approach developed by Michael White and David Epston. Used for over 40 years to treat chronic pain, depression, and anxiety disorders.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Did you consult with neurologists?</div>
+                                <div class="faq-answer">
+                                    <p>The app is built on:</p>
+                                    <ul>
+                                        <li>30 years of personal experience living with migraine</li>
+                                        <li>WHO guidelines on medication safety</li>
+                                        <li>Medical research on migraine triggers</li>
+                                        <li>Narrative therapy principles from the founders of the approach</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Can the app replace a doctor?</div>
+                                <div class="faq-answer">
+                                    <p>No. Mi is a tool for self-help and self-understanding. It helps you understand your personal patterns and manage your condition, but doesn't replace professional medical consultation. Always discuss serious changes with your neurologist.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CATEGORY 6: Practical Use -->
+                    <div class="faq-category">
+                        <button class="category-header" onclick="toggleCategory(this)">
+                            <span class="category-number">6</span>
+                            <span class="category-title">Practical Use</span>
+                            <span class="category-arrow">▼</span>
+                        </button>
+                        <div class="category-content">
+                            <div class="faq-item">
+                                <div class="faq-question">What age is the app suitable for?</div>
+                                <div class="faq-answer">
+                                    <p>The app is suitable for teenagers 13+ and adults. For younger children, we recommend using it together with parents.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Is the app available in other languages?</div>
+                                <div class="faq-answer">
+                                    <p>Currently only English is available. In development:</p>
+                                    <ul>
+                                        <li>Russian</li>
+                                        <li>Ukrainian</li>
+                                        <li>Spanish</li>
+                                    </ul>
+                                    <p>Other languages will be added based on user requests.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Do I need to pay for updates?</div>
+                                <div class="faq-answer">
+                                    <p>No. All app updates are completely free. New features are added regularly at no additional cost.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CATEGORY 7: About Creator -->
+                    <div class="faq-category">
+                        <button class="category-header" onclick="toggleCategory(this)">
+                            <span class="category-number">7</span>
+                            <span class="category-title">About the Creator</span>
+                            <span class="category-arrow">▼</span>
+                        </button>
+                        <div class="category-content">
+                            <div class="faq-item">
+                                <div class="faq-question">Who created Migraine Companion?</div>
+                                <div class="faq-answer">
+                                    <p>Rustam Iuldashov — a solo developer from Ukraine with 30 years of experience living with migraine. Created the app he wished existed — not a cold medical tracker, but an understanding companion.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Why did you create this app?</div>
+                                <div class="faq-answer">
+                                    <p>I was tired of clinical trackers that treat migraine as statistics. I needed a friend who understands — not a judge who counts attacks. That's how Mi was born.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Was the app developed in Ukraine during the war?</div>
+                                <div class="faq-answer">
+                                    <p>Yes. The app was created during wartime, often with power outages of 10-16 hours a day. But it was in the darkness that I realized — many people need light that brings understanding and acceptance of their condition.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CATEGORY 8: Technical -->
+                    <div class="faq-category">
+                        <button class="category-header" onclick="toggleCategory(this)">
+                            <span class="category-number">8</span>
+                            <span class="category-title">Technical Questions</span>
+                            <span class="category-arrow">▼</span>
+                        </button>
+                        <div class="category-content">
+                            <div class="faq-item">
+                                <div class="faq-question">Which devices are supported?</div>
+                                <div class="faq-answer">
+                                    <ul>
+                                        <li>iOS 15+ — iPhone and iPad</li>
+                                        <li>Android — version coming in the next few days</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">How much storage does the app take?</div>
+                                <div class="faq-answer">
+                                    <p>About 120-130 MB — very little for a modern app. Mi includes an AI model, therapeutic games, graphs, and visualizations, but we've optimized everything for minimal size. For comparison: Instagram takes ~250 MB.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Does the app drain battery quickly?</div>
+                                <div class="faq-answer">
+                                    <p>No. Mi is optimized for minimal battery usage. The app runs in the background only when necessary and doesn't affect device battery life.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">What if the app isn't working correctly?</div>
+                                <div class="faq-answer">
+                                    <p>Write to us at our support email or through the form in the app. We respond to all requests and fix issues as a priority.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="https://sites.google.com/view/migrainecompanion/privacy-policy" target="_blank">Privacy Policy</a>
+                <a href="https://sites.google.com/view/migrainecompanion/terms-of-use" target="_blank">Terms of Use</a>
+                <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
+                <a href="https://sites.google.com/view/migrainecompanion/contact" target="_blank">Contact</a>
+            </div>
+            <p class="copyright">© 2025 MIgraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Category accordion toggle
+    function toggleCategory(button) {
+        const content = button.nextElementSibling;
+        const isOpen = content.classList.contains('show');
+        
+        // Close all categories
+        document.querySelectorAll('.category-content').forEach(c => c.classList.remove('show'));
+        document.querySelectorAll('.category-header').forEach(h => h.classList.remove('active'));
+        
+        // Open clicked category if it wasn't open
+        if (!isOpen) {
+            content.classList.add('show');
+            button.classList.add('active');
+        }
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    
+    if (mobileMenuBtn && nav) {
+        mobileMenuBtn.addEventListener('click', function() {
+            nav.classList.toggle('mobile-menu-active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Close menu when clicking on a link
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('mobile-menu-active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+    }
+    </script>
+</body>
+</html>
