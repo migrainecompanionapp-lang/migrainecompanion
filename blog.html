@@ -106,28 +106,63 @@
         }
         
         .blog-hero {
-            padding: 140px 0 60px;
+            padding: 140px 0 80px;
             text-align: center;
-            background: radial-gradient(ellipse at top, rgba(139, 122, 168, 0.1) 0%, transparent 60%);
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/blog-bg.png') center center/cover no-repeat;
+            opacity: 0.85;
+            z-index: 0;
+        }
+        
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.3) 0%, rgba(13,13,13,0.8) 70%, rgba(13,13,13,1) 100%);
+            z-index: 1;
+        }
+        
+        .blog-hero .container {
+            position: relative;
+            z-index: 2;
         }
         
         .blog-hero h1 {
-            font-size: 2.4rem;
+            font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 16px;
             letter-spacing: -0.3px;
             color: #ffffff;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
         }
         
         .blog-hero p {
-            font-size: 1.1rem;
-            color: var(--text);
-            max-width: 500px;
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 520px;
             margin: 0 auto;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+            font-weight: 500;
         }
         
         .blog-content {
-            padding: 40px 0 80px;
+            padding: 60px 0 80px;
         }
         
         .blog-grid {
@@ -194,6 +229,21 @@
             display: flex;
             align-items: center;
             gap: 6px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .read-more:hover {
+            color: #D5B069;
+            transform: translateX(4px);
         }
         
         .coming-soon-card {
@@ -284,7 +334,8 @@
         @media (max-width: 768px) {
             .nav { display: none; }
             .mobile-menu-btn { display: block; }
-            .blog-hero h1 { font-size: 1.8rem; }
+            .blog-hero h1 { font-size: 2rem; }
+            .blog-hero { padding: 120px 0 60px; min-height: 320px; }
             .footer-content { flex-direction: column; text-align: center; }
         }
     </style>
@@ -308,14 +359,26 @@
     <main>
         <section class="blog-hero">
             <div class="container">
-                <h1>Blog</h1>
-                <p>Insights, tips, and stories about living with migraines and finding peace with Mi.</p>
+                <h1>Stories from the Mystic Garden</h1>
+                <p>Insights, experiences, and wisdom about living with migraines — from those who understand.</p>
             </div>
         </section>
 
         <section class="blog-content">
             <div class="container">
                 <div class="blog-grid">
+                    <!-- НАША НОВАЯ СТАТЬЯ -->
+                    <article class="blog-card">
+                        <span class="blog-tag">Personal Story</span>
+                        <h2>I Built a Migraine App During 30 Years of Pain (and a War)</h2>
+                        <p>How chronic illness, wartime development, and narrative therapy came together to create something "good, beautiful, and warm". A journey from 15-20 attacks per month to 3-4.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 January 27, 2026</span>
+                            <span class="blog-read-time">⏱ 8 min read</span>
+                        </div>
+                        <a href="article-30-years.html" class="read-more">Read full story →</a>
+                    </article>
+                    
                     <article class="blog-card">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>Why We Don't Fight Migraines</h2>
@@ -389,7 +452,7 @@
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
                 <a href="mailto:migrainecompanion.app@gmail.com">Contact</a>
             </div>
-            <p class="copyright">© 2026 MIgraine Companion. All rights reserved.</p>
+            <p class="copyright">© 2026 MIgraine Companion. Made with 💜 in Ukraine.</p>
         </div>
     </footer>
 </body>
