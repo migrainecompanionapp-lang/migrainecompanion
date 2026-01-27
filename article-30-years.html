@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How I built a migraine app during 30 years of pain and wartime in Ukraine. A journey from 15-20 attacks per month to 3-4 through self-care and narrative therapy.">
+    <meta name="author" content="Rustam Iuldashov">
+    <title>I Built a Migraine App During 30 Years of Pain (and a War) | MIgraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/article-hero.jpg" alt="Mi standing between storm and healing garden">
+            <div class="article-header">
+                <span class="article-tag">Personal Story</span>
+                <h1>I Built a Migraine App During 30 Years of Pain (and a War)</h1>
+                <p class="article-subtitle">How chronic illness, wartime development, and narrative therapy came together to create something "good, beautiful, and warm"</p>
+                <div class="article-meta">
+                    <span>📅 January 27, 2026</span>
+                    <span>⏱ 8 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+                
+                <section class="article-section">
+                    <h2>The First Attack</h2>
+                    <p>I was 12 years old when migraine found me.</p>
+                    <p>I didn't understand what was happening. The aura came first—visual distortions that made the world look broken. Then the pain. I remember lying in bed for hours, sleeping, scared. My parents were scared too. We didn't have a name for it yet.</p>
+                    <p>In those early years, I felt defective. Different. Wrong somehow. The worst part wasn't the pain—it was the unpredictability. Migraine could arrive during a school lesson, in the middle of a normal day, turning me into "the kid who has to leave."</p>
+                    <p>I didn't know if it would pass. I didn't know if it was treatable. I just knew it was crushing me.</p>
+                </section>
+
+                <div class="article-image">
+                    <img src="images/article-first-attack.jpg" alt="Visual representation of migraine aura and first attack">
+                </div>
+
+                <section class="article-section">
+                    <h2>The Hardest Years</h2>
+                    <p>University was brutal.</p>
+                    <p>I was studying in a different city, living alone. Sometimes attacks happened during lectures. I'd have to leave, fumbling my way to public transport—sometimes with aura, literally feeling my way through buses and streets, half-blind with pain.</p>
+                    <p>Those were the years I felt most broken.</p>
+                    <p>But something shifted around age 35. I started training regularly. Watching my diet more carefully. Learning—slowly, painfully—that I needed to take care of myself. Not just manage symptoms, but actually care for myself. Love myself, even.</p>
+                    
+                    <div class="highlight-box">
+                        <p>The results were undeniable: from 15-20 migraine attacks per month down to 3-4.</p>
+                    </div>
+                    
+                    <p>Not through a miracle drug. Not through some expensive treatment. Through care. Through understanding my triggers. Through respecting my body's limits. Through sleep, nutrition, stress management, consistent exercise.</p>
+                    <p>Through everything I'm now trying to teach through Migraine Companion.</p>
+                    <p>I'm 42 now. I've been living with migraine for 30 years. And I'm still learning.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Accidental Developer</h2>
+                    <p>April 2024. Ukraine. War.</p>
+                    <p>I was bored. I needed something to occupy my mind while air raid sirens became background noise and power outages stretched to 10-16 hours a day.</p>
+                    <p>I decided to learn web development. Just for fun. It worked.</p>
+                    <p>Then I tried making an app—not about migraine, just to see if I could. It worked too.</p>
+                    <p>Then I thought: why not make something I'd actually use? A migraine tracker for myself.</p>
+                    <p>But here's the thing—I knew I wouldn't stick with a simple tracker. I'd tried tracking before and always quit. It was too boring, too clinical. Just numbers and dates on a screen.</p>
+                    <p>So I added something different: therapeutic games. Breathing Garden (4-7-8 technique). Migraine Monster (a gentle care game where you help Mi during difficult moments).</p>
+                    <p>While developing Migraine Monster, I stumbled onto narrative therapy—specifically Michael White's work on externalization.</p>
+                    <p>And everything clicked.</p>
+                </section>
+
+                <div class="article-image">
+                    <img src="images/article-coding.jpg" alt="Laptop with code and candles during wartime development">
+                </div>
+
+                <section class="article-section">
+                    <h2>Mi Is Not Your Enemy</h2>
+                    <p>What if migraine isn't the villain?</p>
+                    <p>Narrative therapy suggests something radical: externalize the problem. Separate the person from the condition. You're not "a migraine sufferer"—you're a person who lives with migraine.</p>
+                    <p>In the app, this became Mi—a companion, not an enemy. The name comes from the first two letters of "Migraine" in Ukrainian (Мігрень). Simple, but it means everything.</p>
+                    <p>Mi reflects your state. When you're calm, Mi is calm. When a storm approaches, Mi is restless. You don't fight Mi—you understand Mi. You don't defeat Mi—you care for Mi.</p>
+                    <p>And here's what surprised me: caring for Mi teaches you to care for yourself.</p>
+                    <p>The app became more than a tracker. It became a tool for learning self-love through the lens of companionship. Every time you log a meal, track sleep, practice breathing—you're not just collecting data. You're showing Mi (and yourself) that you matter. That your wellbeing matters.</p>
+                </section>
+
+                <div class="article-image">
+                    <img src="images/article-companion.jpg" alt="Mi and human hand touching in lavender field">
+                </div>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>Building in the Dark</h2>
+                    <p>Literally.</p>
+                    <p>Power outages: 10-16 hours a day. Sometimes more. I worked whenever electricity came back—7, 8, 9 hours straight while the grid was live. My wife Marina (who's brilliant with colors and themes) would guide the design direction. We'd debate character expressions, color palettes, therapeutic flows—all between blackouts.</p>
+                    <p>Did I want to quit? Many times.</p>
+                    <p>But I couldn't. I don't know how to quit. Never have. Even when nothing was working, when code wouldn't compile, when the whole thing felt impossible—I kept going.</p>
+                    <p>Maybe it's the same stubbornness that got me through 30 years of migraine. You don't get a choice, so you learn not to stop.</p>
+                    <p>Three and a half months of development. Most of it in the dark—both literally and metaphorically.</p>
+                    <p>Then one day, I looked at the finished app with its new theme—the Mystic Garden, the soft purples and golden lights, Mi's gentle face—and I felt something I hadn't felt in a long time.</p>
+                    <p>I made something good. Something beautiful. Something warm.</p>
+                    <p>And I still can't quite believe it: wow, I actually did this.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>What I Want You to Know</h2>
+                    <p>If you don't have migraine, here's what I need you to understand:</p>
+                    <p><strong>We need to accept that there's no reliable cure.</strong> Migraine is part of our life. That's not defeatist—it's realistic. And acceptance is the first step toward actually living well.</p>
+                    <p><strong>We need to learn self-care, not just pop pills.</strong> People look for easy solutions—take medication and move on. But that's a trap. Medication overuse is real, and it makes things worse. Real management means learning what triggers you, respecting your body's limits, and making changes.</p>
+                    <p><strong>We need to love ourselves, not hate our condition.</strong> This is the hardest part.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>A Message to 12-Year-Old Me</h2>
+                    <p>If I could go back to that scared kid lying in bed with his first migraine, I'd say this:</p>
+                    
+                    <div class="quote-box">
+                        <p>You're not defective. You're not broken. You're not less than other people. You're special. Different, yes—but special.</p>
+                    </div>
+                    
+                    <p><em>Learn about this condition. Study it. Respect it. Avoid what provokes it. Stop overthinking. Stop being so hard on yourself. Take care of your health. Not someday—now.</em></p>
+                    <p><em>You're going to build something that helps people. You're going to turn 30 years of pain into something meaningful.</em></p>
+                    <p><em>But first, you need to learn to love yourself.</em></p>
+                </section>
+
+                <div class="article-image">
+                    <img src="images/article-transformation.jpg" alt="Mi's journey from storm to healing garden">
+                </div>
+
+                <section class="article-section">
+                    <h2>What Success Looks Like</h2>
+                    <p>In one year? In five years?</p>
+                    <p>I want Migraine Companion to be the tool that teaches people with migraine how to care for themselves. How to love themselves.</p>
+                    <p>But personally? Success means I'm doing work I love. That I'm growing as a person despite chronic illness. That I'm living a full life—not a limited one—and helping others do the same.</p>
+                    
+                    <div class="highlight-box">
+                        <p>If my journey from 15-20 attacks per month to 3-4 can help even one person, it was worth it.</p>
+                    </div>
+                    
+                    <p>I don't want to just survive migraine. I want to build beautiful things while living with it. I want to prove that chronic pain doesn't mean chronic limitation.</p>
+                    <p>Migraine Companion launched last week on iOS. Android is coming this week. The website is live.</p>
+                    <p>It's free. Because I remember what it's like to search for help and find only expensive subscriptions.</p>
+                    <p>It's built on narrative therapy, evidence-based techniques, and 30 years of lived experience. It tracks 43 factors, predicts attacks 24 hours in advance, and monitors medication safety based on WHO guidelines.</p>
+                    <p>But more than anything, it's built to help you do what took me 30 years to learn:</p>
+                    <p><strong>Accept. Care. Love.</strong></p>
+                    <p>Not the migraine. Yourself.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator & Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime, often with only 8 hours of electricity per day. Believes that chronic pain doesn't mean chronic limitation.</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Begin Your Journey with Mi</h3>
+                        <p>In the Mystic Garden, Mi waits for you. Not to track. Not to judge. Just to understand.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 MIgraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
