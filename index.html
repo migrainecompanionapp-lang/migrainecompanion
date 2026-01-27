@@ -40,6 +40,7 @@
         :root{--malachite:#2D3D35;--malachite-light:#3D4D45;--malachite-dark:#232D28;--charcoal:#16181C;--charcoal-light:#1B1E24;--lavender:#8b7aa8;--gold:#C5A059;--antique-gold:#D5B069;--text:#BDBDBD;--text-light:#9E9E9E;--text-dark:#757575;--paper:#F0EAD6}
         body{font-family:'Inter',-apple-system,sans-serif;background:radial-gradient(circle at 50% 20%,#3D4D45 0%,#16181C 80%);background-attachment:fixed;color:#fff;min-height:100vh;line-height:1.6;overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;position:relative}
         body::after{content:"";position:fixed;inset:0;background:radial-gradient(circle,transparent 40%,rgba(0,0,0,.5) 100%);pointer-events:none;z-index:1}
+        body.menu-open{overflow:hidden}
         html{scroll-behavior:smooth}
         .container{max-width:1100px;margin:0 auto;padding:0 24px}
         header{padding:16px 0;position:fixed;width:100%;top:0;z-index:100;background:rgba(35,45,40,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,122,168,.2)}
@@ -217,7 +218,50 @@
         .fade-in-delay-4{transition-delay:.4s}
         .fade-in-delay-5{transition-delay:.5s}
         @media (max-width:900px){.therapy-grid{grid-template-columns:repeat(2,1fr)}.steps-container{flex-direction:column;align-items:center}.steps-container::before{display:none}}
-        @media (max-width:768px){.nav{display:none}.mobile-menu-btn{display:block}.hero h1{font-size:2.8rem}.hero-mi{width:140px;height:140px}.section-title{font-size:2rem}.download-buttons{flex-direction:column;align-items:center}.download-btn{width:100%;max-width:280px;justify-content:center}.science-content{grid-template-columns:1fr}.poetry{min-height:450px}.poetry-text{font-size:1.35rem}.story-card{padding:34px 26px}.story-quote{font-size:1.2rem}.footer-content{flex-direction:column;text-align:center}.factors-accordion{grid-template-columns:1fr;gap:12px}.accordion-header{padding:16px 18px}.accordion-title{font-size:.95rem}}
+        @media (max-width:768px){
+            .nav{
+                display:none;
+                position:fixed;
+                top:70px;
+                left:0;
+                right:0;
+                background:rgba(35,45,40,0.98);
+                backdrop-filter:blur(20px);
+                flex-direction:column;
+                padding:20px;
+                gap:0;
+                border-bottom:1px solid rgba(139,122,168,0.2);
+                box-shadow:0 10px 30px rgba(0,0,0,0.5);
+                z-index:99;
+            }
+            .nav.mobile-menu-active{
+                display:flex;
+            }
+            .nav a{
+                padding:12px 0;
+                border-bottom:1px solid rgba(139,122,168,0.1);
+                display:block;
+                width:100%;
+            }
+            .nav a:last-child{
+                border-bottom:none;
+            }
+            .mobile-menu-btn{display:block}
+            .hero h1{font-size:2.8rem}
+            .hero-mi{width:140px;height:140px}
+            .section-title{font-size:2rem}
+            .download-buttons{flex-direction:column;align-items:center}
+            .download-btn{width:100%;max-width:280px;justify-content:center}
+            .science-content{grid-template-columns:1fr}
+            .poetry{min-height:450px}
+            .poetry-text{font-size:1.35rem}
+            .story-card{padding:34px 26px}
+            .story-quote{font-size:1.2rem}
+            .footer-content{flex-direction:column;text-align:center}
+            .factors-accordion{grid-template-columns:1fr;gap:12px}
+            .accordion-header{padding:16px 18px}
+            .accordion-title{font-size:.95rem}
+        }
         @media (max-width:600px){.therapy-grid{grid-template-columns:1fr}}
     </style>
 </head>
@@ -559,10 +603,32 @@
         </div>
     </footer>
     <script>
+    // Accordion
     function toggleAccordion(button){const content=button.nextElementSibling;const isOpen=content.classList.contains('show');document.querySelectorAll('.accordion-content').forEach(c=>c.classList.remove('show'));document.querySelectorAll('.accordion-header').forEach(h=>h.classList.remove('active'));if(!isOpen){content.classList.add('show');button.classList.add('active')}}
+    
+    // Fade-in animation
     const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
     document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
     document.querySelectorAll('.therapy-card,.feature-card,.screenshot-card,.stat-card').forEach((el,i)=>{el.classList.add('fade-in','fade-in-delay-'+((i%5)+1));observer.observe(el)});
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    
+    if (mobileMenuBtn && nav) {
+        mobileMenuBtn.addEventListener('click', function() {
+            nav.classList.toggle('mobile-menu-active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Close menu when clicking on a link
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('mobile-menu-active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+    }
     </script>
 </body>
 </html>
