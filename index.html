@@ -197,19 +197,19 @@
         .footer-links a{font-size:.92rem;font-weight:500;color:var(--text-light);text-decoration:none;transition:color .3s}
         .footer-links a:hover{color:var(--lavender)}
         .copyright{font-size:.88rem;font-weight:400;color:var(--text-dark)}
-        .fireflies{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
-        .firefly{position:absolute;background:var(--gold);filter:blur(2px);width:4px;height:4px;border-radius:50%;opacity:0;animation:firefly 8s infinite;box-shadow:0 0 10px var(--gold),0 0 20px var(--lavender)}
-        .firefly:nth-child(1){left:10%;top:20%;animation-delay:0s}
-        .firefly:nth-child(2){left:80%;top:40%;animation-delay:2s;width:3px;height:3px;animation-duration:12s}
-        .firefly:nth-child(3){left:30%;top:70%;animation-delay:4s;width:6px;height:6px;opacity:.8;animation-duration:15s}
-        .firefly:nth-child(4){left:60%;top:15%;animation-delay:1s}
-        .firefly:nth-child(5){left:90%;top:80%;animation-delay:3s;width:3px;height:3px;animation-duration:12s}
-        .firefly:nth-child(6){left:20%;top:50%;animation-delay:5s;width:6px;height:6px;opacity:.8;animation-duration:15s}
-        .firefly:nth-child(7){left:70%;top:60%;animation-delay:2.5s}
-        .firefly:nth-child(8){left:45%;top:30%;animation-delay:6s;width:3px;height:3px;animation-duration:12s}
-        .firefly:nth-child(9){left:15%;top:85%;animation-delay:7s;width:6px;height:6px;opacity:.8;animation-duration:15s}
-        .firefly:nth-child(10){left:85%;top:25%;animation-delay:4.5s}
-        @keyframes firefly{0%,100%{opacity:0;transform:translate(0,0)}20%{opacity:.6}50%{opacity:.3;transform:translate(30px,-20px)}80%{opacity:.5}}
+        
+        /* ===== НОВЫЕ МАГИЧЕСКИЕ СВЕТЛЯЧКИ ===== */
+        .fireflies{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:3;overflow:hidden}
+        .firefly{position:absolute;background:#FFFBEA;border-radius:50%;opacity:0;box-shadow:0 0 4px 1px #FFD700,0 0 12px 3px var(--gold),0 0 25px 8px rgba(139,122,168,0.4)}
+        @keyframes firefly-float{
+            0%,100%{opacity:0;transform:translate(0,0) scale(1)}
+            10%{opacity:0.8}
+            30%{opacity:0.4;transform:translate(var(--move-x),var(--move-y)) scale(1.1)}
+            50%{opacity:0.9;transform:translate(calc(var(--move-x) * 0.5),calc(var(--move-y) * 1.5)) scale(0.9)}
+            70%{opacity:0.3;transform:translate(calc(var(--move-x) * -0.3),calc(var(--move-y) * 0.8)) scale(1.2)}
+            90%{opacity:0.7}
+        }
+        
         .fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
         .fade-in.visible{opacity:1;transform:translateY(0)}
         .fade-in-delay-1{transition-delay:.1s}
@@ -219,93 +219,24 @@
         .fade-in-delay-5{transition-delay:.5s}
         
         /* Credentials Grid - 4 blocks in story section */
-        .credentials-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin: 44px 0 36px;
-        }
-        .credential-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(213, 176, 105, 0.2);
-            border-radius: 20px;
-            padding: 28px 24px;
-            transition: all 0.4s ease;
-        }
-        .credential-card:hover {
-            border-color: rgba(213, 176, 105, 0.5);
-            transform: translateY(-3px);
-        }
-        .credential-card h4 {
-            font-family: 'Cormorant Garamond', serif;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--paper);
-            font-size: 1.05rem;
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-        .credential-card p {
-            font-size: 0.95rem;
-            font-weight: 500;
-            line-height: 1.7;
-            color: var(--text);
-            margin: 0;
-        }
+        .credentials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin:44px 0 36px}
+        .credential-card{background:rgba(255,255,255,.03);backdrop-filter:blur(15px);border:1px solid rgba(213,176,105,.2);border-radius:20px;padding:28px 24px;transition:all .4s ease}
+        .credential-card:hover{border-color:rgba(213,176,105,.5);transform:translateY(-3px)}
+        .credential-card h4{font-family:'Cormorant Garamond',serif;text-transform:uppercase;letter-spacing:.05em;color:var(--paper);font-size:1.05rem;font-weight:500;margin-bottom:12px}
+        .credential-card p{font-size:.95rem;font-weight:500;line-height:1.7;color:var(--text);margin:0}
         
         /* Medical Disclaimer */
-        .medical-disclaimer {
-            background: rgba(197, 160, 89, 0.08);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            border-radius: 14px;
-            padding: 20px 24px;
-            margin-top: 36px;
-        }
-        .medical-disclaimer p {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: var(--text);
-            margin: 0;
-        }
-        .medical-disclaimer strong {
-            color: var(--antique-gold);
-        }
-        .medical-disclaimer a {
-            color: var(--gold);
-            text-decoration: none;
-            border-bottom: 1px solid var(--gold);
-        }
+        .medical-disclaimer{background:rgba(197,160,89,.08);border:1px solid rgba(197,160,89,.3);border-radius:14px;padding:20px 24px;margin-top:36px}
+        .medical-disclaimer p{font-size:.9rem;line-height:1.7;color:var(--text);margin:0}
+        .medical-disclaimer strong{color:var(--antique-gold)}
+        .medical-disclaimer a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold)}
         
         @media (max-width:900px){.therapy-grid{grid-template-columns:repeat(2,1fr)}.steps-container{flex-direction:column;align-items:center}.steps-container::before{display:none}}
         @media (max-width:768px){
-            .nav{
-                display:none;
-                position:fixed;
-                top:70px;
-                left:0;
-                right:0;
-                background:rgba(35,45,40,0.98);
-                backdrop-filter:blur(20px);
-                flex-direction:column;
-                padding:20px;
-                gap:0;
-                border-bottom:1px solid rgba(139,122,168,0.2);
-                box-shadow:0 10px 30px rgba(0,0,0,0.5);
-                z-index:99;
-            }
-            .nav.mobile-menu-active{
-                display:flex;
-            }
-            .nav a{
-                padding:12px 0;
-                border-bottom:1px solid rgba(139,122,168,0.1);
-                display:block;
-                width:100%;
-            }
-            .nav a:last-child{
-                border-bottom:none;
-            }
+            .nav{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(35,45,40,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:20px;gap:0;border-bottom:1px solid rgba(139,122,168,0.2);box-shadow:0 10px 30px rgba(0,0,0,0.5);z-index:99}
+            .nav.mobile-menu-active{display:flex}
+            .nav a{padding:12px 0;border-bottom:1px solid rgba(139,122,168,0.1);display:block;width:100%}
+            .nav a:last-child{border-bottom:none}
             .mobile-menu-btn{display:block}
             .hero h1{font-size:2.8rem}
             .hero-mi{width:140px;height:140px}
@@ -321,28 +252,16 @@
             .factors-accordion{grid-template-columns:1fr;gap:12px}
             .accordion-header{padding:16px 18px}
             .accordion-title{font-size:.95rem}
-            
-            /* Credentials Grid Mobile */
-            .credentials-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-                margin: 32px 0 28px;
-            }
-            .credential-card {
-                padding: 22px 20px;
-            }
-            .credential-card h4 {
-                font-size: 1rem;
-            }
-            .credential-card p {
-                font-size: 0.9rem;
-            }
+            .credentials-grid{grid-template-columns:1fr;gap:16px;margin:32px 0 28px}
+            .credential-card{padding:22px 20px}
+            .credential-card h4{font-size:1rem}
+            .credential-card p{font-size:.9rem}
         }
         @media (max-width:600px){.therapy-grid{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
-    <div class="fireflies"><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div></div>
+    <div class="fireflies"></div>
     <header>
         <div class="container header-content">
             <a href="index.html" class="logo"><img src="images/mi-icon.png" alt="Mi — your gentle migraine companion"><span>M<em>I</em>graine Companion</span></a>
@@ -626,7 +545,7 @@
                                 <p>This app was created in Ukraine during wartime, often with only 8 hours of electricity per day. Sometimes less. In those dark hours — both literal and metaphorical — I worked on something that would bring light to others who live with chronic pain.</p>
                             </div>
                             
-                            <!-- НОВЫЙ БЛОК CREDENTIALS -->
+                            <!-- БЛОК CREDENTIALS -->
                             <div class="credentials-grid">
                                 <div class="credential-card">
                                     <h4>🌙 Personal Experience</h4>
@@ -741,6 +660,45 @@
             });
         });
     }
+    
+    // ===== МАГИЧЕСКИЕ СВЕТЛЯЧКИ (30 штук) =====
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.querySelector('.fireflies');
+        const fireflyCount = 30; // 30 светлячков для читабельности
+        
+        for (let i = 0; i < fireflyCount; i++) {
+            const firefly = document.createElement('div');
+            firefly.className = 'firefly';
+            
+            // Рандомный размер от 2px до 5px
+            const size = Math.random() * 3 + 2;
+            firefly.style.width = size + 'px';
+            firefly.style.height = size + 'px';
+            
+            // Начальная позиция
+            firefly.style.top = Math.random() * 100 + '%';
+            firefly.style.left = Math.random() * 100 + '%';
+            
+            // Переменные для хаотичного движения
+            const moveX = (Math.random() - 0.5) * 120 + 'px';
+            const moveY = (Math.random() - 0.5) * 120 + 'px';
+            firefly.style.setProperty('--move-x', moveX);
+            firefly.style.setProperty('--move-y', moveY);
+            
+            // Рандомная длительность и задержка
+            const duration = Math.random() * 15 + 10;
+            const delay = Math.random() * 20;
+            
+            firefly.style.animation = 'firefly-float ' + duration + 's ease-in-out infinite';
+            firefly.style.animationDelay = delay + 's';
+            
+            // Рандомное размытие для глубины
+            const blur = Math.random() * 1.5 + 0.5;
+            firefly.style.filter = 'blur(' + blur + 'px)';
+            
+            container.appendChild(firefly);
+        }
+    });
     </script>
 </body>
 </html>
