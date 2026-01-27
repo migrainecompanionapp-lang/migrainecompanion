@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medical Disclaimer for Migraine Companion app — self-help tool, not medical advice. Always consult your doctor.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <title>Medical Disclaimer | MIgraine Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--malachite:#2D3D35;--malachite-light:#3D4D45;--malachite-dark:#232D28;--charcoal:#16181C;--charcoal-light:#1B1E24;--lavender:#8b7aa8;--gold:#C5A059;--antique-gold:#D5B069;--text:#BDBDBD;--text-light:#9E9E9E;--text-dark:#757575;--paper:#F0EAD6}
+        body{font-family:'Inter',-apple-system,sans-serif;background:radial-gradient(circle at 50% 20%,#3D4D45 0%,#16181C 80%);background-attachment:fixed;color:#fff;min-height:100vh;line-height:1.6;overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased}
+        html{scroll-behavior:smooth}
+        .container{max-width:900px;margin:0 auto;padding:0 24px}
+        header{padding:16px 0;position:fixed;width:100%;top:0;z-index:100;background:rgba(35,45,40,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,122,168,.2)}
+        .header-content{display:flex;justify-content:space-between;align-items:center}
+        .logo{display:flex;align-items:center;gap:10px;font-size:1.3rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none}
+        .logo img{width:36px;height:36px;border-radius:8px}
+        .logo em{color:var(--lavender);font-style:normal}
+        .nav{display:flex;gap:28px;align-items:center}
+        .nav a{color:var(--text-light);text-decoration:none;font-size:.9rem;font-weight:500;letter-spacing:.1px;transition:color .3s}
+        .nav a:hover{color:var(--lavender)}
+        .mobile-menu-btn{display:none;background:0 0;border:none;color:var(--lavender);font-size:1.5rem;cursor:pointer}
+        .page-header{padding:140px 0 80px;text-align:center}
+        .page-title{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:500;line-height:1.2;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);text-shadow:0 0 15px rgba(197,160,89,.3);margin-bottom:16px}
+        .page-subtitle{font-size:1.15rem;font-weight:500;color:var(--text-light);max-width:600px;margin:0 auto}
+        .content-section{padding:60px 0}
+        .disclaimer-card{background:rgba(22,24,28,.7);backdrop-filter:blur(10px);border:1px solid rgba(213,176,105,.2);border-radius:32px;padding:48px;margin-bottom:32px}
+        .alert-box{background:rgba(197,160,89,.12);border:2px solid var(--gold);border-radius:20px;padding:28px 32px;margin-bottom:40px}
+        .alert-box h2{font-family:'Cormorant Garamond',serif;text-transform:uppercase;letter-spacing:.05em;color:var(--antique-gold);font-size:1.5rem;font-weight:500;margin-bottom:16px}
+        .alert-box p{font-size:1.05rem;font-weight:500;line-height:1.8;color:var(--text);margin-bottom:12px}
+        .alert-box p:last-child{margin-bottom:0}
+        .section-block{margin-bottom:44px}
+        .section-block:last-child{margin-bottom:0}
+        h2{font-family:'Cormorant Garamond',serif;text-transform:uppercase;letter-spacing:.05em;color:var(--paper);font-size:1.8rem;font-weight:500;margin-bottom:20px}
+        h3{font-family:'Cormorant Garamond',serif;text-transform:uppercase;letter-spacing:.05em;color:var(--antique-gold);font-size:1.3rem;font-weight:500;margin-bottom:16px;margin-top:32px}
+        h3:first-child{margin-top:0}
+        p{font-size:1rem;font-weight:500;line-height:1.8;color:var(--text);margin-bottom:16px}
+        ul,ol{margin:20px 0 20px 24px;font-size:1rem;font-weight:500;line-height:1.8;color:var(--text)}
+        li{margin-bottom:12px}
+        strong{font-weight:700;color:#fff}
+        .highlight{color:var(--antique-gold);font-weight:600}
+        .warning{background:rgba(197,160,89,.08);border-left:3px solid var(--gold);padding:20px 24px;border-radius:0 12px 12px 0;margin:24px 0}
+        .warning p{margin-bottom:8px}
+        .warning p:last-child{margin-bottom:0}
+        .emergency-box{background:rgba(139,122,168,.08);border:1px solid var(--lavender);border-radius:16px;padding:24px;margin:24px 0}
+        .emergency-box h3{color:var(--lavender);margin-top:0}
+        .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--gold);text-decoration:none;font-weight:600;font-size:.95rem;margin-top:40px;transition:color .3s}
+        .back-link:hover{color:var(--antique-gold)}
+        .back-link svg{width:16px;height:16px;fill:currentColor}
+        footer{padding:56px 0;background:var(--charcoal);border-top:1px solid rgba(139,122,168,.12)}
+        .footer-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:28px}
+        .footer-links{display:flex;gap:32px;flex-wrap:wrap}
+        .footer-links a{font-size:.92rem;font-weight:500;color:var(--text-light);text-decoration:none;transition:color .3s}
+        .footer-links a:hover{color:var(--lavender)}
+        .copyright{font-size:.88rem;font-weight:400;color:var(--text-dark)}
+        @media (max-width:768px){
+            .nav{display:none}
+            .mobile-menu-btn{display:block}
+            .page-title{font-size:2.2rem}
+            .disclaimer-card{padding:32px 24px}
+            .alert-box{padding:20px 24px}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo"><img src="images/mi-icon.png" alt="Mi — your gentle migraine companion"><span>M<em>I</em>graine Companion</span></a>
+            <nav class="nav">
+                <a href="index.html#screenshots">App</a>
+                <a href="index.html#how-it-works">How It Works</a>
+                <a href="index.html#different">Approach</a>
+                <a href="index.html#science">Science</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#story">Story</a>
+                <a href="blog.html">Blog</a>
+                <a href="faq.html">FAQ</a>
+                <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Medical Disclaimer</h1>
+                <p class="page-subtitle">Important information about using Migraine Companion</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="disclaimer-card">
+                    
+                    <!-- MAIN ALERT -->
+                    <div class="alert-box">
+                        <h2>⚠️ This is Not Medical Advice</h2>
+                        <p><strong>Migraine Companion is a self-help tool based on personal experience and narrative therapy principles.</strong> It is designed to help you track patterns and understand your migraine better.</p>
+                        <p>This app does not diagnose, treat, cure, or prevent any disease. It is not a substitute for professional medical care.</p>
+                    </div>
+
+                    <!-- IMPORTANT NOTES -->
+                    <div class="section-block">
+                        <h2>Important: Always Consult Your Doctor</h2>
+                        <p>Before making <strong>any</strong> changes to your health routine, medication, or treatment plan, you must consult with a qualified healthcare professional.</p>
+                        
+                        <h3>Specifically, consult your doctor before:</h3>
+                        <ul>
+                            <li><strong>Starting or stopping any medication</strong> — including over-the-counter pain relievers</li>
+                            <li><strong>Changing medication dosages</strong> — even if the app suggests you're approaching WHO limits</li>
+                            <li><strong>Trying new treatments or therapies</strong> — including supplements, preventive approaches, or lifestyle changes</li>
+                            <li><strong>Using app predictions to make medical decisions</strong> — AI forecasts are statistical patterns, not medical diagnoses</li>
+                            <li><strong>Interpreting your tracked data</strong> — patterns you notice should be discussed with your neurologist</li>
+                        </ul>
+
+                        <p class="highlight">Your doctor knows your complete medical history, current medications, and individual health needs. The app does not.</p>
+                    </div>
+
+                    <!-- EMERGENCY -->
+                    <div class="emergency-box">
+                        <h3>⚡ When to Seek Emergency Medical Care</h3>
+                        <p><strong>Call emergency services immediately or go to the nearest emergency room if you experience:</strong></p>
+                        <ul>
+                            <li>Sudden, severe headache unlike any you've had before (especially if it feels like a "thunderclap")</li>
+                            <li>Headache with fever, stiff neck, confusion, seizures, double vision, numbness, or difficulty speaking</li>
+                            <li>Headache after a head injury, fall, or blow to the head</li>
+                            <li>Chronic headache that worsens after coughing, exertion, straining, or sudden movement</li>
+                            <li>New headache pain after age 50</li>
+                            <li>Vision changes, weakness, or loss of consciousness</li>
+                        </ul>
+                        <p style="margin-top:16px;"><strong>These symptoms could indicate a medical emergency such as stroke, meningitis, or other serious conditions.</strong></p>
+                        <p><strong>Do not rely on the app during a medical emergency.</strong> Get immediate professional medical help.</p>
+                    </div>
+
+                    <!-- WHAT THE APP IS NOT -->
+                    <div class="section-block">
+                        <h2>What This App Does NOT Do</h2>
+                        
+                        <div class="warning">
+                            <p><strong>Migraine Companion does NOT:</strong></p>
+                        </div>
+
+                        <ul>
+                            <li><strong>Diagnose medical conditions</strong> — Only qualified healthcare professionals can diagnose migraine or other headache disorders</li>
+                            <li><strong>Prescribe medication or treatment</strong> — All medication decisions must be made with your doctor</li>
+                            <li><strong>Replace professional medical care</strong> — This app supplements, not replaces, your relationship with healthcare providers</li>
+                            <li><strong>Provide medical advice</strong> — Information in the app is educational and based on general research, not personalized medical guidance</li>
+                            <li><strong>Guarantee results</strong> — Individual experiences vary; what helps one person may not help another</li>
+                            <li><strong>Act as an emergency service</strong> — In emergencies, call your local emergency number immediately</li>
+                        </ul>
+                    </div>
+
+                    <!-- CREATOR CREDENTIALS -->
+                    <div class="section-block">
+                        <h2>About the Creator</h2>
+                        <p><strong>Rustam Iuldashov, the creator of Migraine Companion, is not a medical doctor.</strong> He is not a neurologist, physician, therapist, or licensed healthcare provider.</p>
+                        
+                        <p>Rustam created this app based on:</p>
+                        <ul>
+                            <li>30 years of personal experience living with chronic migraine</li>
+                            <li>Research into narrative therapy principles developed by Michael White and David Epston</li>
+                            <li>Study of medical research on migraine triggers and patterns</li>
+                            <li>WHO (World Health Organization) medication safety guidelines</li>
+                        </ul>
+
+                        <p>This lived experience and research form the foundation of the app's approach — but they do not constitute medical expertise or professional medical advice.</p>
+                    </div>
+
+                    <!-- AI PREDICTIONS -->
+                    <div class="section-block">
+                        <h2>About AI Predictions & Forecasts</h2>
+                        <p>The app's "Mi's Forecast" feature uses machine learning (logistic regression) to identify patterns in your personal data and predict the likelihood of a migraine in the next 24 hours.</p>
+
+                        <h3>Important limitations:</h3>
+                        <ul>
+                            <li><strong>These are statistical predictions, not medical diagnoses</strong></li>
+                            <li><strong>Accuracy typically ranges from 70-85%</strong> after sufficient data (usually 4+ weeks)</li>
+                            <li><strong>Predictions improve with more data</strong> but are never 100% accurate</li>
+                            <li><strong>False positives and false negatives will occur</strong></li>
+                            <li><strong>AI cannot account for unknown factors</strong> or sudden changes</li>
+                        </ul>
+
+                        <p class="highlight">Use predictions as one tool for awareness and planning — not as definitive medical information.</p>
+                    </div>
+
+                    <!-- WHO MEDICATION LIMITS -->
+                    <div class="section-block">
+                        <h2>About WHO Medication Guidelines</h2>
+                        <p>The app displays <strong>World Health Organization (WHO) guidelines</strong> on medication overuse headache, which suggest limits on acute medication usage (typically 10-15 days per month depending on medication type).</p>
+
+                        <div class="warning">
+                            <p><strong>These guidelines are informational only — not prescriptions or medical advice.</strong></p>
+                        </div>
+
+                        <ul>
+                            <li>WHO guidelines are general recommendations for populations, not personalized medical advice</li>
+                            <li>Your doctor may recommend different limits based on your individual situation</li>
+                            <li>Never adjust your medication based solely on app notifications</li>
+                            <li>If you're approaching or exceeding these limits, discuss it with your healthcare provider</li>
+                            <li>Medication overuse headache is a medical condition that requires professional treatment</li>
+                        </ul>
+
+                        <p><strong>The app's medication tracking is a tool for awareness, not a replacement for medical supervision.</strong></p>
+                    </div>
+
+                    <!-- NARRATIVE THERAPY -->
+                    <div class="section-block">
+                        <h2>About Narrative Therapy Approach</h2>
+                        <p>Migraine Companion is built on principles of <strong>narrative therapy</strong>, a psychological approach developed by Michael White and David Epston that has been used for chronic pain, depression, and anxiety for over 40 years.</p>
+
+                        <p>The app's "companionization" approach (treating migraine as "Mi," a companion rather than enemy) is designed to:</p>
+                        <ul>
+                            <li>Reduce self-blame and increase sense of control (externalization)</li>
+                            <li>Make self-care visible through Mi's responses</li>
+                            <li>Highlight "sparkling moments" when you manage well</li>
+                        </ul>
+
+                        <p><strong>However:</strong> This app is not therapy. It does not replace working with a licensed therapist, counselor, or mental health professional. If you're experiencing depression, anxiety, or other mental health concerns related to chronic pain, please seek professional support.</p>
+                    </div>
+
+                    <!-- DATA & PRIVACY -->
+                    <div class="section-block">
+                        <h2>Your Data & Privacy</h2>
+                        <p>Your health data is stored locally on your device. We do not sell your data to third parties. See our <a href="https://sites.google.com/view/migrainecompanion/privacy-policy" target="_blank" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);">Privacy Policy</a> for full details.</p>
+                        
+                        <p><strong>Important:</strong> While we take data security seriously, no system is 100% secure. Do not rely solely on the app to store critical medical information. Keep backups and share important information with your healthcare providers.</p>
+                    </div>
+
+                    <!-- USE AT YOUR OWN RISK -->
+                    <div class="section-block">
+                        <h2>Use at Your Own Risk</h2>
+                        <p>By using Migraine Companion, you acknowledge that:</p>
+                        <ul>
+                            <li>You understand this app is a self-help tool, not medical advice</li>
+                            <li>You will consult with qualified healthcare professionals before making medical decisions</li>
+                            <li>You will not use the app as a substitute for professional medical care</li>
+                            <li>You assume all risks associated with using the app</li>
+                            <li>The creator and developers are not liable for any health outcomes resulting from app use</li>
+                        </ul>
+                    </div>
+
+                    <!-- QUESTIONS -->
+                    <div class="section-block">
+                        <h2>Questions or Concerns?</h2>
+                        <p>If you have questions about your health or migraine management, please consult your doctor or neurologist.</p>
+                        
+                        <p>For questions about the app itself, contact us at: <a href="mailto:migrainecompanion.app@gmail.com" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);">migrainecompanion.app@gmail.com</a></p>
+                    </div>
+
+                    <!-- LAST UPDATED -->
+                    <div style="margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);text-align:center;">
+                        <p style="font-size:0.9rem;color:var(--text-dark);margin:0;"><strong>Last Updated:</strong> January 27, 2026</p>
+                    </div>
+
+                    <a href="index.html" class="back-link">
+                        <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                        Back to Home
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="disclaimer.html">Medical Disclaimer</a>
+                <a href="https://sites.google.com/view/migrainecompanion/privacy-policy" target="_blank">Privacy Policy</a>
+                <a href="https://sites.google.com/view/migrainecompanion/terms-of-use" target="_blank">Terms of Use</a>
+                <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
+                <a href="https://sites.google.com/view/migrainecompanion/contact" target="_blank">Contact</a>
+            </div>
+            <p class="copyright">© 2025 MIgraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
