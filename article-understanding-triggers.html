@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover what migraine triggers really are — and why chocolate, stress, and weather might not work the way you think. Research-backed insights from someone with 30 years of migraine experience.">
+    <meta name="keywords" content="migraine triggers, bucket theory, threshold theory, prodrome symptoms, migraine patterns, chocolate migraine myth, mood tracking">
+    <title>Understanding Your Triggers: What Your Patterns Are Really Telling You | Migraine Companion Blog</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://mi-companion.com/article-understanding-triggers.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Understanding Your Triggers: What Your Patterns Are Really Telling You">
+    <meta property="og:description" content="Most of what we call 'triggers' aren't quite what we think they are. Discover the surprising science behind migraine patterns.">
+    <meta property="og:image" content="https://mi-companion.com/images/article-triggers.png">
+    <meta property="og:url" content="https://mi-companion.com/article-understanding-triggers.html">
+    <meta property="og:type" content="article">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --lavender: #8b7aa8;
+            --lavender-light: #a594c0;
+            --gold: #C5A059;
+            --gold-light: #D5B069;
+            --bg: #0d0d0d;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --text: #e0e0e0;
+            --text-light: #a0a0a0;
+            --text-dark: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover { color: var(--lavender); }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span { color: var(--lavender); }
+        
+        .article-hero {
+            padding: 120px 0 60px;
+            position: relative;
+            overflow: hidden;
+            min-height: 450px;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('images/article-triggers.png') center center/cover no-repeat;
+            opacity: 0.7;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, 
+                rgba(13,13,13,0.2) 0%, 
+                rgba(13,13,13,0.6) 50%,
+                rgba(13,13,13,0.95) 85%,
+                rgba(13,13,13,1) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+        
+        .article-hero h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.85);
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .article-container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 50px 24px 80px;
+        }
+        
+        .e-e-a-t-byline {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 0;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .e-e-a-t-byline strong { color: var(--text); }
+        
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5em;
+            color: var(--text);
+        }
+        
+        .article-content h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 2.5em 0 0.8em;
+            line-height: 1.3;
+        }
+        
+        .article-content strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .article-content em {
+            font-style: italic;
+            color: var(--lavender-light);
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .article-content a:hover {
+            color: var(--gold-light);
+            border-bottom-color: var(--gold);
+        }
+        
+        .highlight-box {
+            background: rgba(139, 122, 168, 0.1);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            margin: 2em 0;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 0.8em;
+            color: var(--text);
+        }
+        
+        .highlight-box p:last-child { margin-bottom: 0; }
+        
+        .quote-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin: 2em 0;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 16px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.3;
+            line-height: 1;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 12px;
+            padding-left: 20px;
+        }
+        
+        .quote-box cite {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-style: normal;
+            color: var(--gold);
+            padding-left: 20px;
+        }
+        
+        .insight-box {
+            background: linear-gradient(135deg, rgba(197, 160, 89, 0.12) 0%, rgba(139, 122, 168, 0.12) 100%);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 2em 0;
+        }
+        
+        .insight-box h4 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+        
+        .insight-box p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+        
+        .pattern-list {
+            list-style: none;
+            margin: 1.5em 0;
+            padding: 0;
+        }
+        
+        .pattern-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 1em;
+            color: var(--text);
+        }
+        
+        .pattern-list li::before {
+            content: '◈';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+            font-size: 0.9rem;
+        }
+        
+        .steps-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(139, 122, 168, 0.15);
+            border-radius: 12px;
+            padding: 28px;
+            margin: 2em 0;
+        }
+        
+        .steps-box h4 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .step:last-child { margin-bottom: 0; }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--lavender);
+            color: #0d0d0d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        
+        .step-content h5 {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        sup { font-size: 0.7em; color: var(--gold); }
+        sup a { color: var(--gold); text-decoration: none; }
+        
+        .references {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .references h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        
+        .references ol {
+            list-style-position: outside;
+            padding-left: 24px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        
+        .references li { margin-bottom: 12px; }
+        
+        .author-card {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: var(--bg-card);
+            border: 1px solid rgba(139, 122, 168, 0.15);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 50px;
+        }
+        
+        .author-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--lavender);
+        }
+        
+        .author-info h4 {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        .cta-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(139, 122, 168, 0.15) 0%, rgba(197, 160, 89, 0.1) 100%);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .cta-section h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-section p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            font-size: 1rem;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #ffffff;
+            color: #0d0d0d;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,255,255,0.15);
+        }
+        
+        .cta-button svg { width: 22px; height: 22px; }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+        }
+        
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover { color: var(--lavender); }
+        
+        .copyright { color: #555; font-size: 0.85rem; }
+        
+        @media (max-width: 768px) {
+            .article-hero { min-height: 380px; padding: 100px 0 40px; }
+            .article-hero h1 { font-size: 2rem; }
+            .article-content h2 { font-size: 1.6rem; }
+            .author-card { flex-direction: column; text-align: center; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .quote-box { padding: 24px 20px; }
+            .quote-box::before { font-size: 3rem; left: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+        </div>
+    </header>
+    
+    <main>
+        <section class="article-hero">
+            <div class="hero-content">
+                <span class="article-tag">Tips & Science</span>
+                <h1>Understanding Your Triggers: What Your Patterns Are Really Telling You</h1>
+                <p class="article-subtitle">Mi's mood stones can reveal patterns you never noticed. Here's how to read them — and why everything you thought you knew about triggers might be wrong.</p>
+                <div class="article-meta">
+                    <span class="meta-item">📅 January 28, 2026</span>
+                    <span class="meta-item">⏱ 6 min read</span>
+                </div>
+            </div>
+        </section>
+        
+        <article class="article-container">
+            <div class="e-e-a-t-byline">
+                <strong>Written by Rustam</strong> · 30 years lived experience with chronic migraine · App developer & researcher
+            </div>
+            
+            <div class="article-content">
+                <p>You've probably done it a hundred times.</p>
+                
+                <p>You wake up with a migraine, trace back through yesterday like a detective examining evidence. <em>Was it the red wine? The weather? That stressful meeting?</em> You find a suspect, add it to your mental list of things to avoid, and carry on.</p>
+                
+                <p>But what if I told you that after 30 years of migraines and months of building an app to track them, I've learned something surprising?</p>
+                
+                <p><strong>Most of what we call "triggers" aren't quite what we think they are.</strong></p>
+                
+                <h2>The Chocolate Paradox</h2>
+                
+                <p>Here's a fact that might change how you see your migraines forever:</p>
+                
+                <div class="insight-box">
+                    <h4>✦ Surprising Research Finding</h4>
+                    <p>When researchers gave chocolate to people who believed it triggered their migraines and compared it to a placebo, they found <strong>no significant difference</strong> in attacks.<sup><a href="#ref1">[1]</a></sup> Across 25 studies, chocolate as a trigger affected only 1.3% to 33% of people — and most studies relied on memories and beliefs rather than controlled testing.</p>
+                </div>
+                
+                <p>So why does chocolate seem like such an obvious trigger?</p>
+                
+                <p>Because craving chocolate is actually a <strong>symptom</strong> of a migraine that has already started.</p>
+                
+                <div class="quote-box">
+                    <p>During the prodrome phase — the hours or even days before you feel head pain — your brain is already deep in a migraine attack. And one common prodrome symptom? Food cravings, especially for sweets.</p>
+                    <cite>— Dr. Rashmi Halker Singh, Mayo Clinic<sup><a href="#ref2">[2]</a></sup></cite>
+                </div>
+                
+                <p>You eat the chocolate. Hours later, the headache arrives. Your brain connects the dots: <em>chocolate = migraine</em>. But the migraine was coming whether you ate the chocolate or not. You were craving chocolate <em>because</em> the attack had begun.</p>
+                
+                <p>This isn't just academic. It's freeing.</p>
+                
+                <p>It means you might have been avoiding foods for years that weren't actually your triggers. It means the guilt you felt after "giving in" to a craving was misplaced. The migraine was never your fault.</p>
+                
+                <h2>The Bucket Theory: Why Triggers Don't Work Like Allergies</h2>
+                
+                <p>If you're allergic to peanuts, you react every time you encounter them. But migraines don't work that way. Red wine might trigger an attack on Tuesday but be perfectly fine on Saturday. Why?</p>
+                
+                <p>The answer is what researchers call the <strong>Bucket Theory</strong>.<sup><a href="#ref3">[3]</a></sup></p>
+                
+                <div class="highlight-box">
+                    <p>Imagine you wake up each day with a bucket partially filled. This baseline level contains things you can't control — your hormones, the weather, how you slept, underlying stress. Some days the bucket is nearly empty. Some days it's already two-thirds full before you even get out of bed.</p>
+                    <p>Every potential trigger adds water to your bucket. A glass of wine adds some. A skipped meal adds more. A stressful email adds a bit more. <strong>The migraine happens not when you encounter any single trigger, but when your bucket finally overflows.</strong></p>
+                </div>
+                
+                <p>This explains the maddening inconsistency of migraine triggers. It's never just one thing. It's the accumulation.</p>
+                
+                <p>And this is exactly what Mi's mood stones are designed to reveal — not single triggers, but the patterns of accumulation that your brain can't track on its own.</p>
+                <h2>The Surprise Factor: A Harvard Discovery</h2>
+                
+                <p>In November 2025, researchers at Harvard and Massachusetts General Hospital published something remarkable. They discovered a new trigger category that no one was tracking: <strong>surprisal</strong>.<sup><a href="#ref4">[4]</a></sup></p>
+                
+                <p>"Surprisal" measures how unexpected your day is compared to your usual routine. And they found that higher surprisal was significantly associated with increased migraine risk within 12-24 hours.</p>
+                
+                <div class="quote-box">
+                    <p>Migraines are often a hypersensitization with reaction to change in stimuli... A migraine in some ways may be an alarm system that goes off when homeostasis is disrupted.</p>
+                    <cite>— Dr. Noah Rosen, Northwell Health's Headache Center</cite>
+                </div>
+                
+                <p>Think about what this means:</p>
+                
+                <ul class="pattern-list">
+                    <li>A surprise party might be wonderful — and still trigger a migraine</li>
+                    <li>An unexpected day off could leave you with a headache</li>
+                    <li>Even positive changes to your routine carry risk</li>
+                </ul>
+                
+                <p>This is why the migraine brain craves consistency. Not because you're rigid or boring, but because your neurological system is exquisitely sensitive to deviation from expected patterns.</p>
+                
+                <h2>The Let-Down Effect: When Relief Becomes the Trigger</h2>
+                
+                <p>Here's another pattern you might recognize: you power through a stressful week, perform brilliantly under pressure, finally reach the weekend... and immediately get a migraine.</p>
+                
+                <p>It's called the "let-down migraine" or "weekend headache," and researchers believe it happens because the transition from high stress to relaxation involves rapid changes in stress hormones.<sup><a href="#ref5">[5]</a></sup> Your body has been in fight-or-flight mode, flooding you with adrenaline and cortisol. When you finally relax, those levels drop quickly — and the change itself triggers an attack.</p>
+                
+                <div class="insight-box">
+                    <h4>✦ The Cruel Irony</h4>
+                    <p>Sometimes the attack comes not during the stress, but when you finally allow yourself to rest. Understanding this pattern doesn't mean you should never relax. It means you might need to <strong>wind down gradually</strong> rather than crashing completely.</p>
+                </div>
+                
+                <h2>What Your Mood Patterns Are Actually Revealing</h2>
+                
+                <p>Here's something I learned while building Migraine Companion: <strong>92% of people with migraine believe their mood or emotions can trigger attacks</strong>.<sup><a href="#ref6">[6]</a></sup> They know there's a connection.</p>
+                
+                <p>But here's the paradox — keeping a mood diary was rated as one of the least effective prevention strategies in the same research. Why?</p>
+                
+                <p>Because tracking mood without understanding patterns is like collecting puzzle pieces without looking at the box. You need context. You need to see how your emotional state interacts with sleep, weather, hormones, stress levels, and all the other factors filling your bucket.</p>
+                
+                <p>This is why Mi's mood stones aren't just a simple diary. They're designed to reveal:</p>
+                
+                <ul class="pattern-list">
+                    <li><strong>Accumulation patterns:</strong> Not just "I was stressed" but "I was stressed + underslept + it was stormy + I skipped lunch" — the bucket filling up</li>
+                    <li><strong>Prodrome signals:</strong> Were you unusually irritable or craving certain foods? Those might not be triggers — they might be early warnings that an attack has already begun</li>
+                    <li><strong>Threshold fluctuations:</strong> Your sensitivity isn't constant. Tracking patterns over time reveals when your bucket starts fuller</li>
+                    <li><strong>Let-down timing:</strong> When do your attacks cluster? After stress or during it? This shapes your prevention strategy</li>
+                </ul>
+                
+                <h2>The Threshold Theory: Your Defenses Rise and Fall</h2>
+                
+                <p>Perhaps the most empowering insight from migraine research is the <strong>Threshold Theory</strong>.<sup><a href="#ref7">[7]</a></sup></p>
+                
+                <p>Your migraine threshold is your resistance level — how much stimulation your brain can handle before triggering an attack. And here's the key: <strong>this threshold isn't fixed</strong>. It rises and falls in predictable patterns.</p>
+                
+                <p>Research shows that sensory thresholds reach their lowest point at the start of an attack and gradually rise as you recover. This creates a cycle: after a migraine, you're more resistant to triggers for a while. But over time, that resistance fades until something pushes you over the edge again.</p>
+                
+                <p>But more importantly, you can raise your baseline threshold through consistent self-care: regular sleep schedules, consistent meal timing, hydration, stress management techniques (like the <a href="article-478-breathing.html">4-7-8 breathing Mi teaches</a>), and regular movement.</p>
+                
+                <p>These aren't just "healthy habits." They're threshold builders. Each one empties a little water from your bucket and raises the edge a little higher.</p>
+                
+                <h2>Reading Your Patterns: A New Approach</h2>
+                
+                <div class="steps-box">
+                    <h4>How to Actually Use This Information</h4>
+                    
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5>Stop playing detective after every attack</h5>
+                            <p>The question isn't "what triggered this?" but "what combination of factors filled my bucket today?" Often there's no single culprit — just an unlucky accumulation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5>Look for prodrome symptoms, not triggers</h5>
+                            <p>When you feel a craving, unusual fatigue, neck stiffness, or mood changes, consider that a migraine might have already begun. This is your window for early intervention.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h5>Track your baseline, not just attacks</h5>
+                            <p>Mi's mood stones work best when you use them on good days too. The contrast reveals your patterns.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h5>Watch for the let-down pattern</h5>
+                            <p>If you notice attacks clustering after stressful periods, consider gradual wind-down strategies rather than abrupt relaxation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h5>Build your threshold daily</h5>
+                            <p>Small consistent actions — regular sleep, meals, hydration, breathing exercises — compound over time. You're not avoiding triggers; you're raising your defenses.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>The Honest Truth</h2>
+                
+                <p>I want to be clear about something: understanding triggers better doesn't give you complete control.</p>
+                
+                <p>Sometimes you'll do everything right and still get a migraine. The bucket fills from sources beyond your control — hormones, weather, genetics, random neural events. Migraine is a neurological disease, not a puzzle you can solve through perfect behavior.</p>
+                
+                <p>But understanding patterns changes your relationship with the disease. It shifts you from blame (<em>"what did I do wrong?"</em>) to curiosity (<em>"what can I learn from this?"</em>). It moves you from avoidance (<em>"never eat chocolate again"</em>) to wisdom (<em>"my threshold is lower today, so I'll be extra consistent with other factors"</em>).</p>
+                
+                <p>And most importantly, it reminds you that the migraine was never your fault.</p>
+                
+                <p>Your brain just works differently. Mi is here to help you understand how.</p>
+                
+                <!-- References -->
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li id="ref1">Martins, I.P., et al. (2020). "To Eat or Not to Eat: A Review of the Relationship between Chocolate and Migraines." <em>Nutrients</em>, 12(3), 608.</li>
+                        <li id="ref2">Halker Singh, R. (2023). "The Science Behind Migraine Triggers: Are Migraine Triggers Real or Part of the Prodrome Phase?" American Migraine Foundation.</li>
+                        <li id="ref3">Migraine Strong (2024). "Understanding the Bucket Theory and Its Impact on Migraine Attacks."</li>
+                        <li id="ref4">Turner, D.P., et al. (2025). "Information-theoretic trigger surprisal and future headache activity." <em>JAMA Network Open</em>, 8(11), e2542944.</li>
+                        <li id="ref5">Lipton, R.B., et al. (2014). "The role of stress in migraine: a systematic review." <em>Headache</em>, 54(10), 1670-1679.</li>
+                        <li id="ref6">Filzmoser, N., et al. (2024). "Exploring the link between self-management of migraine and emotional awareness." <em>BMC Neurology</em>, 24:47.</li>
+                        <li id="ref7">Schwedt, T.J., et al. (2019). "Migraine understood as a sensory threshold disease." <em>Cephalalgia</em>, 39(13), 1698-1707.</li>
+                    </ol>
+                </div>
+                
+                <!-- Author Card -->
+                <div class="author-card">
+                    <img src="images/rustam.jpeg" alt="Rustam" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Rustam</h4>
+                        <p>Migraine Companion founder. Living with migraines for 30 years, building tools to help others on the same journey. Based in Ukraine. 💜</p>
+                    </div>
+                </div>
+                
+                <!-- CTA -->
+                <div class="cta-section">
+                    <h3>Start Understanding Your Patterns</h3>
+                    <p>Mi's mood stones and prediction algorithm are designed to reveal the patterns your brain can't track alone. Download free and let Mi learn your unique migraine signature.</p>
+                    <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="cta-button" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        Download on App Store
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="disclaimer.html">Medical Disclaimer</a>
+                <a href="https://sites.google.com/view/migrainecompanion/privacy-policy" target="_blank">Privacy Policy</a>
+                <a href="https://sites.google.com/view/migrainecompanion/terms-of-use" target="_blank">Terms of Use</a>
+                <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
+            </div>
+            <p class="copyright">Made with 💜 in Ukraine</p>
+        </div>
+    </footer>
+</body>
+</html>
