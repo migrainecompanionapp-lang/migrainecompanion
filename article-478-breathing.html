@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The 4-7-8 breathing technique can help during migraine attacks by activating your vagus nerve and calming your nervous system. Learn the science and how to practice.">
+    <meta name="author" content="Rustam Iuldashov">
+    <title>The 4-7-8 Breathing Technique for Migraine Relief | MIgraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .steps-box {
+            background: rgba(139, 122, 168, 0.06);
+            border: 1px solid rgba(139, 122, 168, 0.15);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 36px 0;
+        }
+        
+        .steps-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--bg);
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content strong {
+            color: #ffffff;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .step-content p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        
+        .references ol {
+            padding-left: 20px;
+        }
+        
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/article-breathing.png" alt="Mi practicing breathing in the Mystic Garden">
+            <div class="article-header">
+                <span class="article-tag">Self-Care Techniques</span>
+                <h1>The 4-7-8 Breathing Technique</h1>
+                <p class="article-subtitle">How this simple breathing exercise can help during migraine attacks — and why Mi loves it too</p>
+                <div class="article-meta">
+                    <span>📅 January 28, 2026</span>
+                    <span>⏱ 6 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+                
+                <!-- AUTHOR BYLINE FOR GOOGLE E-E-A-T -->
+                <div style="text-align:center;padding:32px 0 48px;border-bottom:1px solid rgba(139,122,168,0.15);margin-bottom:48px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: January 28, 2026
+                    </p>
+                </div>
+                
+                <section class="article-section">
+                    <h2>The Moment Everything Shifts</h2>
+                    <p>You know the feeling.</p>
+                    <p>Maybe it starts as a flicker at the edge of your vision. Or a tightness behind your right eye that wasn't there five minutes ago. Or that strange, electric sensation crawling up the back of your neck.</p>
+                    <p>Your body knows before your mind catches up: <em>a migraine is coming</em>.</p>
+                    <p>In that moment, most of us feel helpless. We reach for medications, close the blinds, cancel plans. We brace for impact.</p>
+                    <p>But what if there's something you can do <em>right now</em> — something that takes sixty seconds, costs nothing, and might just change how your body responds to what's coming?</p>
+                    <p>It's not a cure. Let's be honest about that from the start. But it's a tool. A surprisingly powerful one. And it's been hiding in plain sight for thousands of years.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Ancient Technique a Modern Doctor Brought Back</h2>
+                    <p>Many people assume that breathing exercises are too simple to make a real difference. "Just breathe" sounds like advice you'd find on a motivational poster, not in a medical journal.</p>
+                    <p>But Dr. Andrew Weil — founder of the Center for Integrative Medicine at the University of Arizona — saw something others missed. He took an ancient yogic practice called <em>pranayama</em> and distilled it into a precise, teachable pattern.<sup>[1]</sup></p>
+                    
+                    <div class="quote-box">
+                        <p>"A natural tranquilizer for the nervous system."</p>
+                    </div>
+                    
+                    <p>The pattern is almost absurdly simple:</p>
+                    <p><strong>Inhale</strong> through your nose for <strong>4 seconds</strong><br>
+                    <strong>Hold</strong> your breath for <strong>7 seconds</strong><br>
+                    <strong>Exhale</strong> through your mouth for <strong>8 seconds</strong></p>
+                    <p>That's it. One cycle takes about 19 seconds. Four cycles take just over a minute.</p>
+                    <p>So why does something so basic have the power to calm a nervous system in crisis?</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>What's Actually Happening Inside Your Body</h2>
+                    <p>Here's where it gets interesting.</p>
+                    <p>When a migraine approaches, your body often slips into "fight-or-flight" mode. Your sympathetic nervous system — the ancient alarm system designed to help you escape predators — floods your body with stress signals.<sup>[2]</sup></p>
+                    <p>Your heart beats faster. Your breathing becomes shallow. Blood vessels constrict. Muscles tense. Inflammation rises.</p>
+                    <p>This is useful if you're running from a tiger. It's decidedly <em>not</em> useful when you're trying to survive a workday with a migraine.</p>
+                    <p>The 4-7-8 technique does something elegant: <strong>it hacks this system</strong>.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Vagus Nerve: Your Body's "Calm Down" Button</h2>
+                    <p>Running from your brainstem all the way to your gut is a remarkable nerve called the vagus nerve. Think of it as a two-way communication highway between your brain and your organs.<sup>[3]</sup></p>
+                    <p>When you extend your exhale — breathing out for twice as long as you breathe in — you stimulate this nerve. It's like pressing a reset button. Your vagus nerve sends a clear signal: <em>we're safe. Stand down.</em></p>
+                    <p>A 2022 study published in <em>Physiological Reports</em> put this to the test. Researchers had participants practice the 4-7-8 technique and measured what happened. The results were striking: heart rate dropped, blood pressure fell, and heart rate variability improved — all signs that the parasympathetic nervous system had taken over.<sup>[4]</sup></p>
+                    
+                    <div class="highlight-box">
+                        <p>In plain English: your body physically shifts from alarm mode to recovery mode.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>Why This Matters for Migraines Specifically</h2>
+                    <p>"But does it actually help with migraines?" you might ask. "Or is this just general relaxation stuff?"</p>
+                    <p>Fair question. Here's what we know.</p>
+                    <p>The American Migraine Foundation identifies stress as one of the most common migraine triggers. Not just high stress — but the <em>fluctuations</em> in stress levels. The spike before a deadline. The crash after it's over.<sup>[5]</sup></p>
+                    <p>Dr. Dawn C. Buse, a psychologist who specializes in migraine, has spent years studying behavioral interventions. Her research shows that relaxation techniques and breathing exercises can reduce both the frequency and intensity of migraine attacks.<sup>[5]</sup></p>
+                    <p>What's remarkable is how fast the effects begin:</p>
+                    
+                    <div class="highlight-box">
+                        <p>"During the first 10 seconds of relaxed breathing, we can see a positive change."</p>
+                    </div>
+                    
+                    <p>Ten seconds. That's not a typo. Within the span of two or three slow breaths, your physiology begins to shift.</p>
+                    <p>A 2025 randomized controlled trial went further. Researchers studied chronic migraine patients who added yoga-based breathing and relaxation to their standard treatment. After 12 weeks, the breathing group showed significant improvements: fewer headache days per month, lower pain intensity, reduced disability scores, and better quality of life.<sup>[6]</sup></p>
+                    <p>This wasn't instead of medication. It was <em>alongside</em> it. The breathing practice amplified what the medications were already doing.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Honest Limitations</h2>
+                    <p>I want to be direct with you, because I think you deserve that.</p>
+                    <p>The 4-7-8 technique will not stop a severe migraine in its tracks. If you're in the throes of a full attack — nauseous, light-sensitive, unable to think — a breathing exercise alone won't be enough.</p>
+                    <p>It's also not a replacement for proper medical care. If you're experiencing frequent or severe migraines, you need to work with a healthcare provider.</p>
+                    <p>What breathing exercises <em>can</em> do:</p>
+                    <p>• Help you intervene early, potentially reducing severity<br>
+                    • Lower your baseline stress level with regular practice<br>
+                    • Give you something to <em>do</em> when you feel helpless<br>
+                    • Complement your existing treatment plan</p>
+                    
+                    <div class="quote-box">
+                        <p>Think of it like this: medication is your fire extinguisher. Breathing exercises are your smoke detector — catching things earlier, when they're easier to manage.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>How to Actually Do It</h2>
+                    <p>Let's get practical. Here's exactly how to practice the 4-7-8 technique:</p>
+                    
+                    <div class="steps-box">
+                        <h3>Step-by-Step Guide</h3>
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <strong>Find your position</strong>
+                                <p>Sit with your back straight, or lie down if you're mid-migraine in a dark room.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <strong>Position your tongue</strong>
+                                <p>Place the tip against the ridge behind your upper front teeth. Keep it there throughout.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <strong>Exhale completely</strong>
+                                <p>Empty your lungs through your mouth with a soft "whoosh" sound.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <strong>Inhale (4 counts)</strong>
+                                <p>Close your mouth. Breathe quietly through your nose. Count to 4.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <strong>Hold (7 counts)</strong>
+                                <p>Gently hold your breath. Don't strain. Count to 7.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <strong>Exhale (8 counts)</strong>
+                                <p>Breathe out completely through your mouth with that whoosh. Count to 8.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">7</div>
+                            <div class="step-content">
+                                <strong>Repeat 3 more times</strong>
+                                <p>Complete 4 cycles total. Takes about 75 seconds.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Struggling with the timing?</strong> Speed up the count, but keep the 4:7:8 ratio. The proportions matter more than the absolute seconds.<sup>[1]</sup></p>
+                    <p><strong>Feeling lightheaded?</strong> This is normal at first. It passes. If it's intense, reduce to two or three cycles.</p>
+                    <p><strong>How often?</strong> At minimum, twice daily. Work toward 20 minutes of breathing or relaxation practice most days.<sup>[5]</sup></p>
+                </section>
+
+                <section class="article-section">
+                    <h2>Mi's Breathing Garden</h2>
+                    <p>In Migraine Companion, we built something special: a place called the Breathing Garden.</p>
+                    <p>It's where Mi sits with you when things get hard. Not to fix you — because you're not broken. Not to fight the pain — because sometimes pain doesn't want to be fought.</p>
+                    <p>Just to breathe with you.</p>
+                    <p>There's something powerful about not being alone in that moment. About having a companion who doesn't judge, doesn't rush you, doesn't tell you to "just push through."</p>
+                    <p>Mi knows what it's like. And Mi knows that sometimes, the bravest thing you can do is simply breathe.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Practice That Stays With You</h2>
+                    <p>Here's what I've learned from 30 years with migraines:</p>
+                    <p>The tools that matter most aren't always the most dramatic. They're the ones that are <em>always available</em>. The ones you can reach for at 3 AM, or in a meeting, or on a plane when you feel that familiar shadow approaching.</p>
+                    <p>The 4-7-8 technique won't solve everything. But it gives you something precious: <strong>agency</strong>. A sense that you're not just a passenger in your own body, waiting for the storm to pass.</p>
+                    <p>You can breathe. You can shift your physiology. You can tell your nervous system — with patience, with practice — that it's okay to stand down.</p>
+                    <p>And sometimes, that's enough to change everything.</p>
+                    
+                    <div class="highlight-box">
+                        <p>Start small. Four breaths. Twice a day. See what happens.<br><br>Your body is listening.</p>
+                    </div>
+                </section>
+
+                <!-- REFERENCES -->
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Weil, A. (2010). 4-7-8 Breath Relaxing Exercise. Arizona Center for Integrative Medicine. <a href="https://www.drweil.com/videos-features/videos/breathing-exercises-4-7-8-breath/" target="_blank">drweil.com</a></li>
+                        <li>Russo, M. A., Santarelli, D. M., & O'Rourke, D. (2017). The physiological effects of slow breathing in the healthy human. <em>Breathe</em>, 13(4), 298–309.</li>
+                        <li>Breit, S., et al. (2018). Vagus nerve as modulator of the brain-gut axis. <em>Frontiers in Psychiatry</em>, 9, 44.</li>
+                        <li>Vierra, J., Boonla, O., & Prasertsri, P. (2022). Effects of 4‐7‐8 breathing control on heart rate variability and blood pressure. <em>Physiological Reports</em>, 10(13), e15389. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9277512/" target="_blank">PMC</a></li>
+                        <li>American Migraine Foundation. (2023). Relaxation and Paced Breathing Exercises for Migraine. <a href="https://americanmigrainefoundation.org/resource-library/breathing-exercises-for-migraine/" target="_blank">americanmigrainefoundation.org</a></li>
+                        <li>Complementary Therapies in Medicine. (2025). Yoga-based breathing and relaxation as adjunctive therapy for chronic migraine. <em>ScienceDirect</em>.</li>
+                    </ol>
+                </div>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. The Breathing Garden feature exists because breathing exercises helped me reduce attacks from 15-20 to 3-4 per month.</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Practice with Mi in the Breathing Garden</h3>
+                        <p>Mi is waiting to breathe with you. No judgment. No rush. Just calm.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 MIgraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
