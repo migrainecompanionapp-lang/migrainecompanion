@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How Mi's prediction engine works: the science of forecasting migraines 24 hours in advance using 40+ factors, personalized to your patterns.">
+    <meta name="author" content="Rustam Iuldashov">
+    <title>The Storm Before the Storm: How Mi Predicts Your Migraines | MIgraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+            margin-top: 36px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .info-box {
+            background: rgba(139, 122, 168, 0.06);
+            border: 1px solid rgba(139, 122, 168, 0.15);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 36px 0;
+        }
+        
+        .info-box p {
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .can-cannot {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 36px 0;
+        }
+        
+        .can-box, .cannot-box {
+            padding: 24px;
+            border-radius: 12px;
+        }
+        
+        .can-box {
+            background: rgba(139, 122, 168, 0.08);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+        }
+        
+        .cannot-box {
+            background: rgba(100, 100, 100, 0.08);
+            border: 1px solid rgba(100, 100, 100, 0.2);
+        }
+        
+        .can-box h4, .cannot-box h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .can-box h4 {
+            color: var(--lavender);
+        }
+        
+        .cannot-box h4 {
+            color: var(--text-light);
+        }
+        
+        .can-box p, .cannot-box p {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .confidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+        
+        .confidence-table th,
+        .confidence-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .confidence-table th {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .confidence-table td {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+        
+        .confidence-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+            margin-top: 0;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            margin-top: 0;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .references {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 48px 0;
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+        
+        .references p {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.3rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .can-cannot { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/prediction-hero.png" alt="Mi looking at storm clouds gathering on the horizon">
+            <div class="article-header">
+                <span class="article-tag">Science</span>
+                <h1>The Storm Before the Storm</h1>
+                <p class="article-subtitle">How Mi learned to see your migraines coming — and why prediction beats reaction</p>
+                <div class="article-meta">
+                    <span>📅 January 28, 2026</span>
+                    <span>⏱ 12 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+                
+                <!-- AUTHOR BYLINE FOR GOOGLE E-E-A-T -->
+                <div style="text-align:center;padding:32px 0 48px;border-bottom:1px solid rgba(139,122,168,0.15);margin-bottom:48px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: January 28, 2026
+                    </p>
+                </div>
+                
+                <section class="article-section">
+                    <p>It was 3 AM when Rustam woke up knowing.</p>
+                    <p>Not from pain — that would come later. But something in the air had shifted. The pressure behind his eyes. The way sounds seemed too loud. After 30 years of migraines, his body had learned to whisper warnings his conscious mind couldn't quite hear.</p>
+                    <p>By 7 AM, he was in bed with the curtains drawn, the familiar vice grip squeezing his skull.</p>
+                    <p>"I knew it was coming," he thought. "My body knew. But I didn't act fast enough."</p>
+                    <p>That frustration — the gap between <em>sensing</em> something and <em>understanding</em> it — became the seed of an obsession. What if there was a way to close that gap? What if the warning signs could be made visible, trackable, predictable?</p>
+                    
+                    <div class="highlight-box">
+                        <p>What if you could see the storm before it arrived?</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Conventional Wisdom Is Wrong</h2>
+                    <p>Most people think migraines strike without warning. <strong>They're wrong.</strong></p>
+                    <p>Most migraine apps ask you to record attacks after they happen. <strong>That's backwards.</strong></p>
+                    <p>Most trigger lists tell everyone to avoid the same foods. <strong>That ignores individual biology.</strong></p>
+                    <p>Here's what neurologists have known for decades — but most sufferers never learn:</p>
+                    <p>Your attack doesn't begin when the pain starts. It begins up to 48 hours earlier.</p>
+                    <p>Scientists call this the <strong>prodrome phase</strong>: a quiet revolution inside your nervous system while you go about your day. Your hypothalamus shifts. Neurotransmitter levels change. Blood vessels begin behaving differently.</p>
+                    <p>You might notice subtle hints: a strange craving for sweets, yawning more than usual, feeling "off" without knowing why, neck stiffness that comes from nowhere.</p>
+                    <p>These signals are easy to miss. They're subtle. They vary between people. They happen when you're busy living, not analyzing.</p>
+                    <p><strong>What if something could watch for you?</strong></p>
+                </section>
+
+                <section class="article-section">
+                    <h2>Meet Mi</h2>
+                    <p>Mi is short for "migraine" — but think of Mi as a character, not a condition.</p>
+                    <p>Some people fight their migraines. We propose a different approach: <strong>understand them.</strong></p>
+                    <p>Like a difficult roommate with predictable habits, Mi has patterns. Triggers. Rhythms. Once you learn those patterns, Mi becomes less terrifying and more manageable.</p>
+                    <p>"I stopped thinking of my migraine as a random attack," Rustam explains. "It's not random. It's Mi responding to signals I wasn't paying attention to. The app helps me pay attention."</p>
+                    <p>Mi — the prediction engine — does something simple but powerful: it watches the signals you might miss. Not one signal. Dozens. Across days and weeks. Looking for patterns that connect into something meaningful.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Detective's Method</h2>
+                    <p>Imagine a detective arriving at a crime scene.</p>
+                    <p>No single fingerprint solves the case. It's the <em>pattern</em> of evidence — the timeline, the connections, the pieces that suddenly click together — that reveals the truth.</p>
+                    <p>Mi works the same way.</p>
+                    <p>Every day, Mi examines signals across six domains. Alone, each signal might mean nothing. Together, they tell a story.</p>
+                </section>
+
+                <div class="article-image">
+                    <img src="images/prediction-detective.png" alt="Mi examining patterns like a detective">
+                </div>
+
+                <section class="article-section">
+                    <h3>What You Ate (and Didn't Eat)</h3>
+                    <p><strong>The conventional advice says:</strong> Avoid cheese, chocolate, and red wine.</p>
+                    <p><strong>The problem with that advice:</strong> Your triggers might be completely different.</p>
+                    <p>Research confirms that certain compounds can trigger attacks in susceptible people: tyramine in aged cheese causes vasodilation, nitrates in processed meats affect blood vessels, tannins in red wine interfere with serotonin, blood sugar crashes from skipped meals stress the nervous system.</p>
+                    <p>But "susceptible people" isn't everyone. It might not be you.</p>
+                    <p>One person eats brie weekly without problems. Another gets an attack from a single glass of champagne. A third is triggered by something on no standard list — artificial sweeteners, perhaps, or citrus.</p>
+                    <p><strong>Mi doesn't assume. Mi learns.</strong></p>
+                    <p>It watches what you eat. It watches what happens next. Over weeks and months, <em>your</em> patterns emerge — not population averages.</p>
+                    <p>And it watches something most people overlook: <strong>what you didn't eat.</strong> Skipped meals are among the most underestimated triggers. Your brain runs on glucose. When levels drop, your nervous system notices — often before you do.</p>
+                    <p><em>Timing window: 48 hours. Some foods trigger quickly; others take a day or two.</em></p>
+                </section>
+
+                <section class="article-section">
+                    <h3>How You Slept</h3>
+                    <p><strong>The conventional advice says:</strong> Get more rest.</p>
+                    <p><strong>The reality is more complicated:</strong> Too little sleep triggers attacks. Too <em>much</em> sleep triggers attacks. Irregular sleep — even with enough hours — triggers attacks.</p>
+                    <p>Your brain craves consistency. The circadian rhythm isn't just about feeling tired; it's a fundamental organizing principle of your nervous system. Disrupt it, and you pay a price.</p>
+                    <p>Three patterns matter most:</p>
+                    <p><strong>Duration.</strong> Both extremes are problematic. Six hours might be fine for some people and devastating for others. Nine hours might help one person recover and trigger another's attack.</p>
+                    <p><strong>Quality.</strong> Restless sleep, frequent waking, and difficulty falling back asleep all correlate with next-day attacks — even when total hours look adequate.</p>
+                    <p><strong>Consistency.</strong> Sleeping 11 PM to 7 AM on weekdays, then 2 AM to 11 AM on weekends, creates a kind of "social jet lag" that your brain notices.</p>
+                    <p>But there's one pattern Mi watches especially closely: <strong>the wake-up migraine.</strong></p>
+                    <p>If you frequently wake up already in pain, something is happening while you sleep: sleep apnea, bruxism (teeth grinding), dehydration, or medication wearing off.</p>
+                    <p>You can't report these problems — you're unconscious. But your body records them. Mi watches for the signature they leave behind.</p>
+                    <p><em>If you regularly wake with migraines, mention it to your doctor. It may indicate a treatable sleep disorder.</em></p>
+                </section>
+
+                <section class="article-section">
+                    <h3>What the Sky Is Doing</h3>
+                    <p><strong>Some doctors say:</strong> Weather triggers are unproven.</p>
+                    <p><strong>Many patients say:</strong> I can feel a storm coming in my head.</p>
+                    <p><strong>The research says:</strong> Both are partly right.</p>
+                    <p>Studies have found correlations between barometric pressure changes and migraine onset. Not everyone is affected — but for those who are, the relationship is real. Temperature swings, humidity extremes, and approaching storm fronts also appear in the data, though less consistently.</p>
+                    <p>The challenge: weather sensitivity is highly individual. One person reacts to falling pressure; another to rising pressure. One is triggered by humidity; another by dry air.</p>
+                    <p><strong>Generic weather alerts are useless. What matters is <em>your</em> weather sensitivity.</strong></p>
+                    <p>Mi correlates local conditions with your personal attack history. Over time, it learns which patterns have historically preceded <em>your</em> attacks — not a statistical average, but your specific vulnerability.</p>
+                    <p>You can't control the weather. But you can prepare when conditions turn against you.</p>
+                </section>
+
+                <section class="article-section">
+                    <h3>Where You Are in Your Cycle</h3>
+                    <p><strong>The mechanism is well understood:</strong> Estrogen withdrawal — the drop before menstruation — can precipitate attacks. It's why "menstrual migraine" is a recognized medical category, affecting roughly 60% of female migraine sufferers.</p>
+                    <p><strong>But the timing varies:</strong> Some people are most vulnerable during menstruation (days 1-5). Others around ovulation (mid-cycle). Others in the PMS phase (days 21-28).</p>
+                    <p>Mi tracks your cycle and correlates it with your attack history. It learns which specific days carry highest risk <em>for you</em> — information valuable both for preparation and for conversations with your doctor about cycle-timed prevention.</p>
+                </section>
+
+                <section class="article-section">
+                    <h3>The Weight of Stress</h3>
+                    <p><strong>The assumption:</strong> Stress causes migraines.</p>
+                    <p><strong>The complication:</strong> The relationship works in unexpected ways.</p>
+                    <p>Acute stress — heart-pounding, deadline-looming — often <em>delays</em> attacks. Your fight-or-flight response suppresses pain signals. You push through.</p>
+                    <p>Then the stress ends. You relax. And within hours, Mi arrives.</p>
+                    <p>Doctors call this the <strong>let-down effect</strong>. It's why migraines so often strike on weekends, the first day of vacation, the morning after a big presentation. The attack isn't during the stress — it's in the relief.</p>
+                    <p>Mi watches for both: the accumulation of stress <em>and</em> the dangerous moment of release.</p>
+                </section>
+
+                <section class="article-section">
+                    <h3>The Clock on the Wall</h3>
+                    <p><strong>The pattern:</strong> Ask anyone who's tracked migraines for years, and they'll often say: "Mine come at the same time."</p>
+                    <p>Morning migraines. Afternoon migraines. Weekend migraines. Monday migraines.</p>
+                    <p>These patterns are documented in medical literature: weekend migraine (sleep schedule changes + caffeine timing shifts + stress let-down), Monday migraine (return-to-work stress + disrupted weekend routine), seasonal patterns (weather + light exposure + lifestyle changes).</p>
+                    <p>Mi learns <em>your</em> temporal patterns — when in the day, week, and year you're most vulnerable — and factors this into every prediction.</p>
+                </section>
+
+                <div class="article-image">
+                    <img src="images/prediction-triggers.png" alt="Six trigger domains surrounding Mi">
+                </div>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>Why Combinations Matter More Than Single Triggers</h2>
+                    <p><strong>The common approach:</strong> Identify your triggers. Avoid them.</p>
+                    <p><strong>The problem:</strong> This treats triggers as independent. They're not.</p>
+                    <p>A glass of wine might be fine on a good day. The same glass after poor sleep, during a stressful week, with a pressure system moving in, on day 24 of your cycle? That's a completely different equation.</p>
+                    <p>Medical researchers call this <strong>trigger accumulation</strong>. Each factor adds risk. But certain combinations don't just add — they <em>multiply</em>.</p>
+                    <p>Think of your migraine threshold like a cup. Each trigger pours water in. Most days, the cup holds. But when multiple streams converge at once, the cup overflows.</p>
+                    <p>Mi doesn't just count your triggers. It watches for <strong>dangerous combinations</strong> — the specific pairings that have historically pushed <em>you</em> over the edge.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Science Under the Hood</h2>
+                    <p><strong>Critics of prediction apps often say:</strong> Migraines are too complex to predict.</p>
+                    <p><strong>We would respond:</strong> Complexity is exactly why you need computational help.</p>
+                    <p>Mi's prediction engine uses <strong>logistic regression</strong> — a statistical method that's been the workhorse of medical prediction for decades. If you've seen a "risk calculator" at a doctor's office — for heart disease, diabetes, surgical complications — you've seen logistic regression at work.</p>
+                    <p>The method takes inputs, weights them by importance, accounts for interactions, and outputs a probability. In Mi's case: the likelihood of an attack in the next 24 hours.</p>
+                    <p><strong>But here's where Mi differs from clinical tools:</strong></p>
+                    <p>Clinical models are trained on population averages. They tell you what's true for the typical patient.</p>
+                    <p>Mi is trained on <em>you</em>. It starts with research-based weights — what's generally true about migraines. Then, as you log data, those weights shift to reflect your personal patterns.</p>
+                    <p>The cheese coefficient might start at the population average. If you eat cheese regularly without attacks, Mi learns to weight it lower <em>for you</em>. If you're exquisitely weather-sensitive, Mi weights pressure changes higher <em>for you</em>.</p>
+                    <p>Over time, the model becomes less "what's true about migraines" and more "what's true about <em>your</em> migraines."</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>How Confidence Grows</h2>
+                    <p><strong>A reasonable concern:</strong> How accurate can this really be?</p>
+                    <p><strong>An honest answer:</strong> It depends on your data.</p>
+                    <p>When you first use Mi, predictions are cautious. Think of a new doctor reviewing your chart for the first time. They know the textbook. They know the statistics. But they don't know <em>you</em> yet.</p>
+                    <p>With every entry — every logged meal, every recorded night, every documented attack — Mi's understanding deepens.</p>
+                    
+                    <table class="confidence-table">
+                        <thead>
+                            <tr>
+                                <th>Your Data</th>
+                                <th>Confidence</th>
+                                <th>What's Happening</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>First week</td>
+                                <td>~15%</td>
+                                <td>Learning basics — predictions are general</td>
+                            </tr>
+                            <tr>
+                                <td>2-3 weeks</td>
+                                <td>~35%</td>
+                                <td>Patterns emerging — some personalization</td>
+                            </tr>
+                            <tr>
+                                <td>1-2 months</td>
+                                <td>~60%</td>
+                                <td>Reliable predictions — clear personal patterns</td>
+                            </tr>
+                            <tr>
+                                <td>3+ months</td>
+                                <td>~85%+</td>
+                                <td>Expert-level — Mi knows your vulnerabilities</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p>This isn't magic. It's the same principle that makes experienced neurologists better than new residents: <strong>pattern recognition across accumulated observations.</strong></p>
+                    <p>The difference: Mi never forgets. It holds years of data in perfect memory, finding connections across timescales that human cognition can't track.</p>
+                </section>
+
+                <div class="article-image">
+                    <img src="images/prediction-confidence.png" alt="Mi with growing confidence scale">
+                </div>
+
+                <section class="article-section">
+                    <h2>What Mi Sees That You Don't</h2>
+                    <p>Here's something Rustam discovered after building the app:</p>
+                    <p><strong>Mi sometimes predicts attacks he doesn't feel coming.</strong></p>
+                    <p>"There are days when I feel fine," he says. "Nothing seems wrong. But Mi shows elevated risk. And more often than not, Mi is right."</p>
+                    <p>Why? Because Mi tracks factors below the threshold of conscious awareness: the pressure system 500 kilometers away, moving in your direction; the subtle sleep disruption you don't remember; the meal pattern that matches previous triggers; the calendar showing you're entering high-risk cycle days; the combination of factors that <em>individually</em> seem fine but <em>together</em> spell trouble.</p>
+                    <p>Your body whispers warnings. Mi helps translate.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Limits of Prediction</h2>
+                    <p><strong>We believe in honesty about what Mi can and cannot do.</strong></p>
+                    
+                    <div class="can-cannot">
+                        <div class="can-box">
+                            <h4>Mi Can</h4>
+                            <p>Identify patterns in your triggers you might miss</p>
+                            <p>Warn you when conditions align unfavorably</p>
+                            <p>Learn your specific vulnerabilities over time</p>
+                            <p>Track factors you can't consciously monitor</p>
+                            <p>Provide insights for conversations with your doctor</p>
+                            <p>Help you prepare before attacks instead of reacting after</p>
+                        </div>
+                        <div class="cannot-box">
+                            <h4>Mi Cannot</h4>
+                            <p>Predict with certainty — migraines are complex</p>
+                            <p>Replace medical care — Mi is a support tool</p>
+                            <p>Treat or cure migraines — only healthcare providers can</p>
+                            <p>Account for every factor — some triggers remain unknown</p>
+                            <p>Work without your input — Mi needs data to learn</p>
+                        </div>
+                    </div>
+                    
+                    <p><strong>A prediction is not a prophecy.</strong> High risk doesn't guarantee an attack. Low risk doesn't mean safety. Mi deals in probabilities, not certainties.</p>
+                    <p>But probabilities matter. A 70% chance of rain is useful, even if it doesn't rain. An 80% attack risk is useful, even if the attack doesn't come.</p>
+                    
+                    <div class="highlight-box">
+                        <p>The goal isn't perfect prediction. The goal is better preparation.</p>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>A Note About Your Health</h2>
+                    <p><strong>This section matters. Please read it.</strong></p>
+                    <p>Mi helps you understand your personal migraine patterns. It is <strong>not a medical device</strong> and should not be used for diagnosis or treatment decisions.</p>
+                    <p><strong>Always consult a qualified healthcare provider</strong> for diagnosis of headache disorders, treatment recommendations, medication decisions, and concerning symptoms or pattern changes.</p>
+                    <p><strong>Seek immediate medical attention</strong> if you experience a sudden severe headache unlike any before ("thunderclap headache"), headache with fever, stiff neck, confusion, or seizures, headache after head injury, or any symptoms that worry you.</p>
+                    <p>Migraines are a legitimate neurological condition deserving proper medical care. Mi supports that care — it never replaces it.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The View From Here</h2>
+                    <p>Rustam still gets migraines. After 30 years, that hasn't changed.</p>
+                    <p>What has changed is his relationship to them.</p>
+                    
+                    <div class="quote-box">
+                        <p>"I can't stop the storm. But I can get inside before it hits."</p>
+                    </div>
+                    
+                    <p>"I used to feel ambushed," he says. "Now I feel prepared. Not always — sometimes Mi still catches me off guard. But more often, I see it coming. I can cancel plans, take medication early, set up a dark room before I need it."</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>Getting the Most From Mi</h2>
+                    <p><strong>Log consistently.</strong> Patterns emerge from regular data, not sporadic snapshots.</p>
+                    <p><strong>Log good days too.</strong> Knowing what <em>doesn't</em> cause attacks is as valuable as knowing what does.</p>
+                    <p><strong>Be specific.</strong> "Slept poorly" is less useful than "5 hours, woke twice, hard to fall back asleep."</p>
+                    <p><strong>Give it time.</strong> Meaningful personalization takes 2-4 weeks. Complex patterns take longer.</p>
+                    <p><strong>Use predictions to prepare, not panic.</strong> High risk means take precautions — not that doom is certain.</p>
+                </section>
+
+                <div class="article-image">
+                    <img src="images/prediction-prepare.png" alt="Mi in the garden, ready for the storm on horizon">
+                </div>
+
+                <div class="references">
+                    <h3>The Research Behind This</h3>
+                    <p><strong>Prodrome phase:</strong> Giffin NJ, et al. "Premonitory symptoms in migraine." <em>Neurology</em>. 2003.</p>
+                    <p><strong>Sleep and migraine:</strong> Kelman L, Rains JC. "Headache and sleep." <em>Headache</em>. 2005.</p>
+                    <p><strong>Weather sensitivity:</strong> Hoffmann J, et al. "Weather sensitivity in migraineurs." <em>J Neurol</em>. 2015.</p>
+                    <p><strong>Hormonal migraine:</strong> MacGregor EA. "Menstrual migraine." <em>Ther Adv Neurol Disord</em>. 2009.</p>
+                    <p><strong>Food triggers:</strong> Martin VT, Vij B. "Diet and Headache." <em>Headache</em>. 2016.</p>
+                    <p><strong>Trigger interactions:</strong> Lipton RB, et al. "Migraine: epidemiology, impact, and risk factors." <em>Headache</em>. 2001.</p>
+                </div>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. Believes that understanding your patterns is the first step to living well with migraine.</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Start Understanding Your Patterns</h3>
+                        <p>Mi can't stop your migraines. But Mi can help you stop being surprised by them.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 MIgraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
