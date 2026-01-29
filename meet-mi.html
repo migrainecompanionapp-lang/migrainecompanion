@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet Mi: The Monster Who Wants to Sleep. Discover the philosophy behind Migraine Companion and how caring for yourself calms the creature within through narrative therapy and self-compassion.">
+    <meta name="author" content="Rustam Iuldashov">
+    <title>Meet Mi: The Monster Who Wants to Sleep | MIgraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box .quote-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-style: normal;
+            color: var(--text-light);
+            margin-top: 12px;
+            display: block;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .mood-list {
+            margin: 32px 0;
+        }
+        
+        .mood-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+        
+        .mood-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        
+        .mood-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .references h2 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+        
+        .references ol {
+            list-style-type: decimal !important;
+            padding-left: 28px;
+            counter-reset: none;
+        }
+        
+        .references ol li {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            line-height: 1.6;
+            padding-left: 8px;
+            display: list-item !important;
+        }
+        
+        .references ol li::marker {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        .disclaimer-box {
+            background: rgba(139, 122, 168, 0.05);
+            border: 1px solid rgba(139, 122, 168, 0.15);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 48px 0;
+        }
+        
+        .disclaimer-box h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--lavender);
+            margin-bottom: 12px;
+        }
+        
+        .disclaimer-box p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/article-meet-mi-hero.png" alt="Mi the purple creature sleeping peacefully in the Mystic Garden">
+            <div class="article-header">
+                <span class="article-tag">App Guide</span>
+                <h1>Meet Mi: The Monster Who Wants to Sleep</h1>
+                <p class="article-subtitle">The philosophy behind Migraine Companion and how caring for yourself calms the creature within</p>
+                <div class="article-meta">
+                    <span>📅 January 2025</span>
+                    <span>⏱ 5 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+                
+                <!-- AUTHOR BYLINE FOR GOOGLE E-E-A-T -->
+                <div style="text-align:center;padding:32px 0 48px;border-bottom:1px solid rgba(139,122,168,0.15);margin-bottom:48px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: January 2025
+                    </p>
+                </div>
+
+                <p style="font-size:0.95rem;color:var(--text-light);margin-bottom:48px;line-height:1.7;">Rustam Iuldashov is the creator of MIgraine Companion and has lived with migraines for 30 years. He developed this app based on his personal experience managing chronic migraines and extensive research into evidence-based approaches. This article shares his personal insights alongside peer-reviewed scientific evidence. It is not medical advice — always consult a healthcare provider for medical decisions.</p>
+                
+                <section class="article-section">
+                    <h2>The Advice You've Heard a Thousand Times</h2>
+                    <p>Most migraine advice sounds the same.</p>
+                    <p>Track your triggers. Avoid your patterns. Push through when you can, rest when you must. Apps promise to analyze you. Doctors offer medications. Wellness blogs suggest water, sleep, and stress reduction — as if you hadn't thought of that.</p>
+                    <p>The message underneath it all? Migraine is your enemy. Victory requires combat.</p>
+                    <p>Fight through the pain. Beat your triggers. Conquer your condition.</p>
+                    <p>But here's what 30 years of migraines taught me: the war against your own body is a war you cannot win.</p>
+                    <p>I tried fighting. I pushed through attacks that left me vomiting in bathroom stalls. I ignored warning signs until they became sirens. I told myself I was stronger than this — and every time, my body proved me wrong.</p>
+                    <p>Therefore, after three decades of losing, I stopped fighting.</p>
+                    <p>And something unexpected happened.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>What This Article Covers</h2>
+                    <p>In the next five minutes, I'll share my approach to managing migraines through self-compassion rather than combat — an approach now backed by peer-reviewed research.</p>
+                    <p>We'll explore why fighting often backfires, what the science says about self-compassion and chronic pain, and how I built these principles into a small purple creature named Mi.</p>
+                    
+                    <div class="highlight-box">
+                        <p>Important: Every scientific claim in this article links to peer-reviewed research or established medical organizations. Where I share personal experience, I say so explicitly. This article does not constitute medical advice.</p>
+                    </div>
+                    
+                    <p>Let's begin with a question most migraine apps never ask.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>What If Your Migraine Isn't the Enemy?</h2>
+                    <p>The standard model treats migraine as an invader. Something foreign that attacks you. Something to defeat, manage, control.</p>
+                    <p>But what if that framing creates additional suffering?</p>
+                    <p>Australian therapist Michael White (1948-2008), founder of narrative therapy, spent decades studying how language shapes our experience of illness. His core insight:</p>
+                    
+                    <div class="quote-box">
+                        <p>"The person is not the problem. The problem is the problem."</p>
+                        <span class="quote-author">— Michael White, Maps of Narrative Practice (W.W. Norton, 2007) [1]</span>
+                    </div>
+                    
+                    <p>White called this technique externalization — separating the problem from your identity. You're not "a migraineur." You're a person who experiences migraines. The difference sounds subtle. The psychological effect is substantial.</p>
+                    <p><strong>What the research shows:</strong> A 2020 study published in Research on Social Work Practice applied narrative therapy techniques to chronic pain patients. Participants reported rediscovering personal capabilities they'd lost sight of and rebuilding preferred identities that pain had eroded [2].</p>
+                    <p>In my experience, this shift changed everything. After years of "fighting my migraines," I started treating them as information — signals from my body that something needed attention. This perspective informed how I designed Mi.</p>
+                </section>
+
+                <div class="article-image">
+                    <img src="images/article-mi-companion.png" alt="Mi the purple creature in the Mystic Garden">
+                </div>
+
+                <section class="article-section">
+                    <h2>How Mi Works: A Care-Based Approach</h2>
+                    <p>Mi lives inside MIgraine Companion. A small purple creature with five emotional states, each reflecting your body's current needs.</p>
+                    <p>Left alone, Mi grows restless. A little bigger every few minutes. Not because Mi is malicious — because that's what happens when you forget yourself.</p>
+                    <p>Skip a meal. Mi stirs.</p>
+                    <p>Ignore your thirst. Mi expands.</p>
+                    <p>Push through exhaustion. Mi notices.</p>
+                    <p>This isn't punishment. This is reflection.</p>
+                    <p>Mi doesn't judge what you did wrong. Mi shows what your body might need right now — based on patterns from your own tracking data and scientifically-supported self-care behaviors.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Five Moods of Mi</h2>
+                    <p>Watch Mi closely. Each mood communicates a different message:</p>
+                    
+                    <div class="mood-list">
+                        <div class="mood-item">
+                            <h3>💤 Sleeping (0-20%) — "Mi is sleeping..."</h3>
+                            <p>Balance achieved. Self-care complete. Rest earned.</p>
+                        </div>
+                        <div class="mood-item">
+                            <h3>😌 Calm (21-40%) — "I feel safe with you"</h3>
+                            <p>Peace found. Trust building. Connection growing.</p>
+                        </div>
+                        <div class="mood-item">
+                            <h3>😐 Restless (41-60%) — "Something feels off..."</h3>
+                            <p>Warning rising. Need ignored. Attention required.</p>
+                        </div>
+                        <div class="mood-item">
+                            <h3>😤 Agitated (61-80%) — "Mi is uncomfortable"</h3>
+                            <p>Limits approaching. Body signaling. Action needed.</p>
+                        </div>
+                        <div class="mood-item">
+                            <h3>😠 Upset (81-100%) — "It's hard today"</h3>
+                            <p>Storm arriving. But not alone. Never alone.</p>
+                        </div>
+                    </div>
+                    
+                    <p>The pattern reveals itself: Mi's mood reflects your logged self-care behaviors. The more you observe Mi, the more you may notice your own body's signals — often before you consciously recognize them.</p>
+                    <p>But does caring for a virtual creature actually help with migraines?</p>
+                    <p>Let me share what the research says.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>Why Water Matters: The Evidence</h2>
+                    <p>"Drink more water" sounds like advice from a wellness blog, not a migraine treatment.</p>
+                    <p>Surely real relief requires something stronger?</p>
+                    <p>But the peer-reviewed research says otherwise.</p>
+                    <p>A 2020 study published in the Journal of Clinical Neuroscience tracked 256 women with migraines. Researchers measured four outcomes: pain severity, attack frequency, attack duration, and disability scores [3].</p>
+                    
+                    <div class="highlight-box">
+                        <p>Those who drank more water improved on every metric. The statistical confidence was 99.9% (p &lt; 0.001).</p>
+                    </div>
+                    
+                    <p>An earlier trial published in European Journal of Neurology found that increasing daily water intake by 1.5 liters reduced total headache hours by 21 hours over two weeks [4].</p>
+                    <p>The American Migraine Foundation now identifies dehydration as a trigger for approximately one-third of migraine sufferers [5].</p>
+                    <p>Therefore, when Mi asks for water, there's science behind it. Hydration isn't just general wellness advice — for migraine sufferers, it's a research-supported prevention strategy.</p>
+                    <p>This is why hydration became a core game mechanic in MIgraine Companion.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Science of Breathing</h2>
+                    <p>Breathing exercises seem almost too simple to matter.</p>
+                    <p>Inhale for four counts. Hold for seven. Exhale for eight. How could this ritual possibly affect a neurological condition?</p>
+                    <p>Here's what happens physiologically:</p>
+                    <p>Controlled breathing activates the parasympathetic nervous system — your body's built-in rest-and-digest response. Heart rate slows. Blood pressure drops. Muscle tension releases. The stress cascade that can trigger migraines begins to reverse [6].</p>
+                    <p><strong>The evidence supports this:</strong> A 2022 randomized controlled trial published in Brain and Behavior found that diaphragmatic breathing combined with gentle exercise significantly reduced migraine frequency, duration, and intensity (p &lt; 0.01). These effects persisted at 12-month follow-up [7].</p>
+                    <p>The American Migraine Foundation confirms that paced breathing exercises can reduce attack frequency and improve stress response — one of the most common migraine triggers [6].</p>
+                    <p>Therefore, the Breathing Garden feature in MIgraine Companion isn't decorative. When you breathe, Mi breathes with you. The technique works because the underlying biology works.</p>
+                    <p>But here's where skeptics might push back.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>Addressing the Skeptic: Why a Game?</h2>
+                    <p>Some might argue: a cartoon monster can't help with real neurological pain. Migraines aren't a game — they're a medical condition requiring medical solutions.</p>
+                    <p>They're right about one thing: migraines are serious. I've lived with them for three decades. I know.</p>
+                    <p>But they may be wrong about gamification.</p>
+                    <p>A 2020 study published in JMIR Formative Research evaluated gamified pain management apps with 13 health experts — neurologists, pain specialists, and mobile health researchers [8].</p>
+                    <p>Their assessment? Gamification positively influences patient motivation and engagement without compromising clinical integrity. The experts specifically noted that avatars made pain management programs "engaging and interesting to use."</p>
+                    <p>Why does engagement matter?</p>
+                    <p>Because the best treatment fails if people don't use it consistently.</p>
+                    <p>Pain management apps have a dropout problem. Users download, try for a week, abandon. The knowledge exists — the engagement doesn't.</p>
+                    <p>A scoping review of 70 studies found that game elements like streaks, rewards, and characters significantly improve adherence to self-management behaviors in chronic conditions [9].</p>
+                    
+                    <div class="highlight-box">
+                        <p>The game isn't the treatment. The game is the delivery system.</p>
+                    </div>
+                    
+                    <p>Mi makes you want to drink water, practice breathing, and track patterns — because caring for Mi feels rewarding. And caring for Mi means caring for yourself.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Power of Streaks: Habit Science</h2>
+                    <p>Every day you take care of yourself, your bond with Mi grows stronger.</p>
+                    <p>Streaks build. Trust develops. After seven consecutive days of self-care, you unlock new versions of Mi — the Athlete after exercise streaks, the peaceful Beach Mi after calm days.</p>
+                    <p>This design isn't arbitrary. It's based on behavioral neuroscience.</p>
+                    <p>When you repeat a rewarding behavior, dopamine reinforces the neural pathway connecting cue, action, and reward. Over time, the behavior becomes more automatic — a habit rather than a decision requiring willpower [10].</p>
+                    <p>A 2018 study in BMC Psychology found that pleasure and intrinsic motivation don't just increase habit frequency — they increase habit strength per repetition [11]. Finding an activity rewarding makes it stick faster.</p>
+                    <p>Therefore, Mi's streak system serves a neurological purpose. It's designed to make self-care feel intrinsically rewarding, helping transform conscious effort into automatic habit.</p>
+                    <p>But what happens when the streak breaks? What happens when a migraine actually arrives?</p>
+                </section>
+
+                <div class="article-image">
+                    <img src="images/article-mi-storm.png" alt="Mi during a migraine storm">
+                </div>
+
+                <section class="article-section">
+                    <h2>When the Storm Comes: Migraine Mode</h2>
+                    <p>Most apps would track it. Log your pain on a scale of 1-10. Add it to your statistics. Analyze what went wrong.</p>
+                    <p>Mi does something different.</p>
+                    <p>When you activate migraine mode, Mi doesn't demand data. Mi doesn't grow angry at your "failure."</p>
+                    <p><strong>Mi lies down with you.</strong></p>
+                    <p>The screen softens. The colors dim. The complex features disappear. Only three things remain: water, rest, medicine.</p>
+                    <p>Every small act of care during an attack becomes a "care point." A way of saying: I see you. This is hard. You're doing what you can.</p>
+                    <p>Why does this approach matter?</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Self-Compassion Research</h2>
+                    <p>The voice in your head during a migraine attack probably isn't kind.</p>
+                    <p>"I should have prevented this."</p>
+                    <p>"Why can't I just be normal?"</p>
+                    <p>"I'm letting everyone down."</p>
+                    <p>This voice feels like motivation. Like accountability.</p>
+                    <p>But research suggests it may be making things worse.</p>
+                    <p>Dr. Kristin Neff, researcher at the University of Texas at Austin and pioneer of self-compassion research, defines self-compassion as three components: self-kindness instead of self-judgment, common humanity instead of isolation, and mindfulness instead of over-identification with pain [12].</p>
+                    <p>Here's what the data shows:</p>
+                    <p>A study of 343 chronic pain patients published in European Journal of Pain found that self-compassion was significantly associated with better functioning across every measured outcome — psychological wellbeing, pain acceptance, and valued living. Self-compassion explained up to 46% of variance in functioning outcomes (r² = 0.46) [13].</p>
+                    <p>A systematic review published in The Spanish Journal of Psychology confirmed: self-compassion interventions improve pain acceptance and reduce catastrophizing — the tendency to magnify pain's threat and helplessness [14].</p>
+                    <p>A 2021 randomized controlled trial comparing Mindful Self-Compassion (MSC) to cognitive behavioral therapy found MSC superior for pain acceptance, pain interference, catastrophizing, and anxiety in chronic pain patients [15].</p>
+                    <p>Therefore, the self-criticism that feels productive may actually be counterproductive. It can activate stress responses, increase pain sensitivity, and make both migraines and recovery harder.</p>
+                    <p>Mi offers a different internal dialogue — one grounded in this research.</p>
+                    
+                    <div class="quote-box">
+                        <p>"This is a moment of suffering. Suffering is part of life. May I be kind to myself in this moment."</p>
+                        <span class="quote-author">— Dr. Kristin Neff [12]</span>
+                    </div>
+                    
+                    <p>Not "you failed." Just: "It's hard today. You're not alone."</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>Clarity About What Mi Does — and Doesn't Do</h2>
+                    <p>Let me be direct about my claims.</p>
+                    <p><strong>I am NOT claiming Mi cures migraines.</strong> No app does. Migraines are a complex neurological condition with genetic, environmental, and physiological components. They require medical attention.</p>
+                    <p><strong>I AM claiming this:</strong> The behaviors that calm Mi — hydration, breathing exercises, consistent self-care, self-compassion during attacks — are each independently supported by peer-reviewed research to reduce migraine frequency, severity, or disability in some patients.</p>
+                    <p>Mi doesn't replace your neurologist. Mi makes it easier to consistently practice what your healthcare provider may already recommend.</p>
+                    <p>The difference between knowing you should drink water and actually drinking water is the gap where most health advice fails. Mi lives in that gap — turning knowledge into action through engagement and positive reinforcement.</p>
+                    
+                    <div class="disclaimer-box">
+                        <h3>Medical Disclaimer</h3>
+                        <p>Always work with a healthcare provider for proper diagnosis and treatment of migraines. This app is a self-care support tool, not a medical intervention.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Philosophy: Care, Not Combat</h2>
+                    <p>There's a phrase at the heart of MIgraine Companion:</p>
+                    
+                    <div class="highlight-box">
+                        <p>"Learn to care, not to fight."</p>
+                    </div>
+                    
+                    <p>This isn't weakness. It's a different strategy.</p>
+                    <p>Fighting your body creates stress. Chronic stress can trigger migraines. More migraines create more stress. The cycle accelerates.</p>
+                    <p>Caring for your body supports calm. Calm may help prevent migraines. Fewer migraines create more capacity for care. The cycle can reverse.</p>
+                    <p>Michael White understood this through narrative therapy. Kristin Neff demonstrated it through self-compassion research. I experienced it through 30 years of living with this condition.</p>
+                    <p>We built these principles into a game.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>A Companion for the Journey</h2>
+                    <p>After three decades with migraines, I've learned that the hardest moments aren't always the attacks themselves.</p>
+                    <p>They're the moments between — when you feel alone, misunderstood, exhausted from explaining an invisible condition to people who don't quite get it.</p>
+                    <p>Mi doesn't need you to explain. Mi doesn't need you to prove anything. Mi doesn't judge your bad days or demand perfection on good ones.</p>
+                    <p>Mi just reflects what your body needs — and offers companionship while you figure it out.</p>
+                    <p>So the next time you open MIgraine Companion, look at Mi.</p>
+                    <p>If Mi is restless — consider what you might have forgotten today.</p>
+                    <p>If Mi is calm — let yourself acknowledge that.</p>
+                    <p>And if Mi is sleeping peacefully?</p>
+                    <p>Maybe take a moment to rest too.</p>
+                    <p><strong>You've earned it.</strong></p>
+                    
+                    <div class="highlight-box">
+                        <p>Mi is waiting. Tap 👾 to say hello.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <div class="references">
+                    <h2>References</h2>
+                    <ol>
+                        <li>White, M. (2007). Maps of Narrative Practice. W.W. Norton & Company. See also: <a href="https://dulwichcentre.com.au/what-is-narrative-therapy/externalising/" target="_blank">Dulwich Centre - Externalising</a></li>
+                        <li>Chow, E.O.W., & Fok, D.Y.H. (2020). Recipe of Life: A Relational Narrative Approach in Therapy With Persons Living With Chronic Pain. Research on Social Work Practice, 30(3), 320-329. <a href="https://doi.org/10.1177/1049731519880007" target="_blank">DOI</a></li>
+                        <li>Khorsha, F., et al. (2020). Association of drinking water and migraine headache severity. Journal of Clinical Neuroscience, 77, 81-84. <a href="https://pubmed.ncbi.nlm.nih.gov/32446809/" target="_blank">PubMed</a></li>
+                        <li>Spigt, M., et al. (2005). Increasing the daily water intake for the prophylactic treatment of headache: a pilot trial. European Journal of Neurology, 12(9), 715-718. <a href="https://pubmed.ncbi.nlm.nih.gov/16128874/" target="_blank">PubMed</a></li>
+                        <li>American Migraine Foundation. Migraine and Dehydration. <a href="https://www.webmd.com/migraines-headaches/dehydration-headache-migraine" target="_blank">WebMD Article</a></li>
+                        <li>American Migraine Foundation. Relaxation and Paced Breathing Exercises for Migraine. <a href="https://americanmigrainefoundation.org/resource-library/relaxation-techniques/" target="_blank">AMF Resource</a></li>
+                        <li>Rafique, N., et al. (2022). Effectiveness of eye movement exercise and diaphragmatic breathing with jogging in reducing migraine symptoms. Brain and Behavior, 13(1), e2841. <a href="https://pubmed.ncbi.nlm.nih.gov/36468446/" target="_blank">PubMed</a></li>
+                        <li>Hoffmann, A., et al. (2020). Toward Gamified Pain Management Apps: Mobile Application Rating Scale–Based Quality Assessment. JMIR Formative Research, 4(5), e13170. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7298641/" target="_blank">PMC</a></li>
+                        <li>Huang, X., et al. (2023). The Use of Gamification in the Self-Management of Patients With Chronic Diseases: Scoping Review. JMIR Serious Games, 11, e39019. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9947812/" target="_blank">PMC</a></li>
+                        <li>Wickens, J.R., et al. (2007). Dopaminergic Mechanisms in Actions and Habits. Journal of Neuroscience, 27(31), 8181-8183. <a href="https://www.jneurosci.org/content/27/31/8181" target="_blank">Journal</a></li>
+                        <li>Judah, G., et al. (2018). Exploratory study of the impact of perceived reward on habit formation. BMC Psychology, 6(1), 62. <a href="https://bmcpsychology.biomedcentral.com/articles/10.1186/s40359-018-0270-z" target="_blank">BMC</a></li>
+                        <li>Neff, K. (2011). Self-Compassion: The Proven Power of Being Kind to Yourself. William Morrow. See also: <a href="https://self-compassion.org" target="_blank">self-compassion.org</a></li>
+                        <li>Edwards, K.A., et al. (2019). The relation of self-compassion to functioning among adults with chronic pain. European Journal of Pain, 23(8), 1538-1547. <a href="https://pubmed.ncbi.nlm.nih.gov/31077615/" target="_blank">PubMed</a></li>
+                        <li>Lanzaro, C., et al. (2021). A Systematic Review of Self-Compassion in Chronic Pain. The Spanish Journal of Psychology, 24. <a href="https://pubmed.ncbi.nlm.nih.gov/34725020/" target="_blank">PubMed</a></li>
+                        <li>Torrijos-Zarcero, M., et al. (2021). Mindful Self-Compassion program for chronic pain patients: A randomized controlled trial. European Journal of Pain, 25(4), 930-944. <a href="https://pubmed.ncbi.nlm.nih.gov/33377295/" target="_blank">PubMed</a></li>
+                    </ol>
+                </div>
+
+                <div class="disclaimer-box">
+                    <h3>Medical Disclaimer</h3>
+                    <p>This article and the MIgraine Companion app provide general information and self-care support tools based on peer-reviewed research. They do not constitute medical advice, diagnosis, or treatment. Migraines can be symptoms of serious medical conditions. If you experience severe, sudden, or unusual headaches, please seek immediate medical attention. Always consult a qualified healthcare provider before making decisions about your migraine treatment. The self-care strategies discussed in this article are meant to complement, not replace, professional medical care.</p>
+                </div>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator & Developer</strong> — Rustam has lived with migraines for 30 years and developed MIgraine Companion to share the self-care strategies that have helped him manage his condition. He is not a medical professional — he is a person with migraines who has researched evidence-based approaches and built an app based on that research and his personal experience.</p>
+                            <p style="margin-top: 8px;">Contact: migrainecompanion.app@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Begin Your Journey with Mi</h3>
+                        <p>In the Mystic Garden, Mi waits for you. Not to track. Not to judge. Just to understand.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 MIgraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
