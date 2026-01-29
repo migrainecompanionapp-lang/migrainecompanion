@@ -120,10 +120,18 @@
         .screenshots{background:var(--charcoal);position:relative;overflow:hidden}
         .screenshots::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('images/mystic-garden-bg.png') center center/cover no-repeat;opacity:.08;z-index:0}
         .screenshots .container{position:relative;z-index:1}
-        .screenshots-grid{display:flex;gap:28px;overflow-x:auto;padding:24px 0 44px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+        .screenshots-wrapper{position:relative;padding:0 50px}
+        .screenshots-grid{display:flex;gap:28px;overflow-x:auto;padding:24px 0 44px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
         .screenshots-grid::-webkit-scrollbar{height:8px}
         .screenshots-grid::-webkit-scrollbar-track{background:var(--malachite-dark);border-radius:4px}
         .screenshots-grid::-webkit-scrollbar-thumb{background:var(--lavender);border-radius:4px}
+        .carousel-arrow{position:absolute;top:50%;transform:translateY(-calc(50% + 30px));width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border:1px solid rgba(139,122,168,.3);color:var(--lavender);font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:10;box-shadow:0 4px 20px rgba(0,0,0,.3)}
+        .carousel-arrow:hover{background:rgba(139,122,168,.2);border-color:var(--lavender);color:#fff;box-shadow:0 4px 25px rgba(139,122,168,.4)}
+        .carousel-arrow:active{transform:translateY(-calc(50% + 30px)) scale(0.95)}
+        .carousel-arrow.prev{left:0}
+        .carousel-arrow.next{right:0}
+        .carousel-arrow.hidden{opacity:0;pointer-events:none}
+        .carousel-arrow svg{width:24px;height:24px;fill:currentColor}
         .screenshot-card{flex:0 0 280px;scroll-snap-align:start;text-align:center}
         .screenshot-card img{width:100%;border-radius:24px;box-shadow:0 20px 50px rgba(0,0,0,.4);transition:transform .3s ease;border:2px solid rgba(139,122,168,.2)}
         .screenshot-card:hover img{transform:scale(1.03);border-color:var(--lavender);box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 20px rgba(139,122,168,.3)}
@@ -288,6 +296,8 @@
             .credential-card h4{font-size:1rem}
             .credential-card p{font-size:.9rem}
             .mouse-glow{display:none}
+            .screenshots-wrapper{padding:0}
+            .carousel-arrow{display:none}
         }
         @media (max-width:600px){.therapy-card{flex:0 1 100%}}
     </style>
@@ -339,19 +349,27 @@
             <div class="container">
                 <h2 class="section-title fade-in">Discover Mi's Garden</h2>
                 <p class="section-subtitle fade-in">A peaceful space where tracking becomes caring, and data transforms into understanding.</p>
-                <div class="screenshots-grid">
-                    <article class="screenshot-card video-card">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/YuNWQIGifzI?rel=0&modestbranding=1" title="My Migraine Story — 30 Years" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <h3>My Story</h3>
-                        <p>30 years with migraine. Why I built this app.</p>
-                    </article>
-                    <article class="screenshot-card"><img src="images/screen-home.jpeg" alt="Mi home screen — daily mood tracking"><h3>Home</h3><p>Your daily sanctuary. Mi shows how you're both feeling today.</p></article>
-                    <article class="screenshot-card"><img src="images/screen-monster.jpeg" alt="Migraine Monster therapeutic game"><h3>Migraine Monster</h3><p>A gentle game. Care for Mi during difficult moments.</p></article>
-                    <article class="screenshot-card"><img src="images/screen-breathing.jpeg" alt="Breathing Garden — 4-7-8 technique"><h3>Breathing Garden</h3><p>4-7-8 technique. Let the garden guide your breath.</p></article>
-                    <article class="screenshot-card"><img src="images/screen-ai.jpeg" alt="AI migraine prediction — 24h forecast"><h3>Mi's Forecast</h3><p>AI-powered predictions. See when Mi might wake up.</p></article>
-                    <article class="screenshot-card"><img src="images/screen-journal.jpeg" alt="Migraine journal for tracking triggers"><h3>Journal</h3><p>Your migraine diary. Every entry teaches Mi about you.</p></article>
+                <div class="screenshots-wrapper">
+                    <button class="carousel-arrow prev" aria-label="Previous">
+                        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    </button>
+                    <div class="screenshots-grid">
+                        <article class="screenshot-card video-card">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/YuNWQIGifzI?rel=0&modestbranding=1" title="My Migraine Story — 30 Years" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <h3>My Story</h3>
+                            <p>30 years with migraine. Why I built this app.</p>
+                        </article>
+                        <article class="screenshot-card"><img src="images/screen-home.jpeg" alt="Mi home screen — daily mood tracking"><h3>Home</h3><p>Your daily sanctuary. Mi shows how you're both feeling today.</p></article>
+                        <article class="screenshot-card"><img src="images/screen-monster.jpeg" alt="Migraine Monster therapeutic game"><h3>Migraine Monster</h3><p>A gentle game. Care for Mi during difficult moments.</p></article>
+                        <article class="screenshot-card"><img src="images/screen-breathing.jpeg" alt="Breathing Garden — 4-7-8 technique"><h3>Breathing Garden</h3><p>4-7-8 technique. Let the garden guide your breath.</p></article>
+                        <article class="screenshot-card"><img src="images/screen-ai.jpeg" alt="AI migraine prediction — 24h forecast"><h3>Mi's Forecast</h3><p>AI-powered predictions. See when Mi might wake up.</p></article>
+                        <article class="screenshot-card"><img src="images/screen-journal.jpeg" alt="Migraine journal for tracking triggers"><h3>Journal</h3><p>Your migraine diary. Every entry teaches Mi about you.</p></article>
+                    </div>
+                    <button class="carousel-arrow next" aria-label="Next">
+                        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+                    </button>
                 </div>
             </div>
         </section>
@@ -721,7 +739,56 @@
         }, 2000);
     });
     
+    // Screenshots Carousel Arrows
     document.addEventListener('DOMContentLoaded', function() {
+        const screenshotsGrid = document.querySelector('.screenshots-grid');
+        const prevArrow = document.querySelector('.carousel-arrow.prev');
+        const nextArrow = document.querySelector('.carousel-arrow.next');
+        
+        if (screenshotsGrid && prevArrow && nextArrow) {
+            const scrollAmount = 308; // card width (280) + gap (28)
+            
+            function updateArrowsVisibility() {
+                const scrollLeft = screenshotsGrid.scrollLeft;
+                const maxScroll = screenshotsGrid.scrollWidth - screenshotsGrid.clientWidth;
+                
+                if (scrollLeft <= 10) {
+                    prevArrow.classList.add('hidden');
+                } else {
+                    prevArrow.classList.remove('hidden');
+                }
+                
+                if (scrollLeft >= maxScroll - 10) {
+                    nextArrow.classList.add('hidden');
+                } else {
+                    nextArrow.classList.remove('hidden');
+                }
+            }
+            
+            prevArrow.addEventListener('click', function() {
+                screenshotsGrid.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+            
+            nextArrow.addEventListener('click', function() {
+                screenshotsGrid.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+            
+            screenshotsGrid.addEventListener('scroll', updateArrowsVisibility);
+            
+            // Initial check
+            updateArrowsVisibility();
+            
+            // Recheck on window resize
+            window.addEventListener('resize', updateArrowsVisibility);
+        }
+        
+        // Fireflies
         const container = document.querySelector('.fireflies');
         const fireflyCount = window.innerWidth <= 768 ? 18 : 35;
         const fireflies = [];
