@@ -174,6 +174,39 @@
             padding: 60px 0 80px;
         }
         
+        /* CATEGORY FILTER */
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+        
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .filter-btn:hover {
+            border-color: rgba(139, 122, 168, 0.4);
+            color: #ffffff;
+        }
+        
+        .filter-btn.active {
+            background: rgba(197, 160, 89, 0.15);
+            border-color: rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+        }
+        
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -385,6 +418,16 @@
                 min-height: 320px;
             }
             
+            .category-filter {
+                gap: 8px;
+                padding: 0 10px;
+            }
+            
+            .filter-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            
             .footer-content {
                 flex-direction: column;
                 text-align: center;
@@ -418,9 +461,24 @@
 
         <section class="blog-content">
             <div class="container">
+                
+                <!-- CATEGORY FILTER -->
+                <div class="category-filter">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="personal-story">Personal Story</button>
+                    <button class="filter-btn" data-category="science">Science</button>
+                    <button class="filter-btn" data-category="app-guide">App Guide</button>
+                    <button class="filter-btn" data-category="self-care">Self-Care</button>
+                    <button class="filter-btn" data-category="narrative-therapy">Narrative Therapy</button>
+                    <button class="filter-btn" data-category="tips">Tips</button>
+                    <button class="filter-btn" data-category="triggers">Triggers</button>
+                    <button class="filter-btn" data-category="understanding">Understanding</button>
+                </div>
+                
                 <div class="blog-grid">
-                    <!-- НАША НОВАЯ СТАТЬЯ -->
-                    <article class="blog-card">
+                    
+                    <!-- PERSONAL STORY -->
+                    <article class="blog-card" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>I Built a Migraine App During 30 Years of Pain (and a War)</h2>
                         <p>How chronic illness, wartime development, and narrative therapy came together to create something "good, beautiful, and warm". A journey from 15-20 attacks per month to 3-4.</p>
@@ -431,105 +489,109 @@
                         <a href="article-30-years.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <article class="blog-card">
-    <span class="blog-tag">Narrative Therapy</span>
-    <h2>Why We Don't Fight Migraines</h2>
-    <p>The science behind companionization — and why treating your migraine as a companion works better than treating it as an enemy. Discover how externalization can reduce self-blame and increase your sense of control.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 January 28, 2026</span>
-        <span class="blog-read-time">⏱ 5 min read</span>
-    </div>
-    <a href="article-narrative-therapy.html" class="read-more">Read full story →</a>
-</article>
+                    <!-- NARRATIVE THERAPY -->
+                    <article class="blog-card" data-category="narrative-therapy">
+                        <span class="blog-tag">Narrative Therapy</span>
+                        <h2>Why We Don't Fight Migraines</h2>
+                        <p>The science behind companionization — and why treating your migraine as a companion works better than treating it as an enemy. Discover how externalization can reduce self-blame and increase your sense of control.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 January 28, 2026</span>
+                            <span class="blog-read-time">⏱ 5 min read</span>
+                        </div>
+                        <a href="article-narrative-therapy.html" class="read-more">Read full story →</a>
+                    </article>
                     
-                    <article class="blog-card">
-    <span class="blog-tag">Self-Care</span>
-    <h2>The 4-7-8 Breathing Technique</h2>
-    <p>How this simple breathing exercise can help during migraine attacks — and why Mi loves it too. Learn the science behind controlled breathing and its effect on your nervous system.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 January 28, 2026</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-    <a href="article-478-breathing.html" class="read-more">Read full story →</a>
-</article>
+                    <!-- SELF-CARE -->
+                    <article class="blog-card" data-category="self-care">
+                        <span class="blog-tag">Self-Care</span>
+                        <h2>The 4-7-8 Breathing Technique</h2>
+                        <p>How this simple breathing exercise can help during migraine attacks — and why Mi loves it too. Learn the science behind controlled breathing and its effect on your nervous system.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 January 28, 2026</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                        <a href="article-478-breathing.html" class="read-more">Read full story →</a>
+                    </article>
                     
-                    <article class="blog-card">
-    <span class="blog-tag">Tips</span>
-    <h2>Understanding Your Triggers</h2>
-    <p>Mi's mood stones can reveal patterns you never noticed. Here's how to read them and use this information to prevent future attacks.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 January 28, 2026</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-    <a href="article-understanding-triggers.html" class="read-more">Read full story →</a>
-</article>
+                    <!-- TIPS -->
+                    <article class="blog-card" data-category="tips">
+                        <span class="blog-tag">Tips</span>
+                        <h2>Understanding Your Triggers</h2>
+                        <p>Mi's mood stones can reveal patterns you never noticed. Here's how to read them and use this information to prevent future attacks.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 January 28, 2026</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                        <a href="article-understanding-triggers.html" class="read-more">Read full story →</a>
+                    </article>
                     
-                    <article class="blog-card">
-    <span class="blog-tag">Science</span>
-    <h2>The Storm Before the Storm</h2>
-    <p>Your attack doesn't begin when the pain starts — it begins up to 48 hours earlier. Learn how Mi watches 40+ factors to see the storm before it arrives.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 January 28, 2026</span>
-        <span class="blog-read-time">⏱ 12 min read</span>
-    </div>
-    <a href="article-prediction.html" class="read-more">Read full story →</a>
-</article>
+                    <!-- SCIENCE: PREDICTION -->
+                    <article class="blog-card" data-category="science">
+                        <span class="blog-tag">Science</span>
+                        <h2>The Storm Before the Storm</h2>
+                        <p>Your attack doesn't begin when the pain starts — it begins up to 48 hours earlier. Learn how Mi watches 40+ factors to see the storm before it arrives.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 January 28, 2026</span>
+                            <span class="blog-read-time">⏱ 12 min read</span>
+                        </div>
+                        <a href="article-prediction.html" class="read-more">Read full story →</a>
+                    </article>
                     
-                    <!-- MEET MI -->
-<article class="blog-card">
-    <span class="blog-tag">App Guide</span>
-    <h2>Meet Mi: The Monster Who Wants to Sleep</h2>
-    <p>Mi isn't your enemy — Mi is your companion. Discover the philosophy behind MIgraine Monster and how caring for yourself calms the creature within.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 January 29, 2026</span>
-        <span class="blog-read-time">⏱ 5 min read</span>
-    </div>
-    <a href="meet-mi.html" class="read-more">Read full story →</a>
-</article>
-    
-    <!-- NEW: WEEKEND MIGRAINES -->
-    <article class="blog-card">
-        <span class="blog-tag">Science</span>
-        <h2>Why Your Brain Hates Mondays: Weekend Migraines Explained</h2>
-        <p>The frustrating phenomenon of getting migraines on your days off. Learn about cortisol, "let-down headaches," and why relaxation can trigger attacks.</p>
-        <div class="blog-meta">
-            <span class="blog-date">📅 Coming soon</span>
-            <span class="blog-read-time">⏱ 7 min read</span>
-        </div>
-    </article>
-    
-    <!-- NEW: CAFFEINE -->
-    <article class="blog-card">
-        <span class="blog-tag">Triggers</span>
-        <h2>The Caffeine Paradox: Friend, Foe, or Both?</h2>
-        <p>Coffee can trigger migraines — and also relieve them. Unravel the science behind this paradox and find your personal caffeine balance.</p>
-        <div class="blog-meta">
-            <span class="blog-date">📅 Coming soon</span>
-            <span class="blog-read-time">⏱ 6 min read</span>
-        </div>
-    </article>
-    
-    <!-- NEW: POSTDROME -->
-    <article class="blog-card">
-        <span class="blog-tag">Understanding</span>
-        <h2>Migraine Hangover: The Phase No One Talks About</h2>
-        <p>The pain is gone, but you feel like a zombie. Postdrome is real — and understanding it can help you stop blaming yourself for "being lazy."</p>
-        <div class="blog-meta">
-            <span class="blog-date">📅 Coming soon</span>
-            <span class="blog-read-time">⏱ 5 min read</span>
-        </div>
-    </article>
-    
-    <!-- NEW: GUT-BRAIN -->
-    <article class="blog-card">
-        <span class="blog-tag">Science</span>
-        <h2>The Gut-Brain Highway: How Your Microbiome Talks to Your Migraine</h2>
-        <p>New research reveals a surprising connection between your gut and your head. Discover why Mi tracks your food — and what your stomach is trying to tell you.</p>
-        <div class="blog-meta">
-            <span class="blog-date">📅 Coming soon</span>
-            <span class="blog-read-time">⏱ 8 min read</span>
-        </div>
-    </article>
+                    <!-- APP GUIDE: MEET MI -->
+                    <article class="blog-card" data-category="app-guide">
+                        <span class="blog-tag">App Guide</span>
+                        <h2>Meet Mi: The Monster Who Wants to Sleep</h2>
+                        <p>Mi isn't your enemy — Mi is your companion. Discover the philosophy behind MIgraine Monster and how caring for yourself calms the creature within.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 January 29, 2026</span>
+                            <span class="blog-read-time">⏱ 5 min read</span>
+                        </div>
+                        <a href="meet-mi.html" class="read-more">Read full story →</a>
+                    </article>
+                    
+                    <!-- SCIENCE: WEEKEND MIGRAINES -->
+                    <article class="blog-card" data-category="science">
+                        <span class="blog-tag">Science</span>
+                        <h2>Why Your Brain Hates Mondays: Weekend Migraines Explained</h2>
+                        <p>The frustrating phenomenon of getting migraines on your days off. Learn about cortisol, "let-down headaches," and why relaxation can trigger attacks.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 7 min read</span>
+                        </div>
+                    </article>
+                    
+                    <!-- TRIGGERS: CAFFEINE -->
+                    <article class="blog-card" data-category="triggers">
+                        <span class="blog-tag">Triggers</span>
+                        <h2>The Caffeine Paradox: Friend, Foe, or Both?</h2>
+                        <p>Coffee can trigger migraines — and also relieve them. Unravel the science behind this paradox and find your personal caffeine balance.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                    </article>
+                    
+                    <!-- UNDERSTANDING: POSTDROME -->
+                    <article class="blog-card" data-category="understanding">
+                        <span class="blog-tag">Understanding</span>
+                        <h2>Migraine Hangover: The Phase No One Talks About</h2>
+                        <p>The pain is gone, but you feel like a zombie. Postdrome is real — and understanding it can help you stop blaming yourself for "being lazy."</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 5 min read</span>
+                        </div>
+                    </article>
+                    
+                    <!-- SCIENCE: GUT-BRAIN -->
+                    <article class="blog-card" data-category="science">
+                        <span class="blog-tag">Science</span>
+                        <h2>The Gut-Brain Highway: How Your Microbiome Talks to Your Migraine</h2>
+                        <p>New research reveals a surprising connection between your gut and your head. Discover why Mi tracks your food — and what your stomach is trying to tell you.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 8 min read</span>
+                        </div>
+                    </article>
                     
                     <div class="coming-soon-card">
                         <h3>✨ More articles coming soon</h3>
@@ -570,7 +632,6 @@
             document.body.classList.toggle('menu-open');
         });
         
-        // Close menu when clicking on a link
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 nav.classList.remove('mobile-menu-active');
@@ -578,6 +639,40 @@
             });
         });
     }
+    
+    // Category filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active to clicked button
+            this.classList.add('active');
+            
+            const category = this.dataset.category;
+            
+            if (category === 'all') {
+                // Show all cards in original order
+                blogCards.forEach(card => {
+                    card.style.display = 'block';
+                    card.style.order = '0';
+                });
+            } else {
+                // Show all cards but reorder - selected category first
+                let order = 0;
+                blogCards.forEach(card => {
+                    card.style.display = 'block';
+                    if (card.dataset.category === category) {
+                        card.style.order = '-1';
+                    } else {
+                        card.style.order = order++;
+                    }
+                });
+            }
+        });
+    });
     </script>
 </body>
 </html>
