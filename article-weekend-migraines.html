@@ -3,667 +3,721 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Your Brain Hates Mondays: Weekend Migraines Explained | Migraine Companion</title>
     <meta name="description" content="The frustrating phenomenon of getting migraines on your days off. Learn about cortisol, let-down headaches, and why relaxation can trigger attacks.">
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="author" content="Rustam Iuldashov">
+    <title>Why Your Brain Hates Mondays: Weekend Migraines Explained | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
-            min-height: 100vh;
-            color: #e2e8f0;
-            line-height: 1.8;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
-
-        /* Header */
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
         header {
-            background: rgba(15, 15, 35, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-            padding: 1rem 2rem;
+            padding: 16px 0;
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
         }
-
-        nav {
-            max-width: 1200px;
+        
+        .header-content {
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 0 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.25rem;
+            gap: 6px;
         }
-
-        .logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+        
+        .back-link:hover {
+            color: var(--lavender);
         }
-
-        .nav-links {
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 500px;
             display: flex;
-            gap: 2rem;
-            list-style: none;
+            align-items: center;
+            justify-content: center;
         }
-
-        .nav-links a {
-            color: #a0aec0;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
         }
-
-        .nav-links a:hover {
-            color: #8b5cf6;
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
         }
-
-        /* Article Container */
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 120px 2rem 4rem;
-        }
-
-        /* Article Header */
+        
         .article-header {
+            position: relative;
+            z-index: 2;
             text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 0 24px;
         }
-
-        .article-category {
+        
+        .article-tag {
             display: inline-block;
-            background: linear-gradient(135deg, #8b5cf6, #a855f7);
-            color: #fff;
-            padding: 0.375rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 1rem;
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
             line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
         }
-
+        
         .article-subtitle {
-            font-size: 1.25rem;
-            color: #a0aec0;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
         }
-
+        
         .article-meta {
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 2rem;
-            color: #718096;
-            font-size: 0.9rem;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
         }
-
-        .article-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* Medical Disclaimer */
-        .medical-disclaimer {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.05));
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .medical-disclaimer h4 {
-            color: #f87171;
-            font-size: 1rem;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .medical-disclaimer p {
-            color: #fca5a5;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Article Content */
+        
         .article-content {
-            font-size: 1.1rem;
+            padding: 60px 0 80px;
         }
-
-        .article-content p {
-            margin-bottom: 1.5rem;
-            color: #cbd5e1;
+        
+        .article-section {
+            margin-bottom: 48px;
         }
-
-        .article-content h2 {
-            font-size: 1.75rem;
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
             font-weight: 700;
-            color: #fff;
-            margin: 3rem 0 1.5rem;
-            padding-top: 1rem;
+            color: var(--antique-gold);
         }
-
-        .article-content h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: #e2e8f0;
-            margin: 2rem 0 1rem;
-        }
-
-        .article-content strong {
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .article-content em {
-            color: #c4b5fd;
+        
+        em {
             font-style: italic;
+            color: var(--lavender);
         }
-
-        .article-content a {
-            color: #a78bfa;
+        
+        a {
+            color: var(--lavender);
             text-decoration: none;
-            border-bottom: 1px solid rgba(167, 139, 250, 0.3);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.3);
             transition: all 0.3s ease;
         }
-
-        .article-content a:hover {
-            color: #c4b5fd;
-            border-bottom-color: #c4b5fd;
+        
+        a:hover {
+            color: #a99cc4;
+            border-bottom-color: var(--lavender);
         }
-
-        /* Citation style */
+        
         .citation {
-            color: #8b5cf6;
+            color: var(--gold);
             font-size: 0.85em;
             vertical-align: super;
             font-weight: 600;
-            cursor: pointer;
         }
-
-        .citation:hover {
-            color: #a78bfa;
-        }
-
-        /* Highlight Box */
+        
         .highlight-box {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.05));
-            border-left: 4px solid #8b5cf6;
-            padding: 1.5rem;
-            margin: 2rem 0;
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
             border-radius: 0 12px 12px 0;
+            margin: 36px 0;
         }
-
+        
         .highlight-box p {
-            margin-bottom: 0;
-            color: #e2e8f0;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
         }
-
-        /* Key Stat Box */
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
         .key-stat {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.05));
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 2rem 0;
+            background: rgba(139, 122, 168, 0.1);
+            border: 1px solid rgba(139, 122, 168, 0.3);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 36px 0;
             text-align: center;
         }
-
+        
         .key-stat .number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #4ade80;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--lavender);
             display: block;
+            margin-bottom: 8px;
         }
-
+        
         .key-stat .label {
-            color: #86efac;
+            color: var(--text-light);
             font-size: 1rem;
         }
-
-        /* Trigger Cards */
+        
         .trigger-card {
-            background: rgba(30, 30, 60, 0.5);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            padding: 28px;
             border-radius: 12px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin-bottom: 20px;
         }
-
+        
         .trigger-card h3 {
-            margin-top: 0;
+            color: var(--antique-gold);
+            margin-bottom: 16px;
         }
-
+        
         .trigger-card .claim {
-            color: #a78bfa;
+            color: var(--lavender);
             font-weight: 500;
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
-
+        
         .trigger-card .evidence {
-            color: #cbd5e1;
-            margin-bottom: 1rem;
+            color: var(--text);
+            margin-bottom: 16px;
         }
-
+        
         .trigger-card .implication {
-            color: #94a3b8;
+            color: var(--text-light);
             font-style: italic;
-            padding-left: 1rem;
-            border-left: 2px solid rgba(139, 92, 246, 0.4);
+            padding-left: 16px;
+            border-left: 2px solid rgba(139, 122, 168, 0.4);
+            margin-bottom: 0;
         }
-
-        /* Recommendations List */
-        .recommendations {
-            margin: 2rem 0;
-        }
-
+        
         .recommendation-item {
-            background: rgba(30, 30, 60, 0.3);
-            border: 1px solid rgba(139, 92, 246, 0.15);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            padding: 24px;
             border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
-
+        
         .recommendation-item h4 {
-            color: #a78bfa;
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
+            color: var(--antique-gold);
+            margin-bottom: 12px;
+            font-size: 1.05rem;
         }
-
+        
         .recommendation-item .rationale {
-            color: #94a3b8;
+            color: var(--text-light);
             font-size: 0.95rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 12px;
         }
-
+        
         .recommendation-item .implementation {
-            color: #cbd5e1;
+            color: var(--text);
+            margin-bottom: 0;
         }
-
-        /* Warning Signs Box */
+        
         .warning-box {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.05));
-            border: 1px solid rgba(251, 191, 36, 0.3);
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.3);
             border-radius: 12px;
-            padding: 1.5rem;
-            margin: 2rem 0;
+            padding: 24px 28px;
+            margin: 36px 0;
         }
-
+        
         .warning-box h4 {
-            color: #fbbf24;
-            margin-bottom: 1rem;
+            color: #f87171;
+            margin-bottom: 16px;
+            font-size: 1rem;
         }
-
+        
         .warning-box ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
-
+        
         .warning-box li {
-            color: #fcd34d;
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+            color: #fca5a5;
+            padding: 8px 0;
+            padding-left: 24px;
             position: relative;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(239, 68, 68, 0.1);
         }
-
+        
+        .warning-box li:last-child {
+            border-bottom: none;
+        }
+        
         .warning-box li::before {
             content: "⚠";
             position: absolute;
             left: 0;
         }
-
-        /* Key Takeaways */
+        
         .takeaways {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(168, 85, 247, 0.1));
-            border: 1px solid rgba(139, 92, 246, 0.3);
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
             border-radius: 16px;
-            padding: 2rem;
-            margin: 3rem 0;
+            padding: 32px;
+            margin: 48px 0;
         }
-
+        
         .takeaways h2 {
             margin-top: 0;
-            color: #c4b5fd;
+            color: var(--antique-gold);
         }
-
+        
         .takeaways ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
-
+        
         .takeaways li {
-            padding: 0.75rem 0;
-            padding-left: 2rem;
+            padding: 12px 0;
+            padding-left: 28px;
             position: relative;
-            color: #e2e8f0;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            color: var(--text);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
         }
-
+        
         .takeaways li:last-child {
             border-bottom: none;
         }
-
+        
         .takeaways li::before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: #8b5cf6;
+            color: var(--gold);
             font-weight: bold;
         }
-
-        /* References Section */
-        .references {
-            background: rgba(20, 20, 40, 0.5);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 3rem 0;
+        
+        .references-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            padding: 32px;
+            border-radius: 16px;
+            margin-top: 48px;
         }
-
-        .references h2 {
+        
+        .references-section h2 {
             margin-top: 0;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 24px;
         }
-
-        .references ol {
-            padding-left: 1.5rem;
-            color: #94a3b8;
+        
+        .references-section ol {
+            padding-left: 24px;
+            color: var(--text-light);
             font-size: 0.9rem;
         }
-
-        .references li {
-            margin-bottom: 1rem;
+        
+        .references-section li {
+            margin-bottom: 16px;
             line-height: 1.6;
         }
-
-        .references a {
-            color: #8b5cf6;
+        
+        .references-section a {
             word-break: break-all;
         }
-
-        /* Author Box */
-        .author-box {
-            background: rgba(30, 30, 60, 0.5);
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 3rem 0;
-        }
-
-        .author-box h3 {
-            color: #a78bfa;
-            margin-bottom: 1rem;
-        }
-
-        .author-box p {
-            color: #94a3b8;
-            font-size: 0.95rem;
-        }
-
-        .author-box ul {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
-        }
-
-        .author-box li {
-            color: #cbd5e1;
-            padding: 0.25rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .author-box li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #8b5cf6;
-        }
-
-        /* Closing narrative */
-        .closing-narrative {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.05));
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
+        
+        .disclaimer {
+            font-size: 0.9rem;
+            color: var(--text-dark);
             font-style: italic;
-            color: #c4b5fd;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+            margin-top: 32px;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
             text-align: center;
         }
-
-        /* Back to Blog Link */
-        .back-link {
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            color: #8b5cf6;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
             text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s;
         }
-
-        .back-link:hover {
-            color: #a78bfa;
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+            border-bottom: 1px solid var(--gold);
         }
-
-        /* Footer */
+        
         footer {
-            background: rgba(15, 15, 35, 0.95);
-            border-top: 1px solid rgba(139, 92, 246, 0.2);
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
             text-align: center;
-            color: #718096;
         }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
         }
-
-        .footer-links a {
-            color: #a0aec0;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #8b5cf6;
-        }
-
-        /* Responsive */
+        
         @media (max-width: 768px) {
-            .article-title {
-                font-size: 1.75rem;
-            }
-
-            .article-subtitle {
-                font-size: 1rem;
-            }
-
-            .article-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .article-container {
-                padding: 100px 1rem 2rem;
-            }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .article-meta { flex-direction: column; gap: 8px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <img src="images/mi-logo.png" alt="Mi Logo">
-                <span>Migraine Companion</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#download">Download</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
     </header>
 
-    <main class="article-container">
-        <a href="blog.html" class="back-link">
-            ← Back to Blog
-        </a>
-
-        <article>
-            <header class="article-header">
-                <span class="article-category">Science & Research</span>
-                <h1 class="article-title">Why Your Brain Hates Mondays: Weekend Migraines Explained</h1>
+    <main>
+        <div class="article-hero">
+            <img src="images/article-weekend-migraines.png" alt="Weekend migraines and let-down headache concept">
+            <div class="article-header">
+                <span class="article-tag">Science & Research</span>
+                <h1>Why Your Brain Hates Mondays: Weekend Migraines Explained</h1>
                 <p class="article-subtitle">The frustrating phenomenon of getting migraines on your days off—and the neuroscience behind why relaxation can trigger attacks.</p>
                 <div class="article-meta">
-                    <span>📅 January 2026</span>
+                    <span>📅 January 30, 2026</span>
                     <span>⏱ 8 min read</span>
-                    <span>🔬 Research-Based</span>
+                    <span>✍️ Rustam Iuldashov</span>
                 </div>
-            </header>
-
-            <div class="medical-disclaimer">
-                <h4>⚕️ Medical Disclaimer</h4>
-                <p>This article is for educational purposes only and does not constitute medical advice. Please consult a qualified healthcare provider before making any changes to your migraine management routine. All medical claims are supported by cited peer-reviewed research.</p>
             </div>
+        </div>
 
-            <div class="article-content">
-                <p>It's Saturday morning. You've survived the week—the deadlines, the meetings, the constant low-grade hum of stress. You sleep in. You skip the alarm. You finally, <em>finally</em> relax.</p>
-
-                <p>And then it hits.</p>
-
-                <p>The throb behind your eye. The creeping nausea. The familiar, cruel irony: the migraine arrives precisely when you've earned your rest.</p>
-
-                <p>If this sounds like your life, you're not imagining things. Science has a name for this phenomenon. And after 30 years of living with migraine, I've learned that understanding <em>why</em> it happens is the first step toward outsmarting it.</p>
-
-                <h2>The Conventional Wisdom Is Wrong</h2>
-
-                <p>Most people—including many who live with migraine—believe that stress <em>causes</em> attacks. Reduce your stress, the thinking goes, and you'll reduce your migraines.</p>
-
-                <p>This advice is not just incomplete. It may be actively harmful.</p>
-
-                <p>In 2014, researchers at the Montefiore Headache Center tested a different hypothesis<span class="citation">[1]</span>. They asked: what if it's not stress itself, but the <em>transition out of stress</em> that triggers migraine? To find out, they tracked 17 migraine patients through 2,011 electronic diary entries over three months, measuring both stress levels and migraine onset with unusual precision.</p>
-
-                <p>Their finding overturned decades of assumptions: <strong>the drop in stress was a far more powerful trigger than stress itself.</strong></p>
-
-                <div class="key-stat">
-                    <span class="number">~500%</span>
-                    <span class="label">increased migraine risk within 6 hours after stress decline<span class="citation">[1]</span></span>
+        <article class="article-content">
+            <div class="container">
+                
+                <!-- AUTHOR BYLINE FOR GOOGLE E-E-A-T -->
+                <div style="text-align:center;padding:32px 0 48px;border-bottom:1px solid rgba(139,122,168,0.15);margin-bottom:48px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: January 30, 2026
+                    </p>
                 </div>
 
-                <p>At 12–18 hours post-decline, odds ratios remained elevated at 1.5 to 1.9. The level of stress on any given day showed no consistent association with migraine. But the <em>change</em> in stress—the relief, the relaxation, the letting go—predicted attacks with striking reliability.</p>
-
-                <p>"Results were strongest during the first six hours where decline in stress was associated with a nearly five-fold increased risk of migraine onset," wrote lead author Dr. Richard Lipton<span class="citation">[1]</span>. The study, published in <em>Neurology</em>, introduced a term that has since entered the clinical vocabulary: the <strong>let-down headache</strong><span class="citation">[9]</span>.</p>
-
-                <h2>The Cortisol Hypothesis: Why Relaxation Hurts</h2>
-
-                <p>What biological mechanism could explain this paradox? The leading hypothesis centers on cortisol—the primary stress hormone produced by your adrenal glands.</p>
-
-                <p>Cortisol serves multiple functions during stress. It mobilizes energy. It sharpens cognition. And critically, <strong>it suppresses pain and inflammation</strong> through well-documented anti-inflammatory pathways.</p>
-
-                <p>This creates a temporary protective effect. During periods of high stress, elevated cortisol may mask the neuroinflammatory processes that precede migraine. Your brain is essentially running on its own painkillers.</p>
-
-                <p>But cortisol operates on a loan, not a gift.</p>
-
-                <p>When stress ends, cortisol levels drop—sometimes precipitously. The anti-inflammatory shield disappears. Pain pathways that were suppressed become active. For a brain already primed for migraine, this withdrawal creates a window of heightened vulnerability.</p>
-
-                <p>Research supports this mechanism. A 2020 study published in <em>Cephalalgia Reports</em> found that chronic migraine patients had significantly elevated cortisol levels compared to episodic migraine patients and healthy controls<span class="citation">[5]</span>. More importantly, when chronic migraine patients improved to episodic status, their cortisol levels normalized—suggesting a direct relationship between cortisol dysregulation and migraine burden.</p>
-
-                <h2>Three Triggers That Stack on Weekends</h2>
-
-                <p>Cortisol withdrawal doesn't act alone. Weekend migraines typically result from multiple triggers occurring simultaneously—a phenomenon researchers call "trigger stacking." Three factors deserve particular attention.</p>
-
-                <div class="trigger-card">
-                    <h3>1. Sleep Schedule Disruption</h3>
-                    <p class="claim"><strong>The claim:</strong> Both undersleeping and oversleeping increase migraine risk, but <em>inconsistency</em> may matter more than duration.</p>
-                    <p class="evidence"><strong>The evidence:</strong> Your brain's master circadian clock—the suprachiasmatic nucleus (SCN), a region of approximately 20,000 neurons in the hypothalamus—receives direct input from your retina and coordinates nearly every physiological process on a 24-hour cycle<span class="citation">[6]</span>. Circadian research demonstrates that migraine patients show abnormal chronotype patterns at higher rates than controls, with circadian misalignment correlating with increased attack frequency independent of total sleep hours<span class="citation">[6][7]</span>.</p>
-                    <p class="implication"><strong>The implication:</strong> Sleeping until 10 AM on Saturday after waking at 6:30 AM all week isn't "catching up on rest." It's introducing a 3.5-hour phase shift that your SCN interprets as a form of jet lag. The migraine brain doesn't want more sleep. It wants <em>predictable</em> sleep.</p>
+                <!-- MEDICAL DISCLAIMER -->
+                <div class="warning-box" style="background: rgba(239, 68, 68, 0.05); margin-top: 0;">
+                    <h4>⚕️ Medical Disclaimer</h4>
+                    <p style="color: #fca5a5; font-size: 0.95rem; margin: 0;">This article is for educational purposes only and does not constitute medical advice. Please consult a qualified healthcare provider before making any changes to your migraine management routine. All medical claims are supported by cited peer-reviewed research.</p>
                 </div>
 
-                <div class="trigger-card">
-                    <h3>2. Caffeine Withdrawal</h3>
-                    <p class="claim"><strong>The claim:</strong> Delayed caffeine intake on weekends produces a withdrawal syndrome that can trigger migraine—even when total daily consumption remains constant.</p>
-                    <p class="evidence"><strong>The evidence:</strong> A study of 151 migraine and tension-type headache patients found that 21.9% experienced weekend attacks<span class="citation">[2]</span>. Weekend headache sufferers consumed significantly more daily caffeine (mean: 734 mg, or roughly 7 cups of coffee) and woke substantially later on weekends. The critical finding: patients who combined both high caffeine intake <em>and</em> delayed weekend waking had a 69% probability of weekend headache. Patients who had only one risk factor? Just 4%<span class="citation">[2]</span>.</p>
-                    <p>A randomized controlled trial adds physiological support<span class="citation">[4]</span>. When migraine patients underwent sudden caffeine withdrawal (replaced with placebo), 7 of 9 participants experienced severe migraine attacks within days. Continued caffeine produced no attacks.</p>
-                    <p class="implication"><strong>The implication:</strong> The vulnerability is not caffeine itself but the timing disruption<span class="citation">[3][10]</span>. If you drink coffee at 7 AM on weekdays and wake at 9 AM on Saturday, your brain has been waiting for caffeine for two additional hours—a delay sufficient to trigger withdrawal in dependent individuals.</p>
-                </div>
+                <section class="article-section">
+                    <p>It's Saturday morning. You've survived the week—the deadlines, the meetings, the constant low-grade hum of stress. You sleep in. You skip the alarm. You finally, <em>finally</em> relax.</p>
+                    <p>And then it hits.</p>
+                    <p>The throb behind your eye. The creeping nausea. The familiar, cruel irony: the migraine arrives precisely when you've earned your rest.</p>
+                    <p>If this sounds like your life, you're not imagining things. Science has a name for this phenomenon. And after 30 years of living with migraine, I've learned that understanding <em>why</em> it happens is the first step toward outsmarting it.</p>
+                </section>
 
-                <div class="trigger-card">
-                    <h3>3. Meal Timing Shifts</h3>
-                    <p class="claim"><strong>The claim:</strong> The hypothalamus tracks meal timing independently of caloric intake, and delays can function as migraine triggers.</p>
-                    <p class="evidence"><strong>The evidence:</strong> The hypothalamus regulates not only circadian rhythm but also hunger, satiety, and metabolic homeostasis<span class="citation">[8]</span>. Imaging studies show altered hypothalamic activation during the premonitory phase of migraine—the hours before pain begins—often accompanied by food cravings. Skipped or delayed meals are consistently reported among the top migraine triggers in patient surveys.</p>
-                    <p class="implication"><strong>The implication:</strong> Weekend brunch at 11 AM instead of breakfast at 7 AM may register to your hypothalamus as a four-hour fast—regardless of how much you eat afterward. The migraine brain interprets schedule deviation as metabolic stress.</p>
-                </div>
+                <div class="separator">* * *</div>
 
-                <h2>The Hypothalamus: Where It All Converges</h2>
+                <section class="article-section">
+                    <h2>The Conventional Wisdom Is Wrong</h2>
+                    <p>Most people—including many who live with migraine—believe that stress <em>causes</em> attacks. Reduce your stress, the thinking goes, and you'll reduce your migraines.</p>
+                    <p>This advice is not just incomplete. It may be actively harmful.</p>
+                    <p>In 2014, researchers at the Montefiore Headache Center tested a different hypothesis<span class="citation">[1]</span>. They asked: what if it's not stress itself, but the <em>transition out of stress</em> that triggers migraine? To find out, they tracked 17 migraine patients through 2,011 electronic diary entries over three months, measuring both stress levels and migraine onset with unusual precision.</p>
+                    <p>Their finding overturned decades of assumptions: <strong>the drop in stress was a far more powerful trigger than stress itself.</strong></p>
+                    
+                    <div class="key-stat">
+                        <span class="number">~500%</span>
+                        <span class="label">increased migraine risk within 6 hours after stress decline<span class="citation">[1]</span></span>
+                    </div>
+                    
+                    <p>At 12–18 hours post-decline, odds ratios remained elevated at 1.5 to 1.9. The level of stress on any given day showed no consistent association with migraine. But the <em>change</em> in stress—the relief, the relaxation, the letting go—predicted attacks with striking reliability.</p>
+                    
+                    <div class="quote-box">
+                        <p>"Results were strongest during the first six hours where decline in stress was associated with a nearly five-fold increased risk of migraine onset."</p>
+                    </div>
+                    
+                    <p>The study, published in <em>Neurology</em>, introduced a term that has since entered the clinical vocabulary: the <strong>let-down headache</strong><span class="citation">[9]</span>.</p>
+                </section>
 
-                <p>All three weekend triggers—sleep disruption, caffeine withdrawal, and meal timing shifts—share a common neuroanatomical target: the hypothalamus.</p>
+                <div class="separator">* * *</div>
 
-                <p>This walnut-sized region has emerged as a central player in migraine pathophysiology<span class="citation">[8]</span>. It regulates circadian rhythms, autonomic function, hormone secretion, and—importantly—pain modulation. Recent imaging studies reveal that the hypothalamus activates <em>before</em> migraine pain begins, during the premonitory phase when patients report fatigue, irritability, yawning, and food cravings.</p>
+                <section class="article-section">
+                    <h2>The Cortisol Hypothesis: Why Relaxation Hurts</h2>
+                    <p>What biological mechanism could explain this paradox? The leading hypothesis centers on cortisol—the primary stress hormone produced by your adrenal glands.</p>
+                    <p>Cortisol serves multiple functions during stress. It mobilizes energy. It sharpens cognition. And critically, <strong>it suppresses pain and inflammation</strong> through well-documented anti-inflammatory pathways.</p>
+                    <p>This creates a temporary protective effect. During periods of high stress, elevated cortisol may mask the neuroinflammatory processes that precede migraine. Your brain is essentially running on its own painkillers.</p>
+                    <p>But cortisol operates on a loan, not a gift.</p>
+                    <p>When stress ends, cortisol levels drop—sometimes precipitously. The anti-inflammatory shield disappears. Pain pathways that were suppressed become active. For a brain already primed for migraine, this withdrawal creates a window of heightened vulnerability.</p>
+                    <p>Research supports this mechanism. A 2020 study published in <em>Cephalalgia Reports</em> found that chronic migraine patients had significantly elevated cortisol levels compared to episodic migraine patients and healthy controls<span class="citation">[5]</span>. More importantly, when chronic migraine patients improved to episodic status, their cortisol levels normalized—suggesting a direct relationship between cortisol dysregulation and migraine burden.</p>
+                </section>
 
-                <p>This timeline is significant. It suggests the hypothalamus doesn't merely respond to migraine. <strong>It may be where migraine initiates.</strong></p>
+                <div class="separator">* * *</div>
 
-                <p>The hypothalamus is obsessively devoted to homeostasis—to maintaining stable internal conditions despite external variation. The migraine brain, researchers increasingly believe, represents an extreme form of this vigilance<span class="citation">[6][7]</span>. It monitors everything: cortisol fluctuations, sleep timing, caffeine levels, glucose availability. And it sounds the alarm—often as a migraine—when patterns deviate.</p>
+                <section class="article-section">
+                    <h2>Three Triggers That Stack on Weekends</h2>
+                    <p>Cortisol withdrawal doesn't act alone. Weekend migraines typically result from multiple triggers occurring simultaneously—a phenomenon researchers call "trigger stacking." Three factors deserve particular attention.</p>
 
-                <p>This framework explains one of the cruelest features of let-down migraine: even positive events trigger attacks<span class="citation">[1][9]</span>. A wedding. A vacation. A long-anticipated celebration. The hypothalamus doesn't distinguish good stress release from bad stress release. It registers only the magnitude of change.</p>
+                    <div class="trigger-card">
+                        <h3>1. Sleep Schedule Disruption</h3>
+                        <p class="claim"><strong>The claim:</strong> Both undersleeping and oversleeping increase migraine risk, but <em>inconsistency</em> may matter more than duration.</p>
+                        <p class="evidence"><strong>The evidence:</strong> Your brain's master circadian clock—the suprachiasmatic nucleus (SCN), a region of approximately 20,000 neurons in the hypothalamus—receives direct input from your retina and coordinates nearly every physiological process on a 24-hour cycle<span class="citation">[6]</span>. Circadian research demonstrates that migraine patients show abnormal chronotype patterns at higher rates than controls, with circadian misalignment correlating with increased attack frequency independent of total sleep hours<span class="citation">[6][7]</span>.</p>
+                        <p class="implication"><strong>The implication:</strong> Sleeping until 10 AM on Saturday after waking at 6:30 AM all week isn't "catching up on rest." It's introducing a 3.5-hour phase shift that your SCN interprets as a form of jet lag. The migraine brain doesn't want more sleep. It wants <em>predictable</em> sleep.</p>
+                    </div>
 
-                <h2>Clinical Recommendations: Working With Your Biology</h2>
+                    <div class="trigger-card">
+                        <h3>2. Caffeine Withdrawal</h3>
+                        <p class="claim"><strong>The claim:</strong> Delayed caffeine intake on weekends produces a withdrawal syndrome that can trigger migraine—even when total daily consumption remains constant.</p>
+                        <p class="evidence"><strong>The evidence:</strong> A study of 151 migraine and tension-type headache patients found that 21.9% experienced weekend attacks<span class="citation">[2]</span>. Weekend headache sufferers consumed significantly more daily caffeine (mean: 734 mg, or roughly 7 cups of coffee) and woke substantially later on weekends. The critical finding: patients who combined both high caffeine intake <em>and</em> delayed weekend waking had a 69% probability of weekend headache. Patients who had only one risk factor? Just 4%<span class="citation">[2]</span>.</p>
+                        <p>A randomized controlled trial adds physiological support<span class="citation">[4]</span>. When migraine patients underwent sudden caffeine withdrawal (replaced with placebo), 7 of 9 participants experienced severe migraine attacks within days. Continued caffeine produced no attacks.</p>
+                        <p class="implication"><strong>The implication:</strong> The vulnerability is not caffeine itself but the timing disruption<span class="citation">[3][10]</span>. If you drink coffee at 7 AM on weekdays and wake at 9 AM on Saturday, your brain has been waiting for caffeine for two additional hours—a delay sufficient to trigger withdrawal in dependent individuals.</p>
+                    </div>
 
-                <p>Understanding the let-down mechanism suggests specific, evidence-informed strategies. The goal is not to eliminate stress or relaxation but to <strong>reduce the amplitude of transitions</strong> between the two states.</p>
+                    <div class="trigger-card">
+                        <h3>3. Meal Timing Shifts</h3>
+                        <p class="claim"><strong>The claim:</strong> The hypothalamus tracks meal timing independently of caloric intake, and delays can function as migraine triggers.</p>
+                        <p class="evidence"><strong>The evidence:</strong> The hypothalamus regulates not only circadian rhythm but also hunger, satiety, and metabolic homeostasis<span class="citation">[8]</span>. Imaging studies show altered hypothalamic activation during the premonitory phase of migraine—the hours before pain begins—often accompanied by food cravings. Skipped or delayed meals are consistently reported among the top migraine triggers in patient surveys.</p>
+                        <p class="implication"><strong>The implication:</strong> Weekend brunch at 11 AM instead of breakfast at 7 AM may register to your hypothalamus as a four-hour fast—regardless of how much you eat afterward. The migraine brain interprets schedule deviation as metabolic stress.</p>
+                    </div>
+                </section>
 
-                <div class="warning-box">
-                    <h4>Important Note</h4>
-                    <p>These recommendations are based on research findings and personal experience. They are not medical prescriptions. Please discuss any changes to your migraine management plan with your healthcare provider.</p>
-                </div>
+                <div class="separator">* * *</div>
 
-                <div class="recommendations">
+                <section class="article-section">
+                    <h2>The Hypothalamus: Where It All Converges</h2>
+                    <p>All three weekend triggers—sleep disruption, caffeine withdrawal, and meal timing shifts—share a common neuroanatomical target: the hypothalamus.</p>
+                    <p>This walnut-sized region has emerged as a central player in migraine pathophysiology<span class="citation">[8]</span>. It regulates circadian rhythms, autonomic function, hormone secretion, and—importantly—pain modulation. Recent imaging studies reveal that the hypothalamus activates <em>before</em> migraine pain begins, during the premonitory phase when patients report fatigue, irritability, yawning, and food cravings.</p>
+                    <p>This timeline is significant. It suggests the hypothalamus doesn't merely respond to migraine. <strong>It may be where migraine initiates.</strong></p>
+                    <p>The hypothalamus is obsessively devoted to homeostasis—to maintaining stable internal conditions despite external variation. The migraine brain, researchers increasingly believe, represents an extreme form of this vigilance<span class="citation">[6][7]</span>. It monitors everything: cortisol fluctuations, sleep timing, caffeine levels, glucose availability. And it sounds the alarm—often as a migraine—when patterns deviate.</p>
+                    
+                    <div class="highlight-box">
+                        <p>This framework explains one of the cruelest features of let-down migraine: even positive events trigger attacks. A wedding. A vacation. A long-anticipated celebration. The hypothalamus doesn't distinguish good stress release from bad stress release. It registers only the magnitude of change.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>Clinical Recommendations: Working With Your Biology</h2>
+                    <p>Understanding the let-down mechanism suggests specific, evidence-informed strategies. The goal is not to eliminate stress or relaxation but to <strong>reduce the amplitude of transitions</strong> between the two states.</p>
+
+                    <div class="warning-box" style="background: rgba(251, 191, 36, 0.08); border-color: rgba(251, 191, 36, 0.3);">
+                        <h4 style="color: #fbbf24;">⚠️ Important Note</h4>
+                        <p style="color: #fcd34d; margin: 0;">These recommendations are based on research findings and personal experience. They are not medical prescriptions. Please discuss any changes to your migraine management plan with your healthcare provider.</p>
+                    </div>
+
                     <div class="recommendation-item">
                         <h4>1. Distribute Relaxation Throughout the Week</h4>
                         <p class="rationale"><strong>Rationale:</strong> Avoid the sharp cortisol cliff by preventing stress from accumulating to extreme levels<span class="citation">[5]</span>.</p>
@@ -679,7 +733,7 @@
                     <div class="recommendation-item">
                         <h4>3. Standardize Caffeine Timing</h4>
                         <p class="rationale"><strong>Rationale:</strong> Caffeine withdrawal begins when habituated intake is delayed, not when it's reduced<span class="citation">[2][4]</span>.</p>
-                        <p class="implementation"><strong>Implementation:</strong> Consume caffeine at the same time daily—including weekends<span class="citation">[10]</span>. Consider keeping total intake below 200 mg (approximately two cups of coffee) to reduce dependence severity<span class="citation">[3]</span>. If you wake later on weekends, consume caffeine immediately upon waking rather than at your weekday time.</p>
+                        <p class="implementation"><strong>Implementation:</strong> Consume caffeine at the same time daily—including weekends<span class="citation">[10]</span>. Consider keeping total intake below 200 mg (approximately two cups of coffee) to reduce dependence severity<span class="citation">[3]</span>. If you wake later on weekends, consume caffeine immediately upon waking.</p>
                     </div>
 
                     <div class="recommendation-item">
@@ -693,51 +747,52 @@
                         <p class="rationale"><strong>Rationale:</strong> If the hypothalamus activates before pain begins, early intervention may abort or reduce attack severity<span class="citation">[8]</span>.</p>
                         <p class="implementation"><strong>Implementation:</strong> Learn to recognize your prodromal symptoms—unusual fatigue, yawning, food cravings, neck stiffness, mood changes. These often precede pain by hours and may signal a window for preemptive treatment.</p>
                     </div>
-                </div>
+                </section>
 
-                <h2>When to Consult a Healthcare Provider</h2>
+                <div class="separator">* * *</div>
 
-                <div class="warning-box">
-                    <h4>Seek Medical Evaluation If You Experience:</h4>
-                    <ul>
-                        <li>Sudden, severe headache unlike any you've had before</li>
-                        <li>Headache with fever, stiff neck, confusion, or vision changes</li>
-                        <li>Headache following head injury</li>
-                        <li>New headache patterns after age 50</li>
-                        <li>Migraines that significantly interfere with daily functioning</li>
-                        <li>Need for acute medication more than twice per week</li>
-                        <li>Current treatments that aren't providing adequate relief</li>
-                    </ul>
-                </div>
+                <section class="article-section">
+                    <h2>When to Consult a Healthcare Provider</h2>
+                    <div class="warning-box">
+                        <h4>Seek Medical Evaluation If You Experience:</h4>
+                        <ul>
+                            <li>Sudden, severe headache unlike any you've had before</li>
+                            <li>Headache with fever, stiff neck, confusion, or vision changes</li>
+                            <li>Headache following head injury</li>
+                            <li>New headache patterns after age 50</li>
+                            <li>Migraines that significantly interfere with daily functioning</li>
+                            <li>Need for acute medication more than twice per week</li>
+                            <li>Current treatments that aren't providing adequate relief</li>
+                        </ul>
+                    </div>
+                </section>
 
-                <h2>Addressing the Obvious Objection</h2>
+                <section class="article-section">
+                    <h2>Addressing the Obvious Objection</h2>
+                    <p>At this point, a reasonable reader might object: <em>"You're asking me to never relax, never sleep in, never vary my routine. That's not living—that's imprisonment."</em></p>
+                    <p>The objection is valid. And it points to a deeper truth about migraine management.</p>
+                    <p>The goal is not perfect consistency. Perfect consistency is impossible and, pursued obsessively, becomes its own source of stress. The goal is <strong>informed flexibility</strong>—understanding which variables carry the most risk, and managing them strategically when circumstances allow.</p>
+                    <p>Not every weekend requires military-precision scheduling. But the weekend after a particularly stressful week? The Saturday of a long-awaited vacation? The morning after a major deadline? Those are the high-risk moments when attention to routine pays dividends.</p>
+                    
+                    <div class="highlight-box">
+                        <p>The let-down effect operates primarily in the first 6–18 hours after stress decline. If you can smooth the transition during that window—maintaining wake time, caffeine timing, and meal schedule through Saturday morning—you've navigated the period of greatest vulnerability.</p>
+                    </div>
+                </section>
 
-                <p>At this point, a reasonable reader might object: <em>"You're asking me to never relax, never sleep in, never vary my routine. That's not living—that's imprisonment."</em></p>
+                <div class="separator">* * *</div>
 
-                <p>The objection is valid. And it points to a deeper truth about migraine management.</p>
+                <section class="article-section">
+                    <h2>Reframing the Migraine Brain</h2>
+                    <p>After 30 years of living with this condition, here's what I've come to understand:</p>
+                    <p>The migraine brain is not broken. It is not weak. It is <strong>hypersensitive to change</strong>—and that hypersensitivity, in evolutionary terms, may once have been adaptive. A brain that monitors its environment with extreme vigilance, that sounds alarms at the first sign of instability, might have conferred survival advantages in unpredictable ancestral environments.</p>
+                    <p>Today, that vigilance has become maladaptive. We live in a world of constant change—shifting schedules, variable sleep, irregular meals, oscillating stress. The migraine brain responds to modern life the only way it knows how: by sounding the alarm.</p>
+                    <p>Understanding this doesn't make the pain disappear. But it transforms the relationship. The migraine isn't a random punishment. It's a signal—often an accurate one—that something in your internal environment has shifted too fast.</p>
+                    <p>You can argue with that signal. Or you can learn its language.</p>
+                </section>
 
-                <p>The goal is not perfect consistency. Perfect consistency is impossible and, pursued obsessively, becomes its own source of stress. The goal is <strong>informed flexibility</strong>—understanding which variables carry the most risk, and managing them strategically when circumstances allow.</p>
-
-                <p>Not every weekend requires military-precision scheduling. But the weekend after a particularly stressful week? The Saturday of a long-awaited vacation? The morning after a major deadline? Those are the high-risk moments when attention to routine pays dividends.</p>
-
-                <p>And here's the encouraging finding from the Montefiore study: the let-down effect operates primarily in the first 6–18 hours after stress decline<span class="citation">[1]</span>. If you can smooth the transition during that window—maintaining wake time, caffeine timing, and meal schedule through Saturday morning—you've navigated the period of greatest vulnerability. The rest of the weekend carries lower risk.</p>
-
-                <h2>Reframing the Migraine Brain</h2>
-
-                <p>After 30 years of living with this condition, here's what I've come to understand:</p>
-
-                <p>The migraine brain is not broken. It is not weak. It is <strong>hypersensitive to change</strong>—and that hypersensitivity, in evolutionary terms, may once have been adaptive. A brain that monitors its environment with extreme vigilance, that sounds alarms at the first sign of instability, might have conferred survival advantages in unpredictable ancestral environments.</p>
-
-                <p>Today, that vigilance has become maladaptive. We live in a world of constant change—shifting schedules, variable sleep, irregular meals, oscillating stress. The migraine brain responds to modern life the only way it knows how: by sounding the alarm.</p>
-
-                <p>Understanding this doesn't make the pain disappear. But it transforms the relationship. The migraine isn't a random punishment. It's a signal—often an accurate one—that something in your internal environment has shifted too fast.</p>
-
-                <p>You can argue with that signal. Or you can learn its language.</p>
-
-                <div class="closing-narrative">
+                <div class="quote-box" style="text-align: center; margin: 48px 0;">
                     <p>It's Saturday morning. You've survived the week. But this time, you set an alarm—only 30 minutes later than usual. You get up, drink your coffee at the regular time, eat a small breakfast. You relax, but gently. Progressively. No cliff, just a gradual slope.</p>
-                    <p>The throb doesn't come.</p>
-                    <p>For once, you've earned your rest—and kept it.</p>
+                    <p style="margin-top: 16px; margin-bottom: 0;">The throb doesn't come. For once, you've earned your rest—and kept it.</p>
                 </div>
 
                 <div class="takeaways">
@@ -752,7 +807,7 @@
                     </ul>
                 </div>
 
-                <div class="references">
+                <div class="references-section">
                     <h2>References</h2>
                     <ol>
                         <li>Lipton RB, Buse DC, Hall CB, et al. Reduction in perceived stress as a migraine trigger: Testing the "let-down headache" hypothesis. <em>Neurology</em>. 2014;82(16):1395-1401. <a href="https://pubmed.ncbi.nlm.nih.gov/24670889/" target="_blank">PubMed</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4001194/" target="_blank">PMC Full Text</a></li>
@@ -768,31 +823,36 @@
                     </ol>
                 </div>
 
-                <div class="author-box">
-                    <h3>About the Author</h3>
-                    <p>This article was written by someone who has lived with migraine for 30 years. The author is not a medical professional and does not claim medical expertise. The perspective offered here combines decades of personal experience navigating migraine triggers with a careful review of peer-reviewed research.</p>
-                    <ul>
-                        <li>30 years of lived experience with migraine</li>
-                        <li>Personal experimentation with trigger identification and management</li>
-                        <li>Independent research into published medical literature</li>
-                        <li>No formal medical training or certification</li>
-                    </ul>
-                    <p><strong>Conflict of Interest Statement:</strong> The author has no financial relationships with any pharmaceutical companies, supplement manufacturers, or healthcare institutions.</p>
+                <p class="disclaimer">This article is for informational purposes only and does not constitute medical advice. Migraine management should be discussed with qualified healthcare professionals.</p>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator & Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime, often with only 8 hours of electricity per day. Believes that chronic pain doesn't mean chronic limitation.</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Track Your Weekend Patterns with Mi</h3>
+                        <p>Mi helps you identify your personal triggers and see patterns before they become attacks.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
                 </div>
+
             </div>
         </article>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="blog.html">Blog</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <p>© 2026 Migraine Companion. Made with 💜 for the migraine community.</p>
+        <div class="container">
+            <p class="copyright">© 2026 MIgraine Companion. Made with 💜 in Ukraine.</p>
         </div>
     </footer>
 </body>
