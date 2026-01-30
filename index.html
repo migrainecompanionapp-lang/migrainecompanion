@@ -11,7 +11,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-0KRM61SRSJ');
 </script>
     <meta name="description" content="Track migraines with Mi, your gentle companion. AI-powered predictions, food trigger detection, mood tracking — built on narrative therapy. No judgment, just understanding. Free migraine diary app for iOS &amp; Android.">
@@ -114,7 +113,8 @@
         .download-btn.disabled:hover{transform:none;box-shadow:none;background:rgba(255,255,255,.05)}
         .poetry{min-height:550px;text-align:center;background:var(--charcoal);position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding-bottom:70px;z-index:2}
         .poetry::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-size:contain;background-position:center top;background-repeat:no-repeat;opacity:.85;z-index:0}
-        .poetry::after{content:'';position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(to top,var(--charcoal) 0%,transparent 100%);z-index:1}
+        .poetry::after{content:'';position:absolute;left:0;right:0;bottom:0;height:250px;background:linear-gradient(to top,var(--charcoal) 0%,transparent 100%);z-index:1}
+        .poetry-2::after,.poetry-3::after{background:linear-gradient(to top,var(--malachite) 0%,transparent 100%)}
         .poetry-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.65rem;font-style:italic;font-weight:500;color:#fff;max-width:650px;margin:0 auto;line-height:1.85;position:relative;z-index:2;text-shadow:0 2px 20px rgba(0,0,0,.9),0 0 40px rgba(0,0,0,.7);padding:0 24px;opacity:0;animation:fadeInBlur 1.5s ease-out forwards;animation-delay:.5s}
         @keyframes fadeInBlur{0%{opacity:0;filter:blur(10px)}100%{opacity:1;filter:blur(0)}}
         .poetry-1::before{background-image:url('images/mi-garden.png')}
@@ -159,7 +159,7 @@
         .step-icon{font-size:3.2rem;margin-bottom:22px;display:block;filter:drop-shadow(0 4px 12px rgba(213,176,105,.3))}
         .step-card h3{font-size:1.45rem;font-weight:700;letter-spacing:.1px;color:#fff;margin-bottom:14px}
         .step-card p{font-size:1.02rem;font-weight:500;line-height:1.7;color:var(--text)}
-        .different{background:var(--malachite)}
+        .different{background:linear-gradient(to bottom,var(--malachite) 0%,var(--malachite) 85%,var(--charcoal) 100%)}
         .therapy-grid{display:flex;flex-wrap:wrap;gap:28px;justify-content:center}
         .therapy-card{flex:0 1 calc(33.333% - 19px);min-width:280px;background:rgba(255,255,255,.03)!important;backdrop-filter:blur(15px);border:1px solid rgba(139,122,168,.15)!important;border-radius:40px;padding:36px 32px;transition:all .6s cubic-bezier(.23,1,.32,1);box-shadow:0 10px 40px rgba(0,0,0,.2)}
         .therapy-card:hover{border-color:var(--gold)!important;transform:translateY(-8px) scale(1.01);background:rgba(139,122,168,.08)!important;box-shadow:0 20px 50px rgba(0,0,0,.3)}
@@ -168,7 +168,7 @@
         .therapy-note{text-align:center;margin-top:56px;padding:28px 32px;background:rgba(255,255,255,.03);backdrop-filter:blur(15px);border-radius:18px;border:1px solid rgba(197,160,89,.2)}
         .therapy-note p{font-size:1rem;font-weight:500;line-height:1.7;color:var(--text)}
         .therapy-note strong{font-weight:700;color:var(--antique-gold)}
-        .science{background:var(--malachite)}
+        .science{background:linear-gradient(to bottom,var(--malachite) 0%,var(--malachite) 85%,var(--charcoal) 100%)}
         .science-content{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
         .science-text h2{font-size:2.2rem;font-weight:500;line-height:1.2;margin-bottom:28px}
         .science-text p{font-size:1.02rem;font-weight:500;line-height:1.8;margin-bottom:20px;color:var(--text)}
@@ -198,7 +198,7 @@
         .factor-detail strong{font-size:.9rem;font-weight:600;color:#fff}
         .factor-detail span{font-size:.85rem;font-weight:500;line-height:1.5;color:var(--text-dark)}
         .factor-detail.critical strong{color:var(--antique-gold)}
-        .features{background:var(--charcoal)}
+        .features{background:linear-gradient(to bottom,var(--charcoal) 0%,var(--charcoal) 85%,var(--malachite) 100%)}
         .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px}
         .feature-card{background:rgba(255,255,255,.03)!important;backdrop-filter:blur(15px);border:1px solid rgba(139,122,168,.12)!important;border-radius:40px;padding:32px 28px;transition:all .6s cubic-bezier(.23,1,.32,1);box-shadow:0 10px 40px rgba(0,0,0,.2)}
         .feature-card:hover{border-color:var(--gold)!important;transform:translateY(-8px) scale(1.01);background:rgba(139,122,168,.08)!important;box-shadow:0 20px 50px rgba(0,0,0,.3)}
@@ -249,18 +249,8 @@
         .mouse-glow.active{opacity:1}
         .fireflies{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:3;overflow:hidden}
         .firefly{position:absolute;background:#FFFBEA;border-radius:50%;opacity:0;box-shadow:0 0 4px 1px #FFD700,0 0 12px 3px var(--gold),0 0 25px 8px rgba(139,122,168,0.4);transition:transform 0.15s ease-out}
-        @keyframes firefly-float{
-            0%,100%{opacity:0;transform:translate(0,0) scale(1)}
-            10%{opacity:0.8}
-            30%{opacity:0.4;transform:translate(var(--move-x),var(--move-y)) scale(1.1)}
-            50%{opacity:0.9;transform:translate(calc(var(--move-x) * 0.5),calc(var(--move-y) * 1.5)) scale(0.9)}
-            70%{opacity:0.3;transform:translate(calc(var(--move-x) * -0.3),calc(var(--move-y) * 0.8)) scale(1.2)}
-            90%{opacity:0.7}
-        }
-        @keyframes title-glow{
-            0%,100%{text-shadow:0 0 15px rgba(197,160,89,0.3)}
-            50%{text-shadow:0 0 25px rgba(197,160,89,0.6)}
-        }
+        @keyframes firefly-float{0%,100%{opacity:0;transform:translate(0,0) scale(1)}10%{opacity:0.8}30%{opacity:0.4;transform:translate(var(--move-x),var(--move-y)) scale(1.1)}50%{opacity:0.9;transform:translate(calc(var(--move-x) * 0.5),calc(var(--move-y) * 1.5)) scale(0.9)}70%{opacity:0.3;transform:translate(calc(var(--move-x) * -0.3),calc(var(--move-y) * 0.8)) scale(1.2)}90%{opacity:0.7}}
+        @keyframes title-glow{0%,100%{text-shadow:0 0 15px rgba(197,160,89,0.3)}50%{text-shadow:0 0 25px rgba(197,160,89,0.6)}}
         .fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
         .fade-in.visible{opacity:1;transform:translateY(0)}
         .fade-in-delay-1{transition-delay:.1s}
@@ -755,7 +745,7 @@
         const nextArrow = document.querySelector('.carousel-arrow.next');
         
         if (screenshotsGrid && prevArrow && nextArrow) {
-            const scrollAmount = 308; // card width (280) + gap (28)
+            const scrollAmount = 308;
             
             function updateArrowsVisibility() {
                 const scrollLeft = screenshotsGrid.scrollLeft;
@@ -775,25 +765,15 @@
             }
             
             prevArrow.addEventListener('click', function() {
-                screenshotsGrid.scrollBy({
-                    left: -scrollAmount,
-                    behavior: 'smooth'
-                });
+                screenshotsGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             });
             
             nextArrow.addEventListener('click', function() {
-                screenshotsGrid.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
+                screenshotsGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
             
             screenshotsGrid.addEventListener('scroll', updateArrowsVisibility);
-            
-            // Initial check
             updateArrowsVisibility();
-            
-            // Recheck on window resize
             window.addEventListener('resize', updateArrowsVisibility);
         }
         
@@ -811,10 +791,7 @@
             firefly.style.height = size + 'px';
             
             const isBottom = Math.random() < 0.7;
-            const topPosition = isBottom 
-                ? 50 + Math.random() * 50
-                : Math.random() * 50;
-            
+            const topPosition = isBottom ? 50 + Math.random() * 50 : Math.random() * 50;
             const leftPosition = Math.random() * 100;
             
             firefly.style.top = topPosition + '%';
