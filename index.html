@@ -77,7 +77,7 @@
         .container{max-width:1100px;margin:0 auto;padding:0 24px}
         header{padding:16px 0;position:fixed;width:100%;top:0;z-index:100;background:rgba(35,45,40,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,122,168,.2)}
         .header-content{display:flex;justify-content:space-between;align-items:center}
-        .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none;white-space:nowrap;margin-right:24px}
+        .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none;white-space:nowrap}
         .logo img{width:36px;height:36px;border-radius:8px}
         .logo em{color:var(--lavender);font-style:normal}
         .nav{display:flex;gap:18px;align-items:center}
@@ -112,12 +112,6 @@
         .download-btn:hover:not(.disabled) .btn-text strong{color:var(--malachite-dark)}
         .download-btn.disabled{opacity:.4;cursor:not-allowed;filter:grayscale(1)}
         .download-btn.disabled:hover{transform:none;box-shadow:none;background:rgba(255,255,255,.05)}
-        .mystic-separator{position:relative;height:250px;margin-top:-150px;margin-bottom:-2px;overflow:visible;z-index:5;pointer-events:none}
-        .mystic-separator::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,rgba(22,24,28,.2) 20%,rgba(22,24,28,.6) 50%,var(--charcoal) 100%);-webkit-mask-image:radial-gradient(ellipse 120% 100% at 50% 100%,black 60%,transparent 100%);mask-image:radial-gradient(ellipse 120% 100% at 50% 100%,black 60%,transparent 100%)}
-.mystic-separator::after{content:'';position:absolute;bottom:15%;left:50%;transform:translateX(-50%);width:160%;height:120px;background:radial-gradient(ellipse at center,rgba(197,160,89,.3) 0%,rgba(139,122,168,.15) 35%,transparent 70%);filter:blur(45px);opacity:.5;animation:mystic-breath 10s ease-in-out infinite alternate}
-.mystic-separator.to-green::before{background:linear-gradient(to bottom,transparent 0%,rgba(45,61,53,.2) 20%,rgba(45,61,53,.6) 50%,var(--malachite) 100%)}
-.mystic-separator.to-green::after{background:radial-gradient(ellipse at center,rgba(139,122,168,.25) 0%,rgba(197,160,89,.1) 40%,transparent 70%)}
-@keyframes mystic-breath{0%{opacity:.35;transform:translateX(-50%) scale(1)}100%{opacity:.6;transform:translateX(-50%) scale(1.08)}}
         .poetry{min-height:550px;text-align:center;background:var(--charcoal);position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding-bottom:70px;z-index:2}
         .poetry::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-size:contain;background-position:center top;background-repeat:no-repeat;opacity:.85;z-index:0}
         .poetry::after{content:'';position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(to top,var(--charcoal) 0%,transparent 100%);z-index:1}
@@ -312,7 +306,6 @@
             .mouse-glow{display:none}
             .screenshots-wrapper{padding:0}
             .carousel-arrow{display:none}
-            .mystic-separator{height:80px;margin-top:-40px}
         }
         @media (max-width:600px){.therapy-card{flex:0 1 100%}}
     </style>
@@ -358,7 +351,6 @@
                 </div>
             </div>
         </section>
-        <div class="mystic-separator"></div>
         <section class="poetry poetry-1">
             <p class="poetry-text">In the Mystic Garden, Mi waits for you.<br>Not to track. Not to judge.<br>Just to understand.</p>
         </section>
@@ -419,7 +411,6 @@
         <section class="poetry poetry-2">
             <p class="poetry-text">"The problem is the problem.<br>The person is not the problem."<br><span style="font-size:.85em;opacity:.8">— Michael White, co-founder of narrative therapy</span></p>
         </section>
-        <div class="mystic-separator to-green"></div>
         <section class="different" id="different">
             <div class="container">
                 <h2 class="section-title fade-in">What Makes Us Different</h2>
@@ -434,11 +425,9 @@
                 <div class="therapy-note fade-in"><p>Based on narrative therapy developed by <strong>Michael White</strong> and <strong>David Epston</strong> — a scientifically validated approach used for chronic pain, depression, and anxiety for over <strong>40 years</strong>. You don't need a therapist to benefit. Mi is with you, in your pocket, ready whenever you need.</p></div>
             </div>
         </section>
-        <div class="mystic-separator"></div>
         <section class="poetry poetry-3">
             <p class="poetry-text">Mi whispers: "I see the storm coming.<br>Let's prepare together."</p>
         </section>
-        <div class="mystic-separator to-green"></div>
         <section class="science" id="science">
             <div class="container">
                 <div class="science-content">
@@ -584,7 +573,6 @@
                 </div>
             </div>
         </section>
-        <div class="mystic-separator"></div>
         <section class="poetry poetry-4">
             <p class="poetry-text">Where others see charts, Mi sees your story.<br>Where others count attacks, Mi counts peaceful days.</p>
         </section>
@@ -608,7 +596,6 @@
                 </div>
             </div>
         </section>
-        <div class="mystic-separator to-green"></div>
         <section class="creator-story" id="story">
             <div class="container">
                 <div class="story-wrapper">
