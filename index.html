@@ -112,6 +112,11 @@
         .download-btn:hover:not(.disabled) .btn-text strong{color:var(--malachite-dark)}
         .download-btn.disabled{opacity:.4;cursor:not-allowed;filter:grayscale(1)}
         .download-btn.disabled:hover{transform:none;box-shadow:none;background:rgba(255,255,255,.05)}
+        .mystic-separator{position:relative;height:120px;margin-top:-60px;margin-bottom:-2px;overflow:hidden;z-index:10;pointer-events:none}
+        .mystic-separator::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,transparent 0%,rgba(22,24,28,.3) 30%,rgba(22,24,28,.7) 60%,var(--charcoal) 100%)}
+        .mystic-separator::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:140%;height:80px;background:radial-gradient(ellipse at center,rgba(197,160,89,.25) 0%,rgba(139,122,168,.15) 40%,transparent 70%);filter:blur(25px);opacity:.6;animation:mystic-pulse 8s ease-in-out infinite alternate}
+        .mystic-separator.to-green::before{background:linear-gradient(to bottom,transparent 0%,rgba(45,61,53,.3) 30%,rgba(45,61,53,.7) 60%,var(--malachite) 100%)}
+        @keyframes mystic-pulse{0%{opacity:.4}100%{opacity:.7}}
         .poetry{min-height:550px;text-align:center;background:var(--charcoal);position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding-bottom:70px;z-index:2}
         .poetry::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-size:contain;background-position:center top;background-repeat:no-repeat;opacity:.85;z-index:0}
         .poetry::after{content:'';position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(to top,var(--charcoal) 0%,transparent 100%);z-index:1}
@@ -306,6 +311,7 @@
             .mouse-glow{display:none}
             .screenshots-wrapper{padding:0}
             .carousel-arrow{display:none}
+            .mystic-separator{height:80px;margin-top:-40px}
         }
         @media (max-width:600px){.therapy-card{flex:0 1 100%}}
     </style>
@@ -351,6 +357,7 @@
                 </div>
             </div>
         </section>
+        <div class="mystic-separator"></div>
         <section class="poetry poetry-1">
             <p class="poetry-text">In the Mystic Garden, Mi waits for you.<br>Not to track. Not to judge.<br>Just to understand.</p>
         </section>
@@ -411,6 +418,7 @@
         <section class="poetry poetry-2">
             <p class="poetry-text">"The problem is the problem.<br>The person is not the problem."<br><span style="font-size:.85em;opacity:.8">— Michael White, co-founder of narrative therapy</span></p>
         </section>
+        <div class="mystic-separator to-green"></div>
         <section class="different" id="different">
             <div class="container">
                 <h2 class="section-title fade-in">What Makes Us Different</h2>
@@ -425,9 +433,11 @@
                 <div class="therapy-note fade-in"><p>Based on narrative therapy developed by <strong>Michael White</strong> and <strong>David Epston</strong> — a scientifically validated approach used for chronic pain, depression, and anxiety for over <strong>40 years</strong>. You don't need a therapist to benefit. Mi is with you, in your pocket, ready whenever you need.</p></div>
             </div>
         </section>
+        <div class="mystic-separator"></div>
         <section class="poetry poetry-3">
             <p class="poetry-text">Mi whispers: "I see the storm coming.<br>Let's prepare together."</p>
         </section>
+        <div class="mystic-separator to-green"></div>
         <section class="science" id="science">
             <div class="container">
                 <div class="science-content">
@@ -573,6 +583,7 @@
                 </div>
             </div>
         </section>
+        <div class="mystic-separator"></div>
         <section class="poetry poetry-4">
             <p class="poetry-text">Where others see charts, Mi sees your story.<br>Where others count attacks, Mi counts peaceful days.</p>
         </section>
@@ -596,6 +607,7 @@
                 </div>
             </div>
         </section>
+        <div class="mystic-separator to-green"></div>
         <section class="creator-story" id="story">
             <div class="container">
                 <div class="story-wrapper">
