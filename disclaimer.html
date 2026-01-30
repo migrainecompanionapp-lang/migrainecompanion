@@ -14,16 +14,19 @@
         *{margin:0;padding:0;box-sizing:border-box}
         :root{--malachite:#2D3D35;--malachite-light:#3D4D45;--malachite-dark:#232D28;--charcoal:#16181C;--charcoal-light:#1B1E24;--lavender:#8b7aa8;--gold:#C5A059;--antique-gold:#D5B069;--text:#BDBDBD;--text-light:#9E9E9E;--text-dark:#757575;--paper:#F0EAD6}
         body{font-family:'Inter',-apple-system,sans-serif;background:radial-gradient(circle at 50% 20%,#3D4D45 0%,#16181C 80%);background-attachment:fixed;color:#fff;min-height:100vh;line-height:1.6;overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased}
+        body.menu-open{overflow:hidden}
         html{scroll-behavior:smooth}
         .container{max-width:900px;margin:0 auto;padding:0 24px}
         header{padding:16px 0;position:fixed;width:100%;top:0;z-index:100;background:rgba(35,45,40,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,122,168,.2)}
         .header-content{display:flex;justify-content:space-between;align-items:center}
-        .logo{display:flex;align-items:center;gap:10px;font-size:1.3rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none}
+        .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none;white-space:nowrap}
         .logo img{width:36px;height:36px;border-radius:8px}
         .logo em{color:var(--lavender);font-style:normal}
-        .nav{display:flex;gap:28px;align-items:center}
-        .nav a{color:var(--text-light);text-decoration:none;font-size:.9rem;font-weight:500;letter-spacing:.1px;transition:color .3s}
+        .nav{display:flex;gap:18px;align-items:center}
+        .nav a{color:var(--text-light);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.1px;transition:color .3s;white-space:nowrap}
         .nav a:hover{color:var(--lavender)}
+        .nav-cta{background:transparent;border:1.5px solid var(--gold)!important;padding:6px 14px;border-radius:10px;color:var(--gold)!important;font-weight:700;letter-spacing:.3px;transition:all .3s ease;text-transform:uppercase;font-size:.75rem!important}
+        .nav-cta:hover{background:var(--gold);color:var(--malachite-dark)!important;box-shadow:0 0 20px rgba(197,160,89,.4);transform:translateY(-1px)}
         .mobile-menu-btn{display:none;background:0 0;border:none;color:var(--lavender);font-size:1.5rem;cursor:pointer}
         .page-header{padding:140px 0 80px;text-align:center}
         .page-title{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:500;line-height:1.2;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);text-shadow:0 0 15px rgba(197,160,89,.3);margin-bottom:16px}
@@ -59,11 +62,15 @@
         .footer-links a:hover{color:var(--lavender)}
         .copyright{font-size:.88rem;font-weight:400;color:var(--text-dark)}
         @media (max-width:768px){
-            .nav{display:none}
+            .nav{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(35,45,40,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:20px;gap:0;border-bottom:1px solid rgba(139,122,168,0.2);box-shadow:0 10px 30px rgba(0,0,0,0.5);z-index:99}
+            .nav.mobile-menu-active{display:flex}
+            .nav a{padding:12px 0;border-bottom:1px solid rgba(139,122,168,0.1);display:block;width:100%;font-size:.9rem}
+            .nav a:last-child{border-bottom:none}
             .mobile-menu-btn{display:block}
             .page-title{font-size:2.2rem}
             .disclaimer-card{padding:32px 24px}
             .alert-box{padding:20px 24px}
+            .footer-content{flex-direction:column;text-align:center}
         }
     </style>
 </head>
@@ -80,7 +87,9 @@
                 <a href="index.html#story">Story</a>
                 <a href="blog.html">Blog</a>
                 <a href="faq.html">FAQ</a>
+                <a href="collaborate.html">Collaborate</a>
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
+                <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="nav-cta" target="_blank">Download</a>
             </nav>
             <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
         </div>
@@ -277,8 +286,28 @@
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <p style="color:#555;font-size:0.85rem;font-weight:500;">© 2026 MIgraine Companion. Made with 💜 in Ukraine.</p>
+            <p class="copyright">© 2025 MIgraine Companion. Made with 💜 in Ukraine.</p>
         </div>
     </footer>
+
+    <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    
+    if (mobileMenuBtn && nav) {
+        mobileMenuBtn.addEventListener('click', function() {
+            nav.classList.toggle('mobile-menu-active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('mobile-menu-active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+    }
+    </script>
 </body>
 </html>
