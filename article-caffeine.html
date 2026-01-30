@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coffee can trigger migraines — and also relieve them. Unravel the science behind this paradox and find your personal caffeine balance.">
+    <meta name="author" content="Rustam Iuldashov">
+    <title>The Caffeine Paradox: Friend, Foe, or Both? | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.95rem;
+        }
+        
+        .data-table th {
+            background: rgba(139, 122, 168, 0.15);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--lavender);
+        }
+        
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+            color: var(--text);
+        }
+        
+        .data-table tr:hover {
+            background: rgba(139, 122, 168, 0.05);
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        
+        .references ol {
+            padding-left: 20px;
+        }
+        
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        .medical-disclaimer {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 16px 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .data-table { font-size: 0.85rem; }
+            .data-table th, .data-table td { padding: 8px 12px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/article-caffeine.png" alt="Mi contemplating a coffee cup at dawn">
+            <div class="article-header">
+                <span class="article-tag">Triggers & Science</span>
+                <h1>The Caffeine Paradox</h1>
+                <p class="article-subtitle">Coffee can trigger migraines — and also relieve them. Unravel the science behind this paradox.</p>
+                <div class="article-meta">
+                    <span>📅 January 30, 2026</span>
+                    <span>⏱ 6 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+                
+                <!-- AUTHOR BYLINE -->
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: January 30, 2026
+                    </p>
+                </div>
+                
+                <!-- MEDICAL DISCLAIMER -->
+                <p class="medical-disclaimer">
+                    This article is for educational purposes only and does not constitute medical advice. 
+                    All claims are supported by peer-reviewed research. For personalized recommendations, consult your healthcare provider.
+                </p>
+
+                <section class="article-section">
+                    <h2>6:47 AM. The Kitchen. A Decision.</h2>
+                    <p>You stand before the coffee maker. Your head throbs — not quite a migraine, but that familiar warning pressure behind your left eye. The doctor said cut back on caffeine. Your mother swears by a strong cup at the first sign of trouble. The internet offers seventeen contradictory opinions.</p>
+                    <p>You reach for the mug. You hesitate.</p>
+                    <p>This moment — this tiny daily decision — affects over one billion migraine sufferers worldwide. And almost everyone is asking the wrong question.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Wrong Question (And the Right One)</h2>
+                    <p>Most migraine articles ask: "Is caffeine good or bad?"</p>
+                    <p>Wrong question. Binary. Useless.</p>
+                    <p>The right question: <strong>"What is caffeine doing in MY brain, at THIS dose, at THIS moment?"</strong></p>
+                    <p>Here's what makes this question so difficult to answer: caffeine can both cause and cure the same headache. Scientists call this the Caffeine Paradox.<sup>[1]</sup> It sounds like contradiction. It's actually biology.</p>
+                    <p>Understanding why requires a journey into molecular machinery most people never see. What you'll discover there might change your morning routine forever.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Beautiful Theory That Wasn't Quite Right</h2>
+                    <p>For decades, the explanation seemed elegant:</p>
+                    <p>Migraines happen when blood vessels in the brain expand. Caffeine constricts blood vessels. Therefore, caffeine helps.</p>
+                    <p>Simple. Logical. Partially true.</p>
+                    <p>This vascular hypothesis explained why Excedrin contains caffeine. Why emergency rooms sometimes administered it intravenously. Why your grandmother's "strong coffee cure" actually worked — sometimes.</p>
+                    <p>But the theory had holes you could drive a truck through:</p>
+                    <p>Why does the same cup help one person and devastate another? Why does stopping caffeine trigger attacks? Why do some people react to doses so tiny they shouldn't matter?</p>
+                    <p>The answers came in 2017, when researchers published a landmark paper in <em>Physiological Reviews</em>.<sup>[2]</sup> Migraines, they concluded, aren't primarily a blood vessel problem. They're a <strong>brain excitability problem</strong>.</p>
+                    <p>The trigeminovascular system — a neural network connecting your trigeminal nerve to brain blood vessels — becomes hypersensitive. Overreactive. Hair-trigger. Blood vessel changes are a symptom of this dysfunction, not its cause.</p>
+                    <p>This shift changes everything about caffeine.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Molecule That Changed Everything: Adenosine</h2>
+                    <p>A French laboratory. Researchers draw blood from patients mid-migraine and measure a molecule called adenosine.</p>
+                    <p>The finding: adenosine levels spike <strong>68% higher</strong> during attacks.<sup>[3]</sup></p>
+                    <p>Curious, they inject adenosine directly into migraine patients' veins.</p>
+                    <p>Result: migraine attacks, triggered on demand.<sup>[4]</sup></p>
+                    <p>This wasn't coincidence. This was causation.</p>
+                    <p>Adenosine is your brain's brake pedal. It accumulates throughout the day, slowing neural activity, dilating blood vessels, making you drowsy. That heaviness you feel by 10 PM? Adenosine has been building for sixteen hours.</p>
+                    <p>Now here's the twist that makes pharmacologists smile: caffeine's molecular structure is nearly identical to adenosine.<sup>[5]</sup> So similar it slips into adenosine's receptors like a counterfeit bill into a vending machine.</p>
+                    <p>But caffeine doesn't activate those receptors.</p>
+                    <p><strong>It blocks them.</strong></p>
+                    
+                    <div class="quote-box">
+                        <p>"Caffeine can block the action of adenosine receptors, and thereby stop the effects of adenosine. We do not know exactly how these effects result in acute anti-migraine and pain control actions."</p>
+                    </div>
+                    <p style="text-align:right;font-size:0.9rem;color:var(--text-dark);margin-top:-20px;">— American Migraine Foundation<sup>[4]</sup></p>
+                    
+                    <p>This blocking action creates caffeine's split personality:</p>
+                    <p><strong>Short-term</strong>, it's a hero. Adenosine can't dilate your vessels. Pain signals quiet.</p>
+                    <p><strong>Long-term</strong>, it's a saboteur. Your brain, desperate to restore balance, manufactures more adenosine receptors. Now you need caffeine just to feel normal. Skip your dose, and those extra receptors flood with adenosine.</p>
+                    <p>The result? Withdrawal. And withdrawal feels exactly like migraine.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Contradiction That Isn't</h2>
+                    <p>Search "caffeine migraine" in PubMed. You'll find studies reaching opposite conclusions.</p>
+                    <p>Caffeine triggers migraines. Caffeine doesn't matter. Caffeine might help.</p>
+                    <p>Critics say: "If scientists can't agree, the research is worthless."</p>
+                    <p>Critics are wrong. These studies measure different things.</p>
+                    <p><strong>Study One, 2019:</strong> Researchers hand 98 migraine patients detailed diaries.<sup>[8]</sup> Track everything. Every cup. Every attack. Finding: three or more servings daily tips the balance toward more migraines. One to two servings? No statistical difference.</p>
+                    <p><strong>Study Two, 2024:</strong> Different team, similar population, six weeks of tracking.<sup>[9]</sup> Finding: no association whatsoever between habitual caffeine intake and headache frequency, duration, or intensity.</p>
+                    <p>Contradiction? Look closer.</p>
+                    <p>Study One measured <em>acute changes</em> — what happens when consumption varies day to day. Study Two measured <em>habitual patterns</em> — steady-state users who never deviated.</p>
+                    
+                    <div class="highlight-box">
+                        <p>The emerging consensus: It's not the caffeine. It's the variability.</p>
+                    </div>
+                    
+                    <p>Dr. Emad Estemalik, headache specialist at Cleveland Clinic, puts it plainly: "It tends to become an issue when people are inconsistent and have really high doses of caffeine one day and not the next."<sup>[10]</sup></p>
+                    <p><strong>Consistency.</strong> That's the word that keeps appearing.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>Saturday Morning, 10 AM: A Case Study in Withdrawal</h2>
+                    <p>The scenario is so common it has a clinical name: <strong>the weekend migraine</strong>.<sup>[4]</sup></p>
+                    <p>Watch it unfold:</p>
+                    <p>Monday through Friday: Coffee at 7 AM. Sharp. Reliable. Your brain, adapted to this schedule, has upregulated adenosine receptors to compensate.</p>
+                    <p>Saturday: You sleep in. Luxury. Freedom.</p>
+                    <p>By 10 AM, your brain has been caffeine-free for three extra hours. Those extra adenosine receptors — the ones your brain built to counterbalance your daily dose — suddenly have nothing blocking them.</p>
+                    <p>Adenosine floods in. Vessels dilate. Neural activity shifts. Pain begins.</p>
+                    <p>The timeline is precise: withdrawal symptoms start 12-24 hours after your last dose, peak at 20-51 hours.<sup>[11]</sup> That Saturday afternoon headache? Right on schedule.</p>
+                    <p>This isn't weakness. This isn't addiction in any moral sense. This is <strong>homeostasis</strong> — your brain desperately trying to maintain equilibrium in a chemically altered environment.</p>
+                    <p>The solution isn't necessarily to quit. It's to stop surprising your brain.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>Your Genes Already Made Part of This Decision</h2>
+                    <p>Here's what your doctor probably hasn't told you: roughly half the population metabolizes caffeine slowly because of a single genetic variation.<sup>[13]</sup></p>
+                    <p>One gene. One enzyme. Massive consequences.</p>
+                    <p>The gene is CYP1A2. It builds an enzyme that breaks down more than 95% of the caffeine you consume.<sup>[14]</sup> A common variant determines whether you're a fast or slow metabolizer.</p>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Half-life</th>
+                                <th>Population</th>
+                                <th>What it means</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fast metabolizer (AA)</td>
+                                <td>~3 hours</td>
+                                <td>45%</td>
+                                <td>Afternoon coffee cleared by dinner</td>
+                            </tr>
+                            <tr>
+                                <td>Slow metabolizer (AC/CC)</td>
+                                <td>~12 hours</td>
+                                <td>55%</td>
+                                <td>Afternoon coffee still circulating at 2 AM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p>"Those who inherit two copies of the fast metabolizing gene process coffee four times faster than their slow-metabolizing counterparts," explains Dr. Tiffany Lester.<sup>[15]</sup></p>
+                    <p><strong>Four times faster.</strong></p>
+                    <p>That friend who drinks espresso after dinner and sleeps like the dead? Fast metabolizer.</p>
+                    <p>You, lying awake at 3 AM after a single afternoon latte? Probably slow.</p>
+                    <p>Why this matters for migraines: Sleep disruption is one of the most reliable migraine triggers known to science.<sup>[16]</sup> If you're a slow metabolizer, that 3 PM pick-me-up might still be active at midnight — sabotaging your sleep, priming tomorrow's attack.</p>
+                    <p>Genetic testing isn't routine yet. But you can infer: Does evening caffeine keep you awake?</p>
+                    <p>Your body already knows the answer.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Plot Twist That Changes Everything</h2>
+                    <p>Now for the finding that makes neurologists pause mid-sentence.</p>
+                    <p>The assumption: You drink coffee, therefore you get a migraine. Cause → effect.</p>
+                    <p>The alternative: <strong>Your approaching migraine makes you crave coffee.</strong> Effect → cause.</p>
+                    <p>Consider the prodrome — that 2-48 hour window before a migraine attack when something feels off.<sup>[18]</sup> Patients report yawning. Fatigue. Difficulty concentrating. Cravings.</p>
+                    <p>Cravings for what? Often, stimulants. Often, caffeine.</p>
+                    
+                    <div class="quote-box">
+                        <p>"Drinking coffee before a migraine attack may not be a real headache trigger, but a consequence of premonitory symptoms, including yawning, diminished energy levels, and sleepiness that may herald a headache."</p>
+                    </div>
+                    <p style="text-align:right;font-size:0.9rem;color:var(--text-dark);margin-top:-20px;">— Nutrients, 2020<sup>[1]</sup></p>
+                    
+                    <p>Read that again.</p>
+                    <p>You might not be triggering your migraine with coffee. Your approaching migraine might be driving you toward coffee.</p>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Symptom</th>
+                                <th>Caffeine withdrawal</th>
+                                <th>Migraine prodrome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Drowsiness</td>
+                                <td>91% of studies</td>
+                                <td>72% of patients</td>
+                            </tr>
+                            <tr>
+                                <td>Concentration difficulty</td>
+                                <td>77% of studies</td>
+                                <td>51% of patients</td>
+                            </tr>
+                            <tr>
+                                <td>Fatigue</td>
+                                <td>68% of studies</td>
+                                <td>47% of patients</td>
+                            </tr>
+                            <tr>
+                                <td>Decreased motivation</td>
+                                <td>64% of studies</td>
+                                <td>Common</td>
+                            </tr>
+                            <tr>
+                                <td>Yawning</td>
+                                <td>Documented</td>
+                                <td>36% of patients</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p>The researchers' conclusion: "The same or similar pathophysiological pathways may be involved."<sup>[12]</sup></p>
+                    <p>If this is true — and the evidence is mounting — then many people have been blaming coffee for migraines that were already inevitable. The coffee didn't cause the attack. The coming attack caused the coffee.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The S-Curve: 2025's Breakthrough</h2>
+                    <p>January 2025. <em>Frontiers in Neurology</em>. Researchers analyze NHANES data from thousands of Americans.<sup>[19]</sup></p>
+                    <p>Their discovery: the caffeine-migraine relationship isn't linear.</p>
+                    <p><strong>It's S-shaped.</strong></p>
+                    <p>What this means:</p>
+                    <p>• <strong>0-50 mg</strong> (half a cup): Minimal impact either way<br>
+                    • <strong>50-200 mg</strong> (1-2 cups): Risk increases in susceptible individuals<br>
+                    • <strong>200-400 mg</strong> (2-4 cups): Risk plateaus if consumption stays consistent<br>
+                    • <strong>Variable high intake</strong>: Risk spikes sharply</p>
+                    <p>The S-curve explains why blanket advice fails. "Quit caffeine" helps some people. "Keep drinking" helps others. Both are right — for different positions on the curve.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- CONSULT YOUR DOCTOR BOX -->
+                <div class="highlight-box">
+                    <p>🩺 Before making changes to your caffeine consumption, talk to your healthcare provider — especially if you take medications or have frequent migraines. What follows are general principles, not personalized medical advice.</p>
+                </div>
+
+                <section class="article-section">
+                    <h2>What To Actually Do</h2>
+                    <p>Enough theory. Here's what the evidence supports:</p>
+                    
+                    <h3 style="color:#ffffff;margin:32px 0 16px;">If You Drink Caffeine Now</h3>
+                    <p><strong>Rule One: Consistency beats abstinence.</strong></p>
+                    <p>• Same amount. Same time. Every day. Including weekends.<br>
+                    • Cap at 200 mg daily (two small cups).<sup>[1]</sup><br>
+                    • Never skip your morning dose. Withdrawal triggers more reliably than caffeine itself.<br>
+                    • Track everything. Correlate patterns. Let data, not assumptions, guide you.</p>
+                    
+                    <h3 style="color:#ffffff;margin:32px 0 16px;">If You Want to Quit</h3>
+                    <p><strong>Rule One: Gradual tapering is non-negotiable.</strong></p>
+                    <p>• Reduce 25% per week.<sup>[20]</sup> Not faster.<br>
+                    • Expect 7-9 days of discomfort. Peak at day 2-3.<br>
+                    • The payoff is real: One study showed 72% improvement in migraine frequency from complete cessation vs. 40% from reduction alone.<sup>[21]</sup></p>
+                    
+                    <h3 style="color:#ffffff;margin:32px 0 16px;">If You Use Caffeine to Treat Attacks</h3>
+                    <p><strong>Rule One: Strategic, limited deployment.</strong></p>
+                    <p>• Maximum 2 days per week.<sup>[4]</sup> More risks medication overuse headache.<br>
+                    • Combine with analgesics — caffeine boosts effectiveness of acetaminophen, aspirin, and ibuprofen by up to 40%.<sup>[22]</sup><br>
+                    • Act early. Caffeine works at the first sign. Once pain establishes, effectiveness drops.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>Quick Reference: What's in Your Cup</h2>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Source</th>
+                                <th>Caffeine</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Espresso (1 shot)</td>
+                                <td>63 mg</td>
+                                <td>Concentrated but small</td>
+                            </tr>
+                            <tr>
+                                <td>Brewed coffee (8 oz)</td>
+                                <td>95 mg</td>
+                                <td>Varies by brew</td>
+                            </tr>
+                            <tr>
+                                <td>Black tea (8 oz)</td>
+                                <td>47 mg</td>
+                                <td>Contains L-theanine buffer</td>
+                            </tr>
+                            <tr>
+                                <td>Green tea (8 oz)</td>
+                                <td>28 mg</td>
+                                <td>Gentler curve</td>
+                            </tr>
+                            <tr>
+                                <td>Cola (12 oz)</td>
+                                <td>34 mg</td>
+                                <td>Plus sugar effects</td>
+                            </tr>
+                            <tr>
+                                <td>Energy drink (8 oz)</td>
+                                <td>80-150 mg</td>
+                                <td>Often stacked with other stimulants</td>
+                            </tr>
+                            <tr>
+                                <td>Excedrin Migraine</td>
+                                <td>65 mg</td>
+                                <td>Per dose</td>
+                            </tr>
+                            <tr>
+                                <td>Dark chocolate (1 oz)</td>
+                                <td>12 mg</td>
+                                <td>Easy to overlook</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>6:48 AM. The Kitchen. A Choice.</h2>
+                    <p>You're still standing there. Mug in hand. Pressure behind your eye.</p>
+                    <p>Now you know what the doctor didn't tell you: this isn't about caffeine being good or bad. It's about your specific biology, your genetic metabolism, your consistency — or lack of it.</p>
+                    <p>Maybe you drink the coffee. Maybe you don't.</p>
+                    <p>But now you understand why either choice might work.</p>
+                    
+                    <p><strong>What we know for certain:</strong></p>
+                    <p>• Caffeine affects migraine through adenosine receptor blockade<br>
+                    • Withdrawal often hurts more than moderate, consistent use<br>
+                    • Your genetics determine how fast you clear caffeine<br>
+                    • Your approaching migraine might be causing your craving<br>
+                    • Consistency matters more than the specific amount</p>
+                    
+                    <p><strong>What remains uncertain:</strong></p>
+                    <p>• Your personal threshold<br>
+                    • Whether abstinence or consistency works better for you<br>
+                    • How genetic testing should guide individual recommendations</p>
+                    
+                    <p>The most powerful medicine isn't in your cup or your pill bottle.</p>
+                    <p><strong>It's self-knowledge.</strong></p>
+                    <p>Track your patterns. Test your assumptions. Let your own data — not generic advice — write your treatment plan.</p>
+                    <p>That's what Mi is built to help you do.</p>
+                    
+                    <div class="highlight-box">
+                        <p>Because in the end, the only expert on your migraines is you.</p>
+                    </div>
+                </section>
+
+                <!-- REFERENCES -->
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Nowaczewska M, Wiciński M, Kaźmierczak W. The Ambiguous Role of Caffeine in Migraine Headache: From Trigger to Treatment. <em>Nutrients</em>. 2020;12(8):2259. <a href="https://doi.org/10.3390/nu12082259" target="_blank">doi:10.3390/nu12082259</a></li>
+                        <li>Goadsby PJ, Holland PR, Martins-Oliveira M, et al. Pathophysiology of Migraine: A Disorder of Sensory Processing. <em>Physiological Reviews</em>. 2017;97(2):553-622.</li>
+                        <li>Guieu R, et al. Adenosine and Migraine. <em>Canadian Journal of Neurological Sciences</em>. 1998;25(1):55-58.</li>
+                        <li>American Migraine Foundation. Caffeine and Migraine. December 2022. <a href="https://americanmigrainefoundation.org/resource-library/caffeine-and-migraine/" target="_blank">americanmigrainefoundation.org</a></li>
+                        <li>Fried NT, Elliott MB, Oshinsky ML. The Role of Adenosine Signaling in Headache: A Review. <em>Brain Sciences</em>. 2017;7(3):30.</li>
+                        <li>Hunter Medical Research Institute. Investigating the caffeine paradox. June 2024. <a href="https://hmri.org.au/news-and-stories/investigating-caffeine-paradox/" target="_blank">hmri.org.au</a></li>
+                        <li>Iljazi A, et al. Involvement of adenosine signaling pathway in migraine pathophysiology. <em>The Journal of Headache and Pain</em>. 2022;23:48.</li>
+                        <li>Mostofsky E, et al. Prospective Cohort Study of Caffeinated Beverage Intake as a Potential Trigger of Headaches among Migraineurs. <em>The American Journal of Medicine</em>. 2019;132(8):984-991.</li>
+                        <li>Mittleman MR, et al. Habitual caffeinated beverage consumption and headaches among adults with episodic migraine. <em>Headache</em>. 2024;64(3):299-305.</li>
+                        <li>Cleveland Clinic. Does Caffeine Help Migraines? June 2023. <a href="https://health.clevelandclinic.org/does-caffeine-cause-migraines" target="_blank">health.clevelandclinic.org</a></li>
+                        <li>WebMD. How Caffeine May Help (and Cause) Headaches. April 2024. <a href="https://www.webmd.com/migraines-headaches/triggers-caffeine" target="_blank">webmd.com</a></li>
+                        <li>Alstadhaug KB, Andreou AP. Caffeine and Primary (Migraine) Headaches—Friend or Foe? <em>Frontiers in Neurology</em>. 2019;10:1275.</li>
+                        <li>Cornelis MC, et al. CYP1A2 Genetic Variation, Coffee Intake, and Kidney Dysfunction. <em>JAMA Network Open</em>. 2023;6(1):e2250206.</li>
+                        <li>Thorn CF, et al. PharmGKB summary: caffeine pathway. <em>Pharmacogenetics and Genomics</em>. 2012;22(5):389-395.</li>
+                        <li>Parsley Health. CYP1A2 and the Effects of Caffeine on the Body. January 2025. <a href="https://www.parsleyhealth.com/blog/cyp1a2-effects-of-caffeine-on-the-body" target="_blank">parsleyhealth.com</a></li>
+                        <li>Bertisch SM, et al. Nightly sleep duration, fragmentation, and quality and daily risk of migraine. <em>Neurology</em>. 2020;94(5):e489-e496.</li>
+                        <li>Low JJ, et al. Genetic susceptibility to caffeine intake and metabolism: a systematic review. <em>Journal of Translational Medicine</em>. 2024;22:961.</li>
+                        <li>The Migraine Trust. Migraine and caffeine. March 2023. <a href="https://migrainetrust.org/news/migraine-and-caffeine/" target="_blank">migrainetrust.org</a></li>
+                        <li>Liao Z, et al. The S-shaped association between dietary caffeine intake and severe headache or migraine. <em>Frontiers in Neurology</em>. 2025;16:1517942.</li>
+                        <li>American Migraine Foundation. Understanding Caffeine Headache. March 2025. <a href="https://americanmigrainefoundation.org/resource-library/caffeine-headaches/" target="_blank">americanmigrainefoundation.org</a></li>
+                        <li>Migraine Canada. Caffeine and Migraine. April 2025. <a href="https://migrainecanada.org/caffeine-and-migraine/" target="_blank">migrainecanada.org</a></li>
+                        <li>Lipton RB, et al. Caffeine in the management of patients with headache. <em>The Journal of Headache and Pain</em>. 2017;18:107.</li>
+                    </ol>
+                </div>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. This article reflects research that helped me understand my own caffeine relationship — your experience may differ.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. This article was written independently and is not sponsored.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Track Your Caffeine Patterns with Mi</h3>
+                        <p>Mi helps you discover what works for your unique biology. No judgment. Just data.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
