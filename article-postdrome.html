@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The pain is gone, but you feel like a zombie. Postdrome is real — and understanding it can help you stop blaming yourself for being lazy.">
+    <meta name="author" content="Rustam Iuldashov">
+    <title>Migraine Hangover: The Phase No One Talks About | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.95rem;
+        }
+        
+        .data-table th {
+            background: rgba(139, 122, 168, 0.15);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--lavender);
+        }
+        
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+            color: var(--text);
+        }
+        
+        .data-table tr:hover {
+            background: rgba(139, 122, 168, 0.05);
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        
+        .references ol {
+            padding-left: 20px;
+        }
+        
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        .medical-disclaimer {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 16px 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .key-takeaways {
+            background: rgba(139, 122, 168, 0.08);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+        
+        .key-takeaways h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        
+        .key-takeaways ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .key-takeaways li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .key-takeaways li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .data-table { font-size: 0.85rem; }
+            .data-table th, .data-table td { padding: 8px 12px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/article-postdrome.png" alt="Mi sitting exhausted in a dim kitchen, staring at a coffee cup">
+            <div class="article-header">
+                <span class="article-tag">Understanding</span>
+                <h1>Migraine Hangover</h1>
+                <p class="article-subtitle">The pain is gone, but you feel like a zombie. Postdrome is real — and understanding it can help you stop blaming yourself.</p>
+                <div class="article-meta">
+                    <span>📅 January 30, 2026</span>
+                    <span>⏱ 8 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+                
+                <!-- AUTHOR BYLINE -->
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: January 30, 2026
+                    </p>
+                </div>
+                
+                <!-- MEDICAL DISCLAIMER -->
+                <p class="medical-disclaimer">
+                    This article is for educational purposes only and does not constitute medical advice. 
+                    Content based on peer-reviewed research from Neurology, Brain, and Cephalalgia journals. For personalized recommendations, consult your healthcare provider.
+                </p>
+
+                <section class="article-section">
+                    <h2>The Morning After</h2>
+                    <p>You wake up. The headache is gone.</p>
+                    <p>This should be relief. This should be freedom. Instead, you're standing in your kitchen at 10 a.m., holding a coffee cup you don't remember pouring, staring at the refrigerator like it owes you an explanation.</p>
+                    <p>Your neck has turned to concrete. Your thoughts move through syrup. Somewhere in another room, your phone buzzes with messages you cannot bring yourself to answer.</p>
+                    <p>The migraine is over.</p>
+                    <p>So why do you feel like you've been hit by a truck?</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Phase Without a Name</h2>
+                    <p>For most of medical history, this experience had no name. Doctors studied the headache. They studied the aura. They ignored what came after.</p>
+                    <p>Patients noticed. They always notice.</p>
+                    <p>In 1982, a British neurologist named J.N. Blau asked a simple question: what happens when migraine patients use sleep to end their attacks? He found that 47 out of 50 still felt unwell upon waking.<sup>[1]</sup> The pain was gone. Something else remained.</p>
+                    <p>He called it "the recovery phase." The name didn't stick. For decades, nothing stuck. Patients described feeling "hungover," "wiped out," "not myself." Doctors nodded and moved on.</p>
+                    <p>Then came the electronic diaries.</p>
+                    <p>In 2016, researchers gave 120 migraine patients smartphones and asked them to document everything — not just the headache, but before and after. The results landed like a bomb in neurology circles.<sup>[2]</sup></p>
+                    
+                    <div class="highlight-box">
+                        <p>Eighty-one percent experienced symptoms after the pain ended. Not some patients. Not a sensitive subset. The overwhelming majority.</p>
+                    </div>
+                    
+                    <p>The phase finally got its name: <strong>postdrome</strong>. Its nickname came from the patients themselves: <em>migraine hangover</em>.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>Inside the Recovering Brain</h2>
+                    <p>To understand what's happening, you need to see what a migraine does to your skull's three-pound universe.</p>
+                    <p>Picture an orchestra. Violins, brass, percussion, all playing from the same score. The hypothalamus — a nugget of tissue smaller than an almond — serves as conductor, keeping everyone in sync.</p>
+                    <p>During a migraine, the conductor drops the baton.</p>
+                    <p>Brain regions that should communicate in harmony begin firing chaotically. Blood vessels dilate, then constrict. Pain signals amplify beyond reason. The trigeminal nerve — responsible for sensation in your face — starts screaming.</p>
+                    <p>This is the headache phase. You know this phase. You've survived it countless times.</p>
+                    <p>What you may not know is what the scanners reveal about the aftermath.</p>
+                    <p>When researchers image the brains of people in postdrome, they find something striking: the hypothalamus, pons, and visual cortex remain active long after pain resolves.<sup>[3]</sup> Cerebral blood flow stays reduced across wide territories. The neural circuits that regulate arousal, cognition, and mood haven't reset.</p>
+                    
+                    <div class="quote-box">
+                        <p>"The orchestra has stopped playing. But the musicians are still scattered across the stage, instruments clutched to their chests, unsure if the performance is really over."</p>
+                    </div>
+                    
+                    <p>Your brain needs time to clean up. Time to restore. Time to remember what normal feels like.</p>
+                    <p>This is postdrome. This is why you're staring at the refrigerator.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>Portrait of a Hangover</h2>
+                    <p>The symptoms read like a cruel joke.</p>
+                    <p><strong>Fatigue.</strong> Not the tired you feel after a long day. The tired you feel after running a marathon with the flu. The tired that makes lifting your arm feel like an achievement worth celebrating.</p>
+                    <p><strong>Brain fog.</strong> Words hide from you. Sentences collapse mid-construction. A colleague asks a simple question; you hear the syllables but cannot assemble them into meaning.</p>
+                    <p><strong>Neck stiffness.</strong> As if you spent the night clenching every muscle between your shoulders and skull. You probably did.</p>
+                    <p><strong>Mood swings.</strong> Depression hits some people. Others feel strangely euphoric, almost giddy. Both are real. Both are neurological. Neither says anything about your character.</p>
+                    <p><strong>A bruised brain.</strong> The pain is gone, but touch the spot where it lived, and something winces. The area remembers.</p>
+                    <p>Here's the twist researchers didn't expect: these symptoms mirror the warning signs that appear <em>before</em> a migraine.<sup>[4]</sup> The fatigue, the food cravings, the concentration problems — they show up in prodrome, disappear behind the headache, then resurface in postdrome.</p>
+                    <p>Scientists now suspect the non-headache symptoms form a continuous thread running through the entire attack. We just can't see them during the pain phase. The agony demands all our attention.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Tyranny of "Should"</h2>
+                    <p>The pain ends. The relief washes over you.</p>
+                    <p>And then — almost immediately — another feeling arrives.</p>
+                    <p><em>You should answer those emails now. You should make that meeting. You should catch up on everything you missed while you were down.</em></p>
+                    <p>The tyranny of "should" is merciless.</p>
+                    <p>But here's what the research shows, and what no one tells you: pushing through postdrome doesn't speed recovery. It prolongs it. Worse, it increases your risk of triggering another attack.<sup>[5]</sup></p>
+                    <p>Your brain is running on fumes. The neural circuits that regulate pain haven't fully reset. Demanding peak performance from a recovering system is like asking a marathon runner to sprint immediately after crossing the finish line.</p>
+                    <p>The price isn't just fatigue. It's vulnerability. Your threshold for the next migraine drops during this window.</p>
+                    
+                    <div class="highlight-box">
+                        <p>"Postdrome is not weakness. It's neurology." — Those five words could change your life.</p>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Recovery Playbook</h2>
+                    <p>No pill cures postdrome. Not yet. But strategies exist. They've been tested. They work.</p>
+                    
+                    <p><strong>Rest — but redefine it.</strong> You don't need to lie motionless in darkness. Gentle rest counts. Sit quietly. Read something undemanding. Listen to music that asks nothing of you. The goal isn't sleep; it's reduced stimulation.</p>
+                    
+                    <p><strong>Hydrate like it matters.</strong> Because it does. If you vomited during the attack or slept for many hours, your body has lost significant fluid. Water helps. Electrolyte drinks may help more.</p>
+                    
+                    <p><strong>Feed the hunger wisely.</strong> Appetite often returns with force during postdrome. Honor it — but choose carefully. Avoid your known triggers. Reach for foods that provide steady energy: proteins, complex carbohydrates, vegetables.</p>
+                    
+                    <p><strong>Address the neck.</strong> That concrete feeling between your shoulders responds to intervention. Some people find relief with heat. Others prefer cold. Gentle stretching helps, but don't push into pain.</p>
+                    
+                    <p><strong>Be suspicious of caffeine.</strong> Caffeine helps some people feel better during postdrome. For others, it extends the misery or triggers rebound. If you don't know which camp you belong to, start small. Document what happens.</p>
+                    
+                    <p><strong>Dim the screens.</strong> Your visual system is still recovering. Blue light and constant stimulation from devices can prolong symptoms. If you must use technology, reduce brightness. Take breaks.</p>
+                    
+                    <p><strong>Move — gently.</strong> Light activity supports recovery. A slow walk. Careful stretching. Restorative yoga. Save the intense workouts for when you feel genuinely whole again.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Invisible Wound</h2>
+                    <p>Postdrome carries a particular cruelty: it cannot be seen.</p>
+                    <p>The headache is gone. You look normal. You might say "I'm better" because the pain has stopped. But you're not better. You're recovering.</p>
+                    <p>This gap between appearance and reality creates suffering beyond the symptoms. Guilt arrives: <em>why can't I function?</em> Frustration follows: <em>everyone expects me to be fine.</em> Self-criticism whispers: <em>maybe I'm just weak.</em></p>
+                    <p>You're not weak. You're healing from a neurological event.</p>
+                    <p>Research shows strong connections between migraine and mental health.<sup>[6]</sup> In one survey, nearly 60% of people with migraine reported being diagnosed with an anxiety disorder. Half reported depression.</p>
+                    <p>During postdrome, be gentle with yourself. Especially emotionally. This is not the time for important decisions. Not the time for difficult conversations. Not the time to evaluate your worth based on your output.</p>
+                    <p>Your brain chemistry is temporarily altered. Wait until the fog lifts before judging anything.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Value of Witness</h2>
+                    <p>Most migraine diaries focus on pain: when it started, how bad it got, what stopped it.</p>
+                    <p>Few people track what comes after. This is a missed opportunity.</p>
+                    <p>When you document postdrome, patterns emerge. You learn how long your recovery typically takes. You discover which symptoms appear most consistently. You identify what helps — and what makes things worse.</p>
+                    <p>Over time, postdrome transforms from an unpredictable ordeal into a mapped territory. You can plan around it. Explain it to people who need to understand. Approach it with strategies you've tested on your own body.</p>
+                    <p>Knowledge doesn't eliminate suffering. But it removes surprise. And surprise, in the world of chronic illness, is its own kind of pain.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>Rewriting the Story</h2>
+                    <p>For 30 years, I told myself the same story about the day after a migraine.</p>
+                    <p><em>I'm being lazy. I should push through. Everyone else would be fine by now.</em></p>
+                    <p>The story was wrong. The story made everything worse.</p>
+                    <p>Here is the story I tell now:</p>
+                    
+                    <div class="quote-box">
+                        <p>"My brain just survived something significant. The neural orchestra lost its conductor, descended into chaos, and slowly fought its way back to silence. Now it needs time to remember the music. This is not weakness. This is recovery."</p>
+                    </div>
+                    
+                    <p>The new story doesn't cure postdrome. Nothing cures it yet. But the new story removes the secondary suffering — the guilt, the shame, the sense of personal failure that compounds every symptom.</p>
+                    <p>Eighty-one percent of people with migraine experience postdrome. It appears on brain scans. It's documented in peer-reviewed journals. It's as real as the pain itself — just quieter.</p>
+                    <p>Stop apologizing for needing time to heal.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Morning After (Reprise)</h2>
+                    <p>Tomorrow, or next week, or next month, you will wake from another migraine.</p>
+                    <p>The pain will have ended. The light will seem almost bearable again. You will feel that familiar pull to resume normal life, to prove you're fine, to catch up on everything that piled up while you were down.</p>
+                    <p>Pause.</p>
+                    <p>Look at the coffee cup in your hand. Notice the fog behind your eyes. Acknowledge the neck that feels made of stone.</p>
+                    <p>This is postdrome. This is real. This is your brain asking for something you've rarely given it:</p>
+                    <p><strong>Permission to recover.</strong></p>
+                    <p>Grant that permission. Clear your schedule. Lower the demands. Let the orchestra rest.</p>
+                    <p>The music will return. It always does.</p>
+                    <p>But only if you give it time.</p>
+                </section>
+
+                <!-- KEY TAKEAWAYS -->
+                <div class="key-takeaways">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>Postdrome affects 81% of people with migraine — it's the norm, not the exception</li>
+                        <li>Symptoms include fatigue, brain fog, mood changes, neck stiffness, and lingering sensitivity</li>
+                        <li>Duration is typically under 24 hours, though it can last up to 2 days</li>
+                        <li>Pushing through prolongs recovery and may trigger another attack</li>
+                        <li>Best strategies: rest, hydration, gentle movement, avoiding screens, and self-compassion</li>
+                    </ul>
+                </div>
+
+                <!-- REFERENCES -->
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Blau JN. Resolution of migraine attacks: sleep and the recovery phase. <em>Journal of Neurology, Neurosurgery & Psychiatry</em>. 1982;45(3):223-226. <a href="https://doi.org/10.1136/jnnp.45.3.223" target="_blank">doi:10.1136/jnnp.45.3.223</a></li>
+                        <li>Giffin NJ, Lipton RB, Silberstein SD, Olesen J, Goadsby PJ. The migraine postdrome: An electronic diary study. <em>Neurology</em>. 2016;87(3):309-313. <a href="https://doi.org/10.1212/WNL.0000000000002789" target="_blank">doi:10.1212/WNL.0000000000002789</a></li>
+                        <li>Schulte LH, May A. The migraine generator revisited: continuous scanning of the migraine cycle over 30 days and three spontaneous attacks. <em>Brain</em>. 2016;139(7):1987-1993. <a href="https://doi.org/10.1093/brain/aww097" target="_blank">doi:10.1093/brain/aww097</a></li>
+                        <li>Karsan N, Bose PR, O'Daly O, Zelaya FO, Goadsby PJ. The migraine postdrome: Spontaneous and triggered phenotypes. <em>Cephalalgia</em>. 2021;41(6):721-730. <a href="https://doi.org/10.1177/0333102420975401" target="_blank">doi:10.1177/0333102420975401</a></li>
+                        <li>Bose P, Goadsby PJ. The migraine postdrome. <em>Current Opinion in Neurology</em>. 2016;29(3):299-301. <a href="https://doi.org/10.1097/WCO.0000000000000310" target="_blank">doi:10.1097/WCO.0000000000000310</a></li>
+                        <li>American Migraine Foundation. Migraine Hangover. <a href="https://americanmigrainefoundation.org/resource-library/migraine-hangover/" target="_blank">americanmigrainefoundation.org</a></li>
+                    </ol>
+                </div>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. This article reflects both personal experience and current neuroscience findings.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. This article was written independently and is not sponsored.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Track Your Postdrome Patterns with Mi</h3>
+                        <p>Mi helps you document what happens after the pain — so you can plan, explain, and recover better.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
