@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A personal reflection on migraine stigma and invisible illness, backed by peer-reviewed research. By someone who has lived with migraine for 30 years.">
+    <meta name="author" content="Rustam Iuldashov">
+    <title>You Don't Look Sick: The Loneliness of Invisible Pain | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        
+        .references ol {
+            padding-left: 20px;
+        }
+        
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        .medical-disclaimer {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 16px 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .key-takeaways {
+            background: rgba(139, 122, 168, 0.08);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+        
+        .key-takeaways h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        
+        .key-takeaways ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .key-takeaways li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .key-takeaways li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/hero-invisible-in-crowd.png" alt="Mi stands alone on a busy crosswalk while blurred figures rush past">
+            <div class="article-header">
+                <span class="article-tag">Personal Story</span>
+                <h1>You Don't Look Sick</h1>
+                <p class="article-subtitle">Five words. That's all it takes to erase your pain.</p>
+                <div class="article-meta">
+                    <span>📅 January 31, 2026</span>
+                    <span>⏱ 5 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+                
+                <!-- AUTHOR BYLINE -->
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: January 31, 2026
+                    </p>
+                </div>
+                
+                <!-- MEDICAL DISCLAIMER -->
+                <p class="medical-disclaimer">
+                    This article shares personal experience and summarizes peer-reviewed research about migraine stigma. It is not medical advice. The author is not a healthcare professional. If you experience migraine or chronic pain, please consult a qualified healthcare provider.
+                </p>
+
+                <section class="article-section">
+                    <p>She said it in the break room. Tuesday. 2:47 p.m.</p>
+                    <p>I had just apologized for leaving a meeting early—the aura had started, those jagged lights cutting across my vision like broken glass. My manager looked at me, tilted her head slightly, and delivered the five words I'd heard a hundred times before:</p>
+                    <p><em>"But you don't look sick."</em></p>
+                    <p>She meant well. I know that now. But in that moment, standing under fluorescent lights with lightning fracturing my skull, I felt something worse than pain.</p>
+                    <p>I felt erased.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Invisible War</h2>
+                    <p>Here is what nobody tells you about migraine: the hardest battle isn't the one inside your head.</p>
+                    <p>It's the one you fight to prove that battle exists at all.</p>
+                    <p>Thirty years I've lived with this condition. Thirty years of cancelled plans, abandoned conversations, darkened rooms. And in all that time, no attack has wounded me as deeply as those five words—spoken by friends, colleagues, doctors, lovers, strangers.</p>
+                    <p><em>You don't look sick.</em></p>
+                    <p>The translation is always the same: <strong>I don't believe you.</strong></p>
+                </section>
+
+                <section class="article-section">
+                    <h2>What the Numbers Reveal</h2>
+                    <p>Scientists finally measured what we've always known.</p>
+                    <p>In 2024, researchers surveyed 59,001 people with migraine—the largest study of its kind.<sup>[1]</sup> Their finding: one in three of us faces stigma often or very often. Not occasionally. Not rarely. Regularly. Predictably. As certain as the pain itself.</p>
+                    <p>The researchers identified two specific accusations we face. First: that we're faking it for "secondary gain"—attention, sympathy, an excuse to skip work. Second: that we're exaggerating, making mountains from molehills, headaches from migraines.</p>
+                    <p>Those familiar phrases—<em>"It's just a headache," "Have you tried drinking water?"</em>—aren't random. They're patterns. They appear across cultures, countries, continents. They follow us like shadows.</p>
+                    
+                    <div class="highlight-box">
+                        <p>And here's what stopped me cold when I read the research: migraine may be the most stigmatized neurological disease in existence.<sup>[2]</sup></p>
+                    </div>
+                    
+                    <p>More than epilepsy. More than Parkinson's. More than multiple sclerosis.</p>
+                    <p>Why? Simple. You can see a seizure. You can see a tremor. You cannot see a migraine.</p>
+                    <p>And what people cannot see, they struggle to believe.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>Twelve Spoons</h2>
+                    
+                    <div class="article-image">
+                        <img src="images/twelve-spoons-fading.png" alt="Twelve antique silver spoons on a wooden table, some fading to translucent">
+                    </div>
+                    
+                    <p>Christine Miserandino sat in a diner in 2003, trying to explain lupus to her best friend.<sup>[3]</sup></p>
+                    <p>Words failed. So she grabbed every spoon she could find—off the table, off neighboring tables—and pressed them into her friend's hands.</p>
+                    <p><em>"Here,"</em> she said. <em>"You have lupus now."</em></p>
+                    <p>Each spoon represented a unit of energy. Getting dressed with aching joints? One spoon gone. Showering? Another. Standing on a crowded train? Gone. By noon in this exercise, her friend held only two spoons. And she hadn't done anything extraordinary. She'd just... lived.</p>
+                    <p>The metaphor spread like wildfire. Millions now call themselves "spoonies." We finally had language for what healthy people cannot imagine: while they wake with unlimited reserves, we wake counting.</p>
+                    <p>Counting spoons. Counting hours. Counting the cost of every choice.</p>
+                    <p>But here's what Miserandino's theory also exposed: the exhaustion isn't just physical. It's the relentless work of explaining yourself to people who start each day with pockets overflowing and cannot fathom emptiness.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Wound That Worsens Pain</h2>
+                    
+                    <div class="article-image">
+                        <img src="images/two-realities-split.png" alt="Split portrait: calm face on left, translucent skull with electrical storm on right">
+                    </div>
+                    
+                    <p>Some argue that stigma is merely hurt feelings—unpleasant but separate from the physical reality of disease.</p>
+                    <p>The science says otherwise.</p>
+                    <p>Researchers analyzed 431 studies containing narratives from over 7,700 people with chronic pain.<sup>[4]</sup> They found five consistent themes of invalidation:</p>
+                    <p>Not being believed. Facing coldness instead of compassion. Encountering ignorance instead of understanding. Feeling marked by society's judgment. And the cruelest cut: <strong>beginning to doubt yourself.</strong></p>
+                    <p>That last wound deserves attention.</p>
+                    <p>When the world insists your pain isn't real enough, isn't visible enough, isn't legitimate enough, you start absorbing the message. You wonder: <em>Maybe I am exaggerating. Maybe I should push through. Maybe everyone feels this way and I'm simply weaker.</em></p>
+                    <p>This isn't just psychological damage. It creates physical consequences.</p>
+                    <p>When your brain perceives dismissal as threat, your nervous system activates. Stress hormones flood your body. Pain signals amplify. Your threshold drops. Everything hurts more.<sup>[5]</sup></p>
+                    
+                    <div class="highlight-box">
+                        <p>The people who don't believe you aren't just hurting your feelings. They're literally making your pain worse.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Paradox of Presence</h2>
+                    <p>Loneliness in chronic illness is a strange beast.</p>
+                    <p>You might assume it means isolation—being alone, having no one around. Research reveals something more devastating: you can be surrounded by people and still feel profoundly alone.<sup>[6]</sup></p>
+                    <p>A global study spanning 139 countries found that lonely individuals have 2.1 times higher odds of experiencing physical pain. In the UK Biobank study of 502,528 participants, social exclusion predicted both acute and chronic pain with startling consistency.<sup>[7]</sup></p>
+                    <p>But Japanese researchers uncovered the critical distinction: subjective loneliness—feeling misunderstood—matters more than objective isolation.<sup>[8]</sup> Having people in your life isn't the cure. Having people who understand is.</p>
+                    <p>Those with chronic pain report that friendships fade—not because friends physically leave, but because authentic connection becomes impossible when half your reality remains invisible. The friend is there. The understanding is not.</p>
+                    
+                    <div class="quote-box">
+                        <p>And so you smile. You say "I'm fine." You carry an invisible war into visible rooms full of people who cannot see it. That is the loneliness of invisible pain.</p>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>What Endures</h2>
+                    <p>So what remains, after thirty years of this?</p>
+                    <p>Three truths I wish someone had told the twelve-year-old boy lying terrified in the dark, his first migraine splitting the world apart:</p>
+                    
+                    <p><strong>First: Your experience is real.</strong> Not because I say so—because science documents it. The stigma exists. The loneliness is measurable. The cycle of invalidation and amplified pain is physiologically verifiable. You aren't imagining any of it. You aren't alone in feeling alone.</p>
+                    
+                    <p><strong>Second: You owe no one an explanation.</strong> The most powerful response to "You don't look sick" may be the simplest: <em>"I know. That's what makes it harder."</em> You don't need to justify your neurology. You don't need to prove your pain. You need only to live with it—and that's enough.</p>
+                    
+                    <p><strong>Third: Seek the people who don't require convincing.</strong> They exist. They're usually people who've walked the same path. They recognize the shadow in your eyes before you speak a word. One such person can change everything.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>Why I Built This</h2>
+                    <p>I spent three and a half months building Migraine Companion during wartime in Ukraine, often with only eight hours of electricity per day. I built it because I wanted one place—just one—where understanding exists by default.</p>
+                    <p>Where Mi, your companion through difficult days, never asks if your pain is real.</p>
+                    <p>Where tracking isn't about building evidence for skeptics, but about learning yourself more deeply.</p>
+                    <p>Where you don't have to explain. Where you don't have to prove. Where you simply... belong.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>Full Circle</h2>
+                    <p>I think about that break room sometimes. Tuesday. 2:47 p.m. The fluorescent lights. The tilted head. The five words.</p>
+                    <p><em>But you don't look sick.</em></p>
+                    <p>If I could go back, I'd say this:</p>
+                    
+                    <div class="quote-box">
+                        <p>"You're right. I don't. That's the hardest part."</p>
+                    </div>
+                    
+                    <p>And then I'd walk away. Because after thirty years, I've learned the goal isn't making everyone believe me.</p>
+                    <p>It's finding the people who already do.</p>
+                    
+                    <div class="article-image">
+                        <img src="images/mi-garden-dawn.png" alt="Mi walks along a glowing lavender path toward soft dawn light in an enchanted garden">
+                    </div>
+                </section>
+
+                <!-- KEY TAKEAWAYS -->
+                <div class="key-takeaways">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>One in three people with migraine faces stigma often or very often (OVERCOME study, n=59,001)</li>
+                        <li>Migraine may be the most stigmatized neurological disease — because it's invisible</li>
+                        <li>Invalidation doesn't just hurt emotionally — it physiologically amplifies pain</li>
+                        <li>Subjective loneliness (feeling misunderstood) matters more than objective isolation</li>
+                        <li>You don't need to prove your pain. Finding people who already understand changes everything.</li>
+                    </ul>
+                </div>
+
+                <!-- REFERENCES -->
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Shapiro RE, Nicholson RA, Goadsby PJ, et al. Migraine-Related Stigma and Its Relationship to Disability, Interictal Burden, and Quality of Life: Results of the OVERCOME Study. <em>Neurology</em>. 2024;102(3):e208074. <a href="https://doi.org/10.1212/WNL.0000000000208074" target="_blank">doi:10.1212/WNL.0000000000208074</a></li>
+                        <li>Shapiro RE, Lipton RB, Reiner PB. Stigma and Migraine: Developing Effective Interventions. <em>Current Pain and Headache Reports</em>. 2021;25(11):75. <a href="https://doi.org/10.1007/s11916-021-00982-z" target="_blank">doi:10.1007/s11916-021-00982-z</a></li>
+                        <li>Miserandino C. The Spoon Theory. <em>ButYouDontLookSick.com</em>. 2003. <a href="https://butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/" target="_blank">Original essay</a></li>
+                        <li>Nicola M, Correia H, Ditchburn G, Drummond PD. Invalidation of chronic pain: a thematic analysis of pain narratives. <em>Disability and Rehabilitation</em>. 2021;43(6):861-869. <a href="https://doi.org/10.1080/09638288.2019.1636888" target="_blank">doi:10.1080/09638288.2019.1636888</a></li>
+                        <li>Nicola M, Correia H, Ditchburn G, Drummond PD. Defining pain-validation: the importance of validation in reducing the stresses of chronic pain. <em>Frontiers in Pain Research</em>. 2022;3:884335. <a href="https://doi.org/10.3389/fpain.2022.884335" target="_blank">doi:10.3389/fpain.2022.884335</a></li>
+                        <li>Lim MH, Eres R, Peck C. The association between loneliness and pain: A systematic review and meta-analysis. <em>Scientific Reports</em>. 2025;15(1):2847. <a href="https://doi.org/10.1038/s41598-025-86283-0" target="_blank">doi:10.1038/s41598-025-86283-0</a></li>
+                        <li>Smith TO, Dainty JR, Williamson E, Martin KR. Association between loneliness, social exclusion and pain in the UK Biobank. <em>European Journal of Pain</em>. 2020;24(4):724-734. <a href="https://doi.org/10.1002/ejp.1531" target="_blank">doi:10.1002/ejp.1531</a></li>
+                        <li>Watanabe K, Koyama S, Tanaka K, et al. Social Isolation and Loneliness With Chronic Pain: A Cross-sectional Study in Japan. <em>Journal of Epidemiology</em>. 2024;34(2):78-85. <a href="https://doi.org/10.2188/jea.JE20220345" target="_blank">doi:10.2188/jea.JE20220345</a></li>
+                    </ol>
+                </div>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. This article reflects personal experience supported by peer-reviewed research.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. This article was written independently and is not sponsored.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>In Migraine Companion, Mi Understands</h3>
+                        <p>No words needed. No proof required. Just a companion who gets it.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
