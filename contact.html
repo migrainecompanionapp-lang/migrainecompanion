@@ -19,12 +19,15 @@
         .container{max-width:900px;margin:0 auto;padding:0 24px}
         header{padding:16px 0;position:fixed;width:100%;top:0;z-index:100;background:rgba(35,45,40,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,122,168,.2)}
         .header-content{display:flex;justify-content:space-between;align-items:center}
-        .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none;white-space:nowrap;margin-right:20px}
+        .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none;white-space:nowrap;margin-left:-12px;margin-right:20px}
         .logo img{width:36px;height:36px;border-radius:8px}
         .logo em{color:var(--lavender);font-style:normal}
         .nav{display:flex;gap:18px;align-items:center}
         .nav a{color:var(--text-light);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.1px;transition:color .3s;white-space:nowrap}
         .nav a:hover{color:var(--lavender)}
+        .nav a[href="blog.html"]::before{content:"✦";margin-right:18px;margin-left:14px;color:var(--gold);font-size:.7rem}
+        .nav a[href="blog.html"],.nav a[href="faq.html"],.nav a[href="collaborate.html"],.nav a[href*="support"]:not(.nav-cta){color:#D4CBE5}
+        .nav a[href="blog.html"]:hover,.nav a[href="faq.html"]:hover,.nav a[href="collaborate.html"]:hover,.nav a[href*="support"]:not(.nav-cta):hover{color:#fff}
         .nav-cta{background:transparent;border:1.5px solid var(--gold)!important;padding:6px 14px;border-radius:10px;color:var(--gold)!important;font-weight:700;letter-spacing:.3px;transition:all .3s ease;text-transform:uppercase;font-size:.75rem!important}
         .nav-cta:hover{background:var(--gold);color:var(--malachite-dark)!important;box-shadow:0 0 20px rgba(197,160,89,.4);transform:translateY(-1px)}
         .mobile-menu-btn{display:none;background:0 0;border:none;color:var(--lavender);font-size:1.5rem;cursor:pointer}
@@ -69,6 +72,8 @@
             .nav.mobile-menu-active{display:flex}
             .nav a{padding:12px 0;border-bottom:1px solid rgba(139,122,168,0.1);display:block;width:100%;font-size:.9rem}
             .nav a:last-child{border-bottom:none}
+            .nav a[href="blog.html"]::before{display:none}
+            .nav-cta{width:100%;text-align:center;padding:14px 20px!important;margin-top:12px;border-radius:12px;background:rgba(197,160,89,0.15)!important}
             .mobile-menu-btn{display:block}
             .page-title{font-size:2.2rem}
             .contact-grid{grid-template-columns:1fr}
@@ -238,12 +243,11 @@
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <p class="copyright">© 2025 MIgraine Companion. Made with 💜 in Ukraine.</p>
+            <p class="copyright">© 2026 MIgraine Companion. Made with 💜 in Ukraine.</p>
         </div>
     </footer>
 
     <script>
-    // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
     
