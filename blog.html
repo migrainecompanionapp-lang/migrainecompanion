@@ -30,6 +30,7 @@
             color: #ffffff;
             min-height: 100vh;
             line-height: 1.4;
+            overflow-x: hidden;
         }
         
         body.menu-open {
@@ -40,6 +41,55 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
+        }
+        
+        /* FALLING PETALS */
+        .petals-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+            overflow: hidden;
+        }
+        
+        .petal {
+            position: absolute;
+            top: -50px;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(ellipse at center, rgba(180, 150, 200, 0.8) 0%, rgba(139, 122, 168, 0.4) 50%, transparent 70%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            filter: blur(1px);
+            opacity: 0;
+            animation: petal-fall linear forwards;
+        }
+        
+        .petal.left {
+            left: calc(var(--x) * 1%);
+        }
+        
+        .petal.right {
+            right: calc(var(--x) * 1%);
+        }
+        
+        @keyframes petal-fall {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg) scale(var(--scale));
+            }
+            10% {
+                opacity: var(--opacity);
+            }
+            90% {
+                opacity: var(--opacity);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(var(--rotation)) scale(var(--scale));
+            }
         }
         
         header {
@@ -67,6 +117,8 @@
             text-decoration: none;
             position: relative;
             z-index: 101;
+            margin-left: -12px;
+            margin-right: 20px;
         }
         
         .logo span {
@@ -75,32 +127,67 @@
         
         .nav {
             display: flex;
-            gap: 28px;
+            gap: 18px;
             align-items: center;
         }
         
         .nav a {
             color: var(--text-light);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             font-weight: 500;
             transition: color 0.3s;
+            white-space: nowrap;
         }
         
-        .nav a:hover, .nav a.active {
+        .nav a:hover {
             color: var(--lavender);
         }
         
+        .nav a.active {
+            color: var(--lavender);
+        }
+        
+        .nav a[href="blog.html"]::before {
+            content: "✦";
+            margin-right: 18px;
+            margin-left: 14px;
+            color: var(--gold);
+            font-size: .7rem;
+        }
+        
+        .nav a[href="blog.html"],
+        .nav a[href="faq.html"],
+        .nav a[href="collaborate.html"],
+        .nav a[href*="support"]:not(.nav-cta) {
+            color: #D4CBE5;
+        }
+        
+        .nav a[href="blog.html"]:hover,
+        .nav a[href="faq.html"]:hover,
+        .nav a[href="collaborate.html"]:hover,
+        .nav a[href*="support"]:not(.nav-cta):hover {
+            color: #fff;
+        }
+        
         .nav-cta {
-            background: rgba(197, 160, 89, 0.15);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            padding: 8px 16px;
-            border-radius: 8px;
+            background: transparent;
+            border: 1.5px solid var(--gold) !important;
+            padding: 6px 14px;
+            border-radius: 10px;
             color: var(--gold) !important;
+            font-weight: 700;
+            letter-spacing: .3px;
+            transition: all .3s ease;
+            text-transform: uppercase;
+            font-size: .75rem !important;
         }
         
         .nav-cta:hover {
-            background: rgba(197, 160, 89, 0.25);
+            background: var(--gold);
+            color: var(--bg) !important;
+            box-shadow: 0 0 20px rgba(197,160,89,.4);
+            transform: translateY(-1px);
         }
         
         .mobile-menu-btn {
@@ -172,9 +259,10 @@
         
         .blog-content {
             padding: 60px 0 80px;
+            position: relative;
+            z-index: 2;
         }
         
-        /* CATEGORY FILTER */
         .category-filter {
             display: flex;
             flex-wrap: wrap;
@@ -339,6 +427,8 @@
         footer {
             padding: 40px 0;
             border-top: 1px solid rgba(139, 122, 168, 0.12);
+            position: relative;
+            z-index: 2;
         }
         
         .footer-content {
@@ -405,6 +495,19 @@
                 border-bottom: none;
             }
             
+            .nav a[href="blog.html"]::before {
+                display: none;
+            }
+            
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+                padding: 14px 20px !important;
+                margin-top: 12px;
+                border-radius: 12px;
+                background: rgba(197, 160, 89, 0.15) !important;
+            }
+            
             .mobile-menu-btn {
                 display: block;
             }
@@ -432,18 +535,30 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .petals-container {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- FALLING PETALS -->
+    <div class="petals-container" id="petals"></div>
+    
     <header>
         <div class="container header-content">
             <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
             <nav class="nav">
+                <a href="index.html#screenshots">App</a>
+                <a href="index.html#how-it-works">How It Works</a>
                 <a href="index.html#different">Approach</a>
                 <a href="index.html#science">Science</a>
                 <a href="index.html#features">Features</a>
+                <a href="index.html#story">Story</a>
                 <a href="blog.html" class="active">Blog</a>
+                <a href="faq.html">FAQ</a>
+                <a href="collaborate.html">Collaborate</a>
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
                 <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="nav-cta" target="_blank">Download</a>
             </nav>
@@ -561,29 +676,29 @@
                         <a href="article-weekend-migraines.html" class="read-more">Read full story →</a>
                     </article>
                     
-                   <!-- TRIGGERS: CAFFEINE -->
-<article class="blog-card" data-category="triggers">
-    <span class="blog-tag">Triggers</span>
-    <h2>The Caffeine Paradox: Friend, Foe, or Both?</h2>
-    <p>Coffee can trigger migraines — and also relieve them. Unravel the science behind this paradox and find your personal caffeine balance.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 January 31, 2026</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-    <a href="article-caffeine.html" class="read-more">Read full story →</a>
-</article>
+                    <!-- TRIGGERS: CAFFEINE -->
+                    <article class="blog-card" data-category="triggers">
+                        <span class="blog-tag">Triggers</span>
+                        <h2>The Caffeine Paradox: Friend, Foe, or Both?</h2>
+                        <p>Coffee can trigger migraines — and also relieve them. Unravel the science behind this paradox and find your personal caffeine balance.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 January 31, 2026</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                        <a href="article-caffeine.html" class="read-more">Read full story →</a>
+                    </article>
                     
                     <!-- UNDERSTANDING: POSTDROME -->
-<article class="blog-card" data-category="understanding">
-    <span class="blog-tag">Understanding</span>
-    <h2>Migraine Hangover: The Phase No One Talks About</h2>
-    <p>The pain is gone, but you feel like a zombie. Postdrome is real — and understanding it can help you stop blaming yourself for "being lazy."</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 February 1, 2026</span>
-        <span class="blog-read-time">⏱ 8 min read</span>
-    </div>
-    <a href="article-postdrome.html" class="read-more">Read full story →</a>
-</article>
+                    <article class="blog-card" data-category="understanding">
+                        <span class="blog-tag">Understanding</span>
+                        <h2>Migraine Hangover: The Phase No One Talks About</h2>
+                        <p>The pain is gone, but you feel like a zombie. Postdrome is real — and understanding it can help you stop blaming yourself for "being lazy."</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 February 1, 2026</span>
+                            <span class="blog-read-time">⏱ 8 min read</span>
+                        </div>
+                        <a href="article-postdrome.html" class="read-more">Read full story →</a>
+                    </article>
                     
                     <!-- TRIGGERS: MEDICATION OVERUSE -->
                     <article class="blog-card" data-category="triggers">
@@ -650,66 +765,72 @@
                             <span class="blog-read-time">⏱ 8 min read</span>
                         </div>
                     </article>
+                    
                     <!-- SCIENCE: WEATHER -->
-<article class="blog-card" data-category="science">
-    <span class="blog-tag">Science</span>
-    <h2>Blaming the Barometer: The Weather-Migraine Myth</h2>
-    <p>Everyone says "the pressure dropped." But the science is more complex — and more hopeful — than you think. What actually happens when the storm rolls in.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 7 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="science">
+                        <span class="blog-tag">Science</span>
+                        <h2>Blaming the Barometer: The Weather-Migraine Myth</h2>
+                        <p>Everyone says "the pressure dropped." But the science is more complex — and more hopeful — than you think. What actually happens when the storm rolls in.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 7 min read</span>
+                        </div>
+                    </article>
+                    
                     <!-- TRIGGERS: ALCOHOL -->
-<article class="blog-card" data-category="triggers">
-    <span class="blog-tag">Triggers</span>
-    <h2>The 24-Hour Rule: Why That Glass of Wine Hits Different</h2>
-    <p>That headache the next morning isn't always a hangover. Learn why alcohol affects migraineurs differently — and how to enjoy a drink without paying the price.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="triggers">
+                        <span class="blog-tag">Triggers</span>
+                        <h2>The 24-Hour Rule: Why That Glass of Wine Hits Different</h2>
+                        <p>That headache the next morning isn't always a hangover. Learn why alcohol affects migraineurs differently — and how to enjoy a drink without paying the price.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                    </article>
+                    
                     <!-- UNDERSTANDING: MIGRAINE VS TENSION -->
-<article class="blog-card" data-category="understanding">
-    <span class="blog-tag">Understanding</span>
-    <h2>Migraine or Tension? The Question That Changes Everything</h2>
-    <p>Throbbing vs. pressing. One-sided vs. both. Getting it wrong means getting the wrong treatment. Here's how to finally tell the difference.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 5 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="understanding">
+                        <span class="blog-tag">Understanding</span>
+                        <h2>Migraine or Tension? The Question That Changes Everything</h2>
+                        <p>Throbbing vs. pressing. One-sided vs. both. Getting it wrong means getting the wrong treatment. Here's how to finally tell the difference.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 5 min read</span>
+                        </div>
+                    </article>
+                    
                     <!-- TRIGGERS: SCREEN TIME -->
-<article class="blog-card" data-category="triggers">
-    <span class="blog-tag">Triggers</span>
-    <h2>The Screen That Stares Back: Digital Life with Migraines</h2>
-    <p>8 hours of screen time, 8 hours of potential triggers. What science actually says about blue light — and practical tips that go beyond "just take breaks."</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 7 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="triggers">
+                        <span class="blog-tag">Triggers</span>
+                        <h2>The Screen That Stares Back: Digital Life with Migraines</h2>
+                        <p>8 hours of screen time, 8 hours of potential triggers. What science actually says about blue light — and practical tips that go beyond "just take breaks."</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 7 min read</span>
+                        </div>
+                    </article>
+                    
                     <!-- SCIENCE: SUPPLEMENTS -->
-<article class="blog-card" data-category="science">
-    <span class="blog-tag">Science</span>
-    <h2>Beyond the Pill: What Science Says About Magnesium</h2>
-    <p>Magnesium, riboflavin, CoQ10 — the internet is full of promises. Here's what the research actually supports, and what questions to ask your doctor.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 8 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="science">
+                        <span class="blog-tag">Science</span>
+                        <h2>Beyond the Pill: What Science Says About Magnesium</h2>
+                        <p>Magnesium, riboflavin, CoQ10 — the internet is full of promises. Here's what the research actually supports, and what questions to ask your doctor.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 8 min read</span>
+                        </div>
+                    </article>
+                    
                     <!-- TRIGGERS: SLEEP -->
-<article class="blog-card" data-category="triggers">
-    <span class="blog-tag">Triggers</span>
-    <h2>The Goldilocks Problem: Why Sleep Is Never "Just Right"</h2>
-    <p>Too little triggers an attack. Too much triggers an attack. The maddening science of sleep and migraine — and how to find your personal sweet spot.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 7 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="triggers">
+                        <span class="blog-tag">Triggers</span>
+                        <h2>The Goldilocks Problem: Why Sleep Is Never "Just Right"</h2>
+                        <p>Too little triggers an attack. Too much triggers an attack. The maddening science of sleep and migraine — and how to find your personal sweet spot.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 7 min read</span>
+                        </div>
+                    </article>
 
 <!-- SCIENCE: HORMONES -->
 <article class="blog-card" data-category="science">
@@ -1083,21 +1204,17 @@
     
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Remove active from all buttons
             filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active to clicked button
             this.classList.add('active');
             
             const category = this.dataset.category;
             
             if (category === 'all') {
-                // Show all cards in original order
                 blogCards.forEach(card => {
                     card.style.display = 'block';
                     card.style.order = '0';
                 });
             } else {
-                // Show all cards but reorder - selected category first
                 let order = 0;
                 blogCards.forEach(card => {
                     card.style.display = 'block';
@@ -1110,6 +1227,64 @@
             }
         });
     });
+    
+    // FALLING PETALS
+    const petalsContainer = document.getElementById('petals');
+    
+    function createPetal() {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        
+        // Random side (left or right)
+        const side = Math.random() > 0.5 ? 'left' : 'right';
+        petal.classList.add(side);
+        
+        // Position within edge zone (0-15% from edge)
+        const x = Math.random() * 15;
+        petal.style.setProperty('--x', x);
+        
+        // Random properties
+        const duration = 8 + Math.random() * 12; // 8-20 seconds
+        const scale = 0.5 + Math.random() * 1; // 0.5-1.5x size
+        const opacity = 0.3 + Math.random() * 0.5; // 0.3-0.8 opacity
+        const rotation = 180 + Math.random() * 360; // rotation degrees
+        
+        petal.style.setProperty('--scale', scale);
+        petal.style.setProperty('--opacity', opacity);
+        petal.style.setProperty('--rotation', rotation + 'deg');
+        petal.style.animationDuration = duration + 's';
+        
+        // Random horizontal drift
+        const drift = (Math.random() - 0.5) * 100;
+        petal.style.setProperty('--drift', drift + 'px');
+        
+        petalsContainer.appendChild(petal);
+        
+        // Remove petal after animation
+        setTimeout(() => {
+            petal.remove();
+        }, duration * 1000);
+    }
+    
+    // Create petals periodically
+    function startPetals() {
+        // Initial burst
+        for (let i = 0; i < 5; i++) {
+            setTimeout(() => createPetal(), i * 300);
+        }
+        
+        // Continuous creation
+        setInterval(() => {
+            if (document.visibilityState === 'visible') {
+                createPetal();
+            }
+        }, 2000); // New petal every 2 seconds
+    }
+    
+    // Start after page loads
+    if (window.innerWidth > 768) {
+        startPetals();
+    }
     </script>
 </body>
 </html>
