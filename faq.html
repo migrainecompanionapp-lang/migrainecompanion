@@ -115,7 +115,28 @@
         .nav a:hover {
             color: var(--lavender);
         }
-        
+
+        .nav a[href="blog.html"]::before {
+    content: "✦";
+    margin-right: 18px;
+    margin-left: 14px;
+    color: var(--gold);
+    font-size: .7rem;
+}
+
+.nav a[href="blog.html"],
+.nav a[href="faq.html"],
+.nav a[href="collaborate.html"],
+.nav a[href*="support"]:not(.nav-cta) {
+    color: #D4CBE5;
+}
+
+.nav a[href="blog.html"]:hover,
+.nav a[href="faq.html"]:hover,
+.nav a[href="collaborate.html"]:hover,
+.nav a[href*="support"]:not(.nav-cta):hover {
+    color: #fff;
+}
         .nav a.active {
             color: var(--lavender);
         }
