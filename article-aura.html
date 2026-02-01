@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A word vanishes. Zigzag lines shimmer. Is this a stroke? Understanding migraine aura — the science, the patterns, and why that terrifying glitch is actually a signal you can use.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="migraine aura, visual disturbances, cortical spreading depression, fortification spectra, scintillating scotoma, migraine vs stroke, migraine warning signs">
+    <title>When the World Glitches: Understanding Migraine Aura | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://migrainecompanion.app/article-aura.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org structured data for YMYL health content -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "When the World Glitches: Understanding Migraine Aura",
+        "description": "A comprehensive guide to migraine aura — the science behind visual disturbances, how to differentiate from stroke, and practical strategies for management.",
+        "author": {
+            "@type": "Person",
+            "name": "Rustam Iuldashov",
+            "description": "Founder of Migraine Companion, 30+ years personal experience with migraine"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Migraine Companion",
+            "url": "https://migrainecompanion.app"
+        },
+        "datePublished": "2026-02-01",
+        "dateModified": "2026-02-01",
+        "mainEntityOfPage": {
+            "@type": "WebPage"
+        },
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Migraine with Aura",
+            "code": {
+                "@type": "MedicalCode",
+                "code": "G43.1",
+                "codingSystem": "ICD-10"
+            }
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            margin-top: 32px;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .article-image figcaption {
+            padding: 12px 16px;
+            background: rgba(139, 122, 168, 0.1);
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .warning-box {
+            background: rgba(220, 53, 69, 0.1);
+            border-left: 3px solid #dc3545;
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .warning-box p {
+            font-size: 1rem;
+            color: #ff6b7a;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .warning-box strong {
+            color: #ff6b7a;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+            margin-top: 0;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            margin-top: 0;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+        
+        .references ol {
+            padding-left: 20px;
+        }
+        
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        .medical-disclaimer {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 16px 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .key-takeaways {
+            background: rgba(139, 122, 168, 0.08);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+        
+        .key-takeaways h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+        
+        .key-takeaways ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .key-takeaways li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .key-takeaways li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+        
+        .faq-section {
+            margin: 48px 0;
+            padding: 32px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 16px;
+        }
+        
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+        
+        .faq-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .faq-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .faq-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        
+        .faq-item p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--text-light);
+        }
+        
+        .trust-signals {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 32px 0;
+            padding: 20px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 12px;
+        }
+        
+        .trust-signal {
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .trust-signal::before {
+            content: '✓';
+            color: var(--lavender);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .article-meta { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/article-aura.png" alt="Mi experiencing visual aura - shimmering zigzag patterns surrounding the view of an open book">
+            <div class="article-header">
+                <span class="article-tag">Understanding</span>
+                <h1>When the World Glitches</h1>
+                <p class="article-subtitle">A word vanishes. Zigzag lines shimmer. Is this a stroke? Understanding the science behind migraine aura — and why that terrifying glitch is actually a signal you can use.</p>
+                <div class="article-meta">
+                    <span>📅 February 1, 2026</span>
+                    <span>⏱ 7 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+                
+                <!-- AUTHOR BYLINE -->
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with migraine aura | Last updated: February 1, 2026
+                    </p>
+                </div>
+                
+                <!-- MEDICAL DISCLAIMER -->
+                <p class="medical-disclaimer">
+                    This article is for educational purposes only and does not constitute medical advice. 
+                    Content aligned with ICHD-3 diagnostic criteria and peer-reviewed research. If you experience new, sudden, or severe neurological symptoms, seek emergency care immediately.
+                </p>
+
+                <!-- KEY TAKEAWAYS -->
+                <div class="key-takeaways">
+                    <h3>📋 Key Takeaways</h3>
+                    <ul>
+                        <li>Migraine aura affects 25-30% of people with migraine — about 300 million worldwide</li>
+                        <li>Aura is caused by cortical spreading depression, an electrical wave moving at 3 mm/min</li>
+                        <li>Typical duration: 20-60 minutes, always resolves on its own</li>
+                        <li>Aura provides a warning window to take medication before headache begins</li>
+                        <li>Key difference from stroke: aura builds gradually (5-20 min), stroke hits suddenly</li>
+                        <li>Aura causes no permanent brain damage</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ When to Seek Emergency Care:</strong> If symptoms are new, sudden, severe, or different from your usual pattern — call emergency services immediately. This article helps you understand typical aura, but never self-diagnose during a crisis.</p>
+                </div>
+
+                <section class="article-section">
+                    <p>A word vanishes.</p>
+                    
+                    <p>You're reading a book, and suddenly—a word is gone. Then another. A crack splits your vision. Zigzag lines shimmer, pulse, expand. Colors that don't exist flash at the edge of your sight.</p>
+                    
+                    <p>Your first thought: <em>Am I dying?</em></p>
+                    
+                    <p>You're not. What you're seeing has a name. Scientists call it migraine aura. Three hundred million people experience it worldwide. And here's what nobody tells you: that terrifying "glitch" follows rules. It has a speed. A direction. A clock.</p>
+                    
+                    <div class="highlight-box">
+                        <p>The chaos is a pattern. The pattern is power.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Man Who Timed His Own Brain</h2>
+                    
+                    <p>In 1941, Karl Lashley sat alone in his study with a pencil, a stopwatch, and a migraine.</p>
+                    
+                    <p>Lashley was an American psychologist—and he was losing his vision. Shimmering patterns crawled across his sight line. Most people would panic. Lashley measured.</p>
+                    
+                    <p>He sketched the patterns. He timed their movement. He mapped the crawling edge of the shimmer against the clock.</p>
+                    
+                    <p>His conclusion stunned him: whatever was moving through his brain traveled at exactly three millimeters per minute.<sup>[1]</sup></p>
+                    
+                    <p>Three years later, a Brazilian scientist named Aristides Leão discovered the same wave in rabbit brains at Harvard. He called it "cortical spreading depression."<sup>[2]</sup> Today, neuroscientists call it something more vivid: <strong>brain tsunami</strong>.</p>
+                    
+                    <p>Two men. Two continents. One wave.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>Inside the Storm</h2>
+                    
+                    <p>Most people think aura means your eyes malfunction. They're wrong.</p>
+                    
+                    <p>Aura is electrical. A wave of intense activity sweeps across your visual cortex—the part of your brain that builds everything you see. Neurons fire in a cascade, then fall silent. The wave moves at walking speed: two to five millimeters per minute.<sup>[3]</sup> That's why aura takes twenty minutes to an hour to unfold. The wave is traveling.</p>
+                    
+                    <p>Picture a stadium. Fans stand up section by section, then sit back down. The wave moves; the fans stay. Your neurons work the same way. They fire, they rest, they recover.</p>
+                    
+                    <div class="quote-box">
+                        <p>Aura causes no damage. The wave is loud, but it leaves no scar. Your brain isn't breaking. It's signaling.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>What You See</h2>
+                    
+                    <p>The visual cortex maps like a target. Center vision here. Peripheral vision there. When the wave crosses each zone, it creates specific patterns:</p>
+                    
+                    <p><strong>Fortification spectra.</strong> Jagged zigzag lines that look like medieval castle walls from above. In the 1700s, physician John Fothergill named them after military fortifications. The zigzags pulse at the boundary between active neurons and silenced ones.</p>
+                    
+                    <p><strong>Scintillating scotoma.</strong> A shimmering blind spot that starts small and expands outward in a C-shape. "Scintillating" comes from Latin: sparking. That's what it looks like. Sparks that aren't there.</p>
+                    
+                    <p><strong>The expanding arc.</strong> Some describe it as a kaleidoscope. Others say it's heat ripples rising from summer pavement. Or colors pulsing at the edge of existence.</p>
+                    
+                    <p>One word ties all descriptions together: <strong>expanding</strong>. Aura moves. It grows. It follows a path.</p>
+                    
+                    <p>That path is your diagnostic clue.</p>
+                </section>
+
+                <!-- VISUAL TYPES IMAGE -->
+                <figure class="article-image">
+                    <img src="images/aura-visual-types.png" alt="Three types of migraine aura visual disturbances: Fortification Spectra (jagged zigzag lines), Scintillating Scotoma (shimmering C-shaped blind spot), and Expanding Arc (kaleidoscopic pattern)">
+                    <figcaption>The three most common types of visual aura. Each follows the same underlying mechanism: cortical spreading depression moving across the visual cortex.</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Question Everyone Asks</h2>
+                    
+                    <p>Is this a stroke?</p>
+                    
+                    <p>The fear is reasonable. Both conditions affect vision. Both can cause numbness. Both terrify.</p>
+                    
+                    <p>But they behave differently.</p>
+                    
+                    <p><strong>Stroke hits like a switch.</strong> One moment: fine. Next moment: half your vision gone.</p>
+                    
+                    <p><strong>Aura builds like a sunrise.</strong> You notice something small. It grows. Five minutes. Ten. Twenty.</p>
+                    
+                    <p>Stroke symptoms persist. They don't resolve.</p>
+                    
+                    <p>Aura symptoms march and retreat. They peak. They fade. Almost always within an hour.</p>
+                    
+                    <p>Stroke often steals strength—facial drooping, arm weakness, stumbling.</p>
+                    
+                    <p>Aura rarely causes true weakness. Tingling, yes. Numbness, sometimes. Paralysis, almost never.</p>
+                    
+                    <div class="warning-box">
+                        <p><strong>The rule:</strong> If symptoms are new, sudden, severe, or different—call for help immediately. Don't guess. Don't wait. Don't diagnose yourself mid-crisis.</p>
+                    </div>
+                    
+                    <p>But if you've felt this before? If you recognize the pattern? That recognition is data.</p>
+                </section>
+
+                <!-- STROKE VS AURA IMAGE -->
+                <figure class="article-image">
+                    <img src="images/aura-vs-stroke.png" alt="Comparison infographic: Stroke symptoms appear suddenly like a lightning strike, while Aura symptoms build gradually like a sunrise">
+                    <figcaption>The critical difference: stroke is sudden and persistent; aura is gradual and resolving. When in doubt, always seek emergency care.</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Gift</h2>
+                    
+                    <p>Most migraine attacks ambush. No warning. The pain simply arrives.</p>
+                    
+                    <p>Aura changes that equation. Your brain sends a signal twenty to sixty minutes before the headache phase begins. The shimmer is a countdown clock.</p>
+                    
+                    <p>What will you do with that time?</p>
+                    
+                    <p><strong>Act fast.</strong> Triptans, gepants, and even simple painkillers work dramatically better when taken early.<sup>[4]</sup> Studies show early intervention can cut headache severity in half. The shimmer is your signal: take the pill now.</p>
+                    
+                    <p><strong>Get safe.</strong> If you're driving, pull over. If you're in a meeting, excuse yourself. Aura can temporarily blind you. Don't operate machinery with half a visual field.</p>
+                    
+                    <p><strong>Prepare your space.</strong> Dark room. Quiet. Water. Ice pack. The calmer your environment before the pain arrives, the better you'll weather the storm.</p>
+                    
+                    <p><strong>Document everything.</strong> What were you doing before the shimmer started? What did you eat? How did you sleep last night? The minutes before aura often hide your triggers. Write them down. Over time, patterns emerge.</p>
+                    
+                    <div class="highlight-box">
+                        <p>That's not surrender. That's strategy.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>What We Don't Know</h2>
+                    
+                    <p>Eighty years after Leão's rabbits and Lashley's stopwatch, mysteries remain.</p>
+                    
+                    <p>We don't know what triggers the wave. Stress, sleep disruption, hormonal shifts, and certain foods lower the threshold—but the exact mechanism that tips a stable brain into tsunami mode? Unknown.</p>
+                    
+                    <p>We don't know why some people get aura and others don't. About seventy percent of migraineurs never see the shimmer.<sup>[5]</sup> Genetics play a role. Which genes, and why? Incomplete picture.</p>
+                    
+                    <p>We can't stop aura itself. Current medications target the headache phase, not the spreading depression. Researchers are investigating ion-channel blockers that might prevent the wave from starting. That treatment doesn't exist yet.</p>
+                    
+                    <p>What we know: the phenomenon is real, it follows predictable rules, and it isn't harming you.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>Barbara's Story</h2>
+                    
+                    <p>She was eight years old when her first aura struck.</p>
+                    
+                    <p>Barbara was playing with her brother when her right eye went dark. She ran to her mother. She couldn't find words to explain what she'd lost.</p>
+                    
+                    <p>"One of the scariest things that ever happened to me," she wrote years later.<sup>[6]</sup></p>
+                    
+                    <p>Today, Barbara experiences aura once or twice a week. The frequency has fluctuated over decades. The unpredictability remains.</p>
+                    
+                    <p>But something else changed: her relationship with the shimmer.</p>
+                    
+                    <div class="quote-box">
+                        <p>"I spent years being angry at my migraine. But at the end of the day, it's not worth it. I learned to know my migraine and accept it as part of who I am."</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Reframe</h2>
+                    
+                    <p>Your brain contains eighty-six billion neurons. Trillions of synapses connect them. This system builds every color you see, every sound you hear, every thought you think.</p>
+                    
+                    <p>And sometimes—for reasons we don't fully understand—a wave of electrical activity sweeps through this impossibly complex system at exactly three millimeters per minute.</p>
+                    
+                    <p>You see zigzags. You see sparks. Reality glitches.</p>
+                    
+                    <p>But eighty years of neuroscience have revealed something important: <strong>that glitch is not random</strong>. It's a wave with a speed, a direction, a beginning, and an end. Something you can recognize. Something you can prepare for. Something you can use.</p>
+                    
+                    <p>The next time your vision starts to shimmer, try this:</p>
+                    
+                    <p>Don't think <em>something is wrong with me</em>.</p>
+                    
+                    <p>Think <em>my brain is sending me a signal</em>.</p>
+                    
+                    <p>Then use the time you've been given.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <p><em>The most powerful tool in migraine management is pattern recognition. Track your auras. Document what you see. Note how long they last. Record what comes next. Over time, those patterns become your early warning system—and your path toward control.</em></p>
+                </section>
+
+                <!-- FAQ SECTION -->
+                <div class="faq-section">
+                    <h2>❓ Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <h4>Can migraine aura cause permanent damage?</h4>
+                        <p>No. Despite how alarming it feels, cortical spreading depression is a temporary electrical event that does not damage brain tissue. Neurons fire, then rest, then fully recover.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>How long does migraine aura typically last?</h4>
+                        <p>Most auras last between 20 and 60 minutes. The visual symptoms typically build over 5-20 minutes, peak, then gradually fade. Aura rarely lasts longer than one hour.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>What's the difference between migraine aura and a stroke?</h4>
+                        <p>The key differences are onset and progression. Stroke symptoms appear suddenly and persist or worsen. Aura symptoms build gradually over minutes, follow a predictable pattern, and resolve completely. However, if symptoms are new, sudden, or severe, always seek emergency care.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Can you have migraine aura without headache?</h4>
+                        <p>Yes. This is called "acephalgic migraine" or "silent migraine." About 20% of aura episodes occur without the headache phase that typically follows.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Is there medication that stops aura itself?</h4>
+                        <p>Currently, no approved medication stops cortical spreading depression once it begins. However, taking migraine medication (triptans, gepants, pain relievers) during the aura phase can significantly reduce the severity of the headache that follows.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Should I see a doctor about my aura?</h4>
+                        <p>Yes, especially if: (1) you're experiencing aura for the first time, (2) your aura pattern changes, (3) aura lasts longer than 60 minutes, (4) you have new symptoms like weakness or speech difficulty, or (5) you have cardiovascular risk factors.</p>
+                    </div>
+                </div>
+
+                <!-- TRUST SIGNALS -->
+                <div class="trust-signals">
+                    <span class="trust-signal">Evidence-based content</span>
+                    <span class="trust-signal">ICHD-3 aligned</span>
+                    <span class="trust-signal">Peer-reviewed sources</span>
+                    <span class="trust-signal">Regular updates</span>
+                    <span class="trust-signal">No pharma sponsorship</span>
+                </div>
+
+                <!-- REFERENCES -->
+                <div class="references">
+                    <h3>📚 References</h3>
+                    <ol>
+                        <li>Lashley KS. Patterns of cerebral integration indicated by the scotomas of migraine. <em>Archives of Neurology & Psychiatry</em>. 1941;46(2):331-339.</li>
+                        <li>Leão AAP. Spreading depression of activity in the cerebral cortex. <em>Journal of Neurophysiology</em>. 1944;7(6):359-390.</li>
+                        <li>Charles AC, Baca SM. Cortical spreading depression and migraine. <em>Nature Reviews Neurology</em>. 2013;9(11):637-644. <a href="https://doi.org/10.1038/nrneurol.2013.192" target="_blank">doi:10.1038/nrneurol.2013.192</a></li>
+                        <li>Goadsby PJ, Holland PR, Martins-Oliveira M, et al. Pathophysiology of Migraine: A Disorder of Sensory Processing. <em>Physiological Reviews</em>. 2017;97(2):553-622.</li>
+                        <li>International Headache Society. The International Classification of Headache Disorders, 3rd edition. <em>Cephalalgia</em>. 2018;38(1):1-211.</li>
+                        <li>The Migraine Trust. Living with Migraine: Personal Stories. <a href="https://migrainetrust.org" target="_blank">migrainetrust.org</a></li>
+                        <li>Hadjikhani N, et al. Mechanisms of migraine aura revealed by functional MRI in human visual cortex. <em>PNAS</em>. 2001;98(8):4687-4692.</li>
+                        <li>American Migraine Foundation. Understanding Migraine with Aura. <a href="https://americanmigrainefoundation.org" target="_blank">americanmigrainefoundation.org</a></li>
+                    </ol>
+                </div>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator & Developer</strong> — I've lived with migraine aura for over 30 years. The shimmer that once terrified me became a language I learned to understand. I built Migraine Companion to help others decode their own patterns.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. This article was written independently and is not sponsored.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Track Your Aura Patterns with Mi</h3>
+                        <p>Document what you see, how long it lasts, and what comes next. Over time, patterns emerge — and patterns are power.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
