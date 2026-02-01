@@ -28,12 +28,15 @@
         .container{max-width:1100px;margin:0 auto;padding:0 24px}
         header{padding:16px 0;position:fixed;width:100%;top:0;z-index:100;background:rgba(35,45,40,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,122,168,.2)}
         .header-content{display:flex;justify-content:space-between;align-items:center}
-        .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none;white-space:nowrap}
+        .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none;white-space:nowrap;margin-left:-12px}
         .logo img{width:36px;height:36px;border-radius:8px}
         .logo em{color:var(--lavender);font-style:normal}
         .nav{display:flex;gap:18px;align-items:center}
         .nav a{color:var(--text-light);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.1px;transition:color .3s;white-space:nowrap}
         .nav a:hover{color:var(--lavender)}
+        .nav a[href="blog.html"]::before{content:"✦";margin-right:18px;margin-left:14px;color:var(--gold);font-size:.7rem}
+        .nav a[href="blog.html"],.nav a[href="faq.html"],.nav a[href="collaborate.html"],.nav a[href*="support"]:not(.nav-cta){color:#D4CBE5}
+        .nav a[href="blog.html"]:hover,.nav a[href="faq.html"]:hover,.nav a[href="collaborate.html"]:hover,.nav a[href*="support"]:not(.nav-cta):hover{color:#fff}
         .nav a.active{color:var(--lavender)}
         .nav-cta{background:transparent;border:1.5px solid var(--gold)!important;padding:6px 14px;border-radius:10px;color:var(--gold)!important;font-weight:700;letter-spacing:.3px;transition:all .3s ease;text-transform:uppercase;font-size:.75rem!important}
         .nav-cta:hover{background:var(--gold);color:var(--malachite-dark)!important;box-shadow:0 0 20px rgba(197,160,89,.4);transform:translateY(-1px)}
@@ -50,7 +53,6 @@
         section{scroll-margin-top:80px;padding:80px 0;position:relative;z-index:2}
         .section-title{text-align:center;font-size:2.5rem;font-weight:500;line-height:1.15;margin-bottom:18px}
         .section-subtitle{text-align:center;font-size:1.1rem;font-weight:500;line-height:1.6;color:var(--text-light);max-width:620px;margin:0 auto 56px}
-        /* Story section */
         .story{background:var(--malachite)}
         .story-content{max-width:800px;margin:0 auto;text-align:center}
         .story-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-style:italic;font-weight:500;line-height:1.9;color:#fff;margin-bottom:40px}
@@ -61,7 +63,6 @@
         .stat-item:hover{border-color:var(--antique-gold);transform:translateY(-3px)}
         .stat-number{font-size:2.4rem;font-weight:800;letter-spacing:-.5px;line-height:1.1;margin-bottom:6px;color:var(--antique-gold)}
         .stat-label{font-size:.85rem;font-weight:500;line-height:1.4;color:var(--text-light)}
-        /* Partners section */
         .partners{background:var(--charcoal)}
         .partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
         .partner-card{background:rgba(255,255,255,.03);backdrop-filter:blur(15px);border:1px solid rgba(139,122,168,.15);border-radius:28px;padding:36px 32px;transition:all .5s cubic-bezier(.23,1,.32,1)}
@@ -74,7 +75,6 @@
         .partner-benefit{background:rgba(197,160,89,.08);border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 12px 12px 0}
         .partner-benefit-label{font-size:.75rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--antique-gold);margin-bottom:4px}
         .partner-benefit-text{font-size:.9rem;font-weight:500;line-height:1.5;color:var(--text-light)}
-        /* Contact section */
         .contact{background:var(--malachite);position:relative;overflow:hidden}
         .contact::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('images/mi-garden.png') center center/cover no-repeat;opacity:.1;z-index:0}
         .contact .container{position:relative;z-index:1}
@@ -91,14 +91,12 @@
         .contact-btn-value{font-size:1rem;font-weight:600;letter-spacing:.3px;color:#fff;display:block;transition:color .3s ease}
         .contact-btn:hover .contact-btn-value{color:var(--malachite-dark)}
         .contact-note{margin-top:40px;font-size:.95rem;font-weight:500;color:var(--text-dark);font-style:italic}
-        /* Footer */
         footer{padding:56px 0;background:var(--charcoal);border-top:1px solid rgba(139,122,168,.12);position:relative;z-index:2}
         .footer-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:28px}
         .footer-links{display:flex;gap:32px;flex-wrap:wrap}
         .footer-links a{font-size:.92rem;font-weight:500;color:var(--text-light);text-decoration:none;transition:color .3s}
         .footer-links a:hover{color:var(--lavender)}
         .copyright{font-size:.88rem;font-weight:400;color:var(--text-dark)}
-        /* Animations */
         .fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
         .fade-in.visible{opacity:1;transform:translateY(0)}
         .fade-in-delay-1{transition-delay:.1s}
@@ -107,12 +105,13 @@
         .fade-in-delay-4{transition-delay:.4s}
         .fade-in-delay-5{transition-delay:.5s}
         .fade-in-delay-6{transition-delay:.6s}
-        /* Responsive */
         @media (max-width:768px){
             .nav{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(35,45,40,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:20px;gap:0;border-bottom:1px solid rgba(139,122,168,0.2);box-shadow:0 10px 30px rgba(0,0,0,0.5);z-index:99}
             .nav.mobile-menu-active{display:flex}
             .nav a{padding:12px 0;border-bottom:1px solid rgba(139,122,168,0.1);display:block;width:100%;font-size:.9rem}
             .nav a:last-child{border-bottom:none}
+            .nav a[href="blog.html"]::before{display:none}
+            .nav-cta{width:100%;text-align:center;padding:14px 20px!important;margin-top:12px;border-radius:12px;background:rgba(197,160,89,0.15)!important}
             .mobile-menu-btn{display:block}
             .hero h1{font-size:2.5rem}
             .section-title{font-size:2rem}
@@ -303,12 +302,11 @@
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <p class="copyright">© 2025 MIgraine Companion. Made with 💜 in Ukraine.</p>
+            <p class="copyright">© 2026 MIgraine Companion. Made with 💜 in Ukraine.</p>
         </div>
     </footer>
 
     <script>
-    // Mobile menu
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
     
@@ -326,7 +324,6 @@
         });
     }
 
-    // Fade in animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if(entry.isIntersecting) entry.target.classList.add('visible');
