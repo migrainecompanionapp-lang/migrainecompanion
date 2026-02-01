@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Migraine doesn't just affect you — it moves in with everyone you love. 72% feel they'd be better partners without it. Here's how to protect your relationships.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="migraine relationships, chronic illness marriage, migraine family impact, spoon theory, caregiver burden, migraine guilt">
+    <title>The Third Person in Every Room: How Migraine Lives in Your Relationships | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.85) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            margin-top: 32px;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .article-image figcaption {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.03);
+            font-style: italic;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box cite {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: normal;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .warning-box {
+            background: rgba(220, 53, 69, 0.1);
+            border-left: 3px solid #dc3545;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .warning-box p {
+            font-size: 0.95rem;
+            color: #ff6b6b;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .advice-list {
+            margin: 24px 0;
+        }
+        
+        .advice-list p {
+            margin-bottom: 16px;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        
+        .references ol {
+            padding-left: 20px;
+        }
+        
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        .medical-disclaimer {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 16px 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .key-takeaways {
+            background: rgba(139, 122, 168, 0.08);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+        
+        .key-takeaways h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+        
+        .key-takeaways ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .key-takeaways li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .key-takeaways li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+        
+        .faq-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .faq-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
+        
+        .faq-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.08);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin-bottom: 8px;
+        }
+        
+        .faq-item p {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .content-standards {
+            margin-top: 32px;
+            padding: 20px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(139, 122, 168, 0.08);
+        }
+        
+        .content-standards h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+        
+        .content-standards table {
+            width: 100%;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+        }
+        
+        .content-standards td {
+            padding: 6px 0;
+            vertical-align: top;
+        }
+        
+        .content-standards td:first-child {
+            font-weight: 600;
+            color: var(--text-light);
+            width: 140px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 450px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .article-meta { flex-wrap: wrap; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/migraine-relationships-third-person-hero.png" alt="Illustration of a couple sitting together with a translucent third figure between them, representing how migraine becomes an invisible presence in relationships">
+            <div class="article-header">
+                <span class="article-tag">Relationships</span>
+                <h1>The Third Person in Every Room</h1>
+                <p class="article-subtitle">How Migraine Lives in Your Relationships — and How to Protect What Matters Most</p>
+                <div class="article-meta">
+                    <span>📅 February 2026</span>
+                    <span>⏱ 8 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+                
+                <!-- AUTHOR BYLINE -->
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: February 2026
+                    </p>
+                </div>
+                
+                <!-- MEDICAL DISCLAIMER -->
+                <p class="medical-disclaimer">
+                    This article is for educational purposes only and does not constitute medical or relationship advice. 
+                    Content based on peer-reviewed research from Mayo Clinic Proceedings and Cephalalgia. For personalized support, consult your healthcare provider or a licensed therapist.
+                </p>
+
+                <!-- KEY TAKEAWAYS -->
+                <div class="key-takeaways">
+                    <h3>📋 Key Takeaways</h3>
+                    <ul>
+                        <li><strong>72%</strong> of people with chronic migraine feel they would be better partners without their condition</li>
+                        <li><strong>71.7%</strong> believe they would be better parents — guilt shapes the experience more than pain</li>
+                        <li><strong>29.8%</strong> of patients believe their partner doesn't understand their severity; <strong>16.1%</strong> of partners admit doubt</li>
+                        <li><strong>Spoon theory</strong> provides shared language that transforms arguments into problem-solving</li>
+                        <li>Partners also suffer: higher anxiety levels and moderate caregiver burden documented</li>
+                        <li>Children develop remarkable empathy and self-reliance when given age-appropriate communication</li>
+                        <li><strong>Couples who face migraine together often report stronger relationships</strong> than before</li>
+                    </ul>
+                </div>
+
+                <!-- IMPORTANT NOTE -->
+                <div class="warning-box">
+                    <p><strong>⚠️ Important Note:</strong> If you or your partner are experiencing relationship distress, communication breakdown, or mental health challenges related to chronic illness, consider seeking support from a licensed therapist or counselor who specializes in chronic illness and family dynamics.</p>
+                </div>
+
+                <section class="article-section">
+                    <p>You stand in the doorway. Your family leaves for the beach trip you planned for months. Your partner shoots you that look — somewhere between concern and something else you're afraid to name. Your daughter clutches her yellow bucket. Your son has already forgotten his sunscreen promise. And from the bedroom, that familiar pressure builds behind your left eye like a fist slowly closing.</p>
+                    
+                    <p>"Are you sure you can't come?"</p>
+                    
+                    <p>You whisper: "Next time."</p>
+                    
+                    <p>The door closes. The car starts. You hear the crunch of gravel fading down the driveway.</p>
+                    
+                    <p>Then silence.</p>
+                    
+                    <p>That third person — the uninvited guest who lives in your marriage, your parenting, your friendships — never got a name. It doesn't sit at dinner. It doesn't show up in photographs. But it shapes every conversation, every plan, every whispered "I love you" in the dark.</p>
+                    
+                    <p>This is the story we rarely tell about migraine. Not the neurology. Not the triggers. Not the treatments.</p>
+                    
+                    <p>This is what happens <em>between people</em> when pain moves in.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Numbers Behind Closed Doors</h2>
+                    
+                    <p>The largest study ever conducted on migraine families surveyed over 4,000 couples across the United States.<sup>[1]</sup> The researchers expected to document individual suffering. They found something larger: a disease that doesn't stop at one body.</p>
+                    
+                    <p><strong>Seventy-two percent</strong> of people with chronic migraine feel they would be a better partner without their condition.<sup>[1]</sup> Not "somewhat better." They believe migraine fundamentally limits their capacity to love well.</p>
+                    
+                    <p>The burden spreads further. <strong>51.4%</strong> report that migraine disrupts one-on-one time with their partner.<sup>[1]</sup> <strong>57.9%</strong> say it makes enjoying time together significantly harder.<sup>[1]</sup> <strong>One in three</strong> worries constantly about their family's long-term financial security.<sup>[1]</sup></p>
+                    
+                    <p>But one number cuts deepest.</p>
+                    
+                    <p><strong>29.8%</strong> of people with migraine believe their partner doesn't truly understand how severe their attacks are.<sup>[1]</sup> When researchers asked the partners directly, <strong>16.1%</strong> admitted they sometimes doubt the severity.<sup>[1]</sup> Among people with chronic migraine — those experiencing 15 or more headache days per month — that perception of disbelief rises to <strong>43.9%</strong>.<sup>[1]</sup></p>
+                    
+                    <div class="highlight-box">
+                        <p>That gap between invisible agony and visible confusion is where relationships fracture. Not because anyone fails. Because pain creates a language barrier that words alone cannot cross.</p>
+                    </div>
+                </section>
+
+                <!-- IMAGE 2: DOORWAY MOMENT -->
+                <figure class="article-image">
+                    <img src="images/migraine-relationships-doorway-moment.png" alt="View from a darkened room showing family silhouettes leaving through a bright doorway, capturing the painful moment of missing family activities due to migraine">
+                    <figcaption>The moment of "next time" — watching life continue without you</figcaption>
+                </figure>
+
+                <section class="article-section">
+                    <h2>The Tax You Never Agreed to Pay</h2>
+                    
+                    <p>Guilt arrives uninvited. It stays longer than the pain.</p>
+                    
+                    <p>Dr. Dawn Buse, director of behavioral medicine at Montefiore Headache Center, has spent years documenting what she calls "the family burden of migraine."<sup>[2]</sup> Her research reveals a pattern hiding beneath every statistic: guilt shapes the migraine experience more than pain does.</p>
+                    
+                    <div class="quote-box">
+                        <p>"People with migraine are harder on themselves than their spouses are. They feel guiltier, sadder, angrier, more frustrated — they perceive that their kids are more affected than their partners actually report."</p>
+                        <cite>— Dr. Dawn Buse, Montefiore Headache Center<sup>[2]</sup></cite>
+                    </div>
+                    
+                    <p>Here's what makes this guilt uniquely destructive.</p>
+                    
+                    <p>It attacks when you're already down.</p>
+                    
+                    <p>During an attack, <strong>66%</strong> of parents with chronic migraine report getting more easily angry or annoyed with their children.<sup>[1]</sup> They snap at a spilled glass of milk. They withdraw when a child needs help with homework. Then they lie in the dark, replaying the moment their daughter's face fell.</p>
+                    
+                    <p><strong>71.7%</strong> believe they would be better parents without the condition.<sup>[1]</sup> Not "better at certain tasks." Better parents. Full stop.</p>
+                    
+                    <p>But guilt lies.</p>
+                    
+                    <p>It tells you that <em>you</em> are the problem when <em>migraine</em> is the problem. It confuses a medical condition with a moral failure. It whispers that your family would be happier without you — when the truth is simpler and harder.</p>
+                    
+                    <p>They would be happier if you weren't in pain.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Invisible Made Visible</h2>
+                    
+                    <p>In 2003, a woman named Christine Miserandino sat in a diner with a friend who asked what living with lupus actually felt like.<sup>[3]</sup> Miserandino looked around the table. She grabbed every spoon within reach — from her place setting, from her friend's, from the empty table nearby.</p>
+                    
+                    <p>Then she handed them to her friend.</p>
+                    
+                    <p>"Here's how it works," she said. "You start each day with a limited number of spoons. Healthy people have unlimited spoons. You don't."</p>
+                    
+                    <p>Every task costs spoons. Showering: one. Commuting: three. Attending a meeting: five. Making dinner: two. Helping with homework: three more.</p>
+                    
+                    <p>When you run out, you're done.</p>
+                    
+                    <p>You can borrow from tomorrow. But tomorrow starts in debt.</p>
+                    
+                    <p>Miserandino's "spoon theory" spread through chronic illness communities like wildfire.<sup>[3]</sup> Not because it was clever — though it was. Because it finally gave invisible suffering a visible shape.</p>
+                    
+                    <p><strong>Why does this matter for relationships?</strong></p>
+                    
+                    <p>Because "I'm out of spoons" communicates what "I'm tired" cannot. It tells your partner: <em>This isn't laziness. This isn't choice. This is a depleted account with no deposit coming.</em></p>
+                    
+                    <p>Research shows that couples who develop shared language for invisible symptoms transform their arguments into problem-solving sessions.<sup>[4]</sup> Frustration becomes understanding. Blame becomes teamwork.</p>
+                    
+                    <p>The most powerful thing a partner can say isn't "What can I do?"</p>
+                    
+                    <p>It's three words.</p>
+                    
+                    <div class="highlight-box">
+                        <p><em>I believe you.</em></p>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>The Person Outside the Door</h2>
+                    
+                    <p>We talk about the person with migraine. We rarely ask about the person standing outside the darkened bedroom, holding a plate of food that's getting cold, feeling useless.</p>
+                    
+                    <p>A Spanish study surveying partners of people with migraine found something researchers didn't expect.<sup>[5]</sup> Partners showed <strong>higher anxiety levels than the general population</strong>. They reported moderate caregiver burden on standardized scales. Many felt arguments had become more common. Between <strong>20% and 60%</strong> reported negative effects on their romantic relationship.<sup>[5]</sup></p>
+                    
+                    <p>One husband, interviewed for a separate study, described his experience this way:</p>
+                    
+                    <div class="quote-box">
+                        <p>"My best contribution is making my wife feel like I have things covered while she's down. Her migraine guilt is real, so I do my best to reassure her — 'It's okay, I've got this and I've got you.'"</p>
+                        <cite>— Interview participant, migraine focus group study<sup>[6]</sup></cite>
+                    </div>
+                    
+                    <p>But reassurance costs something too.</p>
+                    
+                    <p>Burnout builds when caregiving becomes constant. Resentment festers when it stays silent. Partners need permission to acknowledge their own struggles — without feeling like they're competing with physical pain.</p>
+                    
+                    <p>Both people carry weight. The person with migraine carries pain and guilt. The partner carries helplessness and hidden exhaustion.</p>
+                    
+                    <p>Neither burden cancels the other.</p>
+                    
+                    <p>Recognizing this creates space for honest conversation.</p>
+                    
+                    <p>And honest conversation is where healing starts.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Children Who Watch and Learn</h2>
+                    
+                    <p>The study found that <strong>9.5%</strong> of children missed school or arrived late because of a parent's migraine.<sup>[1]</sup> Among children aged 11 to 17, researchers documented impacts on global well-being and the parent-child relationship.<sup>[7]</sup> <strong>57.5%</strong> of these children wanted interventions to help them manage the impact on their lives.<sup>[7]</sup></p>
+                    
+                    <p>But resilience is real too.</p>
+                    
+                    <p>Children of parents with chronic illness often develop remarkable empathy, unusual self-reliance, and deep compassion for invisible struggles.<sup>[8]</sup> They learn early that people can hurt without looking hurt. They learn to help without being asked.</p>
+                    
+                    <p>The key is communication calibrated to age.</p>
+                    
+                    <p>For younger children: <em>"Sometimes my head really hurts, so I need quiet time to feel better. It's not your fault, and I'll be back soon."</em></p>
+                    
+                    <p>For teenagers: honest conversations about the condition, what it means, and how they can help — without making them responsible for a parent's health.</p>
+                    
+                    <p>One mother with chronic migraine shared her lesson learned:</p>
+                    
+                    <div class="quote-box">
+                        <p>"The worst thing I did was hide my attacks completely. My kids thought I was just distant and uninterested. When I finally explained, they became my fiercest protectors."</p>
+                        <cite>— Focus group participant<sup>[6]</sup></cite>
+                    </div>
+                    
+                    <p>Children don't need perfect parents.</p>
+                    
+                    <p>They need parents who show up — even when showing up means saying: <em>"I can't right now, but I love you always."</em></p>
+                </section>
+
+                <section class="article-section">
+                    <h2>What Actually Works</h2>
+                    
+                    <p>Research reveals that <strong>20.1%</strong> of people believe migraine has caused or nearly caused a breakup in their relationship.<sup>[1]</sup> The disease contributes to higher rates of divorce, relationship stress, and family conflict.<sup>[9]</sup></p>
+                    
+                    <p>But other research tells a more nuanced story.</p>
+                    
+                    <p>Couples who face migraine <em>together</em> — who communicate openly, share weight, refuse to let disease drive them apart — often report relationships stronger than before.<sup>[4]</sup> Not despite the struggle.</p>
+                    
+                    <p>Because of it.</p>
+                    
+                    <p>The key word: <em>together</em>.</p>
+                    
+                    <h3>For Partners</h3>
+                    
+                    <div class="advice-list">
+                        <p><strong>Believe first.</strong> You may never fully grasp what an attack feels like. You don't have to. Your job isn't to comprehend the pain — it's to trust that it's real.</p>
+                        
+                        <p><strong>Learn the triggers.</strong> Know that flickering lights, certain perfumes, or that third glass of wine might not be worth it. Small accommodations add up to massive relief.</p>
+                        
+                        <p><strong>Take over without being asked.</strong> "I've got dinner, go rest" communicates something that waiting doesn't. It says: <em>I see you. I'm here. Stop managing my feelings and focus on yours.</em></p>
+                        
+                        <p><strong>Never weaponize the illness.</strong> "You always have a headache when we need to..." is a sentence that destroys trust. Once spoken, it echoes in every future attack.</p>
+                        
+                        <p><strong>Protect yourself too.</strong> Caregiver burnout is real. Your needs matter. Find outlets. Maintain friendships. Build your own support system.</p>
+                    </div>
+                    
+                    <h3>For People with Migraine</h3>
+                    
+                    <div class="advice-list">
+                        <p><strong>Communicate before, during, and after.</strong> Don't let your partner guess. "I'm feeling prodrome symptoms — tomorrow might be rough" gives everyone time to adjust.</p>
+                        
+                        <p><strong>Release the guilt spiral.</strong> Easier said than done, but essential. You didn't choose this. Apologizing constantly trains both of you to see migraine as moral failure rather than medical reality.</p>
+                        
+                        <p><strong>Acknowledge their sacrifices.</strong> Your partner adapts routines, changes sleep schedules, handles extra duties. A simple "I see what you do for us, and I'm grateful" travels far.</p>
+                        
+                        <p><strong>Build a wider support network.</strong> Don't put the entire burden of understanding on one person. Friends, support groups, online communities — diversify your sources of strength.</p>
+                        
+                        <p><strong>Create a preparedness plan together.</strong> Frozen meals ready to go. A list of emergency contacts. Backup plans for childcare. Turning chaos into routine reduces stress for everyone.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <section class="article-section">
+                    <h2>The Conversation That Changes Everything</h2>
+                    
+                    <p>If you've read this far, something resonated.</p>
+                    
+                    <p>Maybe you're the one with migraine, drowning in guilt every time you cancel plans. Maybe you're the partner, exhausted from picking up extra weight while wondering if you're allowed to feel frustrated.</p>
+                    
+                    <p>Maybe you're both.</p>
+                    
+                    <p>Here's a four-step conversation that transforms relationships — and it doesn't require a therapist, though one can help:</p>
+                    
+                    <p><strong>Step 1: Name it.</strong> Admit that migraine is the third person in your relationship. Not dramatic. Accurate.</p>
+                    
+                    <p><strong>Step 2: Each person shares one fear.</strong> For the person with migraine: <em>"I'm terrified you'll eventually resent me."</em> For the partner: <em>"Sometimes I feel like I'm failing you because I can't fix this."</em></p>
+                    
+                    <p><strong>Step 3: Ask each other one question.</strong> "What's one small thing that would help you feel more supported?" Not grand gestures. Small, specific, repeatable actions.</p>
+                    
+                    <p><strong>Step 4: Make a plan for the next attack.</strong> What signals mean it's coming? Who handles what? What does "help" actually look like?</p>
+                    
+                    <p>This isn't a one-time fix.</p>
+                    
+                    <p>It's a practice. Like any practice, it gets easier.</p>
+                </section>
+
+                <!-- IMAGE 3: HANDS TOGETHER WITH MI -->
+                <figure class="article-image">
+                    <img src="images/migraine-relationships-hands-together-mi.png" alt="Two hands holding each other with Mi floating gently above, symbolizing partnership and support through chronic illness">
+                    <figcaption>You have each other — and you have help</figcaption>
+                </figure>
+
+                <section class="article-section">
+                    <h2>You're Not Alone in That Room</h2>
+                    
+                    <p>Here's what the research keeps showing, beneath all the statistics about burden and impact and disrupted plans.</p>
+                    
+                    <div class="highlight-box">
+                        <p>Couples who face migraine together often emerge stronger than they were before.<sup>[4]</sup></p>
+                    </div>
+                    
+                    <p>The third person in your room doesn't have to be an enemy. It can become a shared challenge that reminds you, over and over, why you chose each other.</p>
+                    
+                    <p>Because "in sickness and in health" isn't just a wedding phrase. For one billion people worldwide living with migraine,<sup>[10]</sup> and for everyone who loves them, it's a daily choice.</p>
+                    
+                    <p>A choice to believe. A choice to stay. A choice to whisper in the dark:</p>
+                    
+                    <div class="quote-box">
+                        <p><em>I've got this. And I've got you.</em></p>
+                    </div>
+                </section>
+
+                <!-- FAQ SECTION -->
+                <div class="faq-section">
+                    <h3>❓ Frequently Asked Questions</h3>
+                    
+                    <div class="faq-item">
+                        <h4>Q: How common is relationship strain from migraine?</h4>
+                        <p>Very common. Research shows 51.4% of couples report disrupted one-on-one time, and 20.1% believe migraine has caused or nearly caused a breakup. However, many couples who communicate openly report stronger relationships over time.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Q: Should I feel guilty about how migraine affects my family?</h4>
+                        <p>Guilt is a natural response, but research shows people with migraine are often harder on themselves than their families are. Migraine is a neurological condition, not a moral failing. Separating the disease from your identity is an important step toward healthier family dynamics.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Q: How do I explain migraine to my children?</h4>
+                        <p>Use age-appropriate language. For young children: "Sometimes my head really hurts, so I need quiet time to feel better. It's not your fault, and I'll be back soon." For teenagers, more detailed conversations about the condition can build understanding and even strengthen your bond.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Q: My partner doesn't seem to believe how bad my migraines are. What can I do?</h4>
+                        <p>This is more common than you might think — 29.8% of patients perceive partner disbelief. Try using concrete metaphors like "spoon theory," sharing educational resources, or inviting your partner to a medical appointment. Sometimes seeing a doctor validate your experience helps partners understand.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Q: How can I support my partner with migraine without burning out?</h4>
+                        <p>Caregiver burnout is real. Maintain your own friendships and activities, communicate your own needs honestly, and consider joining a support group for partners of people with chronic illness. Your wellbeing matters too — you can't pour from an empty cup.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Q: Should we see a couples therapist?</h4>
+                        <p>If chronic illness is straining your relationship, couples therapy can be very helpful — especially with a therapist who understands chronic illness dynamics. The four-step conversation in this article is a starting point, but professional guidance can provide deeper tools.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Q: Do children of parents with migraine have long-term problems?</h4>
+                        <p>Research shows mixed outcomes. While children may experience some impacts on well-being, many also develop remarkable empathy, self-reliance, and compassion. Open, age-appropriate communication is the key factor in positive outcomes.</p>
+                    </div>
+                </div>
+
+                <!-- REFERENCES -->
+                <div class="references">
+                    <h3>📚 Sources & References</h3>
+                    <ol>
+                        <li>Buse DC, Scher AI, Dodick DW, et al. Impact of migraine on the family: perspectives of people with migraine and their spouse/domestic partner in the CaMEO Study. <em>Mayo Clinic Proceedings</em>. 2016;91(7):901-912. <a href="https://doi.org/10.1016/j.mayocp.2016.04.022" target="_blank">doi:10.1016/j.mayocp.2016.04.022</a></li>
+                        <li>Buse DC, Rupnow MF, Lipton RB. Assessing and managing all aspects of migraine: migraine attacks, migraine-related functional impairment, common comorbidities, and quality of life. <em>Mayo Clinic Proceedings</em>. 2009;84(5):422-435.</li>
+                        <li>Miserandino C. The Spoon Theory. <em>ButYouDontLookSick.com</em>. 2003. <a href="https://butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/" target="_blank">butyoudontlooksick.com</a></li>
+                        <li>Lipton RB, Bigal ME, Kolodner K, et al. The family impact of migraine: population-based studies in the USA and UK. <em>Cephalalgia</em>. 2003;23(6):429-440.</li>
+                        <li>Matías-Guiu J, Porta-Etessam J, Mateos V, et al. One-year prevalence of migraine in Spain: a nationwide population-based survey. <em>Cephalalgia</em>. 2011;31(4):463-470.</li>
+                        <li>Cottrell CK, Drew JB, Waller SE, et al. Perceptions and needs of patients with migraine: a focus group study. <em>Journal of Family Practice</em>. 2002;51(2):142-147.</li>
+                        <li>Frare M, Axia G, Battistella PA. Quality of life, coping strategies and family routines in children with headache. <em>Headache</em>. 2002;42(10):953-962.</li>
+                        <li>Rolland JS. <em>Families, Illness, and Disability: An Integrative Treatment Model</em>. Basic Books. 1994.</li>
+                        <li>Smith R. Impact of migraine on the family. <em>Headache</em>. 1998;38(6):423-426.</li>
+                        <li>GBD 2016 Headache Collaborators. Global, regional, and national burden of migraine and tension-type headache, 1990–2016. <em>The Lancet Neurology</em>. 2018;17(11):954-976.</li>
+                    </ol>
+                </div>
+
+                <!-- CONTENT STANDARDS -->
+                <div class="content-standards">
+                    <h4>✅ Content Standards</h4>
+                    <table>
+                        <tr>
+                            <td>Evidence-based</td>
+                            <td>All statistics sourced from peer-reviewed research (CaMEO Study, Mayo Clinic Proceedings)</td>
+                        </tr>
+                        <tr>
+                            <td>Expert consensus</td>
+                            <td>Content aligned with published research on migraine family burden</td>
+                        </tr>
+                        <tr>
+                            <td>Transparent sourcing</td>
+                            <td>Full references provided with DOIs where available</td>
+                        </tr>
+                        <tr>
+                            <td>Clear authorship</td>
+                            <td>Author credentials and personal experience disclosed</td>
+                        </tr>
+                        <tr>
+                            <td>No conflicts</td>
+                            <td>No pharmaceutical sponsorship</td>
+                        </tr>
+                    </table>
+                    <p style="font-size:0.8rem;color:var(--text-dark);margin-top:12px;margin-bottom:0;"><em>This article follows YMYL (Your Money or Your Life) content standards for health information.</em></p>
+                </div>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. This article reflects both personal experience navigating migraine in relationships and current research on family impact.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. This article was written independently and is not sponsored.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Track Patterns, Communicate Better with Mi</h3>
+                        <p>Mi helps you document your migraine patterns — so you can explain them to the people who matter most and plan together.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
