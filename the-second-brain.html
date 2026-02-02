@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="90% of your serotonin is made in your gut, not your brain. New research reveals a surprising connection between your microbiome and migraine. Discover why Mi tracks your food.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="migraine, gut-brain axis, microbiome, serotonin, probiotics, vagus nerve, migraine triggers, migraine diet">
+    <title>The Second Brain: How Your Gut Talks to Your Migraine | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://migrainecompanion.app/the-second-brain.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org markup for EEAT -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The Second Brain: How Your Gut Talks to Your Migraine",
+        "description": "New research reveals a surprising connection between your gut microbiome and migraine. Discover why Mi tracks your food — and what your stomach is trying to tell you.",
+        "image": "https://migrainecompanion.app/images/article-second-brain.png",
+        "author": {
+            "@type": "Person",
+            "name": "Rustam Iuldashov",
+            "description": "Developer of Migraine Companion with 30+ years of personal migraine experience",
+            "url": "https://migrainecompanion.app/about"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Migraine Companion",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://migrainecompanion.app/images/mi-icon.png"
+            }
+        },
+        "datePublished": "2026-02-02",
+        "dateModified": "2026-02-02",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://migrainecompanion.app/the-second-brain.html"
+        },
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Migraine"
+        },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".article-subtitle", ".key-takeaways"]
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .article-image figcaption {
+            background: rgba(139, 122, 168, 0.1);
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.95rem;
+        }
+        
+        .data-table th {
+            background: rgba(139, 122, 168, 0.15);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--lavender);
+        }
+        
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+            color: var(--text);
+        }
+        
+        .data-table tr:hover {
+            background: rgba(139, 122, 168, 0.05);
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        
+        .references ol {
+            padding-left: 20px;
+        }
+        
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        .medical-disclaimer {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 16px 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .key-takeaways {
+            background: rgba(139, 122, 168, 0.08);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+        
+        .key-takeaways h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        
+        .key-takeaways ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .key-takeaways li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .key-takeaways li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+        
+        .editorial-standards {
+            background: rgba(139, 122, 168, 0.05);
+            border: 1px solid rgba(139, 122, 168, 0.15);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 32px 0;
+        }
+        
+        .editorial-standards h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        
+        .editorial-standards ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .editorial-standards li {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .editorial-standards li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+        
+        .when-to-see-doctor {
+            background: rgba(197, 160, 89, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 32px 0;
+        }
+        
+        .when-to-see-doctor h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        
+        .when-to-see-doctor ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+        }
+        
+        .when-to-see-doctor li {
+            font-size: 0.9rem;
+            color: var(--text);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .when-to-see-doctor li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+        
+        .when-to-see-doctor p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            font-style: italic;
+        }
+        
+        .review-dates {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .data-table { font-size: 0.85rem; }
+            .data-table th, .data-table td { padding: 8px 12px; }
+            .article-meta { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/article-second-brain.png" alt="Artistic visualization of the gut-brain connection with luminous neural pathways">
+            <div class="article-header">
+                <span class="article-tag">Science</span>
+                <h1>The Second Brain</h1>
+                <p class="article-subtitle">90% of your serotonin is made in your gut, not your brain. New research reveals what your stomach is trying to tell you about migraine.</p>
+                <div class="article-meta">
+                    <span>📅 February 2, 2026</span>
+                    <span>⏱ 7 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+                
+                <!-- AUTHOR BYLINE -->
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: February 2, 2026
+                    </p>
+                </div>
+                
+                <!-- MEDICAL DISCLAIMER -->
+                <p class="medical-disclaimer">
+                    <strong>Medical Review:</strong> This content is based on peer-reviewed research from The Journal of Headache and Pain, Cephalalgia, Frontiers in Neurology, and other authoritative sources.<br><br>
+                    <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. Consult your doctor before changing your diet or taking supplements, especially if you take medications or have chronic conditions.
+                </p>
+
+                <!-- OPENING -->
+                <section class="article-section">
+                    <p>Ninety percent of your serotonin never touches your brain.</p>
+                    <p>It's made in your gut. Right now. By bacteria.</p>
+                    <p>This fact upends everything we thought we knew about migraine. For decades, neurologists searched inside the skull for answers. They mapped pain pathways, tracked blood vessels, measured neurotransmitters. The brain, they assumed, held the secret.</p>
+                    <p>They were looking in the wrong place.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE HIDDEN FACTORY -->
+                <section class="article-section">
+                    <h2>The Hidden Factory</h2>
+                    <p>Deep in your intestines, trillions of microorganisms run a chemical plant that would make pharmaceutical companies envious. These bacteria don't just digest your lunch. They manufacture neurotransmitters, regulate inflammation, and send signals directly to your brainstem through a biological cable called the vagus nerve.<sup>[1, 2]</sup></p>
+                    <p>Scientists call this the gut-brain axis. The name sounds clinical, sterile. But picture what it actually means: a conversation happening inside you, right now, between your stomach and your skull.</p>
+                    <p>When the conversation goes well, anti-inflammatory signals flow upward. Pain thresholds stay normal. Your head feels fine.</p>
+                    <p>When it breaks down?</p>
+                    <p>The signals change.<sup>[3]</sup></p>
+                </section>
+
+                <!-- SOMETHING DOCTORS NOTICED -->
+                <section class="article-section">
+                    <h2>Something Doctors Noticed — and Ignored</h2>
+                    <p>For years, physicians observed a curious pattern. Migraine patients showed up in gastroenterology clinics at alarming rates. Three times more likely to have irritable bowel syndrome.<sup>[4]</sup> Higher rates of celiac disease. Persistent nausea between attacks, not just during them.</p>
+                    <p>Coincidence, most researchers assumed. The gut is the gut. The brain is the brain. Different systems, different problems.</p>
+                    <p>Then came the microbiome revolution.</p>
+                    <p>When scientists finally mapped the bacterial universe inside human intestines, they discovered something that demolished the old assumptions. These organisms produce the same chemicals our brains use to think, feel, and process pain.<sup>[5]</sup> They don't just coexist with us. They communicate.</p>
+                    <p>And they have a direct line to headquarters.</p>
+                </section>
+
+                <!-- THE LONGEST NERVE -->
+                <section class="article-section">
+                    <h2>The Longest Nerve</h2>
+                    <p>Your vagus nerve stretches from your brainstem to your gut — the longest cranial nerve in your body. Information travels both directions. Your brain tells your stomach when to digest. Your stomach tells your brain when something's wrong.<sup>[6]</sup></p>
+                    <p>Here's where it gets interesting for migraineurs.</p>
+                    <p>Gut bacteria ferment dietary fiber into molecules called short-chain fatty acids.<sup>[7]</sup> Butyrate. Acetate. Propionate. These aren't waste products. They're chemical messengers that strengthen your intestinal lining, suppress inflammation, and signal directly through the vagus nerve to brain regions that process pain.<sup>[8]</sup></p>
+                    <p>When your microbiome is balanced, these protective signals dominate.</p>
+                    <p>When it's disrupted, inflammatory molecules take over. Cytokines like TNF-α, IL-1β, and IL-6 surge into your bloodstream.<sup>[9]</sup> They cross into your nervous system. They sensitize the trigeminal pathway — the exact neural circuit that triggers migraine attacks.<sup>[10]</sup></p>
+                    
+                    <div class="highlight-box">
+                        <p>Your gut isn't passive. It's negotiating with your brain about whether your head will hurt tomorrow.</p>
+                    </div>
+                </section>
+
+                <!-- IMAGE 1: THE SECOND BRAIN CONNECTED -->
+                <figure class="article-image">
+                    <img src="images/second_brain_connected.png" alt="The Second Brain: Connected — artistic visualization showing the brain, vagus nerve, and gut microbiome as a luminous communication network">
+                    <figcaption>The Second Brain: Connected — The vagus nerve carries millions of signals between your gut and brain every second</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE SEROTONIN PARADOX -->
+                <section class="article-section">
+                    <h2>The Serotonin Paradox</h2>
+                    <p>Remember that 90% figure?</p>
+                    <p>Serotonin plays a strange role in migraine. People with chronic migraines have <em>lower</em> baseline levels between attacks.<sup>[11]</sup> But during an attack, serotonin <em>spikes</em>.<sup>[12]</sup> The volatility — that swinging up and down — appears to be part of the problem.</p>
+                    <p>Your gut bacteria influence how much tryptophan (serotonin's building block) gets converted into serotonin versus other metabolites.<sup>[13]</sup> They determine whether your brain receives the raw materials it needs.</p>
+                    <p>A 2019 study found something striking: people who ate 0.84-1.06 grams of dietary tryptophan daily had 54-60% lower odds of migraine compared to those consuming less than 0.56 grams.<sup>[14]</sup></p>
+                    <p>The difference wasn't medication.</p>
+                    <p>It was breakfast.</p>
+                </section>
+
+                <!-- WHAT THE TRIALS SHOW -->
+                <section class="article-section">
+                    <h2>What the Trials Show</h2>
+                    <p>Science demands evidence. Here's what rigorous studies reveal.</p>
+                    <p>In 2019, researchers ran the gold standard: a randomized, double-blind, placebo-controlled trial testing a 14-strain probiotic on migraine patients.<sup>[15]</sup></p>
+                    <p>After ten weeks:</p>
+                    <p>Episodic migraineurs saw attack frequency drop by <strong>40%</strong>. Chronic migraineurs experienced a <strong>45% reduction</strong>. Both groups reached for painkillers less often. Chronic patients reported shorter attacks.</p>
+                    <p>Another trial combined probiotics with vitamin D.<sup>[16]</sup> After twelve weeks, participants showed significant reductions in migraine frequency — and lower levels of zonulin, a marker of intestinal permeability. Their gut barriers were healing.</p>
+                    <p>Studies comparing the microbiomes of migraineurs to healthy controls consistently find differences<sup>[17, 18]</sup>: lower levels of anti-inflammatory <em>Bifidobacterium longum</em>, higher levels of pro-inflammatory <em>Ruminococcus gnavus</em>, reduced overall diversity in children with migraine.</p>
+                    <p>This isn't just correlation. Mendelian randomization studies — which use genetic variants as natural experiments — support a causal relationship.<sup>[19]</sup> Your microbiome doesn't just correlate with your migraines.</p>
+                    <p>It drives them.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- WHY MI ASKS WHAT YOU ATE -->
+                <section class="article-section">
+                    <h2>Why Mi Asks What You Ate</h2>
+                    <p>This science explains something you may have wondered about.</p>
+                    <p>When Mi asks about your meals, it's not idle curiosity. It's not about catching you eating "bad" foods. There are no bad foods in a moral sense.</p>
+                    <p>But there is information.</p>
+                    <p>Every meal shapes your microbiome.<sup>[20]</sup> High-fiber foods feed bacteria that produce anti-inflammatory compounds. Fermented foods introduce beneficial organisms. Tryptophan-rich proteins provide raw materials for serotonin synthesis.</p>
+                    <p>Patterns matter more than individual meals. Your gut doesn't respond instantly. The microbiome shifts over days. Triggers accumulate. By the time a migraine arrives, the contributing factors may be 48 or 72 hours old.</p>
+                    <p>Mi builds that timeline with you. Over weeks and months, connections emerge that no single food diary entry could reveal.</p>
+                </section>
+
+                <!-- WHAT YOU CAN DO -->
+                <section class="article-section">
+                    <h2>What You Can Do</h2>
+                    <p>The research points toward practical steps.</p>
+                    <p><strong>Feed your beneficial bacteria.</strong> Fiber is their fuel — vegetables, fruits, whole grains, legumes.<sup>[7, 21]</sup> Ninety-five percent of Americans consume insufficient fiber. This matters for migraine.</p>
+                    <p><strong>Consider fermented foods.</strong> Yogurt, kefir, sauerkraut, kimchi, miso.<sup>[22]</sup> Regular exposure maintains microbial diversity.</p>
+                    <p><strong>Prioritize tryptophan sources.</strong> Turkey, salmon, eggs, nuts, seeds, tofu.<sup>[14]</sup> Pair them with complex carbohydrates — this helps tryptophan cross into your brain more effectively.</p>
+                    <p><strong>Protect your gut barrier.</strong> Chronic stress, excessive alcohol, and highly processed diets increase intestinal permeability.<sup>[23]</sup> When your gut becomes "leaky," inflammatory molecules escape into your bloodstream and head toward your brain.</p>
+                    <p><strong>Be patient.</strong> Your microbiome doesn't transform overnight. Studies showing benefits typically run eight to twelve weeks.<sup>[15, 16]</sup> Consistency matters more than perfection.</p>
+                </section>
+
+                <!-- IMAGE 2: THE SECOND BRAIN NOURISHED -->
+                <figure class="article-image">
+                    <img src="images/second_brain_nourished.png" alt="The Second Brain: Nourished — artistic visualization of a healthy microbiome garden inside the intestines">
+                    <figcaption>The Second Brain: Nourished — A thriving microbiome garden produces anti-inflammatory compounds that protect your brain</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE LARGER TRUTH -->
+                <section class="article-section">
+                    <h2>The Larger Truth</h2>
+                    <p>Here's what makes this research compelling:</p>
+                    <p>It reframes migraine. Not as a brain malfunction. Not as a character flaw. But as a systemic condition — one where your entire body participates.<sup>[24]</sup></p>
+                    <p>You didn't cause your migraines by eating wrong. Genetics, hormones, environment — they all play roles.</p>
+                    <p>But you have more influence than you thought.</p>
+                    <p>Every time you eat, you're sending information to trillions of bacteria. They process it. They produce metabolites. They signal upward through your vagus nerve. They shape the inflammatory environment your brain operates in.</p>
+                    <p>That's not magic.</p>
+                    <p>That's biology.</p>
+                    
+                    <div class="quote-box">
+                        <p>And it's why your stomach has something important to say.</p>
+                    </div>
+                </section>
+
+                <!-- KEY TAKEAWAYS -->
+                <div class="key-takeaways">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>90-95% of your body's serotonin is produced in your gut, not your brain</li>
+                        <li>The vagus nerve carries signals between gut and brain — disruption triggers inflammation</li>
+                        <li>Probiotic trials show 40-45% reduction in migraine frequency after 10 weeks</li>
+                        <li>Higher dietary tryptophan intake correlates with 54-60% lower migraine odds</li>
+                        <li>Patterns matter more than individual meals — Mi tracks the timeline for you</li>
+                        <li>Consistency over 8-12 weeks matters more than perfection</li>
+                    </ul>
+                </div>
+
+                <!-- WHEN TO SEE A DOCTOR -->
+                <div class="when-to-see-doctor">
+                    <h3>When to See a Doctor</h3>
+                    <ul>
+                        <li>Experience migraines for the first time or notice a change in your attack pattern</li>
+                        <li>Have migraines with aura and are considering hormonal contraception</li>
+                        <li>Take medications and plan to add probiotics or supplements</li>
+                        <li>Experience gastrointestinal symptoms alongside your migraines</li>
+                        <li>Are considering significant dietary changes</li>
+                    </ul>
+                    <p>This article is a starting point for conversation with your doctor, not a replacement for medical care.</p>
+                </div>
+
+                <!-- REFERENCES -->
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Gershon MD. 5-Hydroxytryptamine (serotonin) in the gastrointestinal tract. <em>Curr Opin Endocrinol Diabetes Obes</em>. 2013;20(1):14-21.</li>
+                        <li>Yano JM, et al. Indigenous bacteria from the gut microbiota regulate host serotonin biosynthesis. <em>Cell</em>. 2015;161(2):264-276.</li>
+                        <li>Arzani M, Jahromi SR, Ghorbani Z, et al. Gut-brain Axis and migraine headache: a comprehensive review. <em>J Headache Pain</em>. 2020;21(1):15. <a href="https://doi.org/10.1186/s10194-020-1078-9" target="_blank">doi:10.1186/s10194-020-1078-9</a></li>
+                        <li>Cole JA, et al. Migraine, fibromyalgia, and depression among people with IBS: a prevalence study. <em>BMC Gastroenterol</em>. 2006;6:26.</li>
+                        <li>Cryan JF, Dinan TG. Mind-altering microorganisms: the impact of the gut microbiota on brain and behaviour. <em>Nat Rev Neurosci</em>. 2012;13(10):701-712.</li>
+                        <li>Bonaz B, Bazin T, Pellissier S. The Vagus Nerve at the Interface of the Microbiota-Gut-Brain Axis. <em>Front Neurosci</em>. 2018;12:49. <a href="https://doi.org/10.3389/fnins.2018.00049" target="_blank">doi:10.3389/fnins.2018.00049</a></li>
+                        <li>Dalile B, Van Oudenhove L, Vervliet B, Verbeke K. The role of short-chain fatty acids in microbiota–gut–brain communication. <em>Nat Rev Gastroenterol Hepatol</em>. 2019;16(8):461-478.</li>
+                        <li>Crawford J, Liu S, Tao F. Gut microbiota and migraine. <em>Neurobiol Pain</em>. 2022;11:100090.</li>
+                        <li>Martami F, et al. Serum level of inflammatory markers in chronic and episodic migraine: a case-control study. <em>Neurol Sci</em>. 2018;39(10):1741-1749.</li>
+                        <li>Noseda R, Borsook D, Burstein R. Neuropeptides and neurotransmitters that modulate thalamo-cortical pathways relevant to migraine headache. <em>Headache</em>. 2017;57(Suppl 2):97-111.</li>
+                        <li>Ferrari MD, et al. Serotonin metabolism in migraine. <em>Neurology</em>. 1989;39(9):1239-1242.</li>
+                        <li>Panconesi A. Serotonin and migraine: a reconsideration of the central theory. <em>J Headache Pain</em>. 2008;9(5):267-276.</li>
+                        <li>Chen Y, Xu J, Chen Y. Regulation of neurotransmitters by the gut microbiota and effects on cognition in neurological disorders. <em>Nutrients</em>. 2021;13(6):2099.</li>
+                        <li>Razeghi Jahromi S, Togha M, Ghorbani Z, et al. The association between dietary tryptophan intake and migraine. <em>Neurol Sci</em>. 2019;40(11):2349-2355. <a href="https://doi.org/10.1007/s10072-019-03984-5" target="_blank">doi:10.1007/s10072-019-03984-5</a></li>
+                        <li>Martami F, Togha M, Seifishahpar M, et al. The effects of a multispecies probiotic supplement on inflammatory markers and episodic and chronic migraine characteristics: A randomized double-blind controlled trial. <em>Cephalalgia</em>. 2019;39(7):841-853. <a href="https://doi.org/10.1177/0333102418820102" target="_blank">doi:10.1177/0333102418820102</a></li>
+                        <li>Ghorbani Z, et al. Effects of probiotic and vitamin D co-supplementation on clinical symptoms, mental health, and inflammation in adult patients with migraine headache: a randomized, triple-blinded, placebo-controlled trial. <em>BMC Med</em>. 2024;22(1):454.</li>
+                        <li>Zang X, Du Y, Jiang M, et al. A thorough investigation into the correlation between migraines and the gut microbiome: an in-depth analysis using Mendelian randomization studies. <em>Front Neurol</em>. 2024;15:1356974.</li>
+                        <li>Bai J, et al. Gut microbiome composition and migraine in children: findings from the American Gut Project. <em>Cephalalgia</em>. 2021;41(3):280-289.</li>
+                        <li>Qu K, Li MX, Gan L, et al. To analyze the relationship between gut microbiota, metabolites and migraine: a two-sample Mendelian randomization study. <em>Front Microbiol</em>. 2024;15:1325047.</li>
+                        <li>De Filippo C, et al. Impact of diet in shaping gut microbiota revealed by a comparative study in children from Europe and rural Africa. <em>Proc Natl Acad Sci USA</em>. 2010;107(33):14691-14696.</li>
+                        <li>Holscher HD. Dietary fiber and prebiotics and the gastrointestinal microbiota. <em>Gut Microbes</em>. 2017;8(2):172-184.</li>
+                        <li>Marco ML, et al. Health benefits of fermented foods: microbiota and beyond. <em>Curr Opin Biotechnol</em>. 2017;44:94-102.</li>
+                        <li>Kelly JR, et al. Breaking down the barriers: the gut microbiome, intestinal permeability and stress-related psychiatric disorders. <em>Front Cell Neurosci</em>. 2015;9:392.</li>
+                        <li>Sgro M, Ray J, Foster E, Bhayee S. Making migraine easier to stomach: the role of the gut–brain–immune axis in headache disorders. <em>Eur J Neurol</em>. 2023;30(11):3605-3621. <a href="https://doi.org/10.1111/ene.15990" target="_blank">doi:10.1111/ene.15990</a></li>
+                    </ol>
+                </div>
+
+                <div class="article-footer">
+                    
+                    <!-- AUTHOR CARD -->
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. This article reflects both personal experience and current neuroscience findings.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. This article was written independently and is not sponsored by any probiotic, supplement, or pharmaceutical company.</em></p>
+                        </div>
+                    </div>
+
+                    <!-- EDITORIAL STANDARDS -->
+                    <div class="editorial-standards">
+                        <h3>How We Create Content</h3>
+                        <ul>
+                            <li><strong>Peer-reviewed sources only.</strong> We cite research from authoritative medical journals (The Journal of Headache and Pain, Cephalalgia, Frontiers in Neurology, Neurology, BMC Medicine, and others).</li>
+                            <li><strong>Scientific consensus.</strong> Information reflects current understanding of the gut-brain connection in neurology. Where consensus is still forming, we note this.</li>
+                            <li><strong>Source transparency.</strong> All claims are backed by references. You can verify the primary sources yourself.</li>
+                            <li><strong>Regular updates.</strong> We review articles when significant new research emerges.</li>
+                            <li><strong>No conflicts of interest.</strong> We receive no funding from probiotic manufacturers, supplement companies, or pharmaceutical corporations.</li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA BOX -->
+                    <div class="cta-box">
+                        <h3>Track Your Food Patterns with Mi</h3>
+                        <p>Mi helps you document what you eat and discover connections that emerge over weeks — because patterns matter more than single meals.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+
+                    <!-- REVIEW DATES -->
+                    <div class="review-dates">
+                        <p><em>Last reviewed: February 2026</em></p>
+                        <p><em>Next scheduled review: August 2026</em></p>
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
