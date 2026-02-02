@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="New research reveals why red wine triggers migraines in some people but not others. Learn about the quercetin connection and evidence-based strategies for informed decision-making.">
+    <meta name="author" content="Rustam Iuldashov">
+    <title>The 24-Hour Rule: Why That Glass of Wine Hits Different | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --wine-red: #722F37;
+            --wine-light: #9B4D54;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.3) 0%, rgba(13,13,13,0.85) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(114, 47, 55, 0.3);
+            border: 1px solid rgba(155, 77, 84, 0.5);
+            color: var(--wine-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .article-image figcaption {
+            background: rgba(255,255,255,0.03);
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(114, 47, 55, 0.1);
+            border-left: 3px solid var(--wine-light);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box .attribution {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-style: normal;
+            color: var(--text-light);
+            margin-top: 12px;
+            display: block;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--wine-light);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .separator-roman {
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            margin: 50px 0 30px;
+            color: var(--wine-light);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+        
+        .practical-list {
+            margin: 28px 0;
+        }
+        
+        .practical-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .practical-item:hover {
+            border-color: rgba(139, 122, 168, 0.25);
+        }
+        
+        .practical-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--antique-gold);
+            margin-bottom: 8px;
+        }
+        
+        .practical-item p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--text);
+        }
+        
+        .warning-box {
+            background: rgba(114, 47, 55, 0.15);
+            border: 1px solid rgba(155, 77, 84, 0.3);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 36px 0;
+        }
+        
+        .warning-box h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--wine-light);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .warning-box p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--text);
+        }
+        
+        .warning-box ul {
+            margin: 12px 0 0 0;
+            padding-left: 20px;
+        }
+        
+        .warning-box li {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        
+        .references ol {
+            padding-left: 20px;
+        }
+        
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        .medical-disclaimer {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 16px 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .key-takeaways {
+            background: rgba(139, 122, 168, 0.08);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+        
+        .key-takeaways h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        
+        .key-takeaways ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .key-takeaways li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .key-takeaways li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+        
+        .medical-attention {
+            background: rgba(114, 47, 55, 0.1);
+            border: 1px solid rgba(155, 77, 84, 0.25);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+        
+        .medical-attention h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--wine-light);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .medical-attention ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .medical-attention li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .medical-attention li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--wine-light);
+        }
+        
+        .medical-attention p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 16px 0 0 0;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 450px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .article-meta { flex-wrap: wrap; gap: 12px; }
+            .practical-item { padding: 16px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/wine_glass_uncertainty.png" alt="Elegant glass of red wine with warm golden lighting and subtle dreamlike distortion in background suggesting migraine uncertainty">
+            <div class="article-header">
+                <span class="article-tag">Triggers & Lifestyle</span>
+                <h1>The 24-Hour Rule</h1>
+                <p class="article-subtitle">Why that glass of wine hits different — and what new research reveals about alcohol and migraine.</p>
+                <div class="article-meta">
+                    <span>📅 January 2026</span>
+                    <span>⏱ 12 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+                
+                <!-- AUTHOR BYLINE -->
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with migraine | Last updated: January 2026
+                    </p>
+                </div>
+                
+                <!-- MEDICAL DISCLAIMER -->
+                <p class="medical-disclaimer">
+                    This article is for educational purposes only and does not constitute medical advice. 
+                    Content based on peer-reviewed research from Scientific Reports, Headache, and Nutrients journals. 
+                    Before making changes to your alcohol consumption, consult your healthcare provider.
+                </p>
+
+                <!-- OPENING SCENE -->
+                <section class="article-section">
+                    <p>Mariya K. poured herself a glass of red wine on her birthday. Eight hours later, she lay in darkness, head splitting, wondering if she'd ever learn. Thirty years of doctors telling her the same thing: <em>"If you have migraines, don't drink."</em></p>
+                    <p>But what if thirty years of advice were wrong?</p>
+                </section>
+
+                <p class="separator-roman">I.</p>
+
+                <section class="article-section">
+                    <p>The conventional wisdom sounds absolute. Alcohol triggers migraines. One in three migraine sufferers names it as a culprit.<sup>[1]</sup> Neurologists list it alongside stress, weather, and hormonal shifts. The logic seems bulletproof: you drink, you suffer.</p>
+                    <p>Then came the data.</p>
+                    <p>In 2022, researchers from Curelator analyzed something unprecedented: 40,165 diary days from 487 people with episodic migraine.<sup>[2]</sup> Participants tracked every trigger, every drink, every headache for months. The scientists crunched the numbers.</p>
+                    <p>The result stunned them.</p>
+                    
+                    <div class="highlight-box">
+                        <p>Alcohol consumed the night before showed no statistically significant effect on next-day migraine probability. The odds ratio: 1.01. Essentially random noise.</p>
+                    </div>
+                    
+                    <p>Stranger still: people who drank appeared <em>less</em> likely to develop migraines 24 to 48 hours later. The odds ratio dropped to 0.75.<sup>[2]</sup></p>
+                    <p>How could this be?</p>
+                </section>
+
+                <p class="separator-roman">II.</p>
+
+                <section class="article-section">
+                    <h2>The Wrong Suspects</h2>
+                    <p>For decades, researchers hunted the wrong suspect.</p>
+                    <p><strong>Sulfites</strong> topped the list. Red wine contains them; so do white wine and beer. Sulfites preserve freshness, prevent oxidation. They seemed the obvious villain.</p>
+                    <p>Except dried apricots contain ten times more sulfites than wine.<sup>[3]</sup> Nobody calls them a migraine trigger.</p>
+                    <p><strong>Histamine</strong> drew attention next. Red wine holds 20 to 200 times more histamine than white.<sup>[4]</sup> The compound dilates blood vessels, triggers inflammation. A plausible mechanism.</p>
+                    <p>But aged cheese packs even more histamine. Sauerkraut and soy sauce, too. The headache pattern didn't match.</p>
+                    <p><strong>Tyramine, tannins, congeners</strong> — one by one, the suspects failed interrogation. Each theory crumbled under scrutiny.<sup>[3,4]</sup></p>
+                    <p>The real culprit hid in plain sight.</p>
+                </section>
+
+                <p class="separator-roman">III.</p>
+
+                <section class="article-section">
+                    <h2>The Quercetin Discovery</h2>
+                    <p>In November 2023, researchers at UC Davis and UC San Francisco announced a breakthrough.<sup>[5]</sup></p>
+                    <p>They found a molecule called <strong>quercetin</strong>.</p>
+                    <p>You've probably consumed it today. Quercetin lives in apple skins, onion layers, berry flesh. Health stores sell it as an antioxidant supplement. By itself, it's harmless. Beneficial, even.</p>
+                    <p>But quercetin has a dark side.</p>
+                    <p>When alcohol enters your bloodstream, your liver converts it to acetaldehyde — a toxic compound that causes flushing, nausea, and pounding headaches. Normally, an enzyme called <strong>ALDH2</strong> breaks down acetaldehyde before it accumulates.</p>
+                    <p>Quercetin blocks that enzyme.<sup>[5]</sup></p>
+                    
+                    <div class="quote-box">
+                        <p>The research team discovered that quercetin glucuronide — the form created when your body metabolizes quercetin — inhibits ALDH2 with an IC50 of just 9.6 micromolar. That's potent enough to matter.</p>
+                    </div>
+                    
+                    <p>The result: acetaldehyde builds up. Your head pays the price.</p>
+                </section>
+
+                <!-- SCIENCE INFOGRAPHIC -->
+                <figure class="article-image">
+                    <img src="images/quercetin_pathway_infographic.png" alt="Scientific infographic illustrating how quercetin from grape skins inhibits ALDH2 enzyme in the liver, causing acetaldehyde accumulation and headache">
+                    <figcaption>The quercetin pathway: from grape skin to headache</figcaption>
+                </figure>
+
+                <p class="separator-roman">IV.</p>
+
+                <section class="article-section">
+                    <h2>Why Red Wine Hurts More</h2>
+                    <p>This explains a mystery that baffled wine drinkers for generations.</p>
+                    <p>Why does red wine cause more headaches than white?</p>
+                    <p>Quercetin concentrates in grape skins. Red wine ferments with skins for days or weeks, extracting flavonoids. White wine touches skins only briefly, then separates. The difference in quercetin content: roughly tenfold.<sup>[6]</sup></p>
+                    <p>But here's the twist that surprised even the scientists.</p>
+                    <p><strong>Not all red wines are equal.</strong></p>
+                    <p>Grapes produce quercetin as sunscreen — protection against ultraviolet light. Vineyards that expose their grapes to sun generate more of it. Premium Napa Valley wines, with their carefully trained vines and sun-drenched clusters, can contain four to five times more quercetin than mass-produced wines from shaded vineyards.<sup>[5,6]</sup></p>
+                    
+                    <div class="highlight-box">
+                        <p>The expensive bottle might be the dangerous one.</p>
+                    </div>
+                </section>
+
+                <!-- WINE COMPARISON IMAGE -->
+                <figure class="article-image">
+                    <img src="images/red_white_wine_comparison.png" alt="Split comparison image showing sun-exposed vineyard with dark grapes high in quercetin versus shaded vineyard with white grapes low in quercetin">
+                    <figcaption>Sun exposure increases quercetin content in grape skins — premium wines may carry higher risk</figcaption>
+                </figure>
+
+                <p class="separator-roman">V.</p>
+
+                <section class="article-section">
+                    <h2>The Personal Equation</h2>
+                    <p>The 2022 study carries a crucial caveat.</p>
+                    <p>It didn't prove alcohol is safe for everyone with migraines. It proved something more nuanced: <strong>the relationship between drinking and headaches is intensely personal.</strong></p>
+                    <p>Some people metabolize acetaldehyde slowly. Roughly 40 percent of East Asian populations carry genetic variants that impair ALDH2 function.<sup>[5,7]</sup> These individuals flush easily and may be hypersensitive to alcohol's effects.</p>
+                    <p>Others lack that vulnerability entirely.</p>
+                    <p>The study also revealed a hidden variable: <em>selection bias</em>. People who experience severe alcohol-triggered migraines tend to stop drinking. The remaining drinkers may represent a naturally resistant population.<sup>[2]</sup></p>
+                    <p>Context matters too. The same glass of wine might pass harmlessly on a relaxed Saturday but devastate you after a stressful workweek. Sleep deprivation, dehydration, hormonal fluctuations — all lower the threshold.<sup>[8,9]</sup></p>
+                    
+                    <div class="quote-box">
+                        <p>Your trigger today might not be your trigger tomorrow.</p>
+                    </div>
+                </section>
+
+                <!-- INDIVIDUAL VARIATION IMAGE -->
+                <figure class="article-image">
+                    <img src="images/individual_migraine_response.png" alt="Conceptual illustration showing how the same glass of wine leads to different outcomes for different people based on genetics, sleep, hydration, and other personal factors">
+                    <figcaption>Same wine, different outcomes: genetics, sleep, stress, and hydration all influence your response</figcaption>
+                </figure>
+
+                <p class="separator-roman">VI.</p>
+
+                <section class="article-section">
+                    <h2>The Expert View</h2>
+                    <p>Headache specialist Michael Marmura, of Thomas Jefferson University, has watched this research unfold.</p>
+                    
+                    <div class="quote-box">
+                        <p>"There's a broader question in our field. Are we overestimating triggers in migraine patients? Triggers can vary not just from patient to patient but from period to period. A person might be sensitive to something at one point in life and not later."</p>
+                        <span class="attribution">— Dr. Michael Marmura, Thomas Jefferson University<sup>[10]</sup></span>
+                    </div>
+                    
+                    <p>He paused.</p>
+                    <p><em>"Our patients get a little demoralized when we tell them they can't do fun things, eat something tasty, or have a beer."</em></p>
+                </section>
+
+                <p class="separator-roman">VII.</p>
+
+                <section class="article-section">
+                    <h2>What This Means for You</h2>
+                    <p>If you've avoided alcohol entirely based on conventional advice, the research suggests reconsideration might be warranted. Not permission to drink freely — but <strong>permission to experiment thoughtfully</strong>.</p>
+                    <p>The practical implications stack up clearly:</p>
+                    
+                    <div class="practical-list">
+                        <div class="practical-item">
+                            <h4>Choose lighter</h4>
+                            <p>White wine, rosé, and sparkling contain a fraction of the quercetin in red. If quercetin drives your reaction, the difference will be noticeable.</p>
+                        </div>
+                        
+                        <div class="practical-item">
+                            <h4>Consider the source</h4>
+                            <p>Mass-produced wines from cooler climates and shaded vineyards often contain less quercetin than premium sun-exposed bottles. The inexpensive option might treat you better.</p>
+                        </div>
+                        
+                        <div class="practical-item">
+                            <h4>Hydrate aggressively</h4>
+                            <p>Alcohol dehydrates. Dehydration triggers migraines independently. A glass of water between drinks addresses both.</p>
+                        </div>
+                        
+                        <div class="practical-item">
+                            <h4>Eat first</h4>
+                            <p>Food slows alcohol absorption and stabilizes blood sugar — another migraine trigger.</p>
+                        </div>
+                        
+                        <div class="practical-item">
+                            <h4>Track patterns</h4>
+                            <p>"I think red wine bothers me" is an impression. "Five of seven times I drank red wine in the evening, a migraine followed within twelve hours" is data. Data enables decisions.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <p class="separator-roman">VIII.</p>
+
+                <section class="article-section">
+                    <h2>When to Be Cautious</h2>
+                    <p>Some situations call for caution regardless.</p>
+                    
+                    <div class="warning-box">
+                        <h4>⚠️ Consider avoiding alcohol if:</h4>
+                        <ul>
+                            <li>You feel the subtle warning signs of an approaching migraine — the vague unease, the light sensitivity, the difficulty finding words — alcohol will likely accelerate the attack</li>
+                            <li>You take MAO inhibitors or certain other medications — wine's tyramine content poses genuine risks beyond headache</li>
+                            <li>Your migraines have increased recently in frequency or severity — adding variables makes diagnosis harder</li>
+                            <li>Tomorrow holds something unmissable — a presentation, a wedding, a flight — the gamble may not be worth the potential cost</li>
+                        </ul>
+                    </div>
+                    
+                    <p>Sometimes the sparkling water, garnished with lime, served in a wine glass, offers more genuine pleasure than any actual wine could. The pleasure of presence without fear.</p>
+                </section>
+
+                <p class="separator-roman">IX.</p>
+
+                <section class="article-section">
+                    <h2>The Science Moves Forward</h2>
+                    <p>Clinical trials are now underway. Researchers plan to give participants wines with measured quercetin levels and track their responses.<sup>[6]</sup> Within a few years, we may have definitive answers.</p>
+                    <p>Until then, the evidence points toward a more nuanced truth than the blanket advice of previous decades.</p>
+                    <p>Alcohol and migraine are connected. But the connection isn't simple cause and effect. It's a complex interaction of your genetics, your current state, what you're drinking, and how much quercetin the winemaker's sun-drenched grapes produced.</p>
+                    <p>For some people with migraines, complete abstinence remains the right choice.</p>
+                    <p>For others, informed moderation may be possible — with the right drink, in the right amount, at the right time.</p>
+                </section>
+
+                <p class="separator-roman">X.</p>
+
+                <section class="article-section">
+                    <h2>Beyond the Wine Glass</h2>
+                    <p>This story isn't really about wine.</p>
+                    <p>It's about the difference between accepting conventional wisdom and examining evidence. It's about the courage to question advice that's been repeated so often it sounds like fact. It's about treating yourself as an individual rather than a statistic.</p>
+                    <p>Thirty years ago, doctors told migraine patients to eliminate cheese, chocolate, and citrus. Most of those restrictions have quietly disappeared as research failed to support them.</p>
+                    <p>Now the same reexamination is reaching alcohol.</p>
+                    
+                    <div class="highlight-box">
+                        <p>The 24-Hour Rule isn't a guarantee. It's an invitation — to stop fearing, start tracking, and discover what's actually true for you.</p>
+                    </div>
+                    
+                    <p>Your body holds the answer. The science is finally catching up.</p>
+                </section>
+
+                <!-- TRACKING IMAGE -->
+                <figure class="article-image">
+                    <img src="images/migraine_tracking_patterns.png" alt="Illustration showing transformation from confusion about migraine triggers to clarity through systematic tracking and pattern recognition">
+                    <figcaption>From guesswork to clarity: tracking reveals your personal patterns</figcaption>
+                </figure>
+
+                <!-- KEY TAKEAWAYS -->
+                <div class="key-takeaways">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>A 2022 study of 40,165 diary days found no statistically significant link between alcohol consumed the night before and next-day migraine</li>
+                        <li>2023 UC Davis/UCSF research identified quercetin — concentrated in grape skins — as a potential mechanism for red wine headaches</li>
+                        <li>Red wine contains roughly 10x more quercetin than white; sun-exposed premium wines may contain 4-5x more than mass-produced wines</li>
+                        <li>Individual responses vary based on ALDH2 genetics, hydration, sleep, stress, and hormonal status</li>
+                        <li>Systematic tracking can reveal your personal patterns — impression vs. data</li>
+                    </ul>
+                </div>
+
+                <!-- WHEN TO SEEK MEDICAL ATTENTION -->
+                <div class="medical-attention">
+                    <h3>⚕️ When to See a Doctor</h3>
+                    <ul>
+                        <li>A sudden, severe headache unlike any you've had before ("thunderclap headache")</li>
+                        <li>Headache with fever, stiff neck, confusion, seizures, double vision, weakness, or numbness</li>
+                        <li>Headache after a head injury</li>
+                        <li>New headache pain if you are over 50</li>
+                        <li>Significant increase in headache frequency or severity</li>
+                    </ul>
+                    <p>This article discusses general research and does not address your individual medical situation. Always discuss changes to your diet or lifestyle with your physician.</p>
+                </div>
+
+                <!-- REFERENCES -->
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Panconesi A. Alcohol-induced headaches: Evidence for a central mechanism? <em>J Neurosci Rural Pract</em>. 2016;7(2):269-275. <a href="https://doi.org/10.4103/0976-3147.178654" target="_blank">doi:10.4103/0976-3147.178654</a></li>
+                        <li>Vives-Mestres M, Casanova A, Buse DC, et al. Alcohol as a trigger of migraine attacks in people with migraine. Results from a large prospective cohort study in English-speaking countries. <em>Headache</em>. 2022;62(10):1329-1338. <a href="https://doi.org/10.1111/head.14428" target="_blank">doi:10.1111/head.14428</a></li>
+                        <li>Pergolizzi JV Jr, Raffa RB, Taylor R Jr. Red wine triggers may lead to better understanding of migraine headache: a narrative review. <em>J Wine Res</em>. 2019;30(1):1-12. <a href="https://doi.org/10.1080/09571264.2019.1573360" target="_blank">doi:10.1080/09571264.2019.1573360</a></li>
+                        <li>Krymchantowski AV, da Cunha Jevoux C. Wine and headache. <em>Headache</em>. 2014;54(6):967-975. <a href="https://doi.org/10.1111/head.12365" target="_blank">doi:10.1111/head.12365</a></li>
+                        <li>Devi A, Levin M, Waterhouse AL. Inhibition of ALDH2 by quercetin glucuronide suggests a new hypothesis to explain red wine headaches. <em>Sci Rep</em>. 2023;13:19503. <a href="https://doi.org/10.1038/s41598-023-46203-y" target="_blank">doi:10.1038/s41598-023-46203-y</a></li>
+                        <li>UC San Francisco. Does a headache have to be the price for drinking red wine? November 20, 2023. <a href="https://www.ucsf.edu/news/2023/11/426606/" target="_blank">ucsf.edu</a></li>
+                        <li>Zduńska A, Cegielska J, Zduński S, Domitrz I. Migraine and Alcohol—Is It Really That Harmful? <em>Nutrients</em>. 2025;17(22):3620. <a href="https://doi.org/10.3390/nu17223620" target="_blank">doi:10.3390/nu17223620</a></li>
+                        <li>Tang Y, Zhang K, Zhang Y, et al. Association Between Dietary Alcohol Intake and Migraine or Severe Headache. <em>Brain Behav</em>. 2025;15:e70400. <a href="https://doi.org/10.1002/brb3.70400" target="_blank">doi:10.1002/brb3.70400</a></li>
+                        <li>Lucerón-Lucas-Torres M, Ruiz-Grao MC, et al. Association between wine consumption and migraine: a systematic review and meta-analysis. <em>Alcohol Alcohol</em>. 2025;60(2):agaf004. <a href="https://doi.org/10.1093/alcalc/agaf004" target="_blank">doi:10.1093/alcalc/agaf004</a></li>
+                        <li>Migraine Science Collaborative. Is Alcohol a Migraine Trigger? February 6, 2025. <a href="https://migrainecollaborative.org/is-alcohol-a-migraine-trigger" target="_blank">migrainecollaborative.org</a></li>
+                    </ol>
+                </div>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. This article combines personal experience with current scientific research.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. This article was written independently based on peer-reviewed research.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Track Your Alcohol Patterns with Mi</h3>
+                        <p>"I think wine bothers me" is an impression. "5 of 7 times red wine triggered a migraine" is data. Mi helps you find your truth.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
