@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your monitor isn't the enemy — but your brain is listening to it in ways you can't see. The neuroscience of screens, light, and migraine.">
+    <meta name="author" content="Rustam Iuldashov">
+    <title>The Screen That Stares Back: What Science Actually Knows About Digital Life with Migraines | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        
+        .references ol {
+            padding-left: 20px;
+        }
+        
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        .medical-disclaimer {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 16px 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/article-screen-light.png" alt="A glowing monitor casting light on a person's face in a dark room, visualizing the invisible light-pain pathway">
+            <div class="article-header">
+                <span class="article-tag">Triggers & Science</span>
+                <h1>The Screen That Stares Back</h1>
+                <p class="article-subtitle">What Science Actually Knows About Digital Life with Migraines</p>
+                <div class="article-meta">
+                    <span>📅 February 2026</span>
+                    <span>⏱ 7 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+
+                <!-- AUTHOR BYLINE -->
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: February 2026
+                    </p>
+                </div>
+
+                <!-- MEDICAL DISCLAIMER -->
+                <p class="medical-disclaimer">
+                    This article is for educational purposes only and does not constitute medical advice.
+                    All claims are supported by peer-reviewed research. For personalized recommendations, consult your healthcare provider.
+                </p>
+
+                <section class="article-section">
+                    <p>The woman in the Boston exam room could not see the light. She had no functional rods, no cones — her retinas had long since lost the cells that form images. She was, by every clinical definition, blind.</p>
+                    <p>But when Rami Burstein, a neuroscientist at Harvard Medical School, turned on a lamp in the room, she winced. Her migraine worsened. She asked him to turn it off.</p>
+                    <p>That was 2010. And that single observation — a blind woman feeling pain from light she could not see — cracked open one of the most important discoveries in migraine science of the past two decades.<sup>[1]</sup></p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The pathway no one expected</h2>
+                    <p>Burstein's team at Beth Israel Deaconess Medical Center had been hunting for the biological mechanism behind photophobia, the sensitivity to light that accompanies more than 80% of migraine attacks.<sup>[2]</sup> The assumption had always been straightforward: light enters the eye, activates the visual system, and somehow triggers pain. Fix the visual input, fix the problem.</p>
+                    <p>The blind patients demolished that assumption.</p>
+                    <p>What Burstein found was a class of retinal cells that had nothing to do with vision. Intrinsically photosensitive retinal ganglion cells — ipRGCs — contain a photopigment called melanopsin. Their job is not to help you read or recognize faces. They measure ambient brightness. They calibrate your circadian clock. They constrict your pupils.<sup>[1, 3]</sup></p>
+                    <p>And they send their axons directly into the posterior thalamus, where they converge on neurons that simultaneously process pain signals from the meninges — the membranes surrounding the brain.<sup>[1]</sup></p>
+                    <p>Light and pain, landing on the same neurons. Not metaphorically. Anatomically.</p>
+                    <p>This was not a theory. Burstein's group confirmed it with multi-electrode recordings in animal models and later with electroretinography in human patients.<sup>[1, 4]</sup> A 2020 study from the same lab (n=60, including 20 healthy controls) refined the picture further: the problem in migraine patients is not that their retinas send abnormal signals. The retina works fine. The amplification happens <em>after</em> — in the brain itself, which selectively cranks up the volume on light-as-pain while leaving the pupil reflex untouched.<sup>[5]</sup></p>
+                    <p>The migraine brain doesn't see light differently. It <em>feels</em> it differently.</p>
+                    <p>This distinction matters enormously for anyone staring at a screen right now. Because every intervention that targets only the light source — dimmer screens, warmer colors, tinted lenses — is treating the speaker when the problem is the amplifier.</p>
+                </section>
+
+                <!-- SCIENTIFIC PATHWAY IMAGE -->
+                <div class="article-image">
+                    <img src="images/screen-light-pathway.png" alt="Scientific illustration showing the ipRGC → thalamus → pain convergence pathway: light entering the eye activates melanopsin-containing retinal ganglion cells, which send signals to the posterior thalamus where they converge with meningeal pain neurons">
+                </div>
+
+                <section class="article-section">
+                    <h2>1.16 billion reasons this matters now</h2>
+                    <p>Migraine is not a headache. The Global Burden of Disease Study 2021, analyzing data from 204 countries, found 1.16 billion people living with the condition — making it the third leading cause of disability-adjusted life years worldwide among all neurological disorders, behind only stroke and neonatal encephalopathy.<sup>[6, 7]</sup> Among children and adolescents, migraine ranks first.<sup>[8]</sup> Among adults under 60, it ranks second.<sup>[8]</sup></p>
+                    <p>And this is the same population that now averages seven to nine hours of daily screen time.</p>
+                    <p>The overlap is not coincidental. A cross-sectional study of 4,927 French university students published in <em>Cephalalgia</em> — later highlighted by <em>Nature Reviews Neurology</em> — found that those in the highest quintile of screen exposure were 37% more likely to have migraine, and 50% more likely to have migraine without aura, compared to the lowest quintile.<sup>[9, 10]</sup> The relationship held after adjusting for BMI, cannabis use, age, and sex.</p>
+                    <p>But correlation and mechanism are different animals. To understand <em>why</em> screens are particularly treacherous for the migraine brain, you have to look past the obvious — and at three triggers hiding in plain sight.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The flicker you can't see</h2>
+                    <p>Pick up your phone. Open the camera. Point it at your laptop screen and lower the brightness to 30%.</p>
+                    <p>See those horizontal lines rolling across the display? That is Pulse Width Modulation — PWM — and it is the trigger almost nobody discusses.</p>
+                    <p>Most LED-backlit screens do not dim smoothly. They blink. The backlight cycles on and off, sometimes hundreds of times per second, and the ratio of on-time to off-time determines perceived brightness.<sup>[11]</sup> At full brightness, the off-intervals are negligible. Lower the brightness — as nearly every migraine sufferer instinctively does — and the off-periods stretch longer, making the flicker more physiologically detectable.</p>
+                    <p>You will never consciously see it. Your retina and cortex register it anyway.</p>
+                    <p>The IEEE 1789 standard on LED lighting documented that PWM frequencies below 3,000 Hz can produce eyestrain, headaches, and measurable decreases in visual task performance.<sup>[12]</sup> Most consumer laptops flicker at frequencies well below that threshold. A clinical case report in the headache literature described a patient whose migraines were reliably triggered by a 60 Hz monitor refresh rate and completely resolved when switched to 75 Hz.<sup>[13]</sup></p>
+                    <p>This is not marginal. This is a stimulus your brain processes every second of every workday, beneath the floor of conscious awareness — feeding directly into the light-pain convergence pathway that Burstein mapped.</p>
+                    <p>The fix is surprisingly concrete. Look for monitors marketed as "Flicker-Free" or "DC dimming" — brands like ViewSonic and BenQ now certify this. If you're stuck with a PWM display, keep brightness above 50%, which is typically the threshold below which modulation begins.<sup>[11, 12]</sup></p>
+                </section>
+
+                <section class="article-section">
+                    <h2>Blue light: the wrong villain</h2>
+                    <p>Here is where the $30 billion blue-light-blocking industry would prefer you stop reading.</p>
+                    <p>Yes, blue light at approximately 480 nm is the wavelength that most potently activates melanopsin in ipRGCs.<sup>[1]</sup> Yes, screens emit blue light. These two facts have launched a thousand product lines.</p>
+                    <p>But the American Academy of Ophthalmology does not recommend blue-light-blocking glasses for computer use.<sup>[14]</sup> The Mayo Clinic found no compelling evidence of their effectiveness.<sup>[15]</sup> And the Association of Migraine Disorders draws a sharp distinction between generic blue-light blockers (no evidence) and specialized FL-41 tinted lenses, which filter the 480–520 nm band and <em>do</em> have clinical support for reducing photophobia.<sup>[16]</sup></p>
+                    <p>One more fact that resets the equation: a clear sky on a sunny afternoon delivers orders of magnitude more blue light than any screen.<sup>[17]</sup> If blue light alone caused migraines, stepping outside would be unbearable. For most people with migraine, it is not.</p>
+                    <p>The screen's real danger is combinatorial. It is not one trigger — it is four, arriving simultaneously: sustained close-focus accommodation, the PWM flicker described above, a luminance contrast between screen and surroundings that forces the pupil into constant recalibration, and a catastrophic drop in blink rate.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The blink crisis</h2>
+                    <p>A healthy person blinks 15 to 20 times per minute. During screen use, that rate drops by up to 66% — to as few as five to seven blinks per minute.<sup>[18]</sup> And even those reduced blinks are often incomplete: the lids fail to close fully, leaving a dry patch on the cornea that never gets refreshed.<sup>[18, 19]</sup></p>
+                    <p>This matters for migraine through a mechanism most patients never consider. The cornea is innervated by the trigeminal nerve — the same nerve at the center of the trigeminovascular pathway that drives migraine pain.<sup>[20]</sup> Corneal dryness generates afferent signals along that nerve. Dry eye does not merely coexist with migraine. It can initiate the cascade.</p>
+                    <p>A 2021 randomized controlled trial published in the <em>Indian Journal of Ophthalmology</em> tested a simple intervention: software that prompted users to blink at regular intervals. The result was a statistically significant improvement in blink rate, tear film stability, and dry eye symptoms.<sup>[21]</sup> A 2025 study in <em>npj Digital Medicine</em> (n=40) confirmed that smartphone-based blink training produced durable improvements in ocular surface health that persisted 30 days after stopping the intervention.<sup>[22]</sup></p>
+                    <p>The cheapest migraine-prevention tool on earth may be remembering to close your eyes.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The dark-mode paradox</h2>
+                    <p>Migraine sufferers reach for dark mode the way a sunburn victim reaches for shade. The logic is sound: less luminance means less ipRGC activation means less convergent pain signaling.</p>
+                    <p>But roughly half the population has some degree of astigmatism.<sup>[23]</sup> For these eyes, dark mode introduces a phenomenon called halation — white text on a black field bleeds outward, creating a fuzzy glow that forces the ciliary muscles to fight for focus. Smaller fonts amplify the effect. OLED screens, where true black means the pixel is physically off, maximize the contrast and make halation worse.<sup>[23, 24]</sup></p>
+                    <p>Researchers at the University of British Columbia's Sensory Perception and Interaction Research Group described the mechanism: a dark background dilates the pupil, and in an astigmatic eye, the wider aperture exposes more of the lens deformation, producing significantly blurrier focus.<sup>[24]</sup></p>
+                    <p>The resolution is not dogmatic. If white-on-black text looks crisp and comfortable, use it. If it seems to swim or glow, switch to a dark gray background — #222 or #333 — with warm off-white text. This preserves the luminance reduction without the halation. Test it yourself. Your eyes will tell you within minutes.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The color that heals</h2>
+                    <p>In 2016, Burstein's group published a study in <em>Brain</em> that read like science fiction. Sixty-nine migraine patients were exposed to narrow-band light of different colors during active attacks. Blue, white, amber, and red light intensified pain in approximately 80% of participants. Green light — 530 ± 10 nm — did not.<sup>[4]</sup></p>
+                    <p>In 20% of patients, green light actually <em>reduced</em> headache intensity.</p>
+                    <p>Using electroretinography and cortical evoked potentials, the team showed that the retina and visual cortex generate their smallest electrical signals in response to green light — smaller than for any other color tested.<sup>[4]</sup> Thalamic recordings in animal models confirmed that dura-sensitive neurons were least activated by green and most activated by blue.<sup>[1, 4]</sup></p>
+                    <p>A large-scale open-label study published in <em>Frontiers in Neurology</em> in 2023 (Lipton, Burstein, and colleagues; n=181) validated the finding under real-world conditions: two hours of narrow-band green light exposure during the ictal phase improved headache perception in 55% of participants.<sup>[25]</sup> A separate trial from the University of Arizona (Martin et al., <em>Cephalalgia</em>, 2021; n=29) recorded a 60–70% reduction in monthly headache days after 10 weeks of daily green LED exposure.<sup>[26]</sup></p>
+                    <p>The mechanism appears to involve proenkephalin-expressing neurons in the ventral lateral geniculate nucleus of the thalamus — a pathway that, when activated by green light, releases enkephalins, the brain's endogenous opioids.<sup>[26, 27]</sup></p>
+                    <p>Your brain contains a built-in analgesic channel. Green light is one of its keys.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>The rule that was never a rule</h2>
+                    <p>You have almost certainly heard the 20-20-20 rule: every 20 minutes, look at something 20 feet away for 20 seconds. It appears on posters in optometrists' offices. It is printed on workplace wellness handouts. It has the crisp authority of settled science.</p>
+                    <p>It is not. The rule was coined by optometrist Jeffrey Anshel in the late 1990s — for a media interview. He later acknowledged he designed it as a memorable mnemonic, leveraging the public's familiarity with "20/20 vision," never as a peer-reviewed clinical protocol.<sup>[28]</sup></p>
+                    <p>A 2023 study in the <em>Indian Journal of Ophthalmology</em> (n=574) found no significant difference in digital eye strain symptoms between those who practiced the 20-20-20 rule and those who did not.<sup>[29]</sup></p>
+                    <p>Does this mean breaks are useless? No. It means the magic is not in the numbers. What the evidence supports is simpler: take breaks of <em>any</em> reasonable duration, at <em>any</em> comfortable distance, with <em>any</em> regularity you can sustain. Some researchers suggest five minutes per hour may be more effective than 20 seconds per 20 minutes.<sup>[28]</sup> Build the habit. Forget the arithmetic.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- CONSULT YOUR DOCTOR BOX -->
+                <div class="highlight-box">
+                    <p>🩺 Before making changes to your screen setup or light exposure therapy, talk to your healthcare provider — especially if you have epilepsy, retinal conditions, or frequent migraines. What follows are general principles, not personalized medical advice.</p>
+                </div>
+
+                <section class="article-section">
+                    <h2>What actually works</h2>
+                    <p>No single intervention solves screen-triggered migraine. But layered strategies, each grounded in the mechanisms described above, shift the balance meaningfully:</p>
+                    <p><strong>Match screen brightness to ambient light.</strong> A bright screen in a dim room forces the pupil into a constant oscillation that stresses the ipRGC pathway. Minimize the contrast between screen and surroundings.</p>
+                    <p><strong>Eliminate invisible flicker.</strong> Choose DC-dimming monitors. On PWM screens, keep brightness above 50%.</p>
+                    <p><strong>Position the screen below eye level.</strong> A downward gaze lowers the upper eyelid, reducing exposed ocular surface area and promoting complete blinks.<sup>[18]</sup></p>
+                    <p><strong>Blink deliberately.</strong> At every paragraph break, every page load, every moment of micro-waiting — close your eyes fully, twice. This is an evidence-based intervention, not a folk remedy.<sup>[21, 22]</sup></p>
+                    <p><strong>Experiment with green light.</strong> A narrow-band green LED lamp during prodrome or early attack is low-cost, low-risk, and increasingly supported by clinical data.<sup>[4, 25, 26]</sup></p>
+                    <p><strong>Avoid chronic dark adaptation.</strong> Wearing dark glasses indoors continuously can recalibrate your visual system toward greater light sensitivity — the opposite of what you want.<sup>[16]</sup> Use tinted lenses strategically, not perpetually.</p>
+                    <p><strong>Take breaks on your own terms.</strong> Forget specific numbers. Build a rhythm of looking away, refocusing, and consciously blinking. The habit matters more than the formula.</p>
+                </section>
+
+                <!-- TOOLKIT INFOGRAPHIC IMAGE -->
+                <div class="article-image">
+                    <img src="images/screen-toolkit.png" alt="Visual infographic summarizing seven evidence-based screen strategies for migraine: brightness matching, flicker elimination, screen positioning, deliberate blinking, green light therapy, strategic tinted lens use, and personalized breaks">
+                </div>
+
+                <section class="article-section">
+                    <h2>What Mi would say</h2>
+                    <p>If you use the Migraine Companion app, you know Mi — the character who represents your migraine not as an enemy, but as a companion you are learning to understand.</p>
+
+                    <div class="quote-box">
+                        <p>"I don't hate your screens. I just notice what you've learned to ignore — the flicker beneath the brightness, the blue hiding in the white, the dryness you won't feel until it's too late. You don't have to abandon the digital world. You just need to set it up so that both of us can live in it."</p>
+                    </div>
+
+                    <p>The goal was never to flee from screens. It was to understand the brain behind the eyes — a brain that registers more than most, and deserves a digital environment designed with that sensitivity in mind.</p>
+                </section>
+
+                <!-- REFERENCES -->
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Noseda R, Kainz V, Jakubowski M, et al. A neural mechanism for exacerbation of headache by light. <em>Nature Neuroscience</em>. 2010;13(2):239–245.</li>
+                        <li>Burstein R, Noseda R, Fulton AB. Neurobiology of photophobia. <em>Journal of Neuro-Ophthalmology</em>. 2019;39(1):94–102.</li>
+                        <li>Berson DM, Dunn FA, Takao M. Phototransduction by retinal ganglion cells that set the circadian clock. <em>Science</em>. 2002;295(5557):1070–1073.</li>
+                        <li>Noseda R, Bernstein CA, Nir RR, et al. Migraine photophobia originating in cone-driven retinal pathways. <em>Brain</em>. 2016;139(7):1971–1986.</li>
+                        <li>McAdams H, Kaiser EA, Igdalova A, et al. Selective amplification of ipRGC signals accounts for interictal photophobia in migraine. <em>Proceedings of the National Academy of Sciences</em>. 2020;117(29):17320–17329.</li>
+                        <li>GBD 2021 Nervous System Disorders Collaborators. Global, regional, and national burden of disorders affecting the nervous system, 1990–2021. <em>The Lancet Neurology</em>. 2024;23(4):344–381.</li>
+                        <li>World Health Organization. Migraine and other headache disorders. Fact sheet. October 2025.</li>
+                        <li>Prieto Peres MF, Sacco S, Pozo-Rosich P, et al. Migraine is the most disabling neurological disease among children and adolescents, and second after stroke among adults: a call to action. <em>Cephalalgia</em>. 2024;44(8). doi:10.1177/03331024241267309.</li>
+                        <li>Montagni I, Guichard E, Carpenet C, Tzourio C, Kurth T. Screen time exposure and reporting of headaches in young adults: a cross-sectional study. <em>Cephalalgia</em>. 2016;36(1):67–78.</li>
+                        <li>Malkki H. Long screen time exposure could increase the risk of migraine. <em>Nature Reviews Neurology</em>. 2016;12:4.</li>
+                        <li>DisplayNinja. What is flicker-free technology and PWM? Updated April 2025.</li>
+                        <li>IEEE Standard 1789-2015. Recommended practices for modulating current in high-brightness LEDs for mitigating health risks to viewers.</li>
+                        <li>Vuralli D, Bolay H. Headache related to a specific screen flickering frequency band. <em>Headache</em>. 2004. PMID: 15096230.</li>
+                        <li>American Academy of Ophthalmology. Position statement: blue light and digital eye strain. <a href="https://www.aao.org" target="_blank">aao.org</a></li>
+                        <li>Mayo Clinic. Are blue light blocking glasses effective? <a href="https://www.mayoclinic.org" target="_blank">mayoclinic.org</a></li>
+                        <li>Association of Migraine Disorders. What to know about migraine glasses. <a href="https://www.migrainedisorders.org" target="_blank">migrainedisorders.org</a>. 2024.</li>
+                        <li>Science Feedback. LED lights aren't a cause of cataracts and don't cause migraines for most people. <a href="https://science.feedback.org" target="_blank">science.feedback.org</a>. 2024.</li>
+                        <li>Sheppard AL, Wolffsohn JS. Digital eye strain: prevalence, measurement and amelioration. <em>BMJ Open Ophthalmology</em>. 2018;3(1):e000146.</li>
+                        <li>The relationship between dry eye disease and digital screen use. <em>Clinical Ophthalmology</em>. 2021;15:3811–3820.</li>
+                        <li>Jaiswal S, et al. Ocular and visual discomfort associated with smartphones, tablets and computers. <em>Clinical and Experimental Optometry</em>. 2019;102(5):463–477.</li>
+                        <li>Argilés M, Cardona G, Pérez-Cabré E, Rodríguez M. Efficacy of blink software in improving the blink rate and dry eye symptoms in visual display terminal users. <em>Indian Journal of Ophthalmology</em>. 2021;69(10):2643–2648.</li>
+                        <li>Smartphone-based blink training application for alleviating dry eye signs and symptoms. <em>npj Digital Medicine</em>. 2025;8:Article 53.</li>
+                        <li>Harrison J. Colors and readability. Sensory Perception and Interaction Research Group, University of British Columbia. 2002.</li>
+                        <li>Locke H. Why dark mode causes more accessibility issues than it solves. 2023. [Citing Harrison, UBC.]</li>
+                        <li>Lipton RB, Melo-Carrillo A, Severs R, et al. Narrow band green light effects on headache, photophobia, sleep, and anxiety among migraine patients. <em>Frontiers in Neurology</em>. 2023;14:1257060.</li>
+                        <li>Martin LF, Patwardhan AM, Jain SV, et al. Evaluation of green light exposure on headache frequency and quality of life in migraine patients. <em>Cephalalgia</em>. 2021;41(2):135–147.</li>
+                        <li>Zhang H, et al. Green light activates enkephalinergic neurons in vLGN. Cited in: <em>Drug Discovery News</em>. 2024.</li>
+                        <li>Optometry Advisor. Digital eye strain: another look at the 20-20-20 rule. 2024.</li>
+                        <li>Kumar A, et al. The 20/20/20 rule: practicing pattern and associations with asthenopic symptoms. <em>Indian Journal of Ophthalmology</em>. 2023;71(7):2916.</li>
+                    </ol>
+                </div>
+
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. This article reflects research that helped me understand my own relationship with screens — your experience may differ.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. This article was written independently and is not sponsored.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Track Your Screen Triggers with Mi</h3>
+                        <p>Mi helps you discover what works for your unique biology. No judgment. Just data.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
