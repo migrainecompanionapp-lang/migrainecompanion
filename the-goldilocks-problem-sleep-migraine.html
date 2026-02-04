@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Too little sleep triggers migraine. Too much triggers migraine. New research on 309,475 people reveals it's not about hours — it's about consistency. The science of your Goldilocks zone.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="migraine, sleep, migraine triggers, sleep deprivation, weekend migraine, circadian rhythm, glymphatic system, adenosine, migraine prevention, sleep hygiene">
+    <title>The Goldilocks Problem: Why Sleep Is Never "Just Right" | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://migrainecompanion.app/the-goldilocks-problem-sleep-migraine.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org markup for EEAT -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The Goldilocks Problem: Why Sleep Is Never 'Just Right'",
+        "description": "Too little sleep triggers migraine. Too much triggers migraine. Research on 309,475 people reveals it's not about hours — it's about consistency.",
+        "image": "https://migrainecompanion.app/images/migraine-sleep-balance-brain-crystal.png",
+        "author": {
+            "@type": "Person",
+            "name": "Rustam Iuldashov",
+            "description": "Developer of Migraine Companion with 30+ years of personal migraine experience",
+            "url": "https://migrainecompanion.app/about"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Migraine Companion",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://migrainecompanion.app/images/mi-icon.png"
+            }
+        },
+        "datePublished": "2026-02-04",
+        "dateModified": "2026-02-04",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://migrainecompanion.app/the-goldilocks-problem-sleep-migraine.html"
+        },
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Migraine"
+        },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".article-subtitle", ".key-takeaways"]
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .article-image figcaption {
+            background: rgba(139, 122, 168, 0.1);
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box .src {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .data-card {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 4px solid var(--lavender);
+            padding: 28px 32px;
+            margin: 36px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .data-card p {
+            margin-bottom: 16px;
+            font-size: 0.98rem;
+        }
+        
+        .data-card p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .action-box {
+            background: rgba(197, 160, 89, 0.06);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 36px;
+            margin: 44px 0;
+        }
+        
+        .action-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+            margin-top: 28px;
+        }
+        
+        .action-box h3:first-child {
+            margin-top: 0;
+        }
+        
+        .action-box p {
+            font-size: 0.98rem;
+            margin-bottom: 14px;
+        }
+        
+        .action-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .editorial-standards {
+            background: rgba(139, 122, 168, 0.05);
+            border: 1px solid rgba(139, 122, 168, 0.15);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 32px 0;
+        }
+        
+        .editorial-standards h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        
+        .editorial-standards ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .editorial-standards li {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .editorial-standards li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .key-takeaways {
+            background: rgba(139, 122, 168, 0.08);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+        
+        .key-takeaways h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        
+        .key-takeaways ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .key-takeaways li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .key-takeaways li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+        
+        .when-to-see-doctor {
+            background: rgba(197, 160, 89, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 32px 0;
+        }
+        
+        .when-to-see-doctor h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        
+        .when-to-see-doctor ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+        }
+        
+        .when-to-see-doctor li {
+            font-size: 0.9rem;
+            color: var(--text);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .when-to-see-doctor li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+        
+        .when-to-see-doctor p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            font-style: italic;
+        }
+        
+        .medical-disclaimer {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 16px 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        
+        .references ol {
+            padding-left: 20px;
+        }
+        
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        .review-dates {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .data-card { padding: 20px 24px; }
+            .action-box { padding: 24px; }
+            .article-meta { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/migraine-sleep-balance-brain-crystal.png" alt="Artistic visualization of a translucent brain balanced between night and day, symbolizing the sleep-migraine connection">
+            <div class="article-header">
+                <span class="article-tag">Neuroscience · Sleep</span>
+                <h1>The Goldilocks Problem</h1>
+                <p class="article-subtitle">Too little triggers an attack. Too much triggers an attack. The maddening science of the migraine brain's obsession with routine — and the clinical evidence for one change that outperforms many medications.</p>
+                <div class="article-meta">
+                    <span>📅 February 4, 2026</span>
+                    <span>⏱ 6 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+
+                <!-- AUTHOR BYLINE -->
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: February 4, 2026
+                    </p>
+                </div>
+
+                <!-- MEDICAL DISCLAIMER -->
+                <p class="medical-disclaimer">
+                    <strong>Medical Review:</strong> This content is based on peer-reviewed research from The Journal of Headache and Pain, The Lancet, Neurology, Frontiers in Neurology, Science Translational Medicine, and other authoritative sources.<br><br>
+                    <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. Consult your doctor before changing your sleep habits, especially if you have a sleep disorder or take medications.
+                </p>
+
+                <!-- OPENING -->
+                <section class="article-section">
+                    <p>Friday night. A week of deadlines, bad coffee, and screen glare. You kill the alarm, pull the blackout curtain shut, and let yourself sleep. Saturday, almost noon, you surface — and the migraine is already boring into your right temple like a drill bit into drywall.</p>
+
+                    <p>You know the old rule: sleep deprivation triggers attacks. You have tested it. Late to bed Wednesday, migraine Thursday — every time. So you tried the logical opposite. You banked hours. You slept in. And the migraine came anyway.</p>
+
+                    <p>Two opposite choices. One identical punishment.</p>
+
+                    <p>For the estimated one billion people worldwide who live with migraine<sup>[1]</sup>, this paradox is familiar enough to feel like a cruel joke. But neuroscientists have spent the last decade cracking it open, and what they found was not about hours at all. It was about something the migraine brain values more than rest: <em>regularity</em>.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE CHEMICAL -->
+                <section class="article-section">
+                    <h2>The Chemical That Counts Your Waking Hours</h2>
+
+                    <p>Every second you are awake, your neurons burn adenosine triphosphate for fuel. The waste product is adenosine — a molecule that accumulates in the brain the way carbon monoxide fills a closed garage: invisibly, steadily, and with consequences.<sup>[2]</sup> The longer you stay up, the more adenosine saturates the extracellular space. That saturation is what makes your eyelids heavy at midnight. It is also what caffeine blocks, which is why an espresso mid-attack brings short relief.<sup>[3]</sup></p>
+
+                    <p>But adenosine does something else. It dilates blood vessels. And it overstimulates cortical neurons through A1 receptors — nudging the brain toward a threshold that migraine researchers track obsessively: cortical spreading depolarization, the slow electrical tsunami that underlies aura.<sup>[4]</sup></p>
+
+                    <p>In 2020, a team led by Kilic at Leiden and Erasmus universities proved the connection experimentally. They deprived rats of sleep for six hours, then for twelve, and measured CSD susceptibility after each interval. The results were dose-dependent: six hours of lost sleep significantly lowered the threshold for cortical spreading depolarization. Twelve hours lowered it further.<sup>[5]</sup> Less sleep, more vulnerability. The relationship was linear.</p>
+                </section>
+
+                <!-- IMAGE: ADENOSINE HOURGLASS -->
+                <figure class="article-image">
+                    <img src="images/adenosine-hourglass-neural-timer.png" alt="Hyper-detailed digital art of a neural hourglass with glowing adenosine molecules accumulating, symbolizing sleep pressure building in the brain">
+                    <figcaption>The Neural Timer — Adenosine accumulates with every waking hour, slowly pushing the migraine brain toward its threshold</figcaption>
+                </figure>
+
+                <div class="quote-box">
+                    <p>"For those with frequent migraine, it becomes a vicious cycle where the migraine causes sleep disruption, which then turns around and further exacerbates the migraine."</p>
+                    <p class="src">— Andrew Charles, MD, Professor of Neurology, UCLA; Director, Goldberg Migraine Program<sup>[6]</sup></p>
+                </div>
+
+                <section class="article-section">
+                    <p>Sleep deprivation damages the brain through a second pathway, too. In 2012, Maiken Nedergaard's team at the University of Rochester discovered the glymphatic system — a network of channels wrapped around blood vessels that flushes the brain with cerebrospinal fluid during sleep, clearing metabolic waste the way a night cleaning crew empties an office building.<sup>[7]</sup> The critical detail: glymphatic flow peaks during deep slow-wave sleep. When you cut that phase short, the waste stays. Amyloid-beta, tau, inflammatory mediators — they linger. In 2022, researchers writing in <em>Frontiers in Neurology</em> demonstrated that impaired glymphatic clearance may be a shared pathogenic mechanism linking sleep disorders and headache.<sup>[8]</sup></p>
+
+                    <p>This is the biology of Monday morning. Skip sleep, and your brain accumulates a vasodilator that primes it for pain and fails to flush the toxins that fuel inflammation.</p>
+                </section>
+
+                <!-- IMAGE: GLYMPHATIC SPLIT -->
+                <figure class="article-image">
+                    <img src="images/glymphatic-system-clean-vs-toxic-brain.png" alt="Split composition showing healthy brain tissue with flowing cerebrospinal fluid on the left versus sleep-deprived brain with stagnant waste buildup on the right">
+                    <figcaption>Clean vs. Toxic — During deep sleep, the glymphatic system flushes waste from the brain. Sleep deprivation shuts down the cleaning crew.</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <!-- SATURDAY MORNING TRAP -->
+                <section class="article-section">
+                    <h2>The Saturday Morning Trap</h2>
+
+                    <p>If too little sleep leaves the brain unwashed and electrically primed, the remedy seems obvious. Sleep more.</p>
+
+                    <p>Except it doesn't work. Neurologists call the result "weekend migraine," and the mechanism has nothing to do with excess rest. It has to do with a clock.</p>
+
+                    <p>Deep in the hypothalamus sits a structure the size of a grain of rice: the suprachiasmatic nucleus, or SCN. It contains roughly 20,000 neurons, and it runs the body's master circadian rhythm — governing when cortisol rises, when melatonin drops, when serotonin shifts.<sup>[9]</sup> Every morning you wake at the same hour, you confirm that clock's setting. Every morning you sleep past it, you scramble the signal.</p>
+
+                    <p>Chronobiologists call this "social jet lag": the gap between your body's internal schedule and the one you actually follow.<sup>[10]</sup> When you wake at seven all week and eleven on Saturday, you impose a four-hour time-zone shift on a brain that did not board a plane. The circadian disruption spills into neurotransmitter balance — serotonin, dopamine — both of which modulate pain sensitivity directly.<sup>[11]</sup> The delayed breakfast extends the overnight glucose fast. And the sudden drop in cortisol, the stress hormone that ran high all week, can trigger an attack within six to eighteen hours — a phenomenon researchers have validated as the "let-down headache."<sup>[12]</sup></p>
+
+                    <div class="highlight-box">
+                        <p>"The migraine brain hates change." — Not too little sleep. Not too much. Just different.<sup>[13]</sup></p>
+                    </div>
+                </section>
+
+                <!-- IMAGE: BROKEN CLOCK -->
+                <figure class="article-image">
+                    <img src="images/circadian-clock-disrupted-brain.png" alt="Surrealist digital art of an ancient astronomical clock mechanism cracked in half inside a human skull, with scattered neurotransmitter molecules">
+                    <figcaption>The Broken Clock — When your weekend schedule deviates from weekdays, your circadian machinery cracks under the strain</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <!-- WHAT 309K PEOPLE TAUGHT US -->
+                <section class="article-section">
+                    <h2>What 309,475 People Taught Us</h2>
+
+                    <p>The strongest evidence for the sleep–migraine link now comes from population-scale data that would have been unimaginable a decade ago.</p>
+
+                    <div class="data-card">
+                        <p><strong>UK Biobank Cohort (2025):</strong> Researchers followed 309,475 headache-free individuals for a median of 13.6 years. For every one-unit improvement in a composite sleep quality score — accounting for chronotype, duration, insomnia, snoring, and daytime sleepiness — the risk of developing new-onset migraine fell by 12 percent (HR 0.88, 95% CI 0.85–0.90).<sup>[14]</sup></p>
+
+                        <p><strong>HUNT Study, Norway (2011):</strong> A prospective cohort of 25,000+ participants from the Nord-Trøndelag region, followed for 11 years, found that insomnia at baseline predicted new headache onset at follow-up — even among people who were headache-free at the start.<sup>[15]</sup></p>
+
+                        <p><strong>Oxford / Migraine Buddy Study (2023):</strong> 11,166 users across 38 countries tracked sleep and attacks in real time for six months. Each nighttime awakening raised the odds of migraine the following day by 17.4 percent. Each deviation from the habitual schedule increased risk by 6.1 percent. Total hours of sleep, on its own, did not predict attacks. Disruption did.<sup>[16]</sup></p>
+
+                        <p><strong>Harvard / BWH Study (2020):</strong> 98 adults with episodic migraine contributed 4,406 person-days of actigraphy and diary data. Low sleep efficiency — fragmented, restless nights — was associated with 39 percent higher odds of headache the next day (OR 1.39, 95% CI 1.06–1.81). Short duration alone was not.<sup>[17]</sup></p>
+                    </div>
+
+                    <p>The pattern across all four studies converges on a single finding: it is not how long you sleep that predicts migraine. It is how consistently and how well.</p>
+
+                    <div class="quote-box">
+                        <p>"It doesn't matter how many hours you sleep. It's the quality of that sleep."</p>
+                        <p class="src">— Emily Stanyer, Oxford Sleep and Circadian Neuroscience Institute, in <em>Scientific American</em><sup>[18]</sup></p>
+                    </div>
+                </section>
+
+                <!-- INTERVENTION -->
+                <section class="article-section">
+                    <h2>The Intervention That Outperformed Drugs</h2>
+
+                    <p>In 2007, Anne Calhoun and Sherry Ford at the University of North Carolina conducted a small study with an outsized result. They took 43 women with chronic migraine — defined as headache on fifteen or more days per month — and taught half of them five behavioral sleep rules. Go to bed only when sleepy. Use the bed only for sleep. Get up at the same time every day. If you can't fall asleep within twenty minutes, leave the bedroom. No television, reading, or eating in bed.<sup>[19]</sup></p>
+
+                    <p>The intervention lasted six weeks. The results lasted far longer.</p>
+
+                    <p>In the control group, zero patients reverted from chronic to episodic migraine at the first visit. In the behavioral sleep group, <strong>48.5 percent</strong> did. Nearly half of the women who had been living with daily headache crossed back to occasional attacks — without a single new prescription.<sup>[19]</sup></p>
+
+                    <p>A 2018 meta-analysis pooling the Calhoun findings with subsequent trials confirmed the effect: behavioral sleep therapy reduced monthly headache frequency by an average of <strong>6.2 days</strong> versus control.<sup>[20]</sup> For context, many preventive medications are considered successful if they cut headache days by 50 percent — which, for a patient with 15 headache days per month, means a reduction of 7.5 days. A behavioral sleep intervention, free of side effects, came remarkably close.</p>
+
+                    <p>The Taiwanese National Health Insurance Research Database added epidemiological scale to the clinical signal. In a nationwide cohort, individuals with non-apnea sleep disorders carried a <strong>3.5-fold higher risk</strong> of developing subsequent migraine (adjusted HR 3.52, 95% CI 3.28–3.79).<sup>[21]</sup> Sleep disturbance was not a minor risk modifier. It was among the strongest predictors of future disease.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- YOUR GOLDILOCKS ZONE -->
+                <section class="article-section">
+                    <h2>Your Goldilocks Zone</h2>
+
+                    <p>The science points to one conclusion. The migraine brain does not care whether you log six hours or nine. It cares whether last night matched the night before.</p>
+
+                    <div class="action-box">
+                        <h3>Same wake time. Seven days.</h3>
+                        <p>Choose a wake-up time and defend it, weekends included. Calhoun's study showed this single change — more than any supplement, any app notification, any medication — correlated with the strongest reduction in chronic migraine.<sup>[19]</sup> The acceptable drift is about one hour. If you rise at seven on weekdays, Saturday's limit is eight.</p>
+
+                        <h3>Consistency beats duration.</h3>
+                        <p>Seven hours nightly outperforms five on weekdays plus ten on Saturday. The Oxford data showed schedule deviation was a stronger predictor of attack than total sleep deficit.<sup>[16]</sup> Regularity is the variable your brain is tracking.</p>
+
+                        <h3>Protect continuity.</h3>
+                        <p>Each nighttime awakening raises next-day migraine risk by 17 percent.<sup>[16]</sup> The phone on the nightstand, caffeine past noon, alcohol before bed, blue light after ten — each one fragments sleep architecture. Your goal is unbroken passage through all sleep stages, especially the deep slow-wave phase where glymphatic clearance peaks.</p>
+
+                        <h3>Track three numbers.</h3>
+                        <p>Time to bed. Time awake. Nighttime disruptions. After three to four weeks, the data will expose a pattern no clinician can diagnose in a fifteen-minute visit. Your personal Goldilocks zone is already encoded in the numbers. The only task is reading them.</p>
+                    </div>
+
+                    <p>Stephen Bender, director of the Center for Facial Pain and Sleep Medicine at Texas A&M, has framed the paradigm shift precisely: the old model treated sleep and pain as a bidirectional loop — pain disrupts sleep, poor sleep amplifies pain. The new evidence reverses the hierarchy. Poor sleep predicts the onset of new pain more powerfully than pain predicts sleep disruption.<sup>[22]</sup></p>
+
+                    <p>Sleep is not a casualty of migraine. It is the lever.</p>
+
+                    <p>And it is the one lever you control.</p>
+                </section>
+
+                <!-- KEY TAKEAWAYS -->
+                <div class="key-takeaways">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>Both sleep deprivation and oversleeping trigger migraine — through different biological mechanisms</li>
+                        <li>Adenosine buildup from lost sleep lowers the brain's threshold for cortical spreading depolarization</li>
+                        <li>The glymphatic system flushes brain waste during deep sleep — skipping it leaves inflammatory toxins behind</li>
+                        <li>"Weekend migraine" is caused by circadian disruption, not excess rest</li>
+                        <li>309,475-person UK Biobank study: each unit of sleep quality improvement = 12% lower migraine risk</li>
+                        <li>Behavioral sleep modification alone reverted 48.5% of chronic migraineurs to episodic — no medications needed</li>
+                        <li>Consistency and quality matter more than total hours of sleep</li>
+                    </ul>
+                </div>
+
+                <!-- WHEN TO SEE A DOCTOR -->
+                <div class="when-to-see-doctor">
+                    <h3>When to See a Doctor</h3>
+                    <ul>
+                        <li>Your migraines have increased in frequency or changed in pattern</li>
+                        <li>You suspect a sleep disorder such as sleep apnea or chronic insomnia</li>
+                        <li>Sleep changes alone have not improved your migraine frequency after 6–8 weeks</li>
+                        <li>You experience migraine with aura and are considering changes to your medication</li>
+                        <li>Your sleep disruption is severe enough to affect daily functioning</li>
+                    </ul>
+                    <p>This article is a starting point for conversation with your doctor, not a replacement for medical care.</p>
+                </div>
+
+                <!-- REFERENCES -->
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Ashina M, Katsarava Z, Do TP, et al. Migraine: epidemiology and systems of care. <em>The Lancet</em>. 2021;397(10283):1485–1495.</li>
+                        <li>Porkka-Heiskanen T, Strecker RE, McCarley RW. Brain site-specificity of extracellular adenosine concentration changes during sleep deprivation and spontaneous sleep. <em>Neuroscience</em>. 2000;99(3):507–517.</li>
+                        <li>Guieu R, Devaux C, Henry H, et al. Adenosine and migraine. <em>Canadian Journal of Neurological Sciences</em>. 1998;25(1):55–58.</li>
+                        <li>Vecchia D, Bhatt DK, et al. Cortical spreading depression and central pain processing. <em>Trends in Neurosciences</em>. 2012;35(8):507–520.</li>
+                        <li>Kilic K, Karatas H, Dönmez-Demir B, et al. Acute sleep deprivation enhances susceptibility to the migraine substrate cortical spreading depolarization. <em>The Journal of Headache and Pain</em>. 2020;21:82.</li>
+                        <li>Charles A, cited in: UCLA study on migraine and sleep yields promising results for treatment. <em>UCLA Health News</em>. June 2022.</li>
+                        <li>Iliff JJ, Wang M, Liao Y, et al. A paravascular pathway facilitates CSF flow through the brain parenchyma and the clearance of interstitial solutes, including amyloid β. <em>Science Translational Medicine</em>. 2012;4(147):147ra111.</li>
+                        <li>Shi Y, Fang Y-H, et al. Glymphatic system dysfunction: a novel mediator of sleep disorders and headaches. <em>Frontiers in Neurology</em>. 2022;13:885020.</li>
+                        <li>Brennan KC, Charles A. Sleep and headache. <em>Seminars in Neurology</em>. 2009;29(4):406–418.</li>
+                        <li>Wittmann M, Dinich J, Merrow M, Roenneberg T. Social jetlag: misalignment of biological and social time. <em>Chronobiology International</em>. 2006;23(1–2):497–509.</li>
+                        <li>Holland PR. Biology of neuropeptides: orexinergic involvement in primary headache disorders. <em>Headache</em>. 2017;57(S2):76–88.</li>
+                        <li>Lipton RB, Buse DC, Hall CB, et al. Reduction in perceived stress as a migraine trigger: testing the "let-down headache" hypothesis. <em>Neurology</em>. 2014;82(16):1395–1401.</li>
+                        <li>CEFALY Medical. What is migraine threshold theory? 2025. Available at: blog.cefaly.com</li>
+                        <li>Liu B, et al. Association of sleep and dyslipidemia with migraine incidence in a cohort of 309,475 participants. <em>Scientific Reports</em>. 2025;15:22994.</li>
+                        <li>Odegard SS, Sand T, Engstrom M, et al. The long-term effect of insomnia on primary headaches: a prospective population-based cohort study (HUNT-2 and HUNT-3). <em>Headache</em>. 2011;51(4):570–580.</li>
+                        <li>Stanyer EC, Brookes J, Pang JR, et al. Investigating the relationship between sleep and migraine in a global sample: a Bayesian cross-sectional approach. <em>The Journal of Headache and Pain</em>. 2023;24:123.</li>
+                        <li>Bertisch SM, Li BM, Henrichs TG, et al. Nightly sleep duration, fragmentation, and quality and daily risk of migraine. <em>Neurology</em>. 2020;94(5):e489–e496.</li>
+                        <li>Stanyer EC, cited in: Solis-Moreira J. Can a bad night's sleep trigger a migraine? <em>Scientific American</em>. February 2024.</li>
+                        <li>Calhoun AH, Ford S. Behavioral sleep modification may revert transformed migraine to episodic migraine. <em>Headache</em>. 2007;47(8):1178–1183.</li>
+                        <li>Smitherman TA, Kuka AJ, Calhoun AH, et al. Cognitive-behavioral therapy for insomnia to reduce chronic migraine: a sequential Bayesian analysis. <em>Headache</em>. 2018;58(7):1052–1059.</li>
+                        <li>Harnod T, Wang YC, Kao CH. Higher risk of developing a subsequent migraine in adults with non-apnea sleep disorders: a nationwide population-based cohort study. <em>European Journal of Internal Medicine</em>. 2015;26(4):232–236.</li>
+                        <li>Bender S, cited in: The relationship between migraine and sleep. <em>Association of Migraine Disorders Podcast</em>, Season 4, Episode 2. 2022.</li>
+                    </ol>
+                </div>
+
+                <div class="article-footer">
+
+                    <!-- AUTHOR CARD -->
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. This article reflects both personal experience and current neuroscience findings.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. This article was written independently and is not sponsored by any pharmaceutical, sleep technology, or supplement company.</em></p>
+                        </div>
+                    </div>
+
+                    <!-- EDITORIAL STANDARDS -->
+                    <div class="editorial-standards">
+                        <h3>How We Create Content</h3>
+                        <ul>
+                            <li><strong>Peer-reviewed sources only.</strong> We cite research from The Lancet, Neurology, The Journal of Headache and Pain, Science Translational Medicine, Frontiers in Neurology, and other authoritative journals.</li>
+                            <li><strong>Population-scale evidence.</strong> This article references cohort studies totaling over 400,000 participants across multiple countries.</li>
+                            <li><strong>Source transparency.</strong> All claims are backed by numbered references. You can verify the primary sources yourself.</li>
+                            <li><strong>Regular updates.</strong> We review articles when significant new research emerges.</li>
+                            <li><strong>No conflicts of interest.</strong> We receive no funding from pharmaceutical companies, sleep technology manufacturers, or supplement corporations.</li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA BOX -->
+                    <div class="cta-box">
+                        <h3>Find Your Goldilocks Zone with Mi</h3>
+                        <p>Migraine Companion tracks the relationship between your sleep and your attacks — so you stop guessing and start seeing your personal pattern in the data.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+
+                    <!-- REVIEW DATES -->
+                    <div class="review-dates">
+                        <p><em>Last reviewed: February 2026</em></p>
+                        <p><em>Next scheduled review: August 2026</em></p>
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
