@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exercise can trigger a migraine — or prevent one. A 2025 meta-analysis of 1,611 patients reveals which workout protocol matches medication efficacy with zero side effects.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="migraine, exercise, migraine prevention, exercise-triggered migraine, aerobic exercise migraine, strength training migraine, CGRP, endorphins, migraine protocol, kinesiophobia">
+    <title>The Exercise Paradox: When Movement Is Both the Trigger and the Cure | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://migrainecompanion.app/the-exercise-paradox.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- Schema.org markup for EEAT -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The Exercise Paradox: When Movement Is Both the Trigger and the Cure",
+        "description": "Exercise can trigger a migraine — or prevent one. A 2025 meta-analysis of 1,611 patients reveals which workout protocol matches medication efficacy with zero side effects.",
+        "image": "https://migrainecompanion.app/images/exercise_paradox_hero_two_paths.png",
+        "author": {
+            "@type": "Person",
+            "name": "Rustam Iuldashov",
+            "description": "Developer of Migraine Companion with 30+ years of personal migraine experience",
+            "url": "https://migrainecompanion.app/about"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Migraine Companion",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://migrainecompanion.app/images/mi-icon.png"
+            }
+        },
+        "datePublished": "2026-02-04",
+        "dateModified": "2026-02-04",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://migrainecompanion.app/the-exercise-paradox.html"
+        },
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Migraine"
+        },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".article-subtitle", ".key-takeaways"]
+        }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--lavender);
+        }
+
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .back-link:hover {
+            color: var(--lavender);
+        }
+
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .article-content {
+            padding: 60px 0 80px;
+        }
+
+        .article-section {
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .article-image figcaption {
+            background: rgba(139, 122, 168, 0.1);
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .references ol {
+            padding-left: 20px;
+        }
+
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+
+        .references a:hover {
+            text-decoration: underline;
+        }
+
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+
+        .medical-disclaimer {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 16px 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+
+        .key-takeaways {
+            background: rgba(139, 122, 168, 0.08);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+
+        .key-takeaways h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .key-takeaways ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .key-takeaways li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .key-takeaways li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+
+        .editorial-standards {
+            background: rgba(139, 122, 168, 0.05);
+            border: 1px solid rgba(139, 122, 168, 0.15);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 32px 0;
+        }
+
+        .editorial-standards h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .editorial-standards ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .editorial-standards li {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .editorial-standards li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+
+        .when-to-see-doctor {
+            background: rgba(197, 160, 89, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 32px 0;
+        }
+
+        .when-to-see-doctor h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .when-to-see-doctor ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+        }
+
+        .when-to-see-doctor li {
+            font-size: 0.9rem;
+            color: var(--text);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .when-to-see-doctor li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        .when-to-see-doctor p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            font-style: italic;
+        }
+
+        .review-dates {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .article-meta { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-hero">
+            <img src="images/exercise_paradox_hero_two_paths.png" alt="A runner at a fork in the road — one path fractures into migraine pain, the other blooms into golden neural pathways">
+            <div class="article-header">
+                <span class="article-tag">Science</span>
+                <h1>The Exercise Paradox</h1>
+                <p class="article-subtitle">She felt the migraine coming. She put on her running shoes. And the attack never arrived.</p>
+                <div class="article-meta">
+                    <span>📅 February 4, 2026</span>
+                    <span>⏱ 7 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+
+                <!-- AUTHOR BYLINE -->
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with chronic migraine | Last updated: February 4, 2026
+                    </p>
+                </div>
+
+                <!-- MEDICAL DISCLAIMER -->
+                <p class="medical-disclaimer">
+                    <strong>Medical Review:</strong> This content is based on peer-reviewed research from Cephalalgia, The Journal of Headache and Pain, Nature Reviews Neurology, PeerJ, American Journal of Lifestyle Medicine, and other authoritative sources.<br><br>
+                    <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. Consult your doctor before starting or changing an exercise programme, especially if you have cardiovascular conditions or take medications that affect heart rate.
+                </p>
+
+                <!-- OPENING -->
+                <section class="article-section">
+                    <p>In 1991, a 43-year-old woman walked into a headache clinic with an unusual confession. She had discovered — by accident, by desperation, by the kind of bodily intuition that science had not yet explained — that if she started running during the first shimmer of a migraine aura, the attack would stall. Not soften. Not shorten. Stop.<sup>[1]</sup></p>
+                    <p>A physician named Darling documented her case in the journal <em>Headache</em>. It was, at the time, considered a curiosity.</p>
+                    <p>Eighteen years later, a separate case appeared in <em>Medical Hypotheses</em>: another patient who consistently halted attacks through fast, intensive running.<sup>[2]</sup> And then a comprehensive 2018 review in <em>The Journal of Headache and Pain</em> placed both cases into a larger scientific framework, noting them as rare but clinically significant examples of exercise as acute migraine treatment.<sup>[3]</sup></p>
+                    <p>Hold those stories in one hand.</p>
+                    <p>Now hold this: in a Dutch headache-clinic study of 103 migraine patients, 38% reported that physical exercise had triggered an attack at some point in their lives. More than half of those patients abandoned the activity that provoked it — not just for a week, not for a season, but permanently.<sup>[4]</sup></p>
+                    <p>Same molecule. Same nervous system. Same species of pain. One person runs into relief. Another runs into agony.</p>
+                    <p>This is the exercise paradox. And for the one billion people living with migraine worldwide<sup>[5]</sup>, understanding it is not academic. It is the difference between a tool you use and a threat you flee.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- WHY YOUR WORKOUT CAN LIGHT THE FUSE -->
+                <section class="article-section">
+                    <h2>Why your workout can light the fuse</h2>
+                    <p>The body is not subtle when it is pushed.</p>
+                    <p>During intense exertion, muscle cells flood the bloodstream with CGRP — calcitonin gene-related peptide — the same inflammatory signalling molecule that modern migraine drugs like erenumab and galcanezumab were designed to block.<sup>[3, 6]</sup> Alongside CGRP, a cascade of changes follows: lactate surges, hypocretin fluctuates, and intracranial pressure briefly spikes. For a nervous system already teetering near its threshold, this can be the push that tips it over.</p>
+                    <p>How often? More often than most doctors acknowledge.</p>
+                    <p>In a controlled provocation study at a Danish research centre, scientists asked migraine patients to perform a single session of intensive indoor cycling. Fifty-seven percent triggered an attack.<sup>[7]</sup> Not a mild headache — a full migraine, with all its neurovascular fury. But the researchers noticed a pattern that reframed the finding: those who triggered attacks already had a higher baseline frequency. Their threshold was already low. The exercise did not create the vulnerability. It exposed it.</p>
+                    <p>And here begins the trap.</p>
+                    <p>A patient exercises. A migraine follows. The brain draws a line between cause and effect — a line that, once drawn, is almost impossible to erase. She cancels her gym membership. He stops walking the dog. Researchers call this kinesiophobia, the fear of movement, and it creates what a 2018 review described as a vicious cycle<sup>[8, 9]</sup>: less exercise lowers the threshold further, which makes the next attempt more likely to provoke an attack, which deepens the fear.</p>
+                    <p>The result? According to a study at a major U.S. headache centre, 73% of chronic migraine patients fail to meet the WHO minimum of 150 minutes per week of moderate-to-vigorous exercise.<sup>[10]</sup> Among non-exercisers, the rate of depression was 47% — nearly double the 25% seen in those who maintained a regular exercise routine.<sup>[10]</sup></p>
+
+                    <div class="highlight-box">
+                        <p>The very thing that could protect the brain becomes the thing the brain is taught to fear.</p>
+                    </div>
+                </section>
+
+                <!-- IMAGE 2: THRESHOLD / TRIGGER -->
+                <figure class="article-image">
+                    <img src="images/migraine_threshold_brain_trigger.png" alt="Cross-section of a translucent head showing the brain's migraine threshold — calm signals below, chaotic inflammation above, with a runner silhouette in the brainstem">
+                    <figcaption>The migraine threshold — when exercise pushes a vulnerable brain past its tipping point, CGRP and inflammatory signals overwhelm protective circuits</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE EVIDENCE -->
+                <section class="article-section">
+                    <h2>The evidence that exercise works as well as medication</h2>
+                    <p>In 2011, at the University of Gothenburg, a physiotherapist named Emma Varkey ran the trial that would quietly change migraine medicine.</p>
+                    <p>Ninety-one patients with migraine were randomized into three groups. One group exercised — 40 minutes of moderate-intensity cycling, three times a week. One group practised relaxation therapy. One group took topiramate, a frontline preventive medication prescribed to millions of people globally and known, among patients, for the mental fog, fatigue, and weight changes it often inflicts.<sup>[11]</sup></p>
+                    <p>After twelve weeks, the results landed like a contradiction.</p>
+                    <p>All three groups showed a nearly identical reduction in migraine frequency: 0.93 fewer attacks per month with exercise, 0.83 with relaxation, 0.97 with topiramate. No statistically significant difference between them (p = 0.95).<sup>[11]</sup></p>
+                    <p>Exercise matched the drug.</p>
+                    <p>But here is the number that most summaries of this study omit — and it is the number that should change the conversation. In the topiramate group, 33% experienced adverse events. In the exercise group, that number was zero.<sup>[11, 12]</sup></p>
+                    <p>Zero.</p>
+                    <p>Same benefit. Radically different cost.</p>
+                    <p>The NHS defines a "good response" to preventive migraine medication as a 30–50% reduction in attack frequency.<sup>[13]</sup> Exercise meets that bar — and in multiple, larger analyses, it exceeds it.</p>
+                    <p>A 2024 network meta-analysis published in <em>Headache</em>, pooling 21 randomized controlled trials and 1,501 patients, confirmed that moderate-intensity aerobic exercise produces moderate-to-large reductions in migraine frequency and intensity. The authors concluded that clinicians should consider exercise — specifically yoga and moderate-intensity aerobic training — as evidence-based first-line options.<sup>[14]</sup></p>
+                    <p>Then, in 2025, the evidence became harder to ignore.</p>
+                    <p>A multilevel network meta-analysis published in <em>PeerJ</em>, synthesizing 27 RCTs and 1,611 patients, found that the most effective intervention was not any single exercise type — but the combination of aerobic and resistance training. The effect size was extraordinary: g = −1.85 (95% CrI: −2.53 to −1.18), ranking first among all modalities with a 91% probability of superiority.<sup>[15]</sup> Resistance training alone came second (g = −1.45). Standard aerobic exercise, yoga, and tai chi followed behind.</p>
+                    <p>Separately, Wang et al. analysed data from the U.S. National Health and Nutrition Examination Survey (NHANES, 1999–2004) — a nationally representative dataset of 2,011 adults reflecting approximately 32 million Americans. Adults who combined vigorous aerobic exercise with muscle-strengthening activities showed a <strong>52% reduction</strong> in the odds of severe headache or migraine (OR: 0.48, 95% CI: 0.26–0.90).<sup>[16]</sup></p>
+                    <p>Fifty-two percent. No prescription required.</p>
+                    <p>A dose-response meta-analysis from October 2025 added a further dimension: across 15 studies and 253 participants, aerobic exercise produced a statistically significant reduction in pain intensity (SMD: −1.1, 95% CI: −1.72 to −0.47).<sup>[17]</sup></p>
+                    <p>And a Stanford researcher, Yohannes Woldeamanuel, offered a detail that most exercise-migraine studies had overlooked: timing matters. In a 2025 commentary in <em>American Journal of Lifestyle Medicine</em>, he called morning exercise "a powerful zeitgeber" — a cue that aligns circadian rhythms, improves sleep quality, and reduces migraine burden.<sup>[18]</sup> Migraine, he noted, is deeply linked to circadian disruption. Irregular exercise, sleep, and meal schedules worsen attack frequency. A regular morning routine counteracts all three.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- THREE SYSTEMS -->
+                <section class="article-section">
+                    <h2>Three systems that shift in your favour</h2>
+                    <p>The question is not whether exercise works. The question is why — and the answer involves three biological systems that, together, raise the brain's resistance to migraine.</p>
+                    <p><strong>Beta-endorphins.</strong> Your body manufactures its own opioids — molecules that bind to the same receptors as morphine. Migraine patients have measurably lower baseline levels of beta-endorphin compared to healthy controls, and those levels plummet further during an attack.<sup>[3, 19]</sup> Regular exercise, particularly when sustained past the anaerobic threshold or beyond 50 minutes, restores production. A six-week aerobic training study by Koseoglu et al. demonstrated that migraine patients showed significantly elevated plasma beta-endorphin alongside reduced attack frequency.<sup>[20]</sup></p>
+                    <p><strong>Endocannabinoids.</strong> For decades, scientists attributed the "runner's high" to endorphins. They were wrong. Endorphins are too large to cross the blood-brain barrier.<sup>[21]</sup> The actual architect of that post-exercise euphoria is anandamide — an endocannabinoid your body synthesizes on demand, small enough to slip through the barrier and dock in the brain's cannabinoid receptors. In migraine patients, the endocannabinoid system is dysfunctional: anandamide levels are significantly lower, which may contribute to sensitization of the trigeminal pain pathways.<sup>[3, 22]</sup> Exercise corrects this. And in a study by Heyman et al., intense exercise significantly increased circulating anandamide, which correlated positively with the third protective factor.<sup>[23]</sup></p>
+                    <p><strong>BDNF — brain-derived neurotrophic factor.</strong> Consider BDNF the brain's repair signal: it promotes neuronal survival, growth, and plasticity.<sup>[24]</sup> During a migraine attack, BDNF spikes as part of the inflammatory response — a crisis signal. But regular exercise normalizes the BDNF system over time, training it away from alarm-mode surges and toward steady, protective levels. In the Heyman study, anandamide and BDNF levels were positively correlated both at the end of exercise and during recovery (r > 0.66, p < 0.05).<sup>[23]</sup> These systems do not work in isolation. They reinforce each other.</p>
+                    <p>Together, they raise the threshold — the invisible line that separates a day with migraine from a day without. A brain that has been trained by regular, moderate exercise does not become immune to migraine. It becomes harder to push over the edge.</p>
+                </section>
+
+                <!-- IMAGE 3: THREE SHIELDS -->
+                <figure class="article-image">
+                    <img src="images/three_shields_endorphin_anandamide_bdnf.png" alt="Luminous brain floating in space surrounded by three protective force-field layers — golden beta-endorphins, green anandamide passing the blood-brain barrier, and blue-purple BDNF neural growth patterns">
+                    <figcaption>Three shields — beta-endorphins, anandamide, and BDNF form layered defences that raise the brain's migraine threshold with every workout</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE PROTOCOL -->
+                <section class="article-section">
+                    <h2>The protocol: how to start without getting burned</h2>
+                    <p>Here is where science meets Monday morning. Knowing that exercise helps is one thing. Doing it without triggering an attack requires strategy — and the data now provides one.</p>
+                    <p><strong>Warm up. Every time.</strong> Multiple clinical guidelines name gradual intensity escalation as the single most protective factor against exercise-triggered attacks.<sup>[12, 14, 18]</sup> Start with 10 minutes of dynamic movement: arm circles, ear-to-shoulder stretches, gentle walking, light leg swings. In the Varkey trial, the incidence of exercise-triggered migraine was just 0.1% — because every session included a structured warm-up.<sup>[12]</sup></p>
+                    <p><strong>Stay moderate.</strong> The target: 70–80% of maximum heart rate, sustained for 20–40 minutes.<sup>[14, 18]</sup> A practical test: you should be able to hold a conversation but not sing. If you can only gasp single words, you have pushed past the zone. Woldeamanuel recommends deconditioned patients begin at 50% of their maximum aerobic capacity, increasing by no more than 5% per week.<sup>[18]</sup> One RCT showed that a coping-focused intervention — where patients learned to manage exercise-related triggers through pacing and relaxation techniques — reduced migraine frequency by 36%, compared to just 13% in a trigger-avoidance group.<sup>[18]</sup> The message: pushing gently through, with the right tools, works better than avoiding movement entirely.</p>
+                    <p><strong>Three sessions per week.</strong> The Varkey protocol — 40 minutes, three times weekly — has the strongest clinical support.<sup>[11]</sup> The 2023 clinical practice guideline published in <em>The Journal of Headache and Pain</em> gives aerobic exercise a B-grade recommendation, the highest assigned to any non-pharmacological migraine intervention.<sup>[25]</sup></p>
+                    <p><strong>Add resistance training.</strong> This is the insight that transforms good into exceptional. The Wang NHANES study showed that vigorous exercise alone reduced migraine odds by 24% — but combining it with muscle-strengthening activities more than doubled that effect to 52%.<sup>[16]</sup> The 2025 PeerJ meta-analysis ranked combined aerobic + resistance training as the single most effective exercise modality, outperforming every other option tested across 27 trials.<sup>[15]</sup> Woldeamanuel specifically recommends resistance band rows, shoulder shrugs, and neck flexor exercises — targeting the posterior chain to reduce nociceptive input through the trigeminocervical complex, one of the brain's primary migraine relay stations.<sup>[18]</sup></p>
+
+                    <div class="quote-box">
+                        <p>"Exercise really attacks migraines from all fronts."<br><span style="font-size:0.9rem;font-style:normal;color:var(--text-light);">— Caroline Alvo, certified health coach, American Migraine Foundation</span></p>
+                    </div>
+
+                    <p><strong>Hydrate and fuel.</strong> Migraine triggers are cumulative. Dehydration alone may not tip you over. Dehydration combined with exercise, heat, and an empty stomach can. Aim for at least 2 litres of water daily, plus 350 ml per 30 minutes of exercise.<sup>[26]</sup> Never train fasted.</p>
+                    <p><strong>Cool down with purpose.</strong> Static stretching after a session — child's pose, neck stretches, upper back release — transitions the nervous system from sympathetic activation to recovery. This is when the body converts beneficial stress into lasting adaptation.<sup>[18]</sup></p>
+                    <p><strong>Track everything.</strong> Record what you did, the intensity, duration, pre-exercise food and water intake, sleep quality, weather, and whether an attack followed. In Migraine Companion, you can log exercise alongside your triggers, symptoms, and patterns. Over time, the data reveals your personal rules — the ones no generic guideline can predict.</p>
+                </section>
+
+                <!-- IMAGE 4: PROTOCOL TRAIL -->
+                <figure class="article-image">
+                    <img src="images/protocol_trail_milestones.png" alt="A winding mountain trail from stormy base to golden summit with five glowing milestone markers — heart rate, water, dumbbell, timer, and journal — and a figure walking at the second marker surrounded by protective glow">
+                    <figcaption>The protocol trail — five milestones from first warm-up to full protection, with gradual progression as the key to success</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <!-- WHAT THIS MEANS FOR YOU -->
+                <section class="article-section">
+                    <h2>What this means for you</h2>
+                    <p>Here is what thirty years of living with migraine, and now an expanding body of peer-reviewed evidence, confirms: exercise is not the enemy.</p>
+                    <p>Unstructured, sudden-intensity movement on a dehydrated, under-slept, stressed body — that is the enemy.</p>
+                    <p>Regular, moderate, thoughtfully planned exercise is something profoundly different. It matches the efficacy of frontline preventive drugs — with zero adverse events reported in the largest controlled trial ever conducted.<sup>[11]</sup> It is the only intervention that simultaneously reduces migraine frequency, improves sleep, lowers depression, and strengthens cardiovascular resilience.<sup>[10, 14, 15]</sup> Neurologist Amaal Starling of the Mayo Clinic, who lives with migraine herself, includes regular exercise in what she calls the "SEEDS for success" in migraine management — alongside sleep, eating, diary-keeping, and stress management.<sup>[27]</sup></p>
+                    <p>The paradox is not that exercise is dangerous and protective at the same time.</p>
+                    <p>The paradox is that the same activity, done differently, produces opposite results.</p>
+                    <p>Start low. Go slow. Build the habit. And let your nervous system learn that movement is not a threat — because once it does, exercise becomes one of the most powerful tools you will ever find.</p>
+
+                    <div class="highlight-box">
+                        <p>You just have to teach your brain to trust it.</p>
+                    </div>
+                </section>
+
+                <!-- KEY TAKEAWAYS -->
+                <div class="key-takeaways">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>Exercise matched topiramate in reducing migraine frequency — with zero adverse events vs 33%</li>
+                        <li>Combined aerobic + resistance training is the most effective modality (g = −1.85, 91% probability of being best across 27 RCTs)</li>
+                        <li>52% reduction in migraine odds with combined vigorous + muscle-strengthening exercise</li>
+                        <li>Warm-up is the single most protective factor — 0.1% trigger rate in structured programmes</li>
+                        <li>Target zone: 70–80% max heart rate, 20–40 minutes, 3× per week minimum</li>
+                        <li>Track everything — your personal rules emerge faster than any generic guideline can predict</li>
+                    </ul>
+                </div>
+
+                <!-- WHEN TO SEE A DOCTOR -->
+                <div class="when-to-see-doctor">
+                    <h3>When to See a Doctor</h3>
+                    <ul>
+                        <li>Experience a sudden, severe headache during or immediately after exercise</li>
+                        <li>Are new to exercise and live with migraine</li>
+                        <li>Have cardiovascular conditions or take beta-blockers or other medications that affect heart rate</li>
+                        <li>Experience exercise-triggered migraines that do not improve with warm-up and pacing strategies</li>
+                        <li>Want to combine an exercise programme with existing preventive medication</li>
+                    </ul>
+                    <p>This article is a starting point for conversation with your doctor, not a replacement for medical care.</p>
+                </div>
+
+                <!-- REFERENCES -->
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Darling M. The use of exercise as a method of aborting migraine. <em>Headache</em>. 1991;31(9):616–618. <a href="https://doi.org/10.1111/j.1526-4610.1991.hed3109616.x" target="_blank">doi:10.1111/j.1526-4610.1991.hed3109616.x</a></li>
+                        <li>Strelniker YM. Intensive running completely removes a migraine attack. <em>Medical Hypotheses</em>. 2009;72(5):608. <a href="https://doi.org/10.1016/j.mehy.2009.01.004" target="_blank">doi:10.1016/j.mehy.2009.01.004</a></li>
+                        <li>Amin FM, Aristeidou S, Baraldi C, et al. The association between migraine and physical exercise. <em>J Headache Pain</em>. 2018;19(1):83. <a href="https://doi.org/10.1186/s10194-018-0902-y" target="_blank">doi:10.1186/s10194-018-0902-y</a></li>
+                        <li>Koppen H, van Veldhoven PL. Migraineurs with exercise-triggered attacks have a distinct migraine. <em>J Headache Pain</em>. 2013;14(1):99. <a href="https://doi.org/10.1186/1129-2377-14-99" target="_blank">doi:10.1186/1129-2377-14-99</a></li>
+                        <li>Steiner TJ, Stovner LJ. Global epidemiology of migraine and its implications for public health and health policy. <em>Nat Rev Neurol</em>. 2023;19(2):109–117.</li>
+                        <li>Edvinsson L, Haanes KA, Warfvinge K, Krause DN. CGRP as the target of new migraine therapies — successful translation from bench to clinic. <em>Nat Rev Neurol</em>. 2018;14(6):338–350. <a href="https://doi.org/10.1038/s41582-018-0003-1" target="_blank">doi:10.1038/s41582-018-0003-1</a></li>
+                        <li>Hougaard A, Amin FM, Hauge AW, Ashina M, Olesen J. Provocation of migraine with aura using natural trigger factors. <em>Neurology</em>. 2013;80(5):428–431. <a href="https://doi.org/10.1212/WNL.0b013e31827f0f10" target="_blank">doi:10.1212/WNL.0b013e31827f0f10</a></li>
+                        <li>Lippi G, Mattiuzzi C, Sanchis-Gomar F. Physical exercise and migraine: for or against? <em>Ann Transl Med</em>. 2018;6(10):181. <a href="https://doi.org/10.21037/atm.2018.04.15" target="_blank">doi:10.21037/atm.2018.04.15</a></li>
+                        <li>Irby MB, Bond DS, Lipton RB, et al. Aerobic exercise for reducing migraine burden: mechanisms, markers, and models of change processes. <em>Curr Pain Headache Rep</em>. 2017;21(2):7. <a href="https://doi.org/10.1007/s11916-017-0608-y" target="_blank">doi:10.1007/s11916-017-0608-y</a></li>
+                        <li>Dyess M, et al. Exercised brain in pain: quantification of exercise in migraine patients at a large tertiary headache center. Presented at: American Academy of Neurology Annual Meeting; 2019.</li>
+                        <li>Varkey E, Cider Å, Carlsson J, Linde M. Exercise as migraine prophylaxis: a randomized study using relaxation and topiramate as controls. <em>Cephalalgia</em>. 2011;31(14):1428–1438. <a href="https://doi.org/10.1177/0333102411419681" target="_blank">doi:10.1177/0333102411419681</a></li>
+                        <li>Malpass K. Exercise is effective as a nonpharmacological approach to reduce the frequency of migraines. <em>Nat Rev Neurol</em>. 2011;7(11):596. <a href="https://doi.org/10.1038/nrneurol.2011.155" target="_blank">doi:10.1038/nrneurol.2011.155</a></li>
+                        <li>NHS Inform. Migraine treatment and prevention. nhsinform.scot. Updated 2024.</li>
+                        <li>Reina-Varona Á, Madroñero-Miguel B, Fierro-Marrero J, et al. Efficacy of various exercise interventions for migraine treatment: a systematic review and network meta-analysis. <em>Headache</em>. 2024;64(7):873–900. <a href="https://doi.org/10.1111/head.14696" target="_blank">doi:10.1111/head.14696</a></li>
+                        <li>Li G, et al. Efficacy and optimal dosage of various exercises for migraine: a multilevel network and dose-response meta-analysis. <em>PeerJ</em>. 2025;13:e20254.</li>
+                        <li>Wang Y, Zhu X, Liang Y. Which exercise patterns are most effective for reducing severe headache/migraine in adults? Evidence from a nationally representative U.S. sample. <em>Am J Lifestyle Med</em>. 2025. <a href="https://doi.org/10.1177/15598276251341206" target="_blank">doi:10.1177/15598276251341206</a></li>
+                        <li>Ogrezeanu DC, Núñez-Cortés R, Salazar-Méndez J, et al. How much aerobic exercise is needed to reduce migraine? A dose-response meta-analysis. <em>Headache</em>. 2025. <a href="https://doi.org/10.1111/head.15070" target="_blank">doi:10.1111/head.15070</a></li>
+                        <li>Woldeamanuel YW. Exercise patterns and migraine management: a multifaceted approach. <em>Am J Lifestyle Med</em>. 2025. <a href="https://doi.org/10.1177/15598276251346394" target="_blank">doi:10.1177/15598276251346394</a></li>
+                        <li>Misra UK, Kalita J, Tripathi GM, Bhoi SK. Role of beta-endorphin in pain modulation in patients with migraine. <em>Cephalalgia</em>. 2013;33(5):316–322.</li>
+                        <li>Koseoglu E, Akboyraz A, Soyuer A, Ersoy AO. Aerobic exercise and plasma beta endorphin levels in patients with migrainous headache without aura. <em>Cephalalgia</em>. 2003;23(10):972–976.</li>
+                        <li>Fuss J, Steinle J, Bindila L, et al. A runner's high depends on cannabinoid receptors in mice. <em>Proc Natl Acad Sci</em>. 2015;112(42):13105–13108. <a href="https://doi.org/10.1073/pnas.1514996112" target="_blank">doi:10.1073/pnas.1514996112</a></li>
+                        <li>Greco R, Gasperi V, Maccarrone M, Tassorelli C. The endocannabinoid system and migraine. <em>Exp Neurol</em>. 2010;224(1):85–91.</li>
+                        <li>Heyman E, Gamelin FX, Goekint M, et al. Intense exercise increases circulating endocannabinoid and BDNF levels in humans — possible implications for reward and depression. <em>Psychoneuroendocrinology</em>. 2012;37(6):844–851. <a href="https://doi.org/10.1016/j.psyneuen.2011.09.017" target="_blank">doi:10.1016/j.psyneuen.2011.09.017</a></li>
+                        <li>Numakawa T, Suzuki S, Kumamaru E, et al. BDNF function and intracellular signaling in neurons. <em>Histol Histopathol</em>. 2010;25(2):237–258.</li>
+                        <li>La Touche R, Fierro-Marrero J, Sánchez-Ruíz I, et al. Prescription of therapeutic exercise in migraine, an evidence-based clinical practice guideline. <em>J Headache Pain</em>. 2023;24(1):68. <a href="https://doi.org/10.1186/s10194-023-01571-8" target="_blank">doi:10.1186/s10194-023-01571-8</a></li>
+                        <li>American Migraine Foundation. Managing migraine with exercise. americanmigrainefoundation.org. Updated March 2025.</li>
+                        <li>Starling AJ. SEEDS for success: lifestyle management in migraine. <em>Cleve Clin J Med</em>. 2019;86(11):741–749.</li>
+                    </ol>
+                </div>
+
+                <div class="article-footer">
+
+                    <!-- AUTHOR CARD -->
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. This article reflects both personal experience and current neuroscience findings.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. This article was written independently and is not sponsored by any pharmaceutical, fitness, or supplement company.</em></p>
+                        </div>
+                    </div>
+
+                    <!-- EDITORIAL STANDARDS -->
+                    <div class="editorial-standards">
+                        <h3>How We Create Content</h3>
+                        <ul>
+                            <li><strong>Peer-reviewed sources only.</strong> We cite research from authoritative medical journals (Cephalalgia, The Journal of Headache and Pain, Nature Reviews Neurology, PeerJ, PNAS, American Journal of Lifestyle Medicine, and others).</li>
+                            <li><strong>Scientific consensus.</strong> Information reflects current understanding of exercise physiology and migraine neuroscience. Where evidence is still emerging, we note this.</li>
+                            <li><strong>Source transparency.</strong> All claims are backed by numbered references with DOI links where available. You can verify the primary sources yourself.</li>
+                            <li><strong>Regular updates.</strong> We review articles when significant new research emerges — this article incorporates meta-analyses published through 2025.</li>
+                            <li><strong>No conflicts of interest.</strong> We receive no funding from fitness equipment manufacturers, supplement companies, or pharmaceutical corporations.</li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA BOX -->
+                    <div class="cta-box">
+                        <h3>Track Your Exercise Patterns with Mi</h3>
+                        <p>Log your workouts alongside triggers, symptoms, and patterns — because your personal exercise rules emerge faster than any generic guideline can predict.</p>
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                    </div>
+
+                    <!-- REVIEW DATES -->
+                    <div class="review-dates">
+                        <p><em>Last reviewed: February 2026</em></p>
+                        <p><em>Next scheduled review: August 2026</em></p>
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
