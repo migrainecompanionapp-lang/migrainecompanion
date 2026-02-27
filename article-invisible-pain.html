@@ -25,6 +25,55 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-content a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-content a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600;}
+        .related-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; font-family: 'Inter', sans-serif;}
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -217,6 +266,15 @@
             display: block;
         }
         
+        .article-image figcaption {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 12px 16px;
+            font-style: italic;
+            background: rgba(255,255,255,0.02);
+        }
+        
         .highlight-box {
             background: rgba(197, 160, 89, 0.08);
             border-left: 3px solid var(--gold);
@@ -339,8 +397,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
@@ -421,6 +479,7 @@ justify-content: center;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 16px;
+            margin-top: 0;
         }
         
         .key-takeaways ul {
@@ -480,7 +539,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -490,14 +548,13 @@ justify-content: center;
                     </p>
                 </div>
                 
-                <!-- MEDICAL DISCLAIMER -->
                 <p class="medical-disclaimer">
                     This article shares personal experience and summarizes peer-reviewed research about migraine stigma. It is not medical advice. The author is not a healthcare professional. If you experience migraine or chronic pain, please consult a qualified healthcare provider.
                 </p>
 
                 <section class="article-section">
                     <p>She said it in the break room. Tuesday. 2:47 p.m.</p>
-                    <p>I had just apologized for leaving a meeting early—the aura had started, those jagged lights cutting across my vision like broken glass. My manager looked at me, tilted her head slightly, and delivered the five words I'd heard a hundred times before:</p>
+                    <p>I had just apologized for leaving a meeting early—the <a href="article-aura.html">aura</a> had started, those jagged lights cutting across my vision like broken glass. My manager looked at me, tilted her head slightly, and delivered the five words I'd heard a hundred times before:</p>
                     <p><em>"But you don't look sick."</em></p>
                     <p>She meant well. I know that now. But in that moment, standing under fluorescent lights with lightning fracturing my skull, I felt something worse than pain.</p>
                     <p>I felt erased.</p>
@@ -509,13 +566,13 @@ justify-content: center;
                     <h2>The Invisible War</h2>
                     <p>Here is what nobody tells you about migraine: the hardest battle isn't the one inside your head.</p>
                     <p>It's the one you fight to prove that battle exists at all.</p>
-                    <p>Thirty years I've lived with this condition. Thirty years of cancelled plans, abandoned conversations, darkened rooms. And in all that time, no attack has wounded me as deeply as those five words—spoken by friends, colleagues, doctors, lovers, strangers.</p>
+                    <p><a href="article-30-years.html">Thirty years I've lived with this condition.</a> Thirty years of cancelled plans, abandoned conversations, darkened rooms. And in all that time, no attack has wounded me as deeply as those five words—spoken by friends, colleagues, doctors, lovers, strangers.</p>
                     <p><em>You don't look sick.</em></p>
                     <p>The translation is always the same: <strong>I don't believe you.</strong></p>
                 </section>
 
                 <section class="article-section">
-                    <h2>What the Numbers Reveal</h2>
+                    <h2>What The Numbers Reveal</h2>
                     <p>Scientists finally measured what we've always known.</p>
                     <p>In 2024, researchers surveyed 59,001 people with migraine—the largest study of its kind.<sup>[1]</sup> Their finding: one in three of us faces stigma often or very often. Not occasionally. Not rarely. Regularly. Predictably. As certain as the pain itself.</p>
                     <p>The researchers identified two specific accusations we face. First: that we're faking it for "secondary gain"—attention, sympathy, an excuse to skip work. Second: that we're exaggerating, making mountains from molehills, headaches from migraines.</p>
@@ -562,7 +619,7 @@ justify-content: center;
                     <p>That last wound deserves attention.</p>
                     <p>When the world insists your pain isn't real enough, isn't visible enough, isn't legitimate enough, you start absorbing the message. You wonder: <em>Maybe I am exaggerating. Maybe I should push through. Maybe everyone feels this way and I'm simply weaker.</em></p>
                     <p>This isn't just psychological damage. It creates physical consequences.</p>
-                    <p>When your brain perceives dismissal as threat, your nervous system activates. Stress hormones flood your body. Pain signals amplify. Your threshold drops. Everything hurts more.<sup>[5]</sup></p>
+                    <p>When your brain perceives dismissal as threat, your nervous system activates. Stress hormones flood your body. Pain signals amplify. Your <a href="article-understanding-triggers.html">threshold drops</a>. Everything hurts more.<sup>[5]</sup></p>
                     
                     <div class="highlight-box">
                         <p>The people who don't believe you aren't just hurting your feelings. They're literally making your pain worse.</p>
@@ -577,7 +634,7 @@ justify-content: center;
                     <p>You might assume it means isolation—being alone, having no one around. Research reveals something more devastating: you can be surrounded by people and still feel profoundly alone.<sup>[6]</sup></p>
                     <p>A global study spanning 139 countries found that lonely individuals have 2.1 times higher odds of experiencing physical pain. In the UK Biobank study of 502,528 participants, social exclusion predicted both acute and chronic pain with startling consistency.<sup>[7]</sup></p>
                     <p>But Japanese researchers uncovered the critical distinction: subjective loneliness—feeling misunderstood—matters more than objective isolation.<sup>[8]</sup> Having people in your life isn't the cure. Having people who understand is.</p>
-                    <p>Those with chronic pain report that friendships fade—not because friends physically leave, but because authentic connection becomes impossible when half your reality remains invisible. The friend is there. The understanding is not.</p>
+                    <p>Those with chronic pain report that <a href="article-relationships.html">friendships fade</a>—not because friends physically leave, but because authentic connection becomes impossible when half your reality remains invisible. The friend is there. The understanding is not.</p>
                     
                     <div class="quote-box">
                         <p>And so you smile. You say "I'm fine." You carry an invisible war into visible rooms full of people who cannot see it. That is the loneliness of invisible pain.</p>
@@ -601,7 +658,7 @@ justify-content: center;
                 <section class="article-section">
                     <h2>Why I Built This</h2>
                     <p>I spent three and a half months building Migraine Companion during wartime in Ukraine, often with only eight hours of electricity per day. I built it because I wanted one place—just one—where understanding exists by default.</p>
-                    <p>Where Mi, your companion through difficult days, never asks if your pain is real.</p>
+                    <p>Where <a href="meet-mi.html">Mi, your companion through difficult days</a>, never asks if your pain is real.</p>
                     <p>Where tracking isn't about building evidence for skeptics, but about learning yourself more deeply.</p>
                     <p>Where you don't have to explain. Where you don't have to prove. Where you simply... belong.</p>
                 </section>
@@ -624,7 +681,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>Key Takeaways</h3>
                     <ul>
@@ -636,7 +692,20 @@ justify-content: center;
                     </ul>
                 </div>
 
-                <!-- REFERENCES -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-relationships.html" class="related-card">
+                            <h4>The Third Person in Every Room</h4>
+                            <p>How chronic pain lives in your relationships and how to navigate partnerships when you have an invisible illness.</p>
+                        </a>
+                        <a href="article-not-my-migraine.html" class="related-card">
+                            <h4>I Am Not My Migraine</h4>
+                            <p>Learn how to untangle your identity from chronic pain using evidence-based narrative therapy.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="references">
                     <h3>References</h3>
                     <ol>
