@@ -26,6 +26,55 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-section a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-section a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600;}
+        .related-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; font-family: 'Inter', sans-serif;}
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -260,6 +309,15 @@
             line-height: 1.7;
         }
         
+        .quote-box .quote-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-style: normal;
+            color: var(--text-light);
+            margin-top: 12px;
+            display: block;
+        }
+        
         .separator {
             text-align: center;
             margin: 60px 0;
@@ -349,8 +407,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
@@ -381,15 +439,6 @@ justify-content: center;
             color: var(--text-dark);
             margin-bottom: 8px;
             line-height: 1.5;
-        }
-        
-        .references a {
-            color: var(--lavender);
-            text-decoration: none;
-        }
-        
-        .references a:hover {
-            text-decoration: underline;
         }
         
         sup {
@@ -526,7 +575,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -536,13 +584,11 @@ justify-content: center;
                     </p>
                 </div>
                 
-                <!-- MEDICAL DISCLAIMER -->
                 <p class="medical-disclaimer">
                     This article is for educational purposes only and does not constitute medical advice. 
                     Content based on peer-reviewed research from JAMA Psychiatry, Brain, and The Lancet Neurology. For personalized recommendations, consult your healthcare provider.
                 </p>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>Key Takeaways</h3>
                     <ul>
@@ -556,7 +602,7 @@ justify-content: center;
 
                 <section class="article-section">
                     <p>The moment Sarah realized she had disappeared happened at a dinner party in March.</p>
-                    <p>Someone asked what she did for fun. She opened her mouth. Nothing came out. She could list her triggers, her medications, her average attack frequency down to the decimal. She could describe the precise quality of her aura — the shimmering crescent, the blind spot that bloomed like ink in water. But fun? Hobbies? The question assumed she was a person. She had become a diagnosis.</p>
+                    <p>Someone asked what she did for fun. She opened her mouth. Nothing came out. She could list her <a href="article-understanding-triggers.html">triggers</a>, her medications, her average attack frequency down to the decimal. She could describe the precise quality of her <a href="article-aura.html">aura</a> — the shimmering crescent, the blind spot that bloomed like ink in water. But fun? Hobbies? The question assumed she was a person. She had become a diagnosis.</p>
                     <p>Later, alone in her car, she sat in the dark and tried to remember who she had been before. The memories were there — graduate school, her first apartment, the summer she learned to sail — but they felt like someone else's photographs. Artifacts from a life that belonged to a woman she used to know.</p>
                     <p>This is what chronic illness does when no one is watching. It doesn't just take your days. It takes your pronouns. You stop saying "I have migraines." You start saying "I am a migraineur." And in that small grammatical shift, something vast disappears.</p>
                     <p>You do.</p>
@@ -631,7 +677,6 @@ justify-content: center;
                     <p>But she had danced. She had given a toast. She had seen her daughter's face during the first dance. And she had done all of this not by being healthy, but by being strategic. By directing her own story instead of letting the story direct her.</p>
                 </section>
 
-                <!-- ВНУТРЕННЯЯ ИЛЛЮСТРАЦИЯ -->
                 <figure class="article-image">
                     <img src="images/Sparkling Moment.png" alt="Mi dancing at a wedding reception, wearing sunglasses, tired but smiling — a sparkling moment of reclaimed identity">
                     <figcaption>A sparkling moment: when pain is present, but you are still the main character of your story.</figcaption>
@@ -674,7 +719,7 @@ justify-content: center;
                     <p>Find language that puts space between you and your condition. Some people use third-person phrasing: "The migraine is active today." Some give it a name or a character. The specific form matters less than the function — creating grammatical distance. The migraine is something you have a relationship <em>with</em>, not something you <em>are</em>.</p>
                     
                     <p><strong>Third: map the influence in both directions.</strong></p>
-                    <p>You can easily list how migraine has affected your life. Now list how <em>you</em> have affected <em>it</em>. What have you learned about prediction, prevention, management? What strategies have helped? What adaptations have you made that work? This is not about keeping score. It's about recovering the evidence of your agency that the dominant narrative has erased.</p>
+                    <p>You can easily list how migraine has affected your life. Now list how <em>you</em> have affected <em>it</em>. What have you learned about <a href="article-prediction.html">prediction</a>, prevention, management? What strategies have helped? What adaptations have you made that work? This is not about keeping score. It's about recovering the evidence of your agency that the dominant narrative has erased.</p>
                     
                     <p><strong>Fourth: excavate the sparkling moments.</strong></p>
                     <p>In the past month, when did you feel most like yourself — not "a person with migraines," but <em>you</em>? What were you doing? Who were you with? What conditions were present? These moments are data about what supports your fullest functioning. Don't dismiss them as exceptions. Treat them as instructions.</p>
@@ -690,7 +735,7 @@ justify-content: center;
                     <p>I need to be honest about what this approach cannot do.</p>
                     <p>It cannot cure migraine. It cannot make pain disappear. It cannot reverse the neurological susceptibility that affects more than one billion people worldwide.<sup>[11]</sup></p>
                     <p>If someone promises you that thinking differently will eliminate chronic illness, they are selling something — and you should leave the room.</p>
-                    <p>But here is what I have learned in thirty years of living with this condition:</p>
+                    <p>But here is what I have learned in <a href="article-30-years.html">thirty years of living with this condition</a>:</p>
                     <p>Cure is not the only meaningful outcome.</p>
                     <p>There is a vast territory between "completely well" and "completely defined by illness." Most of us will live our lives in that territory. The question is not whether we will have limitations. The question is who we will become in relationship to them.</p>
                     <p>Viktor Frankl, the psychiatrist who survived Auschwitz and founded logotherapy, wrote: "When we are no longer able to change a situation, we are challenged to change ourselves."<sup>[12]</sup></p>
@@ -727,7 +772,20 @@ justify-content: center;
                     <p>And after all this time, after everything, you still hold the pen.</p>
                 </section>
 
-                <!-- FURTHER READING -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-narrative-therapy.html" class="related-card">
+                            <h4>Why We Don't Fight</h4>
+                            <p>Discover the specific science behind "companionization" and why treating your migraine as a companion works better than combat.</p>
+                        </a>
+                        <a href="meet-mi.html" class="related-card">
+                            <h4>Meet Mi</h4>
+                            <p>How we translated the principles of externalization and self-compassion into a digital companion.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="further-reading">
                     <h3>Further Reading & Resources</h3>
                     <ul>
@@ -737,7 +795,6 @@ justify-content: center;
                     </ul>
                 </div>
 
-                <!-- REFERENCES -->
                 <div class="references">
                     <h3>References</h3>
                     <ol>
