@@ -25,6 +25,55 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-section a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-section a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600;}
+        .related-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; font-family: 'Inter', sans-serif;}
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -193,6 +242,8 @@
             font-weight: 600;
             color: #ffffff;
             margin-bottom: 16px;
+            margin-top: 36px;
+            letter-spacing: -0.01em;
             line-height: 1.3;
         }
         
@@ -210,19 +261,7 @@
         
         em {
             font-style: italic;
-            color: var(--lavender);
-        }
-        
-        a {
-            color: var(--lavender);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: #a99cc4;
-            border-bottom-color: var(--lavender);
+            color: var(--text-light);
         }
         
         .citation {
@@ -354,44 +393,44 @@
         }
         
         .warning-box {
-    background: rgba(212, 165, 165, 0.08);
-    border: 1px solid rgba(212, 165, 165, 0.3);
-    border-radius: 12px;
-    padding: 24px 28px;
-    margin: 36px 0;
-}
+            background: rgba(212, 165, 165, 0.08);
+            border: 1px solid rgba(212, 165, 165, 0.3);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 36px 0;
+        }
 
-.warning-box h4 {
-    color: #D4A5A5;
-    margin-bottom: 16px;
-    font-size: 1rem;
-}
+        .warning-box h4 {
+            color: #D4A5A5;
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
 
-.warning-box ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+        .warning-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-.warning-box li {
-    color: #e2e8f0;
-    padding: 8px 0;
-    padding-left: 24px;
-    position: relative;
-    font-size: 0.95rem;
-    border-bottom: 1px solid rgba(212, 165, 165, 0.1);
-}
+        .warning-box li {
+            color: #e2e8f0;
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(212, 165, 165, 0.1);
+        }
 
-.warning-box li:last-child {
-    border-bottom: none;
-}
+        .warning-box li:last-child {
+            border-bottom: none;
+        }
 
-.warning-box li::before {
-    content: "⚠";
-    position: absolute;
-    left: 0;
-    color: #D4A5A5;
-}
+        .warning-box li::before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            color: #D4A5A5;
+        }
         
         .takeaways {
             background: rgba(197, 160, 89, 0.08);
@@ -459,6 +498,15 @@
         
         .references-section a {
             word-break: break-all;
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .references-section a:hover {
+            color: #a99cc4;
+            border-bottom-color: var(--lavender);
         }
         
         .disclaimer {
@@ -508,6 +556,7 @@
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 4px;
+            margin-top: 0;
         }
         
         .author-info p {
@@ -530,6 +579,7 @@
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 12px;
+            margin-top: 0;
         }
         
         .cta-box p {
@@ -550,9 +600,9 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
-           flex: 1;
-max-width: 260px;
-justify-content: center;
+            flex: 1;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
@@ -647,7 +697,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE FOR GOOGLE E-E-A-T -->
                 <div style="text-align:center;padding:32px 0 48px;border-bottom:1px solid rgba(139,122,168,0.15);margin-bottom:48px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -657,11 +706,10 @@ justify-content: center;
                     </p>
                 </div>
 
-                <!-- MEDICAL DISCLAIMER -->
-<div class="warning-box" style="margin-top: 0;">
-    <h4>⚕️ Medical Disclaimer</h4>
-    <p style="color: #e2e8f0; font-size: 0.95rem; margin: 0;">This article is for educational purposes only and does not constitute medical advice. Please consult a qualified healthcare provider before making any changes to your migraine management routine. All medical claims are supported by cited peer-reviewed research.</p>
-</div>
+                <div class="warning-box" style="margin-top: 0;">
+                    <h4>⚕️ Medical Disclaimer</h4>
+                    <p style="color: #e2e8f0; font-size: 0.95rem; margin: 0;">This article is for educational purposes only and does not constitute medical advice. Please consult a qualified healthcare provider before making any changes to your migraine management routine. All medical claims are supported by cited peer-reviewed research.</p>
+                </div>
 
                 <section class="article-section">
                     <p>It's Saturday morning. You've survived the week—the deadlines, the meetings, the constant low-grade hum of stress. You sleep in. You skip the alarm. You finally, <em>finally</em> relax.</p>
@@ -718,18 +766,18 @@ justify-content: center;
 
                 <section class="article-section">
                     <h2>Three Triggers That Stack on Weekends</h2>
-                    <p>Cortisol withdrawal doesn't act alone. Weekend migraines typically result from multiple triggers occurring simultaneously—a phenomenon researchers call "trigger stacking." Three factors deserve particular attention.</p>
+                    <p>Cortisol withdrawal doesn't act alone. Weekend migraines typically result from multiple triggers occurring simultaneously—a phenomenon researchers call <a href="article-understanding-triggers.html">"trigger stacking"</a>. Three factors deserve particular attention.</p>
 
                     <div class="trigger-card">
                         <h3>1. Sleep Schedule Disruption</h3>
-                        <p class="claim"><strong>The claim:</strong> Both undersleeping and oversleeping increase migraine risk, but <em>inconsistency</em> may matter more than duration.</p>
+                        <p class="claim"><strong>The claim:</strong> <a href="the-goldilocks-problem-sleep-migraine.html">Both undersleeping and oversleeping increase migraine risk</a>, but <em>inconsistency</em> may matter more than duration.</p>
                         <p class="evidence"><strong>The evidence:</strong> Your brain's master circadian clock—the suprachiasmatic nucleus (SCN), a region of approximately 20,000 neurons in the hypothalamus—receives direct input from your retina and coordinates nearly every physiological process on a 24-hour cycle<span class="citation">[6]</span>. Circadian research demonstrates that migraine patients show abnormal chronotype patterns at higher rates than controls, with circadian misalignment correlating with increased attack frequency independent of total sleep hours<span class="citation">[6][7]</span>.</p>
                         <p class="implication"><strong>The implication:</strong> Sleeping until 10 AM on Saturday after waking at 6:30 AM all week isn't "catching up on rest." It's introducing a 3.5-hour phase shift that your SCN interprets as a form of jet lag. The migraine brain doesn't want more sleep. It wants <em>predictable</em> sleep.</p>
                     </div>
 
                     <div class="trigger-card">
                         <h3>2. Caffeine Withdrawal</h3>
-                        <p class="claim"><strong>The claim:</strong> Delayed caffeine intake on weekends produces a withdrawal syndrome that can trigger migraine—even when total daily consumption remains constant.</p>
+                        <p class="claim"><strong>The claim:</strong> <a href="article-caffeine.html">Delayed caffeine intake on weekends</a> produces a withdrawal syndrome that can trigger migraine—even when total daily consumption remains constant.</p>
                         <p class="evidence"><strong>The evidence:</strong> A study of 151 migraine and tension-type headache patients found that 21.9% experienced weekend attacks<span class="citation">[2]</span>. Weekend headache sufferers consumed significantly more daily caffeine (mean: 734 mg, or roughly 7 cups of coffee) and woke substantially later on weekends. The critical finding: patients who combined both high caffeine intake <em>and</em> delayed weekend waking had a 69% probability of weekend headache. Patients who had only one risk factor? Just 4%<span class="citation">[2]</span>.</p>
                         <p>A randomized controlled trial adds physiological support<span class="citation">[4]</span>. When migraine patients underwent sudden caffeine withdrawal (replaced with placebo), 7 of 9 participants experienced severe migraine attacks within days. Continued caffeine produced no attacks.</p>
                         <p class="implication"><strong>The implication:</strong> The vulnerability is not caffeine itself but the timing disruption<span class="citation">[3][10]</span>. If you drink coffee at 7 AM on weekdays and wake at 9 AM on Saturday, your brain has been waiting for caffeine for two additional hours—a delay sufficient to trigger withdrawal in dependent individuals.</p>
@@ -748,7 +796,7 @@ justify-content: center;
                 <section class="article-section">
                     <h2>The Hypothalamus: Where It All Converges</h2>
                     <p>All three weekend triggers—sleep disruption, caffeine withdrawal, and meal timing shifts—share a common neuroanatomical target: the hypothalamus.</p>
-                    <p>This walnut-sized region has emerged as a central player in migraine pathophysiology<span class="citation">[8]</span>. It regulates circadian rhythms, autonomic function, hormone secretion, and—importantly—pain modulation. Recent imaging studies reveal that the hypothalamus activates <em>before</em> migraine pain begins, during the premonitory phase when patients report fatigue, irritability, yawning, and food cravings.</p>
+                    <p>This walnut-sized region has emerged as a central player in migraine pathophysiology<span class="citation">[8]</span>. It regulates circadian rhythms, autonomic function, hormone secretion, and—importantly—pain modulation. Recent imaging studies reveal that the hypothalamus activates <em>before</em> migraine pain begins, during the <a href="article-prediction.html">premonitory phase</a> when patients report fatigue, irritability, yawning, and food cravings.</p>
                     <p>This timeline is significant. It suggests the hypothalamus doesn't merely respond to migraine. <strong>It may be where migraine initiates.</strong></p>
                     <p>The hypothalamus is obsessively devoted to homeostasis—to maintaining stable internal conditions despite external variation. The migraine brain, researchers increasingly believe, represents an extreme form of this vigilance<span class="citation">[6][7]</span>. It monitors everything: cortisol fluctuations, sleep timing, caffeine levels, glucose availability. And it sounds the alarm—often as a migraine—when patterns deviate.</p>
                     
@@ -771,7 +819,7 @@ justify-content: center;
                     <div class="recommendation-item">
                         <h4>1. Distribute Relaxation Throughout the Week</h4>
                         <p class="rationale"><strong>Rationale:</strong> Avoid the sharp cortisol cliff by preventing stress from accumulating to extreme levels<span class="citation">[5]</span>.</p>
-                        <p class="implementation"><strong>Implementation:</strong> Brief relaxation practices during high-stress periods—even 5–10 minutes of breathing exercises or a short walk—may smooth the cortisol curve and reduce weekend vulnerability. The evidence suggests that relaxing <em>during</em> stress matters more than relaxing <em>after</em> it<span class="citation">[1]</span>.</p>
+                        <p class="implementation"><strong>Implementation:</strong> Brief relaxation practices during high-stress periods—even 5–10 minutes of <a href="article-478-breathing.html">breathing exercises</a> or a short walk—may smooth the cortisol curve and reduce weekend vulnerability. The evidence suggests that relaxing <em>during</em> stress matters more than relaxing <em>after</em> it<span class="citation">[1]</span>.</p>
                     </div>
 
                     <div class="recommendation-item">
@@ -855,6 +903,20 @@ justify-content: center;
                         <li><strong>Prevention requires smoothing transitions,</strong> not eliminating relaxation. Maintain wake time, caffeine timing, and meal schedule within narrow windows, especially in the 6–18 hours after stress ends<span class="citation">[1][9]</span>.</li>
                         <li><strong>These are strategies, not prescriptions.</strong> Individual responses vary. Work with your healthcare provider to develop a personalized management plan.</li>
                     </ul>
+                </div>
+
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-caffeine.html" class="related-card">
+                            <h4>The Caffeine Paradox</h4>
+                            <p>Coffee can trigger migraines — and also relieve them. Find your personal balance.</p>
+                        </a>
+                        <a href="the-goldilocks-problem-sleep-migraine.html" class="related-card">
+                            <h4>The Goldilocks Problem</h4>
+                            <p>Too little sleep triggers an attack. Too much triggers an attack. How to find your sweet spot.</p>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="references-section">
