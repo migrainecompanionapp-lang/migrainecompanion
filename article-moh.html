@@ -1,4 +1,4 @@
-anuary 2026<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,6 +26,55 @@ anuary 2026<!DOCTYPE html>
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-section a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-section a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600;}
+        .related-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; font-family: 'Inter', sans-serif;}
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -216,26 +265,11 @@ anuary 2026<!DOCTYPE html>
             color: var(--text-light);
         }
         
-        .article-image {
-            margin: 48px 0;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-        }
-        
-        .article-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .article-image figcaption {
-            font-size: 0.85rem;
-            color: var(--text-dark);
-            text-align: center;
-            padding: 12px 16px;
-            font-style: italic;
-            background: rgba(255,255,255,0.02);
+        .citation {
+            color: var(--gold);
+            font-size: 0.85em;
+            vertical-align: super;
+            font-weight: 600;
         }
         
         .highlight-box {
@@ -247,8 +281,8 @@ anuary 2026<!DOCTYPE html>
         }
         
         .highlight-box p {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.05rem;
+            font-weight: 500;
             color: var(--antique-gold);
             margin: 0;
             line-height: 1.7;
@@ -421,14 +455,15 @@ anuary 2026<!DOCTYPE html>
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
             background: var(--gold);
             color: var(--bg);
             transform: translateY(-2px);
+            border-bottom: 1px solid var(--gold);
         }
         
         .references {
@@ -486,148 +521,9 @@ justify-content: center;
             font-style: italic;
             color: var(--text-dark);
             text-align: center;
-            padding: 20px;
+            padding: 16px 0;
             margin-bottom: 48px;
-            border: 1px solid rgba(139, 122, 168, 0.1);
-            border-radius: 12px;
-            background: rgba(139, 122, 168, 0.03);
-        }
-        
-        .key-takeaways {
-            background: rgba(139, 122, 168, 0.08);
-            border: 1px solid rgba(139, 122, 168, 0.2);
-            border-radius: 16px;
-            padding: 28px;
-            margin: 48px 0;
-        }
-        
-        .key-takeaways h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 16px;
-            margin-top: 0;
-        }
-        
-        .key-takeaways ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .key-takeaways li {
-            font-size: 0.95rem;
-            color: var(--text);
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-        }
-        
-        .key-takeaways li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-        }
-        
-        .seek-help-box {
-            background: rgba(139, 122, 168, 0.1);
-            border: 1px solid rgba(139, 122, 168, 0.3);
-            border-radius: 16px;
-            padding: 28px;
-            margin: 48px 0;
-        }
-        
-        .seek-help-box h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 16px;
-            margin-top: 0;
-        }
-        
-        .seek-help-box ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .seek-help-box li {
-            font-size: 0.95rem;
-            color: var(--text);
-            padding: 6px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .seek-help-box li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--lavender);
-        }
-        
-        .about-author-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(139, 122, 168, 0.12);
-            border-radius: 16px;
-            padding: 28px;
-            margin: 32px 0 48px;
-        }
-        
-        .about-author-box h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 12px;
-            margin-top: 0;
-        }
-        
-        .about-author-box p {
-            font-size: 0.95rem;
-            color: var(--text);
-            margin-bottom: 12px;
-        }
-        
-        .about-author-box p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .article-info-box {
-            background: rgba(139, 122, 168, 0.05);
-            border: 1px solid rgba(139, 122, 168, 0.1);
-            border-radius: 12px;
-            padding: 24px;
-            margin: 32px 0;
-            font-size: 0.9rem;
-        }
-        
-        .article-info-box p {
-            margin: 6px 0;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-        }
-        
-        .share-box {
-            text-align: center;
-            padding: 32px;
-            margin: 32px 0;
-            border: 1px dashed rgba(139, 122, 168, 0.2);
-            border-radius: 16px;
-        }
-        
-        .share-box p {
-            color: var(--text-light);
-            margin: 8px 0;
-        }
-        
-        .share-box a {
-            color: var(--lavender);
-            text-decoration: none;
-        }
-        
-        .share-box a:hover {
-            text-decoration: underline;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
         }
 
         .video-embed-container {
@@ -667,10 +563,170 @@ justify-content: center;
             color: #ffffff;
             border-bottom-color: var(--lavender);
         }
+
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .article-image figcaption {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 12px 16px;
+            font-style: italic;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .seek-help-box {
+            background: rgba(139, 122, 168, 0.1);
+            border: 1px solid rgba(139, 122, 168, 0.3);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+        
+        .seek-help-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+        
+        .seek-help-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .seek-help-box li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .seek-help-box li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+
+        .about-author-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 32px 0 48px;
+        }
+        
+        .about-author-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            margin-top: 0;
+        }
+        
+        .about-author-box p {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        
+        .about-author-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .article-info-box {
+            background: rgba(139, 122, 168, 0.05);
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            font-size: 0.9rem;
+        }
+        
+        .article-info-box p {
+            margin: 6px 0;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .share-box {
+            text-align: center;
+            padding: 32px;
+            margin: 32px 0;
+            border: 1px dashed rgba(139, 122, 168, 0.2);
+            border-radius: 16px;
+        }
+        
+        .share-box p {
+            color: var(--text-light);
+            margin: 8px 0;
+        }
+        
+        .share-box a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+        
+        .share-box a:hover {
+            text-decoration: underline;
+        }
+
+        .key-takeaways {
+            background: rgba(139, 122, 168, 0.08);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+        
+        .key-takeaways h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+        
+        .key-takeaways ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .key-takeaways li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .key-takeaways li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
-            .article-hero { height: 450px; }
+            .article-hero { height: 400px; }
             p { font-size: 1rem; }
             .article-content { padding: 40px 0 60px; }
             .author-card { flex-direction: column; text-align: center; }
@@ -706,7 +762,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR & META INFO -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1.1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         Author: Iuldashov Rustam | Migraine Companion
@@ -719,19 +774,16 @@ justify-content: center;
                     </p>
                 </div>
                 
-                <!-- MEDICAL DISCLAIMER -->
                 <div class="medical-disclaimer">
                     <strong>Medical Disclaimer:</strong> This article provides educational information about medication overuse headache (MOH) based on current scientific evidence. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider before making decisions about your medications. If you are experiencing worsening headaches, please seek evaluation from a neurologist or headache specialist.
                 </div>
 
-                <!-- ABOUT THE AUTHOR -->
                 <div class="about-author-box">
                     <h3>About the Author</h3>
-                    <p><strong>Iuldashov Rustam</strong> is an independent developer and founder of Migraine Companion, a therapeutic mobile application for migraine management. He brings 30 years of personal experience living with migraines — a journey that has shaped his understanding of the condition from the inside out.</p>
+                    <p><strong>Iuldashov Rustam</strong> is an independent developer and founder of Migraine Companion, a therapeutic mobile application for migraine management. He brings <a href="article-30-years.html">30 years of personal experience</a> living with migraines — a journey that has shaped his understanding of the condition from the inside out.</p>
                     <p>This article combines rigorous scientific research from peer-reviewed medical literature with the lived experience of chronic migraine. All statistics, mechanisms, and treatment recommendations are sourced from authoritative medical publications, including the World Health Organization, the International Headache Society, and studies indexed in PubMed.</p>
                 </div>
 
-                <!-- SECTION I -->
                 <section class="article-section">
                     <h2>I. The Pill That Betrayed You</h2>
                     <p>You remember the exact moment.</p>
@@ -754,14 +806,13 @@ justify-content: center;
                     <p>And if you recognize yourself in this story — if the shoe fits and it pinches — I need you to understand something before we go any further:</p>
                     
                     <div class="highlight-box">
-                        <p>This is not your fault.</p>
+                        <p><a href="article-not-my-migraine.html">This is not your fault.</a></p>
                     </div>
                     
                     <p>This is neurobiology masquerading as personal failure. This is brain chemistry, not character weakness. This is a trap built into the very medications designed to free you.</p>
                     <p>Understanding how it works is the first step to breaking free.</p>
                 </section>
 
-                <!-- SECTION II -->
                 <section class="article-section">
                     <h2>II. The Numbers That Should Stop You Cold</h2>
                     <p>The following data comes from peer-reviewed studies published in medical journals indexed by PubMed, official World Health Organization reports, and the International Classification of Headache Disorders (ICHD-3):</p>
@@ -803,7 +854,6 @@ justify-content: center;
                     <p>This is not a knowledge gap. This is a chasm. This is millions of people falling into a hole that warning labels could prevent.</p>
                 </section>
 
-                <!-- SECTION III -->
                 <section class="article-section">
                     <h2>III. Clinical Definition: The Diagnostic Criteria</h2>
                     <p>The International Headache Society, the world's leading authority on headache classification, provides precise diagnostic criteria in the ICHD-3 [5]. Understanding them protects you:</p>
@@ -828,7 +878,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- SECTION IV -->
                 <section class="article-section">
                     <h2>IV. The Neurobiology: Why Your Brain Turns Against You</h2>
                     <p>Understanding the mechanism helps explain why this isn't about willpower — it's about neuroplasticity.</p>
@@ -869,13 +918,11 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- IMAGE 2: THE BROKEN THERMOSTAT -->
                 <figure class="article-image">
                     <img src="images/The Broken Thermostat.png" alt="A crystalline brain with a broken thermostat inside, serotonin molecules fading to grey">
                     <figcaption>The thermostat metaphor: your brain's pain-dampening system adapts to external override</figcaption>
                 </figure>
 
-                <!-- SECTION V -->
                 <section class="article-section">
                     <h2>V. Risk Hierarchy: Evidence-Based Medication Rankings</h2>
                     <p>Different medications carry dramatically different risks. This hierarchy comes from prospective longitudinal studies and systematic reviews:</p>
@@ -913,7 +960,6 @@ justify-content: center;
                     </ul>
                 </section>
 
-                <!-- SECTION VI -->
                 <section class="article-section">
                     <h2>VI. The Addiction Question: What the Evidence Shows</h2>
                     <p>Some neurologists avoid the word "addiction" when discussing MOH. They worry — rightly — that it stigmatizes patients and discourages treatment-seeking.</p>
@@ -933,7 +979,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- SECTION VII -->
                 <section class="article-section">
                     <h2>VII. Risk Factors: Who Is Most Vulnerable?</h2>
                     <p>The 2011 Hagen study — a prospective investigation following 25,596 patients for 11 years, published in <em>Pain</em> — identified clear risk factors [21]:</p>
@@ -967,12 +1012,12 @@ justify-content: center;
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Anxiety</td>
+                                <td><a href="article-relationships.html">Anxiety</a></td>
                                 <td>58%</td>
                                 <td>Zwart JA, et al. <em>Eur J Neurol.</em> 2003 [22]</td>
                             </tr>
                             <tr>
-                                <td>Depression</td>
+                                <td><a href="article-relationships.html">Depression</a></td>
                                 <td>40%</td>
                                 <td>Zwart JA, et al. <em>Eur J Neurol.</em> 2003 [22]</td>
                             </tr>
@@ -986,7 +1031,6 @@ justify-content: center;
                     
                     <p><strong>Clinical implication:</strong> Treating MOH without addressing comorbid anxiety and depression often fails. Comprehensive management requires a biopsychosocial approach.</p>
                 </section>
-                <!-- SECTION VIII -->
                 <section class="article-section">
                     <h2>VIII. Evidence-Based Treatment: What Works</h2>
                     <p>The cornerstone of MOH treatment is <strong>withdrawal</strong> — reducing or stopping the overused medication. This recommendation comes from international clinical guidelines published by the German Migraine and Headache Society and endorsed by the International Headache Society [24].</p>
@@ -1055,6 +1099,7 @@ justify-content: center;
                         <li style="margin-bottom: 6px;">Topiramate [24]</li>
                         <li style="margin-bottom: 6px;">CGRP monoclonal antibodies (erenumab, fremanezumab, galcanezumab) [24]</li>
                         <li style="margin-bottom: 6px;">OnabotulinumtoxinA (Botox) [26]</li>
+                        <li style="margin-bottom: 6px;">Non-pharmacological tools (like <a href="article-478-breathing.html">breathing exercises</a>) to manage baseline stress.</li>
                     </ul>
                     
                     <div class="highlight-box">
@@ -1062,7 +1107,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- SECTION IX -->
                 <section class="article-section">
                     <h2>IX. Relapse: Honest Data and Prevention</h2>
                     <p>Published prospective studies provide honest relapse statistics:</p>
@@ -1126,7 +1170,6 @@ justify-content: center;
                     </ul>
                 </section>
 
-                <!-- SECTION X -->
                 <section class="article-section">
                     <h2>X. The New Horizon: Medications Without the Trap</h2>
                     <p>We are witnessing a revolution in migraine treatment. For the first time in medical history, we have acute medications that don't appear to cause MOH.</p>
@@ -1149,7 +1192,6 @@ justify-content: center;
                     <p>Lasmiditan targets a different serotonin receptor than triptans, without vasoconstriction. Current evidence suggests low MOH risk [31].</p>
                 </section>
 
-                <!-- SECTION XI -->
                 <section class="article-section">
                     <h2>XI. What Mi Tracks That Protects You</h2>
                     <p>MOH develops insidiously. No one wakes up one day and suddenly has it. It creeps in over months, each pill feeling justified, each day of use reasonable in isolation.</p>
@@ -1165,7 +1207,6 @@ justify-content: center;
                     <p>Mi helps you see the trajectory before you cross the line.</p>
                 </section>
 
-                <!-- SECTION XII -->
                 <section class="article-section">
                     <h2>XII. A Personal Note from Someone Who Understands</h2>
                     <p>I've lived with migraines for 30 years.</p>
@@ -1185,13 +1226,11 @@ justify-content: center;
                     <p>There's a door. It's difficult to reach. But it opens.</p>
                 </section>
 
-                <!-- IMAGE 3: THE DOOR OPENS -->
                 <figure class="article-image">
                     <img src="images/The Door Opens.png" alt="A silhouette walking toward an open door with warm light, leaving behind a corridor of pill bottles">
                     <figcaption>The door out: difficult to reach, but it opens</figcaption>
                 </figure>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>Key Takeaways</h3>
                     <ul>
@@ -1204,7 +1243,20 @@ justify-content: center;
                     </ul>
                 </div>
 
-                <!-- WHEN TO SEEK HELP -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-understanding-triggers.html" class="related-card">
+                            <h4>Understanding Your Triggers</h4>
+                            <p>Once you break the medication loop, learn what's actually filling your migraine "bucket".</p>
+                        </a>
+                        <a href="article-postdrome.html" class="related-card">
+                            <h4>Migraine Hangover</h4>
+                            <p>Understand the recovery phase — what happens to your brain after the pain stops.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="seek-help-box">
                     <h3>When to Seek Professional Help</h3>
                     <p style="margin-bottom: 16px;"><strong>Consult a neurologist or headache specialist if:</strong></p>
@@ -1224,7 +1276,6 @@ justify-content: center;
                     </ul>
                 </div>
 
-                <!-- REFERENCES -->
                 <div class="references">
                     <h3>References</h3>
                     <ol>
@@ -1262,7 +1313,6 @@ justify-content: center;
                     </ol>
                 </div>
 
-                <!-- ARTICLE INFORMATION -->
                 <div class="article-info-box">
                     <h3 style="font-size:1rem;color:#ffffff;margin-bottom:12px;margin-top:0;">Article Information</h3>
                     <p><strong>Content Type:</strong> Educational health information</p>
@@ -1299,7 +1349,6 @@ justify-content: center;
     </a>
 </div>
                     
-                    <!-- SHARE BOX -->
                     <div class="share-box">
                         <p style="font-size:1.1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">Share this article</p>
                         <p>If this information helped you, please share it with others who might benefit. Awareness is the first step toward prevention.</p>
