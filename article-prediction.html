@@ -25,6 +25,55 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-section a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-section a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600;}
+        .related-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; font-family: 'Inter', sans-serif;}
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -442,8 +491,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
@@ -523,7 +572,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE FOR GOOGLE E-E-A-T -->
                 <div style="text-align:center;padding:32px 0 48px;border-bottom:1px solid rgba(139,122,168,0.15);margin-bottom:48px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -551,7 +599,7 @@ justify-content: center;
                     <h2>The Conventional Wisdom Is Wrong</h2>
                     <p>Most people think migraines strike without warning. <strong>They're wrong.</strong></p>
                     <p>Most migraine apps ask you to record attacks after they happen. <strong>That's backwards.</strong></p>
-                    <p>Most trigger lists tell everyone to avoid the same foods. <strong>That ignores individual biology.</strong></p>
+                    <p>Most <a href="article-understanding-triggers.html">trigger lists</a> tell everyone to avoid the same foods. <strong>That ignores individual biology.</strong></p>
                     <p>Here's what neurologists have known for decades — but most sufferers never learn:</p>
                     <p>Your attack doesn't begin when the pain starts. It begins up to 48 hours earlier.</p>
                     <p>Scientists call this the <strong>prodrome phase</strong>: a quiet revolution inside your nervous system while you go about your day. Your hypothalamus shifts. Neurotransmitter levels change. Blood vessels begin behaving differently.</p>
@@ -562,7 +610,7 @@ justify-content: center;
 
                 <section class="article-section">
                     <h2>Meet Mi</h2>
-                    <p>Mi is short for "migraine" — but think of Mi as a character, not a condition.</p>
+                    <p><a href="meet-mi.html">Mi is short for "migraine"</a> — but think of Mi as a character, not a condition.</p>
                     <p>Some people fight their migraines. We propose a different approach: <strong>understand them.</strong></p>
                     <p>Like a difficult roommate with predictable habits, Mi has patterns. Triggers. Rhythms. Once you learn those patterns, Mi becomes less terrifying and more manageable.</p>
                     <p>"I stopped thinking of my migraine as a random attack," Rustam explains. "It's not random. It's Mi responding to signals I wasn't paying attention to. The app helps me pay attention."</p>
@@ -599,7 +647,7 @@ justify-content: center;
                 <section class="article-section">
                     <h3>How You Slept</h3>
                     <p><strong>The conventional advice says:</strong> Get more rest.</p>
-                    <p><strong>The reality is more complicated:</strong> Too little sleep triggers attacks. Too <em>much</em> sleep triggers attacks. Irregular sleep — even with enough hours — triggers attacks.</p>
+                    <p><strong>The reality is more complicated:</strong> <a href="the-goldilocks-problem-sleep-migraine.html">Too little sleep triggers attacks. Too <em>much</em> sleep triggers attacks.</a> Irregular sleep — even with enough hours — triggers attacks.</p>
                     <p>Your brain craves consistency. The circadian rhythm isn't just about feeling tired; it's a fundamental organizing principle of your nervous system. Disrupt it, and you pay a price.</p>
                     <p>Three patterns matter most:</p>
                     <p><strong>Duration.</strong> Both extremes are problematic. Six hours might be fine for some people and devastating for others. Nine hours might help one person recover and trigger another's attack.</p>
@@ -616,7 +664,7 @@ justify-content: center;
                     <p><strong>Some doctors say:</strong> Weather triggers are unproven.</p>
                     <p><strong>Many patients say:</strong> I can feel a storm coming in my head.</p>
                     <p><strong>The research says:</strong> Both are partly right.</p>
-                    <p>Studies have found correlations between barometric pressure changes and migraine onset. Not everyone is affected — but for those who are, the relationship is real. Temperature swings, humidity extremes, and approaching storm fronts also appear in the data, though less consistently.</p>
+                    <p>Studies have found correlations between <a href="weather-migraine-myth.html">barometric pressure changes</a> and migraine onset. Not everyone is affected — but for those who are, the relationship is real. Temperature swings, humidity extremes, and approaching storm fronts also appear in the data, though less consistently.</p>
                     <p>The challenge: weather sensitivity is highly individual. One person reacts to falling pressure; another to rising pressure. One is triggered by humidity; another by dry air.</p>
                     <p><strong>Generic weather alerts are useless. What matters is <em>your</em> weather sensitivity.</strong></p>
                     <p>Mi correlates local conditions with your personal attack history. Over time, it learns which patterns have historically preceded <em>your</em> attacks — not a statistical average, but your specific vulnerability.</p>
@@ -625,7 +673,7 @@ justify-content: center;
 
                 <section class="article-section">
                     <h3>Where You Are in Your Cycle</h3>
-                    <p><strong>The mechanism is well understood:</strong> Estrogen withdrawal — the drop before menstruation — can precipitate attacks. It's why "menstrual migraine" is a recognized medical category, affecting roughly 60% of female migraine sufferers.</p>
+                    <p><strong>The mechanism is well understood:</strong> <a href="article-body-calendar.html">Estrogen withdrawal — the drop before menstruation</a> — can precipitate attacks. It's why "menstrual migraine" is a recognized medical category, affecting roughly 60% of female migraine sufferers.</p>
                     <p><strong>But the timing varies:</strong> Some people are most vulnerable during menstruation (days 1-5). Others around ovulation (mid-cycle). Others in the PMS phase (days 21-28).</p>
                     <p>Mi tracks your cycle and correlates it with your attack history. It learns which specific days carry highest risk <em>for you</em> — information valuable both for preparation and for conversations with your doctor about cycle-timed prevention.</p>
                 </section>
@@ -644,7 +692,7 @@ justify-content: center;
                     <h3>The Clock on the Wall</h3>
                     <p><strong>The pattern:</strong> Ask anyone who's tracked migraines for years, and they'll often say: "Mine come at the same time."</p>
                     <p>Morning migraines. Afternoon migraines. Weekend migraines. Monday migraines.</p>
-                    <p>These patterns are documented in medical literature: weekend migraine (sleep schedule changes + caffeine timing shifts + stress let-down), Monday migraine (return-to-work stress + disrupted weekend routine), seasonal patterns (weather + light exposure + lifestyle changes).</p>
+                    <p>These patterns are documented in medical literature: <a href="article-weekend-migraines.html">weekend migraine</a> (sleep schedule changes + <a href="article-caffeine.html">caffeine timing shifts</a> + stress let-down), Monday migraine (return-to-work stress + disrupted weekend routine), seasonal patterns (weather + light exposure + lifestyle changes).</p>
                     <p>Mi learns <em>your</em> temporal patterns — when in the day, week, and year you're most vulnerable — and factors this into every prediction.</p>
                 </section>
 
@@ -658,7 +706,7 @@ justify-content: center;
                     <h2>Why Combinations Matter More Than Single Triggers</h2>
                     <p><strong>The common approach:</strong> Identify your triggers. Avoid them.</p>
                     <p><strong>The problem:</strong> This treats triggers as independent. They're not.</p>
-                    <p>A glass of wine might be fine on a good day. The same glass after poor sleep, during a stressful week, with a pressure system moving in, on day 24 of your cycle? That's a completely different equation.</p>
+                    <p><a href="alcohol-migraine-24-hour-rule.html">A glass of wine might be fine on a good day.</a> The same glass after poor sleep, during a stressful week, with a pressure system moving in, on day 24 of your cycle? That's a completely different equation.</p>
                     <p>Medical researchers call this <strong>trigger accumulation</strong>. Each factor adds risk. But certain combinations don't just add — they <em>multiply</em>.</p>
                     <p>Think of your migraine threshold like a cup. Each trigger pours water in. Most days, the cup holds. But when multiple streams converge at once, the cup overflows.</p>
                     <p>Mi doesn't just count your triggers. It watches for <strong>dangerous combinations</strong> — the specific pairings that have historically pushed <em>you</em> over the edge.</p>
@@ -801,6 +849,20 @@ justify-content: center;
 
                 <div class="article-image">
                     <img src="images/prediction-prepare.png" alt="Mi in the garden, ready for the storm on horizon">
+                </div>
+
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-understanding-triggers.html" class="related-card">
+                            <h4>Understanding Your Triggers</h4>
+                            <p>Learn why your triggers don't work like allergies and how to read the patterns Mi finds.</p>
+                        </a>
+                        <a href="meet-mi.html" class="related-card">
+                            <h4>Meet Mi</h4>
+                            <p>Discover the philosophy behind Migraine Companion and why treating your migraine as a friend changes everything.</p>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="references">
