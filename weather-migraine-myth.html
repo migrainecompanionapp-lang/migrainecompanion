@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     
-    <!-- Schema.org markup for EEAT -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -67,6 +66,67 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-content a:not(.references a):not(.download-btn) {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-content a:not(.references a):not(.download-btn):hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s ease;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 {
+            color: var(--lavender);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        .related-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -347,6 +407,7 @@
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 4px;
+            margin-top: 0;
         }
         
         .author-info p {
@@ -369,6 +430,7 @@
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 12px;
+            margin-top: 0;
         }
         
         .cta-box p {
@@ -390,8 +452,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
@@ -411,6 +473,7 @@ justify-content: center;
             font-weight: 600;
             color: var(--text-light);
             margin-bottom: 16px;
+            margin-top: 0;
         }
         
         .references ol {
@@ -422,15 +485,6 @@ justify-content: center;
             color: var(--text-dark);
             margin-bottom: 8px;
             line-height: 1.5;
-        }
-        
-        .references a {
-            color: var(--lavender);
-            text-decoration: none;
-        }
-        
-        .references a:hover {
-            text-decoration: underline;
         }
         
         sup {
@@ -472,6 +526,7 @@ justify-content: center;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 16px;
+            margin-top: 0;
         }
         
         .key-takeaways ul {
@@ -490,42 +545,6 @@ justify-content: center;
         
         .key-takeaways li::before {
             content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--lavender);
-        }
-        
-        .editorial-standards {
-            background: rgba(139, 122, 168, 0.05);
-            border: 1px solid rgba(139, 122, 168, 0.15);
-            border-radius: 16px;
-            padding: 28px;
-            margin: 32px 0;
-        }
-        
-        .editorial-standards h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 16px;
-        }
-        
-        .editorial-standards ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .editorial-standards li {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            padding: 6px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .editorial-standards li::before {
-            content: '•';
             position: absolute;
             left: 0;
             color: var(--lavender);
@@ -610,15 +629,6 @@ justify-content: center;
             font-size: 0.7rem;
         }
         
-        .review-dates {
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-dark);
-            margin-top: 32px;
-            padding-top: 16px;
-            border-top: 1px solid rgba(139, 122, 168, 0.1);
-        }
-        
         .article-info-box {
             background: rgba(139, 122, 168, 0.05);
             border: 1px solid rgba(139, 122, 168, 0.12);
@@ -633,6 +643,7 @@ justify-content: center;
             font-weight: 600;
             color: var(--text-light);
             margin-bottom: 12px;
+            margin-top: 0;
         }
         
         .article-info-box p {
@@ -649,7 +660,7 @@ justify-content: center;
             padding: 24px;
             border-radius: 16px;
             border: 1px solid rgba(139, 122, 168, 0.15);
-            max-width: 360px; /* Идеальная ширина для вертикального шортса */
+            max-width: 360px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
@@ -706,9 +717,9 @@ justify-content: center;
                 <h1>Blaming the Barometer</h1>
                 <p class="article-subtitle">50–80% of migraine sufferers blame weather for their attacks. Research shows only 20% have a real connection. You have more control than you thought.</p>
                 <div class="article-meta">
-                    <span>📅 February 6, 2026</span>
-                    <span>⏱ 7 min read</span>
-                    <span>✍️ Rustam Iuldashov</span>
+                    <span class="meta-item">📅 February 6, 2026</span>
+                    <span class="meta-item">⏱ 7 min read</span>
+                    <span class="meta-item">✍️ Rustam Iuldashov</span>
                 </div>
             </div>
         </div>
@@ -716,7 +727,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -726,13 +736,11 @@ justify-content: center;
                     </p>
                 </div>
                 
-                <!-- MEDICAL DISCLAIMER -->
                 <p class="medical-disclaimer">
                     <strong>Medical Review:</strong> This content is based on peer-reviewed research from PubMed and clinical headache journals.<br><br>
                     <strong>Important Notice:</strong> This article provides educational information about weather and migraine based on current scientific evidence. It is not a substitute for professional medical advice. Individual triggers vary — what applies statistically may not apply to you.
                 </p>
 
-                <!-- OPENING -->
                 <section class="article-section">
                     <p>You feel it before you see it.</p>
                     <p>The sky hasn't changed. The forecast shows sun. But something inside you has shifted—a subtle tightness behind your eyes, a whisper of fatigue you cannot name.</p>
@@ -743,17 +751,15 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE NUMBERS EVERYONE BELIEVES -->
                 <section class="article-section">
                     <h2>The Numbers Everyone Believes</h2>
-                    <p>Ask anyone with migraine about triggers. Weather tops the list.</p>
+                    <p>Ask anyone with migraine about <a href="article-understanding-triggers.html">triggers</a>. Weather tops the list.</p>
                     <p>Surveys find that <strong>50 to 80 percent</strong> of migraine sufferers cite weather changes as reliable triggers.<sup>[1]</sup> The belief is so widespread that questioning it feels almost insulting.</p>
                     <p>And there's evidence to support it. Japanese researchers tracked migraine patients through typhoon season and found real correlations: attacks increased as pressure dropped 6 to 10 hectopascals below the standard 1013.<sup>[2]</sup> The pattern seemed undeniable.</p>
                     <p>So the belief isn't imaginary.</p>
                     <p>But it isn't quite true, either.</p>
                 </section>
 
-                <!-- THE NUMBERS THAT DON'T ADD UP -->
                 <section class="article-section">
                     <h2>The Numbers That Don't Add Up</h2>
                     <p>A 2024 review in <em>Current Pain and Headache Reports</em> synthesized the latest research on weather and migraine.<sup>[3]</sup> The researchers expected to confirm what everyone believed.</p>
@@ -771,7 +777,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- IMAGE 1: THE BAROMETER ILLUSION -->
                 <figure class="article-image">
                     <img src="images/the_barometer_illusion.png" alt="The Barometer Illusion — a cracking Victorian barometer revealing golden light, symbolizing the revelation that weather isn't the villain we believed">
                     <figcaption>The Barometer Illusion — When long-held beliefs crack open, what we find inside changes everything</figcaption>
@@ -779,7 +784,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE BUCKET THAT EXPLAINS EVERYTHING -->
                 <section class="article-section">
                     <h2>The Bucket That Explains Everything</h2>
                     <p>If weather isn't the villain, what is?</p>
@@ -805,7 +809,6 @@ justify-content: center;
                     <p>It was everything else.</p>
                 </section>
 
-                <!-- IMAGE 2: THE THRESHOLD BUCKET -->
                 <figure class="article-image">
                     <img src="images/the_threshold_bucket.png" alt="The Threshold Bucket — a luminous glass vessel filled with layered glowing liquids representing different trigger factors, with a tiny weather droplet about to cause overflow">
                     <figcaption>The Threshold Bucket — Every factor fills the same vessel. Weather is often just the final drop, not the cause</figcaption>
@@ -813,11 +816,10 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE PLOT TWIST -->
                 <section class="article-section">
                     <h2>The Plot Twist</h2>
                     <p>Here's something that might reshape how you think about your migraines entirely.</p>
-                    <p>Researchers have been studying the prodrome—the earliest phase of a migraine attack, beginning 24 to 48 hours before pain arrives.<sup>[6]</sup> During prodrome, subtle changes occur. You might feel tired, irritable, unusually thirsty. Your neck might stiffen.</p>
+                    <p>Researchers have been studying the <a href="article-prediction.html">prodrome</a>—the earliest phase of a migraine attack, beginning 24 to 48 hours before pain arrives.<sup>[6]</sup> During prodrome, subtle changes occur. You might feel tired, irritable, unusually thirsty. Your neck might stiffen.</p>
                     <p>And crucially: you might experience intense food cravings.</p>
                     <p>Many people who believe chocolate triggers their migraines have noticed a pattern. They eat chocolate. Hours later, migraine strikes. Cause and effect—obvious.</p>
                     <p>Maybe not.</p>
@@ -832,7 +834,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- WHAT THIS MEANS -->
                 <section class="article-section">
                     <h2>What This Means</h2>
                     <p>None of this is meant to gaslight your experience.</p>
@@ -841,15 +842,14 @@ justify-content: center;
                     <p><strong>You have more control than you thought.</strong></p>
                     <p>If weather were the primary driver, you'd be helpless. You cannot change the barometer. You cannot stop the storms.</p>
                     <p>But if weather is just one factor among many—and usually not the decisive one—you have options. You can work on the parts of your bucket you can control:</p>
-                    <p><strong>Sleep.</strong> Same bedtime, same wake time—even weekends. The migraine brain craves routine.<sup>[10]</sup></p>
+                    <p><strong><a href="the-goldilocks-problem-sleep-migraine.html">Sleep.</a></strong> Same bedtime, same wake time—even weekends. The migraine brain craves routine.<sup>[10]</sup></p>
                     <p><strong>Meals.</strong> Skipping breakfast fills your bucket before the day starts.</p>
                     <p><strong>Hydration.</strong> Six to eight glasses. Simple. Powerful.</p>
                     <p><strong>Stress management.</strong> Research shows "let-down migraines"—attacks hitting when stress finally drops—are nearly five times more likely than migraines during stress itself.<sup>[11]</sup> Your brain reacts to the change.</p>
-                    <p><strong>Caffeine consistency.</strong> Same amount. Same time. Every day.</p>
-                    <p><strong>Medication timing.</strong> If a pressure drop is forecast and your bucket is filling, having acute medication ready isn't superstition. It's strategy.</p>
+                    <p><strong><a href="article-caffeine.html">Caffeine consistency.</a></strong> Same amount. Same time. Every day.</p>
+                    <p><strong><a href="article-moh.html">Medication timing.</a></strong> If a pressure drop is forecast and your bucket is filling, having acute medication ready isn't superstition. It's strategy.</p>
                 </section>
 
-                <!-- IMAGE 3: THE FACTORS YOU COMMAND -->
                 <figure class="article-image">
                     <img src="images/the_factors_you_command.png" alt="The Factors You Command — a woman standing on a hilltop at dawn, surrounded by glowing orbs representing controllable factors, with a distant small storm on the horizon">
                     <figcaption>The Factors You Command — The storm is far away. What matters is what you hold in your hands</figcaption>
@@ -857,7 +857,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE NEW STORY -->
                 <section class="article-section">
                     <h2>The New Story</h2>
                     <p>For years, you told yourself one story:</p>
@@ -873,7 +872,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>Key Takeaways</h3>
                     <ul>
@@ -885,7 +883,20 @@ justify-content: center;
                     </ul>
                 </div>
 
-                <!-- WHEN TO SEE A DOCTOR -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-prediction.html" class="related-card">
+                            <h4>The Storm Before the Storm</h4>
+                            <p>Learn how to spot prodrome symptoms—like those deceptive chocolate cravings—up to 48 hours before the pain starts.</p>
+                        </a>
+                        <a href="the-goldilocks-problem-sleep-migraine.html" class="related-card">
+                            <h4>The Goldilocks Problem</h4>
+                            <p>Sleep is one of the heaviest drops in your migraine bucket. Discover how to find your perfect sleep balance.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="when-to-see-doctor">
                     <h3>When to Seek Professional Help</h3>
                     <ul>
@@ -909,7 +920,6 @@ justify-content: center;
                     <p style="margin-top:16px;">This article is a starting point for conversation with your doctor, not a replacement for medical care.</p>
                 </div>
 
-                <!-- REFERENCES -->
                 <div class="references">
                     <h3>References</h3>
                     <ol>
@@ -927,7 +937,6 @@ justify-content: center;
                     </ol>
                 </div>
 
-                <!-- ARTICLE INFO BOX -->
                 <div class="article-info-box">
                     <h4>Article Information</h4>
                     <p><strong>Content Type:</strong> Educational health information</p>
@@ -941,7 +950,6 @@ justify-content: center;
 
                 <div class="article-footer">
                     
-                    <!-- AUTHOR CARD -->
                     <div class="author-card">
                         <div class="author-avatar">
                             <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
@@ -953,7 +961,6 @@ justify-content: center;
                         </div>
                     </div>
 
-                    <!-- EDITORIAL STANDARDS -->
                     <div class="editorial-standards">
                         <h3>How We Create Content</h3>
                         <ul>
@@ -965,7 +972,6 @@ justify-content: center;
                         </ul>
                     </div>
 
-                    <!-- CTA BOX -->
                     <div class="cta-box">
                         <h3>Track All Your Triggers with Mi</h3>
                         <p>Mi knows how frustrating it is when you can't control what triggers your attacks. That's why Migraine Companion helps you track not just the weather, but all the factors that fill your bucket—sleep, hydration, stress, meals, and more. Because understanding your patterns means taking back control.</p>
@@ -981,13 +987,11 @@ justify-content: center;
 </div>
                     </div>
 
-                    <!-- SHARE BOX -->
                     <div style="text-align:center;margin-top:32px;padding:20px;background:rgba(139,122,168,0.05);border-radius:12px;">
                         <p style="font-size:0.95rem;color:var(--text-light);margin-bottom:12px;">If this information helped you understand your triggers better, please share it with others who might benefit.</p>
-                        <p style="font-size:0.85rem;color:var(--text-dark);margin:0;">Questions or feedback: <a href="mailto:migrainecompanion.app@gmail.com" style="color:var(--lavender);">migrainecompanion.app@gmail.com</a> | <a href="https://mi-companion.com" style="color:var(--lavender);">mi-companion.com</a></p>
+                        <p style="font-size:0.85rem;color:var(--text-dark);margin:0;">Questions or feedback: <a href="mailto:migrainecompanion.app@gmail.com" style="color:var(--lavender);text-decoration:none;border-bottom:1px solid rgba(139, 122, 168, 0.4);">migrainecompanion.app@gmail.com</a></p>
                     </div>
 
-                    <!-- REVIEW DATES -->
                     <div class="review-dates">
                         <p><em>Last reviewed: February 2026</em></p>
                         <p><em>Next scheduled review: August 2026</em></p>
