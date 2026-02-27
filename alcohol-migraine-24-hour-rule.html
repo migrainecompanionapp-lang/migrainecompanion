@@ -8,7 +8,6 @@
     <title>The 24-Hour Rule: Why That Glass of Wine Hits Different | Migraine Companion</title>
     <link rel="icon" type="image/png" href="images/mi-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <style>
         * {
@@ -28,6 +27,67 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-content a:not(.references a):not(.download-btn) {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-content a:not(.references a):not(.download-btn):hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s ease;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 {
+            color: var(--lavender);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        .related-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+        /* --------------------------------------------- */
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -428,6 +488,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
+            flex: 1;
             max-width: 260px;
             justify-content: center;
         }
@@ -474,11 +535,6 @@
         sup {
             color: var(--lavender);
             font-weight: 600;
-            font-size: 0.75em;
-            line-height: 0;
-            position: relative;
-            vertical-align: baseline;
-            top: -0.5em;
         }
 
         footer {
@@ -515,6 +571,7 @@
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 16px;
+            margin-top: 0;
         }
 
         .key-takeaways ul {
@@ -678,9 +735,9 @@
                     <p>In November 2023, researchers at UC Davis and UC San Francisco announced a breakthrough.<sup>[5]</sup></p>
                     <p>They found a molecule called <strong>quercetin</strong>.</p>
                     <p>You've probably consumed it today. Quercetin lives in apple skins, onion layers, berry flesh. Health stores sell it as an antioxidant supplement. By itself, it's harmless. Beneficial, even.</p>
-                    <p>But quercetin has a dark side.</    p>
+                    <p>But quercetin has a dark side.</p>
                     <p>When alcohol enters your bloodstream, your liver converts it to acetaldehyde — a toxic compound that causes flushing, nausea, and pounding headaches. Normally, an enzyme called <strong>ALDH2</strong> breaks down acetaldehyde before it accumulates.</p>
-                    <p>Quercetin blocks that enzyme.<sup>[5]</sup></    p>
+                    <p>Quercetin blocks that enzyme.<sup>[5]</sup></p>
 
                     <div class="quote-box">
                         <p>The research team discovered that quercetin glucuronide — the form created when your body metabolizes quercetin — inhibits ALDH2 with an IC50 of just 9.6 micromolar. That's potent enough to matter.</p>
@@ -724,7 +781,7 @@
                     <p>Some people metabolize acetaldehyde slowly. Roughly 40 percent of East Asian populations carry genetic variants that impair ALDH2 function.<sup>[5,7]</sup> These individuals flush easily and may be hypersensitive to alcohol's effects.</p>
                     <p>Others lack that vulnerability entirely.</p>
                     <p>The study also revealed a hidden variable: <em>selection bias</em>. People who experience severe alcohol-triggered migraines tend to stop drinking. The remaining drinkers may represent a naturally resistant population.<sup>[2]</sup></p>
-                    <p>Context matters too. The same glass of wine might pass harmlessly on a relaxed Saturday but devastate you after a stressful workweek. Sleep deprivation, dehydration, hormonal fluctuations — all lower the threshold.<sup>[8,9]</sup></p>
+                    <p>Context matters too. The same glass of wine might pass harmlessly on a relaxed Saturday but devastate you after a stressful workweek. <a href="the-goldilocks-problem-sleep-migraine.html">Sleep deprivation</a>, dehydration, hormonal fluctuations — all lower the threshold.<sup>[8,9]</sup></p>
 
                     <div class="quote-box">
                         <p>Your trigger today might not be your trigger tomorrow.</p>
@@ -781,7 +838,7 @@
 
                         <div class="practical-item">
                             <h4>Track patterns</h4>
-                            <p>"I think red wine bothers me" is an impression. "Five of seven times I drank red wine in the evening, a migraine followed within twelve hours" is data. Data enables decisions.</p>
+                            <p>"I think red wine bothers me" is an impression. "Five of seven times I drank red wine in the evening, <a href="article-weekend-migraines.html"><strong>the weekend migraine</strong></a> followed within twelve hours" is data. Data enables decisions.</p>
                         </div>
                     </div>
                 </section>
@@ -795,7 +852,7 @@
                     <div class="warning-box">
                         <h4>⚠️ Consider avoiding alcohol if:</h4>
                         <ul>
-                            <li>You feel the subtle warning signs of an approaching migraine — the vague unease, the light sensitivity, the difficulty finding words — alcohol will likely accelerate the attack</li>
+                            <li>You feel the subtle warning signs of an approaching migraine (the <a href="article-prediction.html">prodrome</a>) — the vague unease, the light sensitivity, the difficulty finding words — alcohol will likely accelerate the attack</li>
                             <li>You take MAO inhibitors or certain other medications — wine's tyramine content poses genuine risks beyond headache</li>
                             <li>Your migraines have increased recently in frequency or severity — adding variables makes diagnosis harder</li>
                             <li>Tomorrow holds something unmissable — a presentation, a wedding, a flight — the gamble may not be worth the potential cost</li>
@@ -848,6 +905,20 @@
                     </ul>
                 </div>
 
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-weekend-migraines.html" class="related-card">
+                            <h4>Weekend Migraines Explained</h4>
+                            <p>Learn why shifting your schedule on Saturdays might be causing your weekend attacks.</p>
+                        </a>
+                        <a href="article-moh.html" class="related-card">
+                            <h4>The Trap of Relief</h4>
+                            <p>When does treating a migraine cause the next one? Understand <a href="article-moh.html">medication overuse headache</a> without shame.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="medical-attention">
                     <h3>⚕️ When to See a Doctor</h3>
                     <ul>
@@ -890,7 +961,7 @@
 
                     <div class="cta-box">
                         <h3>Track Your Alcohol Patterns with Mi</h3>
-                        <p>"I think wine bothers me" is an impression. "5 of 7 times red wine triggered a migraine" is data. Mi helps you find your truth.</p>
+                        <p>"I think wine bothers me" is an impression. "5 of 7 times red wine triggered a migraine" is data. <a href="article-understanding-triggers.html">Track your patterns.</a> Mi helps you find your truth.</p>
                         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
                             <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
