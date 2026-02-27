@@ -25,6 +25,55 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-content a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-content a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600;}
+        .related-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; font-family: 'Inter', sans-serif;}
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -204,17 +253,11 @@
             color: var(--text-light);
         }
         
-        .article-image {
-            margin: 48px 0;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-        }
-        
-        .article-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .citation {
+            color: var(--gold);
+            font-size: 0.85em;
+            vertical-align: super;
+            font-weight: 600;
         }
         
         .highlight-box {
@@ -226,8 +269,8 @@
         }
         
         .highlight-box p {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.05rem;
+            font-weight: 500;
             color: var(--antique-gold);
             margin: 0;
             line-height: 1.7;
@@ -322,6 +365,7 @@
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 4px;
+            margin-top: 0;
         }
         
         .author-info p {
@@ -344,6 +388,7 @@
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 12px;
+            margin-top: 0;
         }
         
         .cta-box p {
@@ -365,14 +410,15 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
             background: var(--gold);
             color: var(--bg);
             transform: translateY(-2px);
+            border-bottom: 1px solid var(--gold);
         }
         
         .references {
@@ -397,15 +443,6 @@ justify-content: center;
             color: var(--text-dark);
             margin-bottom: 8px;
             line-height: 1.5;
-        }
-        
-        .references a {
-            color: var(--lavender);
-            text-decoration: none;
-        }
-        
-        .references a:hover {
-            text-decoration: underline;
         }
         
         sup {
@@ -459,18 +496,6 @@ justify-content: center;
             line-height: 1.5;
         }
         
-        .video-caption a {
-            color: var(--lavender);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.3);
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-        
-        .video-caption a:hover {
-            color: #ffffff;
-            border-bottom-color: var(--lavender);
-        }
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
@@ -509,7 +534,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -519,7 +543,6 @@ justify-content: center;
                     </p>
                 </div>
                 
-                <!-- MEDICAL DISCLAIMER -->
                 <p class="medical-disclaimer">
                     This article is for educational purposes only and does not constitute medical advice. 
                     All claims are supported by peer-reviewed research. For personalized recommendations, consult your healthcare provider.
@@ -602,7 +625,7 @@ justify-content: center;
 
                 <section class="article-section">
                     <h2>Saturday Morning, 10 AM: A Case Study in Withdrawal</h2>
-                    <p>The scenario is so common it has a clinical name: <strong>the weekend migraine</strong>.<sup>[4]</sup></p>
+                    <p>The scenario is so common it has a clinical name: <a href="article-weekend-migraines.html"><strong>the weekend migraine</strong></a>.<sup>[4]</sup></p>
                     <p>Watch it unfold:</p>
                     <p>Monday through Friday: Coffee at 7 AM. Sharp. Reliable. Your brain, adapted to this schedule, has upregulated adenosine receptors to compensate.</p>
                     <p>Saturday: You sleep in. Luxury. Freedom.</p>
@@ -658,7 +681,7 @@ justify-content: center;
                         </iframe>
                         <p class="video-caption">Here is exactly why your afternoon coffee might be triggering tomorrow's migraine. <br><a href="https://www.youtube.com/@MICompanion" target="_blank">Subscribe to our YouTube</a> 💜</p>
                     </div>
-                    <p>Why this matters for migraines: Sleep disruption is one of the most reliable migraine triggers known to science.<sup>[16]</sup> If you're a slow metabolizer, that 3 PM pick-me-up might still be active at midnight — sabotaging your sleep, priming tomorrow's attack.</p>
+                    <p>Why this matters for migraines: <a href="the-goldilocks-problem-sleep-migraine.html">Sleep disruption</a> is one of the most reliable migraine triggers known to science.<sup>[16]</sup> If you're a slow metabolizer, that 3 PM pick-me-up might still be active at midnight — sabotaging your sleep, priming tomorrow's attack.</p>
                     <p>Genetic testing isn't routine yet. But you can infer: Does evening caffeine keep you awake?</p>
                     <p>Your body already knows the answer.</p>
                 </section>
@@ -670,7 +693,7 @@ justify-content: center;
                     <p>Now for the finding that makes neurologists pause mid-sentence.</p>
                     <p>The assumption: You drink coffee, therefore you get a migraine. Cause → effect.</p>
                     <p>The alternative: <strong>Your approaching migraine makes you crave coffee.</strong> Effect → cause.</p>
-                    <p>Consider the prodrome — that 2-48 hour window before a migraine attack when something feels off.<sup>[18]</sup> Patients report yawning. Fatigue. Difficulty concentrating. Cravings.</p>
+                    <p>Consider the <a href="article-prediction.html">prodrome</a> — that 2-48 hour window before a migraine attack when something feels off.<sup>[18]</sup> Patients report yawning. Fatigue. Difficulty concentrating. Cravings.</p>
                     <p>Cravings for what? Often, stimulants. Often, caffeine.</p>
                     
                     <div class="quote-box">
@@ -737,7 +760,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- CONSULT YOUR DOCTOR BOX -->
                 <div class="highlight-box">
                     <p>🩺 Before making changes to your caffeine consumption, talk to your healthcare provider — especially if you take medications or have frequent migraines. What follows are general principles, not personalized medical advice.</p>
                 </div>
@@ -751,7 +773,7 @@ justify-content: center;
                     <p>• Same amount. Same time. Every day. Including weekends.<br>
                     • Cap at 200 mg daily (two small cups).<sup>[1]</sup><br>
                     • Never skip your morning dose. Withdrawal triggers more reliably than caffeine itself.<br>
-                    • Track everything. Correlate patterns. Let data, not assumptions, guide you.</p>
+                    • <a href="article-understanding-triggers.html">Track your patterns.</a> Correlate patterns. Let data, not assumptions, guide you.</p>
                     
                     <h3 style="color:#ffffff;margin:32px 0 16px;">If You Want to Quit</h3>
                     <p><strong>Rule One: Gradual tapering is non-negotiable.</strong></p>
@@ -761,7 +783,7 @@ justify-content: center;
                     
                     <h3 style="color:#ffffff;margin:32px 0 16px;">If You Use Caffeine to Treat Attacks</h3>
                     <p><strong>Rule One: Strategic, limited deployment.</strong></p>
-                    <p>• Maximum 2 days per week.<sup>[4]</sup> More risks medication overuse headache.<br>
+                    <p>• Maximum 2 days per week.<sup>[4]</sup> More risks <a href="article-moh.html">medication overuse headache</a>.<br>
                     • Combine with analgesics — caffeine boosts effectiveness of acetaminophen, aspirin, and ibuprofen by up to 40%.<sup>[22]</sup><br>
                     • Act early. Caffeine works at the first sign. Once pain establishes, effectiveness drops.</p>
                 </section>
@@ -853,7 +875,20 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- REFERENCES -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-weekend-migraines.html" class="related-card">
+                            <h4>Weekend Migraines Explained</h4>
+                            <p>Learn why shifting your caffeine schedule on Saturdays might be causing your weekend attacks.</p>
+                        </a>
+                        <a href="article-moh.html" class="related-card">
+                            <h4>The Trap of Relief</h4>
+                            <p>When does treating a migraine cause the next one? Understand medication overuse without shame.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="references">
                     <h3>References</h3>
                     <ol>
