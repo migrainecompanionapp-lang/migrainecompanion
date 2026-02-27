@@ -252,11 +252,63 @@
             font-size: 1.15rem;
             color: rgba(255,255,255,0.9);
             max-width: 520px;
-            margin: 0 auto;
+            margin: 0 auto 30px; /* Added bottom margin for spacing with the form */
             text-shadow: 0 2px 10px rgba(0,0,0,0.7);
             font-weight: 500;
         }
         
+        /* NEWSLETTER FORM STYLES */
+        .subscribe-form {
+            display: flex;
+            max-width: 420px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(139, 122, 168, 0.3);
+            border-radius: 30px;
+            padding: 5px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: border-color 0.3s ease;
+        }
+        
+        .subscribe-form:focus-within {
+            border-color: var(--lavender);
+        }
+
+        .subscribe-form input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .subscribe-form input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .subscribe-form button {
+            background: var(--lavender);
+            color: var(--bg);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-weight: 600;
+            font-family: inherit;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .subscribe-form button:hover {
+            background: #a99cc4;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(139, 122, 168, 0.4);
+        }
+
         .blog-content {
             padding: 60px 0 80px;
             position: relative;
@@ -539,11 +591,29 @@
             .petals-container {
                 display: none;
             }
+
+            .subscribe-form {
+                flex-direction: column;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                backdrop-filter: none;
+                padding: 0;
+            }
+            .subscribe-form input {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(139, 122, 168, 0.3);
+                border-radius: 12px;
+                margin-bottom: 10px;
+            }
+            .subscribe-form button {
+                border-radius: 12px;
+                padding: 14px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- FALLING PETALS -->
     <div class="petals-container" id="petals"></div>
     
     <header>
@@ -571,13 +641,18 @@
             <div class="container">
                 <h1>Stories from the Mystic Garden</h1>
                 <p>Insights, experiences, and wisdom about living with migraines — from those who understand.</p>
+                
+                <form class="subscribe-form" action="https://formspree.io/f/mjgezgbq" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email for new articles..." required>
+                    <button type="submit">Subscribe</button>
+                </form>
+
             </div>
         </section>
 
         <section class="blog-content">
             <div class="container">
                 
-                <!-- CATEGORY FILTER -->
                 <div class="category-filter">
                     <button class="filter-btn active" data-category="all">All</button>
                     <button class="filter-btn" data-category="personal-story">Personal Story</button>
@@ -592,7 +667,6 @@
                 
                 <div class="blog-grid">
                     
-                    <!-- PERSONAL STORY -->
                     <article class="blog-card" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>I Built a Migraine App During 30 Years of Pain (and a War)</h2>
@@ -604,7 +678,6 @@
                         <a href="article-30-years.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- NARRATIVE THERAPY -->
                     <article class="blog-card" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>Why We Don't Fight Migraines</h2>
@@ -616,7 +689,6 @@
                         <a href="article-narrative-therapy.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- SELF-CARE -->
                     <article class="blog-card" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>The 4-7-8 Breathing Technique</h2>
@@ -628,7 +700,6 @@
                         <a href="article-478-breathing.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- TIPS -->
                     <article class="blog-card" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Understanding Your Triggers</h2>
@@ -640,7 +711,6 @@
                         <a href="article-understanding-triggers.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- SCIENCE: PREDICTION -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Storm Before the Storm</h2>
@@ -652,7 +722,6 @@
                         <a href="article-prediction.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- APP GUIDE: MEET MI -->
                     <article class="blog-card" data-category="app-guide">
                         <span class="blog-tag">App Guide</span>
                         <h2>Meet Mi: The Monster Who Wants to Sleep</h2>
@@ -664,7 +733,6 @@
                         <a href="meet-mi.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- SCIENCE: WEEKEND MIGRAINES -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>Why Your Brain Hates Mondays: Weekend Migraines Explained</h2>
@@ -676,7 +744,6 @@
                         <a href="article-weekend-migraines.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- TRIGGERS: CAFFEINE -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Caffeine Paradox: Friend, Foe, or Both?</h2>
@@ -688,7 +755,6 @@
                         <a href="article-caffeine.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- UNDERSTANDING: POSTDROME -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>Migraine Hangover: The Phase No One Talks About</h2>
@@ -700,7 +766,6 @@
                         <a href="article-postdrome.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- TRIGGERS: MEDICATION OVERUSE -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Trap of Relief: When Your Medicine Becomes Your Migraine</h2>
@@ -712,7 +777,6 @@
                         <a href="article-moh.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- NARRATIVE THERAPY: IDENTITY -->
                     <article class="blog-card" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>I Am Not My Migraine: Separating Self from Pain</h2>
@@ -724,31 +788,28 @@
                         <a href="article-not-my-migraine.html" class="read-more">Read full story →</a>
                     </article>
 
-                    <!-- SCIENCE: EXERCISE -->
-<article class="blog-card" data-category="science">
-    <span class="blog-tag">Science</span>
-    <h2>The Exercise Paradox: When Movement Is Medicine</h2>
-    <p>Exercise can trigger an attack — or prevent one. The science behind exertional migraine, and how to make physical activity work for you, not against you.</p>
-    <div class="blog-meta">
-        <<span class="blog-date">📅 February 4, 2026</span>
+                    <article class="blog-card" data-category="science">
+                        <span class="blog-tag">Science</span>
+                        <h2>The Exercise Paradox: When Movement Is Medicine</h2>
+                        <p>Exercise can trigger an attack — or prevent one. The science behind exertional migraine, and how to make physical activity work for you, not against you.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 February 4, 2026</span>
                             <span class="blog-read-time">⏱ 7 min read</span>
                         </div>
                         <a href="the-exercise-paradox.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- PERSONAL STORY: INVISIBLE DISABILITY -->
                     <article class="blog-card" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>You Don't Look Sick: The Loneliness of Invisible Pain</h2>
                         <p>"But you seem fine." Five words that cut deeper than the migraine itself. On explaining the unexplainable, seeking validation, and finding people who truly understand.</p>
                         <div class="blog-meta">
-                            <<span class="blog-date">📅 February 4, 2026</span>
+                            <span class="blog-date">📅 February 4, 2026</span>
                             <span class="blog-read-time">⏱ 6 min read</span>
                         </div>
                         <a href="article-invisible-pain.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- UNDERSTANDING: AURA -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>When the World Glitches: A Journey Through Migraine Aura</h2>
@@ -760,7 +821,6 @@
                         <a href="article-aura.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- PERSONAL STORY: RELATIONSHIPS -->
                     <article class="blog-card" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>The Third Person in Every Room: How Migraine Lives in Your Relationships</h2>
@@ -772,7 +832,6 @@
                         <a href="article-relationships.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- SCIENCE: GUT-BRAIN -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Gut-Brain Highway: How Your Microbiome Talks to Your Migraine</h2>
@@ -784,7 +843,6 @@
                         <a href="the-second-brain.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- SCIENCE: WEATHER -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>Blaming the Barometer: The Weather-Migraine Myth</h2>
@@ -796,7 +854,6 @@
                         <a href="weather-migraine-myth.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- TRIGGERS: ALCOHOL -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The 24-Hour Rule: Why That Glass of Wine Hits Different</h2>
@@ -808,7 +865,6 @@
                         <a href="alcohol-migraine-24-hour-rule.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- UNDERSTANDING: MIGRAINE VS TENSION -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>Migraine or Tension? The Question That Changes Everything</h2>
@@ -820,7 +876,6 @@
                         <a href="article-migraine-vs-tension.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- TRIGGERS: SCREEN TIME -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Screen That Stares Back: Digital Life with Migraines</h2>
@@ -832,7 +887,6 @@
                         <a href="screen-migraine-science.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- SCIENCE: SUPPLEMENTS -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>Beyond the Pill: What Science Says About Magnesium</h2>
@@ -844,7 +898,6 @@
                         <a href="magnesium-riboflavin-coq10-migraine.html" class="read-more">Read full story →</a>
                     </article>
                     
-                    <!-- TRIGGERS: SLEEP -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Goldilocks Problem: Why Sleep Is Never "Just Right"</h2>
@@ -856,314 +909,286 @@
                         <a href="the-goldilocks-problem-sleep-migraine.html" class="read-more">Read full story →</a>
                     </article>
 
-<!-- SCIENCE: HORMONES -->
-<article class="blog-card" data-category="science">
-    <span class="blog-tag">Science</span>
-    <h2>The Hormone Rollercoaster: Menstrual Migraines Explained</h2>
-    <p>Why do attacks cluster around your period? The estrogen drop, the prostaglandin surge, and what you can actually do about hormonal migraines.</p>
-    <div class="blog-meta">
-          <span class="blog-date">📅 February 8, 2026</span>
+                    <article class="blog-card" data-category="science">
+                        <span class="blog-tag">Science</span>
+                        <h2>The Hormone Rollercoaster: Menstrual Migraines Explained</h2>
+                        <p>Why do attacks cluster around your period? The estrogen drop, the prostaglandin surge, and what you can actually do about hormonal migraines.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 February 8, 2026</span>
                             <span class="blog-read-time">⏱ 8 min read</span>
                         </div>
                         <a href="article-body-calendar.html" class="read-more">Read full story →</a>
                     </article>
 
-<!-- UNDERSTANDING: APHASIA -->
-<article class="blog-card" data-category="understanding">
-    <span class="blog-tag">Understanding</span>
-    <h2>When Words Disappear: The Terror of Migraine Aphasia</h2>
-    <p>You know the word. It's right there. But your mouth won't say it. Understanding the language disruptions that can accompany migraine — and why they're temporary.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="understanding">
+                        <span class="blog-tag">Understanding</span>
+                        <h2>When Words Disappear: The Terror of Migraine Aphasia</h2>
+                        <p>You know the word. It's right there. But your mouth won't say it. Understanding the language disruptions that can accompany migraine — and why they're temporary.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                    </article>
 
-<!-- UNDERSTANDING: OSMOPHOBIA -->
-<article class="blog-card" data-category="understanding">
-    <span class="blog-tag">Understanding</span>
-    <h2>The Smell of Danger: When Perfume Becomes a Weapon</h2>
-    <p>Osmophobia — the intense sensitivity to odors — affects up to 95% of migraineurs during attacks. Why your nose becomes your enemy, and how to protect yourself.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 5 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="understanding">
+                        <span class="blog-tag">Understanding</span>
+                        <h2>The Smell of Danger: When Perfume Becomes a Weapon</h2>
+                        <p>Osmophobia — the intense sensitivity to odors — affects up to 95% of migraineurs during attacks. Why your nose becomes your enemy, and how to protect yourself.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 5 min read</span>
+                        </div>
+                    </article>
 
-<!-- TIPS: EMERGENCY KIT -->
-<article class="blog-card" data-category="tips">
-    <span class="blog-tag">Tips</span>
-    <h2>Your Migraine Emergency Kit: Never Be Caught Unprepared</h2>
-    <p>What to pack for work, travel, and life. A practical guide to building your personal migraine survival kit — from medication to comfort items.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 5 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="tips">
+                        <span class="blog-tag">Tips</span>
+                        <h2>Your Migraine Emergency Kit: Never Be Caught Unprepared</h2>
+                        <p>What to pack for work, travel, and life. A practical guide to building your personal migraine survival kit — from medication to comfort items.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 5 min read</span>
+                        </div>
+                    </article>
 
-<!-- SELF-CARE: HOME LIGHTING -->
-<article class="blog-card" data-category="self-care">
-    <span class="blog-tag">Self-Care</span>
-    <h2>Lighting the Way: Creating a Migraine-Friendly Home</h2>
-    <p>Fluorescent flicker, blue light, harsh shadows. Your home might be triggering attacks without you knowing. Simple changes that make a real difference.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="self-care">
+                        <span class="blog-tag">Self-Care</span>
+                        <h2>Lighting the Way: Creating a Migraine-Friendly Home</h2>
+                        <p>Fluorescent flicker, blue light, harsh shadows. Your home might be triggering attacks without you knowing. Simple changes that make a real difference.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                    </article>
 
-<!-- UNDERSTANDING: CHILDREN -->
-<article class="blog-card" data-category="understanding">
-    <span class="blog-tag">Understanding</span>
-    <h2>Little Heads, Big Pain: When Migraine Starts in Childhood</h2>
-    <p>Abdominal migraine. Cyclic vomiting. The "growing pains" that aren't growing pains. Understanding pediatric migraine — and helping the children who suffer in silence.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 8 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="understanding">
+                        <span class="blog-tag">Understanding</span>
+                        <h2>Little Heads, Big Pain: When Migraine Starts in Childhood</h2>
+                        <p>Abdominal migraine. Cyclic vomiting. The "growing pains" that aren't growing pains. Understanding pediatric migraine — and helping the children who suffer in silence.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 8 min read</span>
+                        </div>
+                    </article>
 
-<!-- TIPS: ELIMINATION DIARY -->
-<article class="blog-card" data-category="tips">
-    <span class="blog-tag">Tips</span>
-    <h2>The Food Detective: How to Run Your Own Elimination Trial</h2>
-    <p>Cheese? Chocolate? Wine? Everyone has opinions about migraine triggers. Here's how to find YOUR actual triggers through systematic testing — not internet myths.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 7 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="tips">
+                        <span class="blog-tag">Tips</span>
+                        <h2>The Food Detective: How to Run Your Own Elimination Trial</h2>
+                        <p>Cheese? Chocolate? Wine? Everyone has opinions about migraine triggers. Here's how to find YOUR actual triggers through systematic testing — not internet myths.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 7 min read</span>
+                        </div>
+                    </article>
 
-<!-- TIPS: TRAVEL -->
-<article class="blog-card" data-category="tips">
-    <span class="blog-tag">Tips</span>
-    <h2>Traveling with a Monster: A Migraine Survival Guide</h2>
-    <p>Altitude changes, time zones, dehydration, stress. Travel is a minefield for migraineurs. Practical strategies for planes, trains, and adventures abroad.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 8 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="tips">
+                        <span class="blog-tag">Tips</span>
+                        <h2>Traveling with a Monster: A Migraine Survival Guide</h2>
+                        <p>Altitude changes, time zones, dehydration, stress. Travel is a minefield for migraineurs. Practical strategies for planes, trains, and adventures abroad.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 8 min read</span>
+                        </div>
+                    </article>
 
-<!-- PERSONAL STORY: WORK -->
-<article class="blog-card" data-category="personal-story">
-    <span class="blog-tag">Personal Story</span>
-    <h2>The Conference Room Confession: Migraine at Work</h2>
-    <p>Hiding in bathroom stalls. Pretending to read emails through the blur. The impossible choice between career and health. Stories from the professional frontlines.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 7 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="personal-story">
+                        <span class="blog-tag">Personal Story</span>
+                        <h2>The Conference Room Confession: Migraine at Work</h2>
+                        <p>Hiding in bathroom stalls. Pretending to read emails through the blur. The impossible choice between career and health. Stories from the professional frontlines.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 7 min read</span>
+                        </div>
+                    </article>
 
-<!-- SCIENCE: CGRP -->
-<article class="blog-card" data-category="science">
-    <span class="blog-tag">Science</span>
-    <h2>The CGRP Revolution: The Molecule That Changed Everything</h2>
-    <p>For decades, migraine borrowed medications from other conditions. Then scientists found CGRP. The story of how a tiny molecule created the first migraine-specific preventive treatments.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 10 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="science">
+                        <span class="blog-tag">Science</span>
+                        <h2>The CGRP Revolution: The Molecule That Changed Everything</h2>
+                        <p>For decades, migraine borrowed medications from other conditions. Then scientists found CGRP. The story of how a tiny molecule created the first migraine-specific preventive treatments.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 10 min read</span>
+                        </div>
+                    </article>
 
-<!-- SCIENCE: BOTOX -->
-<article class="blog-card" data-category="science">
-    <span class="blog-tag">Science</span>
-    <h2>31 Needles of Hope: The Truth About Botox for Migraine</h2>
-    <p>It's not about wrinkles. Botox for chronic migraine works through a completely different mechanism. Who it helps, what to expect, and why it takes three months to know.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 7 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="science">
+                        <span class="blog-tag">Science</span>
+                        <h2>31 Needles of Hope: The Truth About Botox for Migraine</h2>
+                        <p>It's not about wrinkles. Botox for chronic migraine works through a completely different mechanism. Who it helps, what to expect, and why it takes three months to know.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 7 min read</span>
+                        </div>
+                    </article>
 
-<!-- SELF-CARE: MEDITATION -->
-<article class="blog-card" data-category="self-care">
-    <span class="blog-tag">Self-Care</span>
-    <h2>Training the Pain Brain: Meditation for Migraineurs</h2>
-    <p>Mindfulness isn't about ignoring pain — it's about changing your relationship with it. Research-backed meditation techniques specifically adapted for migraine sufferers.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 8 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="self-care">
+                        <span class="blog-tag">Self-Care</span>
+                        <h2>Training the Pain Brain: Meditation for Migraineurs</h2>
+                        <p>Mindfulness isn't about ignoring pain — it's about changing your relationship with it. Research-backed meditation techniques specifically adapted for migraine sufferers.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 8 min read</span>
+                        </div>
+                    </article>
 
-<!-- TRIGGERS: HISTAMINE -->
-<article class="blog-card" data-category="triggers">
-    <span class="blog-tag">Triggers</span>
-    <h2>The Histamine Bucket: Why Aged Cheese and Red Wine Attack Together</h2>
-    <p>It's not just tyramine. Histamine intolerance might explain why some foods only trigger attacks sometimes. The bucket theory — and how to keep yours from overflowing.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 7 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="triggers">
+                        <span class="blog-tag">Triggers</span>
+                        <h2>The Histamine Bucket: Why Aged Cheese and Red Wine Attack Together</h2>
+                        <p>It's not just tyramine. Histamine intolerance might explain why some foods only trigger attacks sometimes. The bucket theory — and how to keep yours from overflowing.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 7 min read</span>
+                        </div>
+                    </article>
 
-<!-- UNDERSTANDING: NECK -->
-<article class="blog-card" data-category="understanding">
-    <span class="blog-tag">Understanding</span>
-    <h2>The Neck Connection: When Your Spine Talks to Your Brain</h2>
-    <p>Is it migraine or cervicogenic headache? The confusing overlap between neck problems and migraine — and why treating both might be the answer.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="understanding">
+                        <span class="blog-tag">Understanding</span>
+                        <h2>The Neck Connection: When Your Spine Talks to Your Brain</h2>
+                        <p>Is it migraine or cervicogenic headache? The confusing overlap between neck problems and migraine — and why treating both might be the answer.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                    </article>
 
-<!-- UNDERSTANDING: PREGNANCY -->
-<article class="blog-card" data-category="understanding">
-    <span class="blog-tag">Understanding</span>
-    <h2>Nine Months of Uncertainty: Migraine During Pregnancy</h2>
-    <p>Some women find relief. Others find new triggers. Navigating migraine when most medications are off-limits — and why the second trimester might surprise you.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 9 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="understanding">
+                        <span class="blog-tag">Understanding</span>
+                        <h2>Nine Months of Uncertainty: Migraine During Pregnancy</h2>
+                        <p>Some women find relief. Others find new triggers. Navigating migraine when most medications are off-limits — and why the second trimester might surprise you.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 9 min read</span>
+                        </div>
+                    </article>
 
-<!-- SCIENCE: MIGRAINE BRAIN -->
-<article class="blog-card" data-category="science">
-    <span class="blog-tag">Science</span>
-    <h2>The Hyperexcitable Brain: Why Migraineurs Are Wired Differently</h2>
-    <p>Your brain isn't broken — it's hypersensitive. The neuroscience of why some brains react to stimuli that others ignore, and why this "flaw" might also be a gift.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 9 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="science">
+                        <span class="blog-tag">Science</span>
+                        <h2>The Hyperexcitable Brain: Why Migraineurs Are Wired Differently</h2>
+                        <p>Your brain isn't broken — it's hypersensitive. The neuroscience of why some brains react to stimuli that others ignore, and why this "flaw" might also be a gift.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 9 min read</span>
+                        </div>
+                    </article>
 
-<!-- SELF-CARE: ACUPUNCTURE -->
-<article class="blog-card" data-category="self-care">
-    <span class="blog-tag">Self-Care</span>
-    <h2>Ancient Needles, Modern Evidence: Acupuncture for Migraine</h2>
-    <p>Skeptics dismiss it. Believers swear by it. What does the research actually say? A balanced look at acupuncture — who it helps, how it works, and what to expect.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 7 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="self-care">
+                        <span class="blog-tag">Self-Care</span>
+                        <h2>Ancient Needles, Modern Evidence: Acupuncture for Migraine</h2>
+                        <p>Skeptics dismiss it. Believers swear by it. What does the research actually say? A balanced look at acupuncture — who it helps, how it works, and what to expect.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 7 min read</span>
+                        </div>
+                    </article>
 
-<!-- UNDERSTANDING: CHRONIC -->
-<article class="blog-card" data-category="understanding">
-    <span class="blog-tag">Understanding</span>
-    <h2>The 15-Day Line: When Episodic Becomes Chronic</h2>
-    <p>More than 15 headache days per month changes everything — your diagnosis, your treatment options, your identity. Understanding chronic migraine and the path back.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 8 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="understanding">
+                        <span class="blog-tag">Understanding</span>
+                        <h2>The 15-Day Line: When Episodic Becomes Chronic</h2>
+                        <p>More than 15 headache days per month changes everything — your diagnosis, your treatment options, your identity. Understanding chronic migraine and the path back.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 8 min read</span>
+                        </div>
+                    </article>
 
-<!-- TIPS: ICE VS HEAT -->
-<article class="blog-card" data-category="tips">
-    <span class="blog-tag">Tips</span>
-    <h2>The Ice vs Heat Debate: What Actually Works?</h2>
-    <p>Cold pack on the forehead? Heat on the neck? Some swear by ice, others by warmth. The science behind temperature therapy — and how to find what works for you.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 5 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="tips">
+                        <span class="blog-tag">Tips</span>
+                        <h2>The Ice vs Heat Debate: What Actually Works?</h2>
+                        <p>Cold pack on the forehead? Heat on the neck? Some swear by ice, others by warmth. The science behind temperature therapy — and how to find what works for you.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 5 min read</span>
+                        </div>
+                    </article>
 
-<!-- SCIENCE: ANXIETY -->
-<article class="blog-card" data-category="science">
-    <span class="blog-tag">Science</span>
-    <h2>The Anxious Brain: The Bidirectional Link Between Migraine and Anxiety</h2>
-    <p>Does anxiety trigger migraine, or does migraine cause anxiety? The answer is both — and understanding this connection can change how you treat both conditions.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 8 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="science">
+                        <span class="blog-tag">Science</span>
+                        <h2>The Anxious Brain: The Bidirectional Link Between Migraine and Anxiety</h2>
+                        <p>Does anxiety trigger migraine, or does migraine cause anxiety? The answer is both — and understanding this connection can change how you treat both conditions.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 8 min read</span>
+                        </div>
+                    </article>
 
-<!-- TIPS: MEDICAL TEAM -->
-<article class="blog-card" data-category="tips">
-    <span class="blog-tag">Tips</span>
-    <h2>Building Your Migraine Team: Beyond the Neurologist</h2>
-    <p>GP, neurologist, headache specialist, therapist, physical therapist. Who do you actually need? How to build a support team that works together for your health.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="tips">
+                        <span class="blog-tag">Tips</span>
+                        <h2>Building Your Migraine Team: Beyond the Neurologist</h2>
+                        <p>GP, neurologist, headache specialist, therapist, physical therapist. Who do you actually need? How to build a support team that works together for your health.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                    </article>
 
-<!-- UNDERSTANDING: PRODROME -->
-<article class="blog-card" data-category="understanding">
-    <span class="blog-tag">Understanding</span>
-    <h2>The Warning Signs: Reading Your Prodrome Like a Book</h2>
-    <p>Yawning. Cravings. Irritability. Neck stiffness. Your body sends signals hours before the pain. Learning to read the prodrome — and act before it's too late.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 7 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="understanding">
+                        <span class="blog-tag">Understanding</span>
+                        <h2>The Warning Signs: Reading Your Prodrome Like a Book</h2>
+                        <p>Yawning. Cravings. Irritability. Neck stiffness. Your body sends signals hours before the pain. Learning to read the prodrome — and act before it's too late.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 7 min read</span>
+                        </div>
+                    </article>
 
-<!-- SELF-CARE: BIOFEEDBACK -->
-<article class="blog-card" data-category="self-care">
-    <span class="blog-tag">Self-Care</span>
-    <h2>Learning to Control the Uncontrollable: Biofeedback for Migraine</h2>
-    <p>Sensors on your skin. Lines on a screen. And somehow, you learn to control your body's invisible responses. The surprising science of biofeedback training.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="self-care">
+                        <span class="blog-tag">Self-Care</span>
+                        <h2>Learning to Control the Uncontrollable: Biofeedback for Migraine</h2>
+                        <p>Sensors on your skin. Lines on a screen. And somehow, you learn to control your body's invisible responses. The surprising science of biofeedback training.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                    </article>
 
-<!-- TIPS: TINTED GLASSES -->
-<article class="blog-card" data-category="tips">
-    <span class="blog-tag">Tips</span>
-    <h2>Rose-Colored (or Green) Glasses: Do Tinted Lenses Actually Help?</h2>
-    <p>FL-41 rose tint. Axon Optics. Theraspecs. The claims are bold, and the prices aren't cheap. What research says about precision-tinted lenses for migraine.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="tips">
+                        <span class="blog-tag">Tips</span>
+                        <h2>Rose-Colored (or Green) Glasses: Do Tinted Lenses Actually Help?</h2>
+                        <p>FL-41 rose tint. Axon Optics. Theraspecs. The claims are bold, and the prices aren't cheap. What research says about precision-tinted lenses for migraine.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                    </article>
 
-<!-- TRIGGERS: SUGAR -->
-<article class="blog-card" data-category="triggers">
-    <span class="blog-tag">Triggers</span>
-    <h2>The Blood Sugar Rollercoaster: Glucose and Your Migraine Brain</h2>
-    <p>Skipped breakfast. Afternoon crash. That desperate chocolate craving. Your brain runs on glucose — and the ups and downs might be triggering more than you realize.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="triggers">
+                        <span class="blog-tag">Triggers</span>
+                        <h2>The Blood Sugar Rollercoaster: Glucose and Your Migraine Brain</h2>
+                        <p>Skipped breakfast. Afternoon crash. That desperate chocolate craving. Your brain runs on glucose — and the ups and downs might be triggering more than you realize.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                    </article>
 
-<!-- PERSONAL STORY: HOPE -->
-<article class="blog-card" data-category="personal-story">
-    <span class="blog-tag">Personal Story</span>
-    <h2>From 20 Days to 2: Stories of Successful Management</h2>
-    <p>It took years. It took failures. It took refusing to give up. Real stories from people who found their way to fewer migraine days — and what they learned along the way.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 10 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="personal-story">
+                        <span class="blog-tag">Personal Story</span>
+                        <h2>From 20 Days to 2: Stories of Successful Management</h2>
+                        <p>It took years. It took failures. It took refusing to give up. Real stories from people who found their way to fewer migraine days — and what they learned along the way.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 10 min read</span>
+                        </div>
+                    </article>
 
-<!-- APP GUIDE: NEUROLOGIST -->
-<article class="blog-card" data-category="app-guide">
-    <span class="blog-tag">App Guide</span>
-    <h2>Your First Neurologist Visit: What to Bring, What to Ask</h2>
-    <p>The appointment is finally here. How to make the most of those precious 15 minutes — and how Mi's reports can help you communicate your migraine story clearly.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 5 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="app-guide">
+                        <span class="blog-tag">App Guide</span>
+                        <h2>Your First Neurologist Visit: What to Bring, What to Ask</h2>
+                        <p>The appointment is finally here. How to make the most of those precious 15 minutes — and how Mi's reports can help you communicate your migraine story clearly.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 5 min read</span>
+                        </div>
+                    </article>
 
-<!-- NARRATIVE THERAPY: LANGUAGE -->
-<article class="blog-card" data-category="narrative-therapy">
-    <span class="blog-tag">Narrative Therapy</span>
-    <h2>The Words We Use: How Language Shapes Your Migraine Experience</h2>
-    <p>"Suffering from." "Battling." "Victim of." The words you use to describe your condition aren't neutral — they shape how you feel about it. A guide to rewriting your migraine story.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 Coming soon</span>
-        <span class="blog-read-time">⏱ 6 min read</span>
-    </div>
-</article>
+                    <article class="blog-card" data-category="narrative-therapy">
+                        <span class="blog-tag">Narrative Therapy</span>
+                        <h2>The Words We Use: How Language Shapes Your Migraine Experience</h2>
+                        <p>"Suffering from." "Battling." "Victim of." The words you use to describe your condition aren't neutral — they shape how you feel about it. A guide to rewriting your migraine story.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-read-time">⏱ 6 min read</span>
+                        </div>
+                    </article>
                     
                     <div class="coming-soon-card">
                         <h3>✨ More articles coming soon</h3>
@@ -1173,8 +1198,13 @@
                 
                 <div class="newsletter">
                     <h3>Stay Updated</h3>
-                    <p>New articles and migraine management tips delivered to your inbox.</p>
-                    <p class="newsletter-note">Newsletter coming soon. For now, follow our updates in the app!</p>
+                    <p>New articles and migraine management tips delivered directly to your inbox. No spam, ever.</p>
+                    
+                    <form class="subscribe-form" action="https://formspree.io/f/mjgezgbq" method="POST" style="margin-bottom: 16px;">
+                        <input type="email" name="email" placeholder="Your email address..." required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <p class="newsletter-note">You can also follow our updates directly in the Migraine Companion app.</p>
                 </div>
             </div>
         </section>
