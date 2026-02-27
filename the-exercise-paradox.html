@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
-    <!-- Schema.org markup for EEAT -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -67,6 +66,55 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-section a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-section a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600;}
+        .related-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; font-family: 'Inter', sans-serif;}
+        /* --------------------------------------------- */
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -390,8 +438,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
 
         .download-btn:hover {
@@ -422,15 +470,6 @@ justify-content: center;
             color: var(--text-dark);
             margin-bottom: 8px;
             line-height: 1.5;
-        }
-
-        .references a {
-            color: var(--lavender);
-            text-decoration: none;
-        }
-
-        .references a:hover {
-            text-decoration: underline;
         }
 
         sup {
@@ -472,6 +511,7 @@ justify-content: center;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 16px;
+            margin-top: 0;
         }
 
         .key-takeaways ul {
@@ -657,7 +697,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
 
-                <!-- AUTHOR BYLINE -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -667,15 +706,13 @@ justify-content: center;
                     </p>
                 </div>
 
-                <!-- MEDICAL DISCLAIMER -->
                 <p class="medical-disclaimer">
                     <strong>Medical Review:</strong> This content is based on peer-reviewed research from Cephalalgia, The Journal of Headache and Pain, Nature Reviews Neurology, PeerJ, American Journal of Lifestyle Medicine, and other authoritative sources.<br><br>
                     <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. Consult your doctor before starting or changing an exercise programme, especially if you have cardiovascular conditions or take medications that affect heart rate.
                 </p>
 
-                <!-- OPENING -->
                 <section class="article-section">
-                    <p>In 1991, a 43-year-old woman walked into a headache clinic with an unusual confession. She had discovered — by accident, by desperation, by the kind of bodily intuition that science had not yet explained — that if she started running during the first shimmer of a migraine aura, the attack would stall. Not soften. Not shorten. Stop.<sup>[1]</sup></p>
+                    <p>In 1991, a 43-year-old woman walked into a headache clinic with an unusual confession. She had discovered — by accident, by desperation, by the kind of bodily intuition that science had not yet explained — that if she started running during the first shimmer of a <a href="article-aura.html">migraine aura</a>, the attack would stall. Not soften. Not shorten. Stop.<sup>[1]</sup></p>
                     <p>A physician named Darling documented her case in the journal <em>Headache</em>. It was, at the time, considered a curiosity.</p>
                     <p>Eighteen years later, a separate case appeared in <em>Medical Hypotheses</em>: another patient who consistently halted attacks through fast, intensive running.<sup>[2]</sup> And then a comprehensive 2018 review in <em>The Journal of Headache and Pain</em> placed both cases into a larger scientific framework, noting them as rare but clinically significant examples of exercise as acute migraine treatment.<sup>[3]</sup></p>
                     <p>Hold those stories in one hand.</p>
@@ -686,7 +723,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- WHY YOUR WORKOUT CAN LIGHT THE FUSE -->
                 <section class="article-section">
                     <h2>Why your workout can light the fuse</h2>
                     <p>The body is not subtle when it is pushed.</p>
@@ -711,7 +747,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- IMAGE 2: THRESHOLD / TRIGGER -->
                 <figure class="article-image">
                     <img src="images/migraine_threshold_brain_trigger.png" alt="Cross-section of a translucent head showing the brain's migraine threshold — calm signals below, chaotic inflammation above, with a runner silhouette in the brainstem">
                     <figcaption>The migraine threshold — when exercise pushes a vulnerable brain past its tipping point, CGRP and inflammatory signals overwhelm protective circuits</figcaption>
@@ -719,11 +754,10 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE EVIDENCE -->
                 <section class="article-section">
                     <h2>The evidence that exercise works as well as medication</h2>
                     <p>In 2011, at the University of Gothenburg, a physiotherapist named Emma Varkey ran the trial that would quietly change migraine medicine.</p>
-                    <p>Ninety-one patients with migraine were randomized into three groups. One group exercised — 40 minutes of moderate-intensity cycling, three times a week. One group practised relaxation therapy. One group took topiramate, a frontline preventive medication prescribed to millions of people globally and known, among patients, for the mental fog, fatigue, and weight changes it often inflicts.<sup>[11]</sup></p>
+                    <p>Ninety-one patients with migraine were randomized into three groups. One group exercised — 40 minutes of moderate-intensity cycling, three times a week. One group practised relaxation therapy. One group took topiramate, a frontline <a href="article-moh.html">preventive migraine medication</a> prescribed to millions of people globally and known, among patients, for the mental fog, fatigue, and weight changes it often inflicts.<sup>[11]</sup></p>
                     <p>After twelve weeks, the results landed like a contradiction.</p>
                     <p>All three groups showed a nearly identical reduction in migraine frequency: 0.93 fewer attacks per month with exercise, 0.83 with relaxation, 0.97 with topiramate. No statistically significant difference between them (p = 0.95).<sup>[11]</sup></p>
                     <p>Exercise matched the drug.</p>
@@ -737,12 +771,11 @@ justify-content: center;
                     <p>Separately, Wang et al. analysed data from the U.S. National Health and Nutrition Examination Survey (NHANES, 1999–2004) — a nationally representative dataset of 2,011 adults reflecting approximately 32 million Americans. Adults who combined vigorous aerobic exercise with muscle-strengthening activities showed a <strong>52% reduction</strong> in the odds of severe headache or migraine (OR: 0.48, 95% CI: 0.26–0.90).<sup>[16]</sup></p>
                     <p>Fifty-two percent. No prescription required.</p>
                     <p>A dose-response meta-analysis from October 2025 added a further dimension: across 15 studies and 253 participants, aerobic exercise produced a statistically significant reduction in pain intensity (SMD: −1.1, 95% CI: −1.72 to −0.47).<sup>[17]</sup></p>
-                    <p>And a Stanford researcher, Yohannes Woldeamanuel, offered a detail that most exercise-migraine studies had overlooked: timing matters. In a 2025 commentary in <em>American Journal of Lifestyle Medicine</em>, he called morning exercise "a powerful zeitgeber" — a cue that aligns circadian rhythms, improves sleep quality, and reduces migraine burden.<sup>[18]</sup> Migraine, he noted, is deeply linked to circadian disruption. Irregular exercise, sleep, and meal schedules worsen attack frequency. A regular morning routine counteracts all three.</p>
+                    <p>And a Stanford researcher, Yohannes Woldeamanuel, offered a detail that most exercise-migraine studies had overlooked: timing matters. In a 2025 commentary in <em>American Journal of Lifestyle Medicine</em>, he called morning exercise "a powerful zeitgeber" — a cue that aligns circadian rhythms, improves <a href="the-goldilocks-problem-sleep-migraine.html">sleep quality</a>, and reduces migraine burden.<sup>[18]</sup> Migraine, he noted, is deeply linked to circadian disruption. Irregular exercise, sleep, and meal schedules worsen attack frequency. A regular morning routine counteracts all three.</p>
                 </section>
 
                 <div class="separator">* * *</div>
 
-                <!-- THREE SYSTEMS -->
                 <section class="article-section">
                     <h2>Three systems that shift in your favour</h2>
                     <p>The question is not whether exercise works. The question is why — and the answer involves three biological systems that, together, raise the brain's resistance to migraine.</p>
@@ -752,7 +785,6 @@ justify-content: center;
                     <p>Together, they raise the threshold — the invisible line that separates a day with migraine from a day without. A brain that has been trained by regular, moderate exercise does not become immune to migraine. It becomes harder to push over the edge.</p>
                 </section>
 
-                <!-- IMAGE 3: THREE SHIELDS -->
                 <figure class="article-image">
                     <img src="images/three_shields_endorphin_anandamide_bdnf.png" alt="Luminous brain floating in space surrounded by three protective force-field layers — golden beta-endorphins, green anandamide passing the blood-brain barrier, and blue-purple BDNF neural growth patterns">
                     <figcaption>Three shields — beta-endorphins, anandamide, and BDNF form layered defences that raise the brain's migraine threshold with every workout</figcaption>
@@ -760,7 +792,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE PROTOCOL -->
                 <section class="article-section">
                     <h2>The protocol: how to start without getting burned</h2>
                     <p>Here is where science meets Monday morning. Knowing that exercise helps is one thing. Doing it without triggering an attack requires strategy — and the data now provides one.</p>
@@ -773,12 +804,11 @@ justify-content: center;
                         <p>"Exercise really attacks migraines from all fronts."<br><span style="font-size:0.9rem;font-style:normal;color:var(--text-light);">— Caroline Alvo, certified health coach, American Migraine Foundation</span></p>
                     </div>
 
-                    <p><strong>Hydrate and fuel.</strong> Migraine triggers are cumulative. Dehydration alone may not tip you over. Dehydration combined with exercise, heat, and an empty stomach can. Aim for at least 2 litres of water daily, plus 350 ml per 30 minutes of exercise.<sup>[26]</sup> Never train fasted.</p>
+                    <p><strong>Hydrate and fuel.</strong> <a href="article-understanding-triggers.html">Migraine triggers</a> are cumulative. Dehydration alone may not tip you over. Dehydration combined with exercise, heat, and an empty stomach can. Aim for at least 2 litres of water daily, plus 350 ml per 30 minutes of exercise.<sup>[26]</sup> Never train fasted.</p>
                     <p><strong>Cool down with purpose.</strong> Static stretching after a session — child's pose, neck stretches, upper back release — transitions the nervous system from sympathetic activation to recovery. This is when the body converts beneficial stress into lasting adaptation.<sup>[18]</sup></p>
-                    <p><strong>Track everything.</strong> Record what you did, the intensity, duration, pre-exercise food and water intake, sleep quality, weather, and whether an attack followed. In Migraine Companion, you can log exercise alongside your triggers, symptoms, and patterns. Over time, the data reveals your personal rules — the ones no generic guideline can predict.</p>
+                    <p><strong>Track everything.</strong> Record what you did, the intensity, duration, pre-exercise food and water intake, sleep quality, <a href="weather-migraine-myth.html">weather</a>, and whether an attack followed. In <a href="meet-mi.html">Migraine Companion</a>, you can log exercise alongside your triggers, symptoms, and patterns. Over time, the data reveals your personal rules — the ones no generic guideline can predict.</p>
                 </section>
 
-                <!-- IMAGE 4: PROTOCOL TRAIL -->
                 <figure class="article-image">
                     <img src="images/protocol_trail_milestones.png" alt="A winding mountain trail from stormy base to golden summit with five glowing milestone markers — heart rate, water, dumbbell, timer, and journal — and a figure walking at the second marker surrounded by protective glow">
                     <figcaption>The protocol trail — five milestones from first warm-up to full protection, with gradual progression as the key to success</figcaption>
@@ -786,7 +816,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- WHAT THIS MEANS FOR YOU -->
                 <section class="article-section">
                     <h2>What this means for you</h2>
                     <p>Here is what thirty years of living with migraine, and now an expanding body of peer-reviewed evidence, confirms: exercise is not the enemy.</p>
@@ -801,7 +830,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>Key Takeaways</h3>
                     <ul>
@@ -814,7 +842,20 @@ justify-content: center;
                     </ul>
                 </div>
 
-                <!-- WHEN TO SEE A DOCTOR -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-understanding-triggers.html" class="related-card">
+                            <h4>Understanding Your Triggers</h4>
+                            <p>Learn how factors like exercise, sleep, and weather combine to fill your migraine "bucket".</p>
+                        </a>
+                        <a href="the-goldilocks-problem-sleep-migraine.html" class="related-card">
+                            <h4>The Goldilocks Problem</h4>
+                            <p>Just like exercise, too much or too little sleep can trigger attacks. Find your perfect balance.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="when-to-see-doctor">
                     <h3>When to See a Doctor</h3>
                     <ul>
@@ -827,7 +868,6 @@ justify-content: center;
                     <p>This article is a starting point for conversation with your doctor, not a replacement for medical care.</p>
                 </div>
 
-                <!-- REFERENCES -->
                 <div class="references">
                     <h3>References</h3>
                     <ol>
@@ -863,7 +903,6 @@ justify-content: center;
 
                 <div class="article-footer">
 
-                    <!-- AUTHOR CARD -->
                     <div class="author-card">
                         <div class="author-avatar">
                             <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
@@ -875,7 +914,6 @@ justify-content: center;
                         </div>
                     </div>
 
-                    <!-- EDITORIAL STANDARDS -->
                     <div class="editorial-standards">
                         <h3>How We Create Content</h3>
                         <ul>
@@ -887,7 +925,6 @@ justify-content: center;
                         </ul>
                     </div>
 
-                    <!-- CTA BOX -->
                     <div class="cta-box">
                         <h3>Track Your Exercise Patterns with Mi</h3>
                         <p>Log your workouts alongside triggers, symptoms, and patterns — because your personal exercise rules emerge faster than any generic guideline can predict.</p>
@@ -903,7 +940,6 @@ justify-content: center;
 </div>
                     </div>
 
-                    <!-- REVIEW DATES -->
                     <div class="review-dates">
                         <p><em>Last reviewed: February 2026</em></p>
                         <p><em>Next scheduled review: August 2026</em></p>
