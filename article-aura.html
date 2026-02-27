@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     
-    <!-- Schema.org structured data for YMYL health content -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -62,6 +61,69 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        /* Contextual inline links - exclude references and buttons */
+        .article-content a:not(.references a):not(.download-btn) {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-content a:not(.references a):not(.download-btn):hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        /* Related Articles Box */
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s ease;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 {
+            color: var(--lavender);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        .related-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -450,15 +512,6 @@ justify-content: center;
             line-height: 1.5;
         }
         
-        .references a {
-            color: var(--lavender);
-            text-decoration: none;
-        }
-        
-        .references a:hover {
-            text-decoration: underline;
-        }
-        
         sup {
             color: var(--lavender);
             font-weight: 600;
@@ -658,7 +711,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -668,13 +720,11 @@ justify-content: center;
                     </p>
                 </div>
                 
-                <!-- MEDICAL DISCLAIMER -->
                 <p class="medical-disclaimer">
-                    This article is for educational purposes only and does not constitute medical advice. 
+                    This article is for educational purposes only and does not constitute medical advice. <br>
                     Content aligned with ICHD-3 diagnostic criteria and peer-reviewed research. If you experience new, sudden, or severe neurological symptoms, seek emergency care immediately.
                 </p>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>📋 Key Takeaways</h3>
                     <ul>
@@ -757,7 +807,6 @@ justify-content: center;
                     <p>That path is your diagnostic clue.</p>
                 </section>
 
-                <!-- VISUAL TYPES IMAGE -->
                 <figure class="article-image">
                     <img src="images/aura-visual-types.png" alt="Three types of migraine aura visual disturbances: Fortification Spectra (jagged zigzag lines), Scintillating Scotoma (shimmering C-shaped blind spot), and Expanding Arc (kaleidoscopic pattern)">
                     <figcaption>The three most common types of visual aura. Each follows the same underlying mechanism: cortical spreading depression moving across the visual cortex.</figcaption>
@@ -780,7 +829,7 @@ justify-content: center;
                     
                     <p>Stroke symptoms persist. They don't resolve.</p>
                     
-                    <p>Aura symptoms march and retreat. They peak. They fade. Almost always within an hour.</p>
+                    <p>Aura symptoms march and retreat. They peak. They fade. Almost always within an hour.</    >
                     
                     <p>Stroke often steals strength—facial drooping, arm weakness, stumbling.</p>
                     
@@ -793,7 +842,6 @@ justify-content: center;
                     <p>But if you've felt this before? If you recognize the pattern? That recognition is data.</p>
                 </section>
 
-                <!-- STROKE VS AURA IMAGE -->
                 <figure class="article-image">
                     <img src="images/aura-vs-stroke.png" alt="Comparison infographic: Stroke symptoms appear suddenly like a lightning strike, while Aura symptoms build gradually like a sunrise">
                     <figcaption>The critical difference: stroke is sudden and persistent; aura is gradual and resolving. When in doubt, always seek emergency care.</figcaption>
@@ -810,7 +858,7 @@ justify-content: center;
                     
                     <p>What will you do with that time?</p>
                     
-                    <p><strong>Act fast.</strong> Triptans, gepants, and even simple painkillers work dramatically better when taken early.<sup>[4]</sup> Studies show early intervention can cut headache severity in half. The shimmer is your signal: take the pill now.</p>
+                    <p><strong>Act fast.</strong> Triptans, gepants, and even simple painkillers work dramatically better when taken early.<sup>[4]</sup> Studies show early intervention can <a href="article-medication.html">take the pill now</a> severity in half. The shimmer is your signal: take the pill now.</p>
                     
                     <p><strong>Get safe.</strong> If you're driving, pull over. If you're in a meeting, excuse yourself. Aura can temporarily blind you. Don't operate machinery with half a visual field.</p>
                     
@@ -825,7 +873,7 @@ justify-content: center;
                         <p class="video-caption">Here is how to calm your nervous system when the shimmer starts. <br><a href="https://www.youtube.com/@MICompanion" target="_blank">Subscribe to our YouTube</a> 💜</p>
                     </div>
                     
-                    <p><strong>Document everything.</strong> What were you doing before the shimmer started? What did you eat? How did you sleep last night? The minutes before aura often hide your triggers. Write them down. Over time, patterns emerge.</p>
+                    <p><strong><a href="meet-mi.html">Document everything</a>.</strong> What were you doing before the shimmer started? What did you eat? How did you sleep last night? The minutes before aura often hide your triggers. Write them down. Over time, patterns emerge.</p>
                     
                     <div class="highlight-box">
                         <p>That's not surrender. That's strategy.</p>
@@ -839,7 +887,7 @@ justify-content: center;
                     
                     <p>Eighty years after Leão's rabbits and Lashley's stopwatch, mysteries remain.</p>
                     
-                    <p>We don't know what triggers the wave. Stress, sleep disruption, hormonal shifts, and certain foods lower the threshold—but the exact mechanism that tips a stable brain into tsunami mode? Unknown.</p>
+                    <p>We don't know what triggers the wave. Stress, sleep disruption, hormonal shifts, and certain foods lower the <a href="article-triggers.html">triggers</a>—but the exact mechanism that tips a stable brain into tsunami mode? Unknown.</p>
                     
                     <p>We don't know why some people get aura and others don't. About seventy percent of migraineurs never see the shimmer.<sup>[5]</sup> Genetics play a role. Which genes, and why? Incomplete picture.</p>
                     
@@ -893,10 +941,23 @@ justify-content: center;
                 <div class="separator">* * *</div>
 
                 <section class="article-section">
-                    <p><em>The most powerful tool in migraine management is pattern recognition. Track your auras. Document what you see. Note how long they last. Record what comes next. Over time, those patterns become your early warning system—and your path toward control.</em></p>
+                    <p><em>The most powerful tool in migraine management is pattern recognition. <a href="article-moh.html">track your auras</a>. Document what you see. Note how long they last. Record what comes next. Over time, those patterns become your early warning system—and your path toward control.</em></p>
                 </section>
 
-                <!-- FAQ SECTION -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="weather-migraine-myth.html" class="related-card">
+                            <h4>The Trigger Myth</h4>
+                            <p>We say weather triggers migraine. Science says it's more complicated. Understanding the "bucket" theory of migraine triggers.</p>
+                        </a>
+                        <a href="invisible-pain.html" class="related-card">
+                            <h4>You Don't Look Sick</h4>
+                            <p>The aura is invisible to others. This personal reflection explores the stigma of invisible illness and finding validation.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="faq-section">
                     <h2>❓ Frequently Asked Questions</h2>
                     
@@ -931,7 +992,6 @@ justify-content: center;
                     </div>
                 </div>
 
-                <!-- TRUST SIGNALS -->
                 <div class="trust-signals">
                     <span class="trust-signal">Evidence-based content</span>
                     <span class="trust-signal">ICHD-3 aligned</span>
@@ -940,7 +1000,6 @@ justify-content: center;
                     <span class="trust-signal">No pharma sponsorship</span>
                 </div>
 
-                <!-- REFERENCES -->
                 <div class="references">
                     <h3>📚 References</h3>
                     <ol>
