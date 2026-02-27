@@ -298,6 +298,75 @@
             color: var(--text-light);
         }
         
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-content a:not(.references a):not(.download-btn) {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .article-content a:not(.references a):not(.download-btn):hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        
+        .related-card h4 {
+            color: var(--lavender);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin-top: 0;
+        }
+        
+        .related-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+        /* --------------------------------------------- */
+        
         .article-image {
             margin: 48px 0;
             border-radius: 16px;
@@ -450,13 +519,6 @@
             margin-bottom: 24px;
         }
         
-        .download-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
         .download-btn {
             display: inline-flex;
             align-items: center;
@@ -470,8 +532,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
@@ -503,15 +565,6 @@ justify-content: center;
             color: var(--text-dark);
             margin-bottom: 8px;
             line-height: 1.5;
-        }
-        
-        .references a {
-            color: var(--lavender);
-            text-decoration: none;
-        }
-        
-        .references a:hover {
-            text-decoration: underline;
         }
         
         sup {
@@ -604,7 +657,7 @@ justify-content: center;
         .faq-item h4 {
             font-size: 1rem;
             font-weight: 600;
-            color: #ffffff;
+            color: var(--antique-gold);
             margin-bottom: 8px;
         }
         
@@ -612,6 +665,7 @@ justify-content: center;
             font-size: 0.95rem;
             margin: 0;
             color: var(--text-light);
+            line-height: 1.7;
         }
         
         .trust-signals {
@@ -638,7 +692,44 @@ justify-content: center;
             color: var(--lavender);
             font-weight: bold;
         }
+
+        .video-embed-container {
+            margin: 2.5em auto;
+            text-align: center;
+            background: rgba(139, 122, 168, 0.05);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.15);
+            max-width: 360px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
         
+        .video-embed-container iframe {
+            border-radius: 12px;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border: none;
+        }
+        
+        .video-caption {
+            margin-top: 16px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        
+        .video-caption a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.3);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .video-caption a:hover {
+            color: #ffffff;
+            border-bottom-color: var(--lavender);
+        }
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
@@ -647,7 +738,6 @@ justify-content: center;
             .article-content { padding: 40px 0 60px; }
             .author-card { flex-direction: column; text-align: center; }
             .article-meta { flex-direction: column; gap: 8px; }
-            .download-buttons { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -677,7 +767,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -687,13 +776,11 @@ justify-content: center;
                     </p>
                 </div>
                 
-                <!-- MEDICAL DISCLAIMER -->
                 <p class="medical-disclaimer">
                     This article is for educational purposes only and does not constitute medical advice. 
                     Content aligned with ICHD-3 diagnostic criteria and peer-reviewed research. If you experience new, sudden, or severe headache symptoms, seek emergency care immediately.
                 </p>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>📋 Key Takeaways</h3>
                     <ul>
@@ -748,7 +835,6 @@ justify-content: center;
                     <p>One question — <em>does movement make it worse?</em> — separates these two conditions more reliably than most people realize.</p>
                 </section>
 
-                <!-- STAIRCASE TEST IMAGE -->
                 <figure class="article-image">
                     <img src="images/staircase_test.png" alt="Person climbing stairs during migraine attack with visible pain pulsation — the staircase test for headache diagnosis, digital art">
                     <figcaption>The staircase test: migraine pain surges with each step. Tension headache remains unmoved. One question that separates two conditions.</figcaption>
@@ -761,7 +847,7 @@ justify-content: center;
                     
                     <p>The differences extend well beyond the staircase.</p>
                     
-                    <p>Migraine pain pulses. It throbs in rhythm with the heartbeat, usually favoring one side of the head. And it rarely arrives alone. Nausea rolls in — sometimes tipping into vomiting. Light becomes so painful that an ordinary room feels like an interrogation. Sound amplifies until a normal conversation lands like a slap. About one in five patients experience aura beforehand: visual distortions, tingling, blind spots that crawl across the field of vision.<sup>[5]</sup></p>
+                    <p>Migraine pain pulses. It throbs in rhythm with the heartbeat, usually favoring one side of the head. And it rarely arrives alone. Nausea rolls in — sometimes tipping into vomiting. Light becomes so painful that an ordinary room feels like an interrogation. Sound amplifies until a normal conversation lands like a slap. About one in five patients experience <a href="article-aura.html">aura beforehand</a>: visual distortions, tingling, blind spots that crawl across the field of vision.<sup>[5]</sup></p>
                     
                     <div class="quote-box">
                         <p>Neurologist Nancy Mueller of NYU Langone described the experience to the American Medical Association: a throbbing in a single location, a sick feeling in the stomach, an overwhelming fatigue — and then the sensation of wanting to take your head and put it somewhere else.<sup>[10]</sup></p>
@@ -776,7 +862,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- COMPARISON IMAGE -->
                 <figure class="article-image">
                     <img src="images/migraine_tension_comparison.png" alt="Artistic medical comparison of migraine and tension headache — pulsating one-sided pain versus bilateral pressure band, digital art">
                     <figcaption>Two headaches, two realities. Migraine: pulsating, one-sided, with sensory overload. Tension: pressing, bilateral, dull but manageable.</figcaption>
@@ -800,7 +885,6 @@ justify-content: center;
                     <p>No single answer proves a diagnosis. But five or six answers, repeated across several episodes, reveal the real story. This is precisely why headache diaries exist — and why neurologists say a diary is one of the most powerful diagnostic tools a patient can bring to their first appointment.<sup>[11]</sup> Memory fails. Patterns on paper do not.</p>
                 </section>
 
-                <!-- HEADACHE DIARY IMAGE -->
                 <figure class="article-image">
                     <img src="images/headache_diary_pattern.png" alt="Headache diary showing migraine and tension headache pattern emerging over four weeks — intimate desk scene, digital art">
                     <figcaption>A headache diary over four weeks reveals what a single episode hides. Migraine clusters emerge. Tension dots scatter. The pattern becomes undeniable.</figcaption>
@@ -813,9 +897,9 @@ justify-content: center;
                     
                     <p>Migraine and tension headache do not just feel different. They respond to fundamentally different treatments.</p>
                     
-                    <p>Triptans target the specific neurological pathways that drive a migraine attack. Taken early, they work remarkably well — and they do nothing whatsoever for tension headache.<sup>[8]</sup> Meanwhile, the strategies that tension headache responds to — stress management, posture correction, muscular relaxation — rarely touch a migraine in full force.</p>
+                    <p>Triptans target the specific neurological pathways that drive a migraine attack. Taken early, they work remarkably well — and they do nothing whatsoever for tension headache.<sup>[8]</sup> Meanwhile, the strategies that tension headache responds to — stress management, posture correction, <a href="article-478-breathing.html">muscular relaxation</a> — rarely touch a migraine in full force.</p>
                     
-                    <p>The wrong treatment carries its own danger. Frequent use of painkillers for headaches that keep returning can trigger medication-overuse headache — a new pattern of daily pain layered on top of the original condition.<sup>[5]</sup> A cycle harder to break than the problem that started it.</p>
+                    <p>The wrong treatment carries its own danger. Frequent use of painkillers for headaches that keep returning can trigger <a href="article-moh.html">medication-overuse headache</a> — a new pattern of daily pain layered on top of the original condition.<sup>[5]</sup> A cycle harder to break than the problem that started it.</p>
                     
                     <p>And this is not an edge case. Population-based data from Europe indicate that only 2 to 14 percent of people eligible for migraine prevention actually receive it.<sup>[12]</sup> The gap between what medicine knows and what patients get remains, in the words of a European Headache Federation consensus statement, a substantial public health challenge.<sup>[12]</sup></p>
                 </section>
@@ -831,7 +915,7 @@ justify-content: center;
                     
                     <p>Write them down. Every time.</p>
                     
-                    <p>In Migraine Companion, Mi helps you track exactly these details — building the kind of diary that transforms invisible patterns into a clear, shareable picture. Over weeks, the guessing fades. The pattern sharpens. And when the pattern is clear, the right treatment follows.</p>
+                    <p>In Migraine Companion, <a href="meet-mi.html">Mi helps you track</a> exactly these details — building the kind of diary that transforms invisible patterns into a clear, shareable picture. Over weeks, the guessing fades. The pattern sharpens. And when the pattern is clear, the right treatment follows.</p>
                     
                     <p>Because the question was never "do I have a headache?"</p>
                     
@@ -840,7 +924,20 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- FAQ SECTION -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-aura.html" class="related-card">
+                            <h4>When the World Glitches</h4>
+                            <p>One in five migraine patients experiences aura. Learn how to recognize these visual warnings.</p>
+                        </a>
+                        <a href="article-moh.html" class="related-card">
+                            <h4>The Trap of Relief</h4>
+                            <p>Taking the wrong medication for misdiagnosed headaches can trigger a new cycle of daily pain.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="faq-section">
                     <h2>❓ Frequently Asked Questions</h2>
                     
@@ -875,7 +972,6 @@ justify-content: center;
                     </div>
                 </div>
 
-                <!-- TRUST SIGNALS -->
                 <div class="trust-signals">
                     <span class="trust-signal">Evidence-based content</span>
                     <span class="trust-signal">ICHD-3 aligned</span>
@@ -884,7 +980,6 @@ justify-content: center;
                     <span class="trust-signal">No pharma sponsorship</span>
                 </div>
 
-                <!-- REFERENCES -->
                 <div class="references">
                     <h3>📚 References</h3>
                     <ol>
