@@ -25,6 +25,55 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-section a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-section a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600;}
+        .related-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; font-family: 'Inter', sans-serif;}
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -258,32 +307,6 @@
             opacity: 0.5;
         }
         
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0;
-            font-size: 0.95rem;
-        }
-        
-        .data-table th {
-            background: rgba(139, 122, 168, 0.15);
-            color: #ffffff;
-            font-weight: 600;
-            padding: 12px 16px;
-            text-align: left;
-            border-bottom: 2px solid var(--lavender);
-        }
-        
-        .data-table td {
-            padding: 12px 16px;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
-            color: var(--text);
-        }
-        
-        .data-table tr:hover {
-            background: rgba(139, 122, 168, 0.05);
-        }
-        
         .article-footer {
             margin-top: 60px;
             padding-top: 40px;
@@ -365,8 +388,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
@@ -397,15 +420,6 @@ justify-content: center;
             color: var(--text-dark);
             margin-bottom: 8px;
             line-height: 1.5;
-        }
-        
-        .references a {
-            color: var(--lavender);
-            text-decoration: none;
-        }
-        
-        .references a:hover {
-            text-decoration: underline;
         }
         
         sup {
@@ -477,8 +491,6 @@ justify-content: center;
             p { font-size: 1rem; }
             .article-content { padding: 40px 0 60px; }
             .author-card { flex-direction: column; text-align: center; }
-            .data-table { font-size: 0.85rem; }
-            .data-table th, .data-table td { padding: 8px 12px; }
         }
     </style>
 </head>
@@ -508,7 +520,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -518,7 +529,6 @@ justify-content: center;
                     </p>
                 </div>
                 
-                <!-- MEDICAL DISCLAIMER -->
                 <p class="medical-disclaimer">
                     This article is for educational purposes only and does not constitute medical advice. 
                     Content based on peer-reviewed research from Neurology, Brain, and Cephalalgia journals. For personalized recommendations, consult your healthcare provider.
@@ -535,7 +545,7 @@ justify-content: center;
 
                 <section class="article-section">
                     <h2>The Phase Without a Name</h2>
-                    <p>For most of medical history, this experience had no name. Doctors studied the headache. They studied the aura. They ignored what came after.</p>
+                    <p>For most of medical history, this experience had no name. Doctors studied the headache. They studied the <a href="article-aura.html">aura</a>. They ignored what came after.</p>
                     <p>Patients noticed. They always notice.</p>
                     <p>In 1982, a British neurologist named J.N. Blau asked a simple question: what happens when migraine patients use sleep to end their attacks? He found that 47 out of 50 still felt unwell upon waking.<sup>[1]</sup> The pain was gone. Something else remained.</p>
                     <p>He called it "the recovery phase." The name didn't stick. For decades, nothing stuck. Patients described feeling "hungover," "wiped out," "not myself." Doctors nodded and moved on.</p>
@@ -577,7 +587,7 @@ justify-content: center;
                     <p><strong>Neck stiffness.</strong> As if you spent the night clenching every muscle between your shoulders and skull. You probably did.</p>
                     <p><strong>Mood swings.</strong> Depression hits some people. Others feel strangely euphoric, almost giddy. Both are real. Both are neurological. Neither says anything about your character.</p>
                     <p><strong>A bruised brain.</strong> The pain is gone, but touch the spot where it lived, and something winces. The area remembers.</p>
-                    <p>Here's the twist researchers didn't expect: these symptoms mirror the warning signs that appear <em>before</em> a migraine.<sup>[4]</sup> The fatigue, the food cravings, the concentration problems — they show up in prodrome, disappear behind the headache, then resurface in postdrome.</p>
+                    <p>Here's the twist researchers didn't expect: these symptoms mirror the <a href="article-prediction.html">warning signs that appear before a migraine</a>.<sup>[4]</sup> The fatigue, the food cravings, the concentration problems — they show up in prodrome, disappear behind the headache, then resurface in postdrome.</p>
                     <p>Scientists now suspect the non-headache symptoms form a continuous thread running through the entire attack. We just can't see them during the pain phase. The agony demands all our attention.</p>
                 </section>
 
@@ -610,7 +620,7 @@ justify-content: center;
                     
                     <p><strong>Address the neck.</strong> That concrete feeling between your shoulders responds to intervention. Some people find relief with heat. Others prefer cold. Gentle stretching helps, but don't push into pain.</p>
                     
-                    <p><strong>Be suspicious of caffeine.</strong> Caffeine helps some people feel better during postdrome. For others, it extends the misery or triggers rebound. If you don't know which camp you belong to, start small. Document what happens.</p>
+                    <p><a href="article-caffeine.html"><strong>Be suspicious of caffeine.</strong></a> Caffeine helps some people feel better during postdrome. For others, it extends the misery or triggers rebound. If you don't know which camp you belong to, start small. Document what happens.</p>
                     
                     <p><strong>Dim the screens.</strong> Your visual system is still recovering. Blue light and constant stimulation from devices can prolong symptoms. If you must use technology, reduce brightness. Take breaks.</p>
                     
@@ -622,7 +632,7 @@ justify-content: center;
                 <section class="article-section">
                     <h2>The Invisible Wound</h2>
                     <p>Postdrome carries a particular cruelty: it cannot be seen.</p>
-                    <p>The headache is gone. You look normal. You might say "I'm better" because the pain has stopped. But you're not better. You're recovering.</p>
+                    <p>The headache is gone. <a href="article-invisible-pain.html">You look normal</a>. You might say "I'm better" because the pain has stopped. But you're not better. You're recovering.</p>
                     <p>This gap between appearance and reality creates suffering beyond the symptoms. Guilt arrives: <em>why can't I function?</em> Frustration follows: <em>everyone expects me to be fine.</em> Self-criticism whispers: <em>maybe I'm just weak.</em></p>
                     <p>You're not weak. You're healing from a neurological event.</p>
                     <p>Research shows strong connections between migraine and mental health.<sup>[6]</sup> In one survey, nearly 60% of people with migraine reported being diagnosed with an anxiety disorder. Half reported depression.</p>
@@ -670,7 +680,6 @@ justify-content: center;
                     <p>But only if you give it time.</p>
                 </section>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>Key Takeaways</h3>
                     <ul>
@@ -678,11 +687,24 @@ justify-content: center;
                         <li>Symptoms include fatigue, brain fog, mood changes, neck stiffness, and lingering sensitivity</li>
                         <li>Duration is typically under 24 hours, though it can last up to 2 days</li>
                         <li>Pushing through prolongs recovery and may trigger another attack</li>
-                        <li>Best strategies: rest, hydration, gentle movement, avoiding screens, and self-compassion</li>
+                        <li>Best strategies: rest, hydration, gentle movement, avoiding screens, and <a href="article-narrative-therapy.html">self-compassion</a></li>
                     </ul>
                 </div>
 
-                <!-- REFERENCES -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-invisible-pain.html" class="related-card">
+                            <h4>The Loneliness of Invisible Pain</h4>
+                            <p>"But you seem fine." Learn how to explain the unexplainable when your pain doesn't show.</p>
+                        </a>
+                        <a href="article-prediction.html" class="related-card">
+                            <h4>The Storm Before the Storm</h4>
+                            <p>Postdrome mirrors prodrome. Discover how your brain signals an attack up to 48 hours in advance.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="references">
                     <h3>References</h3>
                     <ol>
