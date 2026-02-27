@@ -25,6 +25,54 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-section a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-section a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; }
+        .related-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -395,8 +443,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
@@ -490,7 +538,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE FOR GOOGLE E-E-A-T -->
                 <div style="text-align:center;padding:32px 0 48px;border-bottom:1px solid rgba(139,122,168,0.15);margin-bottom:48px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -504,7 +551,7 @@ justify-content: center;
                     <h2>The Moment Everything Shifts</h2>
                     <p>You know the feeling.</p>
                     <p>Maybe it starts as a flicker at the edge of your vision. Or a tightness behind your right eye that wasn't there five minutes ago. Or that strange, electric sensation crawling up the back of your neck.</p>
-                    <p>Your body knows before your mind catches up: <em>a migraine is coming</em>.</p>
+                    <p>Your body knows before your mind catches up: <em><a href="article-prediction.html">a migraine is coming</a></em>.</p>
                     <p>In that moment, most of us feel helpless. We reach for medications, close the blinds, cancel plans. We brace for impact.</p>
                     <p>But what if there's something you can do <em>right now</em> — something that takes sixty seconds, costs nothing, and might just change how your body responds to what's coming?</p>
                     <p>It's not a cure. Let's be honest about that from the start. But it's a tool. A surprisingly powerful one. And it's been hiding in plain sight for thousands of years.</p>
@@ -555,7 +602,7 @@ justify-content: center;
                     <h2>Why This Matters for Migraines Specifically</h2>
                     <p>"But does it actually help with migraines?" you might ask. "Or is this just general relaxation stuff?"</p>
                     <p>Fair question. Here's what we know.</p>
-                    <p>The American Migraine Foundation identifies stress as one of the most common migraine triggers. Not just high stress — but the <em>fluctuations</em> in stress levels. The spike before a deadline. The crash after it's over.<sup>[5]</sup></p>
+                    <p>The American Migraine Foundation identifies stress as one of the most common <a href="article-understanding-triggers.html">migraine triggers</a>. Not just high stress — but the <em>fluctuations</em> in stress levels. The spike before a deadline. The crash after it's over.<sup>[5]</sup></p>
                     <p>Dr. Dawn C. Buse, a psychologist who specializes in migraine, has spent years studying behavioral interventions. Her research shows that relaxation techniques and breathing exercises can reduce both the frequency and intensity of migraine attacks.<sup>[5]</sup></p>
                     <p>What's remarkable is how fast the effects begin:</p>
                     
@@ -651,7 +698,7 @@ justify-content: center;
                 <section class="article-section">
                     <h2>Mi's Breathing Garden</h2>
                     <p>In Migraine Companion, we built something special: a place called the Breathing Garden.</p>
-                    <p>It's where Mi sits with you when things get hard. Not to fix you — because you're not broken. Not to fight the pain — because sometimes pain doesn't want to be fought.</p>
+                    <p>It's where <a href="meet-mi.html">Mi sits with you</a> when things get hard. Not to fix you — because you're not broken. Not to <a href="article-narrative-therapy.html">fight the pain</a> — because sometimes pain doesn't want to be fought.</p>
                     <p>Just to breathe with you.</p>
                     <p>There's something powerful about not being alone in that moment. About having a companion who doesn't judge, doesn't rush you, doesn't tell you to "just push through."</p>
                     <p>Mi knows what it's like. And Mi knows that sometimes, the bravest thing you can do is simply breathe.</p>
@@ -672,7 +719,20 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- REFERENCES -->
+                <div class="related-box">
+                    <h3>Deepen Your Practice</h3>
+                    <div class="related-grid">
+                        <a href="article-prediction.html" class="related-card">
+                            <h4>The Storm Before the Storm</h4>
+                            <p>Learn how to use breathing techniques during the 48-hour window before pain starts.</p>
+                        </a>
+                        <a href="the-goldilocks-problem-sleep-migraine.html" class="related-card">
+                            <h4>The Goldilocks Problem</h4>
+                            <p>How relaxing your nervous system can help you find the perfect sleep balance.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="references">
                     <h3>References</h3>
                     <ol>
