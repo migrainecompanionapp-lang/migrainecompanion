@@ -9,7 +9,6 @@
     <link rel="icon" type="image/png" href="images/mi-icon.png">
     <link rel="canonical" href="https://mi-companion.com/article-understanding-triggers.html">
     
-    <!-- Open Graph -->
     <meta property="og:title" content="Understanding Your Triggers: What Your Patterns Are Really Telling You">
     <meta property="og:description" content="Most of what we call 'triggers' aren't quite what we think they are. Discover the surprising science behind migraine patterns.">
     <meta property="og:image" content="https://mi-companion.com/images/article-triggers.png">
@@ -37,6 +36,56 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-content a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-content a:hover {
+            color: var(--lavender-light);
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 600;}
+        .related-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; font-family: 'Inter', sans-serif;}
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -216,18 +265,6 @@
         .article-content em {
             font-style: italic;
             color: var(--lavender-light);
-        }
-        
-        .article-content a {
-            color: var(--gold);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-            transition: all 0.3s;
-        }
-        
-        .article-content a:hover {
-            color: var(--gold-light);
-            border-bottom-color: var(--gold);
         }
         
         .highlight-box {
@@ -455,31 +492,31 @@
         }
         
         .cta-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    padding: 14px 28px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s;
-    flex: 1;
-    max-width: 260px;
-}
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            flex: 1;
+            max-width: 260px;
+        }
 
-.cta-button:hover {
-    background: var(--gold);
-    color: #0d0d0d;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255,255,255,0.15);
-}
+        .cta-button:hover {
+            background: var(--gold);
+            color: #0d0d0d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,255,255,0.15);
+        }
 
-.cta-button svg { width: 22px; height: 22px; fill: currentColor; }
+        .cta-button svg { width: 22px; height: 22px; fill: currentColor; }
         
         footer {
             padding: 40px 0;
@@ -574,7 +611,7 @@
                 <p>Because craving chocolate is actually a <strong>symptom</strong> of a migraine that has already started.</p>
                 
                 <div class="quote-box">
-                    <p>During the prodrome phase — the hours or even days before you feel head pain — your brain is already deep in a migraine attack. And one common prodrome symptom? Food cravings, especially for sweets.</p>
+                    <p>During the <a href="article-prediction.html">prodrome phase</a> — the hours or even days before you feel head pain — your brain is already deep in a migraine attack. And one common prodrome symptom? Food cravings, especially for sweets.</p>
                     <cite>— Dr. Rashmi Halker Singh, Mayo Clinic<sup><a href="#ref2">[2]</a></sup></cite>
                 </div>
                 
@@ -591,13 +628,14 @@
                 <p>The answer is what researchers call the <strong>Bucket Theory</strong>.<sup><a href="#ref3">[3]</a></sup></p>
                 
                 <div class="highlight-box">
-                    <p>Imagine you wake up each day with a bucket partially filled. This baseline level contains things you can't control — your hormones, the weather, how you slept, underlying stress. Some days the bucket is nearly empty. Some days it's already two-thirds full before you even get out of bed.</p>
-                    <p>Every potential trigger adds water to your bucket. A glass of wine adds some. A skipped meal adds more. A stressful email adds a bit more. <strong>The migraine happens not when you encounter any single trigger, but when your bucket finally overflows.</strong></p>
+                    <p>Imagine you wake up each day with a bucket partially filled. This baseline level contains things you can't control — <a href="article-body-calendar.html">your hormones</a>, <a href="weather-migraine-myth.html">the weather</a>, <a href="the-goldilocks-problem-sleep-migraine.html">how you slept</a>, underlying stress. Some days the bucket is nearly empty. Some days it's already two-thirds full before you even get out of bed.</p>
+                    <p>Every potential trigger adds water to your bucket. <a href="alcohol-migraine-24-hour-rule.html">A glass of wine</a> adds some. A skipped meal adds more. A stressful email adds a bit more. <strong>The migraine happens not when you encounter any single trigger, but when your bucket finally overflows.</strong></p>
                 </div>
                 
                 <p>This explains the maddening inconsistency of migraine triggers. It's never just one thing. It's the accumulation.</p>
                 
                 <p>And this is exactly what Mi's mood stones are designed to reveal — not single triggers, but the patterns of accumulation that your brain can't track on its own.</p>
+                
                 <h2>The Surprise Factor: A Harvard Discovery</h2>
                 
                 <p>In November 2025, researchers at Harvard and Massachusetts General Hospital published something remarkable. They discovered a new trigger category that no one was tracking: <strong>surprisal</strong>.<sup><a href="#ref4">[4]</a></sup></p>
@@ -623,7 +661,7 @@
                 
                 <p>Here's another pattern you might recognize: you power through a stressful week, perform brilliantly under pressure, finally reach the weekend... and immediately get a migraine.</p>
                 
-                <p>It's called the "let-down migraine" or "weekend headache," and researchers believe it happens because the transition from high stress to relaxation involves rapid changes in stress hormones.<sup><a href="#ref5">[5]</a></sup> Your body has been in fight-or-flight mode, flooding you with adrenaline and cortisol. When you finally relax, those levels drop quickly — and the change itself triggers an attack.</p>
+                <p>It's called the "let-down migraine" or "<a href="article-weekend-migraines.html">weekend headache</a>," and researchers believe it happens because the transition from high stress to relaxation involves rapid changes in stress hormones.<sup><a href="#ref5">[5]</a></sup> Your body has been in fight-or-flight mode, flooding you with adrenaline and cortisol. When you finally relax, those levels drop quickly — and the change itself triggers an attack.</p>
                 
                 <div class="insight-box">
                     <h4>✦ The Cruel Irony</h4>
@@ -638,7 +676,7 @@
                 
                 <p>Because tracking mood without understanding patterns is like collecting puzzle pieces without looking at the box. You need context. You need to see how your emotional state interacts with sleep, weather, hormones, stress levels, and all the other factors filling your bucket.</p>
                 
-                <p>This is why Mi's mood stones aren't just a simple diary. They're designed to reveal:</p>
+                <p>This is why <a href="meet-mi.html">Mi's mood stones</a> aren't just a simple diary. They're designed to reveal:</p>
                 
                 <ul class="pattern-list">
                     <li><strong>Accumulation patterns:</strong> Not just "I was stressed" but "I was stressed + underslept + it was stormy + I skipped lunch" — the bucket filling up</li>
@@ -716,8 +754,21 @@
                 <p>And most importantly, it reminds you that the migraine was never your fault.</p>
                 
                 <p>Your brain just works differently. Mi is here to help you understand how.</p>
+
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-prediction.html" class="related-card">
+                            <h4>The Storm Before the Storm</h4>
+                            <p>Learn how Mi watches 40+ factors to see the migraine approaching up to 48 hours earlier.</p>
+                        </a>
+                        <a href="weather-migraine-myth.html" class="related-card">
+                            <h4>Blaming the Barometer</h4>
+                            <p>Everyone says the pressure dropped. Here is what actually happens when the weather changes.</p>
+                        </a>
+                    </div>
+                </div>
                 
-                <!-- References -->
                 <div class="references">
                     <h3>References</h3>
                     <ol>
@@ -731,7 +782,6 @@
                     </ol>
                 </div>
                 
-                <!-- Author Card -->
                 <div class="author-card">
                     <img src="images/rustam.jpeg" alt="Rustam" class="author-avatar">
                     <div class="author-info">
@@ -740,7 +790,6 @@
                     </div>
                 </div>
                 
-                <!-- CTA -->
                 <div class="cta-section">
                     <h3>Start Understanding Your Patterns</h3>
                     <p>Mi's mood stones and prediction algorithm are designed to reveal the patterns your brain can't track alone. Download free and let Mi learn your unique migraine signature.</p>
