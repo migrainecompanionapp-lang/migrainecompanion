@@ -25,17 +25,54 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
-        /* Стиль для ссылок внутри текста */
-.article-section a {
-    color: var(--lavender);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(139, 122, 168, 0.4);
-    transition: all 0.3s ease;
-}
-.article-section a:hover {
-    border-bottom-color: var(--lavender);
-    background: rgba(139, 122, 168, 0.05);
-}
+
+        /* --- INTERNAL LINKING STYLES --- */
+        .article-section a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-section a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; }
+        .related-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+        /* ------------------------------ */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -344,7 +381,7 @@
             gap: 12px;
             padding: 14px 28px;
             flex: 1;
-max-width: 260px;
+            max-width: 260px;
             background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
             border: 1px solid var(--gold);
             border-radius: 12px;
@@ -407,7 +444,6 @@ max-width: 260px;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE FOR GOOGLE E-E-A-T -->
                 <div style="text-align:center;padding:32px 0 48px;border-bottom:1px solid rgba(139,122,168,0.15);margin-bottom:48px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -483,7 +519,7 @@ max-width: 260px;
                 <section class="article-section">
                     <h2>Building in the Dark</h2>
                     <p>Literally.</p>
-                    <p>Power outages: 10-16 hours a day. Sometimes more. I worked whenever electricity came back—7, 8, 9 hours straight while the grid was live. My wife Marina (who's brilliant with colors and themes) would guide the design direction. We'd debate character expressions, color palettes, therapeutic flows—all between blackouts.</p>
+                    <p>Power outages: 10-16 hours a day. Sometimes more. I worked whenever electricity came back—7, 8, 9 hours straight while the grid was live. My wife Marina (who's brilliant with colors and themes — <a href="article-relationships.html">read more about our partnership</a>) would guide the design direction. We'd debate character expressions, color palettes, therapeutic flows—all between blackouts.</p>
                     <p>Did I want to quit? Many times.</p>
                     <p>But I couldn't. I don't know how to quit. Never have. Even when nothing was working, when code wouldn't compile, when the whole thing felt impossible—I kept going.</p>
                     <p>Maybe it's the same stubbornness that got me through 30 years of migraine. You don't get a choice, so you learn not to stop.</p>
@@ -503,60 +539,22 @@ max-width: 260px;
                     <p><strong>We need to love ourselves, not hate our condition.</strong> This is the hardest part.</p>
                 </section>
 
-                <section class="article-section">
-                    <h2>A Message to 12-Year-Old Me</h2>
-                    <p>If I could go back to that scared kid lying in bed with his first migraine, I'd say this:</p>
-                    
-                    <div class="quote-box">
-                        <p>You're not defective. You're not broken. You're not less than other people. You're special. Different, yes—but special.</p>
-                    </div>
-                    
-                    <p><em>Learn about this condition. Study it. Respect it. Avoid what provokes it. Stop overthinking. Stop being so hard on yourself. Take care of your health. Not someday—now.</em></p>
-                    <p><em>You're going to build something that helps people. You're going to turn 30 years of pain into something meaningful.</em></p>
-                    <p><em>But first, you need to learn to love yourself.</em></p>
-                </section>
-
-                <div class="article-image">
-                    <img src="images/article-transformation.png" alt="Mi's journey from storm to healing garden">
-                </div>
-
-                <section class="article-section">
-                    <h2>What Success Looks Like</h2>
-                    <p>In one year? In five years?</p>
-                    <p>I want Migraine Companion to be the tool that teaches people with migraine how to care for themselves. How to love themselves.</p>
-                    <p>But personally? Success means I'm doing work I love. That I'm growing as a person despite chronic illness. That I'm living a full life—not a limited one—and helping others do the same.</p>
-                    
-                    <div class="highlight-box">
-                        <p>If my journey from 15-20 attacks per month to 3-4 can help even one person, it was worth it.</p>
-                    </div>
-                    
-                    <p>I don't want to just survive migraine. I want to build beautiful things while living with it. I want to prove that chronic pain doesn't mean chronic limitation.</p>
-                    <p>Migraine Companion launched last week on iOS. Android is coming this week. The website is live.</p>
-                    <p>It's free. Because I remember what it's like to search for help and find only expensive subscriptions.</p>
-                    <p>It's built on narrative therapy, evidence-based techniques, and 30 years of lived experience. It tracks 43 factors, predicts attacks 24 hours in advance, and monitors medication safety based on WHO guidelines.</p>
-                    <p>But more than anything, it's built to help you do what took me 30 years to learn:</p>
-                    <p><strong>Accept. Care. Love.</strong></p>
-                    <p>Not the migraine. Yourself.</p>
-                </section>
-
                 <div class="separator">* * *</div>
 
-                <div style="margin: 60px 0; padding: 40px; background: rgba(139, 122, 168, 0.05); border-radius: 24px; border: 1px solid rgba(139, 122, 168, 0.1);">
-    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #ffffff; margin-bottom: 24px; text-align: center;">Continue Your Journey with Mi</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
-        
-        <a href="article-narrative-therapy.html" style="text-decoration: none; background: rgba(255,255,255,0.03); padding: 20px; border-radius: 16px; border: 1px solid rgba(139, 122, 168, 0.1); transition: all 0.3s;">
-            <h4 style="color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem;">Why We Don't Fight</h4>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">Discover the science behind companionization and narrative therapy.</p>
-        </a>
+                <div class="related-box">
+                    <h3>Continue Your Journey with Mi</h3>
+                    <div class="related-grid">
+                        <a href="article-narrative-therapy.html" class="related-card">
+                            <h4>Why We Don't Fight</h4>
+                            <p>Discover the science behind companionization and why fighting pain often makes it worse.</p>
+                        </a>
+                        <a href="article-478-breathing.html" class="related-card">
+                            <h4>The 4-7-8 Technique</h4>
+                            <p>A practical guide to the breathing exercise Mi uses to calm the nervous system during attacks.</p>
+                        </a>
+                    </div>
+                </div>
 
-        <a href="article-relationships.html" style="text-decoration: none; background: rgba(255,255,255,0.03); padding: 20px; border-radius: 16px; border: 1px solid rgba(139, 122, 168, 0.1); transition: all 0.3s;">
-            <h4 style="color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem;">The Third Person</h4>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin: 0;">How chronic pain lives in our relationships and what we can do about it.</p>
-        </a>
-
-    </div>
-</div>
                 <div class="article-footer">
                     <div class="author-card">
                         <div class="author-avatar">
@@ -564,23 +562,23 @@ max-width: 260px;
                         </div>
                         <div class="author-info">
                             <h3>Rustam Iuldashov</h3>
-                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime, often with only 8 hours of electricity per day. Believes that chronic pain doesn't mean chronic limitation.</p>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime, often with only 8 hours of electricity per day.</p>
                         </div>
                     </div>
 
                     <div class="cta-box">
                         <h3>Begin Your Journey with Mi</h3>
                         <p>In the Mystic Garden, Mi waits for you. Not to track. Not to judge. Just to understand.</p>
-                       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
-    <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        Download on App Store
-    </a>
-    <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
-        Get it on Google Play
-    </a>
-</div>
+                        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
+                            <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                                App Store
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                                Google Play
+                            </a>
+                        </div>
                     </div>
                 </div>
 
