@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     
-    <!-- Schema.org markup for EEAT -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -67,6 +66,67 @@
             --text-light: #a0a0a0;
             --text-dark: #888;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-content a:not(.references a):not(.download-btn) {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        .article-content a:not(.references a):not(.download-btn):hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s ease;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        .related-card h4 {
+            color: var(--lavender);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        .related-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+        /* --------------------------------------------- */
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -309,32 +369,6 @@
             opacity: 0.5;
         }
         
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0;
-            font-size: 0.95rem;
-        }
-        
-        .data-table th {
-            background: rgba(139, 122, 168, 0.15);
-            color: #ffffff;
-            font-weight: 600;
-            padding: 12px 16px;
-            text-align: left;
-            border-bottom: 2px solid var(--lavender);
-        }
-        
-        .data-table td {
-            padding: 12px 16px;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
-            color: var(--text);
-        }
-        
-        .data-table tr:hover {
-            background: rgba(139, 122, 168, 0.05);
-        }
-        
         .article-footer {
             margin-top: 60px;
             padding-top: 40px;
@@ -416,8 +450,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
@@ -448,15 +482,6 @@ justify-content: center;
             color: var(--text-dark);
             margin-bottom: 8px;
             line-height: 1.5;
-        }
-        
-        .references a {
-            color: var(--lavender);
-            text-decoration: none;
-        }
-        
-        .references a:hover {
-            text-decoration: underline;
         }
         
         sup {
@@ -498,6 +523,7 @@ justify-content: center;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 16px;
+            margin-top: 0;
         }
         
         .key-takeaways ul {
@@ -616,8 +642,6 @@ justify-content: center;
             p { font-size: 1rem; }
             .article-content { padding: 40px 0 60px; }
             .author-card { flex-direction: column; text-align: center; }
-            .data-table { font-size: 0.85rem; }
-            .data-table th, .data-table td { padding: 8px 12px; }
             .article-meta { flex-direction: column; gap: 8px; }
         }
     </style>
@@ -648,7 +672,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
                 
-                <!-- AUTHOR BYLINE -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -658,13 +681,11 @@ justify-content: center;
                     </p>
                 </div>
                 
-                <!-- MEDICAL DISCLAIMER -->
                 <p class="medical-disclaimer">
                     <strong>Medical Review:</strong> This content is based on peer-reviewed research from The Journal of Headache and Pain, Cephalalgia, Frontiers in Neurology, and other authoritative sources.<br><br>
                     <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. Consult your doctor before changing your diet or taking supplements, especially if you take medications or have chronic conditions.
                 </p>
 
-                <!-- OPENING -->
                 <section class="article-section">
                     <p>Ninety percent of your serotonin never touches your brain.</p>
                     <p>It's made in your gut. Right now. By bacteria.</p>
@@ -674,17 +695,15 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE HIDDEN FACTORY -->
                 <section class="article-section">
                     <h2>The Hidden Factory</h2>
                     <p>Deep in your intestines, trillions of microorganisms run a chemical plant that would make pharmaceutical companies envious. These bacteria don't just digest your lunch. They manufacture neurotransmitters, regulate inflammation, and send signals directly to your brainstem through a biological cable called the vagus nerve.<sup>[1, 2]</sup></p>
                     <p>Scientists call this the gut-brain axis. The name sounds clinical, sterile. But picture what it actually means: a conversation happening inside you, right now, between your stomach and your skull.</p>
-                    <p>When the conversation goes well, anti-inflammatory signals flow upward. Pain thresholds stay normal. Your head feels fine.</p>
+                    <p>When the conversation goes well, anti-inflammatory signals flow upward. <a href="article-understanding-triggers.html">Pain thresholds</a> stay normal. Your head feels fine.</p>
                     <p>When it breaks down?</p>
                     <p>The signals change.<sup>[3]</sup></p>
                 </section>
 
-                <!-- SOMETHING DOCTORS NOTICED -->
                 <section class="article-section">
                     <h2>Something Doctors Noticed — and Ignored</h2>
                     <p>For years, physicians observed a curious pattern. Migraine patients showed up in gastroenterology clinics at alarming rates. Three times more likely to have irritable bowel syndrome.<sup>[4]</sup> Higher rates of celiac disease. Persistent nausea between attacks, not just during them.</p>
@@ -694,7 +713,6 @@ justify-content: center;
                     <p>And they have a direct line to headquarters.</p>
                 </section>
 
-                <!-- THE LONGEST NERVE -->
                 <section class="article-section">
                     <h2>The Longest Nerve</h2>
                     <p>Your vagus nerve stretches from your brainstem to your gut — the longest cranial nerve in your body. Information travels both directions. Your brain tells your stomach when to digest. Your stomach tells your brain when something's wrong.<sup>[6]</sup></p>
@@ -708,7 +726,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- IMAGE 1: THE SECOND BRAIN CONNECTED -->
                 <figure class="article-image">
                     <img src="images/second_brain_connected.png" alt="The Second Brain: Connected — artistic visualization showing the brain, vagus nerve, and gut microbiome as a luminous communication network">
                     <figcaption>The Second Brain: Connected — The vagus nerve carries millions of signals between your gut and brain every second</figcaption>
@@ -716,7 +733,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE SEROTONIN PARADOX -->
                 <section class="article-section">
                     <h2>The Serotonin Paradox</h2>
                     <p>Remember that 90% figure?</p>
@@ -727,13 +743,12 @@ justify-content: center;
                     <p>It was breakfast.</p>
                 </section>
 
-                <!-- WHAT THE TRIALS SHOW -->
                 <section class="article-section">
                     <h2>What the Trials Show</h2>
                     <p>Science demands evidence. Here's what rigorous studies reveal.</p>
                     <p>In 2019, researchers ran the gold standard: a randomized, double-blind, placebo-controlled trial testing a 14-strain probiotic on migraine patients.<sup>[15]</sup></p>
                     <p>After ten weeks:</p>
-                    <p>Episodic migraineurs saw attack frequency drop by <strong>40%</strong>. Chronic migraineurs experienced a <strong>45% reduction</strong>. Both groups reached for painkillers less often. Chronic patients reported shorter attacks.</p>
+                    <p>Episodic migraineurs saw attack frequency drop by <strong>40%</strong>. Chronic migraineurs experienced a <strong>45% reduction</strong>. Both groups <a href="article-moh.html">reached for painkillers less often</a>. Chronic patients reported shorter attacks.</p>
                     <p>Another trial combined probiotics with vitamin D.<sup>[16]</sup> After twelve weeks, participants showed significant reductions in migraine frequency — and lower levels of zonulin, a marker of intestinal permeability. Their gut barriers were healing.</p>
                     <p>Studies comparing the microbiomes of migraineurs to healthy controls consistently find differences<sup>[17, 18]</sup>: lower levels of anti-inflammatory <em>Bifidobacterium longum</em>, higher levels of pro-inflammatory <em>Ruminococcus gnavus</em>, reduced overall diversity in children with migraine.</p>
                     <p>This isn't just correlation. Mendelian randomization studies — which use genetic variants as natural experiments — support a causal relationship.<sup>[19]</sup> Your microbiome doesn't just correlate with your migraines.</p>
@@ -742,29 +757,26 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- WHY MI ASKS WHAT YOU ATE -->
                 <section class="article-section">
                     <h2>Why Mi Asks What You Ate</h2>
                     <p>This science explains something you may have wondered about.</p>
                     <p>When Mi asks about your meals, it's not idle curiosity. It's not about catching you eating "bad" foods. There are no bad foods in a moral sense.</p>
                     <p>But there is information.</p>
                     <p>Every meal shapes your microbiome.<sup>[20]</sup> High-fiber foods feed bacteria that produce anti-inflammatory compounds. Fermented foods introduce beneficial organisms. Tryptophan-rich proteins provide raw materials for serotonin synthesis.</p>
-                    <p>Patterns matter more than individual meals. Your gut doesn't respond instantly. The microbiome shifts over days. Triggers accumulate. By the time a migraine arrives, the contributing factors may be 48 or 72 hours old.</p>
-                    <p>Mi builds that timeline with you. Over weeks and months, connections emerge that no single food diary entry could reveal.</p>
+                    <p>Patterns matter more than individual meals. Your gut doesn't respond instantly. The microbiome shifts over days. Triggers accumulate. By the time a migraine arrives, the <a href="article-prediction.html">contributing factors may be 48 or 72 hours old</a>.</p>
+                    <p><a href="meet-mi.html">Mi builds that timeline with you.</a> Over weeks and months, connections emerge that no single food diary entry could reveal.</p>
                 </section>
 
-                <!-- WHAT YOU CAN DO -->
                 <section class="article-section">
                     <h2>What You Can Do</h2>
                     <p>The research points toward practical steps.</p>
                     <p><strong>Feed your beneficial bacteria.</strong> Fiber is their fuel — vegetables, fruits, whole grains, legumes.<sup>[7, 21]</sup> Ninety-five percent of Americans consume insufficient fiber. This matters for migraine.</p>
                     <p><strong>Consider fermented foods.</strong> Yogurt, kefir, sauerkraut, kimchi, miso.<sup>[22]</sup> Regular exposure maintains microbial diversity.</p>
                     <p><strong>Prioritize tryptophan sources.</strong> Turkey, salmon, eggs, nuts, seeds, tofu.<sup>[14]</sup> Pair them with complex carbohydrates — this helps tryptophan cross into your brain more effectively.</p>
-                    <p><strong>Protect your gut barrier.</strong> Chronic stress, excessive alcohol, and highly processed diets increase intestinal permeability.<sup>[23]</sup> When your gut becomes "leaky," inflammatory molecules escape into your bloodstream and head toward your brain.</p>
+                    <p><strong>Protect your gut barrier.</strong> Chronic stress, <a href="alcohol-migraine-24-hour-rule.html">excessive alcohol</a>, and highly processed diets increase intestinal permeability.<sup>[23]</sup> When your gut becomes "leaky," inflammatory molecules escape into your bloodstream and head toward your brain.</p>
                     <p><strong>Be patient.</strong> Your microbiome doesn't transform overnight. Studies showing benefits typically run eight to twelve weeks.<sup>[15, 16]</sup> Consistency matters more than perfection.</p>
                 </section>
 
-                <!-- IMAGE 2: THE SECOND BRAIN NOURISHED -->
                 <figure class="article-image">
                     <img src="images/second_brain_nourished.png" alt="The Second Brain: Nourished — artistic visualization of a healthy microbiome garden inside the intestines">
                     <figcaption>The Second Brain: Nourished — A thriving microbiome garden produces anti-inflammatory compounds that protect your brain</figcaption>
@@ -772,7 +784,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE LARGER TRUTH -->
                 <section class="article-section">
                     <h2>The Larger Truth</h2>
                     <p>Here's what makes this research compelling:</p>
@@ -788,7 +799,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>Key Takeaways</h3>
                     <ul>
@@ -801,7 +811,20 @@ justify-content: center;
                     </ul>
                 </div>
 
-                <!-- WHEN TO SEE A DOCTOR -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-understanding-triggers.html" class="related-card">
+                            <h4>Understanding Your Triggers</h4>
+                            <p>Discover how the "bucket theory" explains why foods only sometimes trigger your migraines.</p>
+                        </a>
+                        <a href="alcohol-migraine-24-hour-rule.html" class="related-card">
+                            <h4>The 24-Hour Rule</h4>
+                            <p>Learn why alcohol affects the migraine brain differently and how your gut plays a role.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="when-to-see-doctor">
                     <h3>When to See a Doctor</h3>
                     <ul>
@@ -814,7 +837,6 @@ justify-content: center;
                     <p>This article is a starting point for conversation with your doctor, not a replacement for medical care.</p>
                 </div>
 
-                <!-- REFERENCES -->
                 <div class="references">
                     <h3>References</h3>
                     <ol>
@@ -847,7 +869,6 @@ justify-content: center;
 
                 <div class="article-footer">
                     
-                    <!-- AUTHOR CARD -->
                     <div class="author-card">
                         <div class="author-avatar">
                             <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
@@ -859,7 +880,6 @@ justify-content: center;
                         </div>
                     </div>
 
-                    <!-- EDITORIAL STANDARDS -->
                     <div class="editorial-standards">
                         <h3>How We Create Content</h3>
                         <ul>
@@ -871,7 +891,6 @@ justify-content: center;
                         </ul>
                     </div>
 
-                    <!-- CTA BOX -->
                     <div class="cta-box">
                         <h3>Track Your Food Patterns with Mi</h3>
                         <p>Mi helps you document what you eat and discover connections that emerge over weeks — because patterns matter more than single meals.</p>
@@ -887,7 +906,6 @@ justify-content: center;
 </div>
                     </div>
 
-                    <!-- REVIEW DATES -->
                     <div class="review-dates">
                         <p><em>Last reviewed: February 2026</em></p>
                         <p><em>Next scheduled review: August 2026</em></p>
