@@ -60,31 +60,6 @@
                 "@type": "ScholarlyArticle",
                 "name": "Poor patient awareness and frequent misdiagnosis of migraine",
                 "url": "https://doi.org/10.1111/ene.14114"
-            },
-            {
-                "@type": "ScholarlyArticle",
-                "name": "Prevalence and burden of migraine in the United States: American Migraine Study II",
-                "url": "https://doi.org/10.1046/j.1526-4610.2001.041007646.x"
-            },
-            {
-                "@type": "ScholarlyArticle",
-                "name": "Healthcare resource use and costs associated with misdiagnosis of migraine",
-                "url": "https://doi.org/10.1111/head.14822"
-            },
-            {
-                "@type": "ScholarlyArticle",
-                "name": "The International Classification of Headache Disorders, 3rd edition",
-                "url": "https://doi.org/10.1177/0333102417738202"
-            },
-            {
-                "@type": "ScholarlyArticle",
-                "name": "The global prevalence of headache: an update",
-                "url": "https://doi.org/10.1186/s10194-022-01402-2"
-            },
-            {
-                "@type": "ScholarlyArticle",
-                "name": "Diagnosis and management of migraine in ten steps",
-                "url": "https://doi.org/10.1038/s41582-021-00509-5"
             }
         ],
         "mainEntityOfPage": {
@@ -365,7 +340,16 @@
             line-height: 1.5;
             font-family: 'Inter', sans-serif;
         }
-        /* --------------------------------------------- */
+
+        /* --- BUTTON FIX --- */
+        .download-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: 24px;
+        }
         
         .article-image {
             margin: 48px 0;
@@ -531,9 +515,10 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
-            flex: 1;
+            flex: 1 1 200px;
             max-width: 260px;
             justify-content: center;
+            text-align: center;
         }
         
         .download-btn:hover {
@@ -592,7 +577,7 @@
             margin-bottom: 48px;
             border-bottom: 1px solid rgba(139, 122, 168, 0.1);
         }
-        
+
         .key-takeaways {
             background: rgba(139, 122, 168, 0.08);
             border: 1px solid rgba(139, 122, 168, 0.2);
@@ -738,6 +723,7 @@
             .article-content { padding: 40px 0 60px; }
             .author-card { flex-direction: column; text-align: center; }
             .article-meta { flex-direction: column; gap: 8px; }
+            .download-btn { max-width: 100%; }
         }
     </style>
 </head>
