@@ -10,7 +10,6 @@
     <link rel="icon" type="image/png" href="images/mi-icon.png">
     <link rel="canonical" href="https://migrainecompanion.com/blog/magnesium-riboflavin-coq10-migraine">
 
-    <!-- Schema.org: Article + MedicalWebPage for E-E-A-T -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -100,7 +99,6 @@
     }
     </script>
 
-    <!-- Schema.org: FAQPage for rich snippets -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -142,7 +140,6 @@
     }
     </script>
 
-    <!-- Schema.org: BreadcrumbList -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -487,8 +484,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
@@ -555,42 +552,6 @@ justify-content: center;
             margin-bottom: 48px;
             border-bottom: 1px solid rgba(139, 122, 168, 0.1);
         }
-        
-        .key-takeaways {
-            background: rgba(139, 122, 168, 0.08);
-            border: 1px solid rgba(139, 122, 168, 0.2);
-            border-radius: 16px;
-            padding: 28px;
-            margin: 48px 0;
-        }
-        
-        .key-takeaways h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 16px;
-        }
-        
-        .key-takeaways ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .key-takeaways li {
-            font-size: 0.95rem;
-            color: var(--text);
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-        }
-        
-        .key-takeaways li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--lavender);
-        }
 
         .video-embed-container {
             margin: 2.5em auto;
@@ -629,6 +590,76 @@ justify-content: center;
             color: #ffffff;
             border-bottom-color: var(--lavender);
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-content a:not(.references a):not(.download-btn) {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .article-content a:not(.references a):not(.download-btn):hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        
+        .related-card h4 {
+            color: var(--lavender);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin-top: 0;
+        }
+        
+        .related-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
@@ -648,7 +679,6 @@ justify-content: center;
     </header>
 
     <main>
-        <!-- HERO IMAGE -->
         <div class="article-hero">
             <img src="images/hero-mitochondrial-grid.png" alt="Microscopic view of mitochondria inside a neuron — some glowing brightly, others flickering and fading like a city during a rolling blackout">
             <div class="article-header">
@@ -666,7 +696,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
 
-                <!-- AUTHOR BYLINE — E-E-A-T: Experience signal -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -676,24 +705,20 @@ justify-content: center;
                     </p>
                 </div>
 
-                <!-- MEDICAL DISCLAIMER — E-E-A-T: Trust + YMYL safety -->
                 <p class="medical-disclaimer">
                     This article summarizes peer-reviewed research and clinical guidelines about dietary supplements for migraine prevention. <strong style="color:var(--antique-gold);">It is not medical advice.</strong> The author is not a healthcare professional. Supplement use should be discussed with your doctor, especially if you take other medications, are pregnant, or have kidney disease. All dosages refer to adult use unless otherwise noted.
                 </p>
 
-                <!-- EVIDENCE STANDARD NOTICE — E-E-A-T: Expertise + Trust -->
                 <div class="highlight-box" style="margin-bottom:48px;">
                     <p style="font-size:0.95rem;font-weight:500;color:var(--antique-gold);line-height:1.7;">
                         📋 <strong>Evidence standard:</strong> This article relies on randomized controlled trials, systematic reviews, meta-analyses, and official guidelines from the American Academy of Neurology (AAN) and the American Headache Society (AHS). Individual small studies are identified as such. All claims are referenced to specific sources listed at the end.
                     </p>
                 </div>
 
-                <!-- ==================== ARTICLE TEXT ==================== -->
-
                 <section class="article-section">
                     <p>Your brain weighs about three pounds. It consumes 20% of all the energy your body produces. And it has no backup generator.</p>
                     <p>That last fact matters if you have migraine. Because a growing body of evidence — from neuroimaging labs in Germany, clinical trials in Switzerland, meta-analyses pooling thousands of patients — points to a single, startling idea: your migraine may be, at its root, an energy crisis.</p>
-                    <p>Magnetic resonance spectroscopy has shown that between attacks, the brains of people with migraine produce up to 16% less ATP — the molecule that powers every cell — than the brains of people without.<sup>[1]</sup> The neurons still fire. The thoughts still form. But the margin is thinner. The system is more fragile. And when demand spikes — from stress, weather, hormones, a skipped meal — there isn't enough fuel to keep the grid stable.</p>
+                    <p>Magnetic resonance spectroscopy has shown that between attacks, the brains of people with migraine produce up to 16% less ATP — the molecule that powers every cell — than the brains of people without.<sup>[1]</sup> The neurons still fire. The thoughts still form. But the margin is thinner. The system is more fragile. And when demand spikes — from <a href="article-understanding-triggers.html">stress, weather, hormones, a skipped meal</a> — there isn't enough fuel to keep the grid stable.</p>
                     <p>The lights flicker. Then they go out.</p>
                     <p>This is called the mitochondrial hypothesis of migraine. And it's the reason three ordinary substances — a mineral, a B vitamin, and a coenzyme — have become some of the most studied supplements in headache medicine. Not because they kill pain. Because they feed the power plants.</p>
                     <p>But a plausible theory is not proof. What matters is whether real patients in controlled trials got fewer migraines. Let's look at what they found.</p>
@@ -701,7 +726,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- MAGNESIUM -->
                 <section class="article-section">
                     <h2>Magnesium: The Deficit You Can't See on a Lab Report</h2>
                     <p>Start with a number: up to 50% of people with migraine have low magnesium levels.<sup>[2]</sup> That statistic comes from studies measuring ionized magnesium during acute attacks — work pioneered in the early 1990s by Dr. Alexander Mauskop at the New York Headache Center, who has spent more than three decades studying this single mineral in migraine patients.<sup>[3]</sup></p>
@@ -720,7 +744,7 @@ justify-content: center;
                     <p>So the clinical question becomes simpler: does giving people magnesium reduce their migraines — whether or not we can prove they were low?</p>
                     <p>The answer, across multiple lines of evidence, is yes.</p>
                     <p>A 2016 meta-analysis published in <em>Pain Physician</em> pooled data from 21 randomized controlled trials. Oral magnesium significantly reduced both the frequency and intensity of migraine attacks.<sup>[5]</sup> A systematic review of placebo-controlled trials from 1990 to 2016 found reductions in migraine days ranging from 22% to 43%.<sup>[6]</sup> And in 2012, the American Academy of Neurology and the American Headache Society — the two organizations that set the standard for migraine treatment in the United States — reviewed this evidence and assigned magnesium a <strong>Level B</strong> rating: probably effective, should be considered for prevention.<sup>[7]</sup></p>
-                    <p>The strongest results appear in two groups: people who experience aura, and women whose migraines cluster around menstruation.<sup>[4]</sup> If either describes you, this isn't a "maybe worth trying" conversation. It's a clinical one.</p>
+                    <p>The strongest results appear in two groups: <a href="article-aura.html">people who experience aura</a>, and women whose migraines cluster around menstruation.<sup>[4]</sup> If either describes you, this isn't a "maybe worth trying" conversation. It's a clinical one.</p>
 
                     <h2>Which form, and how much?</h2>
                     <p>Here's where the details matter — and where most advice falls short.</p>
@@ -731,7 +755,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- RIBOFLAVIN -->
                 <section class="article-section">
                     <h2>Riboflavin: Two Dollars a Month, 59% Responder Rate</h2>
                     <p>Vitamin B2 does not have the charisma of magnesium. No one has built a wellness brand around it. It turns your urine bright yellow and has all the mystique of a fluorescent office light.</p>
@@ -744,24 +767,21 @@ justify-content: center;
                     <p>Side effects: bright yellow urine. That's it.</p>
                 </section>
 
-                <!-- MID-ARTICLE IMAGE -->
                 <div class="article-image">
                     <img src="images/three-supplements-glow.png" alt="Three laboratory glass vessels on a dark walnut table — containing glowing gold magnesium crystals, amber riboflavin solution, and deep orange CoQ10 — their light converging at the center, with faint research papers floating behind">
                 </div>
 
-                <!-- CoQ10 -->
                 <section class="article-section">
                     <h2>CoQ10: Real Evidence, Realistic Expectations</h2>
                     <p>Coenzyme Q10 completes the mitochondrial trio. It's a fat-soluble antioxidant that your body produces naturally and that plays a direct role in ATP synthesis — the same energy pathway that magnesium and riboflavin support.<sup>[16]</sup></p>
                     <p>The key randomized trial came from the University of Zurich. Forty-two migraine patients received either 300 mg of CoQ10 or placebo for three months. Among those on CoQ10, 48% saw their attack frequency cut in half. On placebo: 14%.<sup>[17]</sup> A separate trial found that after three months, CoQ10 performed as well as amitriptyline — a widely prescribed migraine preventive — but with fewer side effects.<sup>[18]</sup></p>
                     <p>The most comprehensive test of these findings came in 2021: a meta-analysis of six randomized controlled trials totaling 371 participants. CoQ10 reduced migraine frequency by about 1.5 attacks per month and shortened headache duration. It did not, however, significantly reduce pain severity.<sup>[19]</sup></p>
                     <p>The AAN/AHS classified CoQ10 as <strong>Level C</strong>: possibly effective.<sup>[7]</sup> That's one tier below magnesium and two below the prescription medications at Level A. It means the data is promising but not definitive — the trials are small, and the effects are more modest.</p>
-                    <p>Still, for patients who want to avoid prescription side effects, or who want to layer a supplement on top of existing treatment, CoQ10 has a defensible role. The studied dose is 100–300 mg daily, taken with food to improve absorption.<sup>[20]</sup> It is well-tolerated. It does not interact with most medications. And it costs less than a coffee.</p>
+                    <p>Still, for patients who want to avoid prescription side effects or the risk of <a href="article-moh.html">medication overuse headache</a>, or who want to layer a supplement on top of existing treatment, CoQ10 has a defensible role. The studied dose is 100–300 mg daily, taken with food to improve absorption.<sup>[20]</sup> It is well-tolerated. It does not interact with most medications. And it costs less than a coffee.</p>
                 </section>
 
                 <div class="separator">* * *</div>
 
-                <!-- WHAT DOESN'T WORK -->
                 <section class="article-section">
                     <h2>Three Supplements the Evidence Does Not Support</h2>
                     <p>Honesty about what doesn't work is as important as clarity about what does.</p>
@@ -770,7 +790,6 @@ justify-content: center;
                     <p><strong>Melatonin</strong> (typically 3 mg at bedtime) has very low certainty of evidence for migraine prevention specifically. The same 2024 review added a practical warning for the U.S. market: purity of commercially sold melatonin products is "very poor."<sup>[13]</sup> If you have sleep problems and migraine, it may help indirectly. As a dedicated migraine preventive, the evidence isn't there.</p>
                 </section>
 
-                <!-- DOCTOR QUESTIONS -->
                 <section class="article-section">
                     <h2>Five Questions That Turn a Supplement Into a Strategy</h2>
                     <p>A bottle on your nightstand is not a plan. A conversation with your doctor is. Here are the questions worth bringing:</p>
@@ -778,12 +797,11 @@ justify-content: center;
                     <p><strong>"What form and dose should I start with?"</strong> Glycinate for a sensitive stomach. Citrate if constipation is an issue. Oxide if cost is the priority. 400–600 mg daily.<sup>[4, 8]</sup></p>
                     <p><strong>"Can I add riboflavin to what I'm already taking?"</strong> It's exceptionally safe, but your doctor should see the full picture. One study suggested riboflavin and beta-blockers may work through different mechanisms, potentially complementing each other.<sup>[14]</sup></p>
                     <p><strong>"How long before I should expect results?"</strong> Three months. Minimum. The studies are unanimous on this.<sup>[11, 12, 17]</sup></p>
-                    <p><strong>"Should I track my attacks?"</strong> Yes. A simple daily log — headache or no headache, severity from 1 to 10 — is the only honest way to separate real improvement from the hope that something is working.</p>
+                    <p><strong>"Should I track my attacks?"</strong> Yes. <a href="article-body-calendar.html">A simple daily log</a> — headache or no headache, severity from 1 to 10 — is the only honest way to separate real improvement from the hope that something is working.</p>
                 </section>
 
                 <div class="separator">* * *</div>
 
-                <!-- CONCLUSION -->
                 <section class="article-section">
                     <h2>What This Adds Up To</h2>
                     <p>No supplement will cure migraine. Anyone who tells you otherwise is selling something.</p>
@@ -794,14 +812,24 @@ justify-content: center;
                     <p>One steadier morning at a time.</p>
                 </section>
 
-                <!-- CLOSING IMAGE -->
                 <div class="article-image">
                     <img src="images/dawn-three-lights.png" alt="A quiet mountain path at dawn — three softly glowing orbs of gold, amber, and orange float along the trail like gentle companions, leading toward a warm peach-gold horizon">
                 </div>
 
-                <!-- ==================== END ARTICLE TEXT ==================== -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-moh.html" class="related-card">
+                            <h4>The Trap of Relief</h4>
+                            <p>When does medication stop helping and start hurting? Understanding medication overuse headache.</p>
+                        </a>
+                        <a href="the-second-brain.html" class="related-card">
+                            <h4>The Gut-Brain Highway</h4>
+                            <p>Supplements only work if you absorb them. Discover the surprising connection between your gut and your migraine.</p>
+                        </a>
+                    </div>
+                </div>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>Key Takeaways</h3>
                     <ul>
@@ -814,7 +842,6 @@ justify-content: center;
                     </ul>
                 </div>
 
-                <!-- REFERENCES -->
                 <div class="references">
                     <h3>References</h3>
                     <ol>
@@ -844,7 +871,6 @@ justify-content: center;
                     </ol>
                 </div>
 
-                <!-- AUTHOR CARD + DISCLOSURE -->
                 <div class="article-footer">
                     <div class="author-card">
                         <div class="author-avatar">
