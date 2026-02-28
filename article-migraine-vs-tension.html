@@ -1,944 +1,1039 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Throbbing vs. pressing. One-sided vs. both. Getting it wrong means years of treatment that doesn't work. Here's how to finally tell the difference between migraine and tension headache.">
-    <meta name="author" content="Rustam Iuldashov">
-    <meta name="keywords" content="migraine vs tension headache, headache diagnosis, migraine symptoms, tension headache symptoms, headache diary, migraine misdiagnosis, staircase test migraine, throbbing headache, pressing headache">
-    <title>Migraine or Tension? The Question That Changes Everything | Migraine Companion</title>
-    <link rel="icon" type="image/png" href="images/mi-icon.png">
-    <link rel="canonical" href="https://migrainecompanion.app/article-migraine-vs-tension.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "MedicalWebPage",
-        "headline": "Migraine or Tension? The Question That Changes Everything",
-        "description": "A comprehensive guide to distinguishing migraine from tension headache — the science behind misdiagnosis, the staircase test, symptom comparison, and why the right answer changes your treatment.",
-        "author": {
-            "@type": "Person",
-            "name": "Rustam Iuldashov",
-            "description": "Founder of Migraine Companion, 30+ years personal experience with migraine",
-            "url": "https://www.linkedin.com/in/rustam-iuldashov-022450135/"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Migraine Companion",
-            "url": "https://migrainecompanion.app"
-        },
-        "datePublished": "2026-01-15",
-        "dateModified": "2026-01-15",
-        "medicalAudience": {
-            "@type": "PatientAudience",
-            "audienceType": "Patient"
-        },
-        "about": [
-            {
-                "@type": "MedicalCondition",
-                "name": "Migraine",
-                "code": {
-                    "@type": "MedicalCode",
-                    "code": "G43",
-                    "codingSystem": "ICD-10"
-                }
-            },
-            {
-                "@type": "MedicalCondition",
-                "name": "Tension-type headache",
-                "code": {
-                    "@type": "MedicalCode",
-                    "code": "G44.2",
-                    "codingSystem": "ICD-10"
-                }
-            }
-        ],
-        "citation": [
-            {
-                "@type": "ScholarlyArticle",
-                "name": "Poor patient awareness and frequent misdiagnosis of migraine",
-                "url": "https://doi.org/10.1111/ene.14114"
-            },
-            {
-                "@type": "ScholarlyArticle",
-                "name": "Prevalence and burden of migraine in the United States: American Migraine Study II",
-                "url": "https://doi.org/10.1046/j.1526-4610.2001.041007646.x"
-            },
-            {
-                "@type": "ScholarlyArticle",
-                "name": "Healthcare resource use and costs associated with misdiagnosis of migraine",
-                "url": "https://doi.org/10.1111/head.14822"
-            },
-            {
-                "@type": "ScholarlyArticle",
-                "name": "The International Classification of Headache Disorders, 3rd edition",
-                "url": "https://doi.org/10.1177/0333102417738202"
-            },
-            {
-                "@type": "ScholarlyArticle",
-                "name": "The global prevalence of headache: an update",
-                "url": "https://doi.org/10.1186/s10194-022-01402-2"
-            },
-            {
-                "@type": "ScholarlyArticle",
-                "name": "Diagnosis and management of migraine in ten steps",
-                "url": "https://doi.org/10.1038/s41582-021-00509-5"
-            }
-        ],
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://migrainecompanion.app/article-migraine-vs-tension.html"
-        }
-    }
-    </script>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --lavender: #8b7aa8;
-            --gold: #C5A059;
-            --antique-gold: #D5B069;
-            --bg: #0d0d0d;
-            --text: #d0d0d0;
-            --text-light: #a0a0a0;
-            --text-dark: #888;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        
-        header {
-            padding: 16px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(13, 13, 13, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
-        }
-        
-        .header-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: -0.3px;
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--lavender);
-        }
-        
-        .back-link {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .back-link:hover {
-            color: var(--lavender);
-        }
-        
-        .article-hero {
-            margin-top: 70px;
-            position: relative;
-            overflow: hidden;
-            border-radius: 0 0 24px 24px;
-            height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .article-hero img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        
-        .article-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
-            z-index: 1;
-        }
-        
-        .article-header {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 0 24px;
-        }
-        
-        .article-tag {
-            display: inline-block;
-            background: rgba(197, 160, 89, 0.2);
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            color: var(--gold);
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 6px 14px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            line-height: 1.2;
-            color: #ffffff;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
-        }
-        
-        .article-subtitle {
-            font-size: 1.15rem;
-            font-weight: 500;
-            color: rgba(255,255,255,0.85);
-            font-style: italic;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-        }
-        
-        .article-meta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.7);
-        }
-        
-        .article-content {
-            padding: 60px 0 80px;
-        }
-        
-        .article-section {
-            margin-bottom: 48px;
-        }
-        
-        h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.9rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 20px;
-            letter-spacing: -0.01em;
-            line-height: 1.3;
-        }
-        
-        h3 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 12px;
-            margin-top: 32px;
-        }
-        
-        p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            color: var(--text);
-        }
-        
-        strong {
-            font-weight: 700;
-            color: var(--antique-gold);
-        }
-        
-        em {
-            font-style: italic;
-            color: var(--text-light);
-        }
-        
-        .article-image {
-            margin: 48px 0;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-        }
-        
-        .article-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .article-image figcaption {
-            padding: 12px 16px;
-            background: rgba(139, 122, 168, 0.1);
-            font-size: 0.85rem;
-            color: var(--text-light);
-            text-align: center;
-            font-style: italic;
-        }
-        
-        .highlight-box {
-            background: rgba(197, 160, 89, 0.08);
-            border-left: 3px solid var(--gold);
-            padding: 24px 28px;
-            border-radius: 0 12px 12px 0;
-            margin: 36px 0;
-        }
-        
-        .highlight-box p {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--antique-gold);
-            margin: 0;
-            line-height: 1.7;
-        }
-        
-        .quote-box {
-            background: rgba(139, 122, 168, 0.08);
-            border-left: 3px solid var(--lavender);
-            padding: 24px 28px;
-            border-radius: 0 12px 12px 0;
-            margin: 36px 0;
-        }
-        
-        .quote-box p {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
-            font-style: italic;
-            color: #ffffff;
-            margin: 0;
-            line-height: 1.7;
-        }
-        
-        .warning-box {
-            background: rgba(220, 53, 69, 0.1);
-            border-left: 3px solid #dc3545;
-            padding: 24px 28px;
-            border-radius: 0 12px 12px 0;
-            margin: 36px 0;
-        }
-        
-        .warning-box p {
-            font-size: 1rem;
-            color: #ff6b7a;
-            margin: 0;
-            line-height: 1.7;
-        }
-        
-        .warning-box strong {
-            color: #ff6b7a;
-        }
-        
-        .separator {
-            text-align: center;
-            margin: 60px 0;
-            color: var(--lavender);
-            font-size: 1.5rem;
-            opacity: 0.5;
-        }
-        
-        .article-footer {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(139, 122, 168, 0.15);
-        }
-        
-        .author-card {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(139, 122, 168, 0.12);
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 32px;
-        }
-        
-        .author-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--lavender), var(--gold));
-            padding: 3px;
-            flex-shrink: 0;
-        }
-        
-        .author-avatar img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
-        .author-info h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 4px;
-            margin-top: 0;
-        }
-        
-        .author-info p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin: 0;
-            line-height: 1.5;
-        }
-        
-        .cta-box {
-            background: rgba(197, 160, 89, 0.08);
-            border: 1px solid rgba(197, 160, 89, 0.2);
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-        }
-        
-        .cta-box h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 12px;
-            margin-top: 0;
-        }
-        
-        .cta-box p {
-            font-size: 1rem;
-            color: var(--text-light);
-            margin-bottom: 24px;
-        }
-        
-        .download-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 28px;
-            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
-            border: 1px solid var(--gold);
-            border-radius: 12px;
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            flex: 1;
-max-width: 260px;
-justify-content: center;
-        }
-        
-        .download-btn:hover {
-            background: var(--gold);
-            color: var(--bg);
-            transform: translateY(-2px);
-        }
-        
-        .references {
-            margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(139, 122, 168, 0.1);
-        }
-        
-        .references h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 16px;
-            margin-top: 0;
-        }
-        
-        .references ol {
-            padding-left: 20px;
-        }
-        
-        .references li {
-            font-size: 0.85rem;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-        
-        .references a {
-            color: var(--lavender);
-            text-decoration: none;
-        }
-        
-        .references a:hover {
-            text-decoration: underline;
-        }
-        
-        sup {
-            color: var(--lavender);
-            font-weight: 600;
-        }
-        
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid rgba(139, 122, 168, 0.12);
-            text-align: center;
-        }
-        
-        .copyright {
-            color: var(--text-dark);
-            font-size: 0.85rem;
-        }
-        
-        .medical-disclaimer {
-            font-size: 0.9rem;
-            font-style: italic;
-            color: var(--text-dark);
-            text-align: center;
-            padding: 16px 0;
-            margin-bottom: 48px;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
-        }
-        
-        .key-takeaways {
-            background: rgba(139, 122, 168, 0.08);
-            border: 1px solid rgba(139, 122, 168, 0.2);
-            border-radius: 16px;
-            padding: 28px;
-            margin: 48px 0;
-        }
-        
-        .key-takeaways h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 16px;
-            margin-top: 0;
-        }
-        
-        .key-takeaways ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .key-takeaways li {
-            font-size: 0.95rem;
-            color: var(--text);
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-        }
-        
-        .key-takeaways li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--lavender);
-        }
-        
-        .faq-section {
-            margin: 48px 0;
-            padding: 32px;
-            background: rgba(139, 122, 168, 0.05);
-            border-radius: 16px;
-        }
-        
-        .faq-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 24px;
-        }
-        
-        .faq-item {
-            margin-bottom: 24px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
-        }
-        
-        .faq-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        
-        .faq-item h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-        
-        .faq-item p {
-            font-size: 0.95rem;
-            margin: 0;
-            color: var(--text-light);
-        }
-        
-        .trust-signals {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            margin: 32px 0;
-            padding: 20px;
-            background: rgba(139, 122, 168, 0.05);
-            border-radius: 12px;
-        }
-        
-        .trust-signal {
-            font-size: 0.8rem;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .trust-signal::before {
-            content: '✓';
-            color: var(--lavender);
-            font-weight: bold;
-        }
-        
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
-            .article-hero { height: 400px; }
-            p { font-size: 1rem; }
-            .article-content { padding: 40px 0 60px; }
-            .author-card { flex-direction: column; text-align: center; }
-            .article-meta { flex-direction: column; gap: 8px; }
-            .download-buttons { flex-direction: column; align-items: center; }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Throbbing vs. pressing. One-sided vs. both. Getting it wrong means years of treatment that doesn't work. Here's how to finally tell the difference between migraine and tension headache.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="migraine vs tension headache, headache diagnosis, migraine symptoms, tension headache symptoms, headache diary, migraine misdiagnosis, staircase test migraine, throbbing headache, pressing headache">
+    <title>Migraine or Tension? The Question That Changes Everything | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://migrainecompanion.app/article-migraine-vs-tension.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalWebPage",
+        "headline": "Migraine or Tension? The Question That Changes Everything",
+        "description": "A comprehensive guide to distinguishing migraine from tension headache — the science behind misdiagnosis, the staircase test, symptom comparison, and why the right answer changes your treatment.",
+        "author": {
+            "@type": "Person",
+            "name": "Rustam Iuldashov",
+            "description": "Founder of Migraine Companion, 30+ years personal experience with migraine",
+            "url": "https://www.linkedin.com/in/rustam-iuldashov-022450135/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Migraine Companion",
+            "url": "https://migrainecompanion.app"
+        },
+        "datePublished": "2026-01-15",
+        "dateModified": "2026-01-15",
+        "medicalAudience": {
+            "@type": "PatientAudience",
+            "audienceType": "Patient"
+        },
+        "about": [
+            {
+                "@type": "MedicalCondition",
+                "name": "Migraine",
+                "code": {
+                    "@type": "MedicalCode",
+                    "code": "G43",
+                    "codingSystem": "ICD-10"
+                }
+            },
+            {
+                "@type": "MedicalCondition",
+                "name": "Tension-type headache",
+                "code": {
+                    "@type": "MedicalCode",
+                    "code": "G44.2",
+                    "codingSystem": "ICD-10"
+                }
+            }
+        ],
+        "citation": [
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Poor patient awareness and frequent misdiagnosis of migraine",
+                "url": "https://doi.org/10.1111/ene.14114"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Prevalence and burden of migraine in the United States: American Migraine Study II",
+                "url": "https://doi.org/10.1046/j.1526-4610.2001.041007646.x"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Healthcare resource use and costs associated with misdiagnosis of migraine",
+                "url": "https://doi.org/10.1111/head.14822"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "The International Classification of Headache Disorders, 3rd edition",
+                "url": "https://doi.org/10.1177/0333102417738202"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "The global prevalence of headache: an update",
+                "url": "https://doi.org/10.1186/s10194-022-01402-2"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Diagnosis and management of migraine in ten steps",
+                "url": "https://doi.org/10.1038/s41582-021-00509-5"
+            }
+        ],
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://migrainecompanion.app/article-migraine-vs-tension.html"
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #8b7aa8;
+            --gold: #C5A059;
+            --antique-gold: #D5B069;
+            --bg: #0d0d0d;
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--lavender);
+        }
+        
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .back-link:hover {
+            color: var(--lavender);
+        }
+        
+        .article-hero {
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .article-hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .article-header {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+        
+        .article-subtitle {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .article-content {
+            padding: 60px 0 80px;
+        }
+        
+        .article-section {
+            margin-bottom: 48px;
+        }
+        
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            margin-top: 32px;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        strong {
+            font-weight: 700;
+            color: var(--antique-gold);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-content a:not(.references a):not(.download-btn) {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .article-content a:not(.references a):not(.download-btn):hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        
+        .related-card h4 {
+            color: var(--lavender);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin-top: 0;
+        }
+        
+        .related-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+        /* --------------------------------------------- */
+        
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .article-image figcaption {
+            padding: 12px 16px;
+            background: rgba(139, 122, 168, 0.1);
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .quote-box {
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .warning-box {
+            background: rgba(220, 53, 69, 0.1);
+            border-left: 3px solid #dc3545;
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 36px 0;
+        }
+        
+        .warning-box p {
+            font-size: 1rem;
+            color: #ff6b7a;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .warning-box strong {
+            color: #ff6b7a;
+        }
+        
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--lavender);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(139, 122, 168, 0.15);
+        }
+        
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+            margin-top: 0;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .cta-box {
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            margin-top: 0;
+        }
+        
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            flex: 1;
+            max-width: 260px;
+            justify-content: center;
+        }
+        
+        .download-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .references {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+        
+        .references ol {
+            padding-left: 20px;
+        }
+        
+        .references li {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        sup {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+        
+        .medical-disclaimer {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-dark);
+            text-align: center;
+            padding: 16px 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .key-takeaways {
+            background: rgba(139, 122, 168, 0.08);
+            border: 1px solid rgba(139, 122, 168, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+        }
+        
+        .key-takeaways h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+        
+        .key-takeaways ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .key-takeaways li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .key-takeaways li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+        
+        .faq-section {
+            margin: 48px 0;
+            padding: 32px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 16px;
+        }
+        
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+        
+        .faq-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .faq-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .faq-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--antique-gold);
+            margin-bottom: 8px;
+        }
+        
+        .faq-item p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        .trust-signals {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 32px 0;
+            padding: 20px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 12px;
+        }
+        
+        .trust-signal {
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .trust-signal::before {
+            content: '✓';
+            color: var(--lavender);
+            font-weight: bold;
+        }
+
+        .video-embed-container {
+            margin: 2.5em auto;
+            text-align: center;
+            background: rgba(139, 122, 168, 0.05);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.15);
+            max-width: 360px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .video-embed-container iframe {
+            border-radius: 12px;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border: none;
+        }
+        
+        .video-caption {
+            margin-top: 16px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        
+        .video-caption a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.3);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .video-caption a:hover {
+            color: #ffffff;
+            border-bottom-color: var(--lavender);
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .article-meta { flex-direction: column; gap: 8px; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
-            <a href="blog.html" class="back-link">← Back to Blog</a>
-        </div>
-    </header>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+        </div>
+    </header>
 
-    <main>
-        <div class="article-hero">
-            <img src="images/migraine_vs_tension_hero.png" alt="Person experiencing headache pain — migraine vs tension headache visual comparison, digital art">
-            <div class="article-header">
-                <span class="article-tag">Diagnosis</span>
-                <h1>Migraine or Tension?</h1>
-                <p class="article-subtitle">Throbbing vs. pressing. One-sided vs. both. Getting it wrong means years of treatment that doesn't work. Here's how to finally tell the difference.</p>
-                <div class="article-meta">
-                    <span>📅 February 7, 2026</span>
-                    <span>⏱ 5 min read</span>
-                    <span>✍️ Rustam Iuldashov</span>
-                </div>
-            </div>
-        </div>
+    <main>
+        <div class="article-hero">
+            <img src="images/migraine_vs_tension_hero.png" alt="Person experiencing headache pain — migraine vs tension headache visual comparison, digital art">
+            <div class="article-header">
+                <span class="article-tag">Diagnosis</span>
+                <h1>Migraine or Tension?</h1>
+                <p class="article-subtitle">Throbbing vs. pressing. One-sided vs. both. Getting it wrong means years of treatment that doesn't work. Here's how to finally tell the difference.</p>
+                <div class="article-meta">
+                    <span>📅 February 7, 2026</span>
+                    <span>⏱ 5 min read</span>
+                    <span>✍️ Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
 
-        <article class="article-content">
-            <div class="container">
-                
-                <!-- AUTHOR BYLINE -->
-                <div style="text-align:center;padding:32px 0 16px;">
-                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
-                        By Rustam Iuldashov
-                    </p>
-                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
-                        30 years lived experience with migraine | Last updated: February 7, 2026
-                    </p>
-                </div>
-                
-                <!-- MEDICAL DISCLAIMER -->
-                <p class="medical-disclaimer">
-                    This article is for educational purposes only and does not constitute medical advice. 
-                    Content aligned with ICHD-3 diagnostic criteria and peer-reviewed research. If you experience new, sudden, or severe headache symptoms, seek emergency care immediately.
-                </p>
+        <article class="article-content">
+            <div class="container">
+                
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
+                        By Rustam Iuldashov
+                    </p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">
+                        30 years lived experience with migraine | Last updated: February 7, 2026
+                    </p>
+                </div>
+                
+                <p class="medical-disclaimer">
+                    This article is for educational purposes only and does not constitute medical advice. 
+                    Content aligned with ICHD-3 diagnostic criteria and peer-reviewed research. If you experience new, sudden, or severe headache symptoms, seek emergency care immediately.
+                </p>
 
-                <!-- KEY TAKEAWAYS -->
-                <div class="key-takeaways">
-                    <h3>📋 Key Takeaways</h3>
-                    <ul>
-                        <li>94% of patients with a non-migraine diagnosis actually met the clinical criteria for migraine</li>
-                        <li>The average delay between first attack and correct diagnosis is nearly 8 years</li>
-                        <li>The staircase test: migraine worsens with movement, tension headache does not</li>
-                        <li>Migraine <em>stops</em> you. Tension headache <em>slows</em> you.</li>
-                        <li>Triptans work for migraine but do nothing for tension headache — the right label determines the right treatment</li>
-                        <li>A headache diary over weeks reveals patterns that a single episode cannot</li>
-                    </ul>
-                </div>
+                <div class="key-takeaways">
+                    <h3>📋 Key Takeaways</h3>
+                    <ul>
+                        <li>94% of patients with a non-migraine diagnosis actually met the clinical criteria for migraine</li>
+                        <li>The average delay between first attack and correct diagnosis is nearly 8 years</li>
+                        <li>The staircase test: migraine worsens with movement, tension headache does not</li>
+                        <li>Migraine <em>stops</em> you. Tension headache <em>slows</em> you.</li>
+                        <li>Triptans work for migraine but do nothing for tension headache — the right label determines the right treatment</li>
+                        <li>A headache diary over weeks reveals patterns that a single episode cannot</li>
+                    </ul>
+                </div>
 
-                <section class="article-section">
-                    <p>The pill is already in your hand before you've named the pain.</p>
-                    
-                    <p>Ibuprofen. Paracetamol. Something left over from a prescription you barely remember. You swallow it. You call it "a headache." You move on.</p>
-                    
-                    <p>Most people do exactly this. And that single, careless word — <em>headache</em> — conceals one of the most common diagnostic failures in modern medicine.</p>
-                    
-                    <p>For decades, doctors assumed they could tell migraine from tension headache at a glance. Many still assume this. The evidence tells a different story. A study spanning twelve countries found that only 28 percent of people living with migraine knew they had it.<sup>[1]</sup> The rest called it stress, sinus trouble, or simply "a bad headache." An even more striking finding came from the American Migraine Study II: 94 percent of patients carrying a non-migraine diagnosis actually met the clinical criteria for migraine.<sup>[2]</sup></p>
-                    
-                    <div class="highlight-box">
-                        <p>Read that again. Nearly everyone in the room had the wrong label.</p>
-                    </div>
-                    
-                    <p>Peter Goadsby — professor of neurology at King's College London and UCLA, recipient of the 2021 Brain Prize for his pioneering migraine research — spent years confronting this gap. Before his team's breakthroughs, he observed, migraine was treated as a soft disorder, almost psychological — a problem of coping, not of biology.<sup>[9]</sup> That perception left millions undertreated for a condition now recognized as the second most disabling disease on the planet.</p>
-                    
-                    <p>A skeptic might still ask: does the label really matter? If the head hurts, doesn't any painkiller help?</p>
-                    
-                    <p>No. And the price of that assumption is staggering. A 2024 study in <em>Headache</em> found that misdiagnosed migraine patients visited emergency rooms nearly twice as often and accumulated significantly higher healthcare costs across every care category — inpatient, outpatient, prescriptions — compared to those who received the correct diagnosis from the start.<sup>[3]</sup> The average delay between first attack and correct diagnosis stretches to nearly eight years.<sup>[4]</sup></p>
-                    
-                    <p>Eight years. Of swallowing the wrong pill. For the wrong pain.</p>
-                    
-                    <p>Two words can begin to close that gap: <em>migraine</em> and <em>tension</em>. They feel different. They behave differently. And distinguishing them is simpler than most people expect.</p>
-                </section>
+                <section class="article-section">
+                    <p>The pill is already in your hand before you've named the pain.</p>
+                    
+                    <p>Ibuprofen. Paracetamol. Something left over from a prescription you barely remember. You swallow it. You call it "a headache." You move on.</p>
+                    
+                    <p>Most people do exactly this. And that single, careless word — <em>headache</em> — conceals one of the most common diagnostic failures in modern medicine.</p>
+                    
+                    <p>For decades, doctors assumed they could tell migraine from tension headache at a glance. Many still assume this. The evidence tells a different story. A study spanning twelve countries found that only 28 percent of people living with migraine knew they had it.<sup>[1]</sup> The rest called it stress, sinus trouble, or simply "a bad headache." An even more striking finding came from the American Migraine Study II: 94 percent of patients carrying a non-migraine diagnosis actually met the clinical criteria for migraine.<sup>[2]</sup></p>
+                    
+                    <div class="highlight-box">
+                        <p>Read that again. Nearly everyone in the room had the wrong label.</p>
+                    </div>
+                    
+                    <p>Peter Goadsby — professor of neurology at King's College London and UCLA, recipient of the 2021 Brain Prize for his pioneering migraine research — spent years confronting this gap. Before his team's breakthroughs, he observed, migraine was treated as a soft disorder, almost psychological — a problem of coping, not of biology.<sup>[9]</sup> That perception left millions undertreated for a condition now recognized as the second most disabling disease on the planet.</p>
+                    
+                    <p>A skeptic might still ask: does the label really matter? If the head hurts, doesn't any painkiller help?</p>
+                    
+                    <p>No. And the price of that assumption is staggering. A 2024 study in <em>Headache</em> found that misdiagnosed migraine patients visited emergency rooms nearly twice as often and accumulated significantly higher healthcare costs across every care category — inpatient, outpatient, prescriptions — compared to those who received the correct diagnosis from the start.<sup>[3]</sup> The average delay between first attack and correct diagnosis stretches to nearly eight years.<sup>[4]</sup></p>
+                    
+                    <p>Eight years. Of swallowing the wrong pill. For the wrong pain.</p>
+                    
+                    <p>Two words can begin to close that gap: <em>migraine</em> and <em>tension</em>. They feel different. They behave differently. And distinguishing them is simpler than most people expect.</p>
+                </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator">* * *</div>
 
-                <section class="article-section">
-                    <h2>Walk Up a Flight of Stairs</h2>
-                    
-                    <p>Here is one of the most reliable clinical clues in headache medicine — and you can test it yourself the next time your head hurts.</p>
-                    
-                    <p>Climb a staircase. Or bend forward quickly.</p>
-                    
-                    <p>Then listen to what your pain does.</p>
-                    
-                    <p>Migraine punishes movement. The pain surges with each step, throbs harder with exertion, makes you grip the railing and regret the attempt. This is not a side effect of severe pain; the International Classification of Headache Disorders lists "aggravation by routine physical activity" as a formal diagnostic criterion for migraine.<sup>[5]</sup> Neurologists use this distinction daily.</p>
-                    
-                    <p>Tension headache does not behave this way. It sits there — dull, steady, unmoved by stairs. Some patients find that a brisk walk actually helps it ease.</p>
-                    
-                    <p>One question — <em>does movement make it worse?</em> — separates these two conditions more reliably than most people realize.</p>
-                </section>
+                <section class="article-section">
+                    <h2>Walk Up a Flight of Stairs</h2>
+                    
+                    <p>Here is one of the most reliable clinical clues in headache medicine — and you can test it yourself the next time your head hurts.</p>
+                    
+                    <p>Climb a staircase. Or bend forward quickly.</p>
+                    
+                    <p>Then listen to what your pain does.</p>
+                    
+                    <p>Migraine punishes movement. The pain surges with each step, throbs harder with exertion, makes you grip the railing and regret the attempt. This is not a side effect of severe pain; the International Classification of Headache Disorders lists "aggravation by routine physical activity" as a formal diagnostic criterion for migraine.<sup>[5]</sup> Neurologists use this distinction daily.</p>
+                    
+                    <p>Tension headache does not behave this way. It sits there — dull, steady, unmoved by stairs. Some patients find that a brisk walk actually helps it ease.</p>
+                    
+                    <p>One question — <em>does movement make it worse?</em> — separates these two conditions more reliably than most people realize.</p>
+                </section>
 
-                <!-- STAIRCASE TEST IMAGE -->
-                <figure class="article-image">
-                    <img src="images/staircase_test.png" alt="Person climbing stairs during migraine attack with visible pain pulsation — the staircase test for headache diagnosis, digital art">
-                    <figcaption>The staircase test: migraine pain surges with each step. Tension headache remains unmoved. One question that separates two conditions.</figcaption>
-                </figure>
+                <figure class="article-image">
+                    <img src="images/staircase_test.png" alt="Person climbing stairs during migraine attack with visible pain pulsation — the staircase test for headache diagnosis, digital art">
+                    <figcaption>The staircase test: migraine pain surges with each step. Tension headache remains unmoved. One question that separates two conditions.</figcaption>
+                </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator">* * *</div>
 
-                <section class="article-section">
-                    <h2>What Each One Actually Feels Like</h2>
-                    
-                    <p>The differences extend well beyond the staircase.</p>
-                    
-                    <p>Migraine pain pulses. It throbs in rhythm with the heartbeat, usually favoring one side of the head. And it rarely arrives alone. Nausea rolls in — sometimes tipping into vomiting. Light becomes so painful that an ordinary room feels like an interrogation. Sound amplifies until a normal conversation lands like a slap. About one in five patients experience aura beforehand: visual distortions, tingling, blind spots that crawl across the field of vision.<sup>[5]</sup></p>
-                    
-                    <div class="quote-box">
-                        <p>Neurologist Nancy Mueller of NYU Langone described the experience to the American Medical Association: a throbbing in a single location, a sick feeling in the stomach, an overwhelming fatigue — and then the sensation of wanting to take your head and put it somewhere else.<sup>[10]</sup></p>
-                    </div>
-                    
-                    <p>An untreated migraine attack lasts four to seventy-two hours. It can swallow an entire weekend.</p>
-                    
-                    <p>Tension headache feels like a band tightening across both sides of the skull — forehead, temples, the back of the neck. The pain presses but does not pulse. No nausea. No aura. Light and noise may mildly annoy, but they do not send you retreating to a dark room with the curtains drawn. Up to 78 percent of the general population will experience a tension headache at some point.<sup>[6]</sup> Most people work right through it.</p>
-                    
-                    <div class="highlight-box">
-                        <p>The clearest way to state the difference: migraine stops you. Tension headache slows you.</p>
-                    </div>
-                </section>
+                <section class="article-section">
+                    <h2>What Each One Actually Feels Like</h2>
+                    
+                    <p>The differences extend well beyond the staircase.</p>
+                    
+                    <p>Migraine pain pulses. It throbs in rhythm with the heartbeat, usually favoring one side of the head. And it rarely arrives alone. Nausea rolls in — sometimes tipping into vomiting. Light becomes so painful that an ordinary room feels like an interrogation. Sound amplifies until a normal conversation lands like a slap. About one in five patients experience <a href="article-aura.html">aura beforehand</a>: visual distortions, tingling, blind spots that crawl across the field of vision.<sup>[5]</sup></p>
+                    
+                    <div class="quote-box">
+                        <p>Neurologist Nancy Mueller of NYU Langone described the experience to the American Medical Association: a throbbing in a single location, a sick feeling in the stomach, an overwhelming fatigue — and then the sensation of wanting to take your head and put it somewhere else.<sup>[10]</sup></p>
+                    </div>
+                    
+                    <p>An untreated migraine attack lasts four to seventy-two hours. It can swallow an entire weekend.</p>
+                    
+                    <p>Tension headache feels like a band tightening across both sides of the skull — forehead, temples, the back of the neck. The pain presses but does not pulse. No nausea. No aura. Light and noise may mildly annoy, but they do not send you retreating to a dark room with the curtains drawn. Up to 78 percent of the general population will experience a tension headache at some point.<sup>[6]</sup> Most people work right through it.</p>
+                    
+                    <div class="highlight-box">
+                        <p>The clearest way to state the difference: migraine stops you. Tension headache slows you.</p>
+                    </div>
+                </section>
 
-                <!-- COMPARISON IMAGE -->
-                <figure class="article-image">
-                    <img src="images/migraine_tension_comparison.png" alt="Artistic medical comparison of migraine and tension headache — pulsating one-sided pain versus bilateral pressure band, digital art">
-                    <figcaption>Two headaches, two realities. Migraine: pulsating, one-sided, with sensory overload. Tension: pressing, bilateral, dull but manageable.</figcaption>
-                </figure>
+                <figure class="article-image">
+                    <img src="images/migraine_tension_comparison.png" alt="Artistic medical comparison of migraine and tension headache — pulsating one-sided pain versus bilateral pressure band, digital art">
+                    <figcaption>Two headaches, two realities. Migraine: pulsating, one-sided, with sensory overload. Tension: pressing, bilateral, dull but manageable.</figcaption>
+                </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator">* * *</div>
 
-                <section class="article-section">
-                    <h2>The Grey Zone Is Real</h2>
-                    
-                    <p>Some readers will object that real life rarely sorts this neatly.</p>
-                    
-                    <p>They would be right.</p>
-                    
-                    <p>Research shows that 94 percent of migraine patients also experience tension-type headaches between attacks.<sup>[7]</sup> The Spectrum Study found that nearly one-third of patients initially diagnosed with tension-type headache were later reclassified as migraine once researchers reviewed detailed headache diaries.<sup>[8]</sup> A single episode can genuinely look like either condition.</p>
-                    
-                    <p>A pattern over weeks cannot.</p>
-                    
-                    <p>Did the pain worsen on the stairs? Was it one-sided? Did light bother you? Did you feel nauseous? Did the attack last longer than four hours?</p>
-                    
-                    <p>No single answer proves a diagnosis. But five or six answers, repeated across several episodes, reveal the real story. This is precisely why headache diaries exist — and why neurologists say a diary is one of the most powerful diagnostic tools a patient can bring to their first appointment.<sup>[11]</sup> Memory fails. Patterns on paper do not.</p>
-                </section>
+                <section class="article-section">
+                    <h2>The Grey Zone Is Real</h2>
+                    
+                    <p>Some readers will object that real life rarely sorts this neatly.</p>
+                    
+                    <p>They would be right.</p>
+                    
+                    <p>Research shows that 94 percent of migraine patients also experience tension-type headaches between attacks.<sup>[7]</sup> The Spectrum Study found that nearly one-third of patients initially diagnosed with tension-type headache were later reclassified as migraine once researchers reviewed detailed headache diaries.<sup>[8]</sup> A single episode can genuinely look like either condition.</p>
+                    
+                    <p>A pattern over weeks cannot.</p>
+                    
+                    <p>Did the pain worsen on the stairs? Was it one-sided? Did light bother you? Did you feel nauseous? Did the attack last longer than four hours?</p>
+                    
+                    <p>No single answer proves a diagnosis. But five or six answers, repeated across several episodes, reveal the real story. This is precisely why headache diaries exist — and why neurologists say a diary is one of the most powerful diagnostic tools a patient can bring to their first appointment.<sup>[11]</sup> Memory fails. Patterns on paper do not.</p>
+                </section>
 
-                <!-- HEADACHE DIARY IMAGE -->
-                <figure class="article-image">
-                    <img src="images/headache_diary_pattern.png" alt="Headache diary showing migraine and tension headache pattern emerging over four weeks — intimate desk scene, digital art">
-                    <figcaption>A headache diary over four weeks reveals what a single episode hides. Migraine clusters emerge. Tension dots scatter. The pattern becomes undeniable.</figcaption>
-                </figure>
+                <figure class="article-image">
+                    <img src="images/headache_diary_pattern.png" alt="Headache diary showing migraine and tension headache pattern emerging over four weeks — intimate desk scene, digital art">
+                    <figcaption>A headache diary over four weeks reveals what a single episode hides. Migraine clusters emerge. Tension dots scatter. The pattern becomes undeniable.</figcaption>
+                </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator">* * *</div>
 
-                <section class="article-section">
-                    <h2>Why the Right Answer Changes Everything</h2>
-                    
-                    <p>Migraine and tension headache do not just feel different. They respond to fundamentally different treatments.</p>
-                    
-                    <p>Triptans target the specific neurological pathways that drive a migraine attack. Taken early, they work remarkably well — and they do nothing whatsoever for tension headache.<sup>[8]</sup> Meanwhile, the strategies that tension headache responds to — stress management, posture correction, muscular relaxation — rarely touch a migraine in full force.</p>
-                    
-                    <p>The wrong treatment carries its own danger. Frequent use of painkillers for headaches that keep returning can trigger medication-overuse headache — a new pattern of daily pain layered on top of the original condition.<sup>[5]</sup> A cycle harder to break than the problem that started it.</p>
-                    
-                    <p>And this is not an edge case. Population-based data from Europe indicate that only 2 to 14 percent of people eligible for migraine prevention actually receive it.<sup>[12]</sup> The gap between what medicine knows and what patients get remains, in the words of a European Headache Federation consensus statement, a substantial public health challenge.<sup>[12]</sup></p>
-                </section>
+                <section class="article-section">
+                    <h2>Why the Right Answer Changes Everything</h2>
+                    
+                    <p>Migraine and tension headache do not just feel different. They respond to fundamentally different treatments.</p>
+                    
+                    <p>Triptans target the specific neurological pathways that drive a migraine attack. Taken early, they work remarkably well — and they do nothing whatsoever for tension headache.<sup>[8]</sup> Meanwhile, the strategies that tension headache responds to — stress management, posture correction, <a href="article-478-breathing.html">muscular relaxation</a> — rarely touch a migraine in full force.</p>
+                    
+                    <p>The wrong treatment carries its own danger. Frequent use of painkillers for headaches that keep returning can trigger <a href="article-moh.html">medication-overuse headache</a> — a new pattern of daily pain layered on top of the original condition.<sup>[5]</sup> A cycle harder to break than the problem that started it.</p>
+                    
+                    <p>And this is not an edge case. Population-based data from Europe indicate that only 2 to 14 percent of people eligible for migraine prevention actually receive it.<sup>[12]</sup> The gap between what medicine knows and what patients get remains, in the words of a European Headache Federation consensus statement, a substantial public health challenge.<sup>[12]</sup></p>
+                </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator">* * *</div>
 
-                <section class="article-section">
-                    <h2>Your Move</h2>
-                    
-                    <p>You do not need to diagnose yourself with clinical precision. You need to observe yourself honestly.</p>
-                    
-                    <p>Next time your head hurts, notice five things: <em>Throbbing or pressing? One side or both? Worse with movement? Light or sound intolerable? Nauseous?</em></p>
-                    
-                    <p>Write them down. Every time.</p>
-                    
-                    <p>In Migraine Companion, Mi helps you track exactly these details — building the kind of diary that transforms invisible patterns into a clear, shareable picture. Over weeks, the guessing fades. The pattern sharpens. And when the pattern is clear, the right treatment follows.</p>
-                    
-                    <p>Because the question was never "do I have a headache?"</p>
-                    
-                    <div class="highlight-box">
-                        <p>It was always: which one?</p>
-                    </div>
-                </section>
+                <section class="article-section">
+                    <h2>Your Move</h2>
+                    
+                    <p>You do not need to diagnose yourself with clinical precision. You need to observe yourself honestly.</p>
+                    
+                    <p>Next time your head hurts, notice five things: <em>Throbbing or pressing? One side or both? Worse with movement? Light or sound intolerable? Nauseous?</em></p>
+                    
+                    <p>Write them down. Every time.</p>
+                    
+                    <p>In Migraine Companion, <a href="meet-mi.html">Mi helps you track</a> exactly these details — building the kind of diary that transforms invisible patterns into a clear, shareable picture. Over weeks, the guessing fades. The pattern sharpens. And when the pattern is clear, the right treatment follows.</p>
+                    
+                    <p>Because the question was never "do I have a headache?"</p>
+                    
+                    <div class="highlight-box">
+                        <p>It was always: which one?</p>
+                    </div>
+                </section>
 
-                <!-- FAQ SECTION -->
-                <div class="faq-section">
-                    <h2>❓ Frequently Asked Questions</h2>
-                    
-                    <div class="faq-item">
-                        <h4>Can I have both migraine and tension headache?</h4>
-                        <p>Yes. Research shows that 94% of migraine patients also experience tension-type headaches between attacks. This is one reason misdiagnosis is so common — and why tracking patterns over weeks matters more than analyzing a single episode.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h4>What is the staircase test?</h4>
-                        <p>During a headache, climb a flight of stairs or bend forward quickly. If the pain surges and throbs harder with movement, it's more likely migraine. If the pain stays the same or doesn't change, it's more likely tension-type. The ICHD-3 lists "aggravation by routine physical activity" as a formal criterion for migraine.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h4>Why does it matter which type of headache I have?</h4>
-                        <p>Because treatments are fundamentally different. Triptans work for migraine but do nothing for tension headache. Stress management helps tension headache but rarely stops a migraine. The wrong treatment can even make things worse — frequent painkiller use can trigger medication-overuse headache.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h4>How long does it typically take to get a correct migraine diagnosis?</h4>
-                        <p>Studies show an average delay of nearly 8 years between first attack and correct diagnosis. A 12-country study found that only 28% of people with migraine knew they had it — the rest called it stress, sinus trouble, or simply "a bad headache."</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h4>What should I bring to my first neurologist appointment?</h4>
-                        <p>A headache diary. Record each episode: throbbing or pressing, one side or both, worse with movement, light/sound sensitivity, nausea, duration, and what you ate or did before it started. Neurologists consider a diary one of the most powerful diagnostic tools a patient can bring.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h4>When should I see a doctor about my headaches?</h4>
-                        <p>See a doctor if: (1) headaches are new or changing in pattern, (2) they're increasing in frequency or severity, (3) over-the-counter painkillers aren't helping, (4) headaches are affecting your daily life or work. Seek emergency care if a headache is sudden, the worst of your life, or accompanied by fever, stiff neck, confusion, or weakness.</p>
-                    </div>
-                </div>
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-aura.html" class="related-card">
+                            <h4>When the World Glitches</h4>
+                            <p>One in five migraine patients experiences aura. Learn how to recognize these visual warnings.</p>
+                        </a>
+                        <a href="article-moh.html" class="related-card">
+                            <h4>The Trap of Relief</h4>
+                            <p>Taking the wrong medication for misdiagnosed headaches can trigger a new cycle of daily pain.</p>
+                        </a>
+                    </div>
+                </div>
 
-                <!-- TRUST SIGNALS -->
-                <div class="trust-signals">
-                    <span class="trust-signal">Evidence-based content</span>
-                    <span class="trust-signal">ICHD-3 aligned</span>
-                    <span class="trust-signal">Peer-reviewed sources</span>
-                    <span class="trust-signal">Regular updates</span>
-                    <span class="trust-signal">No pharma sponsorship</span>
-                </div>
+                <div class="faq-section">
+                    <h2>❓ Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <h4>Can I have both migraine and tension headache?</h4>
+                        <p>Yes. Research shows that 94% of migraine patients also experience tension-type headaches between attacks. This is one reason misdiagnosis is so common — and why tracking patterns over weeks matters more than analyzing a single episode.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>What is the staircase test?</h4>
+                        <p>During a headache, climb a flight of stairs or bend forward quickly. If the pain surges and throbs harder with movement, it's more likely migraine. If the pain stays the same or doesn't change, it's more likely tension-type. The ICHD-3 lists "aggravation by routine physical activity" as a formal criterion for migraine.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Why does it matter which type of headache I have?</h4>
+                        <p>Because treatments are fundamentally different. Triptans work for migraine but do nothing for tension headache. Stress management helps tension headache but rarely stops a migraine. The wrong treatment can even make things worse — frequent painkiller use can trigger medication-overuse headache.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>How long does it typically take to get a correct migraine diagnosis?</h4>
+                        <p>Studies show an average delay of nearly 8 years between first attack and correct diagnosis. A 12-country study found that only 28% of people with migraine knew they had it — the rest called it stress, sinus trouble, or simply "a bad headache."</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>What should I bring to my first neurologist appointment?</h4>
+                        <p>A headache diary. Record each episode: throbbing or pressing, one side or both, worse with movement, light/sound sensitivity, nausea, duration, and what you ate or did before it started. Neurologists consider a diary one of the most powerful diagnostic tools a patient can bring.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>When should I see a doctor about my headaches?</h4>
+                        <p>See a doctor if: (1) headaches are new or changing in pattern, (2) they're increasing in frequency or severity, (3) over-the-counter painkillers aren't helping, (4) headaches are affecting your daily life or work. Seek emergency care if a headache is sudden, the worst of your life, or accompanied by fever, stiff neck, confusion, or weakness.</p>
+                    </div>
+                </div>
 
-                <!-- REFERENCES -->
-                <div class="references">
-                    <h3>📚 References</h3>
-                    <ol>
-                        <li>Viana M, Khaliq F, Zecca C, et al. Poor patient awareness and frequent misdiagnosis of migraine: findings from a large transcontinental cohort. <em>European Journal of Neurology.</em> 2020;27(3):536-541. <a href="https://doi.org/10.1111/ene.14114" target="_blank">doi:10.1111/ene.14114</a></li>
-                        <li>Lipton RB, Stewart WF, Diamond S, et al. Prevalence and burden of migraine in the United States: data from the American Migraine Study II. <em>Headache.</em> 2001;41(7):646-657. <a href="https://doi.org/10.1046/j.1526-4610.2001.041007646.x" target="_blank">doi:10.1046/j.1526-4610.2001.041007646.x</a></li>
-                        <li>Kim JR, Devine B, et al. Healthcare resource use and costs associated with the misdiagnosis of migraine. <em>Headache.</em> 2024. <a href="https://doi.org/10.1111/head.14822" target="_blank">doi:10.1111/head.14822</a></li>
-                        <li>Ertas M, Baykan B, Orbay E, et al. A comparative study of sinus headache diagnosis and its impact on migraine treatment delay. <em>Journal of Headache and Pain.</em> 2023;24:148. <a href="https://doi.org/10.1186/s10194-023-01688-0" target="_blank">doi:10.1186/s10194-023-01688-0</a></li>
-                        <li>Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. <em>Cephalalgia.</em> 2018;38(1):1-211. <a href="https://doi.org/10.1177/0333102417738202" target="_blank">doi:10.1177/0333102417738202</a></li>
-                        <li>Stovner LJ, Hagen K, Linde M, Steiner TJ. The global prevalence of headache: an update. <em>Journal of Headache and Pain.</em> 2022;23(1):34. <a href="https://doi.org/10.1186/s10194-022-01402-2" target="_blank">doi:10.1186/s10194-022-01402-2</a></li>
-                        <li>Loder E, Rizzoli P. Tension-type headache. <em>BMJ.</em> 2008;336(7635):88-92. <a href="https://doi.org/10.1136/bmj.39412.705868.AD" target="_blank">doi:10.1136/bmj.39412.705868.AD</a></li>
-                        <li>Lipton RB, Cady RK, Stewart WF, Wilks K, Hall C. Diagnostic lessons from the Spectrum Study. <em>Neurology.</em> 2002;58(9 Suppl 6):S27-S31. <a href="https://doi.org/10.1212/WNL.58.9_suppl_6.S27" target="_blank">doi:10.1212/WNL.58.9_suppl_6.S27</a></li>
-                        <li>Goadsby PJ. Interview with CBC Radio, "As It Happens." March 11, 2021. On occasion of the Brain Prize 2021 award.</li>
-                        <li>Mueller NL. What doctors wish patients knew about living with migraines. <em>American Medical Association.</em> May 27, 2022.</li>
-                        <li>American Migraine Foundation. What to expect from a first-time visit to a headache specialist. <a href="https://americanmigrainefoundation.org" target="_blank">americanmigrainefoundation.org</a></li>
-                        <li>Ashina M, Buse DC, Ashina H, et al. Diagnosis and management of migraine in ten steps. <em>Nature Reviews Neurology.</em> 2021;17:501-514. <a href="https://doi.org/10.1038/s41582-021-00509-5" target="_blank">doi:10.1038/s41582-021-00509-5</a></li>
-                    </ol>
-                </div>
+                <div class="trust-signals">
+                    <span class="trust-signal">Evidence-based content</span>
+                    <span class="trust-signal">ICHD-3 aligned</span>
+                    <span class="trust-signal">Peer-reviewed sources</span>
+                    <span class="trust-signal">Regular updates</span>
+                    <span class="trust-signal">No pharma sponsorship</span>
+                </div>
 
-                <div class="article-footer">
-                    <div class="author-card">
-                        <div class="author-avatar">
-                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
-                        </div>
-                        <div class="author-info">
-                            <h3>Rustam Iuldashov</h3>
-                            <p><strong>Creator & Developer</strong> — I've lived with migraine for over 30 years. Decades of navigating misdiagnosis, wrong treatments, and the daily reality of chronic migraine led me to build Migraine Companion — to help others find their pattern faster than I found mine.</p>
-                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. All medical content is reviewed by qualified healthcare providers and referenced to peer-reviewed research. <a href="https://www.linkedin.com/in/rustam-iuldashov-022450135/" target="_blank" style="color:var(--lavender);">LinkedIn</a> · <a href="mailto:migrainecompanion.app@gmail.com" style="color:var(--lavender);">migrainecompanion.app@gmail.com</a></em></p>
-                        </div>
-                    </div>
+                <div class="references">
+                    <h3>📚 References</h3>
+                    <ol>
+                        <li>Viana M, Khaliq F, Zecca C, et al. Poor patient awareness and frequent misdiagnosis of migraine: findings from a large transcontinental cohort. <em>European Journal of Neurology.</em> 2020;27(3):536-541. <a href="https://doi.org/10.1111/ene.14114" target="_blank">doi:10.1111/ene.14114</a></li>
+                        <li>Lipton RB, Stewart WF, Diamond S, et al. Prevalence and burden of migraine in the United States: data from the American Migraine Study II. <em>Headache.</em> 2001;41(7):646-657. <a href="https://doi.org/10.1046/j.1526-4610.2001.041007646.x" target="_blank">doi:10.1046/j.1526-4610.2001.041007646.x</a></li>
+                        <li>Kim JR, Devine B, et al. Healthcare resource use and costs associated with the misdiagnosis of migraine. <em>Headache.</em> 2024. <a href="https://doi.org/10.1111/head.14822" target="_blank">doi:10.1111/head.14822</a></li>
+                        <li>Ertas M, Baykan B, Orbay E, et al. A comparative study of sinus headache diagnosis and its impact on migraine treatment delay. <em>Journal of Headache and Pain.</em> 2023;24:148. <a href="https://doi.org/10.1186/s10194-023-01688-0" target="_blank">doi:10.1186/s10194-023-01688-0</a></li>
+                        <li>Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. <em>Cephalalgia.</em> 2018;38(1):1-211. <a href="https://doi.org/10.1177/0333102417738202" target="_blank">doi:10.1177/0333102417738202</a></li>
+                        <li>Stovner LJ, Hagen K, Linde M, Steiner TJ. The global prevalence of headache: an update. <em>Journal of Headache and Pain.</em> 2022;23(1):34. <a href="https://doi.org/10.1186/s10194-022-01402-2" target="_blank">doi:10.1186/s10194-022-01402-2</a></li>
+                        <li>Loder E, Rizzoli P. Tension-type headache. <em>BMJ.</em> 2008;336(7635):88-92. <a href="https://doi.org/10.1136/bmj.39412.705868.AD" target="_blank">doi:10.1136/bmj.39412.705868.AD</a></li>
+                        <li>Lipton RB, Cady RK, Stewart WF, Wilks K, Hall C. Diagnostic lessons from the Spectrum Study. <em>Neurology.</em> 2002;58(9 Suppl 6):S27-S31. <a href="https://doi.org/10.1212/WNL.58.9_suppl_6.S27" target="_blank">doi:10.1212/WNL.58.9_suppl_6.S27</a></li>
+                        <li>Goadsby PJ. Interview with CBC Radio, "As It Happens." March 11, 2021. On occasion of the Brain Prize 2021 award.</li>
+                        <li>Mueller NL. What doctors wish patients knew about living with migraines. <em>American Medical Association.</em> May 27, 2022.</li>
+                        <li>American Migraine Foundation. What to expect from a first-time visit to a headache specialist. <a href="https://americanmigrainefoundation.org" target="_blank">americanmigrainefoundation.org</a></li>
+                        <li>Ashina M, Buse DC, Ashina H, et al. Diagnosis and management of migraine in ten steps. <em>Nature Reviews Neurology.</em> 2021;17:501-514. <a href="https://doi.org/10.1038/s41582-021-00509-5" target="_blank">doi:10.1038/s41582-021-00509-5</a></li>
+                    </ol>
+                </div>
 
-                    <div class="cta-box">
-                        <h3>Track Your Headache Patterns with Mi</h3>
-                        <p>Throbbing or pressing? One side or both? Mi helps you document exactly what matters — building the diary that transforms guessing into clarity.</p>
-                        <div class="download-buttons">
-                            <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-    Download on App Store
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
+                        </div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator & Developer</strong> — I've lived with migraine for over 30 years. Decades of navigating misdiagnosis, wrong treatments, and the daily reality of chronic migraine led me to build Migraine Companion — to help others find their pattern faster than I found mine.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. All medical content is reviewed by qualified healthcare providers and referenced to peer-reviewed research. <a href="https://www.linkedin.com/in/rustam-iuldashov-022450135/" target="_blank" style="color:var(--lavender);">LinkedIn</a> · <a href="mailto:migrainecompanion.app@gmail.com" style="color:var(--lavender);">migrainecompanion.app@gmail.com</a></em></p>
+                        </div>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Track Your Headache Patterns with Mi</h3>
+                        <p>Throbbing or pressing? One side or both? Mi helps you document exactly what matters — building the diary that transforms guessing into clarity.</p>
+                        <div class="download-buttons">
+                            <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    Download on App Store
 </a>
 <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
-    Get it on Google Play
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+    Get it on Google Play
 </a>
-                        </div>
-                    </div>
-                </div>
+                        </div>
+                    </div>
+                </div>
 
-            </div>
-        </article>
-    </main>
+            </div>
+        </article>
+    </main>
 
-    <footer>
-        <div class="container">
-            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
-        </div>
-    </footer>
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2026 Migraine Companion. Made with 💜 in Ukraine.</p>
+        </div>
+    </footer>
 </body>
-</html>  
+</html>
