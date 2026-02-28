@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
-    <!-- Schema.org markup for EEAT -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -390,8 +389,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
 
         .download-btn:hover {
@@ -583,6 +582,75 @@ justify-content: center;
             border-top: 1px solid rgba(139, 122, 168, 0.1);
         }
 
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-section a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .article-section a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        
+        .related-card h4 {
+            color: var(--lavender);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin-top: 0;
+        }
+        
+        .related-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
@@ -620,7 +688,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
 
-                <!-- AUTHOR BYLINE -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -630,13 +697,11 @@ justify-content: center;
                     </p>
                 </div>
 
-                <!-- MEDICAL DISCLAIMER -->
                 <p class="medical-disclaimer">
                     <strong>Medical Review:</strong> This content is based on 28 peer-reviewed sources including the <em>New England Journal of Medicine</em>, <em>Neurology</em>, <em>Cephalalgia</em>, <em>The Journal of Headache and Pain</em>, and the SWAN longitudinal cohort study.<br><br>
                     <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. Always consult a healthcare professional before starting or changing any treatment.
                 </p>
 
-                <!-- OPENING -->
                 <section class="article-section">
                     <p>Two days before her period, Sarah cancels dinner. She already knows. Not from the cramp — that comes later — but from the shadow behind her right eye, the slow thickening of light into something hostile. By morning, she will be in bed with the curtains drawn, a washcloth on her forehead, hours lost.</p>
                     <p>She has lived this rhythm for fourteen years.</p>
@@ -645,7 +710,6 @@ justify-content: center;
                     <p>How is that possible?</p>
                 </section>
 
-                <!-- IMAGE 1: THE CLIFF -->
                 <figure class="article-image">
                     <img src="images/hormone_cliff_estrogen_drop.png" alt="The Hormone Cliff — cinematic visualization of the dramatic estrogen withdrawal that triggers menstrual migraine">
                     <figcaption>The Hormone Cliff — Estrogen doesn't just decline before menstruation. In migraineurs, it plummets 46% faster than in controls (SWAN, n = 3,302)</figcaption>
@@ -653,7 +717,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE CLIFF -->
                 <section class="article-section">
                     <h2>The Cliff</h2>
                     <p>The answer begins with a discovery made in 1972 by an Australian neurologist named Brian Somerville. His experiment was deceptively simple: inject estradiol into women who reliably developed migraines before their periods, then observe.<sup>[5]</sup></p>
@@ -665,17 +728,15 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE CASCADE -->
                 <section class="article-section">
                     <h2>The Cascade</h2>
                     <p>If estrogen withdrawal were the whole story, the solution would be simple: stabilize hormones, stop migraines. But biology rarely cooperates. When estrogen drops, it triggers not one disruption but three — each amplifying the others.</p>
                     <p><strong>Serotonin crashes.</strong> Estrogen directly regulates serotonin synthesis. When estrogen declines, serotonin production slows. Simultaneously, the enzyme that destroys serotonin — monoamine oxidase — accelerates.<sup>[9]</sup> Less being made; more being destroyed. This dual collapse may explain why triptans, which depend on serotonin receptors, often underperform against menstrual attacks: the very receptors they target become desensitized when estrogen runs low.<sup>[10]</sup></p>
                     <p><strong>The brain's painkillers go offline.</strong> During the late luteal phase, the capacity to activate μ-opioid receptors — the same system targeted by morphine — becomes impaired.<sup>[11]</sup> Pain signals that would normally be dampened arrive at full volume.</p>
                     <p><strong>Prostaglandins flood the system.</strong> Here menstrual migraine diverges most sharply from ordinary migraine. During the first 48 hours of menstruation, the uterus releases prostaglandin E2 — and these molecules don't stay local. Prostaglandin levels can triple between the follicular and menstrual phases.<sup>[10]</sup> PGE2 provokes the release of calcitonin gene-related peptide (CGRP) from trigeminal nerve fibers, dilating blood vessels and igniting neurogenic inflammation in the meninges.<sup>[12]</sup> Animal models confirm that PGE2 concentrations in pain-processing brain regions rise specifically during periods of low sex hormones, directly increasing CGRP expression.<sup>[12]</sup></p>
-                    <p>MacGregor identified these as two completely independent triggers.<sup>[13]</sup> A woman may be vulnerable to the hormonal drop, to the prostaglandin surge, or to both. This explains a clinical puzzle: why some treatments work for some women and fail for others. The triggers differ. So must the strategy.</p>
+                    <p>MacGregor identified these as two completely <a href="article-understanding-triggers.html">independent triggers</a>.<sup>[13]</sup> A woman may be vulnerable to the hormonal drop, to the prostaglandin surge, or to both. This explains a clinical puzzle: why some treatments work for some women and fail for others. The triggers differ. So must the strategy.</p>
                 </section>
 
-                <!-- IMAGE 2: TRIPLE CASCADE -->
                 <figure class="article-image">
                     <img src="images/triple_cascade_serotonin_prostaglandin_cgrp.png" alt="The Triple Cascade — cinematic visualization of three simultaneous neurochemical disruptions triggered by estrogen withdrawal">
                     <figcaption>The Triple Cascade — Three systems collapse simultaneously: serotonin crashes, opioid receptors shut down, prostaglandins surge — converging on CGRP activation</figcaption>
@@ -683,7 +744,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE NATURAL EXPERIMENTS -->
                 <section class="article-section">
                     <h2>The Natural Experiments</h2>
                     <p>Science often depends on controlled conditions. Nature, occasionally, provides them for free.</p>
@@ -696,7 +756,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- IMAGE 3: LIFECYCLE -->
                 <figure class="article-image">
                     <img src="images/lifecycle_pregnancy_perimenopause_menopause.png" alt="A woman's migraine journey across four life stages — from reproductive years through pregnancy, perimenopause, and menopause">
                     <figcaption>The Lifecycle — Four natural experiments prove the same principle: stable estrogen protects, volatile estrogen attacks</figcaption>
@@ -704,7 +763,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE EVIDENCE -->
                 <section class="article-section">
                     <h2>The Evidence</h2>
                     <p>Understanding the mechanism is necessary. It is not sufficient. What follows is what the clinical trial data actually support — organized from simplest intervention to most targeted, with sample sizes and effect sizes included.</p>
@@ -713,18 +771,17 @@ justify-content: center;
 
                     <p><strong>Timed NSAIDs.</strong> A double-blind, placebo-controlled trial by Sances and colleagues (n = 34) demonstrated that naproxen sodium (550 mg twice daily), started two days before expected menstruation and continued through day three of bleeding, significantly reduced headache frequency, severity, and duration compared with placebo.<sup>[18]</sup> The mechanism is direct: naproxen inhibits cyclooxygenase, blocking the prostaglandin surge that triggers CGRP release.<sup>[4]</sup> For women whose migraines travel with painful or heavy periods — a sign of elevated prostaglandin production — this approach does double duty.</p>
 
-                    <p><strong>Magnesium from cycle day 15.</strong> A double-blind, placebo-controlled trial by Facchinetti and colleagues (n = 20) found that 360 mg of oral magnesium daily, begun on day 15 of the cycle and continued until the next period, significantly reduced both menstrual migraine attacks and premenstrual symptoms.<sup>[19]</sup> Critically, intracellular magnesium levels were measurably lower in migraine patients at baseline and rose significantly with supplementation, suggesting a direct physiological correction rather than a placebo effect.<sup>[19]</sup> Magnesium glycinate is gentler on the stomach; magnesium citrate works better if constipation is a concern.</p>
+                    <p><strong>Magnesium from cycle day 15.</strong> A double-blind, placebo-controlled trial by Facchinetti and colleagues (n = 20) found that <a href="magnesium-riboflavin-coq10-migraine.html">360 mg of oral magnesium daily</a>, begun on day 15 of the cycle and continued until the next period, significantly reduced both menstrual migraine attacks and premenstrual symptoms.<sup>[19]</sup> Critically, intracellular magnesium levels were measurably lower in migraine patients at baseline and rose significantly with supplementation, suggesting a direct physiological correction rather than a placebo effect.<sup>[19]</sup> Magnesium glycinate is gentler on the stomach; magnesium citrate works better if constipation is a concern.</p>
 
-                    <p><strong>Vitamin E mini-course.</strong> A randomized, double-blind, placebo-controlled trial found that 400 IU of vitamin E daily for five days — starting two days before menstruation and continuing three days after — significantly reduced pain intensity, functional disability, and associated symptoms including photophobia and phonophobia.<sup>[20]</sup></p>
+                    <p><strong>Vitamin E mini-course.</strong> A randomized, double-blind, placebo-controlled trial found that 400 IU of vitamin E daily for five days — starting two days before menstruation and continuing three days after — significantly reduced pain intensity, functional disability, and associated symptoms including <a href="article-aura.html">photophobia and phonophobia</a>.<sup>[20]</sup></p>
 
-                    <p><strong>Frovatriptan mini-prevention.</strong> The largest and most rigorous trial data exist for this approach. Silberstein and colleagues randomized 546 women in a double-blind, placebo-controlled, three-way crossover design.<sup>[21]</sup> Each participant treated three perimenstrual periods with placebo, frovatriptan 2.5 mg once daily, or frovatriptan 2.5 mg twice daily, starting two days before anticipated migraine and continuing for six days. The results: menstrual migraine occurred during 67% of placebo periods, 52% of once-daily periods, and 41% of twice-daily periods (p &lt; 0.0001 for both doses versus placebo). Both regimens also significantly reduced migraine severity, duration, and rescue medication use.<sup>[21]</sup> A second trial specifically targeting women with treatment-resistant menstrual migraine (n = 410) confirmed these findings, with the twice-daily regimen doubling the number of headache-free perimenstrual periods compared with placebo (p &lt; 0.001).<sup>[22]</sup> A meta-analysis of six randomized controlled trials totaling over 2,800 participants established frovatriptan 2.5 mg twice daily as the most effective triptan for menstrual migraine prevention (RR 1.98, 95% CI 1.68–2.34 versus placebo).<sup>[23]</sup></p>
+                    <p><strong>Frovatriptan mini-prevention.</strong> The largest and most rigorous trial data exist for this approach. Silberstein and colleagues randomized 546 women in a double-blind, placebo-controlled, three-way crossover design.<sup>[21]</sup> Each participant treated three perimenstrual periods with placebo, frovatriptan 2.5 mg once daily, or frovatriptan 2.5 mg twice daily, starting <a href="article-prediction.html">two days before anticipated migraine</a> and continuing for six days. The results: menstrual migraine occurred during 67% of placebo periods, 52% of once-daily periods, and 41% of twice-daily periods (p &lt; 0.0001 for both doses versus placebo). Both regimens also significantly reduced migraine severity, duration, and rescue medication use.<sup>[21]</sup> A second trial specifically targeting women with treatment-resistant menstrual migraine (n = 410) confirmed these findings, with the twice-daily regimen doubling the number of headache-free perimenstrual periods compared with placebo (p &lt; 0.001).<sup>[22]</sup> A meta-analysis of six randomized controlled trials totaling over 2,800 participants established frovatriptan 2.5 mg twice daily as the most effective triptan for menstrual migraine prevention (RR 1.98, 95% CI 1.68–2.34 versus placebo).<sup>[23]</sup></p>
 
                     <p><strong>Hormonal stabilization.</strong> Estrogen supplementation — via transdermal patch, gel, or continuous low-dose oral contraceptives without placebo breaks — attacks the root mechanism by preventing the estrogen cliff.<sup>[24]</sup> MacGregor's research demonstrated that eliminating or shortening the hormone-free interval can substantially reduce menstrual attacks.<sup>[8]</sup> This path requires careful individualized assessment, particularly for women with migraine with aura, in whom estrogen-containing contraceptives carry elevated cardiovascular risk.<sup>[4]</sup></p>
 
                     <p><strong>CGRP-targeting therapies.</strong> These represent the most significant advance in migraine treatment in decades — and recent evidence confirms their relevance to menstrual migraine specifically. The STRIVE trial (n = 955), published in the <em>New England Journal of Medicine</em>, demonstrated that erenumab — a monoclonal antibody targeting the CGRP receptor — reduced monthly migraine days by approximately 3.7 days at the 140 mg dose, with 50% of patients achieving at least a 50% reduction in migraine frequency versus 26.6% on placebo.<sup>[25]</sup> A 2024 meta-analysis of 26 randomized controlled trials confirmed that both erenumab and galcanezumab significantly outperformed triptans in reducing monthly headache days when used as preventive therapy for menstrual migraine, with mean reductions of 2.1 and 2.4 days respectively.<sup>[26]</sup> Real-world data from Italian headache centers showed that CGRP monoclonal antibodies reduced menstrual migraine days from five to two per cycle, cut mean attack duration from 24 to 8 hours, and improved acute medication response rates from 42.5% to 95%.<sup>[27]</sup></p>
                 </section>
 
-                <!-- IMAGE 4: EVIDENCE STAIRCASE -->
                 <figure class="article-image">
                     <img src="images/evidence_treatments_timeline.png" alt="A monumental staircase of light ascending from darkness — each step represents an increasingly powerful menstrual migraine treatment">
                     <figcaption>The Evidence Staircase — From 3-month diary tracking to CGRP monoclonal antibodies: six levels of evidence-based treatment</figcaption>
@@ -732,7 +789,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE KEY QUESTION -->
                 <section class="article-section">
                     <h2>The Key Question</h2>
                     <p>Menstrual migraine is not a vague complaint. It is a distinct neurobiological event — measurable in hormone assays, visible in CGRP concentrations, and increasingly treatable with therapies designed around its specific mechanisms. A 2024 meta-analysis pooling data from more than 9,100 participants across 16 randomized controlled trials of CGRP monoclonal antibodies confirmed that this class of drugs offers significant, reproducible migraine reduction with a favorable safety profile.<sup>[28]</sup></p>
@@ -743,7 +799,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>Key Takeaways</h3>
                     <ul>
@@ -756,7 +811,20 @@ justify-content: center;
                     </ul>
                 </div>
 
-                <!-- WHEN TO SEE A DOCTOR -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="magnesium-riboflavin-coq10-migraine.html" class="related-card">
+                            <h4>Beyond the Pill: Magnesium & Supplements</h4>
+                            <p>Dive deeper into the science of magnesium, riboflavin, and CoQ10 for natural migraine prevention.</p>
+                        </a>
+                        <a href="article-understanding-triggers.html" class="related-card">
+                            <h4>Understanding Your Triggers</h4>
+                            <p>Hormones are just one piece of the puzzle. Learn how to identify and manage your personal migraine triggers.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="when-to-see-doctor">
                     <h3>When to See a Doctor</h3>
                     <ul>
@@ -769,7 +837,6 @@ justify-content: center;
                     <p>This article is a starting point for conversation with your doctor, not a replacement for medical care.</p>
                 </div>
 
-                <!-- REFERENCES -->
                 <div class="references">
                     <h3>References</h3>
                     <ol>
@@ -806,7 +873,6 @@ justify-content: center;
 
                 <div class="article-footer">
 
-                    <!-- AUTHOR CARD -->
                     <div class="author-card">
                         <div class="author-avatar">
                             <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
@@ -818,7 +884,6 @@ justify-content: center;
                         </div>
                     </div>
 
-                    <!-- EDITORIAL STANDARDS -->
                     <div class="editorial-standards">
                         <h3>How We Create Content</h3>
                         <ul>
@@ -830,7 +895,6 @@ justify-content: center;
                         </ul>
                     </div>
 
-                    <!-- CTA BOX -->
                     <div class="cta-box">
                         <h3>Track Your Menstrual Migraine Pattern with Mi</h3>
                         <p>Mi helps you build the dual diary neurologists recommend — migraine days alongside menstrual days — so patterns emerge that single entries never reveal.</p>
@@ -846,7 +910,6 @@ justify-content: center;
 </div>
                     </div>
 
-                    <!-- REVIEW DATES -->
                     <div class="review-dates">
                         <p><em>Last reviewed: February 2026</em></p>
                         <p><em>Next scheduled review: August 2026</em></p>
