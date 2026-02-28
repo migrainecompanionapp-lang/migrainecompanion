@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     
-    <!-- Schema.org markup for EEAT -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -487,8 +486,8 @@
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
@@ -638,6 +637,75 @@ justify-content: center;
             color: var(--text-dark);
             font-size: 0.85rem;
         }
+
+        /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
+        .article-section a, .action-box a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139, 122, 168, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .article-section a:hover, .action-box a:hover {
+            border-bottom-color: var(--lavender);
+            background: rgba(139, 122, 168, 0.05);
+        }
+
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 122, 168, 0.05);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+        }
+        
+        .related-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 122, 168, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .related-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--lavender);
+        }
+        
+        .related-card h4 {
+            color: var(--lavender);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin-top: 0;
+        }
+        
+        .related-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
         
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
@@ -678,7 +746,6 @@ justify-content: center;
         <article class="article-content">
             <div class="container">
 
-                <!-- AUTHOR BYLINE -->
                 <div style="text-align:center;padding:32px 0 16px;">
                     <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">
                         By Rustam Iuldashov
@@ -688,13 +755,11 @@ justify-content: center;
                     </p>
                 </div>
 
-                <!-- MEDICAL DISCLAIMER -->
                 <p class="medical-disclaimer">
                     <strong>Medical Review:</strong> This content is based on peer-reviewed research from The Journal of Headache and Pain, The Lancet, Neurology, Frontiers in Neurology, Science Translational Medicine, and other authoritative sources.<br><br>
                     <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. Consult your doctor before changing your sleep habits, especially if you have a sleep disorder or take medications.
                 </p>
 
-                <!-- OPENING -->
                 <section class="article-section">
                     <p>Friday night. A week of deadlines, bad coffee, and screen glare. You kill the alarm, pull the blackout curtain shut, and let yourself sleep. Saturday, almost noon, you surface — and the migraine is already boring into your right temple like a drill bit into drywall.</p>
 
@@ -707,18 +772,16 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- THE CHEMICAL -->
                 <section class="article-section">
                     <h2>The Chemical That Counts Your Waking Hours</h2>
 
-                    <p>Every second you are awake, your neurons burn adenosine triphosphate for fuel. The waste product is adenosine — a molecule that accumulates in the brain the way carbon monoxide fills a closed garage: invisibly, steadily, and with consequences.<sup>[2]</sup> The longer you stay up, the more adenosine saturates the extracellular space. That saturation is what makes your eyelids heavy at midnight. It is also what caffeine blocks, which is why an espresso mid-attack brings short relief.<sup>[3]</sup></p>
+                    <p>Every second you are awake, your neurons burn adenosine triphosphate for fuel. The waste product is adenosine — a molecule that accumulates in the brain the way carbon monoxide fills a closed garage: invisibly, steadily, and with consequences.<sup>[2]</sup> The longer you stay up, the more adenosine saturates the extracellular space. That saturation is what makes your eyelids heavy at midnight. It is also <a href="article-caffeine.html">why an espresso mid-attack brings short relief</a>.<sup>[3]</sup></p>
 
-                    <p>But adenosine does something else. It dilates blood vessels. And it overstimulates cortical neurons through A1 receptors — nudging the brain toward a threshold that migraine researchers track obsessively: cortical spreading depolarization, the slow electrical tsunami that underlies aura.<sup>[4]</sup></p>
+                    <p>But adenosine does something else. It dilates blood vessels. And it overstimulates cortical neurons through A1 receptors — nudging the brain toward a threshold that migraine researchers track obsessively: cortical spreading depolarization, the slow electrical tsunami that underlies <a href="article-aura.html">aura</a>.<sup>[4]</sup></p>
 
                     <p>In 2020, a team led by Kilic at Leiden and Erasmus universities proved the connection experimentally. They deprived rats of sleep for six hours, then for twelve, and measured CSD susceptibility after each interval. The results were dose-dependent: six hours of lost sleep significantly lowered the threshold for cortical spreading depolarization. Twelve hours lowered it further.<sup>[5]</sup> Less sleep, more vulnerability. The relationship was linear.</p>
                 </section>
 
-                <!-- IMAGE: ADENOSINE HOURGLASS -->
                 <figure class="article-image">
                     <img src="images/adenosine-hourglass-neural-timer.png" alt="Hyper-detailed digital art of a neural hourglass with glowing adenosine molecules accumulating, symbolizing sleep pressure building in the brain">
                     <figcaption>The Neural Timer — Adenosine accumulates with every waking hour, slowly pushing the migraine brain toward its threshold</figcaption>
@@ -735,7 +798,6 @@ justify-content: center;
                     <p>This is the biology of Monday morning. Skip sleep, and your brain accumulates a vasodilator that primes it for pain and fails to flush the toxins that fuel inflammation.</p>
                 </section>
 
-                <!-- IMAGE: GLYMPHATIC SPLIT -->
                 <figure class="article-image">
                     <img src="images/glymphatic-system-clean-vs-toxic-brain.png" alt="Split composition showing healthy brain tissue with flowing cerebrospinal fluid on the left versus sleep-deprived brain with stagnant waste buildup on the right">
                     <figcaption>Clean vs. Toxic — During deep sleep, the glymphatic system flushes waste from the brain. Sleep deprivation shuts down the cleaning crew.</figcaption>
@@ -743,13 +805,12 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- SATURDAY MORNING TRAP -->
                 <section class="article-section">
                     <h2>The Saturday Morning Trap</h2>
 
                     <p>If too little sleep leaves the brain unwashed and electrically primed, the remedy seems obvious. Sleep more.</p>
 
-                    <p>Except it doesn't work. Neurologists call the result "weekend migraine," and the mechanism has nothing to do with excess rest. It has to do with a clock.</p>
+                    <p>Except it doesn't work. Neurologists call the result "<a href="article-weekend-migraines.html">weekend migraine</a>," and the mechanism has nothing to do with excess rest. It has to do with a clock.</p>
 
                     <p>Deep in the hypothalamus sits a structure the size of a grain of rice: the suprachiasmatic nucleus, or SCN. It contains roughly 20,000 neurons, and it runs the body's master circadian rhythm — governing when cortisol rises, when melatonin drops, when serotonin shifts.<sup>[9]</sup> Every morning you wake at the same hour, you confirm that clock's setting. Every morning you sleep past it, you scramble the signal.</p>
 
@@ -760,7 +821,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- IMAGE: BROKEN CLOCK -->
                 <figure class="article-image">
                     <img src="images/circadian-clock-disrupted-brain.png" alt="Surrealist digital art of an ancient astronomical clock mechanism cracked in half inside a human skull, with scattered neurotransmitter molecules">
                     <figcaption>The Broken Clock — When your weekend schedule deviates from weekdays, your circadian machinery cracks under the strain</figcaption>
@@ -768,7 +828,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- WHAT 309K PEOPLE TAUGHT US -->
                 <section class="article-section">
                     <h2>What 309,475 People Taught Us</h2>
 
@@ -792,7 +851,6 @@ justify-content: center;
                     </div>
                 </section>
 
-                <!-- INTERVENTION -->
                 <section class="article-section">
                     <h2>The Intervention That Outperformed Drugs</h2>
 
@@ -809,7 +867,6 @@ justify-content: center;
 
                 <div class="separator">* * *</div>
 
-                <!-- YOUR GOLDILOCKS ZONE -->
                 <section class="article-section">
                     <h2>Your Goldilocks Zone</h2>
 
@@ -823,10 +880,10 @@ justify-content: center;
                         <p>Seven hours nightly outperforms five on weekdays plus ten on Saturday. The Oxford data showed schedule deviation was a stronger predictor of attack than total sleep deficit.<sup>[16]</sup> Regularity is the variable your brain is tracking.</p>
 
                         <h3>Protect continuity.</h3>
-                        <p>Each nighttime awakening raises next-day migraine risk by 17 percent.<sup>[16]</sup> The phone on the nightstand, caffeine past noon, alcohol before bed, blue light after ten — each one fragments sleep architecture. Your goal is unbroken passage through all sleep stages, especially the deep slow-wave phase where glymphatic clearance peaks.</p>
+                        <p>Each nighttime awakening raises next-day migraine risk by 17 percent.<sup>[16]</sup> The phone on the nightstand, <a href="article-caffeine.html">caffeine past noon</a>, alcohol before bed, blue light after ten — each one fragments sleep architecture. Your goal is unbroken passage through all sleep stages, especially the deep slow-wave phase where glymphatic clearance peaks.</p>
 
                         <h3>Track three numbers.</h3>
-                        <p>Time to bed. Time awake. Nighttime disruptions. After three to four weeks, the data will expose a pattern no clinician can diagnose in a fifteen-minute visit. Your personal Goldilocks zone is already encoded in the numbers. The only task is reading them.</p>
+                        <p>Time to bed. Time awake. Nighttime disruptions. After three to four weeks, <a href="article-body-calendar.html">the data will expose a pattern</a> no clinician can diagnose in a fifteen-minute visit. Your personal Goldilocks zone is already encoded in the numbers. The only task is reading them.</p>
                     </div>
 
                     <p>Stephen Bender, director of the Center for Facial Pain and Sleep Medicine at Texas A&M, has framed the paradigm shift precisely: the old model treated sleep and pain as a bidirectional loop — pain disrupts sleep, poor sleep amplifies pain. The new evidence reverses the hierarchy. Poor sleep predicts the onset of new pain more powerfully than pain predicts sleep disruption.<sup>[22]</sup></p>
@@ -836,7 +893,6 @@ justify-content: center;
                     <p>And it is the one lever you control.</p>
                 </section>
 
-                <!-- KEY TAKEAWAYS -->
                 <div class="key-takeaways">
                     <h3>Key Takeaways</h3>
                     <ul>
@@ -850,7 +906,20 @@ justify-content: center;
                     </ul>
                 </div>
 
-                <!-- WHEN TO SEE A DOCTOR -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-weekend-migraines.html" class="related-card">
+                            <h4>Why Your Brain Hates Mondays</h4>
+                            <p>The frustrating phenomenon of getting migraines on your days off. Learn more about "let-down headaches."</p>
+                        </a>
+                        <a href="article-caffeine.html" class="related-card">
+                            <h4>The Caffeine Paradox</h4>
+                            <p>Coffee can trigger migraines — and also relieve them. Unravel the science behind your afternoon cup.</p>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="when-to-see-doctor">
                     <h3>When to See a Doctor</h3>
                     <ul>
@@ -863,7 +932,6 @@ justify-content: center;
                     <p>This article is a starting point for conversation with your doctor, not a replacement for medical care.</p>
                 </div>
 
-                <!-- REFERENCES -->
                 <div class="references">
                     <h3>References</h3>
                     <ol>
@@ -894,7 +962,6 @@ justify-content: center;
 
                 <div class="article-footer">
 
-                    <!-- AUTHOR CARD -->
                     <div class="author-card">
                         <div class="author-avatar">
                             <img src="images/rustam.jpeg" alt="Rustam Iuldashov">
@@ -906,7 +973,6 @@ justify-content: center;
                         </div>
                     </div>
 
-                    <!-- EDITORIAL STANDARDS -->
                     <div class="editorial-standards">
                         <h3>How We Create Content</h3>
                         <ul>
@@ -918,7 +984,6 @@ justify-content: center;
                         </ul>
                     </div>
 
-                    <!-- CTA BOX -->
                     <div class="cta-box">
                         <h3>Find Your Goldilocks Zone with Mi</h3>
                         <p>Migraine Companion tracks the relationship between your sleep and your attacks — so you stop guessing and start seeing your personal pattern in the data.</p>
@@ -934,7 +999,6 @@ justify-content: center;
 </div>
                     </div>
 
-                    <!-- REVIEW DATES -->
                     <div class="review-dates">
                         <p><em>Last reviewed: February 2026</em></p>
                         <p><em>Next scheduled review: August 2026</em></p>
