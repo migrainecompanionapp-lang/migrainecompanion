@@ -603,6 +603,52 @@
         <p class="copyright">&copy; 2026 Migraine Companion. Made with &#x1F49C; in Ukraine.</p>
     </div>
 </footer>
+    <script>
+function printChecklist() {
+    window.print();
+}
+
+function copyChecklist() {
+    const text = `PRE-FLIGHT MIGRAINE CHECKLIST
+
+3 DAYS BEFORE
+☐ Shift your sleep window. Move bedtime 30 min/day toward destination time zone.
+☐ Audit your travel med kit. Triptans/gepants, anti-nausea, melatonin 0.5–3 mg, ginger 250 mg, electrolytes, peppermint oil.
+☐ High altitude? Talk to your doctor about acetazolamide (Diamox).
+☐ Start a travel trigger diary. Note baseline sleep, hydration, stress.
+
+24 HOURS BEFORE
+☐ Begin pre-hydration. Water with electrolytes — sodium supports migraine threshold.
+☐ Pack sensory armor in carry-on. Headphones, eye mask, peppermint oil, compression socks.
+
+DAY OF DEPARTURE
+☐ Build in buffer time. Airport rush → cortisol crash → migraine.
+☐ Pre-treat motion sickness. Ginger 250 mg or anti-nausea, 30–60 min before ride.
+☐ Eat a real meal. Don't board hungry.
+
+IN-FLIGHT
+☐ Seat: over the wing (plane), front (car), facing forward (train).
+☐ Put on compression socks.
+☐ 250 ml water every hour.
+☐ No alcohol, no excess caffeine.
+☐ Peppermint oil on wrist for hostile smells.
+☐ Medicate at prodrome — aura, yawning, neck stiffness, light sensitivity.
+
+AFTER ARRIVAL
+☐ Switch medications to local time immediately.
+☐ Morning light (flew east) or evening light (flew west).
+☐ Melatonin 0.5–3 mg at destination bedtime.
+☐ First 6 hours = high-risk. Rest. Hydrate. Arrive before you begin.
+
+— From mi-companion.com/article-traveling-with-migraine.html`;
+
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => { btn.textContent = '📋 Copy to Clipboard'; }, 2000);
+    });
+}
+</script>
 
 </body>
 </html>
