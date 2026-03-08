@@ -275,6 +275,26 @@
 
         footer { border-top: 1px solid rgba(139,122,168,0.1); padding: 32px 0; margin-top: 48px; }
         .copyright { text-align: center; font-size: 0.85rem; color: var(--text-dark); }
+        .checklist-btn {
+    padding: 10px 20px; border-radius: 10px; border: 1px solid var(--green);
+    background: linear-gradient(135deg, rgba(106,170,122,0.1), rgba(106,170,122,0.2));
+    color: var(--green); font-weight: 600; font-size: 0.85rem; cursor: pointer;
+    transition: all 0.3s; font-family: 'Inter', sans-serif;
+}
+.checklist-btn:hover { background: var(--green); color: var(--bg); transform: translateY(-2px); }
+
+@media print {
+    body * { visibility: hidden; }
+    #checklist, #checklist * { visibility: visible; }
+    #checklist { position: absolute; left: 0; top: 0; width: 100%; background: #fff; color: #111; padding: 32px; }
+    #checklist h3 { color: #111; }
+    #checklist h4 { color: #333; }
+    #checklist li { color: #222; }
+    #checklist li strong { color: #000; }
+    #checklist li::before { color: #333; }
+    #checklist .checklist-btn { display: none; }
+    #checklist sup { color: #666; }
+}
 
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
