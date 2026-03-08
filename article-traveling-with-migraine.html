@@ -427,8 +427,12 @@
             </div>
         </section>
 
-        <div class="checklist-box">
-            <h3>&#x2708;&#xFE0F; Your Pre-Flight Migraine Checklist &mdash; Print &amp; Pack</h3>
+        <div class="checklist-box" id="checklist">
+    <h3>&#x2708;&#xFE0F; Your Pre-Flight Migraine Checklist &mdash; Print &amp; Pack</h3>
+    <div style="display:flex;gap:12px;justify-content:center;margin-bottom:20px;">
+        <button onclick="printChecklist()" class="checklist-btn">&#x1F5A8; Print Checklist</button>
+        <button onclick="copyChecklist()" class="checklist-btn" id="copyBtn">&#x1F4CB; Copy to Clipboard</button>
+    </div>
 
             <h4>3 Days Before</h4>
             <ul>
