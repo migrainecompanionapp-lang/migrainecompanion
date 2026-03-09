@@ -803,8 +803,60 @@
         }
     </style>
 </head>
-<div class="blog-grid">
+<body>
+    <div class="petals-container" id="petals"></div>
+    
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <nav class="nav">
+                <a href="index.html#screenshots">App</a>
+                <a href="index.html#how-it-works">How It Works</a>
+                <a href="index.html#different">Approach</a>
+                <a href="index.html#science">Science</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#story">Story</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="faq.html">FAQ</a>
+                <a href="collaborate.html">Collaborate</a>
+                <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
+                <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="nav-cta" target="_blank">Download</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <h1>Stories from the Mystic Garden</h1>
+                <p>Insights, experiences, and wisdom about living with migraines — from those who understand.</p>
+                
+                <form class="subscribe-form" action="https://formspree.io/f/mjgezgbq" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email for new articles..." required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="blog-content">
+            <div class="container">
+                
+                <div class="category-filter">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="personal-story">Personal Story</button>
+                    <button class="filter-btn" data-category="science">Science</button>
+                    <button class="filter-btn" data-category="app-guide">App Guide</button>
+                    <button class="filter-btn" data-category="self-care">Self-Care</button>
+                    <button class="filter-btn" data-category="narrative-therapy">Narrative Therapy</button>
+                    <button class="filter-btn" data-category="tips">Tips</button>
+                    <button class="filter-btn" data-category="triggers">Triggers</button>
+                    <button class="filter-btn" data-category="understanding">Understanding</button>
+                </div>
+                
+                <div class="blog-grid">
                     
+                    <!-- CARD 1 -->
                     <article class="blog-card" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>I Built a Migraine App During 30 Years of Pain (and a War)</h2>
@@ -816,6 +868,7 @@
                         <a href="article-30-years.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 2 -->
                     <article class="blog-card" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>Why We Don't Fight Migraines</h2>
@@ -827,6 +880,7 @@
                         <a href="article-narrative-therapy.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 3 -->
                     <article class="blog-card" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>The 4-7-8 Breathing Technique</h2>
@@ -838,6 +892,7 @@
                         <a href="article-478-breathing.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 4 -->
                     <article class="blog-card" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Understanding Your Triggers</h2>
@@ -849,6 +904,7 @@
                         <a href="article-understanding-triggers.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 5 -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Storm Before the Storm</h2>
@@ -860,6 +916,7 @@
                         <a href="article-prediction.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 6 -->
                     <article class="blog-card" data-category="app-guide">
                         <span class="blog-tag">App Guide</span>
                         <h2>Meet Mi: The Monster Who Wants to Sleep</h2>
@@ -871,6 +928,7 @@
                         <a href="meet-mi.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 7 -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>Why Your Brain Hates Mondays: Weekend Migraines Explained</h2>
@@ -882,6 +940,7 @@
                         <a href="article-weekend-migraines.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 8 -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Caffeine Paradox: Friend, Foe, or Both?</h2>
@@ -893,6 +952,7 @@
                         <a href="article-caffeine.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 9 -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>Migraine Hangover: The Phase No One Talks About</h2>
@@ -904,6 +964,7 @@
                         <a href="article-postdrome.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 10 -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Trap of Relief: When Your Medicine Becomes Your Migraine</h2>
@@ -915,6 +976,7 @@
                         <a href="article-moh.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 11 -->
                     <article class="blog-card" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>I Am Not My Migraine: Separating Self from Pain</h2>
@@ -926,6 +988,7 @@
                         <a href="article-not-my-migraine.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 12 -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Exercise Paradox: When Movement Is Medicine</h2>
@@ -937,6 +1000,7 @@
                         <a href="the-exercise-paradox.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 13 -->
                     <article class="blog-card" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>You Don't Look Sick: The Loneliness of Invisible Pain</h2>
@@ -948,6 +1012,7 @@
                         <a href="article-invisible-pain.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 14 -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>When the World Glitches: A Journey Through Migraine Aura</h2>
@@ -959,6 +1024,7 @@
                         <a href="article-aura.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 15 -->
                     <article class="blog-card" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>The Third Person in Every Room: How Migraine Lives in Your Relationships</h2>
@@ -970,6 +1036,7 @@
                         <a href="article-relationships.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 16 -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Gut-Brain Highway: How Your Microbiome Talks to Your Migraine</h2>
@@ -981,6 +1048,7 @@
                         <a href="the-second-brain.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 17 -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>Blaming the Barometer: The Weather-Migraine Myth</h2>
@@ -992,6 +1060,7 @@
                         <a href="weather-migraine-myth.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 18 -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The 24-Hour Rule: Why That Glass of Wine Hits Different</h2>
@@ -1003,6 +1072,7 @@
                         <a href="alcohol-migraine-24-hour-rule.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 19 -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>Migraine or Tension? The Question That Changes Everything</h2>
@@ -1014,6 +1084,7 @@
                         <a href="article-migraine-vs-tension.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 20 -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Screen That Stares Back: Digital Life with Migraines</h2>
@@ -1025,6 +1096,7 @@
                         <a href="screen-migraine-science.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 21 -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>Beyond the Pill: What Science Says About Magnesium</h2>
@@ -1036,6 +1108,7 @@
                         <a href="magnesium-riboflavin-coq10-migraine.html" class="read-more">Read full story →</a>
                     </article>
                     
+                    <!-- CARD 22 -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Goldilocks Problem: Why Sleep Is Never "Just Right"</h2>
@@ -1047,6 +1120,7 @@
                         <a href="the-goldilocks-problem-sleep-migraine.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 23 -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Hormone Rollercoaster: Menstrual Migraines Explained</h2>
@@ -1058,6 +1132,7 @@
                         <a href="article-body-calendar.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 24 -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>When Words Disappear: The Terror of Migraine Aphasia</h2>
@@ -1069,6 +1144,7 @@
                         <a href="article-migraine-aphasia.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 25 -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The Smell of Danger: When Perfume Becomes a Weapon</h2>
@@ -1079,7 +1155,7 @@
                         </div>
                         <a href="article-osmophobia.html" class="read-more">Read full story →</a>
                     </article>
-
+                    <!-- CARD 26 -->
                     <article class="blog-card" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Your Migraine Emergency Kit: Never Be Caught Unprepared</h2>
@@ -1091,6 +1167,7 @@
                         <a href="article-emergency-kit.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 27 -->
                     <article class="blog-card" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>Lighting the Way: Creating a Migraine-Friendly Home</h2>
@@ -1102,6 +1179,7 @@
                         <a href="article-migraine-friendly-lighting.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 28 -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>Little Heads, Big Pain: When Migraine Starts in Childhood</h2>
@@ -1113,6 +1191,7 @@
                         <a href="article-pediatric-migraine.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 29 -->
                     <article class="blog-card" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>The Food Detective: How to Run Your Own Elimination Trial</h2>
@@ -1124,6 +1203,7 @@
                         <a href="food-detective.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 30 -->
                     <article class="blog-card" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Traveling with a Monster: A Migraine Survival Guide</h2>
@@ -1135,6 +1215,7 @@
                         <a href="article-traveling-with-migraine.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 31 -->
                     <article class="blog-card" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>The Conference Room Confession: Migraine at Work</h2>
@@ -1146,6 +1227,7 @@
                         <a href="article-conference-room-confession.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 32 -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The CGRP Revolution: The Molecule That Changed Everything</h2>
@@ -1157,6 +1239,7 @@
                         <a href="article-cgrp-revolution.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 33 -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>31 Needles of Hope: The Truth About Botox for Migraine</h2>
@@ -1168,6 +1251,7 @@
                         <a href="article-botox-chronic-migraine.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 34 -->
                     <article class="blog-card" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>The Vagus Nerve Hack: Simple Techniques That Calm Your Migraine Brain</h2>
@@ -1179,6 +1263,7 @@
                         <a href="article-vagus-nerve-migraine.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 35 -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Dehydration Equation: Why Water Isn't Enough</h2>
@@ -1190,6 +1275,7 @@
                         <a href="article-dehydration-equation.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 36 -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The Neck Connection: When Your Spine Talks to Your Brain</h2>
@@ -1201,6 +1287,7 @@
                         <a href="article-neck-connection.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 37 -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>Nine Months of Uncertainty: Migraine During Pregnancy</h2>
@@ -1212,6 +1299,7 @@
                         <a href="article-migraine-pregnancy.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 38 -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Hyperexcitable Brain: Why Migraineurs Are Wired Differently</h2>
@@ -1223,6 +1311,7 @@
                         <a href="article-hyperexcitable-brain.html" class="read-more">Read full story →</a>
                     </article>
 
+                    <!-- CARD 39 -->
                     <article class="blog-card" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>Ancient Needles, Modern Evidence: Acupuncture for Migraine</h2>
@@ -1233,6 +1322,7 @@
                         </div>
                     </article>
 
+                    <!-- CARD 40 -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The 15-Day Line: When Episodic Becomes Chronic</h2>
@@ -1243,6 +1333,7 @@
                         </div>
                     </article>
 
+                    <!-- CARD 41 -->
                     <article class="blog-card" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>The Ice vs Heat Debate: What Actually Works?</h2>
@@ -1253,6 +1344,7 @@
                         </div>
                     </article>
 
+                    <!-- CARD 42 -->
                     <article class="blog-card" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Anxious Brain: The Bidirectional Link Between Migraine and Anxiety</h2>
@@ -1263,6 +1355,7 @@
                         </div>
                     </article>
 
+                    <!-- CARD 43 -->
                     <article class="blog-card" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Building Your Migraine Team: Beyond the Neurologist</h2>
@@ -1273,6 +1366,7 @@
                         </div>
                     </article>
 
+                    <!-- CARD 44 -->
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The Warning Signs: Reading Your Prodrome Like a Book</h2>
@@ -1283,6 +1377,7 @@
                         </div>
                     </article>
 
+                    <!-- CARD 45 -->
                     <article class="blog-card" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>Learning to Control the Uncontrollable: Biofeedback for Migraine</h2>
@@ -1293,6 +1388,7 @@
                         </div>
                     </article>
 
+                    <!-- CARD 46 -->
                     <article class="blog-card" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Rose-Colored (or Green) Glasses: Do Tinted Lenses Actually Help?</h2>
@@ -1303,6 +1399,7 @@
                         </div>
                     </article>
 
+                    <!-- CARD 47 -->
                     <article class="blog-card" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Blood Sugar Rollercoaster: Glucose and Your Migraine Brain</h2>
@@ -1313,6 +1410,7 @@
                         </div>
                     </article>
 
+                    <!-- CARD 48 -->
                     <article class="blog-card" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>From 20 Days to 2: Stories of Successful Management</h2>
@@ -1323,6 +1421,7 @@
                         </div>
                     </article>
 
+                    <!-- CARD 49 -->
                     <article class="blog-card" data-category="app-guide">
                         <span class="blog-tag">App Guide</span>
                         <h2>Your First Neurologist Visit: What to Bring, What to Ask</h2>
@@ -1333,6 +1432,7 @@
                         </div>
                     </article>
 
+                    <!-- CARD 50 -->
                     <article class="blog-card" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>The Words We Use: How Language Shapes Your Migraine Experience</h2>
