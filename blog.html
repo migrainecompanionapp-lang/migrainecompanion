@@ -1868,21 +1868,21 @@
     const fireflyContainer = document.getElementById('fireflies');
 
     if (fireflyContainer && window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const fireflyCount = 20;
+        const fireflyCount = 28;
 
         for (let i = 0; i < fireflyCount; i++) {
             const firefly = document.createElement('div');
             firefly.className = 'firefly';
 
-            const size = Math.random() * 2.5 + 1.5;
+            const size = Math.random() * 3 + 2;
             firefly.style.width = size + 'px';
             firefly.style.height = size + 'px';
 
             firefly.style.top = Math.random() * 100 + '%';
             firefly.style.left = Math.random() * 100 + '%';
 
-            const moveX = (Math.random() - 0.5) * 80 + 'px';
-            const moveY = (Math.random() - 0.5) * 80 + 'px';
+            const moveX = (Math.random() - 0.5) * 100 + 'px';
+            const moveY = (Math.random() - 0.5) * 100 + 'px';
             firefly.style.setProperty('--move-x', moveX);
             firefly.style.setProperty('--move-y', moveY);
 
