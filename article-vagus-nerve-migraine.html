@@ -54,37 +54,86 @@
     }
     </script>
     <style>
+        /* ============================================================
+           MIGRAINE COMPANION — PREMIUM ARTICLE DESIGN SYSTEM v2.0
+           
+           Design principles applied:
+           — Albers: color exists through context of layers
+           — Wada: Japanese restraint, 3-tier opacity hierarchy
+           — Refactoring UI: warm grays, shadow depth > border weight
+           — St. Clair: each color carries emotional meaning
+           
+           Block philosophy: "Frosted glass panels floating in a dark 
+           garden" — each block is a glass surface with a colored light 
+           source illuminating it from one direction.
+           ============================================================ */
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         :root {
+            /* === FOUNDATION === */
             --bg: #0d0d0d;
             --surface: #141419;
+            
+            /* === ACCENT COLORS (brand DNA — unchanged hex) === */
             --lavender: #8b7aa8;
-            --lavender-soft: rgba(139,122,168,0.08);
-            --lavender-border: rgba(139,122,168,0.15);
             --green: #6aaa7a;
-            --green-soft: rgba(106,170,122,0.08);
-            --green-border: rgba(106,170,122,0.2);
             --teal: #6b9baa;
-            --teal-soft: rgba(107,155,170,0.08);
-            --teal-border: rgba(107,155,170,0.2);
             --gold: #c5a059;
-            --gold-soft: rgba(197,160,89,0.08);
-            --gold-border: rgba(197,160,89,0.2);
-            --text: #d0d0d0;
-            --text-light: #a0a0a0;
-            --text-dark: #888;
+            
+            /* === SOFT BACKGROUNDS — 3-tier opacity (Wada hierarchy) ===
+               Tier 1: Whisper (0.04) — meta areas, large quiet surfaces
+               Tier 2: Gentle (0.06) — standard content boxes
+               Tier 3: Present (0.08) — action items, key information */
+            --lavender-soft: rgba(139,122,168, 0.06);
+            --green-soft: rgba(106,170,122, 0.06);
+            --teal-soft: rgba(107,155,170, 0.06);
+            --gold-soft: rgba(197,160,89, 0.06);
+            
+            /* === BORDERS — unified family at 0.18 (Albers: consistent edges) === */
+            --lavender-border: rgba(139,122,168, 0.18);
+            --green-border: rgba(106,170,122, 0.18);
+            --teal-border: rgba(107,155,170, 0.18);
+            --gold-border: rgba(197,160,89, 0.18);
+            
+            /* === TEXT — warm parchment grays (Refactoring UI: tinted neutrals) ===
+               Each gray carries a warm lavender-sand undertone that 
+               connects to the accent palette. No pure grays. */
+            --text: #cdc6be;
+            --text-light: #a09890;
+            --text-dark: #847b73;
             --text-warm: #c9bda8;
         }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
         .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
 
-        header { padding: 16px 0; position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(13,13,13,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--lavender-border); }
+        /* === HEADER === */
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13,13,13,0.92);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid var(--lavender-border);
+        }
         .header-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.3rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; text-decoration: none; }
         .logo span { color: var(--lavender); }
         .back-link { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
         .back-link:hover { color: var(--lavender); }
 
+        /* === HERO === */
         .article-hero { margin-top: 70px; position: relative; overflow: hidden; border-radius: 0 0 24px 24px; height: 600px; display: flex; align-items: center; justify-content: center; }
         .article-hero img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
         .article-hero::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(13,13,13,0.3) 0%, rgba(13,13,13,0.85) 100%); z-index: 1; }
@@ -94,6 +143,7 @@
         .article-subtitle { font-size: 1.15rem; font-weight: 500; color: rgba(255,255,255,0.85); font-style: italic; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
         .article-meta { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
 
+        /* === CONTENT TYPOGRAPHY === */
         .article-content { padding: 60px 0 80px; }
         .article-section { margin-bottom: 48px; }
         h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; margin-bottom: 20px; letter-spacing: -0.01em; line-height: 1.3; }
@@ -102,86 +152,566 @@
         strong { font-weight: 700; color: var(--text-warm); }
         em { font-style: italic; color: var(--text-light); }
         sup { color: var(--lavender); font-weight: 600; font-size: 0.75rem; }
+        
+        .article-section a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
+        .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
 
-        .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-        .article-image img { width: 100%; height: auto; display: block; }
-        .article-image figcaption { background: var(--lavender-soft); padding: 12px 16px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; }
+        /* ============================================================
+           BLOCK 1: SEPARATOR
+           Was: plain "* * *" text
+           Now: gradient line + center diamond — book chapter break
+           ============================================================ */
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            position: relative;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .separator::before {
+            content: '';
+            position: absolute;
+            left: 15%;
+            right: 15%;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(139,122,168, 0.25) 30%, 
+                rgba(139,122,168, 0.40) 50%, 
+                rgba(139,122,168, 0.25) 70%, 
+                transparent 100%
+            );
+        }
+        .separator::after {
+            content: '◆';
+            position: relative;
+            z-index: 1;
+            color: rgba(139,122,168, 0.35);
+            font-size: 0.55rem;
+            background: var(--bg);
+            padding: 0 16px;
+        }
 
-        .highlight-box { background: var(--green-soft); border-left: 3px solid var(--green); padding: 24px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; }
-        .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; }
+        /* ============================================================
+           BLOCK 2: KEY TAKEAWAYS — Teal
+           Glass panel with top accent line, gradient bg, bottom glow.
+           Article's "welcome mat" — most premium block.
+           ============================================================ */
+        .key-takeaways {
+            background: 
+                linear-gradient(180deg, 
+                    rgba(107,155,170, 0.10) 0%,
+                    rgba(107,155,170, 0.04) 100%
+                );
+            border: 1px solid var(--teal-border);
+            border-radius: 20px;
+            padding: 32px;
+            margin: 48px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 4px 24px rgba(0,0,0, 0.20),
+                0 1px 3px rgba(0,0,0, 0.15),
+                inset 0 1px 0 rgba(107,155,170, 0.12),
+                inset 0 -1px 0 rgba(0,0,0, 0.10);
+        }
+        .key-takeaways::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--teal), transparent);
+            opacity: 0.6;
+            border-radius: 20px 20px 0 0;
+        }
+        .key-takeaways::after {
+            content: '';
+            position: absolute;
+            bottom: -30px; left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 60px;
+            background: radial-gradient(ellipse, rgba(107,155,170, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .key-takeaways h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; position: relative; z-index: 1; }
+        .key-takeaways ul { list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
+        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid rgba(107,155,170, 0.06); }
+        .key-takeaways li:last-child { border-bottom: none; }
+        .key-takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--teal); font-weight: 600; }
 
-        .separator { text-align: center; margin: 60px 0; color: var(--lavender); font-size: 1.5rem; opacity: 0.5; }
+        /* ============================================================
+           BLOCK 3: HIGHLIGHT BOX — Green
+           Pullout quotes. Decorative " ornament. Gradient from left.
+           ============================================================ */
+        .highlight-box {
+            background: 
+                linear-gradient(90deg,
+                    rgba(106,170,122, 0.10) 0%,
+                    rgba(106,170,122, 0.03) 100%
+                );
+            border-left: 3px solid var(--green);
+            padding: 28px 32px 28px 36px;
+            border-radius: 0 16px 16px 0;
+            margin: 36px 0;
+            position: relative;
+            box-shadow:
+                0 4px 20px rgba(0,0,0, 0.18),
+                0 1px 3px rgba(0,0,0, 0.12),
+                inset 0 1px 0 rgba(106,170,122, 0.08),
+                inset 0 -1px 0 rgba(0,0,0, 0.08);
+        }
+        .highlight-box::before {
+            content: '\201C';
+            position: absolute;
+            top: 12px;
+            right: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            line-height: 1;
+            color: rgba(106,170,122, 0.12);
+            pointer-events: none;
+        }
+        .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; position: relative; z-index: 1; }
 
-        .data-card { background: var(--teal-soft); border-left: 4px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 12px 12px 0; }
+        /* ============================================================
+           BLOCK 4: DATA CARD — Teal
+           Hard numbers, statistics. Top-line accent. No quote mark.
+           ============================================================ */
+        .data-card {
+            background: 
+                linear-gradient(90deg,
+                    rgba(107,155,170, 0.10) 0%,
+                    rgba(107,155,170, 0.03) 100%
+                );
+            border-left: 3px solid var(--teal);
+            padding: 28px 32px;
+            margin: 36px 0;
+            border-radius: 0 14px 14px 0;
+            position: relative;
+            box-shadow:
+                0 4px 20px rgba(0,0,0, 0.18),
+                0 1px 3px rgba(0,0,0, 0.12),
+                inset 0 1px 0 rgba(107,155,170, 0.08),
+                inset 0 -1px 0 rgba(0,0,0, 0.08);
+        }
+        .data-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 3px; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(107,155,170, 0.30), transparent 80%);
+            border-radius: 0 14px 0 0;
+        }
         .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
         .data-card p:last-child { margin-bottom: 0; }
 
-        .insight-card { background: var(--lavender-soft); border-left: 4px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 12px 12px 0; }
-        .insight-card p { margin-bottom: 16px; font-size: 0.98rem; }
+        /* ============================================================
+           BLOCK 5: INSIGHT CARD — Lavender
+           Clinical interpretations. Diagonal gradient. Bottom bloom.
+           ============================================================ */
+        .insight-card {
+            background: 
+                linear-gradient(135deg,
+                    rgba(139,122,168, 0.10) 0%,
+                    rgba(139,122,168, 0.02) 100%
+                );
+            border-left: 3px solid var(--lavender);
+            padding: 28px 32px;
+            margin: 36px 0;
+            border-radius: 0 14px 14px 0;
+            position: relative;
+            box-shadow:
+                0 4px 20px rgba(0,0,0, 0.18),
+                0 1px 3px rgba(0,0,0, 0.12),
+                inset 0 1px 0 rgba(139,122,168, 0.08),
+                inset 0 -1px 0 rgba(0,0,0, 0.08);
+        }
+        .insight-card::after {
+            content: '';
+            position: absolute;
+            bottom: -20px; right: 10%;
+            width: 40%;
+            height: 40px;
+            background: radial-gradient(ellipse, rgba(139,122,168, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .insight-card p { margin-bottom: 16px; font-size: 0.98rem; position: relative; z-index: 1; }
         .insight-card p:last-child { margin-bottom: 0; }
 
-        .action-box { background: var(--green-soft); border: 1px solid var(--green-border); border-radius: 16px; padding: 36px; margin: 44px 0; }
-        .action-box h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--green); margin-bottom: 8px; margin-top: 24px; }
+        /* ============================================================
+           BLOCK 6: ACTION BOX — Green
+           "How to do it" — glass panel, inner radiance, step-indicator h3.
+           ============================================================ */
+        .action-box {
+            background: 
+                linear-gradient(180deg,
+                    rgba(106,170,122, 0.08) 0%,
+                    rgba(106,170,122, 0.03) 100%
+                );
+            border: 1px solid var(--green-border);
+            border-radius: 20px;
+            padding: 36px;
+            margin: 44px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 6px 28px rgba(0,0,0, 0.22),
+                0 1px 3px rgba(0,0,0, 0.15),
+                inset 0 1px 0 rgba(106,170,122, 0.12),
+                inset 0 -1px 0 rgba(0,0,0, 0.08);
+        }
+        .action-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--green), rgba(106,170,122, 0.3), transparent);
+            opacity: 0.5;
+        }
+        .action-box::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(ellipse, rgba(106,170,122, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .action-box h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 12px;
+            margin-top: 24px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
         .action-box h3:first-child { margin-top: 0; }
-        .action-box p { font-size: 0.98rem; margin-bottom: 14px; }
+        .action-box p { font-size: 0.98rem; margin-bottom: 14px; position: relative; z-index: 1; }
         .action-box p:last-child { margin-bottom: 0; }
 
-        .emergency-box { background: var(--gold-soft); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 12px 12px 0; margin: 36px 0; }
+        /* ============================================================
+           BLOCK 7: EMERGENCY BOX — Gold
+           Medical warnings. 4px border, warm glow near icon.
+           ============================================================ */
+        .emergency-box {
+            background: 
+                linear-gradient(90deg,
+                    rgba(197,160,89, 0.10) 0%,
+                    rgba(197,160,89, 0.02) 100%
+                );
+            border-left: 4px solid var(--gold);
+            padding: 28px 32px;
+            border-radius: 0 14px 14px 0;
+            margin: 36px 0;
+            position: relative;
+            box-shadow:
+                0 4px 20px rgba(0,0,0, 0.18),
+                0 1px 3px rgba(0,0,0, 0.12),
+                inset 0 1px 0 rgba(197,160,89, 0.10),
+                inset 0 -1px 0 rgba(0,0,0, 0.08);
+        }
+        .emergency-box::after {
+            content: '';
+            position: absolute;
+            top: 20px; left: -2px;
+            width: 40px; height: 40px;
+            background: radial-gradient(circle, rgba(197,160,89, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
         .emergency-box h3 { color: var(--gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
         .emergency-box p { font-size: 0.98rem; margin-bottom: 12px; }
         .emergency-box p:last-child { margin-bottom: 0; }
 
-        .key-takeaways { background: var(--teal-soft); border: 1px solid var(--teal-border); border-radius: 16px; padding: 28px; margin: 48px 0; }
-        .key-takeaways h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
-        .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
-        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 8px 0; padding-left: 24px; position: relative; }
-        .key-takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--teal); }
+        /* ============================================================
+           BLOCK 8: ARTICLE IMAGE — Museum frame
+           ============================================================ */
+        .article-image {
+            margin: 48px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(139,122,168, 0.10);
+            box-shadow:
+                0 20px 60px rgba(0,0,0, 0.35),
+                0 4px 12px rgba(0,0,0, 0.20),
+                inset 0 0 0 1px rgba(255,255,255, 0.03);
+        }
+        .article-image img { width: 100%; height: auto; display: block; }
+        .article-image figcaption {
+            background: 
+                linear-gradient(180deg,
+                    rgba(13,13,13, 0.60) 0%,
+                    rgba(20,20,25, 0.95) 100%
+                );
+            padding: 14px 20px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            font-style: italic;
+            border-top: 1px solid rgba(139,122,168, 0.08);
+        }
 
-        .article-section a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
-        .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
-
-        .medical-disclaimer { font-size: 0.9rem; font-style: italic; color: var(--text-dark); text-align: center; padding: 16px 0; margin-bottom: 48px; border-bottom: 1px solid var(--lavender-border); }
-
-        .related-box { margin: 60px 0; padding: 40px; background: rgba(107,155,170,0.04); border-radius: 24px; border: 1px solid var(--teal-border); }
-        .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; }
+        /* ============================================================
+           BLOCK 9: RELATED BOX + CARDS — Gallery with blog DNA
+           ============================================================ */
+        .related-box {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(107,155,170, 0.03);
+            border-radius: 24px;
+            border: 1px solid var(--teal-border);
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 4px 24px rgba(0,0,0, 0.18),
+                inset 0 1px 0 rgba(107,155,170, 0.06);
+        }
+        .related-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 120px; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--teal), transparent);
+            opacity: 0.4;
+        }
+        .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; position: relative; z-index: 1; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
-        .related-card { display: block; text-decoration: none; background: rgba(255,255,255,0.03); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); transition: all 0.3s; }
-        .related-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.05); border-color: var(--lavender); }
+        .related-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255,255,255, 0.02);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--lavender-border);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow:
+                0 2px 12px rgba(0,0,0, 0.12),
+                inset 0 1px 0 rgba(255,255,255, 0.03);
+        }
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--lavender), transparent);
+            opacity: 0.3;
+            transition: opacity 0.4s ease;
+        }
+        .related-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255, 0.04);
+            border-color: rgba(139,122,168, 0.30);
+            box-shadow:
+                0 12px 40px rgba(0,0,0, 0.25),
+                0 0 0 1px rgba(139,122,168, 0.10),
+                inset 0 1px 0 rgba(255,255,255, 0.05);
+        }
+        .related-card:hover::before { opacity: 0.7; }
         .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
         .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
 
+        /* ============================================================
+           BLOCK 10: FULL MEDICAL DISCLAIMER — Whisper tier
+           ============================================================ */
+        .full-disclaimer {
+            background: rgba(139,122,168, 0.04);
+            border: 1px solid var(--lavender-border);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 48px 0;
+            box-shadow:
+                0 2px 12px rgba(0,0,0, 0.10),
+                inset 0 1px 0 rgba(139,122,168, 0.04);
+        }
+        .full-disclaimer h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .full-disclaimer p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.7; }
+        .full-disclaimer p:last-child { margin-bottom: 0; }
+
+        /* Short disclaimer at top */
+        .medical-disclaimer { font-size: 0.9rem; font-style: italic; color: var(--text-dark); text-align: center; padding: 16px 0; margin-bottom: 48px; border-bottom: 1px solid var(--lavender-border); }
+
+        /* ============================================================
+           BLOCK 11: AUTHOR CARD — Personal warmth, glass panel
+           ============================================================ */
         .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--lavender-border); }
-        .author-card { display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.03); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 24px; margin-bottom: 32px; }
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: 
+                linear-gradient(135deg,
+                    rgba(139,122,168, 0.05) 0%,
+                    rgba(106,170,122, 0.03) 100%
+                );
+            border: 1px solid var(--lavender-border);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 4px 20px rgba(0,0,0, 0.15),
+                inset 0 1px 0 rgba(255,255,255, 0.04),
+                inset 0 -1px 0 rgba(0,0,0, 0.06);
+        }
+        .author-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(139,122,168, 0.25), rgba(106,170,122, 0.20), transparent);
+        }
         .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--lavender), var(--green)); padding: 3px; flex-shrink: 0; }
         .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
         .author-info h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
         .author-info p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
 
-        .editorial-standards { background: var(--lavender-soft); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 32px 0; }
-        .editorial-standards h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        /* ============================================================
+           BLOCK 12: EDITORIAL STANDARDS — Quietest block
+           ============================================================ */
+        .editorial-standards {
+            background: rgba(139,122,168, 0.03);
+            border: 1px solid rgba(139,122,168, 0.12);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 32px 0;
+            box-shadow:
+                0 2px 12px rgba(0,0,0, 0.08),
+                inset 0 1px 0 rgba(139,122,168, 0.04);
+        }
+        .editorial-standards h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
         .editorial-standards ul { list-style: none; padding: 0; margin: 0; }
-        .editorial-standards li { font-size: 0.9rem; color: var(--text-light); padding: 6px 0; padding-left: 20px; position: relative; }
-        .editorial-standards li::before { content: '\2022'; position: absolute; left: 0; color: var(--lavender); }
+        .editorial-standards li {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            border-bottom: 1px solid rgba(139,122,168, 0.05);
+        }
+        .editorial-standards li:last-child { border-bottom: none; }
+        .editorial-standards li::before { content: '\2022'; position: absolute; left: 0; color: var(--lavender); opacity: 0.6; }
 
-        .cta-box { background: var(--green-soft); border: 1px solid var(--green-border); border-radius: 16px; padding: 32px; text-align: center; }
-        .cta-box h3 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
-        .cta-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; }
-        .download-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(106,170,122,0.15), rgba(106,170,122,0.25)); border: 1px solid var(--green); border-radius: 12px; color: var(--green); text-decoration: none; font-weight: 600; transition: all 0.3s; flex: 1; max-width: 260px; justify-content: center; }
-        .download-btn:hover { background: var(--green); color: var(--bg); transform: translateY(-2px); }
+        /* ============================================================
+           BLOCK 13: CTA BOX — Strongest visual gravity
+           ============================================================ */
+        .cta-box {
+            background: 
+                linear-gradient(180deg,
+                    rgba(106,170,122, 0.10) 0%,
+                    rgba(106,170,122, 0.03) 100%
+                );
+            border: 1px solid var(--green-border);
+            border-radius: 20px;
+            padding: 36px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 8px 32px rgba(0,0,0, 0.25),
+                0 2px 6px rgba(0,0,0, 0.15),
+                inset 0 1px 0 rgba(106,170,122, 0.15),
+                inset 0 -1px 0 rgba(0,0,0, 0.08);
+        }
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--green), transparent);
+            opacity: 0.7;
+        }
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(ellipse, rgba(106,170,122, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-box h3 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; position: relative; z-index: 1; }
+        .cta-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; position: relative; z-index: 1; }
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(106,170,122,0.15), rgba(106,170,122,0.25));
+            border: 1px solid var(--green);
+            border-radius: 12px;
+            color: var(--green);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            flex: 1;
+            max-width: 260px;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            box-shadow:
+                0 2px 8px rgba(0,0,0, 0.15),
+                inset 0 1px 0 rgba(106,170,122, 0.10);
+        }
+        .download-btn:hover {
+            background: var(--green);
+            color: var(--bg);
+            transform: translateY(-2px);
+            box-shadow:
+                0 8px 24px rgba(106,170,122, 0.25),
+                0 2px 6px rgba(0,0,0, 0.15),
+                inset 0 1px 0 rgba(255,255,255, 0.20);
+        }
 
+        /* ============================================================
+           BLOCK 14: REFERENCES — Alternating rows for scanability
+           ============================================================ */
         .references { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--lavender-border); }
         .references h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-light); margin-bottom: 16px; }
-        .references ol { padding-left: 20px; }
-        .references li { font-size: 0.85rem; color: var(--text-dark); margin-bottom: 8px; line-height: 1.5; }
-        .references a { color: var(--lavender); text-decoration: none; }
+        .references ol { padding-left: 24px; }
+        .references li {
+            font-size: 0.84rem;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            line-height: 1.6;
+            padding: 8px 10px;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+        .references li:nth-child(odd) { background: rgba(139,122,168, 0.03); }
+        .references li:hover { background: rgba(139,122,168, 0.06); }
+        .references a { color: var(--lavender); text-decoration: none; font-weight: 500; }
         .references a:hover { text-decoration: underline; }
 
-        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--lavender-border); }
+        /* === REVIEW DATES === */
+        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(139,122,168, 0.10); }
 
-        footer { padding: 40px 0; border-top: 1px solid var(--lavender-border); text-align: center; }
-        .copyright { color: var(--text-dark); font-size: 0.85rem; }
-
-        @media (max-width: 768px) { h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } .article-hero { height: 400px; } p { font-size: 1rem; } .article-content { padding: 40px 0 60px; } .author-card { flex-direction: column; text-align: center; } .data-card, .insight-card, .emergency-box { padding: 20px 24px; } .action-box { padding: 24px; } .article-meta { flex-direction: column; gap: 8px; } }
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .data-card, .insight-card, .emergency-box, .highlight-box { padding: 22px 24px; }
+            .action-box { padding: 24px; }
+            .cta-box { padding: 28px; }
+            .article-meta { flex-direction: column; gap: 8px; }
+            .key-takeaways { padding: 24px; }
+            .related-box { padding: 28px; }
+        }
     </style>
     <link rel="stylesheet" href="article-category-colors.css">
 </head>
@@ -232,9 +762,8 @@
                     </ul>
                 </div>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- INTRO -->
                 <section class="article-section">
                     <p>Cold water on the wrist. A slow exhale. A hum that vibrates in your chest.</p>
                     <p>These aren&rsquo;t wellness trends. They&rsquo;re vagus nerve activators &mdash; and for people who live with migraine, they may be the simplest, most underused tools science has validated.</p>
@@ -242,9 +771,8 @@
                     <p>For migraine, that shift changes everything.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- VAGAL PROBLEM -->
                 <section class="article-section">
                     <h2>Your Migraine Brain Has a Vagal Problem</h2>
                     <p>Most people think of migraine as a headache. It isn&rsquo;t. It&rsquo;s a nervous system disorder &mdash; and the vagus nerve sits at the control panel.</p>
@@ -265,9 +793,8 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- BIOLOGY -->
                 <section class="article-section">
                     <h2>How Vagal Activation Fights Migraine &mdash; The Biology</h2>
                     <p>Before the techniques, the mechanism. Understanding <em>why</em> helps you trust the practice.</p>
@@ -284,9 +811,8 @@
                     <p>What if you could activate the same nerve &mdash; through different doorways &mdash; for free?</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- TECHNIQUE 1 -->
                 <section class="article-section">
                     <h2>Technique 1: The Slow Exhale</h2>
                     <p>This is the most studied free vagal activator in existence.</p>
@@ -300,9 +826,8 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- TECHNIQUE 2 -->
                 <section class="article-section">
                     <h2>Technique 2: The Cold Face Reset</h2>
                     <p>Splash cold water on your face &mdash; forehead, cheeks, the bridge of your nose &mdash; and your body executes one of its oldest survival programs.</p>
@@ -319,16 +844,14 @@
                     </div>
                 </section>
 
-                <!-- EMERGENCY BOX -->
                 <div class="emergency-box">
                     <h3>&#x26A0;&#xFE0F; When to Seek Emergency Help</h3>
                     <p>A sudden, severe headache unlike anything you&rsquo;ve experienced &mdash; especially with confusion, vision loss, numbness, slurred speech, or stiff neck &mdash; demands emergency evaluation. Period. These may signal stroke or another medical emergency, not a typical migraine.</p>
                     <p>Call your local emergency number immediately. Do not use this article to self-diagnose.</p>
                 </div>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- TECHNIQUE 3 -->
                 <section class="article-section">
                     <h2>Technique 3: The Hum</h2>
                     <p>This one surprises people. Humming produces mechanical vibrations that travel through your throat, chest, and around your ears &mdash; directly stimulating the vagus nerve through its recurrent laryngeal branch and auricular branches.<sup>[23]</sup></p>
@@ -341,9 +864,8 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- VAGAL TOOLKIT -->
                 <section class="article-section">
                     <h2>Building Your Vagal Toolkit</h2>
                 </section>
@@ -365,7 +887,6 @@
                     <p>Your body was designed to respond to these signals. The vagus nerve is waiting. Use it.</p>
                 </section>
 
-                <!-- RELATED -->
                 <div class="related-box">
                     <h3>Deepen Your Understanding</h3>
                     <div class="related-grid">
@@ -380,16 +901,14 @@
                     </div>
                 </div>
 
-                <!-- FULL MEDICAL DISCLAIMER -->
-                <div id="medical-disclaimer" style="background:var(--lavender-soft);border:1px solid var(--lavender-border);border-radius:16px;padding:28px;margin:48px 0;">
-                    <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:16px;">&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
-                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
-                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">All clinical claims in this article are sourced from peer-reviewed research published in indexed medical journals. Study designs and sample sizes are noted where applicable.</p>
-                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">Always consult a qualified healthcare provider for questions about your individual health, migraine treatment, or medication decisions.</p>
-                    <p style="font-size:0.9rem;color:var(--text-light);margin:0;">The vagus nerve techniques described should complement &mdash; never replace &mdash; prescribed treatments. People with cardiac conditions, particularly bradycardia or heart block, should consult a physician before using cold water immersion techniques. This content was last reviewed for accuracy on March 9, 2026.</p>
+                <div class="full-disclaimer">
+                    <h3>&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
+                    <p>This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
+                    <p>All clinical claims in this article are sourced from peer-reviewed research published in indexed medical journals. Study designs and sample sizes are noted where applicable.</p>
+                    <p>Always consult a qualified healthcare provider for questions about your individual health, migraine treatment, or medication decisions.</p>
+                    <p>The vagus nerve techniques described should complement &mdash; never replace &mdash; prescribed treatments. People with cardiac conditions, particularly bradycardia or heart block, should consult a physician before using cold water immersion techniques. This content was last reviewed for accuracy on March 9, 2026.</p>
                 </div>
 
-                <!-- REFERENCES -->
                 <div id="references" class="references">
                     <h3>References</h3>
                     <ol>
@@ -420,7 +939,6 @@
                     </ol>
                 </div>
 
-                <!-- ABOUT AUTHOR -->
                 <div id="about-author" class="article-footer">
                     <div class="author-card">
                         <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
