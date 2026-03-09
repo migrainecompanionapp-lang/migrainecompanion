@@ -59,9 +59,258 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="article-base.css">
+
+    <style>
+        :root {
+            --bg: #0d0d0d;
+            --surface: #141419;
+            --lavender: #8b7aa8;
+            --lavender-soft: rgba(139,122,168,0.08);
+            --lavender-border: rgba(139,122,168,0.15);
+            --green: #6aaa7a;
+            --green-soft: rgba(106,170,122,0.08);
+            --green-border: rgba(106,170,122,0.2);
+            --teal: #6b9baa;
+            --teal-soft: rgba(107,155,170,0.08);
+            --teal-border: rgba(107,155,170,0.2);
+            --gold: #c5a059;
+            --gold-soft: rgba(197,160,89,0.08);
+            --gold-border: rgba(197,160,89,0.2);
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+            --text-warm: #c9bda8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+        h1 { font-size: 2.8rem; font-weight: 600; color: #ffffff; line-height: 1.2; margin-bottom: 16px; }
+        h2 { font-size: 1.9rem; font-weight: 600; color: #ffffff; margin: 56px 0 20px; line-height: 1.3; }
+        h3 { font-size: 1.3rem; font-weight: 600; color: #ffffff; margin: 24px 0 12px; }
+
+        p { margin-bottom: 20px; color: var(--text); }
+        strong { color: var(--text-warm); }
+        a { color: var(--lavender); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: #a594c0; }
+        sup { color: var(--lavender); font-weight: 600; font-size: 0.75rem; }
+
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(13,13,13,0.95); backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139,122,168,0.1);
+        }
+        .header-content {
+            max-width: 780px; margin: 0 auto; padding: 16px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: #ffffff; text-decoration: none; }
+        .logo span { color: var(--lavender); }
+        .back-link { font-size: 0.85rem; color: var(--text-dark); text-decoration: none; }
+        .back-link:hover { color: var(--lavender); }
+
+        .article-hero {
+    position: relative; width: 100%; height: 700px; overflow: hidden; margin-top: 56px;
+}
+        .article-hero img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center center;
+}
+        .article-hero::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 75%;
+            background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.7) 40%, transparent 100%);
+        }
+        .article-header {
+    position: absolute; bottom: 40px; left: 0; right: 0; z-index: 2;
+    max-width: 780px; margin: 0 auto; padding: 0 24px;
+    text-align: center;
+}
+        .article-tag {
+            display: inline-block; padding: 4px 16px; border-radius: 20px;
+            font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+            background: var(--green-soft); color: var(--green); border: 1px solid var(--green-border);
+            margin-bottom: 16px;
+        }
+        .article-subtitle {
+            font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+            color: var(--text-light); font-style: italic; margin-bottom: 16px;
+        }
+        .article-meta { display: flex; gap: 24px; font-size: 0.85rem; color: var(--text-dark); flex-wrap: wrap; }
+
+        .article-content { padding: 48px 0 80px; }
+
+        .medical-disclaimer {
+            font-size: 0.85rem; color: var(--text-dark); padding: 16px 0;
+            border-bottom: 1px solid rgba(139,122,168,0.1); margin-bottom: 32px;
+        }
+
+        .key-takeaways {
+            background: var(--teal-soft); border: 1px solid var(--teal-border);
+            border-radius: 16px; padding: 28px 32px; margin: 32px 0;
+        }
+        .key-takeaways h3 { color: var(--teal); margin-top: 0; font-size: 1.1rem; }
+        .key-takeaways ul { list-style: none; padding: 0; }
+        .key-takeaways li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: var(--text); }
+        .key-takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--teal); font-weight: 600; }
+
+        .separator { text-align: center; color: var(--text-dark); font-size: 1.2rem; letter-spacing: 12px; padding: 40px 0; }
+
+        .emergency-box {
+            background: var(--gold-soft); border: 1px solid var(--gold-border);
+            border-radius: 16px; padding: 28px 32px; margin: 32px 0;
+        }
+        .emergency-box h3 { color: var(--gold); margin-top: 0; }
+        .emergency-box p { font-size: 0.95rem; color: var(--text); }
+
+        .highlight-box {
+            background: var(--green-soft); border: 1px solid var(--green-border);
+            border-radius: 16px; padding: 24px 28px; margin: 28px 0;
+        }
+        .highlight-box p { color: var(--text); margin: 0; font-size: 1rem; }
+
+        .data-card {
+            background: var(--teal-soft); border: 1px solid var(--teal-border);
+            border-radius: 16px; padding: 24px 28px; margin: 28px 0;
+        }
+        .data-card p { color: var(--text); font-size: 0.95rem; }
+        .data-card p:last-child { margin-bottom: 0; }
+
+        .insight-card {
+            background: var(--lavender-soft); border: 1px solid var(--lavender-border);
+            border-radius: 16px; padding: 24px 28px; margin: 28px 0;
+        }
+        .insight-card p { color: var(--text); margin: 0; font-size: 0.95rem; font-style: italic; }
+
+        .action-box {
+            background: transparent; border: 1px solid var(--green-border);
+            border-radius: 16px; padding: 28px 32px; margin: 32px 0;
+        }
+        .action-box h3 { color: var(--green); margin-top: 16px; font-size: 1.1rem; }
+        .action-box h3:first-child { margin-top: 0; }
+        .action-box p { font-size: 0.95rem; }
+
+        .checklist-box {
+            background: var(--green-soft); border: 1px solid var(--green-border);
+            border-radius: 16px; padding: 32px; margin: 40px 0;
+        }
+        .checklist-box h3 { color: var(--green); margin-top: 0; font-size: 1.3rem; }
+        .checklist-box h4 { color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700; margin: 24px 0 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .checklist-box h4:first-of-type { margin-top: 16px; }
+        .checklist-box ul { list-style: none; padding: 0; }
+        .checklist-box li { padding: 6px 0 6px 28px; position: relative; font-size: 0.9rem; color: var(--text); line-height: 1.6; }
+        .checklist-box li::before { content: '\2610'; position: absolute; left: 0; color: var(--green); font-size: 1.1rem; }
+        .checklist-box li strong { color: var(--text-warm); }
+
+        .article-image { margin: 40px 0; }
+        .article-image img { width: 100%; border-radius: 12px; }
+        .article-image figcaption {
+            text-align: center; font-size: 0.85rem; color: var(--text-dark);
+            font-style: italic; margin-top: 12px; padding: 0 16px;
+        }
+
+        .related-box { margin: 48px 0; }
+        .related-box h3 { color: var(--lavender); margin-bottom: 20px; }
+        .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .related-card {
+            background: var(--lavender-soft); border: 1px solid var(--lavender-border);
+            border-radius: 12px; padding: 20px; text-decoration: none; transition: all 0.3s;
+        }
+        .related-card:hover { border-color: var(--lavender); transform: translateY(-2px); }
+        .related-card h4 { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #ffffff; margin: 0 0 8px; }
+        .related-card p { font-size: 0.85rem; color: var(--text-dark); margin: 0; }
+
+        .references { margin: 48px 0; padding-top: 32px; border-top: 1px solid rgba(139,122,168,0.1); }
+        .references h3 { color: var(--lavender); margin-bottom: 20px; }
+        .references ol { padding-left: 24px; }
+        .references li { font-size: 0.8rem; color: var(--text-dark); margin-bottom: 10px; line-height: 1.6; }
+        .references a { color: var(--lavender); font-size: 0.8rem; }
+
+        .article-footer { margin-top: 48px; }
+        .author-card {
+            display: flex; gap: 24px; padding: 32px;
+            background: var(--surface); border: 1px solid var(--lavender-border);
+            border-radius: 16px; margin-bottom: 32px;
+        }
+        .author-avatar { flex-shrink: 0; }
+        .author-avatar img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+        .author-info h3 { margin-top: 0; color: #ffffff; }
+        .author-info p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px; }
+
+        .editorial-standards {
+            background: var(--lavender-soft); border: 1px solid var(--lavender-border);
+            border-radius: 16px; padding: 28px; margin-bottom: 32px;
+        }
+        .editorial-standards h3 { color: var(--lavender); margin-top: 0; font-size: 1.1rem; }
+        .editorial-standards ul { padding-left: 20px; }
+        .editorial-standards li { font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px; }
+
+        .cta-box {
+            background: var(--green-soft); border: 1px solid var(--green-border);
+            border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 32px;
+        }
+        .cta-box h3 { color: var(--green); margin-top: 0; }
+        .cta-box p { font-size: 0.95rem; color: var(--text-light); margin-bottom: 24px; }
+
+        .download-btn {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, rgba(106,170,122,0.15), rgba(106,170,122,0.25));
+            border: 1px solid var(--green); border-radius: 12px;
+            color: var(--green); text-decoration: none; font-weight: 600;
+            transition: all 0.3s; flex: 1; max-width: 260px; justify-content: center;
+        }
+        .download-btn:hover { background: var(--green); color: var(--bg); transform: translateY(-2px); }
+
+        .review-dates { text-align: center; padding: 24px 0; }
+        .review-dates p { font-size: 0.8rem; color: var(--text-dark); margin-bottom: 4px; }
+
+        footer { border-top: 1px solid rgba(139,122,168,0.1); padding: 32px 0; margin-top: 48px; }
+        .copyright { text-align: center; font-size: 0.85rem; color: var(--text-dark); }
+        .checklist-btn {
+    padding: 10px 20px; border-radius: 10px; border: 1px solid var(--green);
+    background: linear-gradient(135deg, rgba(106,170,122,0.1), rgba(106,170,122,0.2));
+    color: var(--green); font-weight: 600; font-size: 0.85rem; cursor: pointer;
+    transition: all 0.3s; font-family: 'Inter', sans-serif;
+}
+.checklist-btn:hover { background: var(--green); color: var(--bg); transform: translateY(-2px); }
+
+@media print {
+    body * { visibility: hidden; }
+    #checklist, #checklist * { visibility: visible; }
+    #checklist { position: absolute; left: 0; top: 0; width: 100%; background: #fff; color: #111; padding: 32px; }
+    #checklist h3 { color: #111; }
+    #checklist h4 { color: #333; }
+    #checklist li { color: #222; }
+    #checklist li strong { color: #000; }
+    #checklist li::before { color: #333; }
+    #checklist .checklist-btn { display: none; }
+    #checklist sup { color: #666; }
+}
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .data-card, .insight-card, .emergency-box { padding: 20px 24px; }
+            .action-box, .checklist-box { padding: 24px; }
+            .article-meta { flex-direction: column; gap: 8px; }
+            .related-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<body data-category="tips">
+<body>
 
 <header>
     <div class="header-content">
@@ -259,7 +508,7 @@
             </div>
         </div>
 
-        <div id="medical-disclaimer" class="medical-disclaimer-box">
+        <div id="medical-disclaimer" style="background:var(--lavender-soft);border:1px solid var(--lavender-border);border-radius:16px;padding:28px;margin:48px 0;">
             <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:16px;">&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
             <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
             <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">All clinical claims in this article are sourced from peer-reviewed research published in indexed medical journals. Study designs and sample sizes are noted where applicable.</p>
@@ -308,8 +557,8 @@
                 <div class="author-info">
                     <h3>Rustam Iuldashov</h3>
                     <p><strong>Creator &amp; Developer</strong> &mdash; 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. His approach combines first-hand patient experience with peer-reviewed medical research and narrative therapy principles (Michael White &amp; David Epston). He is not a medical professional.</p>
-                    <p class="author-transparency"><em>Transparency &amp; Conflict of Interest Disclosure: Rustam is the developer of the Migraine Companion app. This article was written to educate and inform, not to promote the app. All scientific claims are independently sourced from peer-reviewed literature. The author has no financial relationships with pharmaceutical companies, supplement manufacturers, or travel industry partners mentioned in this article.</em></p>
-                    <p class="author-contact">📧 Contact: mi-companion.com/contact &middot; &#x1F310; Website: mi-companion.com</p>
+                    <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Transparency &amp; Conflict of Interest Disclosure: Rustam is the developer of the Migraine Companion app. This article was written to educate and inform, not to promote the app. All scientific claims are independently sourced from peer-reviewed literature. The author has no financial relationships with pharmaceutical companies, supplement manufacturers, or travel industry partners mentioned in this article.</em></p>
+                    <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);">&#x1F4E7; Contact: mi-companion.com/contact &middot; &#x1F310; Website: mi-companion.com</p>
                 </div>
             </div>
 
