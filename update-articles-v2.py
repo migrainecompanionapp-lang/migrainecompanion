@@ -1,32 +1,11 @@
 #!/usr/bin/env python3
-"""
-SAFE article updater — does NOT remove inline styles.
-Only adds:
-  1. data-category="..." on <body>
-  2. <link rel="stylesheet" href="article-category-colors.css"> before </head>
-  3. Fixes category tag text to match blog.html
-
-Usage: python3 update-articles-v2.py --dry-run
-       python3 update-articles-v2.py
-"""
-
-import os
-import re
-import sys
+import os, re, sys
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).parent
 CSS_FILE = "article-category-colors.css"
 DRY_RUN = "--dry-run" in sys.argv
 
-# Article files to skip
-SKIP_FILES = {
-    "index.html", "blog.html", "faq.html", "collaborate.html",
-    "contact.html", "disclaimer.html",
-}
-
-# Map article filename -> correct category (from blog.html)
-# This is the AUTHORITATIVE mapping
 FILE_CATEGORY_MAP = {
     "article-30-years.html": "personal-story",
     "article-narrative-therapy.html": "narrative-therapy",
@@ -68,7 +47,6 @@ FILE_CATEGORY_MAP = {
     "article-hyperexcitable-brain.html": "science",
 }
 
-# Category display names for tag text
 CATEGORY_DISPLAY = {
     "personal-story": "Personal Story",
     "science": "Science",
@@ -80,128 +58,76 @@ CATEGORY_DISPLAY = {
     "understanding": "Understanding",
 }
 
-
 def add_data_category(html, category):
-    """Add or replace data-category on <body>."""
     html = re.sub(r'(<body[^>]*)\s+data-category="[^"]*"', r'\1', html)
     html = re.sub(r'<body([^>]*?)>', f'<body\\1 data-category="{category}">', html, count=1)
     return html
 
-
 def add_css_link(html):
-    """Add link to overlay CSS before </head> if not already present."""
     if CSS_FILE in html:
         return html
     link_tag = f'    <link rel="stylesheet" href="{CSS_FILE}">\n'
     html = html.replace('</head>', f'{link_tag}</head>')
     return html
 
-
 def fix_tag_text(html, category):
-    """Fix article-tag text to match blog category name."""
     display_name = CATEGORY_DISPLAY.get(category, "")
     if not display_name:
         return html
-    # Replace whatever is inside .article-tag span
     html = re.sub(
         r'(<span\s+class="article-tag"[^>]*>)\s*[^<]+?\s*(</span>)',
         f'\\1{display_name}\\2',
-        html,
-        count=1
+        html, count=1
     )
     return html
 
-
 def process_file(filepath, category):
-    """Process a single file — SAFE, no style removal."""
     with open(filepath, 'r', encoding='utf-8') as f:
         original = f.read()
-
     html = original
-
-    # 1. Add data-category to body
     html = add_data_category(html, category)
-
-    # 2. Add CSS link (does NOT remove inline styles)
     html = add_css_link(html)
-
-    # 3. Fix tag text
     html = fix_tag_text(html, category)
-
     if html == original:
-        print(f"  ✓  No changes needed: {filepath.name} [{category}]")
+        print(f"  OK  No changes needed: {filepath.name} [{category}]")
         return False
-
     if DRY_RUN:
-        print(f"  🔍 Would update: {filepath.name} [{category}]")
+        print(f"  >>  Would update: {filepath.name} [{category}]")
         return True
-
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(html)
-
-    print(f"  ✅ Updated: {filepath.name} [{category}]")
+    print(f"  OK  Updated: {filepath.name} [{category}]")
     return True
-
 
 def main():
     print("=" * 60)
-    print("  Migraine Companion — SAFE Article Color Updater v2")
-    print("  Does NOT remove inline styles")
+    print("  SAFE Article Color Updater v2")
     print("=" * 60)
-
     if DRY_RUN:
-        print("  MODE: DRY RUN (no files will be changed)\n")
+        print("  MODE: DRY RUN\n")
     else:
-        print("  MODE: LIVE (files will be updated)\n")
-
+        print("  MODE: LIVE\n")
     css_path = SCRIPT_DIR / CSS_FILE
     if not css_path.exists():
-        print(f"  ❌ ERROR: {CSS_FILE} not found!")
+        print(f"  ERROR: {CSS_FILE} not found!")
         sys.exit(1)
-
     updated = 0
     total = 0
-
     for filename, category in sorted(FILE_CATEGORY_MAP.items()):
         filepath = SCRIPT_DIR / filename
         if not filepath.exists():
-            print(f"  ⚠️  File not found: {filename}")
+            print(f"  WARN  File not found: {filename}")
             continue
         total += 1
         try:
             if process_file(filepath, category):
                 updated += 1
         except Exception as e:
-            print(f"  ❌ Error: {filename}: {e}")
-
-    print(f"\n  {'Would update' if DRY_RUN else 'Updated'}: {updated}/{total} files")
+            print(f"  ERR  {filename}: {e}")
+    print(f"\n  Result: {updated}/{total} files")
     if DRY_RUN and updated > 0:
-        print("  Run without --dry-run to apply changes.")
+        print("  Run without --dry-run to apply.")
     print("=" * 60)
-
 
 if __name__ == "__main__":
     main()
-```
-
----
-
-**Теперь пошагово:**
-
-**Шаг 1** — Сохрани оба файла на GitHub через браузер (чтобы не мучиться с токенами):
-
-1. Иди на **https://github.com/migrainecompanionapp-lang/migrainecompanion**
-2. Нажми **Add file → Create new file**
-3. Имя: `article-category-colors.css`
-4. Вставь содержимое первого файла
-5. Нажми **Commit changes**
-6. Повтори для `update-articles-v2.py`
-
-**Шаг 2** — В терминале:
-```
-cd ~/Desktop/migrainecompanion && git pull
-```
-
-**Шаг 3** — Тестовый прогон:
-```
-python3 update-articles-v2.py --dry-run
