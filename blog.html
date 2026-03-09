@@ -7,7 +7,7 @@
     <title>Blog | MIgraine Companion</title>
     <link rel="icon" type="image/png" href="images/mi-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,20 +16,45 @@
         }
         
         :root {
-            --lavender: #8b7aa8;
+            /* Mystic Garden Deep */
+            --bg-deep: #12121E;
+            --bg: #1A1A2E;
+            --bg-card: #1E1E32;
+            --bg-card-hover: #252540;
+            --border: rgba(139, 122, 168, 0.10);
+            --border-hover: rgba(139, 122, 168, 0.25);
+            
+            /* Text Hierarchy */
+            --text-heading: #F5F0E8;
+            --text-body: #C9BDA8;
+            --text-muted: #8A8098;
+            --text-subtle: #5E5872;
+            
+            /* Accent Palette */
+            --lavender: #8B7AA8;
             --gold: #C5A059;
-            --bg: #0d0d0d;
-            --text: #a0a0a0;
-            --text-light: #888;
-            --text-dark: #666;
+            --green: #6AAA7A;
+            --teal: #6B9BAA;
+            --sand: #C9BDA8;
+            --cream: #F5F0E8;
+            
+            /* Category Colors */
+            --cat-personal: #C9BDA8;
+            --cat-science: #6B9BAA;
+            --cat-guide: #C5A059;
+            --cat-selfcare: #6AAA7A;
+            --cat-narrative: #8B7AA8;
+            --cat-tips: #B8A892;
+            --cat-triggers: #AA8E6B;
+            --cat-understanding: #7BA5C0;
         }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: #ffffff;
+            background: var(--bg-deep);
+            color: var(--text-body);
             min-height: 100vh;
-            line-height: 1.4;
+            line-height: 1.5;
             overflow-x: hidden;
         }
         
@@ -41,6 +66,10 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Comfortaa', cursive;
         }
         
         /* FALLING PETALS */
@@ -92,15 +121,17 @@
             }
         }
         
+        /* ═══════════ HEADER ═══════════ */
         header {
             padding: 16px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            background: rgba(13, 13, 13, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+            background: rgba(18, 18, 30, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(139, 122, 168, 0.08);
         }
         
         .header-content {
@@ -110,9 +141,10 @@
         }
         
         .logo {
+            font-family: 'Comfortaa', cursive;
             font-size: 1.3rem;
             font-weight: 700;
-            color: #ffffff;
+            color: var(--cream);
             letter-spacing: -0.3px;
             text-decoration: none;
             position: relative;
@@ -132,7 +164,7 @@
         }
         
         .nav a {
-            color: var(--text-light);
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 0.82rem;
             font-weight: 500;
@@ -141,7 +173,7 @@
         }
         
         .nav a:hover {
-            color: var(--lavender);
+            color: var(--cream);
         }
         
         .nav a.active {
@@ -185,7 +217,7 @@
         
         .nav-cta:hover {
             background: var(--gold);
-            color: var(--bg) !important;
+            color: var(--bg-deep) !important;
             box-shadow: 0 0 20px rgba(197,160,89,.4);
             transform: translateY(-1px);
         }
@@ -201,12 +233,13 @@
             z-index: 101;
         }
         
+        /* ═══════════ HERO ═══════════ */
         .blog-hero {
             padding: 140px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            min-height: 500px;
+            min-height: 520px;
             display: flex;
             align-items: center;
         }
@@ -219,7 +252,7 @@
             right: 0;
             bottom: 0;
             background: url('images/blog-bg.png') center center/cover no-repeat;
-            opacity: 0.85;
+            opacity: 0.7;
             z-index: 0;
         }
         
@@ -230,7 +263,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to bottom, rgba(13,13,13,0.3) 0%, rgba(13,13,13,0.8) 70%, rgba(13,13,13,1) 100%);
+            background: 
+                radial-gradient(ellipse at 30% 50%, rgba(139, 122, 168, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 40%, rgba(106, 170, 122, 0.05) 0%, transparent 50%),
+                linear-gradient(to bottom, rgba(18,18,30,0.2) 0%, rgba(18,18,30,0.75) 65%, rgba(18,18,30,1) 100%);
             z-index: 1;
         }
         
@@ -241,38 +277,40 @@
         
         .blog-hero h1 {
             font-size: 2.8rem;
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 16px;
-            letter-spacing: -0.3px;
-            color: #ffffff;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+            letter-spacing: -0.5px;
+            color: var(--cream);
+            text-shadow: 0 2px 30px rgba(0,0,0,0.6);
         }
         
         .blog-hero p {
-            font-size: 1.15rem;
-            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            color: rgba(245, 240, 232, 0.75);
             max-width: 520px;
-            margin: 0 auto 30px; /* Added bottom margin for spacing with the form */
-            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+            margin: 0 auto 32px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
             font-weight: 500;
         }
         
-        /* NEWSLETTER FORM STYLES */
+        /* SUBSCRIBE FORM */
         .subscribe-form {
             display: flex;
             max-width: 420px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(139, 122, 168, 0.3);
+            background: rgba(30, 30, 50, 0.6);
+            border: 1px solid rgba(139, 122, 168, 0.2);
             border-radius: 30px;
             padding: 5px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
             transition: border-color 0.3s ease;
         }
         
         .subscribe-form:focus-within {
             border-color: var(--lavender);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(139, 122, 168, 0.15);
         }
 
         .subscribe-form input {
@@ -280,19 +318,19 @@
             background: transparent;
             border: none;
             padding: 12px 20px;
-            color: #ffffff;
+            color: var(--cream);
             font-family: inherit;
             font-size: 0.95rem;
             outline: none;
         }
 
         .subscribe-form input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--text-muted);
         }
 
         .subscribe-form button {
             background: var(--lavender);
-            color: var(--bg);
+            color: var(--bg-deep);
             border: none;
             padding: 10px 24px;
             border-radius: 24px;
@@ -308,25 +346,27 @@
             transform: scale(1.02);
             box-shadow: 0 4px 15px rgba(139, 122, 168, 0.4);
         }
-
+        
+        /* ═══════════ BLOG CONTENT ═══════════ */
         .blog-content {
             padding: 60px 0 80px;
             position: relative;
             z-index: 2;
         }
         
+        /* CATEGORY FILTER */
         .category-filter {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 40px;
+            margin-bottom: 44px;
             justify-content: center;
         }
         
         .filter-btn {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(139, 122, 168, 0.2);
-            color: var(--text-light);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(139, 122, 168, 0.12);
+            color: var(--text-muted);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
@@ -337,59 +377,182 @@
         }
         
         .filter-btn:hover {
-            border-color: rgba(139, 122, 168, 0.4);
-            color: #ffffff;
+            border-color: rgba(139, 122, 168, 0.3);
+            color: var(--cream);
+            background: rgba(139, 122, 168, 0.06);
         }
         
         .filter-btn.active {
-            background: rgba(197, 160, 89, 0.15);
-            border-color: rgba(197, 160, 89, 0.4);
+            background: rgba(197, 160, 89, 0.12);
+            border-color: rgba(197, 160, 89, 0.35);
             color: var(--gold);
         }
         
+        /* Per-category active filter colors */
+        .filter-btn.active[data-category="personal-story"] {
+            background: rgba(201, 189, 168, 0.10);
+            border-color: rgba(201, 189, 168, 0.35);
+            color: var(--cat-personal);
+        }
+        .filter-btn.active[data-category="science"] {
+            background: rgba(107, 155, 170, 0.10);
+            border-color: rgba(107, 155, 170, 0.35);
+            color: var(--cat-science);
+        }
+        .filter-btn.active[data-category="app-guide"] {
+            background: rgba(197, 160, 89, 0.10);
+            border-color: rgba(197, 160, 89, 0.35);
+            color: var(--cat-guide);
+        }
+        .filter-btn.active[data-category="self-care"] {
+            background: rgba(106, 170, 122, 0.10);
+            border-color: rgba(106, 170, 122, 0.35);
+            color: var(--cat-selfcare);
+        }
+        .filter-btn.active[data-category="narrative-therapy"] {
+            background: rgba(139, 122, 168, 0.10);
+            border-color: rgba(139, 122, 168, 0.35);
+            color: var(--cat-narrative);
+        }
+        .filter-btn.active[data-category="tips"] {
+            background: rgba(184, 168, 146, 0.10);
+            border-color: rgba(184, 168, 146, 0.35);
+            color: var(--cat-tips);
+        }
+        .filter-btn.active[data-category="triggers"] {
+            background: rgba(170, 142, 107, 0.10);
+            border-color: rgba(170, 142, 107, 0.35);
+            color: var(--cat-triggers);
+        }
+        .filter-btn.active[data-category="understanding"] {
+            background: rgba(123, 165, 192, 0.10);
+            border-color: rgba(123, 165, 192, 0.35);
+            color: var(--cat-understanding);
+        }
+        
+        /* ═══════════ BLOG GRID & CARDS ═══════════ */
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
+            gap: 24px;
         }
         
         .blog-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(139, 122, 168, 0.12);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 16px;
             padding: 28px;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Subtle top accent line per category */
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 28px;
+            right: 28px;
+            height: 1px;
+            opacity: 0;
+            transition: opacity 0.35s ease;
         }
         
         .blog-card:hover {
-            border-color: rgba(139, 122, 168, 0.3);
+            border-color: var(--border-hover);
             transform: translateY(-4px);
+            background: var(--bg-card-hover);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
         }
         
+        .blog-card:hover::before {
+            opacity: 1;
+        }
+        
+        /* Category-specific hover glow */
+        .blog-card[data-category="personal-story"]:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(201, 189, 168, 0.08); }
+        .blog-card[data-category="personal-story"]::before { background: linear-gradient(90deg, transparent, var(--cat-personal), transparent); }
+        
+        .blog-card[data-category="science"]:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(107, 155, 170, 0.08); }
+        .blog-card[data-category="science"]::before { background: linear-gradient(90deg, transparent, var(--cat-science), transparent); }
+        
+        .blog-card[data-category="app-guide"]:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(197, 160, 89, 0.08); }
+        .blog-card[data-category="app-guide"]::before { background: linear-gradient(90deg, transparent, var(--cat-guide), transparent); }
+        
+        .blog-card[data-category="self-care"]:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(106, 170, 122, 0.08); }
+        .blog-card[data-category="self-care"]::before { background: linear-gradient(90deg, transparent, var(--cat-selfcare), transparent); }
+        
+        .blog-card[data-category="narrative-therapy"]:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(139, 122, 168, 0.08); }
+        .blog-card[data-category="narrative-therapy"]::before { background: linear-gradient(90deg, transparent, var(--cat-narrative), transparent); }
+        
+        .blog-card[data-category="tips"]:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(184, 168, 146, 0.08); }
+        .blog-card[data-category="tips"]::before { background: linear-gradient(90deg, transparent, var(--cat-tips), transparent); }
+        
+        .blog-card[data-category="triggers"]:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(170, 142, 107, 0.08); }
+        .blog-card[data-category="triggers"]::before { background: linear-gradient(90deg, transparent, var(--cat-triggers), transparent); }
+        
+        .blog-card[data-category="understanding"]:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(123, 165, 192, 0.08); }
+        .blog-card[data-category="understanding"]::before { background: linear-gradient(90deg, transparent, var(--cat-understanding), transparent); }
+        
+        /* TAGS — per category color */
         .blog-tag {
             display: inline-block;
-            background: rgba(197, 160, 89, 0.15);
-            color: var(--gold);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 600;
             padding: 4px 12px;
             border-radius: 20px;
             margin-bottom: 16px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+        
+        .blog-card[data-category="personal-story"] .blog-tag {
+            background: rgba(201, 189, 168, 0.12);
+            color: var(--cat-personal);
+        }
+        .blog-card[data-category="science"] .blog-tag {
+            background: rgba(107, 155, 170, 0.12);
+            color: var(--cat-science);
+        }
+        .blog-card[data-category="app-guide"] .blog-tag {
+            background: rgba(197, 160, 89, 0.12);
+            color: var(--cat-guide);
+        }
+        .blog-card[data-category="self-care"] .blog-tag {
+            background: rgba(106, 170, 122, 0.12);
+            color: var(--cat-selfcare);
+        }
+        .blog-card[data-category="narrative-therapy"] .blog-tag {
+            background: rgba(139, 122, 168, 0.12);
+            color: var(--cat-narrative);
+        }
+        .blog-card[data-category="tips"] .blog-tag {
+            background: rgba(184, 168, 146, 0.12);
+            color: var(--cat-tips);
+        }
+        .blog-card[data-category="triggers"] .blog-tag {
+            background: rgba(170, 142, 107, 0.12);
+            color: var(--cat-triggers);
+        }
+        .blog-card[data-category="understanding"] .blog-tag {
+            background: rgba(123, 165, 192, 0.12);
+            color: var(--cat-understanding);
         }
         
         .blog-card h2 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 12px;
-            color: #ffffff;
+            color: var(--text-heading);
             font-weight: 700;
             line-height: 1.4;
         }
         
         .blog-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            font-weight: 500;
+            color: var(--text-body);
+            font-size: 0.92rem;
+            line-height: 1.65;
+            font-weight: 400;
             margin-bottom: 16px;
         }
         
@@ -397,8 +560,8 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            font-size: 0.8rem;
-            color: var(--text-dark);
+            font-size: 0.78rem;
+            color: var(--text-subtle);
         }
         
         .blog-date {
@@ -419,8 +582,9 @@
             color: var(--gold);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             transition: all 0.3s;
+            letter-spacing: 0.2px;
         }
         
         .read-more:hover {
@@ -428,9 +592,10 @@
             transform: translateX(4px);
         }
         
+        /* COMING SOON CARD */
         .coming-soon-card {
-            background: rgba(139, 122, 168, 0.05);
-            border: 1px dashed rgba(139, 122, 168, 0.3);
+            background: rgba(139, 122, 168, 0.04);
+            border: 1px dashed rgba(139, 122, 168, 0.2);
             border-radius: 16px;
             padding: 40px 28px;
             text-align: center;
@@ -444,41 +609,57 @@
         }
         
         .coming-soon-card p {
-            color: var(--text-dark);
+            color: var(--text-subtle);
             font-size: 0.9rem;
         }
         
+        /* NEWSLETTER */
         .newsletter {
             margin-top: 60px;
-            padding: 40px;
-            background: rgba(197, 160, 89, 0.05);
-            border: 1px solid rgba(197, 160, 89, 0.15);
+            padding: 44px;
+            background: rgba(197, 160, 89, 0.04);
+            border: 1px solid rgba(197, 160, 89, 0.12);
             border-radius: 16px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.4;
         }
         
         .newsletter h3 {
             font-size: 1.3rem;
-            color: #ffffff;
+            color: var(--cream);
             margin-bottom: 8px;
             font-weight: 700;
         }
         
         .newsletter p {
-            color: var(--text);
+            color: var(--text-body);
             font-size: 0.95rem;
             margin-bottom: 20px;
         }
         
         .newsletter-note {
-            color: var(--text-dark);
+            color: var(--text-subtle);
             font-size: 0.85rem;
             font-style: italic;
         }
         
+        /* ═══════════ FOOTER ═══════════ */
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            border-top: 1px solid rgba(139, 122, 168, 0.08);
             position: relative;
             z-index: 2;
         }
@@ -498,7 +679,7 @@
         }
         
         .footer-links a {
-            color: var(--text-light);
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
@@ -510,11 +691,12 @@
         }
         
         .copyright {
-            color: #555;
+            color: var(--text-subtle);
             font-size: 0.85rem;
             font-weight: 500;
         }
         
+        /* ═══════════ MOBILE ═══════════ */
         @media (max-width: 768px) {
             .nav {
                 display: none;
@@ -522,12 +704,13 @@
                 top: 70px;
                 left: 0;
                 right: 0;
-                background: rgba(13, 13, 13, 0.98);
+                background: rgba(18, 18, 30, 0.98);
                 backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
                 flex-direction: column;
                 padding: 20px;
                 gap: 0;
-                border-bottom: 1px solid rgba(139, 122, 168, 0.2);
+                border-bottom: 1px solid rgba(139, 122, 168, 0.12);
                 box-shadow: 0 10px 30px rgba(0,0,0,0.5);
                 z-index: 99;
             }
@@ -538,7 +721,7 @@
             
             .nav a {
                 padding: 12px 0;
-                border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+                border-bottom: 1px solid rgba(139, 122, 168, 0.06);
                 display: block;
                 width: 100%;
             }
@@ -557,7 +740,7 @@
                 padding: 14px 20px !important;
                 margin-top: 12px;
                 border-radius: 12px;
-                background: rgba(197, 160, 89, 0.15) !important;
+                background: rgba(197, 160, 89, 0.1) !important;
             }
             
             .mobile-menu-btn {
@@ -598,11 +781,12 @@
                 border: none;
                 box-shadow: none;
                 backdrop-filter: none;
+                -webkit-backdrop-filter: none;
                 padding: 0;
             }
             .subscribe-form input {
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(139, 122, 168, 0.3);
+                background: rgba(30, 30, 50, 0.6);
+                border: 1px solid rgba(139, 122, 168, 0.2);
                 border-radius: 12px;
                 margin-bottom: 10px;
             }
@@ -646,7 +830,6 @@
                     <input type="email" name="email" placeholder="Enter your email for new articles..." required>
                     <button type="submit">Subscribe</button>
                 </form>
-
             </div>
         </section>
 
@@ -666,7 +849,6 @@
                 </div>
                 
                 <div class="blog-grid">
-                    
                     <article class="blog-card" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>I Built a Migraine App During 30 Years of Pain (and a War)</h2>
@@ -931,7 +1113,6 @@
                         <a href="article-migraine-aphasia.html" class="read-more">Read full story →</a>
                     </article>
 
-
                     <article class="blog-card" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The Smell of Danger: When Perfume Becomes a Weapon</h2>
@@ -954,7 +1135,6 @@
                         <a href="article-emergency-kit.html" class="read-more">Read full story →</a>
                     </article>
 
-
                     <article class="blog-card" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>Lighting the Way: Creating a Migraine-Friendly Home</h2>
@@ -976,6 +1156,7 @@
                         </div>
                         <a href="article-pediatric-migraine.html" class="read-more">Read full story →</a>
                     </article>
+
                     <article class="blog-card" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>The Food Detective: How to Run Your Own Elimination Trial</h2>
@@ -1295,53 +1476,44 @@
         const petal = document.createElement('div');
         petal.className = 'petal';
         
-        // Random side (left or right)
         const side = Math.random() > 0.5 ? 'left' : 'right';
         petal.classList.add(side);
         
-        // Position within edge zone (0-15% from edge)
         const x = Math.random() * 15;
         petal.style.setProperty('--x', x);
         
-        // Random properties
-        const duration = 8 + Math.random() * 12; // 8-20 seconds
-        const scale = 0.5 + Math.random() * 1; // 0.5-1.5x size
-        const opacity = 0.3 + Math.random() * 0.5; // 0.3-0.8 opacity
-        const rotation = 180 + Math.random() * 360; // rotation degrees
+        const duration = 8 + Math.random() * 12;
+        const scale = 0.5 + Math.random() * 1;
+        const opacity = 0.3 + Math.random() * 0.5;
+        const rotation = 180 + Math.random() * 360;
         
         petal.style.setProperty('--scale', scale);
         petal.style.setProperty('--opacity', opacity);
         petal.style.setProperty('--rotation', rotation + 'deg');
         petal.style.animationDuration = duration + 's';
         
-        // Random horizontal drift
         const drift = (Math.random() - 0.5) * 100;
         petal.style.setProperty('--drift', drift + 'px');
         
         petalsContainer.appendChild(petal);
         
-        // Remove petal after animation
         setTimeout(() => {
             petal.remove();
         }, duration * 1000);
     }
     
-    // Create petals periodically
     function startPetals() {
-        // Initial burst
         for (let i = 0; i < 5; i++) {
             setTimeout(() => createPetal(), i * 300);
         }
         
-        // Continuous creation
         setInterval(() => {
             if (document.visibilityState === 'visible') {
                 createPetal();
             }
-        }, 2000); // New petal every 2 seconds
+        }, 2000);
     }
     
-    // Start after page loads
     if (window.innerWidth > 768) {
         startPetals();
     }
