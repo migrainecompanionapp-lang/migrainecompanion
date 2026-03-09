@@ -101,7 +101,7 @@
         }
         
         .container {
-            max-width: 1100px;
+            max-width: 1320px;
             margin: 0 auto;
             padding: 0 var(--sp-6);
         }
@@ -110,8 +110,8 @@
             font-family: 'Comfortaa', cursive;
         }
         
-        /* === FALLING PETALS === */
-        .petals-container {
+        /* === FIREFLIES === */
+        .fireflies {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
@@ -119,33 +119,29 @@
             z-index: 10;
             overflow: hidden;
         }
-        
-        .petal {
+
+        .firefly {
             position: absolute;
-            top: -50px;
-            width: 20px; height: 20px;
-            background: radial-gradient(ellipse at center, rgba(180, 150, 200, 0.8) 0%, rgba(139, 122, 168, 0.4) 50%, transparent 70%);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            filter: blur(1px);
+            background: #FFFBEA;
+            border-radius: 50%;
             opacity: 0;
-            animation: petal-fall linear forwards;
+            box-shadow: 0 0 3px 1px rgba(139, 122, 168, 0.6), 0 0 8px 2px rgba(139, 122, 168, 0.3), 0 0 18px 5px rgba(139, 122, 168, 0.15);
         }
-        
-        .petal.left { left: calc(var(--x) * 1%); }
-        .petal.right { right: calc(var(--x) * 1%); }
-        
-        @keyframes petal-fall {
-            0%  { opacity: 0; transform: translateY(0) rotate(0deg) scale(var(--scale)); }
-            10% { opacity: var(--opacity); }
-            90% { opacity: var(--opacity); }
-            100%{ opacity: 0; transform: translateY(100vh) rotate(var(--rotation)) scale(var(--scale)); }
+
+        @keyframes firefly-float {
+            0%, 100% { opacity: 0; transform: translate(0, 0) scale(1); }
+            10% { opacity: 0.6; }
+            30% { opacity: 0.3; transform: translate(var(--move-x), var(--move-y)) scale(1.1); }
+            50% { opacity: 0.7; transform: translate(calc(var(--move-x) * 0.5), calc(var(--move-y) * 1.5)) scale(0.9); }
+            70% { opacity: 0.2; transform: translate(calc(var(--move-x) * -0.3), calc(var(--move-y) * 0.8)) scale(1.2); }
+            90% { opacity: 0.5; }
         }
         
         /* === REDUCED MOTION === */
         @media (prefers-reduced-motion: reduce) {
             .reveal { transition: none; opacity: 1; transform: none; }
-            .petal { display: none !important; }
             .blog-hero-bg { transition: none; transform: none !important; }
+            .firefly { display: none !important; }
         }
         
         /* === SCROLL REVEAL === */
@@ -336,7 +332,7 @@
             line-height: 1.6;
         }
         
-        /* === SUBSCRIBE FORM (improved) === */
+        /* === SUBSCRIBE FORM === */
         .subscribe-form {
             display: flex;
             max-width: 420px;
@@ -465,11 +461,11 @@
         .blog-search .search-clear.visible { display: flex; }
         .blog-search .search-clear:hover { background: rgba(139, 122, 168, 0.25); }
         
-        /* === CATEGORY FILTER — iOS frosted glass pills === */
+        /* === CATEGORY FILTER === */
         .category-filter {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 4px;
             margin-bottom: var(--sp-12);
             justify-content: center;
             background: rgba(35, 35, 37, 0.35);
@@ -477,8 +473,8 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-default);
             border-radius: 16px;
-            padding: 6px;
-            max-width: 720px;
+            padding: 8px;
+            max-width: 860px;
             margin-left: auto;
             margin-right: auto;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.03);
@@ -488,14 +484,15 @@
             background: transparent;
             border: 1px solid transparent;
             color: var(--text-muted);
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 12px;
-            font-size: 0.78rem;
-            font-weight: 500;
+            font-size: 0.85rem;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             font-family: inherit;
             position: relative;
+            letter-spacing: 0.2px;
         }
         
         .filter-btn:hover {
@@ -569,8 +566,8 @@
         /* === GLASSMORPHISM CAPSULE CARDS === */
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--sp-6);
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--sp-5);
         }
         
         .blog-card {
@@ -579,7 +576,7 @@
             -webkit-backdrop-filter: blur(40px) saturate(180%);
             border: 1px solid var(--border-glass);
             border-radius: 20px;
-            padding: var(--sp-8);
+            padding: var(--sp-6);
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
@@ -589,7 +586,6 @@
                 inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         
-        /* Top accent line — always visible, category-colored */
         .blog-card::before {
             content: '';
             position: absolute;
@@ -605,7 +601,6 @@
             opacity: 1;
         }
         
-        /* Per-category accent lines (always visible) */
         .blog-card[data-category="personal-story"]::before { background: linear-gradient(90deg, transparent, var(--cat-personal), transparent); }
         .blog-card[data-category="science"]::before { background: linear-gradient(90deg, transparent, var(--cat-science), transparent); }
         .blog-card[data-category="app-guide"]::before { background: linear-gradient(90deg, transparent, var(--cat-guide), transparent); }
@@ -615,7 +610,6 @@
         .blog-card[data-category="triggers"]::before { background: linear-gradient(90deg, transparent, var(--cat-triggers), transparent); }
         .blog-card[data-category="understanding"]::before { background: linear-gradient(90deg, transparent, var(--cat-understanding), transparent); }
         
-        /* Inner glow — bottom */
         .blog-card::after {
             content: '';
             position: absolute;
@@ -637,7 +631,6 @@
         
         .blog-card:hover::after { opacity: 1; }
         
-        /* Category bottom glow */
         .blog-card[data-category="personal-story"]::after { background: radial-gradient(ellipse, rgba(201, 189, 168, 0.08) 0%, transparent 70%); }
         .blog-card[data-category="science"]::after { background: radial-gradient(ellipse, rgba(107, 155, 170, 0.08) 0%, transparent 70%); }
         .blog-card[data-category="app-guide"]::after { background: radial-gradient(ellipse, rgba(197, 160, 89, 0.08) 0%, transparent 70%); }
@@ -647,7 +640,6 @@
         .blog-card[data-category="triggers"]::after { background: radial-gradient(ellipse, rgba(170, 142, 107, 0.08) 0%, transparent 70%); }
         .blog-card[data-category="understanding"]::after { background: radial-gradient(ellipse, rgba(123, 165, 192, 0.08) 0%, transparent 70%); }
         
-        /* Category hover — colored border glow */
         .blog-card[data-category="personal-story"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(201, 189, 168, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
         .blog-card[data-category="science"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(107, 155, 170, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
         .blog-card[data-category="app-guide"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(197, 160, 89, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
@@ -737,7 +729,7 @@
         
         /* Typography */
         .blog-card h2 {
-            font-size: 1.25rem;
+            font-size: 1.12rem;
             margin-bottom: var(--sp-2);
             color: var(--text-heading);
             font-weight: 600;
@@ -816,7 +808,6 @@
             opacity: 0.7;
         }
         
-        /* COMING SOON PLACEHOLDER */
         .coming-soon-card {
             background: rgba(139, 122, 168, 0.04);
             backdrop-filter: blur(20px);
@@ -940,7 +931,11 @@
         .copyright { color: var(--text-muted); font-size: 0.82rem; font-weight: 500; }
         
         /* RESPONSIVE */
-        @media (max-width: 1024px) {
+        @media (max-width: 1280px) {
+            .blog-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 960px) {
             .blog-grid { grid-template-columns: repeat(2, 1fr); }
         }
         
@@ -982,7 +977,7 @@
             .category-filter::-webkit-scrollbar { display: none; }
             .filter-btn { padding: 6px 10px; font-size: 0.72rem; border-radius: 8px; white-space: nowrap; }
             .footer-content { flex-direction: column; text-align: center; }
-            .petals-container { display: none; }
+            .fireflies { display: none; }
             .subscribe-form { flex-direction: column; background: transparent; border: none; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; padding: 0; }
             .subscribe-form input { background: rgba(35, 35, 37, 0.6); border: 1px solid rgba(139, 122, 168, 0.18); border-radius: 12px; margin-bottom: 10px; }
             .subscribe-form button { border-radius: 12px; padding: 14px; }
@@ -991,7 +986,7 @@
     </style>
 </head>
 <body>
-    <div class="petals-container" id="petals"></div>
+    <div class="fireflies" id="fireflies"></div>
     
     <header>
         <div class="container header-content">
@@ -1276,6 +1271,7 @@
                         </div>
                         <a href="article-migraine-vs-tension.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
+
                     <!-- CARD 20 -->
                     <article class="blog-card reveal" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
@@ -1347,7 +1343,6 @@
                         </div>
                         <a href="article-osmophobia.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
-                    
                     <!-- CARD 26 -->
                     <article class="blog-card reveal" data-category="tips">
                         <span class="blog-tag">Tips</span>
@@ -1723,25 +1718,21 @@
     function renderCards() {
         const filtered = getFilteredCards();
 
-        // Hide all cards
         blogCards.forEach(card => {
             card.style.display = 'none';
             card.style.order = '';
         });
 
-        // Show filtered cards up to visibleCount
         const toShow = filtered.slice(0, visibleCount);
         toShow.forEach(card => {
             card.style.display = 'block';
         });
 
-        // Coming soon placeholder
         if (comingSoonCard) {
             const hasComingSoon = filtered.some(c => c.classList.contains('coming-soon'));
             comingSoonCard.style.display = (currentCategory === 'all' || hasComingSoon) && !currentSearch ? 'block' : 'none';
         }
 
-        // Show more button
         const remaining = filtered.length - visibleCount;
         if (remaining > 0) {
             showMoreWrapper.style.display = 'block';
@@ -1750,7 +1741,6 @@
             showMoreWrapper.style.display = 'none';
         }
 
-        // No results
         const existingNoResults = blogGrid.querySelector('.no-results');
         if (existingNoResults) existingNoResults.remove();
 
@@ -1763,7 +1753,6 @@
         }
     }
 
-    // Filter buttons
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             filterBtns.forEach(b => b.classList.remove('active'));
@@ -1774,7 +1763,6 @@
         });
     });
 
-    // Search
     searchInput.addEventListener('input', function() {
         currentSearch = this.value.trim();
         searchClear.classList.toggle('visible', currentSearch.length > 0);
@@ -1790,7 +1778,6 @@
         renderCards();
     });
 
-    // Show more
     showMoreBtn.addEventListener('click', function() {
         visibleCount += CARDS_PER_PAGE;
         renderCards();
@@ -1801,7 +1788,6 @@
         }
     });
 
-    // Initial render
     renderCards();
 
     // === SCROLL REVEAL ===
@@ -1848,34 +1834,38 @@
         });
     }
 
-    // === FALLING PETALS ===
-    const petalsContainer = document.getElementById('petals');
+    // === FIREFLIES ===
+    const fireflyContainer = document.getElementById('fireflies');
 
-    function createPetal() {
-        const petal = document.createElement('div');
-        petal.className = 'petal';
-        const side = Math.random() > 0.5 ? 'left' : 'right';
-        petal.classList.add(side);
-        petal.style.setProperty('--x', Math.random() * 15);
-        const duration = 8 + Math.random() * 12;
-        petal.style.setProperty('--scale', 0.5 + Math.random() * 1);
-        petal.style.setProperty('--opacity', 0.3 + Math.random() * 0.5);
-        petal.style.setProperty('--rotation', (180 + Math.random() * 360) + 'deg');
-        petal.style.animationDuration = duration + 's';
-        petal.style.setProperty('--drift', ((Math.random() - 0.5) * 100) + 'px');
-        petalsContainer.appendChild(petal);
-        setTimeout(() => petal.remove(), duration * 1000);
-    }
+    if (fireflyContainer && window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const fireflyCount = 20;
 
-    function startPetals() {
-        for (let i = 0; i < 5; i++) setTimeout(() => createPetal(), i * 300);
-        setInterval(() => {
-            if (document.visibilityState === 'visible') createPetal();
-        }, 2000);
-    }
+        for (let i = 0; i < fireflyCount; i++) {
+            const firefly = document.createElement('div');
+            firefly.className = 'firefly';
 
-    if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        startPetals();
+            const size = Math.random() * 2.5 + 1.5;
+            firefly.style.width = size + 'px';
+            firefly.style.height = size + 'px';
+
+            firefly.style.top = Math.random() * 100 + '%';
+            firefly.style.left = Math.random() * 100 + '%';
+
+            const moveX = (Math.random() - 0.5) * 80 + 'px';
+            const moveY = (Math.random() - 0.5) * 80 + 'px';
+            firefly.style.setProperty('--move-x', moveX);
+            firefly.style.setProperty('--move-y', moveY);
+
+            const duration = Math.random() * 12 + 8;
+            const delay = Math.random() * 15;
+            firefly.style.animation = 'firefly-float ' + duration + 's ease-in-out infinite';
+            firefly.style.animationDelay = delay + 's';
+
+            const blur = Math.random() * 1 + 0.5;
+            firefly.style.filter = 'blur(' + blur + 'px)';
+
+            fireflyContainer.appendChild(firefly);
+        }
     }
     </script>
 </body>
