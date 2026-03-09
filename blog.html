@@ -141,6 +141,13 @@
             100%{ opacity: 0; transform: translateY(100vh) rotate(var(--rotation)) scale(var(--scale)); }
         }
         
+        /* === REDUCED MOTION === */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { transition: none; opacity: 1; transform: none; }
+            .petal { display: none !important; }
+            .blog-hero-bg { transition: none; transform: none !important; }
+        }
+        
         /* === SCROLL REVEAL === */
         .reveal {
             opacity: 0;
@@ -329,20 +336,20 @@
             line-height: 1.6;
         }
         
-        /* SUBSCRIBE FORM */
+        /* === SUBSCRIBE FORM (improved) === */
         .subscribe-form {
             display: flex;
             max-width: 420px;
             margin: 0 auto;
-            background: rgba(26, 26, 48, 0.45);
-            border: 1px solid rgba(139, 122, 168, 0.15);
+            background: rgba(26, 26, 48, 0.50);
+            border: 1px solid rgba(139, 122, 168, 0.12);
             border-radius: 30px;
             padding: 5px;
             backdrop-filter: blur(40px) saturate(180%);
             -webkit-backdrop-filter: blur(40px) saturate(180%);
             box-shadow: 
                 0 8px 32px rgba(0,0,0,0.3),
-                inset 0 1px 0 rgba(255,255,255,0.04),
+                inset 0 1px 0 rgba(255,255,255,0.06),
                 inset 0 -1px 0 rgba(0,0,0,0.1);
             transition: border-color 0.4s ease, box-shadow 0.4s ease;
         }
@@ -351,8 +358,8 @@
             border-color: rgba(139, 122, 168, 0.35);
             box-shadow: 
                 0 8px 32px rgba(0,0,0,0.3),
-                0 0 0 1px rgba(139, 122, 168, 0.08),
-                inset 0 1px 0 rgba(255,255,255,0.04);
+                0 0 20px rgba(139, 122, 168, 0.08),
+                inset 0 1px 0 rgba(255,255,255,0.06);
         }
 
         .subscribe-form input {
@@ -366,10 +373,10 @@
             outline: none;
         }
 
-        .subscribe-form input::placeholder { color: var(--text-muted); }
+        .subscribe-form input::placeholder { color: #7E7593; }
 
         .subscribe-form button {
-            background: var(--lavender);
+            background: linear-gradient(135deg, var(--lavender), #9B8ABF);
             color: var(--surface-base);
             border: none;
             padding: 10px var(--sp-6);
@@ -380,12 +387,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(139, 122, 168, 0.20);
         }
 
         .subscribe-form button:hover {
-            background: #a08ec0;
+            background: linear-gradient(135deg, #a08ec0, #b0a0d0);
             transform: scale(1.03);
-            box-shadow: 0 4px 16px rgba(139, 122, 168, 0.35);
+            box-shadow: 0 4px 20px rgba(139, 122, 168, 0.35);
         }
         
         /* === BLOG CONTENT === */
@@ -394,6 +402,68 @@
             position: relative;
             z-index: 2;
         }
+        
+        /* === SEARCH INPUT === */
+        .blog-search {
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto var(--sp-4);
+            position: relative;
+        }
+
+        .blog-search input {
+            width: 100%;
+            background: rgba(26, 26, 48, 0.35);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-default);
+            border-radius: 14px;
+            padding: 12px 20px 12px 44px;
+            color: var(--cream);
+            font-family: inherit;
+            font-size: 0.88rem;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.03);
+        }
+
+        .blog-search input::placeholder { color: var(--text-muted); }
+
+        .blog-search input:focus {
+            border-color: rgba(139, 122, 168, 0.30);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(139, 122, 168, 0.08);
+        }
+
+        .blog-search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+
+        .blog-search .search-clear {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(139, 122, 168, 0.15);
+            border: none;
+            color: var(--text-secondary);
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .blog-search .search-clear.visible { display: flex; }
+        .blog-search .search-clear:hover { background: rgba(139, 122, 168, 0.25); }
         
         /* === CATEGORY FILTER — iOS frosted glass pills === */
         .category-filter {
@@ -433,7 +503,6 @@
             background: rgba(139, 122, 168, 0.06);
         }
         
-        /* Active pill — frosted glass capsule with depth */
         .filter-btn.active {
             background: rgba(197, 160, 89, 0.12);
             border-color: rgba(197, 160, 89, 0.18);
@@ -448,7 +517,6 @@
             transform: scale(1.02);
         }
         
-        /* Per-category active — glass capsule with category tint */
         .filter-btn.active[data-category="personal-story"] {
             background: rgba(201, 189, 168, 0.12);
             border-color: rgba(201, 189, 168, 0.20);
@@ -521,15 +589,31 @@
                 inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         
-        /* Top light — white subtle, becomes category color on hover */
+        /* Top accent line — always visible, category-colored */
         .blog-card::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 2px;
-            background: linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.06) 50%, transparent 90%);
-            transition: background 0.4s ease;
+            border-radius: 20px 20px 0 0;
+            transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+            opacity: 0.5;
         }
+        
+        .blog-card:hover::before {
+            height: 3px;
+            opacity: 1;
+        }
+        
+        /* Per-category accent lines (always visible) */
+        .blog-card[data-category="personal-story"]::before { background: linear-gradient(90deg, transparent, var(--cat-personal), transparent); }
+        .blog-card[data-category="science"]::before { background: linear-gradient(90deg, transparent, var(--cat-science), transparent); }
+        .blog-card[data-category="app-guide"]::before { background: linear-gradient(90deg, transparent, var(--cat-guide), transparent); }
+        .blog-card[data-category="self-care"]::before { background: linear-gradient(90deg, transparent, var(--cat-selfcare), transparent); }
+        .blog-card[data-category="narrative-therapy"]::before { background: linear-gradient(90deg, transparent, var(--cat-narrative), transparent); }
+        .blog-card[data-category="tips"]::before { background: linear-gradient(90deg, transparent, var(--cat-tips), transparent); }
+        .blog-card[data-category="triggers"]::before { background: linear-gradient(90deg, transparent, var(--cat-triggers), transparent); }
+        .blog-card[data-category="understanding"]::before { background: linear-gradient(90deg, transparent, var(--cat-understanding), transparent); }
         
         /* Inner glow — bottom */
         .blog-card::after {
@@ -545,7 +629,6 @@
             pointer-events: none;
         }
         
-        /* Base hover */
         .blog-card:hover {
             border-color: var(--border-hover);
             transform: translateY(-8px) scale(1.01);
@@ -554,17 +637,7 @@
         
         .blog-card:hover::after { opacity: 1; }
         
-        /* Category hover — colored top line */
-        .blog-card[data-category="personal-story"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-personal), transparent); }
-        .blog-card[data-category="science"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-science), transparent); }
-        .blog-card[data-category="app-guide"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-guide), transparent); }
-        .blog-card[data-category="self-care"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-selfcare), transparent); }
-        .blog-card[data-category="narrative-therapy"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-narrative), transparent); }
-        .blog-card[data-category="tips"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-tips), transparent); }
-        .blog-card[data-category="triggers"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-triggers), transparent); }
-        .blog-card[data-category="understanding"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-understanding), transparent); }
-        
-        /* Category hover — colored bottom glow */
+        /* Category bottom glow */
         .blog-card[data-category="personal-story"]::after { background: radial-gradient(ellipse, rgba(201, 189, 168, 0.08) 0%, transparent 70%); }
         .blog-card[data-category="science"]::after { background: radial-gradient(ellipse, rgba(107, 155, 170, 0.08) 0%, transparent 70%); }
         .blog-card[data-category="app-guide"]::after { background: radial-gradient(ellipse, rgba(197, 160, 89, 0.08) 0%, transparent 70%); }
@@ -574,7 +647,7 @@
         .blog-card[data-category="triggers"]::after { background: radial-gradient(ellipse, rgba(170, 142, 107, 0.08) 0%, transparent 70%); }
         .blog-card[data-category="understanding"]::after { background: radial-gradient(ellipse, rgba(123, 165, 192, 0.08) 0%, transparent 70%); }
         
-        /* Category hover — colored border glow via box-shadow */
+        /* Category hover — colored border glow */
         .blog-card[data-category="personal-story"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(201, 189, 168, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
         .blog-card[data-category="science"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(107, 155, 170, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
         .blog-card[data-category="app-guide"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(197, 160, 89, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
@@ -584,29 +657,83 @@
         .blog-card[data-category="triggers"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(170, 142, 107, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
         .blog-card[data-category="understanding"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(123, 165, 192, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
         
-        /* TAGS */
+        /* === PREMIUM BLOG TAGS === */
         .blog-tag {
             display: inline-block;
             font-size: 0.65rem;
-            font-weight: 600;
-            padding: 4px var(--sp-3);
+            font-weight: 700;
+            padding: 5px 14px;
             border-radius: 20px;
             margin-bottom: var(--sp-3);
-            letter-spacing: 0.6px;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            transition: opacity 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
         
-        .blog-card:hover .blog-tag { opacity: 0.9; }
+        .blog-card:hover .blog-tag {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
         
-        .blog-card[data-category="personal-story"] .blog-tag { background: rgba(201, 189, 168, 0.10); color: var(--cat-personal); }
-        .blog-card[data-category="science"] .blog-tag { background: rgba(107, 155, 170, 0.10); color: var(--cat-science); }
-        .blog-card[data-category="app-guide"] .blog-tag { background: rgba(197, 160, 89, 0.10); color: var(--cat-guide); }
-        .blog-card[data-category="self-care"] .blog-tag { background: rgba(106, 170, 122, 0.10); color: var(--cat-selfcare); }
-        .blog-card[data-category="narrative-therapy"] .blog-tag { background: rgba(139, 122, 168, 0.10); color: var(--cat-narrative); }
-        .blog-card[data-category="tips"] .blog-tag { background: rgba(184, 168, 146, 0.10); color: var(--cat-tips); }
-        .blog-card[data-category="triggers"] .blog-tag { background: rgba(170, 142, 107, 0.10); color: var(--cat-triggers); }
-        .blog-card[data-category="understanding"] .blog-tag { background: rgba(123, 165, 192, 0.10); color: var(--cat-understanding); }
+        .blog-card[data-category="personal-story"] .blog-tag {
+            background: linear-gradient(135deg, rgba(201, 189, 168, 0.10), rgba(201, 189, 168, 0.06));
+            border: 1px solid rgba(201, 189, 168, 0.15);
+            color: var(--cat-personal);
+            text-shadow: 0 0 12px rgba(201, 189, 168, 0.25);
+            box-shadow: inset 0 1px 0 rgba(201, 189, 168, 0.08), 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .blog-card[data-category="science"] .blog-tag {
+            background: linear-gradient(135deg, rgba(107, 155, 170, 0.10), rgba(107, 155, 170, 0.06));
+            border: 1px solid rgba(107, 155, 170, 0.15);
+            color: var(--cat-science);
+            text-shadow: 0 0 12px rgba(107, 155, 170, 0.25);
+            box-shadow: inset 0 1px 0 rgba(107, 155, 170, 0.08), 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .blog-card[data-category="app-guide"] .blog-tag {
+            background: linear-gradient(135deg, rgba(197, 160, 89, 0.10), rgba(197, 160, 89, 0.06));
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            color: var(--cat-guide);
+            text-shadow: 0 0 12px rgba(197, 160, 89, 0.25);
+            box-shadow: inset 0 1px 0 rgba(197, 160, 89, 0.08), 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .blog-card[data-category="self-care"] .blog-tag {
+            background: linear-gradient(135deg, rgba(106, 170, 122, 0.10), rgba(106, 170, 122, 0.06));
+            border: 1px solid rgba(106, 170, 122, 0.15);
+            color: var(--cat-selfcare);
+            text-shadow: 0 0 12px rgba(106, 170, 122, 0.25);
+            box-shadow: inset 0 1px 0 rgba(106, 170, 122, 0.08), 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .blog-card[data-category="narrative-therapy"] .blog-tag {
+            background: linear-gradient(135deg, rgba(139, 122, 168, 0.10), rgba(139, 122, 168, 0.06));
+            border: 1px solid rgba(139, 122, 168, 0.15);
+            color: var(--cat-narrative);
+            text-shadow: 0 0 12px rgba(139, 122, 168, 0.25);
+            box-shadow: inset 0 1px 0 rgba(139, 122, 168, 0.08), 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .blog-card[data-category="tips"] .blog-tag {
+            background: linear-gradient(135deg, rgba(184, 168, 146, 0.10), rgba(184, 168, 146, 0.06));
+            border: 1px solid rgba(184, 168, 146, 0.15);
+            color: var(--cat-tips);
+            text-shadow: 0 0 12px rgba(184, 168, 146, 0.25);
+            box-shadow: inset 0 1px 0 rgba(184, 168, 146, 0.08), 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .blog-card[data-category="triggers"] .blog-tag {
+            background: linear-gradient(135deg, rgba(170, 142, 107, 0.10), rgba(170, 142, 107, 0.06));
+            border: 1px solid rgba(170, 142, 107, 0.15);
+            color: var(--cat-triggers);
+            text-shadow: 0 0 12px rgba(170, 142, 107, 0.25);
+            box-shadow: inset 0 1px 0 rgba(170, 142, 107, 0.08), 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .blog-card[data-category="understanding"] .blog-tag {
+            background: linear-gradient(135deg, rgba(123, 165, 192, 0.10), rgba(123, 165, 192, 0.06));
+            border: 1px solid rgba(123, 165, 192, 0.15);
+            color: var(--cat-understanding);
+            text-shadow: 0 0 12px rgba(123, 165, 192, 0.25);
+            box-shadow: inset 0 1px 0 rgba(123, 165, 192, 0.08), 0 1px 3px rgba(0,0,0,0.2);
+        }
         
         /* Typography */
         .blog-card h2 {
@@ -663,7 +790,33 @@
         .read-more:hover { color: #D5B069; }
         .read-more:hover .arrow { transform: translateX(5px); }
         
-        /* COMING SOON */
+        /* === COMING SOON CARDS === */
+        .blog-card.coming-soon {
+            opacity: 0.45;
+            pointer-events: none;
+            position: relative;
+        }
+
+        .blog-card.coming-soon::before {
+            opacity: 0.25 !important;
+        }
+
+        .blog-card.coming-soon:hover {
+            transform: none;
+            border-color: var(--border-glass);
+            background: var(--surface-card);
+        }
+
+        .blog-card.coming-soon .blog-tag {
+            opacity: 0.5;
+        }
+
+        .blog-card.coming-soon .blog-date {
+            color: var(--lavender);
+            opacity: 0.7;
+        }
+        
+        /* COMING SOON PLACEHOLDER */
         .coming-soon-card {
             background: rgba(139, 122, 168, 0.04);
             backdrop-filter: blur(20px);
@@ -684,6 +837,56 @@
         .coming-soon-card p {
             color: var(--text-muted);
             font-size: 0.88rem;
+        }
+        
+        /* === SHOW MORE BUTTON === */
+        .show-more-wrapper {
+            text-align: center;
+            margin-top: var(--sp-8);
+        }
+
+        .show-more-btn {
+            background: rgba(26, 26, 48, 0.45);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-default);
+            border-radius: 14px;
+            padding: 14px 40px;
+            color: var(--cream);
+            font-family: 'Comfortaa', cursive;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04);
+        }
+
+        .show-more-btn:hover {
+            border-color: var(--border-hover);
+            background: var(--surface-elevated);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
+        }
+
+        .show-more-btn .btn-count {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            margin-left: 8px;
+        }
+
+        /* === NO RESULTS === */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: var(--sp-12) var(--sp-6);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .no-results span {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: var(--sp-3);
         }
         
         /* NEWSLETTER */
@@ -766,8 +969,18 @@
             .blog-hero { padding: 120px 0 60px; min-height: 340px; }
             .blog-grid { grid-template-columns: 1fr; gap: var(--sp-4); }
             .blog-card { padding: var(--sp-6); border-radius: 16px; }
-            .category-filter { gap: 4px; padding: 4px; border-radius: 12px; }
-            .filter-btn { padding: 6px 10px; font-size: 0.72rem; border-radius: 8px; }
+            .category-filter {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                justify-content: flex-start;
+                padding-bottom: 8px;
+                gap: 4px;
+                padding: 4px;
+                border-radius: 12px;
+            }
+            .category-filter::-webkit-scrollbar { display: none; }
+            .filter-btn { padding: 6px 10px; font-size: 0.72rem; border-radius: 8px; white-space: nowrap; }
             .footer-content { flex-direction: column; text-align: center; }
             .petals-container { display: none; }
             .subscribe-form { flex-direction: column; background: transparent; border: none; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; padding: 0; }
@@ -807,7 +1020,7 @@
                 <h1>Stories from the Mystic Garden</h1>
                 <p>Insights, experiences, and wisdom about living with migraines — from those who understand.</p>
                 <form class="subscribe-form" action="https://formspree.io/f/mjgezgbq" method="POST">
-                    <input type="email" name="email" placeholder="Enter your email for new articles..." required>
+                    <input type="email" name="email" placeholder="Enter your email for new articles..." required aria-label="Email address for newsletter">
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
@@ -815,6 +1028,13 @@
 
         <section class="blog-content">
             <div class="container">
+                
+                <div class="blog-search">
+                    <span class="blog-search-icon">🔍</span>
+                    <input type="text" id="blogSearch" placeholder="Search articles..." aria-label="Search articles">
+                    <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+                </div>
+                
                 <div class="category-filter">
                     <button class="filter-btn active" data-category="all">All</button>
                     <button class="filter-btn" data-category="personal-story">Personal Story</button>
@@ -1128,6 +1348,7 @@
                         </div>
                         <a href="article-osmophobia.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
+                    
                     <!-- CARD 26 -->
                     <article class="blog-card reveal" data-category="tips">
                         <span class="blog-tag">Tips</span>
@@ -1284,134 +1505,134 @@
                         <a href="article-hyperexcitable-brain.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
-                    <!-- CARD 39 -->
-                    <article class="blog-card reveal" data-category="self-care">
+                    <!-- CARD 39 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>Ancient Needles, Modern Evidence: Acupuncture for Migraine</h2>
                         <p>Skeptics dismiss it. Believers swear by it. What does the research actually say? A balanced look at acupuncture — who it helps, how it works, and what to expect.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 7 min read</span>
                         </div>
                     </article>
 
-                    <!-- CARD 40 -->
-                    <article class="blog-card reveal" data-category="understanding">
+                    <!-- CARD 40 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The 15-Day Line: When Episodic Becomes Chronic</h2>
                         <p>More than 15 headache days per month changes everything — your diagnosis, your treatment options, your identity. Understanding chronic migraine and the path back.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 8 min read</span>
                         </div>
                     </article>
 
-                    <!-- CARD 41 -->
-                    <article class="blog-card reveal" data-category="tips">
+                    <!-- CARD 41 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>The Ice vs Heat Debate: What Actually Works?</h2>
                         <p>Cold pack on the forehead? Heat on the neck? Some swear by ice, others by warmth. The science behind temperature therapy — and how to find what works for you.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 5 min read</span>
                         </div>
                     </article>
 
-                    <!-- CARD 42 -->
-                    <article class="blog-card reveal" data-category="science">
+                    <!-- CARD 42 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Anxious Brain: The Bidirectional Link Between Migraine and Anxiety</h2>
                         <p>Does anxiety trigger migraine, or does migraine cause anxiety? The answer is both — and understanding this connection can change how you treat both conditions.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 8 min read</span>
                         </div>
                     </article>
 
-                    <!-- CARD 43 -->
-                    <article class="blog-card reveal" data-category="tips">
+                    <!-- CARD 43 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Building Your Migraine Team: Beyond the Neurologist</h2>
                         <p>GP, neurologist, headache specialist, therapist, physical therapist. Who do you actually need? How to build a support team that works together for your health.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 6 min read</span>
                         </div>
                     </article>
 
-                    <!-- CARD 44 -->
-                    <article class="blog-card reveal" data-category="understanding">
+                    <!-- CARD 44 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The Warning Signs: Reading Your Prodrome Like a Book</h2>
                         <p>Yawning. Cravings. Irritability. Neck stiffness. Your body sends signals hours before the pain. Learning to read the prodrome — and act before it's too late.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 7 min read</span>
                         </div>
                     </article>
 
-                    <!-- CARD 45 -->
-                    <article class="blog-card reveal" data-category="self-care">
+                    <!-- CARD 45 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>Learning to Control the Uncontrollable: Biofeedback for Migraine</h2>
                         <p>Sensors on your skin. Lines on a screen. And somehow, you learn to control your body's invisible responses. The surprising science of biofeedback training.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 6 min read</span>
                         </div>
                     </article>
 
-                    <!-- CARD 46 -->
-                    <article class="blog-card reveal" data-category="tips">
+                    <!-- CARD 46 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Rose-Colored (or Green) Glasses: Do Tinted Lenses Actually Help?</h2>
                         <p>FL-41 rose tint. Axon Optics. Theraspecs. The claims are bold, and the prices aren't cheap. What research says about precision-tinted lenses for migraine.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 6 min read</span>
                         </div>
                     </article>
 
-                    <!-- CARD 47 -->
-                    <article class="blog-card reveal" data-category="triggers">
+                    <!-- CARD 47 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Blood Sugar Rollercoaster: Glucose and Your Migraine Brain</h2>
                         <p>Skipped breakfast. Afternoon crash. That desperate chocolate craving. Your brain runs on glucose — and the ups and downs might be triggering more than you realize.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 6 min read</span>
                         </div>
                     </article>
 
-                    <!-- CARD 48 -->
-                    <article class="blog-card reveal" data-category="personal-story">
+                    <!-- CARD 48 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>From 20 Days to 2: Stories of Successful Management</h2>
                         <p>It took years. It took failures. It took refusing to give up. Real stories from people who found their way to fewer migraine days — and what they learned along the way.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 10 min read</span>
                         </div>
                     </article>
 
-                    <!-- CARD 49 -->
-                    <article class="blog-card reveal" data-category="app-guide">
+                    <!-- CARD 49 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="app-guide">
                         <span class="blog-tag">App Guide</span>
                         <h2>Your First Neurologist Visit: What to Bring, What to Ask</h2>
                         <p>The appointment is finally here. How to make the most of those precious 15 minutes — and how Mi's reports can help you communicate your migraine story clearly.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 5 min read</span>
                         </div>
                     </article>
 
-                    <!-- CARD 50 -->
-                    <article class="blog-card reveal" data-category="narrative-therapy">
+                    <!-- CARD 50 — COMING SOON -->
+                    <article class="blog-card reveal coming-soon" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>The Words We Use: How Language Shapes Your Migraine Experience</h2>
                         <p>"Suffering from." "Battling." "Victim of." The words you use to describe your condition aren't neutral — they shape how you feel about it. A guide to rewriting your migraine story.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">📅 Coming soon</span>
+                            <span class="blog-date">✨ Coming soon</span>
                             <span class="blog-read-time">⏱ 6 min read</span>
                         </div>
                     </article>
@@ -1422,12 +1643,18 @@
                     </div>
                 </div>
                 
+                <div class="show-more-wrapper">
+                    <button class="show-more-btn" id="showMoreBtn">
+                        Show more <span class="btn-count"></span>
+                    </button>
+                </div>
+                
                 <div class="newsletter">
                     <h3>Stay Updated</h3>
                     <p>New articles and migraine management tips delivered directly to your inbox. No spam, ever.</p>
                     
                     <form class="subscribe-form" action="https://formspree.io/f/mjgezgbq" method="POST" style="margin-bottom: 16px;">
-                        <input type="email" name="email" placeholder="Your email address..." required>
+                        <input type="email" name="email" placeholder="Your email address..." required aria-label="Email address for newsletter">
                         <button type="submit">Subscribe</button>
                     </form>
                     <p class="newsletter-note">You can also follow our updates directly in the Migraine Companion app.</p>
@@ -1453,13 +1680,12 @@
     // === MOBILE MENU ===
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
-    
+
     if (mobileMenuBtn && nav) {
         mobileMenuBtn.addEventListener('click', function() {
             nav.classList.toggle('mobile-menu-active');
             document.body.classList.toggle('menu-open');
         });
-        
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 nav.classList.remove('mobile-menu-active');
@@ -1467,56 +1693,123 @@
             });
         });
     }
-    
-    // === CATEGORY FILTER ===
+
+    // === CATEGORY FILTER + SEARCH + SHOW MORE ===
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const blogCards = document.querySelectorAll('.blog-card');
-    
+    const blogCards = Array.from(document.querySelectorAll('.blog-card'));
+    const comingSoonCard = document.querySelector('.coming-soon-card');
+    const searchInput = document.getElementById('blogSearch');
+    const searchClear = document.getElementById('searchClear');
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    const showMoreWrapper = document.querySelector('.show-more-wrapper');
+    const blogGrid = document.querySelector('.blog-grid');
+
+    const CARDS_PER_PAGE = 12;
+    let currentCategory = 'all';
+    let currentSearch = '';
+    let visibleCount = CARDS_PER_PAGE;
+
+    function getFilteredCards() {
+        return blogCards.filter(card => {
+            const matchCategory = currentCategory === 'all' || card.dataset.category === currentCategory;
+            if (!currentSearch) return matchCategory;
+            const title = card.querySelector('h2')?.textContent.toLowerCase() || '';
+            const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+            const tag = card.querySelector('.blog-tag')?.textContent.toLowerCase() || '';
+            const query = currentSearch.toLowerCase();
+            return matchCategory && (title.includes(query) || desc.includes(query) || tag.includes(query));
+        });
+    }
+
+    function renderCards() {
+        const filtered = getFilteredCards();
+
+        // Hide all cards
+        blogCards.forEach(card => {
+            card.style.display = 'none';
+            card.style.order = '';
+        });
+
+        // Show filtered cards up to visibleCount
+        const toShow = filtered.slice(0, visibleCount);
+        toShow.forEach(card => {
+            card.style.display = 'block';
+        });
+
+        // Coming soon placeholder
+        if (comingSoonCard) {
+            const hasComingSoon = filtered.some(c => c.classList.contains('coming-soon'));
+            comingSoonCard.style.display = (currentCategory === 'all' || hasComingSoon) && !currentSearch ? 'block' : 'none';
+        }
+
+        // Show more button
+        const remaining = filtered.length - visibleCount;
+        if (remaining > 0) {
+            showMoreWrapper.style.display = 'block';
+            showMoreBtn.querySelector('.btn-count').textContent = '(' + remaining + ' more)';
+        } else {
+            showMoreWrapper.style.display = 'none';
+        }
+
+        // No results
+        const existingNoResults = blogGrid.querySelector('.no-results');
+        if (existingNoResults) existingNoResults.remove();
+
+        if (filtered.length === 0) {
+            const noResults = document.createElement('div');
+            noResults.className = 'no-results';
+            noResults.innerHTML = '<span>🌙</span>No articles found. Try a different search or category.';
+            blogGrid.insertBefore(noResults, comingSoonCard);
+            showMoreWrapper.style.display = 'none';
+        }
+    }
+
+    // Filter buttons
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             filterBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            
-            const category = this.dataset.category;
-            
-            if (category === 'all') {
-                blogCards.forEach(card => {
-                    card.style.display = 'block';
-                    card.style.order = '0';
-                });
-            } else {
-                let order = 0;
-                blogCards.forEach(card => {
-                    card.style.display = 'block';
-                    if (card.dataset.category === category) {
-                        card.style.order = '-1';
-                    } else {
-                        card.style.order = order++;
-                    }
-                });
-            }
+            currentCategory = this.dataset.category;
+            visibleCount = CARDS_PER_PAGE;
+            renderCards();
         });
     });
-    
-    // === STAGGERED SCROLL REVEAL ===
-    const revealElements = document.querySelectorAll('.reveal');
-    
+
+    // Search
+    searchInput.addEventListener('input', function() {
+        currentSearch = this.value.trim();
+        searchClear.classList.toggle('visible', currentSearch.length > 0);
+        visibleCount = CARDS_PER_PAGE;
+        renderCards();
+    });
+
+    searchClear.addEventListener('click', function() {
+        searchInput.value = '';
+        currentSearch = '';
+        searchClear.classList.remove('visible');
+        visibleCount = CARDS_PER_PAGE;
+        renderCards();
+    });
+
+    // Show more
+    showMoreBtn.addEventListener('click', function() {
+        visibleCount += CARDS_PER_PAGE;
+        renderCards();
+        const filtered = getFilteredCards();
+        const newFirst = filtered[visibleCount - CARDS_PER_PAGE];
+        if (newFirst) {
+            newFirst.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    });
+
+    // Initial render
+    renderCards();
+
+    // === SCROLL REVEAL ===
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Find position among currently revealing siblings for stagger delay
-                const allVisible = Array.from(revealElements).filter(el => {
-                    const rect = el.getBoundingClientRect();
-                    return rect.top < window.innerHeight && !el.classList.contains('visible');
-                });
-                
-                const idx = allVisible.indexOf(entry.target);
-                const delay = idx >= 0 ? idx * 60 : 0;
-                
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, delay);
-                
+                entry.target.classList.add('visible');
                 revealObserver.unobserve(entry.target);
             }
         });
@@ -1524,23 +1817,30 @@
         threshold: 0.08,
         rootMargin: '0px 0px -40px 0px'
     });
-    
-    revealElements.forEach(el => revealObserver.observe(el));
-    
+
+    const observeCards = () => {
+        document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+            revealObserver.observe(el);
+        });
+    };
+    observeCards();
+
+    new MutationObserver(() => observeCards()).observe(blogGrid, {
+        attributes: true, subtree: true, attributeFilter: ['style']
+    });
+
     // === HERO PARALLAX ===
     const heroBg = document.querySelector('.blog-hero-bg');
-    
-    if (heroBg && window.innerWidth > 768) {
+
+    if (heroBg && window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         let ticking = false;
-        
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 requestAnimationFrame(() => {
                     const scrollY = window.pageYOffset;
                     const heroHeight = document.querySelector('.blog-hero').offsetHeight;
-                    
                     if (scrollY < heroHeight) {
-                        heroBg.style.transform = `translateY(${scrollY * 0.2}px) scale(1.05)`;
+                        heroBg.style.transform = 'translateY(' + (scrollY * 0.2) + 'px) scale(1.05)';
                     }
                     ticking = false;
                 });
@@ -1548,53 +1848,34 @@
             }
         });
     }
-    
+
     // === FALLING PETALS ===
     const petalsContainer = document.getElementById('petals');
-    
+
     function createPetal() {
         const petal = document.createElement('div');
         petal.className = 'petal';
-        
         const side = Math.random() > 0.5 ? 'left' : 'right';
         petal.classList.add(side);
-        
-        const x = Math.random() * 15;
-        petal.style.setProperty('--x', x);
-        
+        petal.style.setProperty('--x', Math.random() * 15);
         const duration = 8 + Math.random() * 12;
-        const scale = 0.5 + Math.random() * 1;
-        const opacity = 0.3 + Math.random() * 0.5;
-        const rotation = 180 + Math.random() * 360;
-        
-        petal.style.setProperty('--scale', scale);
-        petal.style.setProperty('--opacity', opacity);
-        petal.style.setProperty('--rotation', rotation + 'deg');
+        petal.style.setProperty('--scale', 0.5 + Math.random() * 1);
+        petal.style.setProperty('--opacity', 0.3 + Math.random() * 0.5);
+        petal.style.setProperty('--rotation', (180 + Math.random() * 360) + 'deg');
         petal.style.animationDuration = duration + 's';
-        
-        const drift = (Math.random() - 0.5) * 100;
-        petal.style.setProperty('--drift', drift + 'px');
-        
+        petal.style.setProperty('--drift', ((Math.random() - 0.5) * 100) + 'px');
         petalsContainer.appendChild(petal);
-        
-        setTimeout(() => {
-            petal.remove();
-        }, duration * 1000);
+        setTimeout(() => petal.remove(), duration * 1000);
     }
-    
+
     function startPetals() {
-        for (let i = 0; i < 5; i++) {
-            setTimeout(() => createPetal(), i * 300);
-        }
-        
+        for (let i = 0; i < 5; i++) setTimeout(() => createPetal(), i * 300);
         setInterval(() => {
-            if (document.visibilityState === 'visible') {
-                createPetal();
-            }
+            if (document.visibilityState === 'visible') createPetal();
         }, 2000);
     }
-    
-    if (window.innerWidth > 768) {
+
+    if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         startPetals();
     }
     </script>
