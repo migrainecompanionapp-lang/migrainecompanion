@@ -1,0 +1,243 @@
+/* ============================================
+   MIGRAINE COMPANION — ARTICLE CATEGORY COLORS
+   Overlay file — does NOT replace inline styles
+   Only adds category-specific colors + premium polish
+   Version: 1.0 | March 2026
+   ============================================ */
+
+/* === CATEGORY COLOR VARIABLES === */
+body[data-category="personal-story"] {
+    --cat: #C9BDA8;
+    --cat-soft: rgba(201,189,168,0.08);
+    --cat-mid: rgba(201,189,168,0.15);
+    --cat-border: rgba(201,189,168,0.20);
+    --cat-tag-bg: rgba(201,189,168,0.12);
+    --cat-tag-border: rgba(201,189,168,0.30);
+    --cat-glow: rgba(201,189,168,0.25);
+}
+
+body[data-category="science"] {
+    --cat: #6B9BAA;
+    --cat-soft: rgba(107,155,170,0.08);
+    --cat-mid: rgba(107,155,170,0.15);
+    --cat-border: rgba(107,155,170,0.20);
+    --cat-tag-bg: rgba(107,155,170,0.12);
+    --cat-tag-border: rgba(107,155,170,0.30);
+    --cat-glow: rgba(107,155,170,0.25);
+}
+
+body[data-category="app-guide"] {
+    --cat: #C5A059;
+    --cat-soft: rgba(197,160,89,0.08);
+    --cat-mid: rgba(197,160,89,0.15);
+    --cat-border: rgba(197,160,89,0.20);
+    --cat-tag-bg: rgba(197,160,89,0.12);
+    --cat-tag-border: rgba(197,160,89,0.30);
+    --cat-glow: rgba(197,160,89,0.25);
+}
+
+body[data-category="self-care"] {
+    --cat: #6AAA7A;
+    --cat-soft: rgba(106,170,122,0.08);
+    --cat-mid: rgba(106,170,122,0.15);
+    --cat-border: rgba(106,170,122,0.20);
+    --cat-tag-bg: rgba(106,170,122,0.12);
+    --cat-tag-border: rgba(106,170,122,0.30);
+    --cat-glow: rgba(106,170,122,0.25);
+}
+
+body[data-category="narrative-therapy"] {
+    --cat: #8B7AA8;
+    --cat-soft: rgba(139,122,168,0.08);
+    --cat-mid: rgba(139,122,168,0.15);
+    --cat-border: rgba(139,122,168,0.20);
+    --cat-tag-bg: rgba(139,122,168,0.12);
+    --cat-tag-border: rgba(139,122,168,0.30);
+    --cat-glow: rgba(139,122,168,0.25);
+}
+
+body[data-category="tips"] {
+    --cat: #B8A892;
+    --cat-soft: rgba(184,168,146,0.08);
+    --cat-mid: rgba(184,168,146,0.15);
+    --cat-border: rgba(184,168,146,0.20);
+    --cat-tag-bg: rgba(184,168,146,0.12);
+    --cat-tag-border: rgba(184,168,146,0.30);
+    --cat-glow: rgba(184,168,146,0.25);
+}
+
+body[data-category="triggers"] {
+    --cat: #AA8E6B;
+    --cat-soft: rgba(170,142,107,0.08);
+    --cat-mid: rgba(170,142,107,0.15);
+    --cat-border: rgba(170,142,107,0.20);
+    --cat-tag-bg: rgba(170,142,107,0.12);
+    --cat-tag-border: rgba(170,142,107,0.30);
+    --cat-glow: rgba(170,142,107,0.25);
+}
+
+body[data-category="understanding"] {
+    --cat: #7BA5C0;
+    --cat-soft: rgba(123,165,192,0.08);
+    --cat-mid: rgba(123,165,192,0.15);
+    --cat-border: rgba(123,165,192,0.20);
+    --cat-tag-bg: rgba(123,165,192,0.12);
+    --cat-tag-border: rgba(123,165,192,0.30);
+    --cat-glow: rgba(123,165,192,0.25);
+}
+
+/* ================================================
+   PREMIUM ARTICLE TAG — matches blog capsule style
+   Works on BOTH article templates
+   ================================================ */
+body[data-category] .article-tag {
+    background: linear-gradient(135deg, var(--cat-tag-bg), var(--cat-soft)) !important;
+    border: 1px solid var(--cat-tag-border) !important;
+    color: var(--cat) !important;
+    text-shadow: 0 0 12px var(--cat-glow);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 1px 4px rgba(0,0,0,0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 5px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ================================================
+   HIGHLIGHT BOXES — category-colored border + bg
+   Covers: .highlight-box (template A & B)
+   ================================================ */
+body[data-category] .highlight-box {
+    background: var(--cat-soft) !important;
+    border-left-color: var(--cat) !important;
+}
+
+body[data-category] .highlight-box p {
+    color: var(--cat) !important;
+}
+
+/* ================================================
+   ACTION / STEPS BOXES — category accent
+   Covers: .action-box (template A), .steps-box (template B)
+   ================================================ */
+body[data-category] .action-box {
+    background: var(--cat-soft) !important;
+    border-color: var(--cat-border) !important;
+}
+
+body[data-category] .action-box h3 {
+    color: var(--cat) !important;
+}
+
+body[data-category] .steps-box {
+    border-color: var(--cat-border) !important;
+}
+
+body[data-category] .steps-box h4 {
+    color: var(--cat) !important;
+}
+
+body[data-category] .steps-box .step-number {
+    background: var(--cat-soft) !important;
+    color: var(--cat) !important;
+    border-color: var(--cat-border) !important;
+}
+
+/* ================================================
+   INSIGHT BOXES — both template variants
+   Covers: .insight-box (template B), .insight-card (template A)
+   ================================================ */
+body[data-category] .insight-box {
+    border-left-color: var(--cat) !important;
+}
+
+body[data-category] .insight-box h4 {
+    color: var(--cat) !important;
+}
+
+/* ================================================
+   CTA BOXES — category-colored download buttons
+   Covers: .cta-box (template A), .cta-section (template B)
+   ================================================ */
+body[data-category] .cta-box {
+    background: var(--cat-soft) !important;
+    border-color: var(--cat-border) !important;
+}
+
+body[data-category] .cta-section {
+    border-color: var(--cat-border) !important;
+}
+
+body[data-category] .cta-section h3 {
+    color: var(--cat) !important;
+}
+
+body[data-category] .download-btn {
+    border-color: var(--cat) !important;
+    color: var(--cat) !important;
+    background: linear-gradient(135deg, var(--cat-soft), var(--cat-mid)) !important;
+}
+
+body[data-category] .download-btn:hover {
+    background: var(--cat) !important;
+    color: #0d0d0d !important;
+}
+
+body[data-category] .cta-button {
+    border-color: var(--cat) !important;
+    color: var(--cat) !important;
+}
+
+body[data-category] .cta-button:hover {
+    background: var(--cat) !important;
+    color: #0d0d0d !important;
+}
+
+/* ================================================
+   QUOTE BOXES — subtle category tint
+   ================================================ */
+body[data-category] .quote-box {
+    border-left-color: var(--cat) !important;
+}
+
+body[data-category] .quote-box cite {
+    color: var(--cat) !important;
+}
+
+/* ================================================
+   PATTERN / FEATURE LISTS — category bullet color
+   ================================================ */
+body[data-category] .pattern-list li::before,
+body[data-category] .pattern-list li::marker {
+    color: var(--cat) !important;
+}
+
+/* ================================================
+   PREMIUM POLISH — subtle enhancements everywhere
+   ================================================ */
+
+/* Smooth link hover glow */
+body[data-category] .article-content a:hover,
+body[data-category] .article-section a:hover {
+    background: var(--cat-soft) !important;
+}
+
+/* Author card subtle top accent */
+body[data-category] .author-card {
+    border-top: 2px solid var(--cat-border) !important;
+}
+
+/* Related cards hover — category glow */
+body[data-category] .related-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px var(--cat-border) !important;
+}
+
+/* sup references — match lavender (consistent everywhere) */
+body[data-category] sup,
+body[data-category] sup a {
+    color: #8b7aa8 !important;
+}
