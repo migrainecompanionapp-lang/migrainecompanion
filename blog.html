@@ -16,26 +16,22 @@
         }
         
         :root {
-            /* === Surface Elevation System === */
             --surface-base: #111120;
             --surface-card: rgba(26, 26, 48, 0.45);
             --surface-card-solid: #1A1A30;
             --surface-elevated: rgba(34, 34, 64, 0.55);
             --surface-hover: #2A2A4A;
             
-            /* === Borders === */
             --border-subtle: rgba(139, 122, 168, 0.08);
             --border-default: rgba(139, 122, 168, 0.10);
             --border-hover: rgba(139, 122, 168, 0.22);
             --border-glass: rgba(255, 255, 255, 0.06);
             
-            /* === Text Hierarchy (Bringhurst 1.5x step) === */
             --text-heading: #F5F0E8;
             --text-body: #C9BDA8;
             --text-secondary: #9A8EA6;
             --text-muted: #6E6580;
             
-            /* === Accent Palette === */
             --lavender: #8B7AA8;
             --gold: #C5A059;
             --green: #6AAA7A;
@@ -43,7 +39,6 @@
             --sand: #C9BDA8;
             --cream: #F5F0E8;
             
-            /* === Category Colors === */
             --cat-personal: #C9BDA8;
             --cat-science: #6B9BAA;
             --cat-guide: #C5A059;
@@ -53,7 +48,6 @@
             --cat-triggers: #AA8E6B;
             --cat-understanding: #7BA5C0;
             
-            /* === Spacing System (4px base) === */
             --sp-2: 8px;
             --sp-3: 12px;
             --sp-4: 16px;
@@ -76,7 +70,6 @@
             -moz-osx-font-smoothing: grayscale;
         }
         
-        /* Noise texture — tactile depth */
         body::after {
             content: '';
             position: fixed;
@@ -90,7 +83,6 @@
             background-size: 256px 256px;
         }
         
-        /* Ambient glow — top-center */
         body::before {
             content: '';
             position: fixed;
@@ -149,7 +141,7 @@
             100%{ opacity: 0; transform: translateY(100vh) rotate(var(--rotation)) scale(var(--scale)); }
         }
         
-        /* === SCROLL REVEAL — staggered === */
+        /* === SCROLL REVEAL === */
         .reveal {
             opacity: 0;
             transform: translateY(28px);
@@ -194,9 +186,7 @@
             margin-right: 20px;
         }
         
-        .logo span {
-            color: var(--lavender);
-        }
+        .logo span { color: var(--lavender); }
         
         .nav {
             display: flex;
@@ -214,13 +204,8 @@
             position: relative;
         }
         
-        .nav a:hover {
-            color: var(--cream);
-        }
-        
-        .nav a.active {
-            color: var(--lavender);
-        }
+        .nav a:hover { color: var(--cream); }
+        .nav a.active { color: var(--lavender); }
         
         .nav a.active::after {
             content: '';
@@ -286,7 +271,7 @@
             z-index: 101;
         }
         
-        /* === HERO with parallax === */
+        /* === HERO === */
         .blog-hero {
             padding: 150px 0 90px;
             text-align: center;
@@ -344,7 +329,7 @@
             line-height: 1.6;
         }
         
-        /* SUBSCRIBE FORM — glassmorphism */
+        /* SUBSCRIBE FORM */
         .subscribe-form {
             display: flex;
             max-width: 420px;
@@ -381,9 +366,7 @@
             outline: none;
         }
 
-        .subscribe-form input::placeholder {
-            color: var(--text-muted);
-        }
+        .subscribe-form input::placeholder { color: var(--text-muted); }
 
         .subscribe-form button {
             background: var(--lavender);
@@ -412,7 +395,7 @@
             z-index: 2;
         }
         
-        /* CATEGORY FILTER — iOS segmented control */
+        /* === CATEGORY FILTER — iOS frosted glass pills === */
         .category-filter {
             display: flex;
             flex-wrap: wrap;
@@ -428,6 +411,7 @@
             max-width: 720px;
             margin-left: auto;
             margin-right: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.03);
         }
         
         .filter-btn {
@@ -441,6 +425,7 @@
             cursor: pointer;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             font-family: inherit;
+            position: relative;
         }
         
         .filter-btn:hover {
@@ -448,54 +433,69 @@
             background: rgba(139, 122, 168, 0.06);
         }
         
+        /* Active pill — frosted glass capsule with depth */
         .filter-btn.active {
             background: rgba(197, 160, 89, 0.12);
-            border-color: rgba(197, 160, 89, 0.20);
+            border-color: rgba(197, 160, 89, 0.18);
             color: var(--gold);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.2),
+                0 1px 2px rgba(0,0,0,0.15),
+                inset 0 1px 0 rgba(255,255,255,0.08),
+                inset 0 -1px 0 rgba(0,0,0,0.05);
             transform: scale(1.02);
         }
         
-        /* Per-category active filter colors */
+        /* Per-category active — glass capsule with category tint */
         .filter-btn.active[data-category="personal-story"] {
-            background: rgba(201, 189, 168, 0.10);
-            border-color: rgba(201, 189, 168, 0.22);
+            background: rgba(201, 189, 168, 0.12);
+            border-color: rgba(201, 189, 168, 0.20);
             color: var(--cat-personal);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15), inset 0 1px 0 rgba(201, 189, 168, 0.12), inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         .filter-btn.active[data-category="science"] {
-            background: rgba(107, 155, 170, 0.10);
-            border-color: rgba(107, 155, 170, 0.22);
+            background: rgba(107, 155, 170, 0.12);
+            border-color: rgba(107, 155, 170, 0.20);
             color: var(--cat-science);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15), inset 0 1px 0 rgba(107, 155, 170, 0.12), inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         .filter-btn.active[data-category="app-guide"] {
-            background: rgba(197, 160, 89, 0.10);
-            border-color: rgba(197, 160, 89, 0.22);
+            background: rgba(197, 160, 89, 0.12);
+            border-color: rgba(197, 160, 89, 0.20);
             color: var(--cat-guide);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15), inset 0 1px 0 rgba(197, 160, 89, 0.12), inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         .filter-btn.active[data-category="self-care"] {
-            background: rgba(106, 170, 122, 0.10);
-            border-color: rgba(106, 170, 122, 0.22);
+            background: rgba(106, 170, 122, 0.12);
+            border-color: rgba(106, 170, 122, 0.20);
             color: var(--cat-selfcare);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15), inset 0 1px 0 rgba(106, 170, 122, 0.12), inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         .filter-btn.active[data-category="narrative-therapy"] {
-            background: rgba(139, 122, 168, 0.10);
-            border-color: rgba(139, 122, 168, 0.22);
+            background: rgba(139, 122, 168, 0.12);
+            border-color: rgba(139, 122, 168, 0.20);
             color: var(--cat-narrative);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15), inset 0 1px 0 rgba(139, 122, 168, 0.12), inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         .filter-btn.active[data-category="tips"] {
-            background: rgba(184, 168, 146, 0.10);
-            border-color: rgba(184, 168, 146, 0.22);
+            background: rgba(184, 168, 146, 0.12);
+            border-color: rgba(184, 168, 146, 0.20);
             color: var(--cat-tips);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15), inset 0 1px 0 rgba(184, 168, 146, 0.12), inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         .filter-btn.active[data-category="triggers"] {
-            background: rgba(170, 142, 107, 0.10);
-            border-color: rgba(170, 142, 107, 0.22);
+            background: rgba(170, 142, 107, 0.12);
+            border-color: rgba(170, 142, 107, 0.20);
             color: var(--cat-triggers);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15), inset 0 1px 0 rgba(170, 142, 107, 0.12), inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         .filter-btn.active[data-category="understanding"] {
-            background: rgba(123, 165, 192, 0.10);
-            border-color: rgba(123, 165, 192, 0.22);
+            background: rgba(123, 165, 192, 0.12);
+            border-color: rgba(123, 165, 192, 0.20);
             color: var(--cat-understanding);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15), inset 0 1px 0 rgba(123, 165, 192, 0.12), inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         
         /* === GLASSMORPHISM CAPSULE CARDS === */
@@ -521,18 +521,17 @@
                 inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         
-        /* Top light reflection — always visible subtle */
+        /* Top light — white subtle, becomes category color on hover */
         .blog-card::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0;
-            height: 1px;
+            height: 2px;
             background: linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.06) 50%, transparent 90%);
-            opacity: 1;
-            transition: opacity 0.4s ease;
+            transition: background 0.4s ease;
         }
         
-        /* Inner glow — bottom, category colored */
+        /* Inner glow — bottom */
         .blog-card::after {
             content: '';
             position: absolute;
@@ -546,26 +545,26 @@
             pointer-events: none;
         }
         
+        /* Base hover */
         .blog-card:hover {
             border-color: var(--border-hover);
             transform: translateY(-8px) scale(1.01);
             background: var(--surface-elevated);
-            box-shadow:
-                0 24px 64px rgba(0,0,0,0.35),
-                0 0 0 1px rgba(139, 122, 168, 0.08),
-                inset 0 1px 0 rgba(255,255,255,0.06),
-                inset 0 -1px 0 rgba(0,0,0,0.05);
         }
         
-        .blog-card:hover::before {
-            background: linear-gradient(90deg, transparent 5%, rgba(255,255,255,0.10) 50%, transparent 95%);
-        }
+        .blog-card:hover::after { opacity: 1; }
         
-        .blog-card:hover::after {
-            opacity: 1;
-        }
+        /* Category hover — colored top line */
+        .blog-card[data-category="personal-story"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-personal), transparent); }
+        .blog-card[data-category="science"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-science), transparent); }
+        .blog-card[data-category="app-guide"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-guide), transparent); }
+        .blog-card[data-category="self-care"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-selfcare), transparent); }
+        .blog-card[data-category="narrative-therapy"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-narrative), transparent); }
+        .blog-card[data-category="tips"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-tips), transparent); }
+        .blog-card[data-category="triggers"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-triggers), transparent); }
+        .blog-card[data-category="understanding"]:hover::before { background: linear-gradient(90deg, transparent, var(--cat-understanding), transparent); }
         
-        /* Category-specific hover glows */
+        /* Category hover — colored bottom glow */
         .blog-card[data-category="personal-story"]::after { background: radial-gradient(ellipse, rgba(201, 189, 168, 0.08) 0%, transparent 70%); }
         .blog-card[data-category="science"]::after { background: radial-gradient(ellipse, rgba(107, 155, 170, 0.08) 0%, transparent 70%); }
         .blog-card[data-category="app-guide"]::after { background: radial-gradient(ellipse, rgba(197, 160, 89, 0.08) 0%, transparent 70%); }
@@ -575,7 +574,17 @@
         .blog-card[data-category="triggers"]::after { background: radial-gradient(ellipse, rgba(170, 142, 107, 0.08) 0%, transparent 70%); }
         .blog-card[data-category="understanding"]::after { background: radial-gradient(ellipse, rgba(123, 165, 192, 0.08) 0%, transparent 70%); }
         
-        /* TAGS — per category, pill capsule */
+        /* Category hover — colored border glow via box-shadow */
+        .blog-card[data-category="personal-story"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(201, 189, 168, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
+        .blog-card[data-category="science"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(107, 155, 170, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
+        .blog-card[data-category="app-guide"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(197, 160, 89, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
+        .blog-card[data-category="self-care"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(106, 170, 122, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
+        .blog-card[data-category="narrative-therapy"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(139, 122, 168, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
+        .blog-card[data-category="tips"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(184, 168, 146, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
+        .blog-card[data-category="triggers"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(170, 142, 107, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
+        .blog-card[data-category="understanding"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(123, 165, 192, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
+        
+        /* TAGS */
         .blog-tag {
             display: inline-block;
             font-size: 0.65rem;
@@ -588,9 +597,7 @@
             transition: opacity 0.3s ease;
         }
         
-        .blog-card:hover .blog-tag {
-            opacity: 0.9;
-        }
+        .blog-card:hover .blog-tag { opacity: 0.9; }
         
         .blog-card[data-category="personal-story"] .blog-tag { background: rgba(201, 189, 168, 0.10); color: var(--cat-personal); }
         .blog-card[data-category="science"] .blog-tag { background: rgba(107, 155, 170, 0.10); color: var(--cat-science); }
@@ -601,7 +608,7 @@
         .blog-card[data-category="triggers"] .blog-tag { background: rgba(170, 142, 107, 0.10); color: var(--cat-triggers); }
         .blog-card[data-category="understanding"] .blog-tag { background: rgba(123, 165, 192, 0.10); color: var(--cat-understanding); }
         
-        /* Typography hierarchy — Bringhurst 1.5x step */
+        /* Typography */
         .blog-card h2 {
             font-size: 1.25rem;
             margin-bottom: var(--sp-2);
@@ -611,9 +618,7 @@
             transition: color 0.3s ease;
         }
         
-        .blog-card:hover h2 {
-            color: #fff;
-        }
+        .blog-card:hover h2 { color: #fff; }
         
         .blog-card p {
             color: var(--text-body);
@@ -655,15 +660,10 @@
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        .read-more:hover {
-            color: #D5B069;
-        }
+        .read-more:hover { color: #D5B069; }
+        .read-more:hover .arrow { transform: translateX(5px); }
         
-        .read-more:hover .arrow {
-            transform: translateX(5px);
-        }
-        
-        /* COMING SOON CARD — glassmorphism */
+        /* COMING SOON */
         .coming-soon-card {
             background: rgba(139, 122, 168, 0.04);
             backdrop-filter: blur(20px);
@@ -686,7 +686,7 @@
             font-size: 0.88rem;
         }
         
-        /* NEWSLETTER — glassmorphism */
+        /* NEWSLETTER */
         .newsletter {
             margin-top: var(--sp-16);
             padding: var(--sp-12);
@@ -698,43 +698,24 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            box-shadow:
-                0 4px 24px rgba(0,0,0,0.15),
-                inset 0 1px 0 rgba(255,255,255,0.04);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04);
         }
         
         .newsletter::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 50%;
+            top: 0; left: 50%;
             transform: translateX(-50%);
-            width: 200px;
-            height: 1px;
+            width: 200px; height: 1px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
             opacity: 0.4;
         }
         
-        .newsletter h3 {
-            font-size: 1.3rem;
-            color: var(--cream);
-            margin-bottom: var(--sp-2);
-            font-weight: 700;
-        }
+        .newsletter h3 { font-size: 1.3rem; color: var(--cream); margin-bottom: var(--sp-2); font-weight: 700; }
+        .newsletter p { color: var(--text-secondary); font-size: 0.92rem; margin-bottom: var(--sp-5); }
+        .newsletter-note { color: var(--text-muted); font-size: 0.82rem; font-style: italic; }
         
-        .newsletter p {
-            color: var(--text-secondary);
-            font-size: 0.92rem;
-            margin-bottom: var(--sp-5);
-        }
-        
-        .newsletter-note {
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            font-style: italic;
-        }
-        
-        /* === FOOTER === */
+        /* FOOTER */
         footer {
             padding: var(--sp-10) 0;
             border-top: 1px solid var(--border-subtle);
@@ -750,121 +731,48 @@
             gap: var(--sp-5);
         }
         
-        .footer-links {
-            display: flex;
-            gap: var(--sp-6);
-            flex-wrap: wrap;
-        }
+        .footer-links { display: flex; gap: var(--sp-6); flex-wrap: wrap; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--lavender); }
+        .copyright { color: var(--text-muted); font-size: 0.82rem; font-weight: 500; }
         
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--lavender);
-        }
-        
-        .copyright {
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            font-weight: 500;
-        }
-        
-        /* === RESPONSIVE === */
+        /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .blog-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .blog-grid { grid-template-columns: repeat(2, 1fr); }
         }
         
         @media (max-width: 768px) {
             .nav {
                 display: none;
                 position: fixed;
-                top: 70px;
-                left: 0; right: 0;
+                top: 70px; left: 0; right: 0;
                 background: rgba(17, 17, 32, 0.98);
                 backdrop-filter: blur(24px);
                 -webkit-backdrop-filter: blur(24px);
                 flex-direction: column;
-                padding: 20px;
-                gap: 0;
+                padding: 20px; gap: 0;
                 border-bottom: 1px solid var(--border-default);
                 box-shadow: 0 10px 40px rgba(0,0,0,0.5);
                 z-index: 99;
             }
-            
             .nav.mobile-menu-active { display: flex; }
-            
-            .nav a {
-                padding: var(--sp-3) 0;
-                border-bottom: 1px solid var(--border-subtle);
-                display: block;
-                width: 100%;
-            }
-            
+            .nav a { padding: var(--sp-3) 0; border-bottom: 1px solid var(--border-subtle); display: block; width: 100%; }
             .nav a:last-child { border-bottom: none; }
             .nav a.active::after { display: none; }
             .nav a[href="blog.html"]::before { display: none; }
-            
-            .nav-cta {
-                width: 100%;
-                text-align: center;
-                padding: 14px 20px !important;
-                margin-top: var(--sp-3);
-                border-radius: 12px;
-                background: rgba(197, 160, 89, 0.08) !important;
-            }
-            
+            .nav-cta { width: 100%; text-align: center; padding: 14px 20px !important; margin-top: var(--sp-3); border-radius: 12px; background: rgba(197, 160, 89, 0.08) !important; }
             .mobile-menu-btn { display: block; }
-            
             .blog-hero h1 { font-size: 2.2rem; letter-spacing: -0.5px; }
             .blog-hero { padding: 120px 0 60px; min-height: 340px; }
-            
-            .blog-grid {
-                grid-template-columns: 1fr;
-                gap: var(--sp-4);
-            }
-            
-            .blog-card {
-                padding: var(--sp-6);
-                border-radius: 16px;
-            }
-            
-            .category-filter {
-                gap: 4px;
-                padding: 4px;
-                border-radius: 12px;
-            }
+            .blog-grid { grid-template-columns: 1fr; gap: var(--sp-4); }
+            .blog-card { padding: var(--sp-6); border-radius: 16px; }
+            .category-filter { gap: 4px; padding: 4px; border-radius: 12px; }
             .filter-btn { padding: 6px 10px; font-size: 0.72rem; border-radius: 8px; }
-            
             .footer-content { flex-direction: column; text-align: center; }
             .petals-container { display: none; }
-
-            .subscribe-form {
-                flex-direction: column;
-                background: transparent;
-                border: none;
-                box-shadow: none;
-                backdrop-filter: none;
-                -webkit-backdrop-filter: none;
-                padding: 0;
-            }
-            .subscribe-form input {
-                background: rgba(26, 26, 48, 0.6);
-                border: 1px solid rgba(139, 122, 168, 0.18);
-                border-radius: 12px;
-                margin-bottom: 10px;
-            }
-            .subscribe-form button {
-                border-radius: 12px;
-                padding: 14px;
-            }
-            
+            .subscribe-form { flex-direction: column; background: transparent; border: none; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; padding: 0; }
+            .subscribe-form input { background: rgba(26, 26, 48, 0.6); border: 1px solid rgba(139, 122, 168, 0.18); border-radius: 12px; margin-bottom: 10px; }
+            .subscribe-form button { border-radius: 12px; padding: 14px; }
             .newsletter { padding: var(--sp-8) var(--sp-6); }
         }
     </style>
@@ -898,7 +806,6 @@
             <div class="container">
                 <h1>Stories from the Mystic Garden</h1>
                 <p>Insights, experiences, and wisdom about living with migraines — from those who understand.</p>
-                
                 <form class="subscribe-form" action="https://formspree.io/f/mjgezgbq" method="POST">
                     <input type="email" name="email" placeholder="Enter your email for new articles..." required>
                     <button type="submit">Subscribe</button>
@@ -908,7 +815,6 @@
 
         <section class="blog-content">
             <div class="container">
-                
                 <div class="category-filter">
                     <button class="filter-btn active" data-category="all">All</button>
                     <button class="filter-btn" data-category="personal-story">Personal Story</button>
@@ -1596,9 +1502,9 @@
     const revealElements = document.querySelectorAll('.reveal');
     
     const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Find all siblings in the same row for stagger
+                // Find position among currently revealing siblings for stagger delay
                 const allVisible = Array.from(revealElements).filter(el => {
                     const rect = el.getBoundingClientRect();
                     return rect.top < window.innerHeight && !el.classList.contains('visible');
