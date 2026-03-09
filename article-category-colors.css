@@ -2,7 +2,7 @@
    MIGRAINE COMPANION — ARTICLE CATEGORY COLORS
    Overlay file — does NOT replace inline styles
    Only adds category-specific colors + premium polish
-   Version: 1.0 | March 2026
+   Version: 1.1 | March 2026
    ============================================ */
 
 /* === CATEGORY COLOR VARIABLES === */
@@ -105,6 +105,49 @@ body[data-category] .article-tag {
     text-transform: uppercase;
     font-size: 0.75rem;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ================================================
+   HERO — centered tag + brighter image
+   Works on both article templates
+   ================================================ */
+body[data-category] .article-header,
+body[data-category] .hero-content {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+body[data-category] .article-tag {
+    align-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Brighter hero image — lighter gradient overlay */
+body[data-category] .article-hero::after {
+    background: linear-gradient(
+        to bottom,
+        rgba(13,13,13,0.15) 0%,
+        rgba(13,13,13,0.35) 40%,
+        rgba(13,13,13,0.75) 85%,
+        rgba(13,13,13,0.95) 100%
+    ) !important;
+}
+
+/* Category-tinted accent line at top of hero */
+body[data-category] .article-hero::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, transparent, var(--cat), transparent) !important;
+    opacity: 0.5 !important;
+    z-index: 3 !important;
 }
 
 /* ================================================
