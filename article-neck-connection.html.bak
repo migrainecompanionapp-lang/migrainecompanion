@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Is it migraine or cervicogenic headache? The confusing overlap between neck problems and migraine — and why treating both might be the answer. 25 peer-reviewed sources.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="cervicogenic headache, migraine neck pain, trigeminocervical complex, neck headache, cervicogenic vs migraine, neck pain migraine overlap, physical therapy migraine, cervical spine headache">
+    <title>The Neck Connection: When Your Spine Talks to Your Brain | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://mi-companion.com/article-neck-connection.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Neck Connection: When Your Spine Talks to Your Brain">
+    <meta property="og:description" content="Is it migraine or cervicogenic headache? The confusing overlap between neck problems and migraine — and why treating both might be the answer. 25 peer-reviewed sources.">
+    <meta property="og:image" content="https://mi-companion.com/images/neck_connection_hero.png">
+    <meta property="og:url" content="https://mi-companion.com/article-neck-connection.html">
+    <meta property="article:published_time" content="2026-03-09">
+    <meta property="article:modified_time" content="2026-03-09">
+    <meta property="article:author" content="Rustam Iuldashov">
+    <meta property="article:section" content="Understanding">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+            "@type": "MedicalWebPage",
+            "@id": "https://mi-companion.com/article-neck-connection.html",
+            "lastReviewed": "2026-03-09",
+            "medicalAudience": { "@type": "Patient" }
+        },
+        "headline": "The Neck Connection: When Your Spine Talks to Your Brain",
+        "description": "Is it migraine or cervicogenic headache? The confusing overlap between neck problems and migraine — and why treating both might be the answer. 25 peer-reviewed sources.",
+        "image": "https://mi-companion.com/images/neck_connection_hero.png",
+        "datePublished": "2026-03-09",
+        "dateModified": "2026-03-09",
+        "author": {
+            "@type": "Person",
+            "name": "Rustam Iuldashov",
+            "url": "https://mi-companion.com/about",
+            "description": "Creator of Migraine Companion. 30 years of personal experience living with chronic migraine. Not a medical professional."
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Migraine Companion",
+            "logo": { "@type": "ImageObject", "url": "https://mi-companion.com/images/mi-icon.png" }
+        },
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Migraine"
+        },
+        "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-subtitle", ".key-takeaways"] }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0d0d0d;
+            --surface: #141419;
+            --lavender: #8b7aa8;
+            --lavender-soft: rgba(139,122,168,0.08);
+            --lavender-border: rgba(139,122,168,0.15);
+            --green: #6aaa7a;
+            --green-soft: rgba(106,170,122,0.08);
+            --green-border: rgba(106,170,122,0.2);
+            --teal: #6b9baa;
+            --teal-soft: rgba(107,155,170,0.08);
+            --teal-border: rgba(107,155,170,0.2);
+            --gold: #c5a059;
+            --gold-soft: rgba(197,160,89,0.08);
+            --gold-border: rgba(197,160,89,0.2);
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+            --text-warm: #c9bda8;
+        }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+        header { padding: 16px 0; position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(13,13,13,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--lavender-border); }
+        .header-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.3rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; text-decoration: none; }
+        .logo span { color: var(--lavender); }
+        .back-link { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--lavender); }
+
+        .article-hero { margin-top: 70px; position: relative; overflow: hidden; border-radius: 0 0 24px 24px; height: 600px; display: flex; align-items: center; justify-content: center; }
+        .article-hero img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+        .article-hero::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(13,13,13,0.15) 0%, rgba(13,13,13,0.75) 100%); z-index: 1; }
+        .article-header { position: relative; z-index: 2; text-align: center; padding: 0 24px; }
+        .article-tag { display: inline-block; background: rgba(106,170,122,0.15); border: 1px solid rgba(106,170,122,0.35); color: var(--green); font-size: 0.75rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 600; line-height: 1.2; color: #fff; margin-bottom: 16px; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.8); }
+        .article-subtitle { font-size: 1.15rem; font-weight: 500; color: rgba(255,255,255,0.85); font-style: italic; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
+        .article-meta { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+        .article-content { padding: 60px 0 80px; }
+        .article-section { margin-bottom: 48px; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; margin-bottom: 20px; letter-spacing: -0.01em; line-height: 1.3; }
+        h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+        p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; color: var(--text); }
+        strong { font-weight: 700; color: var(--text-warm); }
+        em { font-style: italic; color: var(--text-light); }
+        sup { color: var(--lavender); font-weight: 600; font-size: 0.75rem; }
+
+        .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+        .article-image img { width: 100%; height: auto; display: block; }
+        .article-image figcaption { background: var(--lavender-soft); padding: 12px 16px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; }
+
+        .highlight-box { background: var(--green-soft); border-left: 3px solid var(--green); padding: 24px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; }
+        .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; }
+
+        .separator { text-align: center; margin: 60px 0; color: var(--lavender); font-size: 1.5rem; opacity: 0.5; }
+
+        .data-card { background: var(--teal-soft); border-left: 4px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 12px 12px 0; }
+        .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
+        .data-card p:last-child { margin-bottom: 0; }
+
+        .insight-card { background: var(--lavender-soft); border-left: 4px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 12px 12px 0; }
+        .insight-card p { margin-bottom: 16px; font-size: 0.98rem; }
+        .insight-card p:last-child { margin-bottom: 0; }
+
+        .action-box { background: var(--green-soft); border: 1px solid var(--green-border); border-radius: 16px; padding: 36px; margin: 44px 0; }
+        .action-box h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--green); margin-bottom: 8px; margin-top: 24px; }
+        .action-box h3:first-child { margin-top: 0; }
+        .action-box p { font-size: 0.98rem; margin-bottom: 14px; }
+        .action-box p:last-child { margin-bottom: 0; }
+
+        .emergency-box { background: var(--gold-soft); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 12px 12px 0; margin: 36px 0; }
+        .emergency-box h3 { color: var(--gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+        .emergency-box p { font-size: 0.98rem; margin-bottom: 12px; }
+        .emergency-box p:last-child { margin-bottom: 0; }
+
+        .key-takeaways { background: var(--teal-soft); border: 1px solid var(--teal-border); border-radius: 16px; padding: 28px; margin: 48px 0; }
+        .key-takeaways h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 8px 0; padding-left: 24px; position: relative; }
+        .key-takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--teal); }
+
+        .article-section a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
+        .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
+
+        .medical-disclaimer { font-size: 0.9rem; font-style: italic; color: var(--text-dark); text-align: center; padding: 16px 0; margin-bottom: 48px; border-bottom: 1px solid var(--lavender-border); }
+
+        .related-box { margin: 60px 0; padding: 40px; background: rgba(107,155,170,0.04); border-radius: 24px; border: 1px solid var(--teal-border); }
+        .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .related-card { display: block; text-decoration: none; background: rgba(255,255,255,0.03); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); transition: all 0.3s; }
+        .related-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.05); border-color: var(--lavender); }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
+        .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+
+        .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--lavender-border); }
+        .author-card { display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.03); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 24px; margin-bottom: 32px; }
+        .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--lavender), var(--green)); padding: 3px; flex-shrink: 0; }
+        .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .author-info h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+        .author-info p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+
+        .editorial-standards { background: var(--lavender-soft); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 32px 0; }
+        .editorial-standards h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .editorial-standards ul { list-style: none; padding: 0; margin: 0; }
+        .editorial-standards li { font-size: 0.9rem; color: var(--text-light); padding: 6px 0; padding-left: 20px; position: relative; }
+        .editorial-standards li::before { content: '\2022'; position: absolute; left: 0; color: var(--lavender); }
+
+        .cta-box { background: var(--green-soft); border: 1px solid var(--green-border); border-radius: 16px; padding: 32px; text-align: center; }
+        .cta-box h3 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+        .cta-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; }
+        .download-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(106,170,122,0.15), rgba(106,170,122,0.25)); border: 1px solid var(--green); border-radius: 12px; color: var(--green); text-decoration: none; font-weight: 600; transition: all 0.3s; flex: 1; max-width: 260px; justify-content: center; }
+        .download-btn:hover { background: var(--green); color: var(--bg); transform: translateY(-2px); }
+
+        .references { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--lavender-border); }
+        .references h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-light); margin-bottom: 16px; }
+        .references ol { padding-left: 20px; }
+        .references li { font-size: 0.85rem; color: var(--text-dark); margin-bottom: 8px; line-height: 1.5; }
+        .references a { color: var(--lavender); text-decoration: none; }
+        .references a:hover { text-decoration: underline; }
+
+        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--lavender-border); }
+
+        footer { padding: 40px 0; border-top: 1px solid var(--lavender-border); text-align: center; }
+        .copyright { color: var(--text-dark); font-size: 0.85rem; }
+
+        @media (max-width: 768px) { h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } .article-hero { height: 400px; } p { font-size: 1rem; } .article-content { padding: 40px 0 60px; } .author-card { flex-direction: column; text-align: center; } .data-card, .insight-card, .emergency-box { padding: 20px 24px; } .action-box { padding: 24px; } .article-meta { flex-direction: column; gap: 8px; } }
+    </style>
+    <link rel="stylesheet" href="article-category-colors.css">
+</head>
+<body data-category="understanding">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">&larr; Back to Blog</a>
+        </div>
+    </header>
+    <main>
+        <div class="article-hero">
+            <img src="images/neck_connection_hero.png" alt="A person sitting in a dark room, touching the back of their neck, with two streams of light — lavender from the head and green from the spine — converging at the skull base">
+            <div class="article-header">
+                <span class="article-tag">Understanding</span>
+                <h1>The Neck Connection: When Your Spine Talks to Your Brain</h1>
+                <p class="article-subtitle">Is it migraine or cervicogenic headache? The confusing overlap between neck problems and migraine &mdash; and why treating both might be the answer.</p>
+                <div class="article-meta">
+                    <span>&#x1F4C5; March 9, 2026</span>
+                    <span>&#x23F1; 6 min read</span>
+                    <span>&#x270D;&#xFE0F; Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+
+                <div id="article-meta" style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">By Rustam Iuldashov</p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">30 years lived experience with chronic migraine | Sources: 25 peer-reviewed references including <em>Cephalalgia</em> (n=51,000+), <em>PM&amp;R</em> (meta-analysis of RCTs), <em>Journal of Headache and Pain</em> (n=487), <em>Brain</em>, <em>BMC Musculoskeletal Disorders</em> | Last updated: March 9, 2026</p>
+                </div>
+
+                <p class="medical-disclaimer">
+                    <strong>Medical Review:</strong> This content is based on peer-reviewed research from Cephalalgia, Headache, PM&amp;R, Journal of Headache and Pain, Brain, BMC Musculoskeletal Disorders, Musculoskeletal Science and Practice, Frontiers in Human Neuroscience, and Applied Sciences.<br><br>
+                    <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. The author is not a licensed physician or healthcare professional. Cervicogenic headache diagnosis requires clinical examination and may involve diagnostic nerve blocks. Always consult your doctor.
+                </p>
+
+                <div class="key-takeaways">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>Neck pain affects 73&ndash;90% of people with migraine &mdash; more common than nausea &mdash; and is linked to significantly greater disability, depression, and anxiety<sup>[1, 3]</sup></li>
+                        <li>The trigeminocervical complex creates a bidirectional pain highway between your neck and brain: neck problems can cause headache, and migraine can cause neck pain, through the same neurons<sup>[4, 5]</sup></li>
+                        <li>Cervicogenic headache mimics migraine convincingly, with misdiagnosis rates reported as high as 92%<sup>[7]</sup></li>
+                        <li>Over half of migraine patients show trigeminocervical convergence patterns, suggesting cervical involvement is common, not exceptional<sup>[13]</sup></li>
+                        <li>Physical therapy targeting cervical mobility, deep neck flexor strength, and motor control can reduce headache frequency &mdash; and may be the missing piece for migraineurs with persistent neck symptoms<sup>[17, 18]</sup></li>
+                    </ul>
+                </div>
+
+                <div class="separator">* * *</div>
+
+                <!-- INTRO -->
+                <section class="article-section">
+                    <p>The stiffness starts at the base of your skull. It creeps upward &mdash; a slow, tightening grip that wraps around your temples. Within hours, the full migraine arrives. And you&rsquo;re left with a question that millions of people with migraine ask their doctors every year: is my neck causing these headaches, or is my migraine causing the neck pain?</p>
+                    <p>The answer, according to a growing body of neuroscience research, is one that most people never hear. It could be both &mdash; at the same time, through the same neural pathway, in a loop that feeds itself.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE SYMPTOM NOBODY TALKS ABOUT -->
+                <section class="article-section">
+                    <h2>The Symptom Nobody Talks About</h2>
+                    <p>Migraine has a reputation problem. Ask anyone what happens during an attack and they&rsquo;ll mention throbbing head pain, nausea, sensitivity to light. What they rarely mention is the neck.</p>
+                    <p>They should. A 2022 meta-analysis pooling data from multiple clinical studies found that <strong>77% of migraine patients reported neck pain</strong> &mdash; making it more common than nausea, the symptom most people consider migraine&rsquo;s hallmark.<sup>[1]</sup> Population-based research has confirmed similar numbers: upwards of 75% of adult migraineurs experience neck pain.<sup>[2]</sup> And for people with chronic migraine, the odds of neck pain are roughly double those in episodic migraine.<sup>[1]</sup></p>
+                    <p>The consequences extend far beyond discomfort. A 2024 multicountry study of over 51,000 participants across six nations found that migraineurs with neck pain experienced nearly twice the rate of moderate-to-severe disability compared to those without it. They also reported higher rates of depression (40.2% vs 28.2%), anxiety (41.2% vs 29.2%), and significantly reduced work productivity.<sup>[3]</sup></p>
+
+                    <div class="highlight-box">
+                        <p>Neck pain isn&rsquo;t a footnote in the migraine story. It&rsquo;s a central chapter &mdash; one that medicine has been slow to read.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE RELAY STATION -->
+                <section class="article-section">
+                    <h2>The Relay Station That Blurs Everything</h2>
+                    <p>To understand why, you need to look at a small region deep in the brainstem called the <strong>trigeminocervical complex</strong> (TCC).</p>
+                    <p>Picture a highway interchange. Two major roads merge into a single lane. The trigeminal nerve &mdash; the brain&rsquo;s primary pain messenger for the head and face &mdash; sends signals into this interchange. So do the nerves from the top three vertebrae of your neck: C1, C2, and C3. Both sets of signals converge onto the same neurons in the trigeminocervical complex, which relays one combined message to the brain.<sup>[4, 5]</sup></p>
+                    <p>The result is <strong>bidirectional referral</strong>. Pain originating in your cervical spine can travel through the complex and be interpreted as head pain &mdash; behind the eyes, across the forehead, deep in the temples. Migraine pain generated by the trigeminal system can travel the opposite direction and be felt as neck stiffness, soreness, and aching.<sup>[4, 6]</sup></p>
+                    <p>Your brain receives one signal. It cannot separate the source. Neck pain and head pain arrive through the same door.</p>
+                </section>
+
+                <figure class="article-image">
+                    <img src="images/neck_tcc_highway.png" alt="The Highway Interchange — trigeminal nerve and cervical nerves C1–C3 converge at the trigeminocervical complex (TCC), sending one merged signal to the brain" loading="lazy">
+                    <figcaption>The Highway Interchange &mdash; two neural &ldquo;roads&rdquo; merge at the trigeminocervical complex. Your brain receives one signal and cannot determine whether it came from the head or the neck. [4, 5, 15]</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE GREAT DIAGNOSTIC TRAP -->
+                <section class="article-section">
+                    <h2>The Great Diagnostic Trap</h2>
+                    <p>This shared pathway creates one of the most stubborn diagnostic puzzles in headache medicine.</p>
+                    <p>Cervicogenic headache (CEH) &mdash; a secondary headache caused by structural problems in the cervical spine &mdash; can look almost identical to migraine. It can produce nausea, light sensitivity, sound sensitivity, and pain that worsens with movement.<sup>[9, 10]</sup> The reason: cervical nociception (pain signaling from the neck) activates the same trigeminocervical nucleus that migraine uses, generating remarkably similar downstream symptoms.</p>
+                    <p>Yet the two conditions are fundamentally different. Migraine is a primary neurological disorder &mdash; a brain genetically wired to generate attacks. Cervicogenic headache is a mechanical problem &mdash; facet joints, discs, or muscles in the neck sending pain signals upward.<sup>[10, 11]</sup> The treatment for one may do nothing for the other.</p>
+                    <p>How often does this distinction get missed? One study examining chronic headache patients found that <strong>92% of those with cervicogenic headache had been incorrectly diagnosed</strong>.<sup>[7]</sup> Other researchers have estimated that roughly half of cervicogenic headache cases receive the wrong diagnosis, leading to years of ineffective treatment.<sup>[8]</sup></p>
+                </section>
+
+                <!-- EMERGENCY BOX -->
+                <div class="emergency-box">
+                    <h3>&#x26A0;&#xFE0F; When to Seek Emergency Help</h3>
+                    <p>Any new, sudden, severe headache &mdash; especially with neck stiffness, fever, confusion, vision changes, or weakness &mdash; requires emergency evaluation immediately. These symptoms could indicate meningitis, cervical artery dissection, or subarachnoid hemorrhage, not cervicogenic headache or migraine.</p>
+                    <p>Call your local emergency number. Do not use this article to self-diagnose.</p>
+                </div>
+
+                <section class="article-section">
+                    <p>There are clinical clues that help distinguish cervicogenic headache from migraine. Cervicogenic headache tends to be <strong>fixed on one side</strong> &mdash; always the same side, attack after attack. Neck range of motion is typically reduced. Pain is triggered or worsened by specific neck movements or sustained awkward postures. The upper cervical region is tender to palpation.<sup>[9, 10]</sup> The flexion-rotation test, in which a clinician gently rotates your flexed neck, identifies cervicogenic headache with 91% sensitivity and 90% specificity.<sup>[12]</sup></p>
+                    <p>But here&rsquo;s the complication that changes everything: many people don&rsquo;t have one or the other. They have both.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE OVERLAP -->
+                <section class="article-section">
+                    <h2>The Overlap That Rewrites the Rules</h2>
+                    <p>A 2022 multicenter study asked migraine patients to map their pain locations on an electronic form. The result: <strong>55% showed a pain pattern consistent with trigeminocervical convergence</strong> &mdash; meaning their migraine involved significant cervical components.<sup>[13]</sup> Among people with chronic migraine, the percentage climbed higher still.</p>
+                    <p>Central sensitization explains how this overlap deepens over time. During a migraine attack, neurons in the trigeminocervical complex become hyperexcitable. Signals that would normally be filtered out &mdash; minor neck tension, subtle postural strain &mdash; get amplified into full pain signals.<sup>[14, 15]</sup> The neck muscles that started with ordinary stiffness become active pain generators, feeding signals back into the brainstem, which amplifies the migraine, which sensitizes the neck further.</p>
+
+                    <div class="data-card">
+                        <p>The loop tightens. Each cycle lowers the threshold for the next attack.</p>
+                    </div>
+
+                    <p>A prospective study of 487 migraineurs captured this in real time. Sixty-nine percent reported neck pain during their migraine phase. Among those, 54% noticed the neck pain arriving with the headache, and 24% felt it within two hours before the head pain began &mdash; accompanied by other migraine symptoms like nausea, light sensitivity, and vertigo.<sup>[16]</sup> The researchers posed a question that remains unanswered: does the premonitory phase end where the attack begins, or has the neck been part of the attack all along?</p>
+                </section>
+
+                <figure class="article-image">
+                    <img src="images/neck_sensitization_loop.png" alt="The Sensitization Loop — a four-station cycle showing neck tension, TCC amplification, migraine attack, and central sensitization feeding back into each other" loading="lazy">
+                    <figcaption>The Loop Tightens &mdash; neck tension feeds the trigeminocervical complex, which amplifies migraine, which sensitizes the nervous system, which amplifies neck tension. Breaking the cycle requires addressing both sides. [1, 13, 14, 16]</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <!-- TREATING WHAT YOU'VE BEEN MISSING -->
+                <section class="article-section">
+                    <h2>Treating What You&rsquo;ve Been Missing</h2>
+                    <p>This overlap carries a direct clinical message. If cervical dysfunction is contributing to your migraine &mdash; as a trigger, an amplifier, or a coexisting condition &mdash; treating only the migraine leaves the cycle incomplete.</p>
+                    <p>The evidence for addressing the neck is growing. A 2023 systematic review found moderate-certainty evidence that manual therapy reduced cervicogenic headache frequency by approximately <strong>one episode per week</strong> compared to sham (simulated) treatment.<sup>[17]</sup> A program combining spinal manipulative therapy with deep neck flexor exercises showed particular promise, with benefits sustained over the long term.<sup>[18]</sup></p>
+                    <p>For migraine patients with persistent neck involvement, the data point toward an integrated approach. A meta-meta-analysis found that manual therapy combined with exercise reduced pain intensity and improved quality of life across migraine, tension-type headache, and cervicogenic headache alike.<sup>[19]</sup> The pattern that works targets three elements: restoring cervical mobility, strengthening the deep neck flexors, and retraining motor control.<sup>[18, 20]</sup></p>
+
+                    <div class="insight-card">
+                        <p>None of this replaces standard migraine treatment. CGRP inhibitors (a newer class of targeted migraine preventives), triptans, preventive medications &mdash; these remain essential tools. But if your medications provide only partial relief and your neck is perpetually stiff, a musculoskeletal assessment of the cervical spine may reveal a contributor that no pill can address.</p>
+                    </div>
+
+                    <p>The neck and the brain speak to each other through the same neural pathway. For too many people with migraine, treatment addresses only one side of that conversation. Listening to both could change everything.</p>
+                </section>
+
+                <!-- RELATED -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-migraine-friendly-lighting.html" class="related-card">
+                            <h4>Lighting the Way</h4>
+                            <p>Your home lighting may be silently triggering attacks. The neuroscience of photophobia and 7 changes you can make tonight.</p>
+                        </a>
+                        <a href="article-caffeine-migraine.html" class="related-card">
+                            <h4>The Caffeine Paradox</h4>
+                            <p>How the same molecule can treat and trigger your migraine &mdash; and how to find your personal threshold.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- MEDICAL DISCLAIMER FULL -->
+                <div id="medical-disclaimer" style="background:var(--lavender-soft);border:1px solid var(--lavender-border);border-radius:16px;padding:28px;margin:48px 0;">
+                    <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:16px;">&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
+                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
+                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">All clinical claims in this article are sourced from peer-reviewed research published in indexed medical journals. Study designs and sample sizes are noted where applicable.</p>
+                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">Always consult a qualified healthcare provider for questions about your individual health, migraine treatment, or medication decisions.</p>
+                    <p style="font-size:0.9rem;color:var(--text-light);margin:0;">Cervicogenic headache diagnosis requires a clinical examination and may involve diagnostic nerve blocks &mdash; do not self-diagnose based on symptoms alone. This content was last reviewed for accuracy on March 9, 2026.</p>
+                </div>
+
+                <!-- REFERENCES -->
+                <div id="references" class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Al-Khazali HM, Younis S, Al-Sayegh Z, Ashina S, Ashina M, Schytz HW. &ldquo;Prevalence of neck pain in migraine: A systematic review and meta-analysis.&rdquo; <em>Cephalalgia</em>, 42(7):663&ndash;685 (2022). <a href="https://doi.org/10.1177/03331024211068073" target="_blank">doi:10.1177/03331024211068073</a>. Study design: Systematic review &amp; Meta-analysis. n=pooled from multiple studies.</li>
+                        <li>Ashina S, Bendtsen L, Lyngberg AC, Lipton RB, Hajiyeva N, Jensen R. &ldquo;Prevalence of neck pain in migraine and tension-type headache: A population study.&rdquo; <em>Cephalalgia</em>, 35(3):211&ndash;219 (2015). <a href="https://doi.org/10.1177/0333102414535110" target="_blank">doi:10.1177/0333102414535110</a>. Study design: Population-based cross-sectional. n=1,000+.</li>
+                        <li>Matharu M, Katsarava Z, Buse DC, et al. &ldquo;Characterizing neck pain during headache among people with migraine: multicountry results from the CaMEO-I cross-sectional study.&rdquo; <em>Headache</em>, 64(7):750&ndash;763 (2024). <a href="https://doi.org/10.1111/head.14753" target="_blank">doi:10.1111/head.14753</a>. Study design: Cross-sectional observational. n=51,000+.</li>
+                        <li>Bartsch T, Goadsby PJ. &ldquo;The trigeminocervical complex and migraine: current concepts and synthesis.&rdquo; <em>Current Pain and Headache Reports</em>, 7(5):371&ndash;376 (2003). <a href="https://doi.org/10.1007/s11916-003-0036-y" target="_blank">doi:10.1007/s11916-003-0036-y</a>. Study design: Review/Electrophysiology.</li>
+                        <li>Kerr FW. &ldquo;A mechanism to account for frontal headache in cases of posterior fossa tumours.&rdquo; <em>Journal of Neurosurgery</em>, 18:60&ndash;66 (1961). Study design: Experimental.</li>
+                        <li>Piovesan EJ, Kowacs PA, Tatsui CE, et al. &ldquo;Referred pain after painful stimulation of the greater occipital nerve in humans: evidence of convergence of cervical afferents on trigeminal nuclei.&rdquo; <em>Arquivos de Neuro-Psiquiatria</em>, 59(3-A):539&ndash;543 (2001). <a href="https://doi.org/10.1590/S0004-282X2001000400010" target="_blank">doi:10.1590/S0004-282X2001000400010</a>. Study design: Experimental. n=12.</li>
+                        <li>Saremi H, Hemmatjoo M, Kolahi S. &ldquo;Misdiagnosis of patients with cervicogenic headache: a case series study.&rdquo; <em>Function and Disability Journal</em>, 1(4):32&ndash;37 (2018). Study design: Case series. n=60.</li>
+                        <li>Luedtke K, et al. Protocol referencing ~50% misdiagnosis rate in cervicogenic headache. <em>BMJ Open</em> (2019). <a href="https://doi.org/10.1136/bmjopen-2019-031587" target="_blank">doi:10.1136/bmjopen-2019-031587</a>. Study design: Protocol/Review.</li>
+                        <li>Piovesan EJ, Utiumi MAT, Grossi DB. &ldquo;Cervicogenic headache &mdash; How to recognize and treat.&rdquo; <em>Best Practice &amp; Research Clinical Rheumatology</em>, 38(1):101931 (2024). <a href="https://doi.org/10.1016/j.berh.2024.101931" target="_blank">doi:10.1016/j.berh.2024.101931</a>. Study design: Clinical review.</li>
+                        <li>Van Doorn D, et al. &ldquo;Cervicogenic headache and occipital neuralgia.&rdquo; <em>Pain Practice</em> (2024). <a href="https://doi.org/10.1111/papr.13447" target="_blank">doi:10.1111/papr.13447</a>. Study design: Clinical review.</li>
+                        <li>Headache Classification Committee. &ldquo;The International Classification of Headache Disorders, 3rd edition.&rdquo; <em>Cephalalgia</em>, 38(1):1&ndash;211 (2018). <a href="https://doi.org/10.1177/0333102417738202" target="_blank">doi:10.1177/0333102417738202</a>. Study design: Classification guideline.</li>
+                        <li>Hall TM, Briffa NK, Hopper D, Robinson K. Flexion-rotation test diagnostic accuracy. Referenced in Jull G. <em>Musculoskeletal Science and Practice</em> (2023). Study design: Diagnostic accuracy. Sensitivity 91%, Specificity 90%.</li>
+                        <li>Piovesan EJ, et al. &ldquo;Prevalence of trigeminocervical convergence mechanisms in episodic and chronic migraine.&rdquo; <em>Arquivos de Neuro-Psiquiatria</em>, 80(4):351&ndash;358 (2022). <a href="https://doi.org/10.1590/0004-282X-ANP-2021-0180" target="_blank">doi:10.1590/0004-282X-ANP-2021-0180</a>. Study design: Multicenter cross-sectional. n=210.</li>
+                        <li>Burstein R, et al. Central sensitization in migraine. Referenced in de Tommaso M, et al. &ldquo;Pathophysiological bases of comorbidity in migraine.&rdquo; <em>Frontiers in Human Neuroscience</em>, 15:640574 (2021). <a href="https://doi.org/10.3389/fnhum.2021.640574" target="_blank">doi:10.3389/fnhum.2021.640574</a>. Study design: Review.</li>
+                        <li>Bartsch T, Goadsby PJ. &ldquo;Stimulation of the greater occipital nerve induces increased central excitability of dural afferent input.&rdquo; <em>Brain</em>, 125(7):1496&ndash;1509 (2002). <a href="https://doi.org/10.1093/brain/awf166" target="_blank">doi:10.1093/brain/awf166</a>. Study design: Electrophysiological experimental.</li>
+                        <li>Lampl C, Rudolph M, Deligianni CI, Mitsikostas DD. &ldquo;Neck pain in episodic migraine: premonitory symptom or part of the attack?&rdquo; <em>Journal of Headache and Pain</em>, 16:566 (2015). <a href="https://doi.org/10.1186/s10194-015-0566-9" target="_blank">doi:10.1186/s10194-015-0566-9</a>. Study design: Prospective cohort. n=487.</li>
+                        <li>Demont A, Lafrance S, Gaska C, et al. &ldquo;Efficacy of physiotherapy interventions for the management of adults with cervicogenic headache: A systematic review and meta-analyses.&rdquo; <em>PM&amp;R</em>, 15(5):613&ndash;628 (2023). <a href="https://doi.org/10.1002/pmrj.12856" target="_blank">doi:10.1002/pmrj.12856</a>. Study design: Systematic review &amp; Meta-analysis. n=265 (primary outcome).</li>
+                        <li>Jull G. &ldquo;Cervicogenic headache.&rdquo; <em>Musculoskeletal Science and Practice</em>, 66:102804 (2023). <a href="https://doi.org/10.1016/j.msksp.2023.102804" target="_blank">doi:10.1016/j.msksp.2023.102804</a>. Study design: Narrative review (multicentre RCT program).</li>
+                        <li>Esp&iacute;-L&oacute;pez GV, et al. &ldquo;Effectiveness of exercise and manual therapy as treatment for patients with migraine, tension-type headache or cervicogenic headache: an umbrella and mapping review with meta-meta-analysis.&rdquo; <em>Applied Sciences</em>, 11(15):6856 (2021). <a href="https://doi.org/10.3390/app11156856" target="_blank">doi:10.3390/app11156856</a>. Study design: Meta-meta-analysis.</li>
+                        <li>Anarte-Lazo E, et al. &ldquo;Differentiating migraine, cervicogenic headache and asymptomatic individuals based on physical examination findings: a systematic review and meta-analysis.&rdquo; <em>BMC Musculoskeletal Disorders</em>, 22:755 (2021). <a href="https://doi.org/10.1186/s12891-021-04595-w" target="_blank">doi:10.1186/s12891-021-04595-w</a>. Study design: Systematic review &amp; Meta-analysis. n=62 studies.</li>
+                        <li>Al-Khazali HM, Kr&oslash;ll LS, Ashina H, et al. &ldquo;Neck pain and headache: Pathophysiology, treatments and future directions.&rdquo; <em>Musculoskeletal Science and Practice</em>, 66:102804 (2023). <a href="https://doi.org/10.1016/j.msksp.2023.102804" target="_blank">doi:10.1016/j.msksp.2023.102804</a>. Study design: Position paper/Review.</li>
+                        <li>Ashina S, Bendtsen L, Burstein R, et al. &ldquo;Pain sensitivity in relation to frequency of migraine and tension-type headache with or without coexistent neck pain.&rdquo; <em>Scandinavian Journal of Pain</em>, 23(1):76&ndash;87 (2023). <a href="https://doi.org/10.1515/sjpain-2022-0030" target="_blank">doi:10.1515/sjpain-2022-0030</a>. Study design: Population-based cross-sectional. n=496.</li>
+                        <li>Robinson CL, Christensen RH, Al-Khazali HM, et al. &ldquo;Prevalence and relative frequency of cervicogenic headache in population- and clinic-based studies: A systematic review and meta-analysis.&rdquo; <em>Cephalalgia</em> (2025). <a href="https://doi.org/10.1177/03331024251322446" target="_blank">doi:10.1177/03331024251322446</a>. Study design: Systematic review &amp; Meta-analysis.</li>
+                        <li>StatPearls. &ldquo;Cervicogenic Headache.&rdquo; NCBI Bookshelf, updated 2022. Prevalence 0.4&ndash;4%; C2-3 joint involved in ~70% of cases.</li>
+                        <li>Eigenbrodt AK, Christensen RH, et al. &ldquo;Premonitory symptoms in migraine: a systematic review and meta-analysis of observational studies.&rdquo; <em>Journal of Headache and Pain</em>, 23(1):140 (2022). <a href="https://doi.org/10.1186/s10194-022-01510-z" target="_blank">doi:10.1186/s10194-022-01510-z</a>. Study design: Systematic review &amp; Meta-analysis.</li>
+                    </ol>
+                </div>
+
+                <!-- ABOUT AUTHOR -->
+                <div id="about-author" class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> &mdash; 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. His approach combines first-hand patient experience with peer-reviewed medical research and narrative therapy principles (Michael White &amp; David Epston). He is not a medical professional.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Transparency &amp; Conflict of Interest Disclosure: Rustam is the developer of the Migraine Companion app. This article was written to educate and inform, not to promote the app. All scientific claims are independently sourced from peer-reviewed literature. No financial relationships with any physical therapy, chiropractic, or manual therapy organizations.</em></p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);">&#x1F4E7; Contact: mi-companion.com/contact &middot; &#x1F310; Website: mi-companion.com</p>
+                        </div>
+                    </div>
+
+                    <div class="editorial-standards">
+                        <h3>How We Create Content</h3>
+                        <ul>
+                            <li><strong>Peer-reviewed sources only.</strong> Cephalalgia, Headache, PM&amp;R, Journal of Headache and Pain, Brain, BMC Musculoskeletal Disorders, Musculoskeletal Science and Practice, Frontiers in Human Neuroscience, Applied Sciences.</li>
+                            <li><strong>Study transparency.</strong> Study design and sample sizes noted for all clinical references.</li>
+                            <li><strong>Source verification.</strong> All claims backed by numbered references with DOI links.</li>
+                            <li><strong>Experience + Science.</strong> 30 years personal migraine experience combined with peer-reviewed evidence.</li>
+                            <li><strong>Regular updates.</strong> Articles reviewed when significant new research emerges.</li>
+                            <li><strong>No conflicts of interest.</strong> No funding from physical therapy, chiropractic, or pharmaceutical organizations.</li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Track Your Neck Pain. Find the Pattern.</h3>
+                        <p>Migraine Companion helps you log attacks, track triggers including neck involvement, and build the personal dataset that turns unpredictable pain into actionable patterns.</p>
+                        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
+                            <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                                Download on App Store
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                                Get it on Google Play
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="review-dates">
+                        <p><em>Last reviewed: March 2026</em></p>
+                        <p><em>Next scheduled review: September 2026</em></p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 Migraine Companion. Made with &#x1F49C; in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>

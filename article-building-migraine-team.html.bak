@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GP, neurologist, headache specialist, therapist, physical therapist — who do you actually need for migraine? How to build a care team that works together. 21 peer-reviewed sources.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="migraine care team, headache specialist vs neurologist, migraine GP, migraine physical therapy, CBT migraine, migraine telehealth, migraine multidisciplinary care, UCNS headache specialist, migraine pharmacist, migraine coordination, building migraine team, migraine support network">
+    <title>Building Your Migraine Team: Beyond the Neurologist | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://mi-companion.com/article-building-migraine-team.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Building Your Migraine Team: Beyond the Neurologist">
+    <meta property="og:description" content="GP, neurologist, headache specialist, therapist, physical therapist — who do you actually need? How to build a support team that works together for your health. 21 peer-reviewed sources.">
+    <meta property="og:image" content="https://mi-companion.com/images/migraine_team_table.png">
+    <meta property="og:url" content="https://mi-companion.com/article-building-migraine-team.html">
+    <meta property="article:published_time" content="2026-03-11">
+    <meta property="article:modified_time" content="2026-03-11">
+    <meta property="article:author" content="Rustam Iuldashov">
+    <meta property="article:section" content="Tips">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+            "@type": "MedicalWebPage",
+            "@id": "https://mi-companion.com/article-building-migraine-team.html",
+            "lastReviewed": "2026-03-11",
+            "medicalAudience": { "@type": "Patient" }
+        },
+        "headline": "Building Your Migraine Team: Beyond the Neurologist",
+        "description": "Evidence-based guide to building a multidisciplinary migraine care team. Covers GP role, headache specialist vs neurologist, CBT for migraine, physical therapy, pharmacist integration, telehealth, and self-coordination strategies. 21 peer-reviewed sources.",
+        "image": "https://mi-companion.com/images/migraine_team_table.png",
+        "datePublished": "2026-03-11",
+        "dateModified": "2026-03-11",
+        "author": {
+            "@type": "Person",
+            "name": "Rustam Iuldashov",
+            "url": "https://mi-companion.com/about",
+            "description": "Creator of Migraine Companion. 30 years of personal experience living with chronic migraine. Not a medical professional."
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Migraine Companion",
+            "logo": { "@type": "ImageObject", "url": "https://mi-companion.com/images/mi-icon.png" }
+        },
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Migraine"
+        },
+        "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-subtitle", ".key-takeaways"] }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0d0d0d;
+            --surface: #141419;
+            --lavender: #8b7aa8;
+            --green: #6aaa7a;
+            --teal: #6b9baa;
+            --gold: #c5a059;
+            --tips: #B8A892;
+            --lavender-soft: rgba(139,122,168, 0.06);
+            --green-soft: rgba(106,170,122, 0.06);
+            --teal-soft: rgba(107,155,170, 0.06);
+            --gold-soft: rgba(197,160,89, 0.06);
+            --tips-soft: rgba(184,168,146, 0.06);
+            --lavender-border: rgba(139,122,168, 0.18);
+            --green-border: rgba(106,170,122, 0.18);
+            --teal-border: rgba(107,155,170, 0.18);
+            --gold-border: rgba(197,160,89, 0.18);
+            --tips-border: rgba(184,168,146, 0.18);
+            --text: #cdc6be;
+            --text-light: #a09890;
+            --text-dark: #847b73;
+            --text-warm: #c9bda8;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13,13,13,0.92);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid var(--lavender-border);
+        }
+        .header-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.3rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; text-decoration: none; }
+        .logo span { color: var(--lavender); }
+        .back-link { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--lavender); }
+
+        .article-hero { margin-top: 70px; position: relative; overflow: hidden; border-radius: 0 0 24px 24px; height: 600px; display: flex; align-items: center; justify-content: center; }
+        .article-hero img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+        .article-hero::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(13,13,13,0.10) 0%, rgba(13,13,13,0.75) 100%); z-index: 1; }
+        .article-header { position: relative; z-index: 2; text-align: center; padding: 0 24px; }
+        .article-tag { display: inline-block; background: rgba(184,168,146,0.15); border: 1px solid rgba(184,168,146,0.35); color: var(--tips); font-size: 0.75rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 600; line-height: 1.2; color: #fff; margin-bottom: 16px; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.8); }
+        .article-subtitle { font-size: 1.15rem; font-weight: 500; color: rgba(255,255,255,0.85); font-style: italic; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
+        .article-meta { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+        .article-content { padding: 60px 0 80px; }
+        .article-section { margin-bottom: 48px; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; margin-bottom: 20px; letter-spacing: -0.01em; line-height: 1.3; }
+        h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+        p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; color: var(--text); }
+        strong { font-weight: 700; color: var(--text-warm); }
+        em { font-style: italic; color: var(--text-light); }
+        sup { color: var(--lavender); font-weight: 600; font-size: 0.75rem; }
+        .article-section a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
+        .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
+
+        .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
+        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168, 0.25) 30%, rgba(139,122,168, 0.40) 50%, rgba(139,122,168, 0.25) 70%, transparent 100%); }
+        .separator::after { content: '◆'; position: relative; z-index: 1; color: rgba(139,122,168, 0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
+
+        .key-takeaways { background: linear-gradient(180deg, rgba(107,155,170, 0.10) 0%, rgba(107,155,170, 0.04) 100%); border: 1px solid var(--teal-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0, 0.20), 0 1px 3px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(107,155,170, 0.12), inset 0 -1px 0 rgba(0,0,0, 0.10); }
+        .key-takeaways::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.6; border-radius: 20px 20px 0 0; }
+        .key-takeaways::after { content: ''; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); width: 70%; height: 60px; background: radial-gradient(ellipse, rgba(107,155,170, 0.08) 0%, transparent 70%); pointer-events: none; }
+        .key-takeaways h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; position: relative; z-index: 1; }
+        .key-takeaways ul { list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
+        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid rgba(107,155,170, 0.06); }
+        .key-takeaways li:last-child { border-bottom: none; }
+        .key-takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--teal); font-weight: 600; }
+
+        .highlight-box { background: linear-gradient(90deg, rgba(106,170,122, 0.10) 0%, rgba(106,170,122, 0.03) 100%); border-left: 3px solid var(--green); padding: 28px 32px 28px 36px; border-radius: 0 16px 16px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(106,170,122, 0.08), inset 0 -1px 0 rgba(0,0,0, 0.08); }
+        .highlight-box::before { content: '\201C'; position: absolute; top: 12px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; line-height: 1; color: rgba(106,170,122, 0.12); pointer-events: none; }
+        .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; position: relative; z-index: 1; }
+
+        .data-card { background: linear-gradient(90deg, rgba(107,155,170, 0.10) 0%, rgba(107,155,170, 0.03) 100%); border-left: 3px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(107,155,170, 0.08), inset 0 -1px 0 rgba(0,0,0, 0.08); }
+        .data-card::before { content: ''; position: absolute; top: 0; left: 3px; right: 0; height: 1px; background: linear-gradient(90deg, rgba(107,155,170, 0.30), transparent 80%); border-radius: 0 14px 0 0; }
+        .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
+        .data-card p:last-child { margin-bottom: 0; }
+
+        .insight-card { background: linear-gradient(135deg, rgba(139,122,168, 0.10) 0%, rgba(139,122,168, 0.02) 100%); border-left: 3px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(139,122,168, 0.08), inset 0 -1px 0 rgba(0,0,0, 0.08); }
+        .insight-card::after { content: ''; position: absolute; bottom: -20px; right: 10%; width: 40%; height: 40px; background: radial-gradient(ellipse, rgba(139,122,168, 0.06) 0%, transparent 70%); pointer-events: none; }
+        .insight-card p { margin-bottom: 16px; font-size: 0.98rem; position: relative; z-index: 1; }
+        .insight-card p:last-child { margin-bottom: 0; }
+
+        .emergency-box { background: linear-gradient(90deg, rgba(197,160,89, 0.10) 0%, rgba(197,160,89, 0.02) 100%); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 14px 14px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(197,160,89, 0.10), inset 0 -1px 0 rgba(0,0,0, 0.08); }
+        .emergency-box::after { content: ''; position: absolute; top: 20px; left: -2px; width: 40px; height: 40px; background: radial-gradient(circle, rgba(197,160,89, 0.12) 0%, transparent 70%); pointer-events: none; }
+        .emergency-box h3 { color: var(--gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+        .emergency-box p { font-size: 0.98rem; margin-bottom: 12px; }
+        .emergency-box p:last-child { margin-bottom: 0; }
+
+        .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(139,122,168, 0.10); box-shadow: 0 20px 60px rgba(0,0,0, 0.35), 0 4px 12px rgba(0,0,0, 0.20), inset 0 0 0 1px rgba(255,255,255, 0.03); }
+        .article-image img { width: 100%; height: auto; display: block; }
+        .article-image figcaption { background: linear-gradient(180deg, rgba(13,13,13, 0.60) 0%, rgba(20,20,25, 0.95) 100%); padding: 14px 20px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; border-top: 1px solid rgba(139,122,168, 0.08); }
+
+        .related-box { margin: 60px 0; padding: 40px; background: rgba(107,155,170, 0.03); border-radius: 24px; border: 1px solid var(--teal-border); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0, 0.18), inset 0 1px 0 rgba(107,155,170, 0.06); }
+        .related-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.4; }
+        .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; position: relative; z-index: 1; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .related-card { display: block; text-decoration: none; background: rgba(255,255,255, 0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 12px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(255,255,255, 0.03); }
+        .related-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--lavender), transparent); opacity: 0.3; transition: opacity 0.4s ease; }
+        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255, 0.04); border-color: rgba(139,122,168, 0.30); box-shadow: 0 12px 40px rgba(0,0,0, 0.25), 0 0 0 1px rgba(139,122,168, 0.10), inset 0 1px 0 rgba(255,255,255, 0.05); }
+        .related-card:hover::before { opacity: 0.7; }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
+        .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+
+        .full-disclaimer { background: rgba(139,122,168, 0.04); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 48px 0; box-shadow: 0 2px 12px rgba(0,0,0, 0.10), inset 0 1px 0 rgba(139,122,168, 0.04); }
+        .full-disclaimer h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .full-disclaimer p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.7; }
+        .full-disclaimer p:last-child { margin-bottom: 0; }
+
+        .medical-disclaimer { font-size: 0.9rem; font-style: italic; color: var(--text-dark); text-align: center; padding: 16px 0; margin-bottom: 48px; border-bottom: 1px solid var(--lavender-border); }
+
+        .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--lavender-border); }
+        .author-card { display: flex; align-items: center; gap: 20px; background: linear-gradient(135deg, rgba(139,122,168, 0.05) 0%, rgba(106,170,122, 0.03) 100%); border: 1px solid var(--lavender-border); border-radius: 20px; padding: 28px; margin-bottom: 32px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(255,255,255, 0.04), inset 0 -1px 0 rgba(0,0,0, 0.06); }
+        .author-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(139,122,168, 0.25), rgba(106,170,122, 0.20), transparent); }
+        .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--lavender), var(--green)); padding: 3px; flex-shrink: 0; }
+        .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .author-info h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+        .author-info p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+
+        .editorial-standards { background: rgba(139,122,168, 0.03); border: 1px solid rgba(139,122,168, 0.12); border-radius: 16px; padding: 28px; margin: 32px 0; box-shadow: 0 2px 12px rgba(0,0,0, 0.08), inset 0 1px 0 rgba(139,122,168, 0.04); }
+        .editorial-standards h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .editorial-standards ul { list-style: none; padding: 0; margin: 0; }
+        .editorial-standards li { font-size: 0.9rem; color: var(--text-light); padding: 8px 0; padding-left: 20px; position: relative; border-bottom: 1px solid rgba(139,122,168, 0.05); }
+        .editorial-standards li:last-child { border-bottom: none; }
+        .editorial-standards li::before { content: '\2022'; position: absolute; left: 0; color: var(--lavender); opacity: 0.6; }
+
+        .cta-box { background: linear-gradient(180deg, rgba(184,168,146, 0.10) 0%, rgba(184,168,146, 0.03) 100%); border: 1px solid var(--tips-border); border-radius: 20px; padding: 36px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0, 0.25), 0 2px 6px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(184,168,146, 0.15), inset 0 -1px 0 rgba(0,0,0, 0.08); }
+        .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--tips), transparent); opacity: 0.7; }
+        .cta-box::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60%; height: 60%; background: radial-gradient(ellipse, rgba(184,168,146, 0.06) 0%, transparent 70%); pointer-events: none; }
+        .cta-box h3 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; position: relative; z-index: 1; }
+        .cta-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; position: relative; z-index: 1; }
+        .download-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(184,168,146,0.15), rgba(184,168,146,0.25)); border: 1px solid var(--tips); border-radius: 12px; color: var(--tips); text-decoration: none; font-weight: 600; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); flex: 1; max-width: 260px; justify-content: center; position: relative; z-index: 1; box-shadow: 0 2px 8px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(184,168,146, 0.10); }
+        .download-btn:hover { background: var(--tips); color: var(--bg); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,168,146, 0.25), 0 2px 6px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(255,255,255, 0.20); }
+
+        .references { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--lavender-border); }
+        .references h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-light); margin-bottom: 16px; }
+        .references ol { padding-left: 24px; }
+        .references li { font-size: 0.84rem; color: var(--text-dark); margin-bottom: 4px; line-height: 1.6; padding: 8px 10px; border-radius: 6px; transition: background 0.2s ease; }
+        .references li:nth-child(odd) { background: rgba(139,122,168, 0.03); }
+        .references li:hover { background: rgba(139,122,168, 0.06); }
+        .references a { color: var(--lavender); text-decoration: none; font-weight: 500; }
+        .references a:hover { text-decoration: underline; }
+
+        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(139,122,168, 0.10); }
+
+        footer { padding: 40px 0; border-top: 1px solid var(--lavender-border); }
+        .copyright { text-align: center; color: var(--text-dark); font-size: 0.82rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: 400px; }
+            p { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .data-card, .insight-card, .emergency-box, .highlight-box { padding: 22px 24px; }
+            .cta-box { padding: 28px; }
+            .article-meta { flex-direction: column; gap: 8px; }
+            .key-takeaways { padding: 24px; }
+            .related-box { padding: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">&larr; Back to Blog</a>
+        </div>
+    </header>
+    <main>
+        <div class="article-hero">
+            <img src="images/migraine_team_table.png" alt="Atmospheric illustration of a person sitting at a round table with an open notebook, surrounded by five distinct empty chairs — each representing a different healthcare specialist waiting to join the migraine care team">
+            <div class="article-header">
+                <span class="article-tag">Tips</span>
+                <h1>Building Your Migraine Team: Beyond the Neurologist</h1>
+                <p class="article-subtitle">GP, neurologist, headache specialist, therapist, physical therapist. Who do you actually need &mdash; and how do you make them work together when the system won&rsquo;t do it for you?</p>
+                <div class="article-meta">
+                    <span>&#x1F4C5; March 11, 2026</span>
+                    <span>&#x23F1; 6 min read</span>
+                    <span>&#x270D;&#xFE0F; Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+
+                <div id="article-meta" style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">By Rustam Iuldashov</p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">30 years lived experience with chronic migraine | Sources: 21 peer-reviewed references including <em>BMC Neurology</em> (n=201), <em>Journal of Clinical Medicine</em> (n=186), <em>Medicina</em> (11 RCTs), <em>npj Digital Medicine</em> (ITC meta-analysis) | Last updated: March 11, 2026</p>
+                </div>
+
+                <p class="medical-disclaimer">
+                    <strong>Medical Review:</strong> This content is based on peer-reviewed research from BMC Neurology, Headache, Journal of Clinical Medicine, Frontiers in Neurology, Journal of Integrative Neuroscience, The Journal of Headache and Pain, Brazilian Journal of Physical Therapy, Medicina, npj Digital Medicine, and StatPearls.<br><br>
+                    <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. The author is not a licensed physician or healthcare professional. Always consult your doctor before making changes to your treatment plan.
+                </p>
+
+                <div class="key-takeaways">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>Most people with migraine are managed by a single GP &mdash; and many are <strong>undertreated</strong>. Two screening questions can open the door to better care<sup>[1][2]</sup></li>
+                        <li>A headache specialist is not the same as a general neurologist &mdash; the additional fellowship training translates to <strong>different questions, different tools, different outcomes</strong><sup>[4][5]</sup></li>
+                        <li>CBT for migraine has strong evidence across <strong>50+ trials</strong> &mdash; and digital delivery works as well as face-to-face<sup>[9][12]</sup></li>
+                        <li>Physical therapy targeting cervical dysfunction can <strong>meaningfully reduce headache days</strong> &mdash; but only with a PT who understands headache<sup>[13][15]</sup></li>
+                        <li>Your pharmacist sees every medication from every prescriber &mdash; <strong>one conversation</strong> might reveal the trigger you&rsquo;ve missed<sup>[16]</sup></li>
+                        <li>No system will coordinate your care for you &mdash; a shared document and closing the <strong>communication loop</strong> between providers is the infrastructure of a functioning team<sup>[18]</sup></li>
+                    </ul>
+                </div>
+
+                <div class="separator"></div>
+
+                <section class="article-section">
+                    <p>Here&rsquo;s the thing nobody tells you when you get diagnosed with migraine: the system expects you to figure it out with one doctor.</p>
+                    <p>One doctor. For a neurological disease that affects your sleep, your neck, your mood, your gut, your relationships, your career. One person in a white coat with fifteen minutes and a prescription pad.</p>
+                    <p>I&rsquo;ve lived with migraine for 30 years. It took me far too long to realize that managing this disease isn&rsquo;t a solo act &mdash; it&rsquo;s a team sport. And the team doesn&rsquo;t build itself.</p>
+                    <p>A European survey of 201 GPs across five countries found that <strong>82% were managing patients with disabling or chronic migraine entirely on their own</strong> &mdash; no specialist referral, no coordinated plan.<sup>[1]</sup> When referrals did happen, 97% of GPs remained responsible for follow-up, often prescribing treatments that fell short of current guidelines. In the US, the OVERCOME study told a similar story: only half of people with migraine had seen a healthcare provider in the past year, and fewer than one in five were using preventive treatment &mdash; despite more than 40% being candidates for it.<sup>[2]</sup></p>
+
+                    <div class="data-card">
+                        <p><strong>82%</strong> of GPs managed disabling/chronic migraine patients alone &mdash; without specialist referral<sup>[1]</sup></p>
+                        <p><strong>16.8%</strong> of eligible migraine patients were using preventive treatment (despite 40.4% being candidates)<sup>[2]</sup></p>
+                    </div>
+
+                    <p>The care gap is enormous. This article is your blueprint for closing it.</p>
+                </section>
+
+                <div class="separator"></div>
+
+                <section class="article-section">
+                    <h2>Your GP: More Powerful Than You Think</h2>
+                    <p>Your general practitioner handles roughly 70% of all migraine care.<sup>[3]</sup> For episodic migraine that responds to acute treatment, a capable GP may be all you need.</p>
+                    <p>But there&rsquo;s a catch. Medical schools historically devoted about one hour to headache education. Neurology residents received roughly three.<sup>[4]</sup> The landscape has improved &mdash; but not enough. A GP juggling diabetes, hypertension, and depression may not have time to track whether your migraine pattern has shifted from episodic to chronic, or whether you&rsquo;re overusing acute medication and sliding toward medication-overuse headache.</p>
+                    <p>Two questions can change the trajectory of your care:</p>
+                    <p>&ldquo;Have I been screened for chronic migraine?&rdquo; and &ldquo;Am I a candidate for preventive treatment?&rdquo;</p>
+                    <p>That&rsquo;s it. If your GP hesitates on either answer, you&rsquo;ve found the edge of their comfort zone &mdash; and the moment to bring a specialist onto the field.</p>
+
+                    <div class="highlight-box">
+                        <p>Bring data, not memories. A headache diary with dates, severity, medication use, and functional impact communicates in ten seconds what a verbal history takes ten minutes to convey.</p>
+                    </div>
+                </section>
+
+                <div class="separator"></div>
+
+                <section class="article-section">
+                    <h2>The Specialist Gap: Why &ldquo;Neurologist&rdquo; Isn&rsquo;t Specific Enough</h2>
+                    <p>A neurologist treats epilepsy, stroke, Parkinson&rsquo;s, multiple sclerosis &mdash; and migraine. A headache specialist is a neurologist who completed an additional fellowship year devoted exclusively to headache medicine and earned certification from the United Council for Neurologic Subspecialties.<sup>[5]</sup></p>
+                    <p>The distinction is not semantic. It&rsquo;s clinical.</p>
+                    <p>One patient described switching from a general neurologist to a headache specialist and being asked, in her very first 30-minute visit, questions she&rsquo;d never heard before. She left with a complete protocol: preventive medication, acute treatment, emergency plan, and a direct line to her specialist during crises.<sup>[6]</sup> In 30 minutes, she received what years of general neurology hadn&rsquo;t delivered.</p>
+                    <p>The problem is math. The US has approximately 700 fellowship-trained headache specialists. That&rsquo;s one for every 80,000 people who need one.<sup>[4][5]</sup> Wait times stretch to six months. Entire states have none.</p>
+                    <p><strong>When to seek one:</strong> Four or more migraine days per month. Two or more failed treatments. Unusual symptoms &mdash; prolonged aura, numbness, attacks lasting beyond 72 hours. A provider unfamiliar with CGRP therapies or neuromodulation.<sup>[5]</sup></p>
+
+                    <div class="emergency-box">
+                        <h3>&#x26A0;&#xFE0F; When to Seek Emergency Help</h3>
+                        <p>If you experience a sudden, severe headache unlike anything you&rsquo;ve felt before &mdash; especially if accompanied by fever, stiff neck, confusion, seizures, double vision, weakness on one side of the body, or loss of consciousness &mdash; call your local emergency number immediately. A new, explosive headache is not migraine until proven otherwise.</p>
+                        <p>Do not use this article to self-diagnose.</p>
+                    </div>
+
+                    <p><strong>When you can&rsquo;t find a specialist locally:</strong> Telehealth has changed the equation. A 2023 study of 186 patients at a virtual headache center reported a <strong>55% median reduction in monthly headache days</strong> within 90 days &mdash; plus a 66% drop in emergency room visits.<sup>[7]</sup> Multiple randomized trials confirm that video consultations for headache are non-inferior to face-to-face visits in both clinical outcomes and patient satisfaction.<sup>[8]</sup> The specialist you need might be 500 miles away. A screen can close that distance.</p>
+                </section>
+
+                <figure class="article-image">
+                    <img src="images/migraine_team_listening.png" alt="Atmospheric illustration of two people in a warm, intimate conversation — one listening intently, the other speaking with visible relief — representing the moment when a migraine patient finally finds a provider who truly hears them" loading="lazy">
+                    <figcaption>The moment everything changes: a provider who listens, asks the right questions, and builds a plan with you &mdash; not for you. Finding the right specialist transforms migraine care from trial-and-error to targeted strategy.</figcaption>
+                </figure>
+
+                <div class="separator"></div>
+
+                <section class="article-section">
+                    <h2>Your Therapist: Rewiring the Pain Response</h2>
+                    <p>Let&rsquo;s be direct: CBT for migraine is not about being told to relax. It&rsquo;s a structured clinical intervention that retrains how your nervous system processes pain signals and stress cascades.</p>
+                    <p>The evidence is substantial. A 2025 systematic review examined 50 trials involving over 6,000 adults and found that CBT, relaxation training, and mindfulness-based therapies each independently reduced migraine frequency.<sup>[9]</sup> A meta-analysis of 11 RCTs confirmed significant reductions in both headache frequency and disability scores as measured by MIDAS.<sup>[10]</sup> In children and adolescents, CBT produced odds ratios of 9.11 for clinically meaningful improvement &mdash; effects that held at long-term follow-up.<sup>[11]</sup></p>
+                    <p>One detail that changes everything: a 2024 meta-analysis found digital CBT equally effective as face-to-face therapy for headache prevention.<sup>[12]</sup> You don&rsquo;t need a specialist therapist in your zip code. You need a structured program &mdash; and the discipline to follow it.</p>
+
+                    <div class="insight-card">
+                        <p>Ask a prospective therapist one question: &ldquo;Have you treated migraine patients before?&rdquo; CBT for migraine includes specific techniques &mdash; biofeedback, progressive muscle relaxation, trigger desensitization &mdash; that differ from standard depression-focused CBT. A therapist trained in chronic pain understands that your brain isn&rsquo;t broken. It&rsquo;s hypersensitive. Those are different problems requiring different tools.</p>
+                    </div>
+                </section>
+
+                <div class="separator"></div>
+
+                <section class="article-section">
+                    <h2>Your Physical Therapist: The Neck Connection</h2>
+                    <p>That tight band at the base of your skull. The jaw clenching you notice only when someone points it out. The dizziness that arrives with or between attacks.</p>
+                    <p>Your neck has a story to tell. And a physical therapist trained in headache can read it.</p>
+                    <p>A 2023 systematic review and meta-analysis of RCTs found that manual therapy combined with medication significantly reduced both headache intensity and headache days per month in chronic migraine.<sup>[13]</sup> Aerobic exercise earned a B-grade recommendation in clinical practice guidelines for migraine.<sup>[14]</sup> Physical therapists working with migraine patients focus on two distinct targets: cervical spine musculoskeletal dysfunction &mdash; particularly trigger points and joint restrictions &mdash; and vestibular rehabilitation for migraine-related balance and dizziness problems.<sup>[15]</sup></p>
+                    <p><strong>The key detail:</strong> Not every physical therapist understands the connection between your C2-C3 joint and your temporal pain. Ask specifically for someone experienced with headache patients or trained in cervical manual therapy. The right PT can reduce your headache days. The wrong one will stretch your hamstrings and send you home.</p>
+                </section>
+
+                <div class="separator"></div>
+
+                <section class="article-section">
+                    <h2>Your Pharmacist: The Full-Picture Specialist</h2>
+                    <p>Your pharmacist holds a view that no other provider has: every medication you take, from every prescriber, all on one screen.</p>
+                    <p>The European Headache Federation recently endorsed integrating community pharmacists into headache care &mdash; particularly for screening, monitoring medication overuse, and patient education.<sup>[16]</sup> In Ireland, a multidisciplinary program incorporating pharmacist collaboration alongside nurse-led headache clinics reduced hospital visits and improved patient outcomes.<sup>[17]</sup></p>
+                    <p><strong>One question to ask at your next refill:</strong> &ldquo;Could any of my non-migraine medications be triggering or worsening my headaches?&rdquo; Beta-blockers for blood pressure. Hormonal contraceptives. Proton pump inhibitors. The trigger you&rsquo;ve been hunting in your diet might live in your medicine cabinet.</p>
+                </section>
+
+                <div class="separator"></div>
+
+                <section class="article-section">
+                    <h2>You Are the Hub</h2>
+                    <p>Here is the uncomfortable truth that no guideline will say plainly: your providers don&rsquo;t talk to each other. Different records. Different systems. Different priorities. The StatPearls chapter on migraine interprofessional management specifically recommends that all team members document changes and communicate promptly.<sup>[18]</sup> In practice, that coordination falls on one person.</p>
+                    <p>You.</p>
+                    <p>This isn&rsquo;t a burden &mdash; it&rsquo;s a superpower. Nobody else has the complete picture. Nobody else lives in your body, tracks your patterns, and sits in every appointment. You are the only person who sees the whole board.</p>
+                    <p><strong>Build your coordination system in three steps:</strong></p>
+                    <p>First, create one document. Every provider&rsquo;s name and contact. Every medication with dose and start date. Every treatment tried and why it stopped. Keep it on your phone.</p>
+                    <p>Second, before each appointment, send a brief update: current headache frequency, medication changes since last visit, any new symptoms. Two minutes of preparation can save fifteen minutes of repetition.</p>
+                    <p>Third, close the communication loop. When your headache specialist changes your treatment, tell your GP the same day. When your therapist identifies a stress pattern, mention it at your next neurology visit. When your physical therapist finds cervical restriction, note it in your shared document. You are the signal passing between nodes that otherwise exist in isolation.</p>
+
+                    <div class="highlight-box">
+                        <p>No system will coordinate your care for you. A shared document, a two-minute pre-appointment update, and closing the communication loop between providers &mdash; that&rsquo;s the infrastructure of a functioning team.</p>
+                    </div>
+                </section>
+
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-anxious-brain.html" class="related-card">
+                            <h4>The Anxious Brain</h4>
+                            <p>Migraine and anxiety share a bidirectional link. Understanding this connection can change how you work with both your neurologist and therapist.</p>
+                        </a>
+                        <a href="article-hyperexcitable-brain.html" class="related-card">
+                            <h4>The Hyperexcitable Brain</h4>
+                            <p>Your brain isn&rsquo;t broken &mdash; it&rsquo;s hypersensitive. The neuroscience of why some brains react to stimuli that others ignore.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="full-disclaimer">
+                    <h3>&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
+                    <p>This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
+                    <p>All clinical claims in this article are sourced from peer-reviewed research published in indexed medical journals. Study designs and sample sizes are noted where applicable.</p>
+                    <p>Always consult a qualified healthcare provider for questions about your individual health, migraine treatment, or medication decisions. Building a care team is a personal process &mdash; the recommendations here are starting points, not prescriptions. Your needs may differ based on your specific migraine type, frequency, comorbidities, and insurance coverage.</p>
+                    <p>This content was last reviewed for accuracy on March 11, 2026.</p>
+                </div>
+
+                <div id="references" class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Pozo-Rosich P, Mart&iacute;nez-Garc&iacute;a A, et al. &ldquo;Current clinical practice in disabling and chronic migraine in the primary care setting: results from the European My-LIFE anamnesis survey.&rdquo; <em>BMC Neurology</em>, 21:1 (2021). <a href="https://doi.org/10.1186/s12883-020-02014-6" target="_blank">doi:10.1186/s12883-020-02014-6</a>. Study design: Cross-sectional survey. n=201 GPs.</li>
+                        <li>Lipton RB, Nicholson RA, Reed ML, et al. &ldquo;Diagnosis, consultation, treatment, and impact of migraine in the US: results of the OVERCOME (US) study.&rdquo; <em>Headache</em>, 62:122&ndash;140 (2022). <a href="https://doi.org/10.1111/head.14259" target="_blank">doi:10.1111/head.14259</a>. Study design: Population-based survey. n=~20,000.</li>
+                        <li>National Headache Foundation. &ldquo;Why Migraine Prevention Matters in Primary Care.&rdquo; <em>NHF InSights Podcast</em> (2025). Expert source.</li>
+                        <li>Gallagher RM, Alam R, Shah J. &ldquo;Headache in medical education.&rdquo; <em>Headache</em>, 44:8 (2004). <a href="https://doi.org/10.1111/j.1526-4610.2004.04145.x" target="_blank">doi:10.1111/j.1526-4610.2004.04145.x</a>. Study design: Cross-sectional survey. AHS data: 1 headache specialist per 80,000 people.</li>
+                        <li>American Migraine Foundation. &ldquo;The Value of a Headache Specialist.&rdquo; (2022). Expert opinion: Dr. Kathleen Digre, University of Utah.</li>
+                        <li>Migraine.com. &ldquo;Neurologist Versus Migraine Specialist: What&rsquo;s the Difference?&rdquo; (2021). Patient experience narrative.</li>
+                        <li>Berk T, Silberstein S, McAllister P. &ldquo;A Novel Virtual-Based Comprehensive Clinical Approach to Headache Care.&rdquo; <em>Journal of Clinical Medicine</em>, 12(16):5349 (2023). <a href="https://doi.org/10.3390/jcm12165349" target="_blank">doi:10.3390/jcm12165349</a>. Study design: Retrospective chart review. n=186.</li>
+                        <li>M&uuml;ller KI, Alstadhaug KB, Bekkelund SI. &ldquo;Video consultation for non-acute headache by neurologist is not inferior to traditional consultations.&rdquo; <em>Frontiers in Neurology</em> (2026). <a href="https://doi.org/10.3389/fneur.2026.1798381" target="_blank">doi:10.3389/fneur.2026.1798381</a>. Study design: RCT post-hoc analysis. n=402.</li>
+                        <li>Minen MT, et al. &ldquo;Behavioral interventions for migraine prevention: A systematic review and meta-analysis.&rdquo; <em>Headache</em> (2025). <a href="https://doi.org/10.1111/head.14890" target="_blank">doi:10.1111/head.14890</a>. Study design: Systematic review / Meta-analysis. n=6,024 across 50 trials.</li>
+                        <li>Bae JY, Sung HK, et al. &ldquo;Cognitive Behavioral Therapy for Migraine Headache: A Systematic Review and Meta-Analysis.&rdquo; <em>Medicina</em>, 58(1):44 (2022). <a href="https://doi.org/10.3390/medicina58010044" target="_blank">doi:10.3390/medicina58010044</a>. Study design: Systematic review / Meta-analysis. n=11 RCTs.</li>
+                        <li>Powers SW, Kashikar-Zuck SM, et al. &ldquo;Cognitive Behavioral Therapy for Pediatric Headache and Migraine: Why to Prescribe and What New Research is Critical.&rdquo; <em>Headache</em> (2017). <a href="https://doi.org/10.1111/head.13167" target="_blank">doi:10.1111/head.13167</a>. Study design: Meta-analysis. n=14 RCTs. OR=9.11 (95% CI: 5.01&ndash;16.58).</li>
+                        <li>Huhn M, et al. &ldquo;An indirect treatment comparison meta-analysis of digital versus face-to-face cognitive behavior therapy for headache.&rdquo; <em>npj Digital Medicine</em>, 7:273 (2024). <a href="https://doi.org/10.1038/s41746-024-01264-9" target="_blank">doi:10.1038/s41746-024-01264-9</a>. Study design: ITC meta-analysis.</li>
+                        <li>Onan D, Ekizo&#287;lu E, Ar&#305;kan H, et al. &ldquo;The Efficacy of Physical Therapy and Rehabilitation Approaches in Chronic Migraine: A Systematic Review and Meta-Analysis.&rdquo; <em>Journal of Integrative Neuroscience</em>, 22(5):126 (2023). <a href="https://doi.org/10.31083/j.jin2205126" target="_blank">doi:10.31083/j.jin2205126</a>. Study design: Systematic review / Meta-analysis. n=7 RCTs.</li>
+                        <li>Lara-Palomo IC, et al. &ldquo;Prescription of therapeutic exercise in migraine, an evidence-based clinical practice guideline.&rdquo; <em>The Journal of Headache and Pain</em>, 24:68 (2023). <a href="https://doi.org/10.1186/s10194-023-01571-8" target="_blank">doi:10.1186/s10194-023-01571-8</a>. Study design: Clinical practice guideline (AGREE/SIGN methodology).</li>
+                        <li>Carvalho GF, et al. &ldquo;Physical therapy and migraine: musculoskeletal and balance dysfunctions and their relevance for clinical practice.&rdquo; <em>Brazilian Journal of Physical Therapy</em>, 24(4):306&ndash;317 (2020). <a href="https://doi.org/10.1016/j.bjpt.2019.11.001" target="_blank">doi:10.1016/j.bjpt.2019.11.001</a>. Study design: Narrative review.</li>
+                        <li>BaniHani H, Lampl C, MaassenvandenBrink A, et al. &ldquo;The role of community pharmacists in managing common headache disorders.&rdquo; EHF/Lifting The Burden position statement. <em>The Journal of Headache and Pain</em> (2025). Study design: Expert consensus / Position statement.</li>
+                        <li>Begasse de Dhaem O, Logan RN, et al. &ldquo;Multidisciplinary Approach to Optimize Patient-centered Delivery of Headache Care.&rdquo; <em>American Headache Society</em> (2025). Study design: Program description / Expert recommendation.</li>
+                        <li>StatPearls. &ldquo;Migraine Headache &mdash; Interprofessional Team Management.&rdquo; (2024). Study design: Expert consensus / Textbook chapter.</li>
+                        <li>Lipton RB. &ldquo;Treating patients with migraine: What PCPs need to know.&rdquo; <em>Healio Primary Care</em> (2019). Expert interview.</li>
+                        <li>Begasse de Dhaem O, et al. &ldquo;Headache Horizons: Integrating Community Health Workers Into Migraine Care.&rdquo; <em>Practical Neurology</em> (2025). OVERCOME study data context.</li>
+                        <li>Klan T, Gaul C, et al. &ldquo;Behavioral treatment for migraine prophylaxis in adults: Moderator analysis of a randomized controlled trial.&rdquo; <em>Cephalalgia</em>, 43(7) (2023). <a href="https://doi.org/10.1177/03331024231178237" target="_blank">doi:10.1177/03331024231178237</a>. Study design: RCT moderator analysis. Responder rate ~44%.</li>
+                    </ol>
+                </div>
+
+                <div id="about-author" class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> &mdash; 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. His approach combines first-hand patient experience with peer-reviewed medical research and narrative therapy principles (Michael White &amp; David Epston). He is not a medical professional.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Transparency &amp; Conflict of Interest Disclosure: Rustam is the developer of the Migraine Companion app. This article was written to educate and inform, not to promote the app. All scientific claims are independently sourced from peer-reviewed literature. The author has no financial relationships with pharmaceutical companies, headache clinics, telehealth platforms, or any healthcare providers mentioned in this article.</em></p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);">&#x1F4E7; Contact: mi-companion.com/contact &middot; &#x1F310; Website: mi-companion.com</p>
+                        </div>
+                    </div>
+
+                    <div class="editorial-standards">
+                        <h3>How We Create Content</h3>
+                        <ul>
+                            <li><strong>Peer-reviewed sources only.</strong> BMC Neurology, Headache, Journal of Clinical Medicine, Frontiers in Neurology, Journal of Integrative Neuroscience, The Journal of Headache and Pain, Brazilian Journal of Physical Therapy, Medicina, npj Digital Medicine, Cephalalgia, StatPearls.</li>
+                            <li><strong>Study transparency.</strong> Study design and sample sizes noted for all clinical references.</li>
+                            <li><strong>Source verification.</strong> All claims backed by numbered references with DOI links.</li>
+                            <li><strong>Experience + Science.</strong> 30 years personal migraine experience combined with peer-reviewed evidence.</li>
+                            <li><strong>Regular updates.</strong> Articles reviewed when significant new research emerges.</li>
+                            <li><strong>No conflicts of interest.</strong> No funding from pharmaceutical companies, telehealth platforms, headache clinics, or healthcare provider organizations.</li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Bring Your Team the Data They Need</h3>
+                        <p>Migraine Companion generates shareable reports with attack frequency, triggers, medication use, and MIDAS scores &mdash; so every provider on your team sees the same complete picture.</p>
+                        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
+                            <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                                Download on App Store
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                                Get it on Google Play
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="review-dates">
+                        <p><em>Last reviewed: March 2026</em></p>
+                        <p><em>Next scheduled review: September 2026</em></p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 Migraine Companion. Made with &#x1F49C; in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>
