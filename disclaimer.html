@@ -17,20 +17,223 @@
         body.menu-open{overflow:hidden}
         html{scroll-behavior:smooth}
         .container{max-width:900px;margin:0 auto;padding:0 24px}
-        header{padding:16px 0;position:fixed;width:100%;top:0;z-index:100;background:rgba(35,45,40,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,122,168,.2)}
-        .header-content{display:flex;justify-content:space-between;align-items:center}
-        .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none;white-space:nowrap;margin-left:-12px;margin-right:20px}
-        .logo img{width:36px;height:36px;border-radius:8px}
-        .logo em{color:var(--lavender);font-style:normal}
-        .nav{display:flex;gap:18px;align-items:center}
-        .nav a{color:var(--text-light);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.1px;transition:color .3s;white-space:nowrap}
-        .nav a:hover{color:var(--lavender)}
-        .nav a[href="blog.html"]::before{content:"✦";margin-right:18px;margin-left:14px;color:var(--gold);font-size:.7rem}
-        .nav a[href="blog.html"],.nav a[href="faq.html"],.nav a[href="collaborate.html"],.nav a[href*="support"]:not(.nav-cta){color:#D4CBE5}
-        .nav a[href="blog.html"]:hover,.nav a[href="faq.html"]:hover,.nav a[href="collaborate.html"]:hover,.nav a[href*="support"]:not(.nav-cta):hover{color:#fff}
-        .nav-cta{background:transparent;border:1.5px solid var(--gold)!important;padding:6px 14px;border-radius:10px;color:var(--gold)!important;font-weight:700;letter-spacing:.3px;transition:all .3s ease;text-transform:uppercase;font-size:.75rem!important}
-        .nav-cta:hover{background:var(--gold);color:var(--malachite-dark)!important;box-shadow:0 0 20px rgba(197,160,89,.4);transform:translateY(-1px)}
-        .mobile-menu-btn{display:none;background:0 0;border:none;color:var(--lavender);font-size:1.5rem;cursor:pointer}
+
+        /* ═══════════════════════════════════════════
+           PREMIUM HEADER
+        ═══════════════════════════════════════════ */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            height: 64px;
+            background: rgba(30, 38, 33, 0.75);
+            backdrop-filter: saturate(180%) blur(24px);
+            -webkit-backdrop-filter: saturate(180%) blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        .header-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--paper);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .logo em {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 600;
+        }
+        .nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .nav > a {
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            color: rgba(255, 255, 255, 0.65);
+            transition: color 0.25s ease;
+            white-space: nowrap;
+        }
+        .nav > a:hover {
+            color: #ffffff;
+        }
+        .nav-download-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .nav-cta {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(213, 176, 105, 0.25);
+            padding: 7px 18px;
+            border-radius: 980px;
+            color: var(--paper);
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .nav-download-wrapper:hover .nav-cta {
+            background: rgba(213, 176, 105, 0.1);
+            border-color: var(--gold);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(213, 176, 105, 0.15);
+        }
+        .download-dropdown {
+            position: absolute;
+            top: 130%;
+            right: 0;
+            background: rgba(30, 38, 33, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 160px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+        }
+        .download-dropdown::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            right: 35px;
+            width: 10px;
+            height: 10px;
+            background: rgba(30, 38, 33, 0.95);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            transform: rotate(45deg);
+        }
+        .nav-download-wrapper:hover .download-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .download-dropdown a {
+            padding: 10px 16px;
+            border-radius: 10px;
+            color: var(--paper);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+        .download-dropdown a:hover {
+            background: rgba(213, 176, 105, 0.15);
+            color: var(--gold);
+            padding-left: 20px;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: 0 0;
+            border: none;
+            color: var(--paper);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .mobile-menu-btn:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 900px) {
+            .header-container { padding: 0 24px; }
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .nav {
+                display: none;
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                height: calc(100vh - 64px);
+                background: rgba(22, 24, 28, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 40px 24px;
+                gap: 24px;
+                overflow-y: auto;
+            }
+            .nav.mobile-menu-active { display: flex; }
+            .nav > a {
+                font-size: 1.2rem;
+                color: var(--paper);
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+                padding-bottom: 16px;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-download-wrapper { width: 100%; margin-top: 10px; }
+            .nav-download-wrapper > .nav-cta { display: none; }
+            .download-dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+                gap: 12px;
+            }
+            .download-dropdown::before { display: none; }
+            .download-dropdown a {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(213, 176, 105, 0.25);
+                justify-content: center;
+                padding: 14px 20px;
+                border-radius: 980px;
+                font-weight: 500;
+                width: 100%;
+            }
+            .download-dropdown a:hover {
+                padding-left: 16px;
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           PAGE CONTENT
+        ═══════════════════════════════════════════ */
         .page-header{padding:140px 0 80px;text-align:center}
         .page-title{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:500;line-height:1.2;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);text-shadow:0 0 15px rgba(197,160,89,.3);margin-bottom:16px}
         .page-subtitle{font-size:1.15rem;font-weight:500;color:var(--text-light);max-width:600px;margin:0 auto}
@@ -64,14 +267,8 @@
         .footer-links a{font-size:.92rem;font-weight:500;color:var(--text-light);text-decoration:none;transition:color .3s}
         .footer-links a:hover{color:var(--lavender)}
         .copyright{font-size:.88rem;font-weight:400;color:var(--text-dark)}
+
         @media (max-width:768px){
-            .nav{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(35,45,40,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:20px;gap:0;border-bottom:1px solid rgba(139,122,168,0.2);box-shadow:0 10px 30px rgba(0,0,0,0.5);z-index:99}
-            .nav.mobile-menu-active{display:flex}
-            .nav a{padding:12px 0;border-bottom:1px solid rgba(139,122,168,0.1);display:block;width:100%;font-size:.9rem}
-            .nav a:last-child{border-bottom:none}
-            .nav a[href="blog.html"]::before{display:none}
-            .nav-cta{width:100%;text-align:center;padding:14px 20px!important;margin-top:12px;border-radius:12px;background:rgba(197,160,89,0.15)!important}
-            .mobile-menu-btn{display:block}
             .page-title{font-size:2.2rem}
             .disclaimer-card{padding:32px 24px}
             .alert-box{padding:20px 24px}
@@ -81,22 +278,40 @@
 </head>
 <body>
     <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo"><img src="images/mi-icon.png" alt="Mi — your gentle migraine companion"><span>M<em>I</em>graine Companion</span></a>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/mi-icon.png" alt="Mi — your gentle migraine companion">
+                <span>M<em>I</em>graine Companion</span>
+            </a>
             <nav class="nav">
-                <a href="index.html#screenshots">App</a>
-                <a href="index.html#how-it-works">How It Works</a>
-                <a href="index.html#different">Approach</a>
-                <a href="index.html#science">Science</a>
+                <a href="index.html">App</a>
                 <a href="index.html#features">Features</a>
                 <a href="index.html#story">Story</a>
                 <a href="blog.html">Blog</a>
                 <a href="faq.html">FAQ</a>
                 <a href="collaborate.html">Collaborate</a>
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
-                <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="nav-cta" target="_blank">Download</a>
+                
+                <div class="nav-download-wrapper">
+                    <span class="nav-cta">Download</span>
+                    <div class="download-dropdown">
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" target="_blank">
+                            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;margin-right:8px;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.19 2.31-.88 3.5-.8 1.19.05 2.18.42 2.92 1.05-1.92 1.25-1.57 3.52.28 4.35-.45 1.34-1.12 2.76-1.78 3.57zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                            App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" target="_blank">
+                            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;margin-right:8px;"><path d="M17.523 15.341l2.366 4.103a.563.563 0 0 1-.772.772l-2.404-1.385A11.378 11.378 0 0 1 12 19.882c-1.636 0-3.18-.344-4.577-.962l-2.406 1.385a.563.563 0 0 1-.771-.772l2.365-4.103C4.246 13.568 2.75 10.966 2.75 8h18.5c0 2.966-1.496 5.568-3.727 7.341zM8.318 11.516a1.265 1.265 0 1 0 0-2.531 1.265 1.265 0 0 0 0 2.531zm7.364 0a1.265 1.265 0 1 0 0-2.531 1.265 1.265 0 0 0 0 2.531zM5.526 6.368L4.17 4.018a.563.563 0 0 1 .974-.563l1.418 2.457a11.516 11.516 0 0 1 10.876 0l1.418-2.457a.563.563 0 1 1 .974.563l-1.355 2.35C20.505 6.941 21.602 7.781 22 8.75H2c.398-.969 1.495-1.809 3.526-2.382z"/></svg>
+                            Google Play
+                        </a>
+                    </div>
+                </div>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
+            
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" style="width: 28px; height: 28px; fill: currentColor;">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -151,7 +366,6 @@
                         <p style="margin-top:16px;"><strong>These symptoms could indicate a medical emergency such as stroke, meningitis, or other serious conditions.</strong></p>
                         <p><strong>Do not rely on the app during a medical emergency.</strong> Get immediate professional medical help.</p>
                     </div>
-
                     <!-- WHAT THE APP IS NOT -->
                     <div class="section-block">
                         <h2>What This App Does NOT Do</h2>
