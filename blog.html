@@ -7,7 +7,8 @@
     <title>Blog | MIgraine Companion</title>
     <link rel="icon" type="image/png" href="images/mi-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -38,6 +39,7 @@
             --teal: #6B9BAA;
             --sand: #C9BDA8;
             --cream: #F5F0E8;
+            --paper: #F0EAD6;
             
             --cat-personal: #C9BDA8;
             --cat-science: #6B9BAA;
@@ -121,21 +123,21 @@
         }
 
         .firefly {
-    position: absolute;
-    background: #FFFBEA;
-    border-radius: 50%;
-    opacity: 0;
-    box-shadow: 0 0 4px 1px rgba(213, 176, 105, 0.7), 0 0 12px 3px rgba(197, 160, 89, 0.4), 0 0 25px 8px rgba(139, 122, 168, 0.3);
-}
+            position: absolute;
+            background: #FFFBEA;
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 4px 1px rgba(213, 176, 105, 0.7), 0 0 12px 3px rgba(197, 160, 89, 0.4), 0 0 25px 8px rgba(139, 122, 168, 0.3);
+        }
 
         @keyframes firefly-float {
-    0%, 100% { opacity: 0; transform: translate(0, 0) scale(1); }
-    10% { opacity: 0.8; }
-    30% { opacity: 0.4; transform: translate(var(--move-x), var(--move-y)) scale(1.1); }
-    50% { opacity: 0.9; transform: translate(calc(var(--move-x) * 0.5), calc(var(--move-y) * 1.5)) scale(0.9); }
-    70% { opacity: 0.3; transform: translate(calc(var(--move-x) * -0.3), calc(var(--move-y) * 0.8)) scale(1.2); }
-    90% { opacity: 0.7; }
-}
+            0%, 100% { opacity: 0; transform: translate(0, 0) scale(1); }
+            10% { opacity: 0.8; }
+            30% { opacity: 0.4; transform: translate(var(--move-x), var(--move-y)) scale(1.1); }
+            50% { opacity: 0.9; transform: translate(calc(var(--move-x) * 0.5), calc(var(--move-y) * 1.5)) scale(0.9); }
+            70% { opacity: 0.3; transform: translate(calc(var(--move-x) * -0.3), calc(var(--move-y) * 0.8)) scale(1.2); }
+            90% { opacity: 0.7; }
+        }
         
         /* === REDUCED MOTION === */
         @media (prefers-reduced-motion: reduce) {
@@ -156,122 +158,217 @@
             transform: translateY(0);
         }
         
-        /* === HEADER === */
+        /* ═══════════════════════════════════════════
+           PREMIUM HEADER
+        ═══════════════════════════════════════════ */
         header {
-            padding: var(--sp-4) 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            background: rgba(19, 19, 20, 0.80);
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
-            border-bottom: 1px solid var(--border-subtle);
+            height: 64px;
+            background: rgba(19, 19, 20, 0.75);
+            backdrop-filter: saturate(180%) blur(24px);
+            -webkit-backdrop-filter: saturate(180%) blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
             transition: background 0.3s ease;
         }
-        
-        .header-content {
+        .header-container {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
         .logo {
-            font-family: 'Comfortaa', cursive;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--cream);
-            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--paper);
             text-decoration: none;
-            position: relative;
-            z-index: 101;
-            margin-left: -12px;
-            margin-right: 20px;
+            white-space: nowrap;
         }
-        
-        .logo span { color: var(--lavender); }
-        
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .logo em {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 600;
+        }
         .nav {
             display: flex;
-            gap: 18px;
+            gap: 28px;
             align-items: center;
         }
-        
-        .nav a {
-            color: var(--text-muted);
+        .nav > a {
             text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            color: rgba(255, 255, 255, 0.65);
+            transition: color 0.25s ease;
             white-space: nowrap;
-            position: relative;
         }
-        
-        .nav a:hover { color: var(--cream); }
-        .nav a.active { color: var(--lavender); }
-        
-        .nav a.active::after {
+        .nav > a:hover {
+            color: #ffffff;
+        }
+        .nav-download-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .nav-cta {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(213, 176, 105, 0.25);
+            padding: 7px 18px;
+            border-radius: 980px;
+            color: var(--paper);
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .nav-download-wrapper:hover .nav-cta {
+            background: rgba(213, 176, 105, 0.1);
+            border-color: var(--gold);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(213, 176, 105, 0.15);
+        }
+        .download-dropdown {
+            position: absolute;
+            top: 130%;
+            right: 0;
+            background: rgba(19, 19, 20, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 160px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+        }
+        .download-dropdown::before {
             content: '';
             position: absolute;
-            bottom: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px; height: 3px;
-            background: var(--lavender);
-            border-radius: 50%;
+            top: -5px;
+            right: 35px;
+            width: 10px;
+            height: 10px;
+            background: rgba(19, 19, 20, 0.95);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            transform: rotate(45deg);
         }
-        
-        .nav a[href="blog.html"]::before {
-            content: "✦";
-            margin-right: 18px;
-            margin-left: 14px;
-            color: var(--gold);
-            font-size: .7rem;
+        .nav-download-wrapper:hover .download-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
-        
-        .nav a[href="blog.html"],
-        .nav a[href="faq.html"],
-        .nav a[href="collaborate.html"],
-        .nav a[href*="support"]:not(.nav-cta) {
-            color: #D4CBE5;
-        }
-        
-        .nav a[href="blog.html"]:hover,
-        .nav a[href="faq.html"]:hover,
-        .nav a[href="collaborate.html"]:hover,
-        .nav a[href*="support"]:not(.nav-cta):hover {
-            color: #fff;
-        }
-        
-        .nav-cta {
-            background: transparent;
-            border: 1.5px solid var(--gold) !important;
-            padding: 6px 14px;
+        .download-dropdown a {
+            padding: 10px 16px;
             border-radius: 10px;
-            color: var(--gold) !important;
-            font-weight: 700;
-            letter-spacing: .3px;
-            transition: all .3s ease;
-            text-transform: uppercase;
-            font-size: .75rem !important;
+            color: var(--paper);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
         }
-        
-        .nav-cta:hover {
-            background: var(--gold);
-            color: var(--surface-base) !important;
-            box-shadow: 0 0 24px rgba(197,160,89,.35);
-            transform: translateY(-1px);
+        .download-dropdown a:hover {
+            background: rgba(213, 176, 105, 0.15);
+            color: var(--gold);
+            padding-left: 20px;
         }
-        
         .mobile-menu-btn {
             display: none;
-            background: none;
+            background: 0 0;
             border: none;
-            color: var(--lavender);
-            font-size: 1.5rem;
+            color: var(--paper);
             cursor: pointer;
-            position: relative;
-            z-index: 101;
+            transition: color 0.3s ease;
+        }
+        .mobile-menu-btn:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 900px) {
+            .header-container { padding: 0 24px; }
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .nav {
+                display: none;
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                height: calc(100vh - 64px);
+                background: rgba(19, 19, 20, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 40px 24px;
+                gap: 24px;
+                overflow-y: auto;
+            }
+            .nav.mobile-menu-active { display: flex; }
+            .nav > a {
+                font-size: 1.2rem;
+                color: var(--paper);
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+                padding-bottom: 16px;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-download-wrapper { width: 100%; margin-top: 10px; }
+            .nav-download-wrapper > .nav-cta { display: none; }
+            .download-dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+                gap: 12px;
+            }
+            .download-dropdown::before { display: none; }
+            .download-dropdown a {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(213, 176, 105, 0.25);
+                justify-content: center;
+                padding: 14px 20px;
+                border-radius: 980px;
+                font-weight: 500;
+                width: 100%;
+            }
+            .download-dropdown a:hover {
+                padding-left: 16px;
+            }
         }
         
         /* === HERO === */
@@ -343,21 +440,13 @@
             padding: 5px;
             backdrop-filter: blur(40px) saturate(180%);
             -webkit-backdrop-filter: blur(40px) saturate(180%);
-            box-shadow: 
-                0 8px 32px rgba(0,0,0,0.3),
-                inset 0 1px 0 rgba(255,255,255,0.06),
-                inset 0 -1px 0 rgba(0,0,0,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.1);
             transition: border-color 0.4s ease, box-shadow 0.4s ease;
         }
-        
         .subscribe-form:focus-within {
             border-color: rgba(139, 122, 168, 0.35);
-            box-shadow: 
-                0 8px 32px rgba(0,0,0,0.3),
-                0 0 20px rgba(139, 122, 168, 0.08),
-                inset 0 1px 0 rgba(255,255,255,0.06);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 20px rgba(139, 122, 168, 0.08), inset 0 1px 0 rgba(255,255,255,0.06);
         }
-
         .subscribe-form input {
             flex: 1;
             background: transparent;
@@ -368,9 +457,7 @@
             font-size: 0.92rem;
             outline: none;
         }
-
         .subscribe-form input::placeholder { color: #7E7593; }
-
         .subscribe-form button {
             background: linear-gradient(135deg, var(--lavender), #9B8ABF);
             color: var(--surface-base);
@@ -385,7 +472,6 @@
             white-space: nowrap;
             box-shadow: 0 2px 8px rgba(139, 122, 168, 0.20);
         }
-
         .subscribe-form button:hover {
             background: linear-gradient(135deg, #a08ec0, #b0a0d0);
             transform: scale(1.03);
@@ -406,7 +492,6 @@
             margin: 0 auto var(--sp-4);
             position: relative;
         }
-
         .blog-search input {
             width: 100%;
             background: rgba(35, 35, 37, 0.35);
@@ -422,14 +507,11 @@
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.03);
         }
-
         .blog-search input::placeholder { color: var(--text-muted); }
-
         .blog-search input:focus {
             border-color: rgba(139, 122, 168, 0.30);
             box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(139, 122, 168, 0.08);
         }
-
         .blog-search-icon {
             position: absolute;
             left: 16px;
@@ -439,7 +521,6 @@
             font-size: 0.9rem;
             pointer-events: none;
         }
-
         .blog-search .search-clear {
             position: absolute;
             right: 14px;
@@ -457,11 +538,10 @@
             justify-content: center;
             transition: background 0.2s ease;
         }
-
         .blog-search .search-clear.visible { display: flex; }
         .blog-search .search-clear:hover { background: rgba(139, 122, 168, 0.25); }
         
-        /* === CATEGORY FILTER — iOS Frosted Glass Capsules === */
+        /* === CATEGORY FILTER === */
         .category-filter {
             display: flex;
             flex-wrap: wrap;
@@ -472,7 +552,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
         .filter-btn {
             background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(40px) saturate(180%);
@@ -488,177 +567,54 @@
             font-family: inherit;
             position: relative;
             letter-spacing: 0.3px;
-            box-shadow: 
-                0 1px 3px rgba(0,0,0,0.2),
-                0 4px 12px rgba(0,0,0,0.08),
-                inset 0 1px 0 rgba(255,255,255,0.08),
-                inset 0 -0.5px 0 rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -0.5px 0 rgba(0,0,0,0.1);
         }
-        
         .filter-btn:hover {
             color: var(--text-secondary);
             background: rgba(255, 255, 255, 0.07);
             border-color: rgba(255, 255, 255, 0.14);
             transform: translateY(-1px);
-            box-shadow: 
-                0 2px 6px rgba(0,0,0,0.25),
-                0 8px 20px rgba(0,0,0,0.10),
-                inset 0 1px 0 rgba(255,255,255,0.12),
-                inset 0 -0.5px 0 rgba(0,0,0,0.1);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25), 0 8px 20px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -0.5px 0 rgba(0,0,0,0.1);
         }
-        
         .filter-btn.active {
             background: rgba(197, 160, 89, 0.10);
             border-color: rgba(197, 160, 89, 0.22);
             color: var(--gold);
             backdrop-filter: blur(40px) saturate(200%);
             -webkit-backdrop-filter: blur(40px) saturate(200%);
-            box-shadow:
-                0 2px 8px rgba(0,0,0,0.25),
-                0 6px 16px rgba(0,0,0,0.10),
-                inset 0 1px 0 rgba(255,255,255,0.12),
-                inset 0 -0.5px 0 rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -0.5px 0 rgba(0,0,0,0.08);
             transform: scale(1.03);
         }
-        
-        /* Per-category default tints */
-        .filter-btn[data-category="personal-story"] {
-            border-color: rgba(201, 189, 168, 0.10);
-            color: rgba(201, 189, 168, 0.80);
-        }
-        .filter-btn[data-category="personal-story"]:hover {
-            background: rgba(201, 189, 168, 0.06);
-            border-color: rgba(201, 189, 168, 0.20);
-            color: var(--cat-personal);
-        }
-
-        .filter-btn[data-category="science"] {
-            border-color: rgba(107, 155, 170, 0.10);
-            color: rgba(107, 155, 170, 0.80);
-        }
-        .filter-btn[data-category="science"]:hover {
-            background: rgba(107, 155, 170, 0.06);
-            border-color: rgba(107, 155, 170, 0.20);
-            color: var(--cat-science);
-        }
-
-        .filter-btn[data-category="app-guide"] {
-            border-color: rgba(197, 160, 89, 0.10);
-            color: rgba(197, 160, 89, 0.80);
-        }
-        .filter-btn[data-category="app-guide"]:hover {
-            background: rgba(197, 160, 89, 0.06);
-            border-color: rgba(197, 160, 89, 0.20);
-            color: var(--cat-guide);
-        }
-
-        .filter-btn[data-category="self-care"] {
-            border-color: rgba(106, 170, 122, 0.10);
-            color: rgba(106, 170, 122, 0.80);
-        }
-        .filter-btn[data-category="self-care"]:hover {
-            background: rgba(106, 170, 122, 0.06);
-            border-color: rgba(106, 170, 122, 0.20);
-            color: var(--cat-selfcare);
-        }
-
-        .filter-btn[data-category="narrative-therapy"] {
-            border-color: rgba(139, 122, 168, 0.10);
-            color: rgba(139, 122, 168, 0.80);
-        }
-        .filter-btn[data-category="narrative-therapy"]:hover {
-            background: rgba(139, 122, 168, 0.06);
-            border-color: rgba(139, 122, 168, 0.20);
-            color: var(--cat-narrative);
-        }
-
-        .filter-btn[data-category="tips"] {
-            border-color: rgba(184, 168, 146, 0.10);
-            color: rgba(184, 168, 146, 0.80);
-        }
-        .filter-btn[data-category="tips"]:hover {
-            background: rgba(184, 168, 146, 0.06);
-            border-color: rgba(184, 168, 146, 0.20);
-            color: var(--cat-tips);
-        }
-
-        .filter-btn[data-category="triggers"] {
-            border-color: rgba(170, 142, 107, 0.10);
-            color: rgba(170, 142, 107, 0.80);
-        }
-        .filter-btn[data-category="triggers"]:hover {
-            background: rgba(170, 142, 107, 0.06);
-            border-color: rgba(170, 142, 107, 0.20);
-            color: var(--cat-triggers);
-        }
-
-        .filter-btn[data-category="understanding"] {
-            border-color: rgba(123, 165, 192, 0.10);
-            color: rgba(123, 165, 192, 0.80);
-        }
-        .filter-btn[data-category="understanding"]:hover {
-            background: rgba(123, 165, 192, 0.06);
-            border-color: rgba(123, 165, 192, 0.20);
-            color: var(--cat-understanding);
-        }
-        
-        /* Per-category active states */
-        .filter-btn.active[data-category="personal-story"] {
-            background: rgba(201, 189, 168, 0.12);
-            border-color: rgba(201, 189, 168, 0.20);
-            color: var(--cat-personal);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(201, 189, 168, 0.12), inset 0 -0.5px 0 rgba(0,0,0,0.08);
-        }
-        .filter-btn.active[data-category="science"] {
-            background: rgba(107, 155, 170, 0.12);
-            border-color: rgba(107, 155, 170, 0.20);
-            color: var(--cat-science);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(107, 155, 170, 0.12), inset 0 -0.5px 0 rgba(0,0,0,0.08);
-        }
-        .filter-btn.active[data-category="app-guide"] {
-            background: rgba(197, 160, 89, 0.12);
-            border-color: rgba(197, 160, 89, 0.20);
-            color: var(--cat-guide);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(197, 160, 89, 0.12), inset 0 -0.5px 0 rgba(0,0,0,0.08);
-        }
-        .filter-btn.active[data-category="self-care"] {
-            background: rgba(106, 170, 122, 0.12);
-            border-color: rgba(106, 170, 122, 0.20);
-            color: var(--cat-selfcare);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(106, 170, 122, 0.12), inset 0 -0.5px 0 rgba(0,0,0,0.08);
-        }
-        .filter-btn.active[data-category="narrative-therapy"] {
-            background: rgba(139, 122, 168, 0.12);
-            border-color: rgba(139, 122, 168, 0.20);
-            color: var(--cat-narrative);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(139, 122, 168, 0.12), inset 0 -0.5px 0 rgba(0,0,0,0.08);
-        }
-        .filter-btn.active[data-category="tips"] {
-            background: rgba(184, 168, 146, 0.12);
-            border-color: rgba(184, 168, 146, 0.20);
-            color: var(--cat-tips);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(184, 168, 146, 0.12), inset 0 -0.5px 0 rgba(0,0,0,0.08);
-        }
-        .filter-btn.active[data-category="triggers"] {
-            background: rgba(170, 142, 107, 0.12);
-            border-color: rgba(170, 142, 107, 0.20);
-            color: var(--cat-triggers);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(170, 142, 107, 0.12), inset 0 -0.5px 0 rgba(0,0,0,0.08);
-        }
-        .filter-btn.active[data-category="understanding"] {
-            background: rgba(123, 165, 192, 0.12);
-            border-color: rgba(123, 165, 192, 0.20);
-            color: var(--cat-understanding);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(123, 165, 192, 0.12), inset 0 -0.5px 0 rgba(0,0,0,0.08);
-        }
-        
+        .filter-btn[data-category="personal-story"]{border-color:rgba(201,189,168,0.10);color:rgba(201,189,168,0.80)}
+        .filter-btn[data-category="personal-story"]:hover{background:rgba(201,189,168,0.06);border-color:rgba(201,189,168,0.20);color:var(--cat-personal)}
+        .filter-btn[data-category="science"]{border-color:rgba(107,155,170,0.10);color:rgba(107,155,170,0.80)}
+        .filter-btn[data-category="science"]:hover{background:rgba(107,155,170,0.06);border-color:rgba(107,155,170,0.20);color:var(--cat-science)}
+        .filter-btn[data-category="app-guide"]{border-color:rgba(197,160,89,0.10);color:rgba(197,160,89,0.80)}
+        .filter-btn[data-category="app-guide"]:hover{background:rgba(197,160,89,0.06);border-color:rgba(197,160,89,0.20);color:var(--cat-guide)}
+        .filter-btn[data-category="self-care"]{border-color:rgba(106,170,122,0.10);color:rgba(106,170,122,0.80)}
+        .filter-btn[data-category="self-care"]:hover{background:rgba(106,170,122,0.06);border-color:rgba(106,170,122,0.20);color:var(--cat-selfcare)}
+        .filter-btn[data-category="narrative-therapy"]{border-color:rgba(139,122,168,0.10);color:rgba(139,122,168,0.80)}
+        .filter-btn[data-category="narrative-therapy"]:hover{background:rgba(139,122,168,0.06);border-color:rgba(139,122,168,0.20);color:var(--cat-narrative)}
+        .filter-btn[data-category="tips"]{border-color:rgba(184,168,146,0.10);color:rgba(184,168,146,0.80)}
+        .filter-btn[data-category="tips"]:hover{background:rgba(184,168,146,0.06);border-color:rgba(184,168,146,0.20);color:var(--cat-tips)}
+        .filter-btn[data-category="triggers"]{border-color:rgba(170,142,107,0.10);color:rgba(170,142,107,0.80)}
+        .filter-btn[data-category="triggers"]:hover{background:rgba(170,142,107,0.06);border-color:rgba(170,142,107,0.20);color:var(--cat-triggers)}
+        .filter-btn[data-category="understanding"]{border-color:rgba(123,165,192,0.10);color:rgba(123,165,192,0.80)}
+        .filter-btn[data-category="understanding"]:hover{background:rgba(123,165,192,0.06);border-color:rgba(123,165,192,0.20);color:var(--cat-understanding)}
+        .filter-btn.active[data-category="personal-story"]{background:rgba(201,189,168,0.12);border-color:rgba(201,189,168,0.20);color:var(--cat-personal);box-shadow:0 2px 8px rgba(0,0,0,0.25),0 6px 16px rgba(0,0,0,0.10),inset 0 1px 0 rgba(201,189,168,0.12),inset 0 -0.5px 0 rgba(0,0,0,0.08)}
+        .filter-btn.active[data-category="science"]{background:rgba(107,155,170,0.12);border-color:rgba(107,155,170,0.20);color:var(--cat-science);box-shadow:0 2px 8px rgba(0,0,0,0.25),0 6px 16px rgba(0,0,0,0.10),inset 0 1px 0 rgba(107,155,170,0.12),inset 0 -0.5px 0 rgba(0,0,0,0.08)}
+        .filter-btn.active[data-category="app-guide"]{background:rgba(197,160,89,0.12);border-color:rgba(197,160,89,0.20);color:var(--cat-guide);box-shadow:0 2px 8px rgba(0,0,0,0.25),0 6px 16px rgba(0,0,0,0.10),inset 0 1px 0 rgba(197,160,89,0.12),inset 0 -0.5px 0 rgba(0,0,0,0.08)}
+        .filter-btn.active[data-category="self-care"]{background:rgba(106,170,122,0.12);border-color:rgba(106,170,122,0.20);color:var(--cat-selfcare);box-shadow:0 2px 8px rgba(0,0,0,0.25),0 6px 16px rgba(0,0,0,0.10),inset 0 1px 0 rgba(106,170,122,0.12),inset 0 -0.5px 0 rgba(0,0,0,0.08)}
+        .filter-btn.active[data-category="narrative-therapy"]{background:rgba(139,122,168,0.12);border-color:rgba(139,122,168,0.20);color:var(--cat-narrative);box-shadow:0 2px 8px rgba(0,0,0,0.25),0 6px 16px rgba(0,0,0,0.10),inset 0 1px 0 rgba(139,122,168,0.12),inset 0 -0.5px 0 rgba(0,0,0,0.08)}
+        .filter-btn.active[data-category="tips"]{background:rgba(184,168,146,0.12);border-color:rgba(184,168,146,0.20);color:var(--cat-tips);box-shadow:0 2px 8px rgba(0,0,0,0.25),0 6px 16px rgba(0,0,0,0.10),inset 0 1px 0 rgba(184,168,146,0.12),inset 0 -0.5px 0 rgba(0,0,0,0.08)}
+        .filter-btn.active[data-category="triggers"]{background:rgba(170,142,107,0.12);border-color:rgba(170,142,107,0.20);color:var(--cat-triggers);box-shadow:0 2px 8px rgba(0,0,0,0.25),0 6px 16px rgba(0,0,0,0.10),inset 0 1px 0 rgba(170,142,107,0.12),inset 0 -0.5px 0 rgba(0,0,0,0.08)}
+        .filter-btn.active[data-category="understanding"]{background:rgba(123,165,192,0.12);border-color:rgba(123,165,192,0.20);color:var(--cat-understanding);box-shadow:0 2px 8px rgba(0,0,0,0.25),0 6px 16px rgba(0,0,0,0.10),inset 0 1px 0 rgba(123,165,192,0.12),inset 0 -0.5px 0 rgba(0,0,0,0.08)}
         /* === GLASSMORPHISM CAPSULE CARDS === */
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: var(--sp-5);
         }
-        
         .blog-card {
             background: var(--surface-card);
             backdrop-filter: blur(40px) saturate(180%);
@@ -669,12 +625,8 @@
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
-            box-shadow:
-                0 4px 24px rgba(0,0,0,0.15),
-                inset 0 1px 0 rgba(255,255,255,0.04),
-                inset 0 -1px 0 rgba(0,0,0,0.05);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04), inset 0 -1px 0 rgba(0,0,0,0.05);
         }
-        
         .blog-card::before {
             content: '';
             position: absolute;
@@ -684,61 +636,50 @@
             transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
             opacity: 0.5;
         }
-        
-        .blog-card:hover::before {
-            height: 3px;
-            opacity: 1;
-        }
-        
-        .blog-card[data-category="personal-story"]::before { background: linear-gradient(90deg, transparent, var(--cat-personal), transparent); }
-        .blog-card[data-category="science"]::before { background: linear-gradient(90deg, transparent, var(--cat-science), transparent); }
-        .blog-card[data-category="app-guide"]::before { background: linear-gradient(90deg, transparent, var(--cat-guide), transparent); }
-        .blog-card[data-category="self-care"]::before { background: linear-gradient(90deg, transparent, var(--cat-selfcare), transparent); }
-        .blog-card[data-category="narrative-therapy"]::before { background: linear-gradient(90deg, transparent, var(--cat-narrative), transparent); }
-        .blog-card[data-category="tips"]::before { background: linear-gradient(90deg, transparent, var(--cat-tips), transparent); }
-        .blog-card[data-category="triggers"]::before { background: linear-gradient(90deg, transparent, var(--cat-triggers), transparent); }
-        .blog-card[data-category="understanding"]::before { background: linear-gradient(90deg, transparent, var(--cat-understanding), transparent); }
-        
+        .blog-card:hover::before { height: 3px; opacity: 1; }
+        .blog-card[data-category="personal-story"]::before{background:linear-gradient(90deg,transparent,var(--cat-personal),transparent)}
+        .blog-card[data-category="science"]::before{background:linear-gradient(90deg,transparent,var(--cat-science),transparent)}
+        .blog-card[data-category="app-guide"]::before{background:linear-gradient(90deg,transparent,var(--cat-guide),transparent)}
+        .blog-card[data-category="self-care"]::before{background:linear-gradient(90deg,transparent,var(--cat-selfcare),transparent)}
+        .blog-card[data-category="narrative-therapy"]::before{background:linear-gradient(90deg,transparent,var(--cat-narrative),transparent)}
+        .blog-card[data-category="tips"]::before{background:linear-gradient(90deg,transparent,var(--cat-tips),transparent)}
+        .blog-card[data-category="triggers"]::before{background:linear-gradient(90deg,transparent,var(--cat-triggers),transparent)}
+        .blog-card[data-category="understanding"]::before{background:linear-gradient(90deg,transparent,var(--cat-understanding),transparent)}
         .blog-card::after {
             content: '';
             position: absolute;
             bottom: -60px; left: 50%;
             transform: translateX(-50%);
-            width: 80%;
-            height: 80px;
+            width: 80%; height: 80px;
             border-radius: 50%;
             opacity: 0;
             transition: opacity 0.5s ease;
             pointer-events: none;
         }
-        
         .blog-card:hover {
             border-color: var(--border-hover);
             transform: translateY(-8px) scale(1.01);
             background: var(--surface-elevated);
         }
-        
         .blog-card:hover::after { opacity: 1; }
+        .blog-card[data-category="personal-story"]::after{background:radial-gradient(ellipse,rgba(201,189,168,0.08) 0%,transparent 70%)}
+        .blog-card[data-category="science"]::after{background:radial-gradient(ellipse,rgba(107,155,170,0.08) 0%,transparent 70%)}
+        .blog-card[data-category="app-guide"]::after{background:radial-gradient(ellipse,rgba(197,160,89,0.08) 0%,transparent 70%)}
+        .blog-card[data-category="self-care"]::after{background:radial-gradient(ellipse,rgba(106,170,122,0.08) 0%,transparent 70%)}
+        .blog-card[data-category="narrative-therapy"]::after{background:radial-gradient(ellipse,rgba(139,122,168,0.08) 0%,transparent 70%)}
+        .blog-card[data-category="tips"]::after{background:radial-gradient(ellipse,rgba(184,168,146,0.08) 0%,transparent 70%)}
+        .blog-card[data-category="triggers"]::after{background:radial-gradient(ellipse,rgba(170,142,107,0.08) 0%,transparent 70%)}
+        .blog-card[data-category="understanding"]::after{background:radial-gradient(ellipse,rgba(123,165,192,0.08) 0%,transparent 70%)}
+        .blog-card[data-category="personal-story"]:hover{box-shadow:0 24px 64px rgba(0,0,0,0.35),0 0 0 1px rgba(201,189,168,0.12),inset 0 1px 0 rgba(255,255,255,0.06)}
+        .blog-card[data-category="science"]:hover{box-shadow:0 24px 64px rgba(0,0,0,0.35),0 0 0 1px rgba(107,155,170,0.12),inset 0 1px 0 rgba(255,255,255,0.06)}
+        .blog-card[data-category="app-guide"]:hover{box-shadow:0 24px 64px rgba(0,0,0,0.35),0 0 0 1px rgba(197,160,89,0.12),inset 0 1px 0 rgba(255,255,255,0.06)}
+        .blog-card[data-category="self-care"]:hover{box-shadow:0 24px 64px rgba(0,0,0,0.35),0 0 0 1px rgba(106,170,122,0.12),inset 0 1px 0 rgba(255,255,255,0.06)}
+        .blog-card[data-category="narrative-therapy"]:hover{box-shadow:0 24px 64px rgba(0,0,0,0.35),0 0 0 1px rgba(139,122,168,0.12),inset 0 1px 0 rgba(255,255,255,0.06)}
+        .blog-card[data-category="tips"]:hover{box-shadow:0 24px 64px rgba(0,0,0,0.35),0 0 0 1px rgba(184,168,146,0.12),inset 0 1px 0 rgba(255,255,255,0.06)}
+        .blog-card[data-category="triggers"]:hover{box-shadow:0 24px 64px rgba(0,0,0,0.35),0 0 0 1px rgba(170,142,107,0.12),inset 0 1px 0 rgba(255,255,255,0.06)}
+        .blog-card[data-category="understanding"]:hover{box-shadow:0 24px 64px rgba(0,0,0,0.35),0 0 0 1px rgba(123,165,192,0.12),inset 0 1px 0 rgba(255,255,255,0.06)}
         
-        .blog-card[data-category="personal-story"]::after { background: radial-gradient(ellipse, rgba(201, 189, 168, 0.08) 0%, transparent 70%); }
-        .blog-card[data-category="science"]::after { background: radial-gradient(ellipse, rgba(107, 155, 170, 0.08) 0%, transparent 70%); }
-        .blog-card[data-category="app-guide"]::after { background: radial-gradient(ellipse, rgba(197, 160, 89, 0.08) 0%, transparent 70%); }
-        .blog-card[data-category="self-care"]::after { background: radial-gradient(ellipse, rgba(106, 170, 122, 0.08) 0%, transparent 70%); }
-        .blog-card[data-category="narrative-therapy"]::after { background: radial-gradient(ellipse, rgba(139, 122, 168, 0.08) 0%, transparent 70%); }
-        .blog-card[data-category="tips"]::after { background: radial-gradient(ellipse, rgba(184, 168, 146, 0.08) 0%, transparent 70%); }
-        .blog-card[data-category="triggers"]::after { background: radial-gradient(ellipse, rgba(170, 142, 107, 0.08) 0%, transparent 70%); }
-        .blog-card[data-category="understanding"]::after { background: radial-gradient(ellipse, rgba(123, 165, 192, 0.08) 0%, transparent 70%); }
-        
-        .blog-card[data-category="personal-story"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(201, 189, 168, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
-        .blog-card[data-category="science"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(107, 155, 170, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
-        .blog-card[data-category="app-guide"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(197, 160, 89, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
-        .blog-card[data-category="self-care"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(106, 170, 122, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
-        .blog-card[data-category="narrative-therapy"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(139, 122, 168, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
-        .blog-card[data-category="tips"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(184, 168, 146, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
-        .blog-card[data-category="triggers"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(170, 142, 107, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
-        .blog-card[data-category="understanding"]:hover { box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(123, 165, 192, 0.12), inset 0 1px 0 rgba(255,255,255,0.06); }
-        
-        /* === PREMIUM BLOG TAGS === */
+        /* === BLOG TAGS === */
         .blog-tag {
             display: inline-block;
             font-size: 0.65rem;
@@ -753,314 +694,74 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
         }
+        .blog-card:hover .blog-tag { opacity: 1; transform: translateY(-1px); }
+        .blog-card[data-category="personal-story"] .blog-tag{background:linear-gradient(135deg,rgba(201,189,168,0.10),rgba(201,189,168,0.06));border:1px solid rgba(201,189,168,0.15);color:var(--cat-personal);text-shadow:0 0 12px rgba(201,189,168,0.25);box-shadow:inset 0 1px 0 rgba(201,189,168,0.08),0 1px 3px rgba(0,0,0,0.2)}
+        .blog-card[data-category="science"] .blog-tag{background:linear-gradient(135deg,rgba(107,155,170,0.10),rgba(107,155,170,0.06));border:1px solid rgba(107,155,170,0.15);color:var(--cat-science);text-shadow:0 0 12px rgba(107,155,170,0.25);box-shadow:inset 0 1px 0 rgba(107,155,170,0.08),0 1px 3px rgba(0,0,0,0.2)}
+        .blog-card[data-category="app-guide"] .blog-tag{background:linear-gradient(135deg,rgba(197,160,89,0.10),rgba(197,160,89,0.06));border:1px solid rgba(197,160,89,0.15);color:var(--cat-guide);text-shadow:0 0 12px rgba(197,160,89,0.25);box-shadow:inset 0 1px 0 rgba(197,160,89,0.08),0 1px 3px rgba(0,0,0,0.2)}
+        .blog-card[data-category="self-care"] .blog-tag{background:linear-gradient(135deg,rgba(106,170,122,0.10),rgba(106,170,122,0.06));border:1px solid rgba(106,170,122,0.15);color:var(--cat-selfcare);text-shadow:0 0 12px rgba(106,170,122,0.25);box-shadow:inset 0 1px 0 rgba(106,170,122,0.08),0 1px 3px rgba(0,0,0,0.2)}
+        .blog-card[data-category="narrative-therapy"] .blog-tag{background:linear-gradient(135deg,rgba(139,122,168,0.10),rgba(139,122,168,0.06));border:1px solid rgba(139,122,168,0.15);color:var(--cat-narrative);text-shadow:0 0 12px rgba(139,122,168,0.25);box-shadow:inset 0 1px 0 rgba(139,122,168,0.08),0 1px 3px rgba(0,0,0,0.2)}
+        .blog-card[data-category="tips"] .blog-tag{background:linear-gradient(135deg,rgba(184,168,146,0.10),rgba(184,168,146,0.06));border:1px solid rgba(184,168,146,0.15);color:var(--cat-tips);text-shadow:0 0 12px rgba(184,168,146,0.25);box-shadow:inset 0 1px 0 rgba(184,168,146,0.08),0 1px 3px rgba(0,0,0,0.2)}
+        .blog-card[data-category="triggers"] .blog-tag{background:linear-gradient(135deg,rgba(170,142,107,0.10),rgba(170,142,107,0.06));border:1px solid rgba(170,142,107,0.15);color:var(--cat-triggers);text-shadow:0 0 12px rgba(170,142,107,0.25);box-shadow:inset 0 1px 0 rgba(170,142,107,0.08),0 1px 3px rgba(0,0,0,0.2)}
+        .blog-card[data-category="understanding"] .blog-tag{background:linear-gradient(135deg,rgba(123,165,192,0.10),rgba(123,165,192,0.06));border:1px solid rgba(123,165,192,0.15);color:var(--cat-understanding);text-shadow:0 0 12px rgba(123,165,192,0.25);box-shadow:inset 0 1px 0 rgba(123,165,192,0.08),0 1px 3px rgba(0,0,0,0.2)}
         
-        .blog-card:hover .blog-tag {
-            opacity: 1;
-            transform: translateY(-1px);
-        }
-        
-        .blog-card[data-category="personal-story"] .blog-tag {
-            background: linear-gradient(135deg, rgba(201, 189, 168, 0.10), rgba(201, 189, 168, 0.06));
-            border: 1px solid rgba(201, 189, 168, 0.15);
-            color: var(--cat-personal);
-            text-shadow: 0 0 12px rgba(201, 189, 168, 0.25);
-            box-shadow: inset 0 1px 0 rgba(201, 189, 168, 0.08), 0 1px 3px rgba(0,0,0,0.2);
-        }
-        .blog-card[data-category="science"] .blog-tag {
-            background: linear-gradient(135deg, rgba(107, 155, 170, 0.10), rgba(107, 155, 170, 0.06));
-            border: 1px solid rgba(107, 155, 170, 0.15);
-            color: var(--cat-science);
-            text-shadow: 0 0 12px rgba(107, 155, 170, 0.25);
-            box-shadow: inset 0 1px 0 rgba(107, 155, 170, 0.08), 0 1px 3px rgba(0,0,0,0.2);
-        }
-        .blog-card[data-category="app-guide"] .blog-tag {
-            background: linear-gradient(135deg, rgba(197, 160, 89, 0.10), rgba(197, 160, 89, 0.06));
-            border: 1px solid rgba(197, 160, 89, 0.15);
-            color: var(--cat-guide);
-            text-shadow: 0 0 12px rgba(197, 160, 89, 0.25);
-            box-shadow: inset 0 1px 0 rgba(197, 160, 89, 0.08), 0 1px 3px rgba(0,0,0,0.2);
-        }
-        .blog-card[data-category="self-care"] .blog-tag {
-            background: linear-gradient(135deg, rgba(106, 170, 122, 0.10), rgba(106, 170, 122, 0.06));
-            border: 1px solid rgba(106, 170, 122, 0.15);
-            color: var(--cat-selfcare);
-            text-shadow: 0 0 12px rgba(106, 170, 122, 0.25);
-            box-shadow: inset 0 1px 0 rgba(106, 170, 122, 0.08), 0 1px 3px rgba(0,0,0,0.2);
-        }
-        .blog-card[data-category="narrative-therapy"] .blog-tag {
-            background: linear-gradient(135deg, rgba(139, 122, 168, 0.10), rgba(139, 122, 168, 0.06));
-            border: 1px solid rgba(139, 122, 168, 0.15);
-            color: var(--cat-narrative);
-            text-shadow: 0 0 12px rgba(139, 122, 168, 0.25);
-            box-shadow: inset 0 1px 0 rgba(139, 122, 168, 0.08), 0 1px 3px rgba(0,0,0,0.2);
-        }
-        .blog-card[data-category="tips"] .blog-tag {
-            background: linear-gradient(135deg, rgba(184, 168, 146, 0.10), rgba(184, 168, 146, 0.06));
-            border: 1px solid rgba(184, 168, 146, 0.15);
-            color: var(--cat-tips);
-            text-shadow: 0 0 12px rgba(184, 168, 146, 0.25);
-            box-shadow: inset 0 1px 0 rgba(184, 168, 146, 0.08), 0 1px 3px rgba(0,0,0,0.2);
-        }
-        .blog-card[data-category="triggers"] .blog-tag {
-            background: linear-gradient(135deg, rgba(170, 142, 107, 0.10), rgba(170, 142, 107, 0.06));
-            border: 1px solid rgba(170, 142, 107, 0.15);
-            color: var(--cat-triggers);
-            text-shadow: 0 0 12px rgba(170, 142, 107, 0.25);
-            box-shadow: inset 0 1px 0 rgba(170, 142, 107, 0.08), 0 1px 3px rgba(0,0,0,0.2);
-        }
-        .blog-card[data-category="understanding"] .blog-tag {
-            background: linear-gradient(135deg, rgba(123, 165, 192, 0.10), rgba(123, 165, 192, 0.06));
-            border: 1px solid rgba(123, 165, 192, 0.15);
-            color: var(--cat-understanding);
-            text-shadow: 0 0 12px rgba(123, 165, 192, 0.25);
-            box-shadow: inset 0 1px 0 rgba(123, 165, 192, 0.08), 0 1px 3px rgba(0,0,0,0.2);
-        }
-        
-        .blog-card h2 {
-            font-size: 1.12rem;
-            margin-bottom: var(--sp-2);
-            color: var(--text-heading);
-            font-weight: 600;
-            line-height: 1.35;
-            transition: color 0.3s ease;
-        }
-        
+        .blog-card h2 { font-size: 1.12rem; margin-bottom: var(--sp-2); color: var(--text-heading); font-weight: 600; line-height: 1.35; transition: color 0.3s ease; }
         .blog-card:hover h2 { color: #fff; }
-        
-        .blog-card p {
-            color: var(--text-body);
-            font-size: 0.88rem;
-            line-height: 1.7;
-            font-weight: 400;
-            margin-bottom: var(--sp-5);
-        }
-        
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: var(--sp-4);
-            font-size: 0.72rem;
-            color: var(--text-muted);
-        }
-        
-        .blog-date, .blog-read-time {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .read-more {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: var(--sp-3);
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.82rem;
-            transition: all 0.3s ease;
-            letter-spacing: 0.2px;
-        }
-        
-        .read-more .arrow {
-            display: inline-block;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
+        .blog-card p { color: var(--text-body); font-size: 0.88rem; line-height: 1.7; font-weight: 400; margin-bottom: var(--sp-5); }
+        .blog-meta { display: flex; align-items: center; gap: var(--sp-4); font-size: 0.72rem; color: var(--text-muted); }
+        .blog-date, .blog-read-time { display: flex; align-items: center; gap: 6px; }
+        .read-more { display: inline-flex; align-items: center; gap: 6px; margin-top: var(--sp-3); color: var(--gold); text-decoration: none; font-weight: 600; font-size: 0.82rem; transition: all 0.3s ease; letter-spacing: 0.2px; }
+        .read-more .arrow { display: inline-block; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
         .read-more:hover { color: #D5B069; }
         .read-more:hover .arrow { transform: translateX(5px); }
         
         /* === COMING SOON === */
-        .blog-card.coming-soon {
-            opacity: 0.45;
-            pointer-events: none;
-            position: relative;
-        }
-
+        .blog-card.coming-soon { opacity: 0.45; pointer-events: none; position: relative; }
         .blog-card.coming-soon::before { opacity: 0.25 !important; }
-
-        .blog-card.coming-soon:hover {
-            transform: none;
-            border-color: var(--border-glass);
-            background: var(--surface-card);
-        }
-
+        .blog-card.coming-soon:hover { transform: none; border-color: var(--border-glass); background: var(--surface-card); }
         .blog-card.coming-soon .blog-tag { opacity: 0.5; }
-
-        .blog-card.coming-soon .blog-date {
-            color: var(--lavender);
-            opacity: 0.7;
-        }
-        
-        .coming-soon-card {
-            background: rgba(139, 122, 168, 0.04);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px dashed rgba(139, 122, 168, 0.12);
-            border-radius: 20px;
-            padding: var(--sp-10) var(--sp-8);
-            text-align: center;
-        }
-        
-        .coming-soon-card h3 {
-            font-size: 1.05rem;
-            color: var(--lavender);
-            margin-bottom: var(--sp-2);
-            font-weight: 600;
-        }
-        
-        .coming-soon-card p {
-            color: var(--text-muted);
-            font-size: 0.88rem;
-        }
+        .blog-card.coming-soon .blog-date { color: var(--lavender); opacity: 0.7; }
+        .coming-soon-card { background: rgba(139, 122, 168, 0.04); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px dashed rgba(139, 122, 168, 0.12); border-radius: 20px; padding: var(--sp-10) var(--sp-8); text-align: center; }
+        .coming-soon-card h3 { font-size: 1.05rem; color: var(--lavender); margin-bottom: var(--sp-2); font-weight: 600; }
+        .coming-soon-card p { color: var(--text-muted); font-size: 0.88rem; }
         
         /* === SHOW MORE === */
-        .show-more-wrapper {
-            text-align: center;
-            margin-top: var(--sp-8);
-        }
-
-        .show-more-btn {
-            background: rgba(35, 35, 37, 0.45);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border-default);
-            border-radius: 14px;
-            padding: 14px 40px;
-            color: var(--cream);
-            font-family: 'Comfortaa', cursive;
-            font-size: 0.88rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04);
-        }
-
-        .show-more-btn:hover {
-            border-color: var(--border-hover);
-            background: var(--surface-elevated);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
-        }
-
-        .show-more-btn .btn-count {
-            color: var(--text-muted);
-            font-size: 0.78rem;
-            margin-left: 8px;
-        }
-
-        .no-results {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: var(--sp-12) var(--sp-6);
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .no-results span {
-            display: block;
-            font-size: 2rem;
-            margin-bottom: var(--sp-3);
-        }
+        .show-more-wrapper { text-align: center; margin-top: var(--sp-8); }
+        .show-more-btn { background: rgba(35,35,37,0.45); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--border-default); border-radius: 14px; padding: 14px 40px; color: var(--cream); font-family: 'Comfortaa', cursive; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04); }
+        .show-more-btn:hover { border-color: var(--border-hover); background: var(--surface-elevated); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06); }
+        .show-more-btn .btn-count { color: var(--text-muted); font-size: 0.78rem; margin-left: 8px; }
+        .no-results { grid-column: 1 / -1; text-align: center; padding: var(--sp-12) var(--sp-6); color: var(--text-muted); font-size: 0.95rem; }
+        .no-results span { display: block; font-size: 2rem; margin-bottom: var(--sp-3); }
         
         /* NEWSLETTER */
-        .newsletter {
-            margin-top: var(--sp-16);
-            padding: var(--sp-12);
-            background: rgba(35, 35, 37, 0.45);
-            backdrop-filter: blur(40px) saturate(180%);
-            -webkit-backdrop-filter: blur(40px) saturate(180%);
-            border: 1px solid rgba(197, 160, 89, 0.08);
-            border-radius: 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04);
-        }
-        
-        .newsletter::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 200px; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            opacity: 0.4;
-        }
-        
+        .newsletter { margin-top: var(--sp-16); padding: var(--sp-12); background: rgba(35,35,37,0.45); backdrop-filter: blur(40px) saturate(180%); -webkit-backdrop-filter: blur(40px) saturate(180%); border: 1px solid rgba(197,160,89,0.08); border-radius: 20px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04); }
+        .newsletter::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.4; }
         .newsletter h3 { font-size: 1.3rem; color: var(--cream); margin-bottom: var(--sp-2); font-weight: 700; }
         .newsletter p { color: var(--text-secondary); font-size: 0.92rem; margin-bottom: var(--sp-5); }
         .newsletter-note { color: var(--text-muted); font-size: 0.82rem; font-style: italic; }
         
         /* FOOTER */
-        footer {
-            padding: var(--sp-10) 0;
-            border-top: 1px solid var(--border-subtle);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: var(--sp-5);
-        }
-        
+        footer { padding: var(--sp-10) 0; border-top: 1px solid var(--border-subtle); position: relative; z-index: 2; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--sp-5); }
         .footer-links { display: flex; gap: var(--sp-6); flex-wrap: wrap; }
         .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.3s; }
         .footer-links a:hover { color: var(--lavender); }
         .copyright { color: var(--text-muted); font-size: 0.82rem; font-weight: 500; }
         
         /* RESPONSIVE */
-        @media (max-width: 1280px) {
-            .blog-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-
-        @media (max-width: 960px) {
-            .blog-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        
+        @media (max-width: 1280px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 960px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
-            .nav {
-                display: none;
-                position: fixed;
-                top: 70px; left: 0; right: 0;
-                background: rgba(19, 19, 20, 0.98);
-                backdrop-filter: blur(24px);
-                -webkit-backdrop-filter: blur(24px);
-                flex-direction: column;
-                padding: 20px; gap: 0;
-                border-bottom: 1px solid var(--border-default);
-                box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-                z-index: 99;
-            }
-            .nav.mobile-menu-active { display: flex; }
-            .nav a { padding: var(--sp-3) 0; border-bottom: 1px solid var(--border-subtle); display: block; width: 100%; }
-            .nav a:last-child { border-bottom: none; }
-            .nav a.active::after { display: none; }
-            .nav a[href="blog.html"]::before { display: none; }
-            .nav-cta { width: 100%; text-align: center; padding: 14px 20px !important; margin-top: var(--sp-3); border-radius: 12px; background: rgba(197, 160, 89, 0.08) !important; }
-            .mobile-menu-btn { display: block; }
             .blog-hero h1 { font-size: 2.2rem; letter-spacing: -0.5px; }
             .blog-hero { padding: 120px 0 60px; min-height: 340px; }
             .blog-grid { grid-template-columns: 1fr; gap: var(--sp-4); }
             .blog-card { padding: var(--sp-6); border-radius: 16px; }
-            .category-filter {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                justify-content: flex-start;
-                padding-bottom: 8px;
-                gap: 6px;
-            }
+            .category-filter { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; justify-content: flex-start; padding-bottom: 8px; gap: 6px; }
             .category-filter::-webkit-scrollbar { display: none; }
             .filter-btn { padding: 8px 14px; font-size: 0.75rem; white-space: nowrap; }
             .footer-content { flex-direction: column; text-align: center; }
             .fireflies { display: none; }
             .subscribe-form { flex-direction: column; background: transparent; border: none; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; padding: 0; }
-            .subscribe-form input { background: rgba(35, 35, 37, 0.6); border: 1px solid rgba(139, 122, 168, 0.18); border-radius: 12px; margin-bottom: 10px; }
+            .subscribe-form input { background: rgba(35,35,37,0.6); border: 1px solid rgba(139,122,168,0.18); border-radius: 12px; margin-bottom: 10px; }
             .subscribe-form button { border-radius: 12px; padding: 14px; }
             .newsletter { padding: var(--sp-8) var(--sp-6); }
         }
@@ -1070,22 +771,39 @@
     <div class="fireflies" id="fireflies"></div>
     
     <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/mi-icon.png" alt="Mi — your gentle migraine companion">
+                <span>M<em>I</em>graine Companion</span>
+            </a>
             <nav class="nav">
-                <a href="index.html#screenshots">App</a>
-                <a href="index.html#how-it-works">How It Works</a>
-                <a href="index.html#different">Approach</a>
-                <a href="index.html#science">Science</a>
+                <a href="index.html">App</a>
                 <a href="index.html#features">Features</a>
                 <a href="index.html#story">Story</a>
-                <a href="blog.html" class="active">Blog</a>
                 <a href="faq.html">FAQ</a>
                 <a href="collaborate.html">Collaborate</a>
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
-                <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="nav-cta" target="_blank">Download</a>
+                
+                <div class="nav-download-wrapper">
+                    <span class="nav-cta">Download</span>
+                    <div class="download-dropdown">
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" target="_blank">
+                            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;margin-right:8px;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.19 2.31-.88 3.5-.8 1.19.05 2.18.42 2.92 1.05-1.92 1.25-1.57 3.52.28 4.35-.45 1.34-1.12 2.76-1.78 3.57zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                            App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" target="_blank">
+                            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;margin-right:8px;"><path d="M17.523 15.341l2.366 4.103a.563.563 0 0 1-.772.772l-2.404-1.385A11.378 11.378 0 0 1 12 19.882c-1.636 0-3.18-.344-4.577-.962l-2.406 1.385a.563.563 0 0 1-.771-.772l2.365-4.103C4.246 13.568 2.75 10.966 2.75 8h18.5c0 2.966-1.496 5.568-3.727 7.341zM8.318 11.516a1.265 1.265 0 1 0 0-2.531 1.265 1.265 0 0 0 0 2.531zm7.364 0a1.265 1.265 0 1 0 0-2.531 1.265 1.265 0 0 0 0 2.531zM5.526 6.368L4.17 4.018a.563.563 0 0 1 .974-.563l1.418 2.457a11.516 11.516 0 0 1 10.876 0l1.418-2.457a.563.563 0 1 1 .974.563l-1.355 2.35C20.505 6.941 21.602 7.781 22 8.75H2c.398-.969 1.495-1.809 3.526-2.382z"/></svg>
+                            Google Play
+                        </a>
+                    </div>
+                </div>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
+            
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" style="width: 28px; height: 28px; fill: currentColor;">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -1129,10 +847,7 @@
                         <span class="blog-tag">Personal Story</span>
                         <h2>I Built a Migraine App During 30 Years of Pain (and a War)</h2>
                         <p>How chronic illness, wartime development, and narrative therapy came together to create something "good, beautiful, and warm". A journey from 15-20 attacks per month to 3-4.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 January 27, 2026</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 January 27, 2026</span><span class="blog-read-time">⏱ 8 min read</span></div>
                         <a href="article-30-years.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1140,10 +855,7 @@
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>Why We Don't Fight Migraines</h2>
                         <p>The science behind companionization — and why treating your migraine as a companion works better than treating it as an enemy. Discover how externalization can reduce self-blame and increase your sense of control.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 January 28, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 January 28, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="article-narrative-therapy.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1151,10 +863,7 @@
                         <span class="blog-tag">Self-Care</span>
                         <h2>The 4-7-8 Breathing Technique</h2>
                         <p>How this simple breathing exercise can help during migraine attacks — and why Mi loves it too. Learn the science behind controlled breathing and its effect on your nervous system.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 January 28, 2026</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 January 28, 2026</span><span class="blog-read-time">⏱ 6 min read</span></div>
                         <a href="article-478-breathing.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1162,10 +871,7 @@
                         <span class="blog-tag">Tips</span>
                         <h2>Understanding Your Triggers</h2>
                         <p>Mi's mood stones can reveal patterns you never noticed. Here's how to read them and use this information to prevent future attacks.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 January 28, 2026</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 January 28, 2026</span><span class="blog-read-time">⏱ 6 min read</span></div>
                         <a href="article-understanding-triggers.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1173,10 +879,7 @@
                         <span class="blog-tag">Science</span>
                         <h2>The Storm Before the Storm</h2>
                         <p>Your attack doesn't begin when the pain starts — it begins up to 48 hours earlier. Learn how Mi watches 40+ factors to see the storm before it arrives.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 January 28, 2026</span>
-                            <span class="blog-read-time">⏱ 12 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 January 28, 2026</span><span class="blog-read-time">⏱ 12 min read</span></div>
                         <a href="article-prediction.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1184,10 +887,7 @@
                         <span class="blog-tag">App Guide</span>
                         <h2>Meet Mi: The Monster Who Wants to Sleep</h2>
                         <p>Mi isn't your enemy — Mi is your companion. Discover the philosophy behind MIgraine Monster and how caring for yourself calms the creature within.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 January 29, 2026</span>
-                            <span class="blog-read-time">⏱ 5 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 January 29, 2026</span><span class="blog-read-time">⏱ 5 min read</span></div>
                         <a href="meet-mi.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1195,10 +895,7 @@
                         <span class="blog-tag">Science</span>
                         <h2>Why Your Brain Hates Mondays: Weekend Migraines Explained</h2>
                         <p>The frustrating phenomenon of getting migraines on your days off. Learn about cortisol, "let-down headaches," and why relaxation can trigger attacks.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 January 30, 2026</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 January 30, 2026</span><span class="blog-read-time">⏱ 8 min read</span></div>
                         <a href="article-weekend-migraines.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1206,10 +903,7 @@
                         <span class="blog-tag">Triggers</span>
                         <h2>The Caffeine Paradox: Friend, Foe, or Both?</h2>
                         <p>Coffee can trigger migraines — and also relieve them. Unravel the science behind this paradox and find your personal caffeine balance.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 January 31, 2026</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 January 31, 2026</span><span class="blog-read-time">⏱ 6 min read</span></div>
                         <a href="article-caffeine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1217,10 +911,7 @@
                         <span class="blog-tag">Understanding</span>
                         <h2>Migraine Hangover: The Phase No One Talks About</h2>
                         <p>The pain is gone, but you feel like a zombie. Postdrome is real — and understanding it can help you stop blaming yourself for "being lazy."</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 1, 2026</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 1, 2026</span><span class="blog-read-time">⏱ 8 min read</span></div>
                         <a href="article-postdrome.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1228,10 +919,7 @@
                         <span class="blog-tag">Triggers</span>
                         <h2>The Trap of Relief: When Your Medicine Becomes Your Migraine</h2>
                         <p>The cruelest paradox in migraine treatment: the pill that saves you can become the pill that enslaves you. Understanding medication overuse headache — without shame.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 2, 2026</span>
-                            <span class="blog-read-time">⏱ 10 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 2, 2026</span><span class="blog-read-time">⏱ 10 min read</span></div>
                         <a href="article-moh.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1239,10 +927,7 @@
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>I Am Not My Migraine: Separating Self from Pain</h2>
                         <p>After years of chronic illness, migraine becomes identity. "I am a migraineur." But what if you could untangle yourself from your condition — and rediscover who you are without the pain?</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 3, 2026</span>
-                            <span class="blog-read-time">⏱ 9 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 3, 2026</span><span class="blog-read-time">⏱ 9 min read</span></div>
                         <a href="article-not-my-migraine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1250,10 +935,7 @@
                         <span class="blog-tag">Science</span>
                         <h2>The Exercise Paradox: When Movement Is Medicine</h2>
                         <p>Exercise can trigger an attack — or prevent one. The science behind exertional migraine, and how to make physical activity work for you, not against you.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 4, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 4, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="the-exercise-paradox.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1261,10 +943,7 @@
                         <span class="blog-tag">Personal Story</span>
                         <h2>You Don't Look Sick: The Loneliness of Invisible Pain</h2>
                         <p>"But you seem fine." Five words that cut deeper than the migraine itself. On explaining the unexplainable, seeking validation, and finding people who truly understand.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 4, 2026</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 4, 2026</span><span class="blog-read-time">⏱ 6 min read</span></div>
                         <a href="article-invisible-pain.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1272,10 +951,7 @@
                         <span class="blog-tag">Understanding</span>
                         <h2>When the World Glitches: A Journey Through Migraine Aura</h2>
                         <p>Zigzag lines. Blind spots. The terrifying thought: "Is this a stroke?" For 30% of migraineurs, the attack begins with a visual warning. Here's what's actually happening in your brain.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 5, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 5, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="article-aura.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1283,10 +959,7 @@
                         <span class="blog-tag">Personal Story</span>
                         <h2>The Third Person in Every Room: How Migraine Lives in Your Relationships</h2>
                         <p>Cancelled plans. Darkened bedrooms. The guilt of being a burden. Migraine doesn't just affect you — it moves in with everyone you love. An honest conversation about partnership and chronic pain.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 5, 2026</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 5, 2026</span><span class="blog-read-time">⏱ 8 min read</span></div>
                         <a href="article-relationships.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1294,10 +967,7 @@
                         <span class="blog-tag">Science</span>
                         <h2>The Gut-Brain Highway: How Your Microbiome Talks to Your Migraine</h2>
                         <p>New research reveals a surprising connection between your gut and your head. Discover why Mi tracks your food — and what your stomach is trying to tell you.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 6, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 6, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="the-second-brain.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1305,10 +975,7 @@
                         <span class="blog-tag">Science</span>
                         <h2>Blaming the Barometer: The Weather-Migraine Myth</h2>
                         <p>Everyone says "the pressure dropped." But the science is more complex — and more hopeful — than you think. What actually happens when the storm rolls in.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 6, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 6, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="weather-migraine-myth.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1316,10 +983,7 @@
                         <span class="blog-tag">Triggers</span>
                         <h2>The 24-Hour Rule: Why That Glass of Wine Hits Different</h2>
                         <p>That headache the next morning isn't always a hangover. Learn why alcohol affects migraineurs differently — and how to enjoy a drink without paying the price.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 6, 2026</span>
-                            <span class="blog-read-time">⏱ 12 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 6, 2026</span><span class="blog-read-time">⏱ 12 min read</span></div>
                         <a href="alcohol-migraine-24-hour-rule.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1327,10 +991,7 @@
                         <span class="blog-tag">Understanding</span>
                         <h2>Migraine or Tension? The Question That Changes Everything</h2>
                         <p>Throbbing vs. pressing. One-sided vs. both. Getting it wrong means getting the wrong treatment. Here's how to finally tell the difference.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 7, 2026</span>
-                            <span class="blog-read-time">⏱ 5 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 7, 2026</span><span class="blog-read-time">⏱ 5 min read</span></div>
                         <a href="article-migraine-vs-tension.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1338,10 +999,7 @@
                         <span class="blog-tag">Triggers</span>
                         <h2>The Screen That Stares Back: Digital Life with Migraines</h2>
                         <p>8 hours of screen time, 8 hours of potential triggers. What science actually says about blue light — and practical tips that go beyond "just take breaks."</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 7, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 7, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="screen-migraine-science.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1349,10 +1007,7 @@
                         <span class="blog-tag">Science</span>
                         <h2>Beyond the Pill: What Science Says About Magnesium</h2>
                         <p>Magnesium, riboflavin, CoQ10 — the internet is full of promises. Here's what the research actually supports, and what questions to ask your doctor.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 7, 2026</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 7, 2026</span><span class="blog-read-time">⏱ 6 min read</span></div>
                         <a href="magnesium-riboflavin-coq10-migraine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
                     
@@ -1360,10 +1015,7 @@
                         <span class="blog-tag">Triggers</span>
                         <h2>The Goldilocks Problem: Why Sleep Is Never "Just Right"</h2>
                         <p>Too little triggers an attack. Too much triggers an attack. The maddening science of sleep and migraine — and how to find your personal sweet spot.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 8, 2026</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 8, 2026</span><span class="blog-read-time">⏱ 6 min read</span></div>
                         <a href="the-goldilocks-problem-sleep-migraine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1371,10 +1023,7 @@
                         <span class="blog-tag">Science</span>
                         <h2>The Hormone Rollercoaster: Menstrual Migraines Explained</h2>
                         <p>Why do attacks cluster around your period? The estrogen drop, the prostaglandin surge, and what you can actually do about hormonal migraines.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 February 8, 2026</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 February 8, 2026</span><span class="blog-read-time">⏱ 8 min read</span></div>
                         <a href="article-body-calendar.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1382,10 +1031,7 @@
                         <span class="blog-tag">Understanding</span>
                         <h2>When Words Disappear: The Terror of Migraine Aphasia</h2>
                         <p>You know the word. It's right there. But your mouth won't say it. Understanding the language disruptions that can accompany migraine — and why they're temporary.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 6, 2026</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 6, 2026</span><span class="blog-read-time">⏱ 6 min read</span></div>
                         <a href="article-migraine-aphasia.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1393,20 +1039,15 @@
                         <span class="blog-tag">Understanding</span>
                         <h2>The Smell of Danger: When Perfume Becomes a Weapon</h2>
                         <p>Osmophobia — the intense sensitivity to odors — affects up to 95% of migraineurs during attacks. Why your nose becomes your enemy, and how to protect yourself.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 6, 2026</span>
-                            <span class="blog-read-time">⏱ 9 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 6, 2026</span><span class="blog-read-time">⏱ 9 min read</span></div>
                         <a href="article-osmophobia.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
+
                     <article class="blog-card reveal" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Your Migraine Emergency Kit: Never Be Caught Unprepared</h2>
                         <p>What to pack for work, travel, and life. A practical guide to building your personal migraine survival kit — from medication to comfort items.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 6, 2026</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 6, 2026</span><span class="blog-read-time">⏱ 8 min read</span></div>
                         <a href="article-emergency-kit.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1414,10 +1055,7 @@
                         <span class="blog-tag">Self-Care</span>
                         <h2>Lighting the Way: Creating a Migraine-Friendly Home</h2>
                         <p>Fluorescent flicker, blue light, harsh shadows. Your home might be triggering attacks without you knowing. Simple changes that make a real difference.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 7, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 7, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="article-migraine-friendly-lighting.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1425,10 +1063,7 @@
                         <span class="blog-tag">Understanding</span>
                         <h2>Little Heads, Big Pain: When Migraine Starts in Childhood</h2>
                         <p>Abdominal migraine. Cyclic vomiting. The "growing pains" that aren't growing pains. Understanding pediatric migraine — and helping the children who suffer in silence.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 7, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 7, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="article-pediatric-migraine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1436,10 +1071,7 @@
                         <span class="blog-tag">Tips</span>
                         <h2>The Food Detective: How to Run Your Own Elimination Trial</h2>
                         <p>Cheese? Chocolate? Wine? Everyone has opinions about migraine triggers. Here's how to find YOUR actual triggers through systematic testing — not internet myths.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 7, 2026</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 7, 2026</span><span class="blog-read-time">⏱ 6 min read</span></div>
                         <a href="food-detective.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1447,10 +1079,7 @@
                         <span class="blog-tag">Tips</span>
                         <h2>Traveling with a Monster: A Migraine Survival Guide</h2>
                         <p>Altitude changes, time zones, dehydration, stress. Travel is a minefield for migraineurs. Practical strategies for planes, trains, and adventures abroad.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 8, 2026</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 8, 2026</span><span class="blog-read-time">⏱ 8 min read</span></div>
                         <a href="article-traveling-with-migraine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1458,10 +1087,7 @@
                         <span class="blog-tag">Personal Story</span>
                         <h2>The Conference Room Confession: Migraine at Work</h2>
                         <p>Hiding in bathroom stalls. Pretending to read emails through the blur. The impossible choice between career and health. Stories from the professional frontlines.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 8, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 8, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="article-conference-room-confession.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1469,10 +1095,7 @@
                         <span class="blog-tag">Science</span>
                         <h2>The CGRP Revolution: The Molecule That Changed Everything</h2>
                         <p>For decades, migraine borrowed medications from other conditions. Then scientists found CGRP. The story of how a tiny molecule created the first migraine-specific preventive treatments.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 8, 2026</span>
-                            <span class="blog-read-time">⏱ 10 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 8, 2026</span><span class="blog-read-time">⏱ 10 min read</span></div>
                         <a href="article-cgrp-revolution.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1480,10 +1103,7 @@
                         <span class="blog-tag">Science</span>
                         <h2>31 Needles of Hope: The Truth About Botox for Migraine</h2>
                         <p>It's not about wrinkles. Botox for chronic migraine works through a completely different mechanism. Who it helps, what to expect, and why it takes three months to know.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 9, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 9, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="article-botox-chronic-migraine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1491,10 +1111,7 @@
                         <span class="blog-tag">Self-Care</span>
                         <h2>The Vagus Nerve Hack: Simple Techniques That Calm Your Migraine Brain</h2>
                         <p>Cold water on the wrist. A slow exhale. A hum. Your vagus nerve is the longest cranial nerve — and activating it can dial down migraine sensitivity in minutes.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 9, 2026</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 9, 2026</span><span class="blog-read-time">⏱ 8 min read</span></div>
                         <a href="article-vagus-nerve-migraine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1502,10 +1119,7 @@
                         <span class="blog-tag">Triggers</span>
                         <h2>The Dehydration Equation: Why Water Isn't Enough</h2>
                         <p>You drink eight glasses a day and still get attacks. Turns out, hydration is about electrolyte balance, not just volume. The science your water bottle won't tell you.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 9, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 9, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="article-dehydration-equation.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1513,10 +1127,7 @@
                         <span class="blog-tag">Understanding</span>
                         <h2>The Neck Connection: When Your Spine Talks to Your Brain</h2>
                         <p>Is it migraine or cervicogenic headache? The confusing overlap between neck problems and migraine — and why treating both might be the answer.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 9, 2026</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 9, 2026</span><span class="blog-read-time">⏱ 6 min read</span></div>
                         <a href="article-neck-connection.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1524,10 +1135,7 @@
                         <span class="blog-tag">Understanding</span>
                         <h2>Nine Months of Uncertainty: Migraine During Pregnancy</h2>
                         <p>Some women find relief. Others find new triggers. Navigating migraine when most medications are off-limits — and why the second trimester might surprise you.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 9, 2026</span>
-                            <span class="blog-read-time">⏱ 9 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 9, 2026</span><span class="blog-read-time">⏱ 9 min read</span></div>
                         <a href="article-migraine-pregnancy.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1535,10 +1143,7 @@
                         <span class="blog-tag">Science</span>
                         <h2>The Hyperexcitable Brain: Why Migraineurs Are Wired Differently</h2>
                         <p>Your brain isn't broken — it's hypersensitive. The neuroscience of why some brains react to stimuli that others ignore, and why this "flaw" might also be a gift.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 9, 2026</span>
-                            <span class="blog-read-time">⏱ 9 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 9, 2026</span><span class="blog-read-time">⏱ 9 min read</span></div>
                         <a href="article-hyperexcitable-brain.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1546,10 +1151,7 @@
                         <span class="blog-tag">Self-Care</span>
                         <h2>Ancient Needles, Modern Evidence: Acupuncture for Migraine</h2>
                         <p>Skeptics dismiss it. Believers swear by it. What does the research actually say? A balanced look at acupuncture — who it helps, how it works, and what to expect.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 10, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 10, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="article-acupuncture-migraine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1557,10 +1159,7 @@
                         <span class="blog-tag">Understanding</span>
                         <h2>The 15-Day Line: When Episodic Becomes Chronic</h2>
                         <p>More than 15 headache days per month changes everything — your diagnosis, your treatment options, your identity. Understanding chronic migraine and the path back.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 10, 2026</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 10, 2026</span><span class="blog-read-time">⏱ 8 min read</span></div>
                         <a href="article-chronic-migraine-15-day-line.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
@@ -1568,545 +1167,381 @@
                         <span class="blog-tag">Tips</span>
                         <h2>The Ice vs Heat Debate: What Actually Works?</h2>
                         <p>Cold pack on the forehead? Heat on the neck? Some swear by ice, others by warmth. The science behind temperature therapy — and how to find what works for you.</p>
-                        <div class="blog-meta">
-                             <span class="blog-date">📅 March 10, 2026</span>
-                            <span class="blog-read-time">⏱ 5 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 10, 2026</span><span class="blog-read-time">⏱ 5 min read</span></div>
                         <a href="article-ice-vs-heat.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
-
                     <article class="blog-card reveal" data-category="science">
-    <span class="blog-tag">Science</span>
-    <h2>The Anxious Brain: The Bidirectional Link Between Migraine and Anxiety</h2>
-    <p>Does anxiety trigger migraine, or does migraine cause anxiety? The answer is both — and understanding this connection can change how you treat both conditions.</p>
-    <div class="blog-meta">
-        <span class="blog-date">📅 March 10, 2026</span>
-        <span class="blog-read-time">⏱ 8 min read</span>
-    </div>
-    <a href="article-anxious-brain.html" class="read-more">Read full story <span class="arrow">→</span></a>
-</article>
+                        <span class="blog-tag">Science</span>
+                        <h2>The Anxious Brain: The Bidirectional Link Between Migraine and Anxiety</h2>
+                        <p>Does anxiety trigger migraine, or does migraine cause anxiety? The answer is both — and understanding this connection can change how you treat both conditions.</p>
+                        <div class="blog-meta"><span class="blog-date">📅 March 10, 2026</span><span class="blog-read-time">⏱ 8 min read</span></div>
+                        <a href="article-anxious-brain.html" class="read-more">Read full story <span class="arrow">→</span></a>
+                    </article>
 
                     <article class="blog-card reveal" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Building Your Migraine Team: Beyond the Neurologist</h2>
                         <p>GP, neurologist, headache specialist, therapist, physical therapist. Who do you actually need? How to build a support team that works together for your health.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 10, 2026</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 10, 2026</span><span class="blog-read-time">⏱ 6 min read</span></div>
                         <a href="article-building-migraine-team.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
-                     <article class="blog-card reveal" data-category="understanding">
+                    <article class="blog-card reveal" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The Warning Signs: Reading Your Prodrome Like a Book</h2>
                         <p>Yawning. Cravings. Irritability. Neck stiffness. Your body sends signals hours before the pain. Learning to read the prodrome — and act before it's too late.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">📅 March 10, 2026</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">📅 March 10, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="article-prodrome-warning-signs.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
-
                     <article class="blog-card reveal coming-soon" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Forbidden Molecule: Psilocybin, Psychedelics, and the Future of Migraine</h2>
                         <p>Structurally almost identical to sumatriptan. A Yale trial showed one dose reduced attacks for two weeks. 75% of users in a Canadian survey reported relief. The most controversial — and promising — frontier in migraine research.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 10 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 10 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>The Side Effect Roulette: An Honest Guide to Migraine Preventive Medications</h2>
                         <p>"Dopamax" brain fog. Beta-blocker fatigue. Amitriptyline weight gain. Nobody tells you what preventive meds actually feel like. A no-shame guide to every major class — what to expect, when to push through, and when to switch.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 9 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 9 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Ozempic Effect: Why Weight Loss Drugs Are Reducing Migraines</h2>
                         <p>Patients on GLP-1 medications are reporting fewer attacks — and scientists are paying attention. The emerging link between metabolic health, obesity, neuroinflammation, and migraine chronification.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>The Day After: A Practical Survival Guide for the Migraine Hangover</h2>
                         <p>The pain is gone but you're wrecked. What to eat, drink, and do — and what to avoid — during the postdrome. Practical hacks from the migraine community that actually help you recover faster.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 6 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Doom Scroll Spiral: Social Media, Dopamine, and Your Migraine Brain</h2>
                         <p>It's not just the screen light. It's the anxiety-triggering content, the dopamine loops, the neck bent at 45 degrees for hours. How mindless scrolling is becoming one of the most underrecognized migraine triggers of our time.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>Is This a Stroke? When Migraine Aura Becomes an Emergency</h2>
                         <p>Numbness on one side. Words that won't come. Vision that dissolves. Every migraineur with aura has asked: "Is this the time it's something worse?" How to tell the difference — and when minutes matter.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>Flying with a Ticking Clock: How to Survive Air Travel with Migraine</h2>
                         <p>Cabin pressure drops. Recycled air. Dehydration at 35,000 feet. Why airplanes are a perfect migraine storm — and a pre-flight, in-flight, and post-flight protocol that frequent flyers swear by.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 6 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The Jaw You Clench at Night: TMJ, Bruxism, and the Migraine Connection</h2>
                         <p>You wake up with head pain and blame the pillow. But your jaw has been clenching for hours. The surprising link between your teeth, your trigeminal nerve, and your migraine — and the simple device that might help.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>The McMigraine Phenomenon: What to Eat When an Attack Hits</h2>
                         <p>Fries and a Coke went viral on TikTok as a migraine "cure." The science behind it is real: salt, caffeine, fast carbs. But it's not magic — it's your prodrome talking. What to eat during an attack, and why your cravings are data.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 6 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>Zapping the Pain Away: The Truth About Neuromodulation Devices</h2>
                         <p>Cefaly, gammaCore, SpringTMS, Nerivio — electrical and magnetic devices that promise drug-free relief. What clinical trials actually show, who benefits most, and why your neurologist may not have mentioned them.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 9 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 9 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Climate Migraine: How a Warming Planet Is Changing Your Brain</h2>
                         <p>Every 10°F rise in temperature means 6% more headaches. A 12-year UK study of 400,000 people links air pollution and extreme heat to rising migraine rates. Climate change isn't just an environmental crisis — it's a neurological one.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>Why You Wake Up with a Migraine: The Mystery of Morning Attacks</h2>
                         <p>"I wake up with a migraine almost every day." The most common complaint in migraine communities — and the most overlooked. Sleep apnea, bruxism, circadian cortisol, overnight dehydration, and what your pillow can't fix.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Gepant Generation: Nurtec, Ubrelvy, Qulipta — A Real-World Guide</h2>
                         <p>The first class of migraine drugs that work for both prevention and rescue. No injections, no triptans, no cardiovascular risk. What Reddit debates and clinical data agree on — and where they don't.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Cannabis Question: Relief, Trigger, or Both?</h2>
                         <p>Some swear it aborts attacks. Others say it makes them worse. As legalization expands and the first clinical trials report results, here's what science actually knows — and doesn't — about cannabis and migraine.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>Learning to Control the Uncontrollable: Biofeedback for Migraine</h2>
                         <p>Sensors on your skin. Lines on a screen. And somehow, you learn to control your body's invisible responses. The surprising science of biofeedback training.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 6 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Rose-Colored (or Green) Glasses: Do Tinted Lenses Actually Help?</h2>
                         <p>FL-41 rose tint. Axon Optics. Theraspecs. The claims are bold, and the prices aren't cheap. What research says about precision-tinted lenses for migraine.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 6 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Blood Sugar Rollercoaster: Glucose and Your Migraine Brain</h2>
                         <p>Skipped breakfast. Afternoon crash. That desperate chocolate craving. Your brain runs on glucose — and the ups and downs might be triggering more than you realize.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 6 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>From 20 Days to 2: Stories of Successful Management</h2>
                         <p>It took years. It took failures. It took refusing to give up. Real stories from people who found their way to fewer migraine days — and what they learned along the way.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 10 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 10 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="app-guide">
                         <span class="blog-tag">App Guide</span>
                         <h2>Your First Neurologist Visit: What to Bring, What to Ask</h2>
                         <p>The appointment is finally here. How to make the most of those precious 15 minutes — and how Mi's reports can help you communicate your migraine story clearly.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 5 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 5 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>The Words We Use: How Language Shapes Your Migraine Experience</h2>
                         <p>"Suffering from." "Battling." "Victim of." The words you use to describe your condition aren't neutral — they shape how you feel about it. A guide to rewriting your migraine story.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 6 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>The Grief Nobody Mentions: Mourning a Future That Never Happened</h2>
                         <p>The career you didn't pursue. The trip you cancelled. The child you hesitated to have. Chronic migraine steals futures — and nobody teaches you how to grieve something that never existed.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>The Invisible Tax: What Migraine Actually Costs You</h2>
                         <p>Lost workdays. Medications. Cancelled plans. The career you downshifted. Nobody talks about the financial devastation of chronic migraine — until the bills pile up.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>The Dopamine Diet: How Your Brain's Reward System Affects Your Migraine</h2>
                         <p>That chocolate craving before an attack isn't weakness — it's your dopamine system signaling distress. The science behind prodromal cravings and practical strategies for brain-friendly nutrition.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>The ADHD-Migraine Double Bind: Managing Two Invisible Conditions</h2>
                         <p>Chaotic sleep. Forgotten medications. Hyperstimulation. When ADHD and migraine coexist — and research shows they often do — managing one can sabotage the other. Strategies for both.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>Beyond CGRP: The PACAP Revolution and the Future of Migraine Treatment</h2>
                         <p>For the ~50% who don't respond to anti-CGRP drugs, a new molecule offers hope. PACAP — a completely independent migraine pathway — just passed phase 2 trials. The next chapter in migraine science.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 10 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 10 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="app-guide">
                         <span class="blog-tag">App Guide</span>
                         <h2>Your First 7 Days with Mi: A Gentle Onboarding Guide</h2>
                         <p>Day 1: meet your companion. Day 3: your first diary entry. Day 7: your first patterns emerge. A warm, no-pressure guide to starting your journey with Mi.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 5 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 5 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Histamine Connection: The Trigger Hiding in Your "Healthy" Foods</h2>
                         <p>Avocado. Fermented foods. Aged cheese. Kombucha. Everything wellness culture loves might be flooding your brain with histamine. The overlooked trigger — and how to test if it's yours.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The Migraine-Menopause Storm: When Hormones Change the Rules</h2>
                         <p>Some women find relief after menopause. Others face the worst attacks of their lives. Why perimenopause rewrites everything you knew about your migraine — and what the latest science says about HRT.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 9 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 9 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>The Guilt Epidemic: Why Chronic Illness Turns You Into an Apologist</h2>
                         <p>"Sorry I can't come." "Sorry I'm cancelling again." "Sorry I'm like this." How migraine turns you into a person who apologizes for existing — and how to stop.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>The Silent Partner: A Letter from Someone Who Loves a Migraineur</h2>
                         <p>They watch you disappear into a dark room and feel helpless. They cancel their own plans without telling you. For the first time — the other side of the story.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>The Art of Saying No: Setting Boundaries Without Guilt</h2>
                         <p>FOMO versus an attack. The dinner you shouldn't attend. The project you can't take on. Practical scripts and strategies for protecting your health without destroying your relationships.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 6 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Medical Gaslighting: When "It's Just a Headache" Becomes Medical Trauma</h2>
                         <p>"All your labs are fine, so you're fine." Medical gaslighting topped the 2025 list of patient safety threats. How to recognize it, fight it, and heal from it.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 9 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 9 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="app-guide">
                         <span class="blog-tag">App Guide</span>
                         <h2>Mi's Breathing Garden: How a Game Became a Therapy Tool</h2>
                         <p>Inhale for 4. Hold for 7. Exhale for 8. A flower grows. Mi falls asleep. How a simple breathing game uses vagus nerve science to calm your migraine brain — one bloom at a time.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 5 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 5 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Perfume in the Elevator: Chemical Triggers You Can't Control</h2>
                         <p>A coworker's cologne. Fresh paint. A scented candle in a café. When the world is a minefield of invisible chemical triggers — and you can't just "avoid" them.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>When the ER Doesn't Believe You: Navigating Emergency Care with Migraine</h2>
                         <p>The eye rolls. The drug-seeker suspicion. The hours of waiting. Emergency rooms can be hostile territory for migraineurs. How to prepare, what to say, and when you must go regardless.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>Sparkling Moments: Finding Joy Between the Storms</h2>
                         <p>Michael White called them "sparkling moments" — the times when your illness doesn't define you. Learning to notice, collect, and protect the good days changes everything.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 6 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>Parenting Through the Pain: When Mom or Dad Can't Get Out of Bed</h2>
                         <p>"Mommy's monster woke up today." The guilt of missing school plays, the fear in little eyes, and the quiet heroism of raising children while your brain is at war with itself.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Scattered Brain: How Migraine Rewires Your Memory and Focus</h2>
                         <p>Lost words. Foggy thinking. The name you can't recall. New research shows migraine affects cognition even between attacks — and machine learning is beginning to predict who's most at risk.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>Your Migraine Toolkit: Non-Medication Weapons That Actually Work</h2>
                         <p>Migraine caps. Green light lamps. Peppermint oil. Compression bands. A systematic review of what science actually supports — and what's just marketing.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="app-guide">
                         <span class="blog-tag">App Guide</span>
                         <h2>Mi Lab Explained: Your Personal Migraine Laboratory</h2>
                         <p>Caffeine Profile Quiz. Coffee Shop Card. What's in My Cup. Gentle Exit. Four tools that turn your daily habits into scientific data — and help you find your personal thresholds.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 6 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 6 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The Comorbidity Web: Migraine's Invisible Connections to Everything Else</h2>
                         <p>Depression. Anxiety. Fibromyalgia. IBS. Raynaud's. It's not bad luck — it's shared neurobiology. Why treating migraine in isolation often fails, and what "whole-person" care actually means.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 9 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 9 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>Writing the Letter You'll Never Send: A Narrative Therapy Exercise</h2>
                         <p>A letter to your migraine. A letter to yourself before the diagnosis. A letter to yourself five years from now. Three therapeutic writing exercises that science says can reduce attack frequency.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>The Insurance Maze: Getting Your Migraine Treatment Approved</h2>
                         <p>Prior authorization. Step therapy. Denied claims. The bureaucratic nightmare between you and the medication that works. How to fight back — and win.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Tyramine Trap: Why Aged, Fermented, and Cured Foods Fight Your Brain</h2>
                         <p>Salami. Blue cheese. Soy sauce. Sauerkraut. The "cheese migraine" isn't a myth — but your genetics determine whether tyramine is your enemy. How to find out.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="personal-story">
                         <span class="blog-tag">Personal Story</span>
                         <h2>The Man in the Shadows: Migraine Doesn't Care About Your Gender</h2>
                         <p>"Men don't get migraines." Except 1 in 15 do — and they're less likely to be diagnosed, less likely to seek help, and more likely to suffer in silence. It's time to talk about it.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="app-guide">
                         <span class="blog-tag">App Guide</span>
                         <h2>Mi After Dark: How the App Adapts to Your Worst Moments</h2>
                         <p>When you can barely open your eyes, the last thing you need is a bright screen. How Mi's dark theme, minimal taps, and gentle voice were designed for the moments when everything hurts.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 5 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 5 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>The Stories Others Tell About You: Reclaiming Your Narrative</h2>
                         <p>"Just drink more water." "My aunt cured hers with yoga." How other people's stories replace your own experience — and how to take back the right to define your journey.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>The Green Light Experiment: One Wavelength That Calms the Migraine Brain</h2>
                         <p>Harvard research found that narrow-band green light (520 nm) is the only wavelength that doesn't worsen migraine — and may reduce pain by 20%. A practical guide to bringing it home.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>The Sex Talk Nobody's Having: Intimacy, Desire, and Migraine</h2>
                         <p>Fear of triggering an attack. Medications that kill desire. The guilt of saying "not tonight" for real. Migraine's impact on intimacy is devastating — and almost never discussed.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 8 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
                     <article class="blog-card reveal coming-soon" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>The Witness: Why Being Believed Matters More Than Being Fixed</h2>
                         <p>Sometimes the most healing thing isn't a pill or a technique — it's someone who simply says "I see you." The therapeutic power of witnessing, and why acknowledgment changes the brain.</p>
-                        <div class="blog-meta">
-                            <span class="blog-date">✨ Coming soon</span>
-                            <span class="blog-read-time">⏱ 7 min read</span>
-                        </div>
+                        <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 7 min read</span></div>
                     </article>
                     
                     <div class="coming-soon-card">
@@ -2194,22 +1629,13 @@
 
     function renderCards() {
         const filtered = getFilteredCards();
-
-        blogCards.forEach(card => {
-            card.style.display = 'none';
-            card.style.order = '';
-        });
-
+        blogCards.forEach(card => { card.style.display = 'none'; card.style.order = ''; });
         const toShow = filtered.slice(0, visibleCount);
-        toShow.forEach(card => {
-            card.style.display = 'block';
-        });
-
+        toShow.forEach(card => { card.style.display = 'block'; });
         if (comingSoonCard) {
             const hasComingSoon = filtered.some(c => c.classList.contains('coming-soon'));
             comingSoonCard.style.display = (currentCategory === 'all' || hasComingSoon) && !currentSearch ? 'block' : 'none';
         }
-
         const remaining = filtered.length - visibleCount;
         if (remaining > 0) {
             showMoreWrapper.style.display = 'block';
@@ -2217,10 +1643,8 @@
         } else {
             showMoreWrapper.style.display = 'none';
         }
-
         const existingNoResults = blogGrid.querySelector('.no-results');
         if (existingNoResults) existingNoResults.remove();
-
         if (filtered.length === 0) {
             const noResults = document.createElement('div');
             noResults.className = 'no-results';
@@ -2260,9 +1684,7 @@
         renderCards();
         const filtered = getFilteredCards();
         const newFirst = filtered[visibleCount - CARDS_PER_PAGE];
-        if (newFirst) {
-            newFirst.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+        if (newFirst) { newFirst.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
     });
 
     renderCards();
@@ -2270,30 +1692,16 @@
     // === SCROLL REVEAL ===
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                revealObserver.unobserve(entry.target);
-            }
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
         });
-    }, {
-        threshold: 0.08,
-        rootMargin: '0px 0px -40px 0px'
-    });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    const observeCards = () => {
-        document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-            revealObserver.observe(el);
-        });
-    };
+    const observeCards = () => { document.querySelectorAll('.reveal:not(.visible)').forEach(el => { revealObserver.observe(el); }); };
     observeCards();
-
-    new MutationObserver(() => observeCards()).observe(blogGrid, {
-        attributes: true, subtree: true, attributeFilter: ['style']
-    });
+    new MutationObserver(() => observeCards()).observe(blogGrid, { attributes: true, subtree: true, attributeFilter: ['style'] });
 
     // === HERO PARALLAX ===
     const heroBg = document.querySelector('.blog-hero-bg');
-
     if (heroBg && window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         let ticking = false;
         window.addEventListener('scroll', () => {
@@ -2301,9 +1709,7 @@
                 requestAnimationFrame(() => {
                     const scrollY = window.pageYOffset;
                     const heroHeight = document.querySelector('.blog-hero').offsetHeight;
-                    if (scrollY < heroHeight) {
-                        heroBg.style.transform = 'translateY(' + (scrollY * 0.2) + 'px) scale(1.05)';
-                    }
+                    if (scrollY < heroHeight) { heroBg.style.transform = 'translateY(' + (scrollY * 0.2) + 'px) scale(1.05)'; }
                     ticking = false;
                 });
                 ticking = true;
@@ -2313,34 +1719,26 @@
 
     // === FIREFLIES ===
     const fireflyContainer = document.getElementById('fireflies');
-
     if (fireflyContainer && window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const fireflyCount = 20;
-
         for (let i = 0; i < fireflyCount; i++) {
             const firefly = document.createElement('div');
             firefly.className = 'firefly';
-
             const size = Math.random() * 3 + 2;
             firefly.style.width = size + 'px';
             firefly.style.height = size + 'px';
-
             firefly.style.top = Math.random() * 100 + '%';
             firefly.style.left = Math.random() * 100 + '%';
-
             const moveX = (Math.random() - 0.5) * 100 + 'px';
             const moveY = (Math.random() - 0.5) * 100 + 'px';
             firefly.style.setProperty('--move-x', moveX);
             firefly.style.setProperty('--move-y', moveY);
-
             const duration = Math.random() * 12 + 8;
             const delay = Math.random() * 15;
             firefly.style.animation = 'firefly-float ' + duration + 's ease-in-out infinite';
             firefly.style.animationDelay = delay + 's';
-
             const blur = Math.random() * 1 + 0.5;
             firefly.style.filter = 'blur(' + blur + 'px)';
-
             fireflyContainer.appendChild(firefly);
         }
     }
