@@ -17,7 +17,7 @@
         body.menu-open{overflow:hidden}
         html{scroll-behavior:smooth}
         .container{max-width:900px;margin:0 auto;padding:0 24px}
-        
+
         /* ═══════════════════════════════════════════
            PREMIUM HEADER
         ═══════════════════════════════════════════ */
@@ -29,19 +29,19 @@
         ═══════════════════════════════════════════ */
         .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none;white-space:nowrap;margin-left:-12px;margin-right:20px}
         .logo img{width:36px;height:36px;border-radius:8px}
-        .logo em{color:var(--antique-gold);font-style:normal}
+        .logo em{color:#D5B069;font-style:normal}
 
         /* ═══════════════════════════════════════════
-           PREMIUM NAV — shared base
+           PREMIUM NAV
         ═══════════════════════════════════════════ */
-        .nav{display:flex;align-items:center;gap:2px}
-        .nav a{text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.05em;padding:8px 13px;border-radius:8px;transition:all .35s cubic-bezier(.4,0,.2,1);white-space:nowrap;position:relative}
+        .nav{display:flex;gap:18px;align-items:center}
+        .nav a{text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.04em;transition:all .35s cubic-bezier(.4,0,.2,1);white-space:nowrap;position:relative}
 
         /* ─── PRIMARY LINKS (App → Story) ─── */
         .nav a{color:#A8A8A8}
-        .nav a::after{content:"";position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:0;height:1px;background:linear-gradient(90deg,transparent,var(--antique-gold),transparent);transition:width .4s cubic-bezier(.4,0,.2,1)}
-        .nav a:hover::after{width:70%}
-        .nav a:hover{color:var(--paper);text-shadow:0 0 12px rgba(213,176,105,.3);transform:translateY(-0.5px)}
+        .nav a::after{content:"";position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);width:0;height:1px;background:linear-gradient(90deg,transparent,#D5B069,transparent);transition:width .4s cubic-bezier(.4,0,.2,1)}
+        .nav a:hover::after{width:100%}
+        .nav a:hover{color:#F0EAD6;text-shadow:0 0 12px rgba(213,176,105,.3);transform:translateY(-0.5px)}
 
         /* ─── ✦ SEPARATOR ─── */
         .nav a[href="blog.html"]::before{content:"✦";margin-right:18px;margin-left:14px;color:var(--gold);font-size:.5rem;opacity:.4}
@@ -50,30 +50,30 @@
         .nav a[href="blog.html"],
         .nav a[href="faq.html"],
         .nav a[href="collaborate.html"],
-        .nav a[href*="support"]:not(.nav-cta){color:#A899C2;font-weight:400;font-size:.78rem;letter-spacing:.04em}
+        .nav a[href*="support"]:not(.nav-cta){color:#A899C2;font-weight:500;font-size:.82rem;letter-spacing:.04em}
         .nav a[href="blog.html"]::after,
         .nav a[href="faq.html"]::after,
         .nav a[href="collaborate.html"]::after,
-        .nav a[href*="support"]:not(.nav-cta)::after{background:linear-gradient(90deg,transparent,var(--lavender),transparent)}
+        .nav a[href*="support"]:not(.nav-cta)::after{background:linear-gradient(90deg,transparent,#8b7aa8,transparent)}
         .nav a[href="blog.html"]:hover,
         .nav a[href="faq.html"]:hover,
         .nav a[href="collaborate.html"]:hover,
         .nav a[href*="support"]:not(.nav-cta):hover{color:#D4CBE5;text-shadow:0 0 10px rgba(139,122,168,.3)}
 
         /* ─── CTA DOWNLOAD — shimmer ─── */
-        .nav-cta{background:transparent;border:1px solid rgba(197,160,89,.45)!important;padding:7px 18px;border-radius:10px;color:var(--antique-gold)!important;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.72rem!important;margin-left:10px;position:relative;overflow:hidden}
+        .nav-cta{background:transparent;border:1.5px solid rgba(197,160,89,.45)!important;padding:6px 14px;border-radius:10px;color:#D5B069!important;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.75rem!important;position:relative;overflow:hidden}
         .nav-cta::after{display:none!important}
         .nav-cta::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(120deg,transparent,rgba(213,176,105,.15),transparent);transition:.7s cubic-bezier(.4,0,.2,1)}
-        .nav-cta:hover{background:rgba(197,160,89,.1)!important;border-color:var(--gold)!important;color:var(--paper)!important;box-shadow:0 0 24px rgba(197,160,89,.18),0 0 6px rgba(197,160,89,.08);transform:translateY(-1px);text-shadow:0 0 8px rgba(213,176,105,.25)!important}
+        .nav-cta:hover{background:rgba(197,160,89,.1)!important;border-color:var(--gold)!important;color:#F0EAD6!important;box-shadow:0 0 24px rgba(197,160,89,.18),0 0 6px rgba(197,160,89,.08);transform:translateY(-1px);text-shadow:0 0 8px rgba(213,176,105,.25)!important}
         .nav-cta:hover::before{left:100%}
 
         /* ═══════════════════════════════════════════
-           MOBILE MENU
+           MOBILE
         ═══════════════════════════════════════════ */
         .mobile-menu-btn{display:none;background:0 0;border:none;color:var(--lavender);font-size:1.5rem;cursor:pointer}
 
         /* ═══════════════════════════════════════════
-           PAGE CONTENT (unchanged)
+           PAGE CONTENT
         ═══════════════════════════════════════════ */
         .page-header{padding:140px 0 80px;text-align:center}
         .page-title{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:500;line-height:1.2;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);text-shadow:0 0 15px rgba(197,160,89,.3);margin-bottom:16px}
@@ -112,9 +112,6 @@
         .social-link{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.03);backdrop-filter:blur(15px);border:1px solid rgba(139,122,168,0.2);border-radius:16px;padding:14px 24px;color:var(--text);text-decoration:none;font-weight:600;transition:all 0.3s ease}
         .social-link:hover{border-color:var(--lavender);background:rgba(139,122,168,0.08);transform:translateY(-2px)}
 
-        /* ═══════════════════════════════════════════
-           MOBILE
-        ═══════════════════════════════════════════ */
         @media (max-width:768px){
             .nav{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(35,45,40,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:20px;gap:0;border-bottom:1px solid rgba(139,122,168,0.2);box-shadow:0 10px 30px rgba(0,0,0,0.5);z-index:99}
             .nav.mobile-menu-active{display:flex}
@@ -122,7 +119,7 @@
             .nav a:last-child{border-bottom:none}
             .nav a[href="blog.html"]::before{display:none}
             .nav a::after{display:none}
-            .nav-cta{width:100%;text-align:center;padding:14px 20px!important;margin-top:12px;margin-left:0!important;border-radius:12px;background:rgba(197,160,89,0.15)!important}
+            .nav-cta{width:100%;text-align:center;padding:14px 20px!important;margin-top:12px;border-radius:12px;background:rgba(197,160,89,0.15)!important}
             .mobile-menu-btn{display:block}
             .page-title{font-size:2.2rem}
             .contact-grid{grid-template-columns:1fr}
@@ -162,7 +159,7 @@
 
         <section class="content-section">
             <div class="container">
-                
+
                 <div class="contact-grid">
                     <div class="contact-card">
                         <div class="contact-icon">
@@ -220,23 +217,23 @@
                 <div class="info-box">
                     <h2>What We Can Help With</h2>
                     <p style="font-size:1rem;font-weight:500;line-height:1.7;color:var(--text);margin-bottom:24px;">Whether you need technical support, have questions about the app, or want to share feedback — we're here for you.</p>
-                    
+
                     <div class="support-types">
                         <div class="support-type">
                             <h4>🛠️ Technical Support</h4>
                             <p>Bugs, crashes, syncing issues, feature problems, or installation help</p>
                         </div>
-                        
+
                         <div class="support-type">
                             <h4>❓ General Inquiries</h4>
                             <p>Questions about features, how Mi works, Premium subscription, or pricing</p>
                         </div>
-                        
+
                         <div class="support-type">
                             <h4>💬 Feedback & Suggestions</h4>
                             <p>Ideas for new features, improvements, or your experience with Mi</p>
                         </div>
-                        
+
                         <div class="support-type">
                             <h4>📰 Press & Media</h4>
                             <p>Media inquiries, interview requests, or partnership opportunities</p>
@@ -294,13 +291,13 @@
     <script>
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
-    
+
     if (mobileMenuBtn && nav) {
         mobileMenuBtn.addEventListener('click', function() {
             nav.classList.toggle('mobile-menu-active');
             document.body.classList.toggle('menu-open');
         });
-        
+
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 nav.classList.remove('mobile-menu-active');
