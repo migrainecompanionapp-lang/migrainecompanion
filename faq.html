@@ -8,520 +8,329 @@
     <title>FAQ — Frequently Asked Questions | MIgraine Companion</title>
     <link rel="icon" type="image/png" href="images/mi-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --malachite: #2D3D35;
-            --malachite-dark: #232D28;
-            --charcoal: #16181C;
-            --lavender: #8b7aa8;
-            --gold: #C5A059;
-            --antique-gold: #D5B069;
-            --text: #BDBDBD;
-            --text-light: #9E9E9E;
-            --text-dark: #757575;
-            --paper: #F0EAD6;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: radial-gradient(circle at 50% 20%, #3D4D45 0%, #16181C 80%);
-            background-attachment: fixed;
-            color: #fff;
-            min-height: 100vh;
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        body.menu-open {
-            overflow: hidden;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--malachite:#2D3D35;--malachite-light:#3D4D45;--malachite-dark:#232D28;--charcoal:#16181C;--charcoal-light:#1B1E24;--lavender:#8b7aa8;--gold:#C5A059;--antique-gold:#D5B069;--text:#BDBDBD;--text-light:#9E9E9E;--text-dark:#757575;--paper:#F0EAD6}
+        body{font-family:'Inter',-apple-system,sans-serif;background:radial-gradient(circle at 50% 20%,#3D4D45 0%,#16181C 80%);background-attachment:fixed;color:#fff;min-height:100vh;line-height:1.6;overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased}
+        body.menu-open{overflow:hidden}
+        html{scroll-behavior:smooth}
+        .container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+        /* ═══════════════════════════════════════════
+           PREMIUM HEADER
+        ═══════════════════════════════════════════ */
         header {
-            padding: 16px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            background: rgba(35, 45, 40, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(139, 122, 168, 0.2);
+            height: 64px;
+            background: rgba(30, 38, 33, 0.75);
+            backdrop-filter: saturate(180%) blur(24px);
+            -webkit-backdrop-filter: saturate(180%) blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            transition: background 0.3s ease;
         }
-        
-        .header-content {
+        .header-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
+        /* ═══════════════════════════════════════════
+           LOGO
+        ═══════════════════════════════════════════ */
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            color: #fff;
-            text-decoration: none;
-            position: relative;
-            z-index: 101;
-            white-space: nowrap;
-            margin-right: 20px;
-        }
-        
-        .logo img {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-        }
-        
-        .logo em {
-            color: var(--lavender);
-            font-style: normal;
-        }
-        
-        .nav {
-            display: flex;
-            gap: 18px;
-            align-items: center;
-        }
-        
-        .nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 500;
-            letter-spacing: 0.1px;
-            transition: color 0.3s;
-            white-space: nowrap;
-        }
-        
-        .nav a:hover {
-            color: var(--lavender);
-        }
-
-        .nav a[href="blog.html"]::before {
-    content: "✦";
-    margin-right: 18px;
-    margin-left: 14px;
-    color: var(--gold);
-    font-size: .7rem;
-}
-
-.nav a[href="blog.html"],
-.nav a[href="faq.html"],
-.nav a[href="collaborate.html"],
-.nav a[href*="support"]:not(.nav-cta) {
-    color: #D4CBE5;
-}
-
-.nav a[href="blog.html"]:hover,
-.nav a[href="faq.html"]:hover,
-.nav a[href="collaborate.html"]:hover,
-.nav a[href*="support"]:not(.nav-cta):hover {
-    color: #fff;
-}
-        .nav a.active {
-            color: var(--lavender);
-        }
-        
-        .nav-cta {
-            background: transparent;
-            border: 1.5px solid var(--gold) !important;
-            padding: 6px 14px;
-            border-radius: 10px;
-            color: var(--gold) !important;
-            font-weight: 700;
-            letter-spacing: .3px;
-            transition: all .3s ease;
-            text-transform: uppercase;
-            font-size: .75rem !important;
-        }
-        
-        .nav-cta:hover {
-            background: var(--gold);
-            color: var(--malachite-dark) !important;
-            box-shadow: 0 0 20px rgba(197,160,89,.4);
-            transform: translateY(-1px);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--lavender);
-            font-size: 1.5rem;
-            cursor: pointer;
-            position: relative;
-            z-index: 101;
-        }
-        
-        .faq-hero {
-            padding: 140px 0 80px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .faq-hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--paper);
-            text-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
-            margin-bottom: 16px;
-        }
-        
-        .faq-hero p {
-            font-size: 1.15rem;
-            font-weight: 500;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .faq-content {
-            padding: 60px 0 100px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .faq-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 60px;
-        }
-        
-        .faq-intro p {
-            font-size: 1.05rem;
-            font-weight: 500;
-            line-height: 1.7;
-            color: var(--text);
-            margin-bottom: 32px;
-        }
-        
-        .faq-contact {
-            background: rgba(197, 160, 89, 0.08);
-            border: 1px solid rgba(197, 160, 89, 0.2);
-            border-radius: 12px;
-            padding: 20px 24px;
-        }
-        
-        .faq-contact p {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--antique-gold);
-            margin: 0;
-        }
-        
-        .faq-contact a {
-            color: var(--gold);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .faq-contact a:hover {
-            color: var(--antique-gold);
-        }
-        
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 16px;
-            align-items: start;
-        }
-        
-        .faq-category {
-            margin-bottom: 0;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(139, 122, 168, 0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-        
-        .faq-category:hover {
-            border-color: rgba(197, 160, 89, 0.4);
-            background: rgba(255, 255, 255, 0.04);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .category-header {
-            width: 100%;
-            padding: 20px 22px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
             gap: 12px;
-            color: #fff;
-            font-family: inherit;
-            transition: background 0.3s;
-            text-align: left;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--paper);
+            text-decoration: none;
+            white-space: nowrap;
         }
-        
-        .category-header:hover {
-            background: rgba(197, 160, 89, 0.05);
-        }
-        
-        .category-number {
+        .logo img {
             width: 32px;
             height: 32px;
-            background: linear-gradient(135deg, var(--antique-gold), var(--gold));
-            border-radius: 50%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .logo em {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        /* ═══════════════════════════════════════════
+           DESKTOP NAV
+        ═══════════════════════════════════════════ */
+        .nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .nav > a {
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            color: rgba(255, 255, 255, 0.65);
+            transition: color 0.25s ease;
+            white-space: nowrap;
+        }
+        .nav > a:hover {
+            color: #ffffff;
+        }
+
+        /* ─── DROPDOWN DOWNLOAD ─── */
+        .nav-download-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .nav-cta {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(213, 176, 105, 0.25);
+            padding: 7px 18px;
+            border-radius: 980px;
+            color: var(--paper);
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .nav-download-wrapper:hover .nav-cta {
+            background: rgba(213, 176, 105, 0.1);
+            border-color: var(--gold);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(213, 176, 105, 0.15);
+        }
+        .download-dropdown {
+            position: absolute;
+            top: 130%;
+            right: 0;
+            background: rgba(30, 38, 33, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 160px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+        }
+        .download-dropdown::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            right: 35px;
+            width: 10px;
+            height: 10px;
+            background: rgba(30, 38, 33, 0.95);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            transform: rotate(45deg);
+        }
+        .nav-download-wrapper:hover .download-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .download-dropdown a {
+            padding: 10px 16px;
+            border-radius: 10px;
+            color: var(--paper);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--charcoal);
-            flex-shrink: 0;
         }
-        
-        .category-title {
-            font-family: 'Cormorant Garamond', serif;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: var(--paper);
-            flex: 1;
-        }
-        
-        .category-arrow {
-            font-size: 0.7rem;
-            color: var(--text-light);
-            transition: transform 0.3s;
-            margin-left: 4px;
-        }
-        
-        .category-header.active .category-arrow {
-            transform: rotate(180deg);
-        }
-        
-        .category-content {
-            display: none;
-            padding: 0 22px 24px;
-            background: rgba(0, 0, 0, 0.15);
-            border-top: 1px solid rgba(197, 160, 89, 0.05);
-        }
-        
-        .category-content.show {
-            display: block;
-        }
-        
-        .faq-item {
-            padding: 24px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-        
-        .faq-question {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-        
-        .faq-answer {
-            font-size: 0.95rem;
-            font-weight: 500;
-            line-height: 1.7;
-            color: var(--text);
-        }
-        
-        .faq-answer p {
-            margin-bottom: 12px;
-        }
-        
-        .faq-answer p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .faq-answer ul {
-            margin: 12px 0;
+        .download-dropdown a:hover {
+            background: rgba(213, 176, 105, 0.15);
+            color: var(--gold);
             padding-left: 20px;
         }
-        
-        .faq-answer li {
-            margin-bottom: 8px;
-            line-height: 1.6;
+
+        /* ═══════════════════════════════════════════
+           MOBILE MENU
+        ═══════════════════════════════════════════ */
+        .mobile-menu-btn {
+            display: none;
+            background: 0 0;
+            border: none;
+            color: var(--paper);
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
-        
-        .faq-answer a {
+        .mobile-menu-btn:hover {
             color: var(--gold);
-            text-decoration: none;
-            transition: color 0.3s;
         }
-        
-        .faq-answer a:hover {
-            color: var(--antique-gold);
-        }
-        
-        footer {
-            padding: 56px 0;
-            background: var(--charcoal);
-            border-top: 1px solid rgba(139, 122, 168, 0.12);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 28px;
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 32px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            font-size: 0.92rem;
-            font-weight: 500;
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--lavender);
-        }
-        
-        .copyright {
-            font-size: 0.88rem;
-            font-weight: 400;
-            color: var(--text-dark);
-        }
-        
-        @media (max-width: 768px) {
+
+        @media (max-width: 900px) {
+            .header-container { padding: 0 24px; }
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
             .nav {
                 display: none;
                 position: fixed;
-                top: 70px;
+                top: 64px;
                 left: 0;
                 right: 0;
-                background: rgba(35, 45, 40, 0.98);
+                height: calc(100vh - 64px);
+                background: rgba(22, 24, 28, 0.98);
                 backdrop-filter: blur(20px);
                 flex-direction: column;
-                padding: 20px;
-                gap: 0;
-                border-bottom: 1px solid rgba(139, 122, 168, 0.2);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-                z-index: 99;
+                justify-content: flex-start;
+                padding: 40px 24px;
+                gap: 24px;
+                overflow-y: auto;
             }
-            
-            .nav.mobile-menu-active {
-                display: flex;
-            }
-            
-            .nav a {
-                padding: 12px 0;
-                border-bottom: 1px solid rgba(139, 122, 168, 0.1);
-                display: block;
-                width: 100%;
-                font-size: .9rem;
-            }
-            
-            .nav a:last-child {
-                border-bottom: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav a[href="blog.html"]::before {
-                display: none;
-            }
-            
-            .nav-cta {
+            .nav.mobile-menu-active { display: flex; }
+            .nav > a {
+                font-size: 1.2rem;
+                color: var(--paper);
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+                padding-bottom: 16px;
                 width: 100%;
                 text-align: center;
-                padding: 14px 20px !important;
-                margin-top: 12px;
-                border-radius: 12px;
-                background: rgba(197, 160, 89, 0.15) !important;
             }
-            .faq-hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .faq-hero {
-                padding: 120px 0 60px;
-            }
-            
-            .faq-grid {
-                grid-template-columns: 1fr;
+            .nav-download-wrapper { width: 100%; margin-top: 10px; }
+            .nav-download-wrapper > .nav-cta { display: none; }
+            .download-dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                padding: 0;
                 gap: 12px;
             }
-            
-            .category-header {
-                padding: 16px 18px;
+            .download-dropdown::before { display: none; }
+            .download-dropdown a {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(213, 176, 105, 0.25);
+                justify-content: center;
+                padding: 14px 20px;
+                border-radius: 980px;
+                font-weight: 500;
+                width: 100%;
             }
-            
-            .category-title {
-                font-size: 0.95rem;
+            .download-dropdown a:hover {
+                padding-left: 16px;
             }
-            
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
+        }
+
+        /* ═══════════════════════════════════════════
+           FAQ CONTENT
+        ═══════════════════════════════════════════ */
+        .faq-hero{padding:140px 0 80px;text-align:center;position:relative;z-index:2}
+        .faq-hero h1{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);text-shadow:0 0 15px rgba(197,160,89,.3);margin-bottom:16px}
+        .faq-hero p{font-size:1.15rem;font-weight:500;color:var(--text-light);max-width:600px;margin:0 auto}
+        .faq-content{padding:60px 0 100px;position:relative;z-index:2}
+        .faq-intro{text-align:center;max-width:700px;margin:0 auto 60px}
+        .faq-intro p{font-size:1.05rem;font-weight:500;line-height:1.7;color:var(--text);margin-bottom:32px}
+        .faq-contact{background:rgba(197,160,89,.08);border:1px solid rgba(197,160,89,.2);border-radius:12px;padding:20px 24px}
+        .faq-contact p{font-size:.95rem;font-weight:600;color:var(--antique-gold);margin:0}
+        .faq-contact a{color:var(--gold);text-decoration:none;transition:color .3s}
+        .faq-contact a:hover{color:var(--antique-gold)}
+        .faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start}
+        .faq-category{margin-bottom:0;background:rgba(255,255,255,.02);backdrop-filter:blur(15px);border:1px solid rgba(139,122,168,.1);border-radius:20px;overflow:hidden;transition:all .4s ease}
+        .faq-category:hover{border-color:rgba(197,160,89,.4);background:rgba(255,255,255,.04);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+        .category-header{width:100%;padding:20px 22px;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;gap:12px;color:#fff;font-family:inherit;transition:background .3s;text-align:left}
+        .category-header:hover{background:rgba(197,160,89,.05)}
+        .category-number{width:32px;height:32px;background:linear-gradient(135deg,var(--antique-gold),var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;color:var(--charcoal);flex-shrink:0}
+        .category-title{font-family:'Cormorant Garamond',serif;text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem;font-weight:500;color:var(--paper);flex:1}
+        .category-arrow{font-size:.7rem;color:var(--text-light);transition:transform .3s;margin-left:4px}
+        .category-header.active .category-arrow{transform:rotate(180deg)}
+        .category-content{display:none;padding:0 22px 24px;background:rgba(0,0,0,.15);border-top:1px solid rgba(197,160,89,.05)}
+        .category-content.show{display:block}
+        .faq-item{padding:24px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+        .faq-item:last-child{border-bottom:none}
+        .faq-question{font-size:1rem;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.5}
+        .faq-answer{font-size:.95rem;font-weight:500;line-height:1.7;color:var(--text)}
+        .faq-answer p{margin-bottom:12px}
+        .faq-answer p:last-child{margin-bottom:0}
+        .faq-answer ul{margin:12px 0;padding-left:20px}
+        .faq-answer li{margin-bottom:8px;line-height:1.6}
+        .faq-answer a{color:var(--gold);text-decoration:none;transition:color .3s}
+        .faq-answer a:hover{color:var(--antique-gold)}
+        footer{padding:56px 0;background:var(--charcoal);border-top:1px solid rgba(139,122,168,.12);position:relative;z-index:2}
+        .footer-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:28px}
+        .footer-links{display:flex;gap:32px;flex-wrap:wrap}
+        .footer-links a{font-size:.92rem;font-weight:500;color:var(--text-light);text-decoration:none;transition:color .3s}
+        .footer-links a:hover{color:var(--lavender)}
+        .copyright{font-size:.88rem;font-weight:400;color:var(--text-dark)}
+
+        @media (max-width:768px){
+            .faq-hero h1{font-size:2.2rem}
+            .faq-hero{padding:120px 0 60px}
+            .faq-grid{grid-template-columns:1fr;gap:12px}
+            .category-header{padding:16px 18px}
+            .category-title{font-size:.95rem}
+            .footer-content{flex-direction:column;text-align:center}
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container header-content">
+        <div class="header-container">
             <a href="index.html" class="logo">
                 <img src="images/mi-icon.png" alt="Mi — your gentle migraine companion">
                 <span>M<em>I</em>graine Companion</span>
             </a>
             <nav class="nav">
-                <a href="index.html#screenshots">App</a>
-                <a href="index.html#how-it-works">How It Works</a>
-                <a href="index.html#different">Approach</a>
-                <a href="index.html#science">Science</a>
+                <a href="index.html">App</a>
                 <a href="index.html#features">Features</a>
                 <a href="index.html#story">Story</a>
                 <a href="blog.html">Blog</a>
-                <a href="faq.html" class="active">FAQ</a>
                 <a href="collaborate.html">Collaborate</a>
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
-                <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="nav-cta" target="_blank">Download</a>
+                
+                <div class="nav-download-wrapper">
+                    <span class="nav-cta">Download</span>
+                    <div class="download-dropdown">
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" target="_blank">
+                            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;margin-right:8px;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.19 2.31-.88 3.5-.8 1.19.05 2.18.42 2.92 1.05-1.92 1.25-1.57 3.52.28 4.35-.45 1.34-1.12 2.76-1.78 3.57zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                            App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" target="_blank">
+                            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;margin-right:8px;"><path d="M17.523 15.341l2.366 4.103a.563.563 0 0 1-.772.772l-2.404-1.385A11.378 11.378 0 0 1 12 19.882c-1.636 0-3.18-.344-4.577-.962l-2.406 1.385a.563.563 0 0 1-.771-.772l2.365-4.103C4.246 13.568 2.75 10.966 2.75 8h18.5c0 2.966-1.496 5.568-3.727 7.341zM8.318 11.516a1.265 1.265 0 1 0 0-2.531 1.265 1.265 0 0 0 0 2.531zm7.364 0a1.265 1.265 0 1 0 0-2.531 1.265 1.265 0 0 0 0 2.531zM5.526 6.368L4.17 4.018a.563.563 0 0 1 .974-.563l1.418 2.457a11.516 11.516 0 0 1 10.876 0l1.418-2.457a.563.563 0 1 1 .974.563l-1.355 2.35C20.505 6.941 21.602 7.781 22 8.75H2c.398-.969 1.495-1.809 3.526-2.382z"/></svg>
+                            Google Play
+                        </a>
+                    </div>
+                </div>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
+            
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" style="width: 28px; height: 28px; fill: currentColor;">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -558,14 +367,12 @@
                                     <p>We don't just count migraines — we use narrative therapy. Mi is your migraine represented as a companion. Instead of fighting, you learn to understand and care. This is a fundamentally different approach to living with chronic pain.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">What is "companionization"?</div>
                                 <div class="faq-answer">
                                     <p>It's a narrative therapy technique: you externalize the problem. Mi is your migraine separate from you. You're not "a migraineur" — you're a person who lives with Mi. This reduces self-blame and increases your sense of control over the situation.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Do I need a therapist to use the app?</div>
                                 <div class="faq-answer">
@@ -589,7 +396,6 @@
                                     <p>Yes. All essential features for managing migraine are free forever. This is not a trial or limited version. You can effectively track migraines, find triggers, and care for yourself — completely free.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">What's included in the free version?</div>
                                 <div class="faq-answer">
@@ -606,7 +412,6 @@
                                     </ul>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">What is Premium subscription?</div>
                                 <div class="faq-answer">
@@ -619,7 +424,6 @@
                                     </ul>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Why are some features paid?</div>
                                 <div class="faq-answer">
@@ -627,7 +431,6 @@
                                     <p>But importantly: we don't hide core functionality behind a paywall. Migraine tracking, trigger detection, medication safety — all free. Unlike many competitors who limit even basic features with subscriptions.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Can I try Premium for free?</div>
                                 <div class="faq-answer">
@@ -651,21 +454,18 @@
                                     <p>Absolutely. All data is stored locally on your device. We don't sell, share, or analyze your personal data. Your health information belongs only to you.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Can I sync between devices?</div>
                                 <div class="faq-answer">
                                     <p>In development. Soon you'll be able to sync data via iCloud with full end-to-end encryption. Even we won't be able to read your data.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Can I export my data?</div>
                                 <div class="faq-answer">
                                     <p>Yes. You can export a complete report in PDF format for your doctor or personal archive. Your data is always accessible and portable.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">What happens to my data if I delete the app?</div>
                                 <div class="faq-answer">
@@ -694,21 +494,18 @@
                                     </ul>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">How accurate is Mi's AI forecast?</div>
                                 <div class="faq-answer">
                                     <p>Mi learns from your data over 2-4 weeks. Accuracy grows over time — usually reaches 70-85% after a month of regular use. The more data, the more accurate the forecast.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Can I add my own triggers?</div>
                                 <div class="faq-answer">
                                     <p>Yes. Mi tracks 43 standard factors based on medical research, but you can add your unique triggers that are important specifically for you.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Does the app support Apple Health / Google Fit?</div>
                                 <div class="faq-answer">
@@ -716,14 +513,12 @@
                                     <p>Android — Google Fit integration will be added after the Android release.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">How much time does daily tracking take?</div>
                                 <div class="faq-answer">
                                     <p>1-2 minutes per day. Mi doesn't require much effort — quick logging of food, sleep, mood. The app is designed not to be a burden in your life.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">What if I forget to log data?</div>
                                 <div class="faq-answer">
@@ -732,7 +527,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- CATEGORY 5: Scientific Basis -->
                     <div class="faq-category">
                         <button class="category-header" onclick="toggleCategory(this)">
@@ -747,7 +541,6 @@
                                     <p>Yes. Narrative therapy is a scientifically validated approach developed by Michael White and David Epston. Used for over 40 years to treat chronic pain, depression, and anxiety disorders.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Did you consult with neurologists?</div>
                                 <div class="faq-answer">
@@ -760,7 +553,6 @@
                                     </ul>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Can the app replace a doctor?</div>
                                 <div class="faq-answer">
@@ -784,7 +576,6 @@
                                     <p>The app is suitable for teenagers 13+ and adults. For younger children, we recommend using it together with parents.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Is the app available in other languages?</div>
                                 <div class="faq-answer">
@@ -797,7 +588,6 @@
                                     <p>Other languages will be added based on user requests.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Do I need to pay for updates?</div>
                                 <div class="faq-answer">
@@ -821,14 +611,12 @@
                                     <p>Rustam Iuldashov — a solo developer from Ukraine with 30 years of experience living with migraine. Created the app he wished existed — not a cold medical tracker, but an understanding companion.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Why did you create this app?</div>
                                 <div class="faq-answer">
                                     <p>I was tired of clinical trackers that treat migraine as statistics. I needed a friend who understands — not a judge who counts attacks. That's how Mi was born.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Was the app developed in Ukraine during the war?</div>
                                 <div class="faq-answer">
@@ -851,25 +639,22 @@
                                 <div class="faq-answer">
                                     <ul>
                                         <li>iOS 15+ — iPhone and iPad</li>
-                                        <li>Android — version coming in the next few days</li>
+                                        <li>Android — available on Google Play</li>
                                     </ul>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">How much storage does the app take?</div>
                                 <div class="faq-answer">
                                     <p>About 120-130 MB — very little for a modern app. Mi includes an AI model, therapeutic games, graphs, and visualizations, but we've optimized everything for minimal size. For comparison: Instagram takes ~250 MB.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">Does the app drain battery quickly?</div>
                                 <div class="faq-answer">
                                     <p>No. Mi is optimized for minimal battery usage. The app runs in the background only when necessary and doesn't affect device battery life.</p>
                                 </div>
                             </div>
-                            
                             <div class="faq-item">
                                 <div class="faq-question">What if the app isn't working correctly?</div>
                                 <div class="faq-answer">
@@ -887,33 +672,28 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-links">
+                <a href="disclaimer.html">Medical Disclaimer</a>
                 <a href="https://sites.google.com/view/migrainecompanion/privacy-policy" target="_blank">Privacy Policy</a>
                 <a href="https://sites.google.com/view/migrainecompanion/terms-of-use" target="_blank">Terms of Use</a>
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
-                <a href="https://sites.google.com/view/migrainecompanion/contact" target="_blank">Contact</a>
+                <a href="contact.html">Contact</a>
             </div>
-            <p class="copyright">© 2025 MIgraine Companion. Made with 💜 in Ukraine.</p>
+            <p class="copyright">© 2026 MIgraine Companion. Made with 💜 in Ukraine.</p>
         </div>
     </footer>
 
     <script>
-    // Category accordion toggle
     function toggleCategory(button) {
         const content = button.nextElementSibling;
         const isOpen = content.classList.contains('show');
-        
-        // Close all categories
         document.querySelectorAll('.category-content').forEach(c => c.classList.remove('show'));
         document.querySelectorAll('.category-header').forEach(h => h.classList.remove('active'));
-        
-        // Open clicked category if it wasn't open
         if (!isOpen) {
             content.classList.add('show');
             button.classList.add('active');
         }
     }
 
-    // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
     
@@ -923,7 +703,6 @@
             document.body.classList.toggle('menu-open');
         });
         
-        // Close menu when clicking on a link
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 nav.classList.remove('mobile-menu-active');
