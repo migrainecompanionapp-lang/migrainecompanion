@@ -72,25 +72,202 @@
         body::after{content:"";position:fixed;inset:0;background:radial-gradient(circle,transparent 40%,rgba(0,0,0,.5) 100%);pointer-events:none;z-index:1}
         body.menu-open{overflow:hidden}
         html{scroll-behavior:smooth}
-        .container{max-width:1100px;margin:0 auto;padding:0 24px}
-        header{padding:16px 0;position:fixed;width:100%;top:0;z-index:100;background:rgba(35,45,40,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,122,168,.2)}
-        .header-content{display:flex;justify-content:space-between;align-items:center}
-        .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700;letter-spacing:-.3px;color:#fff;text-decoration:none;white-space:nowrap;margin-left:-12px;flex-shrink:0;margin-right:40px}
-        .logo img{width:36px;height:36px;border-radius:8px}
-        .logo em{color:var(--lavender);font-style:normal}
-        .nav{display:flex;gap:18px;align-items:center;margin-left:auto}
-        .nav a{color:var(--text-light);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.1px;transition:color .3s;white-space:nowrap}
-        .nav a:hover{color:var(--lavender)}
+        .container{max-width:900px;margin:0 auto;padding:0 24px}
+
+        /* ═══════════════════════════════════════════
+           APPLE-STYLE PREMIUM HEADER
+        ═══════════════════════════════════════════ */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            height: 64px;
+            background: rgba(30, 38, 33, 0.75); /* Глубокое стекло */
+            backdrop-filter: saturate(180%) blur(24px);
+            -webkit-backdrop-filter: saturate(180%) blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1100px; /* Широкий контейнер для воздуха */
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ═══════════════════════════════════════════
+           PREMIUM LOGO
+        ═══════════════════════════════════════════ */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--paper);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .logo em {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        /* ═══════════════════════════════════════════
+           PREMIUM NAV (Minimalist)
+        ═══════════════════════════════════════════ */
+        .nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .nav > a {
+            text-decoration: none;
+            font-size: 0.85rem; /* Аккуратный, сдержанный размер */
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            color: rgba(255, 255, 255, 0.65);
+            transition: color 0.25s ease;
+            white-space: nowrap;
+        }
+        .nav > a:hover {
+            color: #ffffff;
+        }
+
+        /* Logic for separator from original file */
         .nav a[href="blog.html"]::before{content:"✦";margin-right:18px;margin-left:14px;color:var(--gold);font-size:.7rem}
         .nav a[href="blog.html"],.nav a[href="faq.html"],.nav a[href="collaborate.html"],.nav a[href*="support"]:not(.nav-cta){color:#D4CBE5}
         .nav a[href="blog.html"]:hover,.nav a[href="faq.html"]:hover,.nav a[href="collaborate.html"]:hover,.nav a[href*="support"]:not(.nav-cta):hover{color:#fff}
-        .nav-cta{background:transparent;border:1.5px solid var(--gold)!important;padding:6px 14px;border-radius:10px;color:var(--gold)!important;font-weight:700;letter-spacing:.3px;transition:all .3s ease;text-transform:uppercase;font-size:.75rem!important}
-        .nav-cta:hover{background:var(--gold);color:var(--malachite-dark)!important;box-shadow:0 0 20px rgba(197,160,89,.4);transform:translateY(-1px)}
-        .mobile-menu-btn{display:none;background:0 0;border:none;color:var(--lavender);font-size:1.5rem;cursor:pointer}
+
+        /* ─── DROPDOWN DOWNLOAD ─── */
+        .nav-download-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .nav-cta {
+            background: rgba(255, 255, 255, 0.04) !important;
+            border: 1px solid rgba(213, 176, 105, 0.25) !important;
+            padding: 7px 18px !important;
+            border-radius: 980px !important; /* Форма таблетки */
+            color: var(--paper) !important;
+            font-weight: 500 !important;
+            font-size: 0.8rem !important;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease !important;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            text-transform: none !important; /* Отменяем верхний регистр оригинала */
+        }
+        
+        .nav-download-wrapper:hover .nav-cta {
+            background: rgba(213, 176, 105, 0.1) !important;
+            border-color: var(--gold) !important;
+            color: #ffffff !important;
+            box-shadow: 0 0 15px rgba(213, 176, 105, 0.15);
+        }
+
+        .download-dropdown {
+            position: absolute;
+            top: 130%;
+            right: 0;
+            background: rgba(30, 38, 33, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 160px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+            z-index: 200;
+        }
+
+        .download-dropdown::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            right: 35px;
+            width: 10px;
+            height: 10px;
+            background: rgba(30, 38, 33, 0.95);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            transform: rotate(45deg);
+        }
+
+        .nav-download-wrapper:hover .download-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .download-dropdown a {
+            padding: 10px 16px;
+            border-radius: 10px;
+            color: var(--paper) !important;
+            font-size: 0.9rem !important;
+            text-decoration: none;
+            transition: all 0.2s ease !important;
+            display: flex;
+            align-items: center;
+            border: none !important; /* Убираем рамку оригинала */
+            font-weight: 500 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+        }
+
+        .download-dropdown a:hover {
+            background: rgba(213, 176, 105, 0.15) !important;
+            color: var(--gold) !important;
+            padding-left: 20px;
+        }
+
+        /* ═══════════════════════════════════════════
+           MOBILE MENU
+        ═══════════════════════════════════════════ */
+        .mobile-menu-btn {
+            display: none;
+            background: 0 0;
+            border: none;
+            color: var(--paper); /* Изменили на бумажный */
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--gold);
+        }
+
+        /* ═══════════════════════════════════════════
+           HERO & CONTENT (Unchanged)
+        ═══════════════════════════════════════════ */
         .hero{padding:140px 0 100px;text-align:center;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;z-index:2}
         .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('images/mystic-garden-bg.png') center center/cover no-repeat;opacity:.35;z-index:0;mix-blend-mode:overlay}
         .hero::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom,rgba(35,45,40,.3) 0%,rgba(45,61,53,.7) 40%,var(--malachite) 70%,var(--charcoal) 100%);z-index:1}
-        .hero-content{position:relative;z-index:2;width:100%}
         .hero-mi{width:180px;height:180px;border-radius:32px;margin:0 auto 36px;box-shadow:0 20px 60px rgba(139,122,168,.3);animation:float 6s ease-in-out infinite}
         @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
         h1,h2,h3,.section-title{font-family:'Cormorant Garamond',serif!important;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);text-shadow:0 0 15px rgba(197,160,89,.3)}
@@ -266,21 +443,98 @@
         .medical-disclaimer p{font-size:.9rem;line-height:1.7;color:var(--text);margin:0}
         .medical-disclaimer strong{color:var(--antique-gold)}
         .medical-disclaimer a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold)}
-        @media (max-width:900px){.therapy-card{flex:0 1 calc(50% - 14px)}.steps-container{flex-direction:column;align-items:center}.steps-container::before{display:none}}
+
+        /* ═══════════════════════════════════════════
+           MEDIA QUERIES
+        ═══════════════════════════════════════════ */
+        @media (max-width:900px){
+            .therapy-grid{flex-direction: column; gap: 20px;}
+            .therapy-card{flex: 0 1 100%; width: 100%;}
+            .steps-container{flex-direction:column;align-items:center; gap: 40px;}
+            .step-card { width: 100%; max-width: 100%; }
+            .steps-container::before{display:none}
+            .science-content{grid-template-columns: 1fr; gap: 40px;}
+            .science-stats{grid-template-columns: 1fr 1fr;}
+        }
+
         @media (max-width:768px){
-    .nav{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(35,45,40,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:20px;gap:0;border-bottom:1px solid rgba(139,122,168,0.2);box-shadow:0 10px 30px rgba(0,0,0,0.5);z-index:99}
-    .nav.mobile-menu-active{display:flex}
-    .nav a{padding:12px 0;border-bottom:1px solid rgba(139,122,168,0.1);display:block;width:100%;font-size:.9rem}
-    .nav a:last-child{border-bottom:none}
-    .nav a[href="blog.html"]::before{display:none}
-    .nav-cta{width:100%;text-align:center;padding:14px 20px!important;margin-top:12px;border-radius:12px;background:rgba(197,160,89,0.15)!important}
-    .mobile-menu-btn{display:block}
+            .header-container { padding: 0 24px; }
+            
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .nav {
+                display: none;
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                height: calc(100vh - 64px);
+                background: rgba(22, 24, 28, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 40px 24px;
+                gap: 24px;
+                overflow-y: auto;
+                border-bottom: 1px solid rgba(139,122,168,0.2);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                z-index: 99;
+                margin-left: 0;
+            }
+            .nav.mobile-menu-active { display: flex; }
+            
+            .nav > a { 
+                font-size: 1.2rem; 
+                color: var(--paper); 
+                border-bottom: 1px solid rgba(255,255,255,0.05); 
+                padding-bottom: 16px; 
+                width: 100%; 
+                text-align: center; 
+            }
+            .nav > a:last-child { border-bottom: none; }
+            .nav a[href="blog.html"]::before{display:none}
+
+            /* Mobile dropdown resets */
+            .nav-download-wrapper { width: 100%; margin-top: 10px; }
+            .nav-download-wrapper > .nav-cta { display: none; }
+            
+            .download-dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+                gap: 12px;
+                width: 100%;
+            }
+            .download-dropdown::before { display: none; }
+            .download-dropdown a {
+                background: rgba(255, 255, 255, 0.04) !important;
+                border: 1px solid rgba(213, 176, 105, 0.25) !important;
+                justify-content: center;
+                padding: 14px 20px !important;
+                border-radius: 980px !important;
+                font-weight: 500;
+                width: 100%;
+                font-size: 1rem !important;
+            }
+            .download-dropdown a:hover {
+                padding-left: 16px; /* отменяем сдвиг на мобилке */
+            }
+
+            /* Unchanged mobile content styles */
             .hero h1{font-size:2.8rem}
             .hero-mi{width:140px;height:140px}
             .section-title{font-size:2rem}
             .download-buttons{flex-direction:column;align-items:center}
             .download-btn{width:100%;max-width:280px;justify-content:center}
-            .science-content{grid-template-columns:1fr}
             .poetry{min-height:450px}
             .poetry-text{font-size:1.35rem}
             .story-card{padding:34px 26px}
@@ -297,52 +551,45 @@
             .screenshots-wrapper{padding:0}
             .carousel-arrow{display:none}
         }
-        @media (max-width:600px){.therapy-card{flex:0 1 100%}}
-        .nav-dropdown{position:relative}
-.nav-dropdown-btn{cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.3px;text-transform:uppercase;font-size:.75rem!important}
-.nav-dropdown-menu{display:none;position:absolute;top:100%;padding-top:10px;right:0;background:rgba(35,45,40,.98);backdrop-filter:blur(20px);border:1px solid rgba(197,160,89,.3);border-radius:12px;overflow:hidden;min-width:160px;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:200}
-.nav-dropdown-menu a{display:block;padding:12px 18px;color:#fff;text-decoration:none;font-size:.85rem;font-weight:500;transition:background .2s;white-space:nowrap}
-.nav-dropdown-menu a:hover{background:rgba(197,160,89,.15);color:var(--gold)}
-.nav-dropdown:hover .nav-dropdown-menu{display:block}
-        @media (max-width:768px){
-    .nav-dropdown{width:100%}
-    .nav-dropdown-btn{display:none}
-    .nav-dropdown-menu{display:block;position:static;background:transparent;border:none;box-shadow:none;backdrop-filter:none;min-width:unset;border-radius:0}
-    .nav-dropdown-menu a{padding:12px 0;border-bottom:1px solid rgba(139,122,168,.1);color:var(--text-light);font-size:.9rem}
-    .nav-dropdown-menu a:hover{background:transparent;color:var(--lavender)}
-}
     </style>
 </head>
 <body>
     <div class="mouse-glow"></div>
     <div class="fireflies"></div>
     <header>
-        <div class="container header-content">
-            <a href="/" class="logo"><img src="images/mi-icon.png" alt="Mi — your gentle migraine companion"><span>M<em>I</em>graine Companion</span></a>
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="images/mi-icon.png" alt="Mi — your gentle migraine companion">
+                <span>M<em>I</em>graine Companion</span>
+            </a>
             <nav class="nav">
                 <a href="#screenshots">App</a>
                 <a href="#how-it-works">How It Works</a>
-                <a href="#different">Approach</a>
-                <a href="#science">Science</a>
-                <a href="#features">Features</a>
                 <a href="#story">Story</a>
                 <a href="blog.html">Blog</a>
                 <a href="faq.html">FAQ</a>
-                <a href="collaborate.html">Collaborate</a>
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
-                <div class="nav-dropdown">
-    <button class="nav-cta nav-dropdown-btn">Download ▾</button>
-    <div class="nav-dropdown-menu">
-        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" target="_blank">
-            🍎 App Store
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" target="_blank">
-            🤖 Google Play
-        </a>
-    </div>
-</div>
+                
+                <div class="nav-download-wrapper">
+                    <span class="nav-cta">Download</span>
+                    <div class="download-dropdown">
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" target="_blank">
+                            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;margin-right:8px;"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.19 2.31-.88 3.5-.8 1.19.05 2.18.42 2.92 1.05-1.92 1.25-1.57 3.52.28 4.35-.45 1.34-1.12 2.76-1.78 3.57zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                            App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" target="_blank">
+                            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;margin-right:8px;"><path d="M17.523 15.341l2.366 4.103a.563.563 0 0 1-.772.772l-2.404-1.385A11.378 11.378 0 0 1 12 19.882c-1.636 0-3.18-.344-4.577-.962l-2.406 1.385a.563.563 0 0 1-.771-.772l2.365-4.103C4.246 13.568 2.75 10.966 2.75 8h18.5c0 2.966-1.496 5.568-3.727 7.341zM8.318 11.516a1.265 1.265 0 1 0 0-2.531 1.265 1.265 0 0 0 0 2.531zm7.364 0a1.265 1.265 0 1 0 0-2.531 1.265 1.265 0 0 0 0 2.531zM5.526 6.368L4.17 4.018a.563.563 0 0 1 .974-.563l1.418 2.457a11.516 11.516 0 0 1 10.876 0l1.418-2.457a.563.563 0 1 1 .974.563l-1.355 2.35C20.505 6.941 21.602 7.781 22 8.75H2c.398-.969 1.495-1.809 3.526-2.382z"/></svg>
+                            Google Play
+                        </a>
+                    </div>
+                </div>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
+            
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" style="width: 28px; height: 28px; fill: currentColor;">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
         </div>
     </header>
     <main>
@@ -644,8 +891,8 @@
                             </div>
                             <div class="medical-disclaimer">
                                 <p>
-                                    <strong>Medical Disclaimer:</strong> 
-                                    Migraine Companion is a self-help tool, not medical advice. Always consult your doctor before making changes to medication or treatment. In case of emergency symptoms, seek immediate medical attention. 
+                                    <strong>Medical Disclaimer:</strong> <br>
+                                    Migraine Companion is a self-help tool, not medical advice. Always consult your doctor before making changes to medication or treatment. In case of emergency symptoms, seek immediate medical attention. <br>
                                     <a href="disclaimer.html">Read full disclaimer</a>
                                 </p>
                             </div>
