@@ -3,18 +3,18 @@
   <!-- === MAIN PAGES === -->
   <url>
     <loc>https://mi-companion.com/</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mi-companion.com/blog.html</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- === ARTICLES (55) === -->
+  <!-- === ARTICLES (66) === -->
 
   <!-- January 27, 2026 -->
   <url>
@@ -180,7 +180,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- === NEW ARTICLES (32) — March 6–12, 2026 === -->
+  <!-- === BATCH 2 — March 6–12, 2026 === -->
 
   <!-- March 6, 2026 -->
   <url>
@@ -384,6 +384,80 @@
   <url>
     <loc>https://mi-companion.com/article-neuromodulation-devices.html</loc>
     <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mi-companion.com/article-climate-migraine.html</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- === BATCH 3 — March 13–15, 2026 === -->
+
+  <!-- March 13, 2026 -->
+  <url>
+    <loc>https://mi-companion.com/article-morning-migraine.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mi-companion.com/article-gepants-guide.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mi-companion.com/article-cannabis-migraine.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mi-companion.com/article-pacap-revolution.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mi-companion.com/article-biofeedback-migraine.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mi-companion.com/article-tinted-lenses-migraine.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- March 14, 2026 -->
+  <url>
+    <loc>https://mi-companion.com/article-glucose-migraine.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mi-companion.com/article-from-20-to-2.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- March 15, 2026 -->
+  <url>
+    <loc>https://mi-companion.com/article-first-neurologist-visit.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mi-companion.com/article-language-migraine.html</loc>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
