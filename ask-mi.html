@@ -869,7 +869,7 @@
         inputBox.value = ''; inputBox.style.height = 'auto'; sendBtn.classList.remove('active'); inputBox.focus();
     }
 
-    function scrollToBottom() { requestAnimationFrame(() => { chatArea.scrollTop = chatArea.scrollHeight; }); }
+    function scrollToBottom() { setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 50); setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 300); }
 
     function escapeHtml(t) { const d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
 
