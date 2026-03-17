@@ -1,0 +1,596 @@
+MIGRAINE COMPANION KNOWLEDGE BASE — 66 articles, 600+ peer-reviewed citations
+Website: https://mi-companion.com | Author: Rustam Iuldashov (30 years lived experience)
+
+---
+ARTICLE: Meet Mi: The Monster Who Wants to Sleep
+Category: App Guide | URL: https://mi-companion.com/meet-mi.html
+Summary: The philosophy behind Migraine Companion — why treating migraine as a companion (not enemy) works better. Mi's 5 mood states reflect self-care behaviors. Backed by narrative therapy and research on hydration, breathing, and self-compassion.
+Key facts: Michael White's externalization technique: 'The person is not the problem' | Increasing water by 1.5L reduced headache hours by 21 over two weeks | 4-7-8 breathing activates parasympathetic nervous system | Self-compassion reduces pain catastrophizing and improves outcomes | Mi has 5 mood states: Sleeping, Calm, Restless, Agitated, Upset
+Connects to: narrative-therapy, 478-breathing, dehydration-equation, not-my-migraine, language-migraine
+Topics: narrative therapy, externalization, self-compassion, hydration, breathing, app philosophy, Mi character
+Solutions: narrative therapy, hydration tracking, breathing exercises, self-compassion practice
+
+---
+ARTICLE: Your First Neurologist Visit: What to Bring, What to Ask
+Category: App Guide | URL: https://mi-companion.com/article-first-neurologist-visit.html
+Summary: How to prepare for and maximize a neurologist appointment. What to bring (diary data, medication history, family history), what questions to ask, and how Migraine Companion reports help communicate your story.
+Key facts: Average neurology appointment is 45 minutes or less | Headache diary data is the single most useful diagnostic tool | Key questions: frequency, severity, triggers, family history, prior treatments | Migraine Companion generates shareable reports for doctors
+Connects to: building-migraine-team, understanding-triggers, prodrome-warning-signs, chronic-migraine-15-day-line
+Topics: neurologist, doctor visit, diagnosis, headache diary, medical appointment, preparation
+Solutions: headache diary, doctor communication, treatment history tracking
+
+---
+ARTICLE: I Am Not My Migraine: Separating Self from Pain
+Category: Narrative Therapy | URL: https://mi-companion.com/article-not-my-migraine.html
+Summary: How chronic illness fuses with identity and how narrative therapy's externalization technique helps separate the person from the condition. Identity fusion is learned and can be unlearned.
+Key facts: Chronic illness can become fused with identity — 'I am a migraineur' vs 'I experience migraines' | Narrative therapy externalization reduces self-blame | Identity fusion increases pain catastrophizing and disability | Separation improves sense of agency and control
+Connects to: narrative-therapy, language-migraine, meet-mi, invisible-pain, conference-room-confession
+Topics: identity, narrative therapy, externalization, self-blame, chronic illness identity, psychological impact
+Solutions: externalization exercises, narrative therapy, identity work, reauthoring
+
+---
+ARTICLE: The Words We Use: How Language Shapes Your Migraine Experience
+Category: Narrative Therapy | URL: https://mi-companion.com/article-language-migraine.html
+Summary: How language shapes illness experience. 'Suffering from,' 'battling,' 'victim of' create combat framing that increases suffering. Rewriting your migraine story changes how you feel about it.
+Key facts: Combat metaphors increase helplessness and catastrophizing | Language shapes neural pain processing pathways | 27 peer-reviewed references including Neurology (n=59,001) | Reframing language improves self-efficacy and perceived control
+Connects to: not-my-migraine, narrative-therapy, meet-mi, anxious-brain
+Topics: language, metaphors, framing, narrative therapy, combat language, reframing
+Solutions: language reframing, narrative reauthoring, mindful communication
+
+---
+ARTICLE: Why We Don't Fight Migraines: The Science of Companionization
+Category: Narrative Therapy | URL: https://mi-companion.com/article-narrative-therapy.html
+Summary: The science behind companionization vs combat framing. Framing chronic illness as a battle increases suffering. Companion-based approach grounded in psychological research.
+Key facts: Combat framing increases stress hormones and pain sensitivity | Companionization reduces cortisol and sympathetic activation | Narrative therapy techniques reduce chronic pain disability | Self-compassion correlates with lower migraine frequency
+Connects to: meet-mi, not-my-migraine, language-migraine, anxious-brain
+Topics: narrative therapy, companionization, combat framing, self-compassion, psychological approach
+Solutions: companionization, self-compassion, narrative therapy
+
+---
+ARTICLE: From 20 Days to 2: Stories of Successful Management
+Category: Personal Story | URL: https://mi-companion.com/article-from-20-to-2.html
+Summary: Real stories of people who dramatically reduced migraine days through combination approaches. 22 peer-reviewed references. Shows that improvement is possible but takes time and persistence.
+Key facts: Combination approaches work better than single interventions | Improvement often takes months to years of experimentation | Lifestyle modifications amplify medication effectiveness | Tracking patterns is essential for finding personal triggers
+Connects to: building-migraine-team, side-effect-roulette, understanding-triggers, chronic-migraine-15-day-line
+Topics: success stories, improvement, combination treatment, hope, management, long-term outcomes
+Solutions: combination approach, persistent tracking, lifestyle modification, medication optimization
+
+---
+ARTICLE: I Built a Migraine App During 30 Years of Pain (and a War)
+Category: Personal Story | URL: https://mi-companion.com/article-30-years.html
+Summary: Rustam's personal story: from first attack at age 12 to building Migraine Companion during wartime in Ukraine. From 15-20 attacks/month to 3-4 through self-management.
+Key facts: First migraine at age 12 with visual aura | Reduced from 15-20 attacks/month to 3-4 | Built app during active wartime in Ukraine | Narrative therapy principles transformed approach to illness
+Connects to: meet-mi, narrative-therapy, not-my-migraine, from-20-to-2
+Topics: personal story, app development, wartime, Ukraine, chronic migraine journey, lived experience
+Solutions: self-management, tracking, narrative therapy, lifestyle changes
+
+---
+ARTICLE: The Conference Room Confession: Migraine at Work
+Category: Personal Story | URL: https://mi-companion.com/article-conference-room-confession.html
+Summary: Navigating migraine in professional settings. Stigma, hiding, accommodation requests, and the courage to stop pretending. Based on Goffman's stigma theory.
+Key facts: Workplace stigma causes most migraineurs to hide their condition | Presenteeism costs exceed absenteeism costs for employers | ADA may provide workplace accommodations for chronic migraine | Disclosure decisions depend on workplace culture and manager relationship
+Connects to: invisible-pain, not-my-migraine, anxious-brain, chronic-migraine-15-day-line
+Topics: work, career, stigma, disclosure, accommodation, presenteeism, professional life
+Solutions: workplace accommodations, disclosure strategies, ergonomic adjustments, flexible scheduling
+
+---
+ARTICLE: The Third Person in Every Room: How Migraine Lives in Your Relationships
+Category: Personal Story | URL: https://mi-companion.com/article-relationships.html
+Summary: How migraine affects partnerships, family, and friendships. 72% of chronic migraineurs feel they'd be better partners without their condition. Communication strategies and partner support.
+Key facts: 72% feel they would be better partners without migraine | 71.7% believe family doesn't understand their condition | Cancelled plans and darkened bedrooms strain relationships | Partner education and communication protocols improve outcomes
+Connects to: invisible-pain, not-my-migraine, conference-room-confession, anxious-brain
+Topics: relationships, partnership, family, guilt, burden, communication, cancelled plans
+Solutions: partner education, communication strategies, couples therapy, migraine action plans
+
+---
+ARTICLE: You Don't Look Sick: The Loneliness of Invisible Pain
+Category: Personal Story | URL: https://mi-companion.com/article-invisible-pain.html
+Summary: The stigma of invisible illness. 'But you seem fine' — five words that cut deeper than the migraine itself. Validation, isolation, and finding people who understand.
+Key facts: Migraine is an invisible disability — no external markers | Stigma leads to delayed diagnosis and undertreated pain | Social isolation worsens migraine outcomes | Peer support communities improve coping and reduce isolation
+Connects to: conference-room-confession, relationships, not-my-migraine, anxious-brain
+Topics: invisible illness, stigma, validation, loneliness, social isolation, understanding
+Solutions: peer support, advocacy, education of others, support communities
+
+---
+ARTICLE: Beyond CGRP: The PACAP Revolution and the Future of Migraine Treatment
+Category: Science | URL: https://mi-companion.com/article-pacap-revolution.html
+Summary: PACAP is a migraine-triggering neuropeptide independent of CGRP. 40-70% don't respond to anti-CGRP drugs — PACAP may be why. First drugs targeting PACAP itself (not PAC1 receptor) show promise.
+Key facts: PACAP operates completely independently of CGRP pathway | 40-70% of people don't get adequate relief from anti-CGRP therapies | 2025 RCT proved blocking CGRP doesn't prevent PACAP-triggered migraines | First PAC1 receptor drug (AMG 301) failed; targeting PACAP molecule itself is the breakthrough | Phase 2 trials show promise for anti-PACAP antibodies
+Connects to: cgrp-revolution, gepants-guide, side-effect-roulette, hyperexcitable-brain
+Topics: PACAP, CGRP, future treatments, drug development, neuropeptide, clinical trials
+Solutions: discuss with neurologist, anti-PACAP trials, combination therapy
+
+---
+ARTICLE: Beyond the Pill: What Science Actually Says About Magnesium, Riboflavin, and CoQ10
+Category: Science | URL: https://mi-companion.com/magnesium-riboflavin-coq10-migraine.html
+Summary: Evidence-based review of top 3 supplements. Magnesium 400-600mg (AMF recommended), riboflavin 400mg (59% responder rate), CoQ10 300mg. What forms, doses, and timelines to expect.
+Key facts: Magnesium citrate 600mg: significant migraine frequency reduction | Riboflavin 400mg: 59% had ≥50% reduction in attacks (NNT=2.3) | CoQ10 300mg: reduced attacks from 4.9 to 3.2/month | AMF recommends magnesium 400-600mg for prevention | Start low, build over 2 weeks, give 3 months to see results
+Connects to: side-effect-roulette, food-detective, glucose-migraine, dehydration-equation
+Topics: magnesium, riboflavin, CoQ10, supplements, vitamins, natural prevention, evidence-based
+Solutions: magnesium citrate 400-600mg, riboflavin 400mg, CoQ10 300mg, supplement protocol
+
+---
+ARTICLE: Blaming the Barometer: The Weather-Migraine Myth
+Category: Science | URL: https://mi-companion.com/weather-migraine-myth.html
+Summary: 50-80% believe weather triggers attacks but only ~20% have reliable connection. The 'bucket theory' explains inconsistency: cumulative load matters, not single factors. Prodrome may increase weather sensitivity.
+Key facts: 50-80% believe weather triggers attacks | Only ~20% show reliable weather-migraine connection in studies | Bucket theory: migraine fires when cumulative triggers exceed threshold | Prodrome symptoms starting 24-48h before may increase weather sensitivity | Controllable factors matter more than weather
+Connects to: understanding-triggers, prodrome-warning-signs, climate-migraine, storm-before-storm
+Topics: weather, barometric pressure, bucket theory, trigger threshold, controllable triggers
+Solutions: focus on controllable triggers, lower baseline load, track patterns
+
+---
+ARTICLE: 31 Needles of Hope: The Truth About Botox for Migraine
+Category: Science | URL: https://mi-companion.com/article-botox-chronic-migraine.html
+Summary: Botox blocks pain-signaling molecules (CGRP, substance P, glutamate) from trigeminal nerve endings. PREEMPT trials (n=1,384). 31 injections every 12 weeks. FDA-approved only for chronic migraine (≥15 days/month).
+Key facts: Works by blocking CGRP/substance P/glutamate from trigeminal nerve endings | PREEMPT trials (n=1,384): significant reduction in headache days | 31 injections across 7 head/neck areas every 12 weeks | Full benefit typically requires 2-3 cycles (6-9 months) | Only for chronic migraine (≥15 days/month), not episodic | Side effects mild: neck pain 9%, eyelid droop 4%
+Connects to: chronic-migraine-15-day-line, cgrp-revolution, side-effect-roulette, neck-connection
+Topics: Botox, onabotulinumtoxinA, chronic migraine, preventive treatment, injections, PREEMPT
+Solutions: Botox injections, discuss with neurologist, 3-cycle trial commitment
+
+---
+ARTICLE: The Anxious Brain: The Bidirectional Link Between Migraine and Anxiety
+Category: Science | URL: https://mi-companion.com/article-anxious-brain.html
+Summary: Migraine and anxiety share bidirectional relationship and common neurobiology: serotonin, CGRP in amygdala, HPA axis. Interictal burden (anxiety between attacks) may cause more disability than attacks themselves.
+Key facts: Bidirectional: each increases risk of the other | Share serotonin dysfunction, CGRP activity, HPA axis dysregulation | CGRP causes anxiety by depleting dopamine in hippocampus | Interictal anxiety may drive more disability than attacks | CGRP treatments can improve both conditions simultaneously | CBT dismantles fear-avoidance cycle
+Connects to: hyperexcitable-brain, weekend-migraines, sleep-migraine, doomscroll-spiral, narrative-therapy
+Topics: anxiety, depression, mental health, fear, anticipatory anxiety, interictal burden, comorbidity
+Solutions: CBT, CGRP therapy, treat both conditions, fear-avoidance work, mindfulness
+
+---
+ARTICLE: The Hormone Rollercoaster: Menstrual Migraines Explained
+Category: Science | URL: https://mi-companion.com/article-body-calendar.html
+Summary: Menstrual migraine in 5-day window (day -2 to +3). Trigger is speed of estrogen decline. Three cascades: serotonin crash + opioid shutdown + prostaglandin surge → CGRP activation.
+Key facts: Menstrual migraine: 5-day window day -2 to +3 of period | Migraineurs show 46% steeper estrogen drops (SWAN, n=3,302) | Frovatriptan 2.5mg reduces menstrual migraine from 67% to 41% | CGRP antibodies cut menstrual migraine days from 5 to 2 per cycle | 3 months of dual diary tracking is diagnostic foundation
+Connects to: cgrp-revolution, gepants-guide, magnesium-supplements, understanding-triggers
+Topics: menstrual migraine, hormones, estrogen, period, menstruation, hormonal migraine, women
+Solutions: cycle tracking, mini-prophylaxis with frovatriptan, CGRP antibodies, magnesium, dual diary
+
+---
+ARTICLE: The CGRP Revolution: The Molecule That Changed Everything
+Category: Science | URL: https://mi-companion.com/article-cgrp-revolution.html
+Summary: CGRP discovery and 8 FDA-approved therapies. STRIVE trial: 50% on erenumab had migraine days cut by half. HER-MES: erenumab better tolerated and more effective than topiramate. AHS recommends as first-line 2024.
+Key facts: CGRP discovered 1982-83, linked to migraine in 1990s | 8 FDA-approved CGRP therapies: 4 antibodies + 4 gepants | STRIVE (n=955): 50% on erenumab 140mg had ≥50% reduction | HER-MES: erenumab beat topiramate, 4x fewer dropouts | AHS made CGRP first-line prevention in 2024 | 5-year safety data shows sustained benefits
+Connects to: gepants-guide, pacap-revolution, botox-chronic-migraine, side-effect-roulette
+Topics: CGRP, erenumab, Aimovig, monoclonal antibodies, preventive treatment, first-line therapy
+Solutions: CGRP antibodies, discuss with neurologist, first-line option
+
+---
+ARTICLE: The Exercise Paradox: When Movement Is Both the Trigger and the Cure
+Category: Science | URL: https://mi-companion.com/the-exercise-paradox.html
+Summary: Exercise can trigger or prevent migraine. Unstructured sudden-intensity exercise on dehydrated/tired body = trigger. Regular moderate planned exercise matches efficacy of preventive drugs.
+Key facts: Regular moderate exercise matches efficacy of preventive medications | Sudden intense exercise on dehydrated/tired body triggers attacks | Gradual progression prevents exercise-triggered migraine | Same activity done differently produces opposite results | Start low, go slow, build habit
+Connects to: dehydration-equation, sleep-migraine, weekend-migraines, understanding-triggers
+Topics: exercise, physical activity, exertional migraine, prevention, fitness, sports
+Solutions: gradual exercise progression, pre-exercise hydration, warm-up protocol, consistent schedule
+
+---
+ARTICLE: The Forbidden Molecule: Psilocybin, Psychedelics, and the Future of Migraine
+Category: Science | URL: https://mi-companion.com/article-psilocybin-migraine.html
+Summary: Psilocybin is structurally related to serotonin, binds same receptors as triptans. Yale trial: single dose reduced attacks for 2 weeks. 75% relief in Canadian survey. All trials small (n=10-18). Legal barriers.
+Key facts: Psilocin binds 5-HT1B/1D receptors (same as triptans) | Yale trial: single dose reduced migraine days by 1.65/week for 2 weeks | 75% reported headache relief in 2025 Canadian survey | Single dose increases dendritic spine density ~10% within 24 hours | NEVER combine with triptans or SSRIs/SNRIs (serotonin syndrome risk) | All trials small (n=10-18) — not evidence-based treatment yet
+Connects to: cgrp-revolution, hyperexcitable-brain, side-effect-roulette
+Topics: psilocybin, psychedelics, serotonin, experimental treatment, neuroplasticity, future therapy
+Solutions: clinical trials only, never self-treat, discuss research with neurologist
+
+---
+ARTICLE: The Gepant Generation: Nurtec, Ubrelvy, Qulipta — A Real-World Guide
+Category: Science | URL: https://mi-companion.com/article-gepants-guide.html
+Summary: First oral migraine-specific drugs. Nurtec: acute + preventive. Ubrelvy: acute only. Qulipta: prevention only. Pain freedom at 2h ~20%, relief ~60%. No cardiovascular risk unlike triptans.
+Key facts: First oral drugs designed specifically for migraine | No cardiovascular risks (unlike triptans) | Nurtec: both acute and preventive use | Ubrelvy: acute only, allows redosing at 2 hours | Qulipta: prevention only, strong constipation signal in real-world data | If one gepant fails, another might work — different pharmacokinetics
+Connects to: cgrp-revolution, pacap-revolution, side-effect-roulette, moh
+Topics: gepants, Nurtec, Ubrelvy, Qulipta, rimegepant, ubrogepant, atogepant, acute treatment, oral medication
+Solutions: gepant trial, switch between gepants, discuss with neurologist
+
+---
+ARTICLE: The Hyperexcitable Brain: Why Migraineurs Are Wired Differently
+Category: Science | URL: https://mi-companion.com/article-hyperexcitable-brain.html
+Summary: Migraine brain is cortically hyperexcitable — neurons fire more easily. Glutamate/GABA imbalance. Habituation deficit (failure to tune out stimuli). 123 risk loci identified. May have been evolutionary advantage.
+Key facts: Neurons fire more easily and intensely, even between attacks | Glutamate/GABA imbalance tips toward overactivation | Habituation deficit: most consistent finding in migraine research | Thalamocortical dysrhythmia floods cortex with sensory info | 123 risk loci, 40-60% heritability | Hyperexcitable brain may have enhanced survival in evolution
+Connects to: anxious-brain, aura, osmophobia, migraine-friendly-lighting, screen-migraine
+Topics: hyperexcitability, neuroscience, genetics, habituation, sensory sensitivity, brain wiring
+Solutions: sensory management, environmental modification, understanding your neurology
+
+---
+ARTICLE: The Ozempic Effect: Why Weight Loss Drugs Are Reducing Migraines
+Category: Science | URL: https://mi-companion.com/article-ozempic-effect.html
+Summary: GLP-1 drugs (semaglutide, liraglutide) showing migraine reduction. 2025 pilot: liraglutide cut chronic migraine days nearly in half. Three pathways: intracranial pressure, CGRP suppression, metabolic inflammation reversal.
+Key facts: 2025 pilot: liraglutide cut chronic migraine days ~50% | Weight loss didn't explain improvement | GLP-1 may lower intracranial pressure, suppress CGRP, reverse metabolic inflammation | Largest study (n≈11,000/group): fewer ER visits on GLP-1 | Obesity raises chronic migraine risk by up to 75% | NOT approved for migraine — no large RCT completed
+Connects to: cgrp-revolution, glucose-migraine, chronic-migraine-15-day-line
+Topics: GLP-1, Ozempic, semaglutide, weight loss, obesity, metabolic health, emerging treatment
+Solutions: discuss with neurologist if on GLP-1, weight management, metabolic health
+
+---
+ARTICLE: The Second Brain: How Your Gut Talks to Your Migraine
+Category: Science | URL: https://mi-companion.com/the-second-brain.html
+Summary: 90% of serotonin is made in the gut. Gut-brain axis connects microbiome to migraine. Gut bacteria composition differs in migraineurs. Food tracking matters because of this connection.
+Key facts: 90% of serotonin produced in gut, not brain | Gut microbiome composition differs in migraineurs | Gut-brain axis communicates via vagus nerve | Inflammation in gut can trigger neuroinflammation | Probiotics may reduce migraine frequency (emerging research)
+Connects to: food-detective, glucose-migraine, caffeine, alcohol-24-hour-rule, dehydration-equation
+Topics: gut-brain axis, microbiome, serotonin, gut health, food, probiotics, inflammation
+Solutions: food tracking, gut health awareness, anti-inflammatory diet, probiotics discussion
+
+---
+ARTICLE: The Storm Before the Storm: How Mi Predicts Your Migraines
+Category: Science | URL: https://mi-companion.com/article-prediction.html
+Summary: Migraine begins up to 48 hours before pain. Mi tracks 40+ factors to detect prodrome patterns. Food triggers vary individually — Mi learns YOUR patterns, not population averages.
+Key facts: Attack begins 24-48 hours before pain | 40+ factors tracked for pattern detection | Individual triggers differ from population averages | Skipped meals among most underestimated triggers | Pattern recognition improves with more data over weeks/months
+Connects to: prodrome-warning-signs, understanding-triggers, food-detective, weather-migraine-myth
+Topics: prediction, prodrome, pattern detection, tracking, early warning, personalized triggers
+Solutions: consistent tracking, prodrome awareness, early intervention, personalized trigger identification
+
+---
+ARTICLE: Why Your Brain Hates Mondays: Weekend Migraines Explained
+Category: Science | URL: https://mi-companion.com/article-weekend-migraines.html
+Summary: Stress decline (not stress itself) triggers let-down migraines. Risk peaks in first 6 hours of relaxation. Cortisol withdrawal + sleep schedule change + caffeine timing shift = trigger stacking.
+Key facts: Stress DECLINE is the trigger, not stress itself | Risk peaks in first 6 hours after relaxation (5x increase) | Cortisol withdrawal removes natural anti-inflammatory protection | Triple stacking: sleep schedule + caffeine timing + meal shifts | Hypothalamus craves consistency — even positive changes are threats
+Connects to: sleep-migraine, caffeine, anxious-brain, understanding-triggers
+Topics: weekend migraine, let-down headache, cortisol, stress, routine, schedule disruption
+Solutions: maintain weekend wake time, consistent caffeine timing, gradual relaxation, smooth transitions
+
+---
+ARTICLE: Zapping the Pain Away: The Truth About Neuromodulation Devices
+Category: Science | URL: https://mi-companion.com/article-neuromodulation-devices.html
+Summary: 6 FDA-cleared devices: Cefaly, gammaCore, SAVI Dual, Nerivio, SpringTMS, sTMS mini. 2025 IHS guidelines recommend several. 50-60% report meaningful benefit. Drug-free option.
+Key facts: 6 FDA-cleared non-invasive devices for migraine | 2025 IHS guidelines recommend Cefaly, Nerivio, SAVI Dual for acute treatment | 50-60% of users report meaningful benefit | Nerivio: broadest evidence, most insurance coverage, lowest cost | SAVI Dual: best data for migraine with aura | Best as part of combination approach, not standalone
+Connects to: cgrp-revolution, vagus-nerve-migraine, side-effect-roulette, biofeedback-migraine
+Topics: neuromodulation, Cefaly, gammaCore, Nerivio, SAVI Dual, drug-free, devices, electrical stimulation
+Solutions: neuromodulation trial, discuss with neurologist, combination approach
+
+---
+ARTICLE: Ancient Needles, Modern Evidence: Acupuncture for Migraine
+Category: Self-Care | URL: https://mi-companion.com/article-acupuncture-migraine.html
+Summary: Cochrane evidence supports acupuncture as preventive. JAMA trial: 67% reduction, lasting months after treatment. May reduce CGRP. NICE recommends when meds fail. 6-10 sessions over 5-8 weeks.
+Key facts: Cochrane moderate-quality evidence as effective preventive | JAMA trial: 67% reduction in migraine frequency | Benefits last months after treatment ends | May reduce CGRP (same target as modern drugs) | NICE recommends when standard meds fail | Plan 6-10 sessions over 5-8 weeks, 3x/week initially
+Connects to: biofeedback-migraine, vagus-nerve-migraine, side-effect-roulette, building-migraine-team
+Topics: acupuncture, complementary therapy, Cochrane evidence, NICE guidelines, drug-free prevention
+Solutions: acupuncture course, find trained practitioner, 6-10 session commitment
+
+---
+ARTICLE: Flying with a Ticking Clock: How to Survive Air Travel with Migraine
+Category: Self-Care | URL: https://mi-companion.com/article-flying-with-migraine.html
+Summary: Cabin hypoxia triggers migraine in up to 63%. Descent is most dangerous phase. Early medication timing: 84% pain-free at 2h if treated early vs 53% when pain escalated. Pre/in/post-flight protocols.
+Key facts: Low-oxygen conditions trigger migraine in up to 63% of susceptible people | Descent is most dangerous: rapid pressure changes activate trigeminal nerve | Early treatment: 84% pain-free at 2h vs 53% when pain escalated | All prescription drugs allowed through TSA in carry-on | Post-landing: cortisol drop + circadian disruption + hypoxia recovery
+Connects to: traveling-with-migraine, dehydration-equation, emergency-kit, caffeine
+Topics: flying, air travel, airplane, cabin pressure, hypoxia, travel migraine
+Solutions: pre-flight hydration, early medication, window seat, FL-41 glasses, descent preparation
+
+---
+ARTICLE: Learning to Control the Uncontrollable: Biofeedback for Migraine
+Category: Self-Care | URL: https://mi-companion.com/article-biofeedback-migraine.html
+Summary: Grade A evidence for migraine prevention, on par with propranolol. Three types: thermal, EMG, HRV. Matches medication in head-to-head trials. Effects last: stable at 17 months, only 9% relapse vs 39% for propranolol.
+Key facts: Grade A evidence — on par with propranolol and topiramate | Three types: thermal, EMG, and HRV biofeedback | Combined with medication: 79% improvement vs 54% alone | Stable at 17 months; 9% relapse vs 39% for propranolol | Home practice 10 min/day is #1 predictor of success | Only 18% of referred patients complete even one session — access is bottleneck
+Connects to: vagus-nerve-migraine, 478-breathing, anxious-brain, neuromodulation-devices
+Topics: biofeedback, thermal biofeedback, EMG, HRV, autonomic training, drug-free, self-regulation
+Solutions: biofeedback training, home practice 10 min/day, digital biofeedback tools
+
+---
+ARTICLE: Lighting the Way: Creating a Migraine-Friendly Home
+Category: Self-Care | URL: https://mi-companion.com/article-migraine-friendly-lighting.html
+Summary: Eyes contain cells (ipRGCs) sending pain signals directly to brain. Green 530nm light reduces pain ~20%. LED flicker triggers 41% of migraineurs. Warm light ≤2700K, flicker-free drivers recommended.
+Key facts: ipRGCs send pain signals to brain separate from vision | Blue, amber, red light activate pain pathway most | Green light 530nm reduces pain by ~20% | Green light therapy reduced headache days by ~60% | 41% developed headaches from standard LED flicker vs 8% controls | Chronic darkness worsens photophobia over time
+Connects to: screen-migraine, hyperexcitable-brain, tinted-lenses-migraine, osmophobia
+Topics: lighting, photophobia, green light, LED, flicker, home environment, light sensitivity
+Solutions: warm light ≤2700K, flicker-free drivers, green light strips, layered lighting, avoid chronic darkness
+
+---
+ARTICLE: The 4-7-8 Breathing Technique for Migraine Relief
+Category: Self-Care | URL: https://mi-companion.com/article-478-breathing.html
+Summary: 4-7-8 breathing activates parasympathetic nervous system. 2022 RCT: diaphragmatic breathing reduced migraine frequency. AMF confirms paced breathing reduces attacks.
+Key facts: Inhale 4, hold 7, exhale 8 activates parasympathetic system | 2022 RCT: significant migraine frequency reduction | Heart rate slows, blood pressure drops, muscle tension releases | AMF confirms paced breathing reduces attack frequency | Breathing Garden in app uses this technique
+Connects to: vagus-nerve-migraine, meet-mi, biofeedback-migraine, anxious-brain
+Topics: breathing, 4-7-8, relaxation, parasympathetic, acute relief, Breathing Garden
+Solutions: 4-7-8 technique, daily breathing practice, use during prodrome/attack
+
+---
+ARTICLE: The Vagus Nerve Hack: Simple Techniques That Calm Your Migraine Brain
+Category: Self-Care | URL: https://mi-companion.com/article-vagus-nerve-migraine.html
+Summary: Vagus nerve is longest cranial nerve. Activating it dials down migraine sensitivity. Techniques: cold water, slow exhale, humming. Can work in minutes.
+Key facts: Vagus nerve is longest cranial nerve — connects brain to gut | Activation shifts from sympathetic to parasympathetic dominance | Cold exposure activates dive reflex and vagal tone | Slow exhale (longer than inhale) directly stimulates vagus | Humming/gargling vibrate vagus nerve branches | Effects measurable within minutes
+Connects to: 478-breathing, biofeedback-migraine, neuromodulation-devices, anxious-brain
+Topics: vagus nerve, vagal tone, parasympathetic, cold exposure, humming, quick relief
+Solutions: cold water on wrists/face, 4-7-8 breathing, humming, gargling, slow exhale
+
+---
+ARTICLE: Building Your Migraine Team: Beyond the Neurologist
+Category: Tips | URL: https://mi-companion.com/article-building-migraine-team.html
+Summary: Who you need: GP, neurologist, headache specialist, therapist, PT. How to build a support team that works together. When to escalate from GP to specialist.
+Key facts: GP is gateway; headache specialist understands nuances | PT addresses cervicogenic component | Therapist addresses anxiety/depression comorbidity | Multidisciplinary approach shows best outcomes | Communication between providers is critical
+Connects to: first-neurologist-visit, side-effect-roulette, neck-connection, anxious-brain
+Topics: healthcare team, neurologist, headache specialist, physical therapy, multidisciplinary care
+Solutions: build care team, headache specialist referral, coordinate providers
+
+---
+ARTICLE: Rose-Colored (or Green) Glasses: Do Tinted Lenses Actually Help?
+Category: Tips | URL: https://mi-companion.com/article-tinted-lenses-migraine.html
+Summary: FL-41 rose tint, Axon Optics, TheraSpecs. Research on precision-tinted lenses for migraine. What works, what's marketing, and what to expect.
+Key facts: FL-41 tint blocks specific wavelengths that activate ipRGCs | Clinical evidence shows reduced photophobia and attack frequency | Not all tinted lenses are equal — precision tinting matters | Useful for fluorescent environments and screen work | Not a cure — part of sensory management toolkit
+Connects to: migraine-friendly-lighting, screen-migraine, hyperexcitable-brain, conference-room-confession
+Topics: FL-41, tinted lenses, TheraSpecs, Axon Optics, photophobia, light sensitivity glasses
+Solutions: FL-41 glasses trial, precision-tinted lenses, indoor vs outdoor options
+
+---
+ARTICLE: The Day After: A Practical Survival Guide for the Migraine Hangover
+Category: Tips | URL: https://mi-companion.com/article-migraine-hangover.html
+Summary: Practical recovery guide for postdrome phase. What to eat, drink, do — and avoid. Tips from migraine community for faster recovery.
+Key facts: Postdrome can last 24-48 hours after pain resolves | Brain is still recovering — not laziness | Gentle hydration and electrolytes aid recovery | Light movement better than complete rest | Avoid triggers that could rebound into another attack
+Connects to: postdrome, dehydration-equation, glucose-migraine, exercise-paradox
+Topics: postdrome, recovery, hangover, day after, fatigue, brain fog
+Solutions: electrolyte hydration, gentle movement, easy meals, gradual return to activity
+
+---
+ARTICLE: The Food Detective: How to Run Your Own Elimination Trial
+Category: Tips | URL: https://mi-companion.com/food-detective.html
+Summary: How to systematically find YOUR food triggers through elimination trials — not internet myths. Cheese, chocolate, wine may not be your triggers. Individual variation is enormous.
+Key facts: Individual food triggers vary enormously | Population-wide 'trigger lists' mislead most people | Systematic elimination-reintroduction is gold standard | 2-week elimination, then reintroduce one food at a time | Keep detailed diary during trial
+Connects to: understanding-triggers, caffeine, alcohol-24-hour-rule, glucose-migraine, second-brain
+Topics: food triggers, elimination diet, food diary, chocolate, cheese, wine, individual triggers
+Solutions: elimination trial protocol, food diary, systematic reintroduction
+
+---
+ARTICLE: The Ice vs. Heat Debate: What Actually Works?
+Category: Tips | URL: https://mi-companion.com/article-ice-vs-heat.html
+Summary: Science behind temperature therapy. Cold constricts vessels and numbs. Heat relaxes muscles and increases flow. Finding what works for you — often combination works best.
+Key facts: Cold on forehead/temples: vasoconstriction + pain gate theory | Heat on neck/shoulders: muscle relaxation, increased blood flow | Combination (cold head + warm neck) often most effective | Individual response varies significantly | Apply for 15-20 minutes max
+Connects to: emergency-kit, neck-connection, vagus-nerve-migraine
+Topics: ice, heat, cold therapy, temperature, acute relief, cryotherapy
+Solutions: cold pack on forehead, heat on neck, combination approach, ice cap
+
+---
+ARTICLE: The McMigraine Phenomenon: What to Eat When an Attack Hits
+Category: Tips | URL: https://mi-companion.com/article-mcmigraine-phenomenon.html
+Summary: McDonald's fries and Coke went viral as migraine 'cure'. Science behind it: salt, caffeine, fast carbs. Prodrome cravings are data — your brain is telling you what it needs.
+Key facts: Salt, caffeine, and fast carbs address prodrome-stage deficits | Cravings during prodrome are brain signaling glucose/sodium needs | Not magic — matches what neuroscience predicts the brain needs | Small frequent meals during attack prevent glucose crash | Ginger shown to reduce nausea as effectively as some medications
+Connects to: glucose-migraine, caffeine, prodrome-warning-signs, dehydration-equation
+Topics: food during attack, cravings, prodrome cravings, McDonald's, salt, glucose, practical eating
+Solutions: salt + caffeine + carbs during prodrome, small frequent meals, ginger for nausea
+
+---
+ARTICLE: The Migraine Map: How to Choose a City That Won't Attack You
+Category: Tips | URL: https://mi-companion.com/article-migraine-map.html
+Summary: Data-driven framework for location choice. Factors: barometric stability, air pollution, altitude, allergens, healthcare access. Best/worst cities ranked by migraine-friendliness.
+Key facts: Barometric stability matters more than absolute pressure | Air pollution directly triggers neuroinflammation | Altitude affects migraine through hypoxia | Healthcare deserts limit treatment access | Coastal cities with stable climates tend to score well
+Connects to: weather-migraine-myth, climate-migraine, building-migraine-team
+Topics: location, city, relocation, climate, air quality, altitude, barometric pressure
+Solutions: location assessment framework, barometric stability research, healthcare access check
+
+---
+ARTICLE: The Side Effect Roulette: An Honest Guide to Migraine Preventive Medications
+Category: Tips | URL: https://mi-companion.com/article-side-effect-roulette.html
+Summary: What preventive meds actually feel like. Topiramate brain fog, beta-blocker fatigue, amitriptyline weight gain. Every major class: what to expect, when to push through, when to switch.
+Key facts: Topiramate ('Dopamax'): word-finding difficulty, tingling, weight loss, cognitive fog | Beta-blockers: fatigue, exercise intolerance, cold extremities | Amitriptyline: weight gain, dry mouth, morning grogginess | Valproate: weight gain, hair loss, teratogenic | CGRP drugs: generally well-tolerated, constipation with some | Every class has 2-3 month trial needed before judging
+Connects to: cgrp-revolution, gepants-guide, botox-chronic-migraine, building-migraine-team, magnesium-supplements
+Topics: preventive medications, side effects, topiramate, beta-blockers, amitriptyline, medication guide
+Solutions: informed medication choice, 2-3 month trial commitment, side effect management, discuss switching
+
+---
+ARTICLE: Traveling with a Monster: A Migraine Survival Guide
+Category: Tips | URL: https://mi-companion.com/article-traveling-with-migraine.html
+Summary: Altitude changes, time zones, dehydration, stress. Travel as minefield. Practical strategies for planes, trains, and adventures abroad.
+Key facts: Time zone changes disrupt circadian rhythm and cortisol | Altitude above 2500m increases migraine risk significantly | Travel stress loads multiple triggers simultaneously | Maintain medication schedule in local time | Pack double medication supply in two separate bags
+Connects to: flying-with-migraine, emergency-kit, dehydration-equation, sleep-migraine
+Topics: travel, time zones, altitude, vacation, jet lag, international travel
+Solutions: gradual time zone adjustment, hydration protocol, double medication packing, trigger minimization
+
+---
+ARTICLE: Understanding Your Triggers: What Your Patterns Are Really Telling You
+Category: Tips | URL: https://mi-companion.com/article-understanding-triggers.html
+Summary: Mi's mood stones reveal patterns. Triggers aren't simple cause-effect — they're cumulative. How to read patterns and use information for prevention.
+Key facts: Triggers are cumulative (bucket theory), not single causes | Same trigger may not always cause attack — depends on total load | Pattern recognition requires consistent tracking over weeks | Prodrome symptoms can be mistaken for triggers | Mi tracks and visualizes patterns over time
+Connects to: storm-before-storm, weather-migraine-myth, food-detective, prodrome-warning-signs
+Topics: triggers, patterns, tracking, bucket theory, cumulative triggers, mood stones
+Solutions: consistent tracking, pattern analysis, trigger load management
+
+---
+ARTICLE: Your Migraine Emergency Kit: Never Be Caught Unprepared
+Category: Tips | URL: https://mi-companion.com/article-emergency-kit.html
+Summary: What to pack for work, travel, and life. Practical guide to building personal migraine survival kit — medication to comfort items.
+Key facts: Kit for work, car, travel bag — three locations | Medications, ice pack, sunglasses, earplugs, water, snacks | Keep medications in original containers for travel | Include comfort items: eye mask, essential oils | Update kit seasonally and after medication changes
+Connects to: traveling-with-migraine, flying-with-migraine, ice-vs-heat, tinted-lenses-migraine
+Topics: emergency kit, preparedness, medication, work kit, travel kit, comfort items
+Solutions: build 3 kits (work/car/travel), regular kit updates, comfort item selection
+
+---
+ARTICLE: The 24-Hour Rule: Why That Glass of Wine Hits Different
+Category: Triggers | URL: https://mi-companion.com/alcohol-migraine-24-hour-rule.html
+Summary: Alcohol affects migraineurs differently. Not always hangover — true migraine trigger. 24-hour window. How to enjoy a drink without paying the price.
+Key facts: Alcohol triggers migraine through multiple pathways: histamine, vasodilation, dehydration | Red wine most reported trigger, but individual variation huge | Trigger window extends up to 24 hours | Not the same as hangover headache | Hydration and food before/during/after reduces risk
+Connects to: caffeine, food-detective, dehydration-equation, glucose-migraine
+Topics: alcohol, wine, red wine, histamine, drinking, trigger window
+Solutions: hydration protocol, food pairing, know your specific triggers, 24-hour tracking window
+
+---
+ARTICLE: The Blood Sugar Rollercoaster: Glucose and Your Migraine Brain
+Category: Triggers | URL: https://mi-companion.com/article-glucose-migraine.html
+Summary: Brain runs on glucose. Skipped meals, afternoon crashes, sugar spikes all trigger attacks. Steady blood sugar through regular meals is key prevention.
+Key facts: Brain uses ~20% of body's glucose despite being 2% of mass | Hypoglycemia directly triggers cortical spreading depression | Skipped meals are among top 5 most common triggers | Blood sugar crashes activate stress hormones → migraine cascade | Regular small meals maintain stable glucose
+Connects to: mcmigraine-phenomenon, food-detective, weekend-migraines, dehydration-equation
+Topics: blood sugar, glucose, hypoglycemia, skipped meals, diet, sugar crash, fasting
+Solutions: regular meals every 3-4 hours, complex carbs over simple, no skipping breakfast, bedtime snack if morning migraines
+
+---
+ARTICLE: The Caffeine Paradox: Friend, Foe, or Both?
+Category: Triggers | URL: https://mi-companion.com/article-caffeine.html
+Summary: Coffee triggers AND relieves migraine. Caffeine half-life is 6 hours. Withdrawal triggers attacks within 12-24 hours. Finding personal balance and cutoff time is key.
+Key facts: Caffeine half-life ~6 hours (varies by genetics: CYP1A2) | Withdrawal triggers attacks within 12-24 hours of last dose | 200mg caffeine helps acute migraine (in some OTC meds) | Regular daily intake >200mg increases withdrawal risk | Consistent timing more important than amount
+Connects to: weekend-migraines, sleep-migraine, morning-migraine, food-detective
+Topics: caffeine, coffee, withdrawal, CYP1A2, timing, cutoff time, dependency
+Solutions: consistent daily timing, personal cutoff time, gradual reduction if needed, track coffee intake
+
+---
+ARTICLE: The Cannabis Question: Relief, Trigger, or Both?
+Category: Triggers | URL: https://mi-companion.com/article-cannabis-migraine.html
+Summary: Some report attack abortion, others worsening. First clinical trials reporting results. What science knows and doesn't. THC vs CBD differences.
+Key facts: Endocannabinoid system modulates pain, inflammation, serotonin | THC may abort attacks in some; CBD may reduce inflammation | MOH risk exists with frequent cannabis use | First RCTs underway but results limited | Varies enormously by individual, strain, route, dose
+Connects to: moh, psilocybin-migraine, side-effect-roulette
+Topics: cannabis, marijuana, CBD, THC, endocannabinoid, legalization, alternative treatment
+Solutions: discuss with neurologist, if trying: low dose, track carefully, be aware of MOH risk
+
+---
+ARTICLE: The Climate Migraine: How a Warming Planet Is Changing Your Brain
+Category: Triggers | URL: https://mi-companion.com/article-climate-migraine.html
+Summary: Every 10°F temperature rise = 6% more headaches. 12-year UK study (400,000 people) links air pollution and extreme heat to migraine. Climate change is a neurological crisis.
+Key facts: 10°F temperature rise = 6% increase in headache ER visits | 12-year UK study (n=400,000): pollution and heat linked to migraine | PM2.5 particles cross blood-brain barrier → neuroinflammation | Extreme weather events increase trigger frequency | Wildfire smoke particularly dangerous for migraineurs
+Connects to: weather-migraine-myth, migraine-map, dehydration-equation, osmophobia
+Topics: climate change, heat, air pollution, temperature, PM2.5, wildfire smoke, environmental triggers
+Solutions: air quality monitoring, heat avoidance strategies, indoor air purification, climate-aware planning
+
+---
+ARTICLE: The Dehydration Equation: Why Water Isn't Enough
+Category: Triggers | URL: https://mi-companion.com/article-dehydration-equation.html
+Summary: Hydration is about electrolyte balance, not just volume. You can drink 8 glasses and still be functionally dehydrated. Sodium, potassium, magnesium all matter.
+Key facts: Dehydration triggers ~1/3 of migraine sufferers | Electrolyte balance matters as much as volume | Sodium and potassium drive cellular hydration | Increasing water by 1.5L cut headache hours by 21 in 2 weeks | Morning dehydration from overnight fluid loss is underrecognized
+Connects to: caffeine, alcohol-24-hour-rule, glucose-migraine, exercise-paradox, flying-with-migraine
+Topics: dehydration, water, electrolytes, sodium, hydration, fluid balance
+Solutions: electrolyte drinks, morning hydration, consistent intake, pre-exercise hydration
+
+---
+ARTICLE: The Doom Scroll Spiral: Social Media, Dopamine, and Your Migraine Brain
+Category: Triggers | URL: https://mi-companion.com/article-doomscroll-spiral.html
+Summary: Not just screen light — anxiety content, dopamine loops, neck position. Mindless scrolling is an underrecognized migraine trigger combining multiple risk factors.
+Key facts: Combines screen light + anxiety + dopamine depletion + neck strain | Dopamine dysregulation overlaps with migraine pathophysiology | Anxiety-triggering content activates HPA axis | Neck flexion at 45° for hours strains cervical spine | Blue light suppresses melatonin and disrupts sleep
+Connects to: screen-migraine, anxious-brain, neck-connection, sleep-migraine
+Topics: social media, doom scrolling, dopamine, screen time, digital wellness, anxiety, phone
+Solutions: screen time limits, content curation, posture awareness, night mode, digital boundaries
+
+---
+ARTICLE: The Goldilocks Problem: Why Sleep Is Never 'Just Right'
+Category: Triggers | URL: https://mi-companion.com/the-goldilocks-problem-sleep-migraine.html
+Summary: Too little AND too much sleep trigger attacks. The maddening science of sleep and migraine. Finding your personal sweet spot.
+Key facts: Both sleep deprivation AND oversleeping trigger migraine | Hypothalamus controls both sleep and migraine pathways | Consistent wake time is more important than total hours | Weekend sleep-in of >1 hour increases Monday attack risk | Sleep disorders (apnea, insomnia) increase migraine frequency
+Connects to: weekend-migraines, morning-migraine, caffeine, anxious-brain
+Topics: sleep, insomnia, oversleeping, sleep hygiene, circadian rhythm, sleep schedule
+Solutions: consistent wake time ±30 min, sleep hygiene protocol, screen apnea evaluation, no weekend sleep-in >1h
+
+---
+ARTICLE: The Screen That Stares Back: Digital Life with Migraines
+Category: Triggers | URL: https://mi-companion.com/screen-migraine-science.html
+Summary: 8 hours of screen time = 8 hours of potential triggers. What science actually says about blue light. Practical tips beyond 'just take breaks'.
+Key facts: Screen flicker, blue light, and glare trigger photosensitive migraineurs | 20-20-20 rule: every 20 min, look 20ft away, for 20 seconds | Dark mode may actually worsen reading in some situations | Screen brightness should match ambient lighting | Text size and contrast matter more than blue light filters
+Connects to: migraine-friendly-lighting, tinted-lenses-migraine, doomscroll-spiral, hyperexcitable-brain
+Topics: screens, blue light, computer, digital eye strain, dark mode, monitor settings
+Solutions: 20-20-20 rule, ambient matching brightness, larger text, matte screen filter, FL-41 for screen work
+
+---
+ARTICLE: The Trap of Relief: When Your Medicine Becomes Your Migraine
+Category: Triggers | URL: https://mi-companion.com/article-moh.html
+Summary: Medication overuse headache — the cruelest paradox. Using acute medication >10-15 days/month causes chronic daily headache. Understanding without shame. Detoxification protocols.
+Key facts: Using acute meds >10-15 days/month can cause MOH | Triptans: >10 days/month threshold | NSAIDs: >15 days/month threshold | Most common cause of chronic daily headache | Detoxification is necessary but temporary worsening expected | Preventive medication should be started before/during detox
+Connects to: chronic-migraine-15-day-line, side-effect-roulette, gepants-guide, building-migraine-team
+Topics: medication overuse, MOH, rebound headache, triptans, NSAIDs, chronic daily headache, detox
+Solutions: track medication days, discuss with neurologist, supervised detox, preventive bridge therapy
+
+---
+ARTICLE: Is This a Stroke? When Migraine Aura Becomes an Emergency
+Category: Understanding | URL: https://mi-companion.com/article-stroke-aura-emergency.html
+Summary: How to distinguish migraine aura from stroke. Numbness, speech loss, vision changes — when minutes matter. Clear guidance on when to call emergency services.
+Key facts: Migraine aura: gradual onset (5-20 min), positive symptoms, serial progression | Stroke: sudden onset (seconds), negative symptoms (loss of function) | FAST: Face drooping, Arm weakness, Speech difficulty, Time to call | New aura pattern in someone >40 warrants urgent evaluation | When in doubt, always call emergency services
+Connects to: aura, aphasia, hyperexcitable-brain
+Topics: stroke, emergency, aura, FAST, warning signs, when to call 911
+Solutions: learn FAST signs, call emergency if sudden onset, never assume 'just migraine' with new symptoms
+
+---
+ARTICLE: Little Heads, Big Pain: When Migraine Starts in Childhood
+Category: Understanding | URL: https://mi-companion.com/article-pediatric-migraine.html
+Summary: Abdominal migraine, cyclic vomiting, 'growing pains' that aren't. Understanding pediatric migraine and helping children who suffer in silence.
+Key facts: Migraine can present as abdominal pain in children | Cyclic vomiting syndrome is a migraine variant | Children's attacks are shorter but can be more intense | Family history strongly predicts pediatric migraine | Many children go undiagnosed for years
+Connects to: hyperexcitable-brain, understanding-triggers, 478-breathing
+Topics: children, pediatric, abdominal migraine, cyclic vomiting, school, childhood onset
+Solutions: pediatric neurologist referral, age-appropriate tracking, school accommodation plan
+
+---
+ARTICLE: Migraine Hangover: The Phase No One Talks About
+Category: Understanding | URL: https://mi-companion.com/article-postdrome.html
+Summary: Postdrome is real. Zombie-like feeling after pain resolves. Understanding it stops self-blame for 'being lazy'. 24-48 hours of recovery is normal.
+Key facts: Postdrome affects up to 80% of migraineurs | Lasts 24-48 hours after headache phase | Cognitive fog, fatigue, mood changes, food cravings | Not laziness — measurable brain changes on fMRI | Understanding postdrome reduces self-blame
+Connects to: migraine-hangover, prodrome-warning-signs, not-my-migraine, conference-room-confession
+Topics: postdrome, recovery, fatigue, brain fog, zombie, after attack
+Solutions: accept recovery time, gentle self-care, plan for reduced capacity, gradual return
+
+---
+ARTICLE: Migraine or Tension? The Question That Changes Everything
+Category: Understanding | URL: https://mi-companion.com/article-migraine-vs-tension.html
+Summary: Throbbing vs pressing, one-sided vs both. Getting it wrong = wrong treatment. Clear diagnostic criteria and differences.
+Key facts: Migraine: usually one-sided, throbbing, moderate-severe, worsened by activity | Tension: both sides, pressing/tightening, mild-moderate, not worsened by activity | Migraine has nausea, photo/phonophobia; tension type does not | 40% of migraineurs are initially misdiagnosed as tension-type | Treatment differs significantly — triptans don't help tension headache
+Connects to: first-neurologist-visit, neck-connection, chronic-migraine-15-day-line
+Topics: diagnosis, tension headache, migraine vs tension, one-sided, throbbing, pressing
+Solutions: accurate diagnosis, headache diary for doctor, describe symptoms precisely
+
+---
+ARTICLE: Nine Months of Uncertainty: Migraine During Pregnancy
+Category: Understanding | URL: https://mi-companion.com/article-migraine-pregnancy.html
+Summary: Some find relief, others new triggers. Navigating migraine with most medications off-limits. Second trimester often brings improvement due to stable estrogen.
+Key facts: 60-70% of migraineurs improve during pregnancy (especially T2-T3) | Improvement linked to sustained high estrogen levels | Most migraine medications contraindicated in pregnancy | Acetaminophen generally considered safest option | Some experience first migraine or worsening during pregnancy | Postpartum estrogen crash often triggers return
+Connects to: body-calendar, magnesium-supplements, biofeedback-migraine, 478-breathing
+Topics: pregnancy, hormones, estrogen, breastfeeding, medication safety, prenatal
+Solutions: discuss safe options with OB + neurologist, non-drug therapies, magnesium, biofeedback
+
+---
+ARTICLE: The 15-Day Line: When Episodic Becomes Chronic
+Category: Understanding | URL: https://mi-companion.com/article-chronic-migraine-15-day-line.html
+Summary: ≥15 headache days/month changes diagnosis, treatment, identity. Understanding chronic migraine and the path back. Modifiable risk factors for chronification.
+Key facts: Chronic migraine: ≥15 headache days/month for ≥3 months | About 3% of episodic migraine converts to chronic each year | Modifiable risk factors: MOH, obesity, sleep disorders, depression, caffeine overuse | Botox, CGRP drugs specifically indicated for chronic migraine | Reversion to episodic is possible with proper treatment
+Connects to: moh, botox-chronic-migraine, cgrp-revolution, anxious-brain, sleep-migraine
+Topics: chronic migraine, chronification, 15-day threshold, episodic vs chronic, risk factors
+Solutions: track headache days accurately, address modifiable risk factors, chronic-specific treatments
+
+---
+ARTICLE: The Jaw You Clench at Night: TMJ, Bruxism, and the Migraine Connection
+Category: Understanding | URL: https://mi-companion.com/article-tmj-bruxism-migraine.html
+Summary: Bruxism activates trigeminal nerve. 70% TMJ-migraine comorbidity. Night guard reduces attacks by 40%. Jaw, teeth, and trigeminal nerve connected.
+Key facts: Bruxism activates trigeminal nerve — same nerve central to migraine | 70% of TMJ patients have migraine comorbidity | Night guard reduced attack frequency by ~40% in studies | Morning jaw pain/headache is hallmark sign | Stress increases nighttime clenching
+Connects to: morning-migraine, neck-connection, anxious-brain, sleep-migraine
+Topics: TMJ, bruxism, teeth grinding, jaw clenching, trigeminal nerve, night guard, dental
+Solutions: dental evaluation, night guard/splint, stress management, physical therapy for jaw
+
+---
+ARTICLE: The Neck Connection: When Your Spine Talks to Your Brain
+Category: Understanding | URL: https://mi-companion.com/article-neck-connection.html
+Summary: Cervicogenic headache vs migraine overlap. Neck problems can trigger or worsen migraine through trigeminocervical complex. Treating both may be the answer.
+Key facts: Trigeminocervical complex connects neck input to migraine pathways | Cervicogenic headache mimics migraine symptoms | Neck stiffness is one of the most common prodrome symptoms | Physical therapy addressing neck can reduce migraine frequency | Posture, especially forward head posture, contributes
+Connects to: tmj-bruxism-migraine, doomscroll-spiral, prodrome-warning-signs, morning-migraine
+Topics: neck, cervical spine, cervicogenic headache, posture, trigeminocervical complex, physical therapy
+Solutions: physical therapy, posture correction, ergonomic setup, neck exercises, cervical evaluation
+
+---
+ARTICLE: The Smell of Danger: When Perfume Becomes a Weapon
+Category: Understanding | URL: https://mi-companion.com/article-osmophobia.html
+Summary: Osmophobia affects up to 95% during attacks. Why nose becomes enemy. Perfume, chemicals, cooking smells. Protection strategies.
+Key facts: Osmophobia affects up to 95% of migraineurs during attacks | Highly specific to migraine — useful diagnostic marker | Central sensitization amplifies normal smells into pain | Perfume, cleaning products, cooking most common triggers | Can persist between attacks in chronic migraine
+Connects to: hyperexcitable-brain, migraine-friendly-lighting, climate-migraine, emergency-kit
+Topics: osmophobia, smell sensitivity, perfume, chemical triggers, sensory sensitivity
+Solutions: scent-free products, air purifiers, communicate needs, carry mask
+
+---
+ARTICLE: The Warning Signs: Reading Your Prodrome Like a Book
+Category: Understanding | URL: https://mi-companion.com/article-prodrome-warning-signs.html
+Summary: Yawning, cravings, irritability, neck stiffness — body sends signals hours before pain. Learning to read and act on prodrome.
+Key facts: Prodrome begins 24-48 hours before headache | Common signs: yawning, food cravings, irritability, neck stiffness, fatigue | 77% of migraineurs experience at least one prodrome symptom | Early treatment during prodrome is most effective | Prodrome symptoms often mistaken for triggers (e.g., chocolate craving)
+Connects to: storm-before-storm, understanding-triggers, mcmigraine-phenomenon, weather-migraine-myth
+Topics: prodrome, early warning, yawning, cravings, irritability, neck stiffness, early intervention
+Solutions: learn your prodrome pattern, early medication at prodrome onset, preemptive self-care
+
+---
+ARTICLE: When the World Glitches: Understanding Migraine Aura
+Category: Understanding | URL: https://mi-companion.com/article-aura.html
+Summary: 30% of migraineurs have aura. Zigzag lines, blind spots, visual distortions. Caused by cortical spreading depression. Usually 5-60 minutes before headache.
+Key facts: Affects ~30% of migraineurs | Caused by cortical spreading depression (wave of electrical activity) | Visual aura most common: zigzag lines, scotoma, flickering | Lasts 5-60 minutes, usually before headache | Can also include sensory, speech, or motor symptoms
+Connects to: stroke-aura-emergency, aphasia, hyperexcitable-brain
+Topics: aura, visual aura, zigzag lines, scotoma, cortical spreading depression, visual disturbance
+Solutions: recognize aura as early warning, take medication at aura onset, rest in safe environment
+
+---
+ARTICLE: When Words Disappear: The Terror of Migraine Aphasia
+Category: Understanding | URL: https://mi-companion.com/article-migraine-aphasia.html
+Summary: Word-finding difficulty during migraine. You know the word but can't say it. Understanding language disruptions — and why they're temporary.
+Key facts: Aphasia can occur as part of migraine aura | Affects word finding, sentence construction, comprehension | Caused by cortical spreading depression through language areas | Usually temporary (5-60 minutes) | Can be terrifying but doesn't indicate brain damage
+Connects to: aura, stroke-aura-emergency, hyperexcitable-brain, conference-room-confession
+Topics: aphasia, word finding, speech, language, cognitive symptoms, brain fog
+Solutions: recognize as aura symptom, have pre-written cards for emergencies, know stroke vs migraine signs
+
+---
+ARTICLE: Why You Wake Up with a Migraine: The Mystery of Morning Attacks
+Category: Understanding | URL: https://mi-companion.com/article-morning-migraine.html
+Summary: Most common complaint in migraine communities. Sleep apnea, bruxism, circadian cortisol, overnight dehydration, and what your pillow can't fix.
+Key facts: Morning migraine is the most common complaint in migraine communities | Multiple converging causes: sleep apnea, bruxism, cortisol trough, dehydration | 4-6 AM cortisol is at lowest → reduced anti-inflammatory protection | 8 hours without water = significant dehydration | Sleep apnea and migraine have 50%+ comorbidity in some studies
+Connects to: tmj-bruxism-migraine, sleep-migraine, caffeine, dehydration-equation, neck-connection
+Topics: morning migraine, waking with migraine, sleep apnea, cortisol, overnight dehydration
+Solutions: sleep study for apnea, dental evaluation for bruxism, bedtime water, consistent wake time, bedtime snack
