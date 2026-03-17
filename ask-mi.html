@@ -1033,6 +1033,9 @@
         }
         chatMessages.appendChild(msgDiv);
         scrollToBottom();
+        const observer = new MutationObserver(() => { chatArea.scrollTop = chatArea.scrollHeight; });
+        observer.observe(msgDiv, { childList: true, subtree: true, characterData: true });
+        setTimeout(() => observer.disconnect(), 3000);
     }
 
     function showTyping() {
