@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ask Mi — AI-powered migraine advisor based on 66 peer-reviewed articles. Describe your situation and get personalized insights.">
+    <meta name="description" content="Ask Mi — AI-powered migraine advisor based on 55+ peer-reviewed articles. Describe your situation and get personalized insights.">
     <title>Ask Mi — AI Migraine Advisor | Migraine Companion</title>
     <link rel="icon" type="image/png" href="images/mi-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,27 +14,36 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
+            /* Surface — 3 depth levels */
             --surface-base: #131314;
-            --surface-card: rgba(35, 35, 37, 0.45);
-            --surface-elevated: rgba(43, 43, 45, 0.55);
-            --border-subtle: rgba(139, 122, 168, 0.08);
+            --surface-card: rgba(30, 30, 32, 0.72);
+            --surface-elevated: rgba(43, 43, 45, 0.65);
+            --surface-floating: rgba(50, 48, 54, 0.80);
+            
+            --border-subtle: rgba(139, 122, 168, 0.06);
             --border-default: rgba(139, 122, 168, 0.10);
             --border-hover: rgba(139, 122, 168, 0.22);
+            --border-glass: rgba(255, 255, 255, 0.06);
+            
+            /* Text — migraine-friendly warm palette, WCAG AA+ on #131314 */
             --text-heading: #F5F0E8;
-            --text-body: #C9BDA8;
-            --text-secondary: #9A8EA6;
-            --text-muted: #6E6580;
+            --text-body: #D0C4AE;
+            --text-secondary: #B5A8C4;
+            --text-muted: #9088A0;
+            
+            /* Accents — green/teal safe zone (Harvard 520nm) */
             --lavender: #8B7AA8;
             --gold: #C5A059;
             --green: #6AAA7A;
             --teal: #6B9BAA;
-            --sand: #C9BDA8;
+            --sand: #D0C4AE;
             --cream: #F5F0E8;
             --paper: #F0EAD6;
         }
         
         body {
             font-family: 'Inter', -apple-system, sans-serif;
+            font-weight: 400;
             background: var(--surface-base);
             color: var(--text-body);
             min-height: 100vh;
@@ -42,6 +51,7 @@
             display: flex;
             flex-direction: column;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             overflow: hidden;
         }
         
@@ -52,7 +62,7 @@
             top: -200px; left: 50%;
             transform: translateX(-50%);
             width: 900px; height: 700px;
-            background: radial-gradient(ellipse, rgba(139, 122, 168, 0.06) 0%, transparent 70%);
+            background: radial-gradient(ellipse, rgba(139, 122, 168, 0.05) 0%, transparent 70%);
             pointer-events: none; z-index: 0;
         }
         body::after {
@@ -60,7 +70,7 @@
             position: fixed;
             bottom: -100px; right: -100px;
             width: 500px; height: 500px;
-            background: radial-gradient(ellipse, rgba(197, 160, 89, 0.04) 0%, transparent 70%);
+            background: radial-gradient(ellipse, rgba(197, 160, 89, 0.03) 0%, transparent 70%);
             pointer-events: none; z-index: 0;
         }
         
@@ -71,10 +81,11 @@
             height: 56px;
             background: rgba(19, 19, 20, 0.80);
             backdrop-filter: saturate(180%) blur(24px);
+            -webkit-backdrop-filter: saturate(180%) blur(24px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
-            padding: 0 20px;
+            padding: 0 24px;
             flex-shrink: 0;
             z-index: 10;
             position: relative;
@@ -90,7 +101,7 @@
         .header-left {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 16px;
         }
         .back-btn {
             display: flex;
@@ -102,9 +113,9 @@
             font-weight: 500;
             padding: 6px 14px;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid var(--border-glass);
             background: rgba(255,255,255,0.03);
-            transition: all 0.3s ease;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .back-btn:hover {
             color: var(--cream);
@@ -118,17 +129,18 @@
             gap: 10px;
         }
         .header-title img { width: 28px; height: 28px; border-radius: 7px; }
-        .header-title span {
+        .header-title .name {
             font-family: 'Comfortaa', cursive;
             font-size: 0.9rem;
             font-weight: 600;
             color: var(--gold);
         }
         .header-title .subtitle {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.7rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            font-weight: 400;
+            font-weight: 500;
+            font-style: italic;
             margin-left: 2px;
         }
         .new-chat-btn {
@@ -137,14 +149,14 @@
             gap: 5px;
             color: var(--text-muted);
             background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid var(--border-glass);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.78rem;
             font-weight: 500;
             font-family: inherit;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .new-chat-btn:hover {
             color: var(--cream);
@@ -156,7 +168,7 @@
         .chat-area {
             flex: 1;
             overflow-y: auto;
-            padding: 32px 20px 24px;
+            padding: 24px 24px;
             display: flex;
             flex-direction: column;
             position: relative;
@@ -183,68 +195,166 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             text-align: center;
-            padding: 40px 20px;
-            animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 12px 0 40px;
         }
         @keyframes fade-up {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(16px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .welcome-avatar {
-            width: 72px; height: 72px;
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.4), 0 0 40px rgba(197, 160, 89, 0.08);
-            margin-bottom: 20px;
+        @keyframes fade-down {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .welcome h1 {
-            font-size: 1.5rem;
-            color: var(--cream);
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-        .welcome p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            max-width: 450px;
-            line-height: 1.6;
-            margin-bottom: 32px;
-        }
-        .welcome-badge {
+
+        /* Dev badge */
+        .dev-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(197, 160, 89, 0.08);
-            border: 1px solid rgba(197, 160, 89, 0.15);
+            background: rgba(139, 122, 168, 0.06);
+            border: 1px solid rgba(139, 122, 168, 0.12);
             border-radius: 20px;
-            padding: 5px 14px;
-            font-size: 0.72rem;
-            color: var(--gold);
+            padding: 5px 16px;
+            font-size: 0.68rem;
+            color: var(--lavender);
             font-weight: 600;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            animation: fade-down 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .dev-badge svg { width: 12px; height: 12px; fill: currentColor; opacity: 0.7; }
+
+        /* Welcome header */
+        .welcome-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 6px;
+            animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .welcome-avatar {
+            width: 48px; height: 48px;
+            border-radius: 13px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 30px rgba(197, 160, 89, 0.06);
+        }
+        .welcome h1 {
+            font-size: 1.75rem;
+            color: var(--cream);
+            font-weight: 700;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        .welcome-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            font-weight: 500;
             margin-bottom: 28px;
+            animation: fade-up 0.6s 0.08s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
-        /* Starter cards */
+        /* ═══ INFO CARD ═══ */
+        .info-card {
+            width: 100%;
+            max-width: 740px;
+            background: var(--surface-card);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--border-default);
+            border-radius: 20px;
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.04);
+            animation: fade-up 0.6s 0.14s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 180px; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.35;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 28px;
+        }
+        .info-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .info-icon {
+            width: 38px; height: 38px;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .info-icon svg { width: 18px; height: 18px; }
+        .info-icon.ic-what { background: rgba(107, 155, 170, 0.10); border: 1px solid rgba(107, 155, 170, 0.12); }
+        .info-icon.ic-what svg { fill: var(--teal); }
+        .info-icon.ic-how { background: rgba(139, 122, 168, 0.10); border: 1px solid rgba(139, 122, 168, 0.12); }
+        .info-icon.ic-how svg { fill: var(--lavender); }
+        .info-icon.ic-value { background: rgba(106, 170, 122, 0.10); border: 1px solid rgba(106, 170, 122, 0.12); }
+        .info-icon.ic-value svg { fill: var(--green); }
+        .info-icon.ic-price { background: rgba(197, 160, 89, 0.08); border: 1px solid rgba(197, 160, 89, 0.10); }
+        .info-icon.ic-price svg { fill: var(--gold); }
+        .info-text h3 {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 3px;
+            letter-spacing: 0.01em;
+        }
+        .info-text p {
+            font-size: 0.82rem;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+
+        /* ═══ STARTER CARDS ═══ */
+        .starter-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            animation: fade-up 0.6s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
         .starter-cards {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            max-width: 560px;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            max-width: 740px;
             width: 100%;
+            animation: fade-up 0.6s 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
         .starter-card {
             background: var(--surface-card);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 14px;
-            padding: 16px;
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 18px 20px;
             text-align: left;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.03);
         }
         .starter-card::before {
             content: '';
@@ -252,7 +362,7 @@
             top: 0; left: 0; right: 0;
             height: 2px;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.35s ease, height 0.35s ease;
         }
         .starter-card:nth-child(1)::before { background: linear-gradient(90deg, transparent, var(--teal), transparent); }
         .starter-card:nth-child(2)::before { background: linear-gradient(90deg, transparent, var(--green), transparent); }
@@ -260,36 +370,67 @@
         .starter-card:nth-child(4)::before { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
         .starter-card:hover {
             border-color: var(--border-hover);
-            transform: translateY(-3px);
+            transform: translateY(-5px) scale(1.01);
             background: var(--surface-elevated);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
         }
-        .starter-card:hover::before { opacity: 1; }
-        .starter-card .card-icon {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-            display: block;
+        .starter-card:hover::before { opacity: 1; height: 3px; }
+
+        /* SVG orb icons */
+        .card-orb {
+            width: 36px; height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
+            transition: box-shadow 0.4s ease;
         }
-        .starter-card .card-text {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
+        .card-orb svg { width: 18px; height: 18px; position: relative; z-index: 1; }
+        .starter-card:nth-child(1) .card-orb { background: rgba(107,155,170,0.12); border: 1px solid rgba(107,155,170,0.15); }
+        .starter-card:nth-child(1) .card-orb svg { fill: var(--teal); }
+        .starter-card:nth-child(1):hover .card-orb { box-shadow: 0 0 16px rgba(107,155,170,0.2); }
+        .starter-card:nth-child(2) .card-orb { background: rgba(106,170,122,0.12); border: 1px solid rgba(106,170,122,0.15); }
+        .starter-card:nth-child(2) .card-orb svg { fill: var(--green); }
+        .starter-card:nth-child(2):hover .card-orb { box-shadow: 0 0 16px rgba(106,170,122,0.2); }
+        .starter-card:nth-child(3) .card-orb { background: rgba(139,122,168,0.12); border: 1px solid rgba(139,122,168,0.15); }
+        .starter-card:nth-child(3) .card-orb svg { fill: var(--lavender); }
+        .starter-card:nth-child(3):hover .card-orb { box-shadow: 0 0 16px rgba(139,122,168,0.2); }
+        .starter-card:nth-child(4) .card-orb { background: rgba(197,160,89,0.12); border: 1px solid rgba(197,160,89,0.15); }
+        .starter-card:nth-child(4) .card-orb svg { fill: var(--gold); }
+        .starter-card:nth-child(4):hover .card-orb { box-shadow: 0 0 16px rgba(197,160,89,0.2); }
+
+        .card-content { flex: 1; min-width: 0; }
+        .card-title {
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--text-heading);
+            line-height: 1.35;
+            margin-bottom: 2px;
+            transition: color 0.3s ease;
         }
-        .starter-card:hover .card-text { color: var(--cream); }
+        .card-desc {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+            transition: color 0.3s ease;
+        }
+        .starter-card:hover .card-title { color: #fff; }
+        .starter-card:hover .card-desc { color: var(--text-secondary); }
 
         /* ═══ MESSAGE BUBBLES ═══ */
         .message {
             display: flex;
             gap: 12px;
             max-width: 100%;
-            animation: msg-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: msg-in 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         @keyframes msg-in {
             from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .message.user {
-            flex-direction: row-reverse;
-        }
+        .message.user { flex-direction: row-reverse; }
         .msg-avatar {
             width: 32px; height: 32px;
             border-radius: 9px;
@@ -302,8 +443,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
         }
+        .msg-avatar.user-avatar svg { width: 16px; height: 16px; fill: var(--text-secondary); }
         .msg-bubble {
             max-width: 85%;
             padding: 14px 18px;
@@ -321,12 +462,12 @@
         .message.mi .msg-bubble {
             background: var(--surface-card);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(197, 160, 89, 0.08);
             border-bottom-left-radius: 6px;
             color: var(--text-body);
             box-shadow: 0 4px 20px rgba(0,0,0,0.12);
         }
-        /* Mi response content styling */
         .msg-bubble h2 {
             font-family: 'Comfortaa', cursive;
             font-size: 0.88rem;
@@ -357,37 +498,8 @@
             font-style: italic;
         }
 
-        /* Clickable options in Mi response */
-        .mi-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 10px;
-        }
-        .mi-option-btn {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            color: var(--text-secondary);
-            padding: 7px 14px;
-            border-radius: 20px;
-            font-size: 0.78rem;
-            font-family: inherit;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .mi-option-btn:hover {
-            background: rgba(197, 160, 89, 0.10);
-            border-color: rgba(197, 160, 89, 0.20);
-            color: var(--cream);
-        }
-
         /* Loading dots */
-        .mi-typing {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 0;
-        }
+        .mi-typing { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
         .mi-typing-dots { display: flex; gap: 4px; }
         .mi-typing-dots span {
             width: 7px; height: 7px;
@@ -406,15 +518,15 @@
         /* ═══ INPUT AREA ═══ */
         .input-area {
             flex-shrink: 0;
-            padding: 12px 20px 20px;
+            padding: 12px 24px 20px;
             position: relative;
             z-index: 10;
         }
         .input-area::before {
             content: '';
             position: absolute;
-            top: -20px; left: 0; right: 0;
-            height: 20px;
+            top: -24px; left: 0; right: 0;
+            height: 24px;
             background: linear-gradient(to top, var(--surface-base), transparent);
             pointer-events: none;
         }
@@ -425,33 +537,34 @@
         }
         .input-box {
             width: 100%;
-            background: rgba(35, 35, 37, 0.50);
+            background: var(--surface-floating);
             backdrop-filter: blur(40px);
-            border: 1px solid rgba(197, 160, 89, 0.12);
-            border-radius: 16px;
-            padding: 14px 54px 14px 20px;
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(197, 160, 89, 0.10);
+            border-radius: 18px;
+            padding: 16px 56px 16px 22px;
             color: var(--cream);
             font-family: inherit;
             font-size: 0.9rem;
             line-height: 1.5;
             outline: none;
             resize: none;
-            min-height: 48px;
+            min-height: 52px;
             max-height: 120px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.04);
+            transition: border-color 0.35s ease, box-shadow 0.35s ease;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.04);
         }
         .input-box::placeholder { color: var(--text-muted); }
         .input-box:focus {
-            border-color: rgba(197, 160, 89, 0.30);
-            box-shadow: 0 4px 24px rgba(0,0,0,0.2), 0 0 20px rgba(197, 160, 89, 0.06);
+            border-color: rgba(197, 160, 89, 0.25);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.25), 0 0 24px rgba(197, 160, 89, 0.05);
         }
         .send-btn {
             position: absolute;
-            right: 8px;
-            bottom: 8px;
-            width: 36px; height: 36px;
-            border-radius: 10px;
+            right: 10px;
+            bottom: 10px;
+            width: 38px; height: 38px;
+            border-radius: 50%;
             border: none;
             background: linear-gradient(135deg, var(--gold), #D5B069);
             color: var(--surface-base);
@@ -459,39 +572,46 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            opacity: 0.5;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0.4;
+            box-shadow: 0 2px 8px rgba(197, 160, 89, 0.15);
         }
         .send-btn.active { opacity: 1; }
         .send-btn.active:hover {
-            transform: scale(1.05);
-            box-shadow: 0 2px 12px rgba(197, 160, 89, 0.3);
+            transform: scale(1.08);
+            box-shadow: 0 4px 16px rgba(197, 160, 89, 0.3);
         }
         .send-btn svg { width: 16px; height: 16px; fill: currentColor; }
+        .input-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+            padding: 0 4px;
+        }
         .input-disclaimer {
-            text-align: center;
             font-size: 0.68rem;
             color: var(--text-muted);
-            margin-top: 8px;
-            opacity: 0.7;
+            opacity: 0.6;
         }
 
         /* ═══ TRIAL BAR ═══ */
-        .trial-bar {
-            text-align: center;
-            font-size: 0.72rem;
+        .trial-info {
+            font-size: 0.7rem;
             color: var(--text-muted);
-            padding: 6px 0 2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .trial-bar a { color: var(--gold); text-decoration: none; font-weight: 600; }
-        .trial-dots { display: inline-flex; gap: 6px; margin-left: 8px; vertical-align: middle; }
+        .trial-info a { color: var(--gold); text-decoration: none; font-weight: 600; }
+        .trial-dots { display: inline-flex; gap: 5px; }
         .trial-dot {
-            width: 8px; height: 8px; border-radius: 50%;
-            border: 1px solid rgba(197, 160, 89, 0.3);
+            width: 6px; height: 6px; border-radius: 50%;
+            border: 1px solid rgba(197, 160, 89, 0.25);
             background: transparent; transition: all 0.3s ease;
         }
-        .trial-dot.used { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 6px rgba(197,160,89,0.3); }
-        .trial-bar.hidden { display: none; }
+        .trial-dot.used { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 6px rgba(197,160,89,0.25); }
+        .trial-info.hidden { display: none; }
 
         /* ═══ PAYWALL ═══ */
         .pw-overlay {
@@ -504,55 +624,58 @@
         .pw-overlay.visible { display: flex; }
         .pw-card {
             max-width: 420px; width: 100%;
-            background: rgba(35,35,37,0.90); backdrop-filter: blur(40px);
-            border: 1px solid rgba(197,160,89,0.15); border-radius: 24px;
+            background: var(--surface-floating); backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(197,160,89,0.12); border-radius: 24px;
             padding: 40px 28px; text-align: center; position: relative;
             box-shadow: 0 24px 80px rgba(0,0,0,0.5);
             animation: pw-in 0.5s cubic-bezier(0.16,1,0.3,1);
         }
         @keyframes pw-in { from { opacity:0; transform:translateY(24px) scale(0.96); } to { opacity:1; transform:translateY(0) scale(1); } }
-        .pw-card::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:140px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0.5; }
-        .pw-avatar { width:60px; height:60px; border-radius:15px; margin:0 auto 16px; box-shadow:0 4px 20px rgba(0,0,0,0.3); }
-        .pw-card h2 { font-family:'Comfortaa',cursive; font-size:1.25rem; color:var(--cream); margin-bottom:8px; font-weight:700; }
+        .pw-card::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:140px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0.4; }
+        .pw-avatar { width:56px; height:56px; border-radius:14px; margin:0 auto 16px; box-shadow:0 4px 20px rgba(0,0,0,0.3); }
+        .pw-card h2 { font-family:'Comfortaa',cursive; font-size:1.2rem; color:var(--cream); margin-bottom:8px; font-weight:700; }
         .pw-sub { color:var(--text-secondary); font-size:0.85rem; line-height:1.6; margin-bottom:20px; }
         .pw-features { text-align:left; margin-bottom:20px; padding:0 8px; }
         .pw-feat { display:flex; align-items:flex-start; gap:10px; padding:6px 0; font-size:0.82rem; color:var(--text-body); line-height:1.5; }
         .pw-chk { color:var(--green); font-size:0.85rem; flex-shrink:0; margin-top:2px; }
-        .pw-price { margin-bottom:20px; padding:16px; background:rgba(197,160,89,0.04); border:1px solid rgba(197,160,89,0.10); border-radius:14px; }
+        .pw-price { margin-bottom:20px; padding:16px; background:rgba(197,160,89,0.04); border:1px solid rgba(197,160,89,0.08); border-radius:14px; }
         .pw-amt { font-family:'Comfortaa',cursive; font-size:2rem; font-weight:700; color:var(--cream); }
         .pw-per { color:var(--text-muted); font-size:0.85rem; }
         .pw-note { color:var(--text-muted); font-size:0.7rem; margin-top:4px; }
-        .pw-cta { width:100%; padding:15px; border:none; border-radius:14px; background:linear-gradient(135deg,var(--gold),#D5B069); color:var(--surface-base); font-family:'Comfortaa',cursive; font-size:0.92rem; font-weight:700; cursor:pointer; transition:all 0.3s ease; margin-bottom:10px; box-shadow:0 4px 20px rgba(197,160,89,0.2); }
-        .pw-cta:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(197,160,89,0.3); }
+        .pw-cta { width:100%; padding:15px; border:none; border-radius:14px; background:linear-gradient(135deg,var(--gold),#D5B069); color:var(--surface-base); font-family:'Comfortaa',cursive; font-size:0.92rem; font-weight:700; cursor:pointer; transition:all 0.3s ease; margin-bottom:10px; box-shadow:0 4px 20px rgba(197,160,89,0.15); }
+        .pw-cta:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(197,160,89,0.25); }
         .pw-skip { background:none; border:none; color:var(--text-muted); font-size:0.75rem; cursor:pointer; font-family:inherit; padding:6px; }
         .pw-skip:hover { color:var(--text-secondary); }
         .pw-ok { display:none; }
         .pw-ok.visible { display:block; }
         .pw-ok h2 { color:var(--green); }
         .pw-ok-btn { width:100%; padding:15px; border:none; border-radius:14px; background:linear-gradient(135deg,var(--green),#7BC48A); color:var(--surface-base); font-family:'Comfortaa',cursive; font-size:0.92rem; font-weight:700; cursor:pointer; margin-top:16px; }
-        .sub-badge { display:none; font-size:0.6rem; font-weight:700; color:var(--gold); background:rgba(197,160,89,0.08); border:1px solid rgba(197,160,89,0.15); padding:2px 8px; border-radius:12px; letter-spacing:0.05em; margin-left:8px; }
+        .sub-badge { display:none; font-size:0.6rem; font-weight:700; color:var(--gold); background:rgba(197,160,89,0.08); border:1px solid rgba(197,160,89,0.12); padding:2px 8px; border-radius:12px; letter-spacing:0.05em; margin-left:8px; }
         .sub-badge.visible { display:inline; }
 
         /* ═══ RESPONSIVE ═══ */
         @media (max-width: 768px) {
-            .header { height: 50px; padding: 0 12px; }
+            .header { height: 50px; padding: 0 14px; }
             .header-title .subtitle { display: none; }
             .back-btn span { display: none; }
             .new-chat-btn span { display: none; }
-            .chat-area { padding: 16px 12px; }
-            .welcome h1 { font-size: 1.2rem; }
-            .welcome p { font-size: 0.82rem; }
-            .starter-cards { grid-template-columns: 1fr; max-width: 320px; }
+            .chat-area { padding: 14px 14px; }
+            .welcome h1 { font-size: 1.35rem; }
+            .welcome-subtitle { font-size: 0.92rem; }
+            .info-grid { grid-template-columns: 1fr; gap: 16px; }
+            .info-card { padding: 22px 20px; }
+            .starter-cards { grid-template-columns: 1fr; max-width: 400px; }
             .msg-bubble { max-width: 92%; padding: 12px 14px; font-size: 0.84rem; }
-            .input-area { padding: 8px 12px 14px; }
-            .input-box { padding: 12px 48px 12px 16px; font-size: 0.85rem; }
+            .input-area { padding: 8px 14px 16px; }
+            .input-box { padding: 14px 50px 14px 18px; font-size: 0.85rem; }
         }
 
         /* ═══ SCROLLBAR ═══ */
         .chat-area::-webkit-scrollbar { width: 4px; }
         .chat-area::-webkit-scrollbar-track { background: transparent; }
-        .chat-area::-webkit-scrollbar-thumb { background: rgba(139, 122, 168, 0.15); border-radius: 4px; }
-        .chat-area::-webkit-scrollbar-thumb:hover { background: rgba(139, 122, 168, 0.25); }
+        .chat-area::-webkit-scrollbar-thumb { background: rgba(139, 122, 168, 0.12); border-radius: 4px; }
+        .chat-area::-webkit-scrollbar-thumb:hover { background: rgba(139, 122, 168, 0.22); }
     </style>
 </head>
 <body>
@@ -567,7 +690,7 @@
                 </a>
                 <div class="header-title">
                     <img src="images/mi-icon.png" alt="Mi">
-                    <span>Ask Mi</span>
+                    <span class="name">Ask Mi</span>
                     <span class="sub-badge" id="subBadge">PRO</span>
                     <span class="subtitle">AI Migraine Advisor</span>
                 </div>
@@ -584,27 +707,99 @@
         <div class="chat-inner" id="chatInner">
             <div class="chat-messages" id="chatMessages">
 
-                <!-- WELCOME STATE (shown when no messages) -->
+                <!-- WELCOME STATE -->
                 <div class="welcome" id="welcome">
-                    <h1>Hi, I'm Mi</h1>
-                    <p>Describe your migraine situation and I'll connect the dots across our research library. The more detail you share, the better I can help.</p>
-                    
+
+                    <div class="dev-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Early Preview — Features being refined
+                    </div>
+
+                    <div class="welcome-header">
+                        <img src="images/mi-icon.png" alt="Mi" class="welcome-avatar">
+                        <h1>Ask Mi</h1>
+                    </div>
+                    <p class="welcome-subtitle">Your personal AI migraine advisor</p>
+
+                    <!-- INFO CARD -->
+                    <div class="info-card">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-icon ic-what">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                                </div>
+                                <div class="info-text">
+                                    <h3>What is Ask Mi?</h3>
+                                    <p>An AI advisor trained on 55+ peer-reviewed migraine articles with 600+ scientific citations.</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon ic-how">
+                                    <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                                </div>
+                                <div class="info-text">
+                                    <h3>How it works</h3>
+                                    <p>Describe your situation in plain language. Mi finds patterns across our entire research library.</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon ic-value">
+                                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                                </div>
+                                <div class="info-text">
+                                    <h3>What you get</h3>
+                                    <p>Personalized insights, cross-article analysis, and actionable steps — not generic advice.</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon ic-price">
+                                    <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                                </div>
+                                <div class="info-text">
+                                    <h3>Try free, then unlock</h3>
+                                    <p>3 free questions to explore. Unlimited access for $2.99/month. Cancel anytime.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="starter-label">Try asking about...</p>
                     <div class="starter-cards">
                         <div class="starter-card" data-question="I wake up with migraines almost every day and my jaw hurts in the morning">
-                            <span class="card-icon">🌅</span>
-                            <span class="card-text">I wake up with migraines every day and my jaw hurts</span>
+                            <div class="card-orb">
+                                <svg viewBox="0 0 24 24"><path d="M12.5 7.5a.5.5 0 0 0-1 0v5.21l-3.15 1.89a.5.5 0 0 0 .51.86l3.39-2.03A.5.5 0 0 0 12.5 13V7.5zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18.5a8.5 8.5 0 1 1 0-17 8.5 8.5 0 0 1 0 17z"/></svg>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title">Morning migraines</div>
+                                <div class="card-desc">Waking up with pain and jaw tension</div>
+                            </div>
                         </div>
                         <div class="starter-card" data-question="My migraines get worse around my period and nothing seems to help">
-                            <span class="card-icon">📅</span>
-                            <span class="card-text">Migraines get worse around my period</span>
+                            <div class="card-orb">
+                                <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title">Hormonal patterns</div>
+                                <div class="card-desc">Attacks tied to menstrual cycle</div>
+                            </div>
                         </div>
                         <div class="starter-card" data-question="I drink 3-4 cups of coffee a day and get migraines on weekends when I sleep in">
-                            <span class="card-icon">☕</span>
-                            <span class="card-text">Coffee + weekend migraines when I sleep in</span>
+                            <div class="card-orb">
+                                <svg viewBox="0 0 24 24"><path d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7V8h1.5c1.38 0 2.5-1.12 2.5-2.5S19.88 3 18.5 3zM16 5v3H6V5h10zm2.5 1.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zM4 19h16v2H4v-2z"/></svg>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title">Caffeine + weekends</div>
+                                <div class="card-desc">Weekend migraines when sleeping in</div>
+                            </div>
                         </div>
                         <div class="starter-card" data-question="My migraines are getting more frequent each month. I now take painkillers almost every day">
-                            <span class="card-icon">📈</span>
-                            <span class="card-text">Attacks getting more frequent, taking painkillers daily</span>
+                            <div class="card-orb">
+                                <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title">Increasing frequency</div>
+                                <div class="card-desc">More attacks, daily painkillers</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -616,20 +811,22 @@
     <!-- INPUT AREA -->
     <div class="input-area">
         <div class="input-inner">
-            <div class="trial-bar" id="trialBar">
-                Free questions remaining
-                <span class="trial-dots">
-                    <span class="trial-dot" id="dot1"></span>
-                    <span class="trial-dot" id="dot2"></span>
-                    <span class="trial-dot" id="dot3"></span>
-                </span>
-            </div>
             <textarea class="input-box" id="inputBox" placeholder="Describe your migraine situation..." rows="1"></textarea>
             <button class="send-btn" id="sendBtn" aria-label="Send message">
                 <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
             </button>
         </div>
-        <p class="input-disclaimer">Mi is an AI advisor, not a doctor. Always consult your healthcare provider for medical decisions.</p>
+        <div class="input-meta">
+            <span class="input-disclaimer">Mi is an AI advisor, not a doctor. Always consult your healthcare provider.</span>
+            <div class="trial-info" id="trialInfo">
+                <span class="trial-dots">
+                    <span class="trial-dot" id="dot1"></span>
+                    <span class="trial-dot" id="dot2"></span>
+                    <span class="trial-dot" id="dot3"></span>
+                </span>
+                <span id="trialText">3 free questions</span>
+            </div>
+        </div>
     </div>
 
     <!-- PAYWALL OVERLAY -->
@@ -638,7 +835,7 @@
             <div id="pwPrompt">
                 <img src="images/mi-icon.png" alt="Mi" class="pw-avatar">
                 <h2>Mi loved helping you!</h2>
-                <p class="pw-sub">Unlock unlimited access to your personal AI migraine advisor — powered by 66 peer-reviewed articles and 600+ citations.</p>
+                <p class="pw-sub">Unlock unlimited access to your personal AI migraine advisor — powered by 55+ peer-reviewed articles and 600+ citations.</p>
                 <div class="pw-features">
                     <div class="pw-feat"><span class="pw-chk">✓</span><span>Unlimited questions with multi-turn dialog</span></div>
                     <div class="pw-feat"><span class="pw-chk">✓</span><span>Expert cross-article pattern analysis</span></div>
@@ -660,16 +857,15 @@
             </div>
         </div>
     </div>
-
     <script>
     // ============================
     // ASK MI — COMPLETE: CHAT + PAYWALL + PADDLE
     // ============================
 
     // ⚠️ REPLACE THESE 3 VALUES ⚠️
-    const MI_WORKER_URL = 'https://mi-advisor.migrainecompanion-app.workers.dev';  // Your Cloudflare Worker URL
-    const PADDLE_CLIENT_TOKEN = 'live_xxxxxxxxxxxxxxxxxxxxxxx';              // Paddle → Developer Tools → Authentication
-    const PADDLE_PRICE_ID = 'pri_xxxxxxxxxxxxxxxxxxxxxxx';                   // Paddle → Catalog → Products → Your Price ID
+    const MI_WORKER_URL = 'https://mi-advisor.migrainecompanion-app.workers.dev';
+    const PADDLE_CLIENT_TOKEN = 'live_xxxxxxxxxxxxxxxxxxxxxxx';
+    const PADDLE_PRICE_ID = 'pri_xxxxxxxxxxxxxxxxxxxxxxx';
     const PADDLE_ENV = 'sandbox'; // ← Change to 'production' when going live
 
     // ── Paddle Init ──
@@ -695,20 +891,24 @@
     }
 
     // ── Paywall UI ──
-    const trialBar = document.getElementById('trialBar');
+    const trialInfo = document.getElementById('trialInfo');
+    const trialText = document.getElementById('trialText');
     const pwOverlay = document.getElementById('pwOverlay');
     const dots = [document.getElementById('dot1'), document.getElementById('dot2'), document.getElementById('dot3')];
 
     function updateTrialUI() {
         if (isSub()) {
-            trialBar.classList.add('hidden');
+            trialInfo.classList.add('hidden');
             document.getElementById('subBadge').classList.add('visible');
             return;
         }
         const used = getUsed();
         dots.forEach((d, i) => d.classList.toggle('used', i < used));
-        if (used >= FREE_Q) {
-            trialBar.innerHTML = 'Free questions used · <a href="#" onclick="showPW();return false">Unlock unlimited →</a>';
+        const remaining = FREE_Q - used;
+        if (remaining > 0) {
+            trialText.textContent = remaining + ' free question' + (remaining > 1 ? 's' : '');
+        } else {
+            trialText.innerHTML = '<a href="#" onclick="showPW();return false">Unlock unlimited →</a>';
         }
     }
 
@@ -782,12 +982,11 @@
     sendBtn.addEventListener('click', sendMessage);
     newChatBtn.addEventListener('click', resetChat);
 
-    // ── Send Message (with paywall check) ──
+    // ── Send Message ──
     async function sendMessage() {
         const text = inputBox.value.trim();
         if (!text || isLoading) return;
 
-        // PAYWALL CHECK
         if (!canAsk()) return;
 
         if (welcome) welcome.style.display = 'none';
@@ -818,7 +1017,6 @@
             addMessage('mi', answer, true);
             conversationHistory.push({ role: 'mi', text: answer });
 
-            // COUNT THE QUESTION
             onAsked();
 
             if (conversationHistory.length >= MAX_TURNS * 2) {
@@ -837,7 +1035,7 @@
         if (role === 'mi') {
             msgDiv.innerHTML = `<img src="images/mi-icon.png" alt="Mi" class="msg-avatar"><div class="msg-bubble">${isMarkdown ? markdownToHtml(text) : escapeHtml(text)}</div>`;
         } else {
-            msgDiv.innerHTML = `<div class="msg-avatar user-avatar">👤</div><div class="msg-bubble">${escapeHtml(text)}</div>`;
+            msgDiv.innerHTML = `<div class="msg-avatar user-avatar"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div><div class="msg-bubble">${escapeHtml(text)}</div>`;
         }
         chatMessages.appendChild(msgDiv);
         scrollToBottom();
@@ -846,7 +1044,7 @@
     function showTyping() {
         const d = document.createElement('div');
         d.className = 'message mi';
-        d.innerHTML = `<img src="images/mi-icon.png" alt="Mi" class="msg-avatar"><div class="msg-bubble"><div class="mi-typing"><div class="mi-typing-dots"><span></span><span></span><span></span></div><span class="mi-typing-text">Analyzing across 66 articles...</span></div></div>`;
+        d.innerHTML = `<img src="images/mi-icon.png" alt="Mi" class="msg-avatar"><div class="msg-bubble"><div class="mi-typing"><div class="mi-typing-dots"><span></span><span></span><span></span></div><span class="mi-typing-text">Analyzing across 55+ articles...</span></div></div>`;
         chatMessages.appendChild(d);
         scrollToBottom();
         return d;
@@ -867,7 +1065,10 @@
         inputBox.value = ''; inputBox.style.height = 'auto'; sendBtn.classList.remove('active'); inputBox.focus();
     }
 
-    function scrollToBottom() { setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 50); setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 300); }
+    function scrollToBottom() {
+        setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 50);
+        setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 300);
+    }
 
     function escapeHtml(t) { const d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
 
