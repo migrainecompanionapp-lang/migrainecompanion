@@ -1072,10 +1072,7 @@
         inputBox.focus();
     }
 
-    function scrollToBottom() {
-        setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 50);
-        setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 300);
-    }
+    function scrollToBottom() { setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 50); setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 300); setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 800); setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 1500); }
 
     function escapeHtml(t) {
         const d = document.createElement('div');
