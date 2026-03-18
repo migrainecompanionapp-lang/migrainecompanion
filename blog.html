@@ -144,6 +144,7 @@
             .reveal { transition: none; opacity: 1; transform: none; }
             .blog-hero-bg { transition: none; transform: none !important; }
             .firefly { display: none !important; }
+            .hero-book-wrapper { animation: none !important; transform: none !important; }
         }
         
         /* === SCROLL REVEAL === */
@@ -464,6 +465,125 @@
             text-shadow: 0 2px 10px rgba(0,0,0,0.4);
             font-weight: 400;
             line-height: 1.6;
+        }
+
+        /* === HERO BOOKS 3D EFFECT === */
+        .hero-books {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none; /* Allows clicks to pass through empty space */
+            z-index: 3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 6%;
+        }
+        .hero-book-wrapper {
+            pointer-events: auto; /* Re-enable clicks for the books */
+            perspective: 1000px;
+            text-decoration: none;
+            animation: book-float 6s ease-in-out infinite;
+            display: block;
+        }
+        .hero-book-wrapper.left { animation-delay: 0s; }
+        .hero-book-wrapper.right { animation-delay: -3s; }
+
+        @keyframes book-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .hero-book {
+            position: relative;
+            display: block;
+            width: 130px;
+            transform-style: preserve-3d;
+            transform: rotateY(-18deg) rotateX(4deg) rotateZ(-2deg);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hero-book-wrapper.right .hero-book {
+            transform: rotateY(18deg) rotateX(4deg) rotateZ(2deg);
+        }
+
+        .hero-book-wrapper:hover .hero-book {
+            transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.1);
+        }
+
+        .hero-book img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px 8px 8px 4px;
+            box-shadow: -8px 8px 25px rgba(0,0,0,0.6), inset 2px 0 5px rgba(255,255,255,0.2);
+            transition: box-shadow 0.5s ease;
+            display: block;
+        }
+
+        .hero-book-wrapper.right .hero-book img {
+            box-shadow: 8px 8px 25px rgba(0,0,0,0.6), inset -2px 0 5px rgba(255,255,255,0.2);
+        }
+
+        .hero-book-wrapper:hover .hero-book img {
+            box-shadow: 0 20px 45px rgba(0,0,0,0.7), 0 0 25px rgba(197, 160, 89, 0.3), inset 2px 0 5px rgba(255,255,255,0.3);
+        }
+        
+        /* Book Spine Light Effect */
+        .hero-book::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(to right, rgba(255,255,255,0.5), transparent);
+            border-radius: 4px 0 0 4px;
+            z-index: 2;
+        }
+        .hero-book-wrapper.right .hero-book::before {
+            left: auto; right: 0;
+            background: linear-gradient(to left, rgba(255,255,255,0.5), transparent);
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Book Cover Reflection */
+        .hero-book::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+            border-radius: 4px 8px 8px 4px;
+            pointer-events: none;
+        }
+
+        /* Floating Badge */
+        .book-badge {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(35, 35, 37, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 20px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease, bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .hero-book-wrapper:hover .book-badge {
+            opacity: 1;
+            bottom: -45px;
+        }
+
+        @media (max-width: 1200px) {
+            .hero-books { padding: 0 3%; }
+            .hero-book { width: 110px; }
+        }
+        @media (max-width: 900px) {
+            .hero-books { display: none; /* Hide on small screens to prevent overlap */ }
         }
         
         /* === SUBSCRIBE FORM === */
@@ -820,7 +940,8 @@
                 <a href="faq.html">FAQ</a>
                 <a href="collaborate.html">Collaborate</a>
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
-<a href="ask-mi.html" style="color: var(--gold) !important; font-weight: 600;">✨ Ask Mi</a>
+                <a href="books.html">Books</a>
+                <a href="ask-mi.html" style="color: var(--gold) !important; font-weight: 600;">✨ Ask Mi</a>
                 
                 <div class="nav-download-wrapper">
                     <span class="nav-cta">Download</span>
@@ -844,10 +965,25 @@
             </button>
         </div>
     </header>
-
     <main>
         <section class="blog-hero">
             <div class="blog-hero-bg"></div>
+            
+            <div class="hero-books">
+                <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="hero-book-wrapper left">
+                    <div class="hero-book">
+                        <img src="images/book-pocket-guide.jpg" alt="The Migraine Pocket Guide">
+                    </div>
+                    <span class="book-badge">Available on Amazon</span>
+                </a>
+                
+                <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="hero-book-wrapper right">
+                    <div class="hero-book">
+                        <img src="images/book-brain-quiet.jpg" alt="The Brain That Won't Be Quiet">
+                    </div>
+                    <span class="book-badge">Available on Amazon</span>
+                </a>
+            </div>
             <div class="container">
                 <h1>Stories from the Mystic Garden</h1>
                 <p>Insights, experiences, and wisdom about living with migraines — from those who understand.</p>
@@ -1044,7 +1180,7 @@
                     <article class="blog-card reveal" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>Beyond the Pill: What Science Says About Magnesium</h2>
-                        <p>Magnesium, riboflavin, CoQ10 — the internet is full of promises. Here's what the research actually supports, and what questions to ask your doctor.</p>
+                        <p>Magnesium, riboflavin, CoQ10 — the internet is full of promises. Here's what the research supports, and what questions to ask your doctor.</p>
                         <div class="blog-meta"><span class="blog-date">📅 February 7, 2026</span><span class="blog-read-time">⏱ 6 min read</span></div>
                         <a href="magnesium-riboflavin-coq10-migraine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
