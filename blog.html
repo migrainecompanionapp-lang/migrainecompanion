@@ -22,17 +22,14 @@
             --surface-card-solid: #1A1A30;
             --surface-elevated: rgba(43, 43, 45, 0.55);
             --surface-hover: #3A3832;
-            
             --border-subtle: rgba(139, 122, 168, 0.08);
             --border-default: rgba(139, 122, 168, 0.10);
             --border-hover: rgba(139, 122, 168, 0.22);
             --border-glass: rgba(255, 255, 255, 0.06);
-            
             --text-heading: #F5F0E8;
             --text-body: #C9BDA8;
             --text-secondary: #9A8EA6;
             --text-muted: #6E6580;
-            
             --lavender: #8B7AA8;
             --gold: #C5A059;
             --green: #6AAA7A;
@@ -40,7 +37,6 @@
             --sand: #C9BDA8;
             --cream: #F5F0E8;
             --paper: #F0EAD6;
-            
             --cat-personal: #C9BDA8;
             --cat-science: #6B9BAA;
             --cat-guide: #C5A059;
@@ -49,7 +45,6 @@
             --cat-tips: #B8A892;
             --cat-triggers: #AA8E6B;
             --cat-understanding: #7BA5C0;
-            
             --sp-2: 8px;
             --sp-3: 12px;
             --sp-4: 16px;
@@ -98,9 +93,7 @@
             z-index: 0;
         }
         
-        body.menu-open {
-            overflow: hidden;
-        }
+        body.menu-open { overflow: hidden; }
         
         .container {
             max-width: 1320px;
@@ -108,9 +101,7 @@
             padding: 0 var(--sp-6);
         }
         
-        h1, h2, h3 {
-            font-family: 'Comfortaa', cursive;
-        }
+        h1, h2, h3 { font-family: 'Comfortaa', cursive; }
         
         /* === FIREFLIES === */
         .fireflies {
@@ -121,7 +112,6 @@
             z-index: 10;
             overflow: hidden;
         }
-
         .firefly {
             position: absolute;
             background: #FFFBEA;
@@ -129,7 +119,6 @@
             opacity: 0;
             box-shadow: 0 0 4px 1px rgba(213, 176, 105, 0.7), 0 0 12px 3px rgba(197, 160, 89, 0.4), 0 0 25px 8px rgba(139, 122, 168, 0.3);
         }
-
         @keyframes firefly-float {
             0%, 100% { opacity: 0; transform: translate(0, 0) scale(1); }
             10% { opacity: 0.8; }
@@ -139,28 +128,20 @@
             90% { opacity: 0.7; }
         }
         
-        /* === REDUCED MOTION === */
         @media (prefers-reduced-motion: reduce) {
             .reveal { transition: none; opacity: 1; transform: none; }
             .blog-hero-bg { transition: none; transform: none !important; }
             .firefly { display: none !important; }
         }
         
-        /* === SCROLL REVEAL === */
         .reveal {
             opacity: 0;
             transform: translateY(28px);
-            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
         
-        /* ═══════════════════════════════════════════
-           PREMIUM HEADER
-        ═══════════════════════════════════════════ */
+        /* === HEADER === */
         header {
             position: fixed;
             width: 100%;
@@ -170,7 +151,7 @@
             background: rgba(19, 19, 20, 0.75);
             backdrop-filter: saturate(180%) blur(24px);
             -webkit-backdrop-filter: saturate(180%) blur(24px);
-           border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.03), 0 8px 32px rgba(0,0,0,0.25);
             display: flex;
             align-items: center;
@@ -197,22 +178,9 @@
             text-decoration: none;
             white-space: nowrap;
         }
-        .logo img {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        .logo em {
-            color: var(--gold);
-            font-style: italic;
-            font-weight: 600;
-        }
-        .nav {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
+        .logo img { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .logo em { color: var(--gold); font-style: italic; font-weight: 600; }
+        .nav { display: flex; gap: 28px; align-items: center; }
         .nav > a {
             text-decoration: none;
             font-size: 0.85rem;
@@ -234,19 +202,13 @@
             background: linear-gradient(90deg, transparent, rgba(213,176,105,0.6), transparent);
             transition: width 0.4s cubic-bezier(.4,0,.2,1);
         }
-        .nav > a:hover::after {
-            width: 100%;
-        }
+        .nav > a:hover::after { width: 100%; }
         .nav > a:hover {
             color: var(--paper, #F0EAD6);
             text-shadow: 0 0 12px rgba(213,176,105,0.2);
             transform: translateY(-0.5px);
         }
-        .nav-download-wrapper {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-        }
+        .nav-download-wrapper { position: relative; display: inline-flex; align-items: center; }
         .nav-cta {
             background: transparent;
             border: 1.5px solid rgba(197, 160, 89, 0.45);
@@ -267,10 +229,8 @@
         .nav-cta::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(120deg, transparent, rgba(213,176,105,0.15), transparent);
             transition: 0.7s cubic-bezier(.4,0,.2,1);
         }
@@ -282,13 +242,10 @@
             text-shadow: 0 0 8px rgba(213,176,105,0.25);
             transform: translateY(-1px);
         }
-        .nav-download-wrapper:hover .nav-cta::before {
-            left: 100%;
-        }
+        .nav-download-wrapper:hover .nav-cta::before { left: 100%; }
         .download-dropdown {
             position: absolute;
-            top: 130%;
-            right: 0;
+            top: 130%; right: 0;
             background: rgba(19, 19, 20, 0.95);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -308,20 +265,14 @@
         .download-dropdown::before {
             content: '';
             position: absolute;
-            top: -5px;
-            right: 35px;
-            width: 10px;
-            height: 10px;
+            top: -5px; right: 35px;
+            width: 10px; height: 10px;
             background: rgba(19, 19, 20, 0.95);
             border-left: 1px solid rgba(255, 255, 255, 0.08);
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             transform: rotate(45deg);
         }
-        .nav-download-wrapper:hover .download-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+        .nav-download-wrapper:hover .download-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
         .download-dropdown a {
             padding: 10px 16px;
             border-radius: 10px;
@@ -332,11 +283,7 @@
             display: flex;
             align-items: center;
         }
-        .download-dropdown a:hover {
-            background: rgba(213, 176, 105, 0.15);
-            color: var(--gold);
-            padding-left: 20px;
-        }
+        .download-dropdown a:hover { background: rgba(213, 176, 105, 0.15); color: var(--gold); padding-left: 20px; }
         .mobile-menu-btn {
             display: none;
             background: 0 0;
@@ -345,23 +292,15 @@
             cursor: pointer;
             transition: color 0.3s ease;
         }
-        .mobile-menu-btn:hover {
-            color: var(--gold);
-        }
+        .mobile-menu-btn:hover { color: var(--gold); }
 
         @media (max-width: 900px) {
             .header-container { padding: 0 24px; }
-            .mobile-menu-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+            .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
             .nav {
                 display: none;
                 position: fixed;
-                top: 64px;
-                left: 0;
-                right: 0;
+                top: 64px; left: 0; right: 0;
                 height: calc(100vh - 64px);
                 background: rgba(19, 19, 20, 0.98);
                 backdrop-filter: blur(20px);
@@ -384,14 +323,9 @@
             .nav-download-wrapper > .nav-cta { display: none; }
             .download-dropdown {
                 position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                background: transparent;
-                border: none;
-                box-shadow: none;
-                padding: 0;
-                gap: 12px;
+                opacity: 1; visibility: visible; transform: none;
+                background: transparent; border: none; box-shadow: none;
+                padding: 0; gap: 12px;
             }
             .download-dropdown::before { display: none; }
             .download-dropdown a {
@@ -403,9 +337,7 @@
                 font-weight: 500;
                 width: 100%;
             }
-            .download-dropdown a:hover {
-                padding-left: 16px;
-            }
+            .download-dropdown a:hover { padding-left: 16px; }
         }
         
         /* === HERO === */
@@ -418,7 +350,6 @@
             display: flex;
             align-items: center;
         }
-        
         .blog-hero-bg {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -428,7 +359,6 @@
             will-change: transform;
             transition: transform 0.1s linear;
         }
-        
         .blog-hero::after {
             content: '';
             position: absolute;
@@ -440,12 +370,7 @@
                 linear-gradient(to bottom, rgba(19,19,20,0.15) 0%, rgba(19,19,20,0.7) 60%, rgba(19,19,20,1) 100%);
             z-index: 1;
         }
-        
-        .blog-hero .container {
-            position: relative;
-            z-index: 2;
-        }
-        
+        .blog-hero .container { position: relative; z-index: 2; }
         .blog-hero h1 {
             font-size: 3.2rem;
             font-weight: 700;
@@ -455,7 +380,6 @@
             text-shadow: 0 2px 40px rgba(0,0,0,0.5);
             line-height: 1.15;
         }
-        
         .blog-hero p {
             font-size: 1.1rem;
             color: rgba(245, 240, 232, 0.7);
@@ -465,7 +389,120 @@
             font-weight: 400;
             line-height: 1.6;
         }
-        
+
+        /* === 3D FLOATING BOOKS === */
+        .hero-book-wrap {
+            position: absolute;
+            top: 0; bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            gap: 10px;
+        }
+        .hero-book-wrap.left { left: 3%; }
+        .hero-book-wrap.right { right: 3%; }
+
+        @keyframes book-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-book {
+            display: block;
+            text-decoration: none;
+            perspective: 900px;
+            animation: book-float 5s ease-in-out infinite;
+        }
+        .hero-book-wrap.right .hero-book {
+            animation-delay: 1.5s;
+        }
+
+        .hero-book-inner {
+            width: 108px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(-18deg) rotateX(3deg);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+            border-radius: 3px 8px 8px 3px;
+            box-shadow:
+                -8px 8px 24px rgba(0,0,0,0.55),
+                -2px 2px 6px rgba(0,0,0,0.35),
+                inset -3px 0 8px rgba(0,0,0,0.2);
+        }
+        .hero-book-wrap.right .hero-book-inner {
+            transform: rotateY(18deg) rotateX(3deg);
+            box-shadow:
+                8px 8px 24px rgba(0,0,0,0.55),
+                2px 2px 6px rgba(0,0,0,0.35),
+                inset 3px 0 8px rgba(0,0,0,0.2);
+        }
+        .hero-book:hover .hero-book-inner {
+            transform: rotateY(-6deg) rotateX(1deg) translateY(-6px) scale(1.06);
+            box-shadow:
+                -14px 20px 48px rgba(0,0,0,0.65),
+                -3px 4px 12px rgba(197,160,89,0.25),
+                inset -3px 0 8px rgba(0,0,0,0.15);
+        }
+        .hero-book-wrap.right .hero-book:hover .hero-book-inner {
+            transform: rotateY(6deg) rotateX(1deg) translateY(-6px) scale(1.06);
+            box-shadow:
+                14px 20px 48px rgba(0,0,0,0.65),
+                3px 4px 12px rgba(197,160,89,0.25),
+                inset 3px 0 8px rgba(0,0,0,0.15);
+        }
+
+        .hero-book-inner img {
+            width: 100%;
+            display: block;
+            border-radius: 3px 8px 8px 3px;
+            opacity: 0.88;
+            transition: opacity 0.4s ease;
+        }
+        .hero-book:hover .hero-book-inner img { opacity: 1; }
+
+        /* Spine shadow overlay */
+        .hero-book-inner::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 10px;
+            background: linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+            border-radius: 3px 0 0 3px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        /* Top gloss */
+        .hero-book-inner::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 35%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.08) 0%, transparent 100%);
+            border-radius: 3px 8px 0 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-book-label {
+            text-align: center;
+            font-size: 0.58rem;
+            color: rgba(197,160,89,0.6);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        .hero-book:hover .hero-book-label { color: rgba(197,160,89,0.9); }
+
+        @media (max-width: 1100px) {
+            .hero-book-inner { width: 88px; }
+        }
+        @media (max-width: 900px) {
+            .hero-book-wrap { display: none; }
+        }
+
         /* === SUBSCRIBE FORM === */
         .subscribe-form {
             display: flex;
@@ -516,19 +553,10 @@
         }
         
         /* === BLOG CONTENT === */
-        .blog-content {
-            padding: var(--sp-16) 0 80px;
-            position: relative;
-            z-index: 2;
-        }
+        .blog-content { padding: var(--sp-16) 0 80px; position: relative; z-index: 2; }
         
         /* === SEARCH INPUT === */
-        .blog-search {
-            width: 100%;
-            max-width: 720px;
-            margin: 0 auto var(--sp-4);
-            position: relative;
-        }
+        .blog-search { width: 100%; max-width: 720px; margin: 0 auto var(--sp-4); position: relative; }
         .blog-search input {
             width: 100%;
             background: rgba(35, 35, 37, 0.35);
@@ -545,49 +573,23 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.03);
         }
         .blog-search input::placeholder { color: var(--text-muted); }
-        .blog-search input:focus {
-            border-color: rgba(139, 122, 168, 0.30);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(139, 122, 168, 0.08);
-        }
-        .blog-search-icon {
-            position: absolute;
-            left: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            pointer-events: none;
-        }
+        .blog-search input:focus { border-color: rgba(139, 122, 168, 0.30); box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(139, 122, 168, 0.08); }
+        .blog-search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.9rem; pointer-events: none; }
         .blog-search .search-clear {
-            position: absolute;
-            right: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(139, 122, 168, 0.15);
-            border: none;
-            color: var(--text-secondary);
-            width: 22px; height: 22px;
-            border-radius: 50%;
-            font-size: 0.7rem;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s ease;
+            position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+            background: rgba(139, 122, 168, 0.15); border: none; color: var(--text-secondary);
+            width: 22px; height: 22px; border-radius: 50%; font-size: 0.7rem; cursor: pointer;
+            display: none; align-items: center; justify-content: center; transition: background 0.2s ease;
         }
         .blog-search .search-clear.visible { display: flex; }
         .blog-search .search-clear:hover { background: rgba(139, 122, 168, 0.25); }
         
         /* === CATEGORY FILTER === */
         .category-filter {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+            display: flex; flex-wrap: wrap; gap: 8px;
             margin-bottom: var(--sp-12);
             justify-content: center;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 900px; margin-left: auto; margin-right: auto;
         }
         .filter-btn {
             background: rgba(255, 255, 255, 0.04);
@@ -595,33 +597,14 @@
             -webkit-backdrop-filter: blur(40px) saturate(180%);
             border: 1px solid rgba(255, 255, 255, 0.08);
             color: var(--text-muted);
-            padding: 10px 22px;
-            border-radius: 50px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            cursor: pointer;
+            padding: 10px 22px; border-radius: 50px;
+            font-size: 0.82rem; font-weight: 600; cursor: pointer;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            font-family: inherit;
-            position: relative;
-            letter-spacing: 0.3px;
+            font-family: inherit; position: relative; letter-spacing: 0.3px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -0.5px 0 rgba(0,0,0,0.1);
         }
-        .filter-btn:hover {
-            color: var(--text-secondary);
-            background: rgba(255, 255, 255, 0.07);
-            border-color: rgba(255, 255, 255, 0.14);
-            transform: translateY(-1px);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.25), 0 8px 20px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -0.5px 0 rgba(0,0,0,0.1);
-        }
-        .filter-btn.active {
-            background: rgba(197, 160, 89, 0.10);
-            border-color: rgba(197, 160, 89, 0.22);
-            color: var(--gold);
-            backdrop-filter: blur(40px) saturate(200%);
-            -webkit-backdrop-filter: blur(40px) saturate(200%);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -0.5px 0 rgba(0,0,0,0.08);
-            transform: scale(1.03);
-        }
+        .filter-btn:hover { color: var(--text-secondary); background: rgba(255, 255, 255, 0.07); border-color: rgba(255, 255, 255, 0.14); transform: translateY(-1px); box-shadow: 0 2px 6px rgba(0,0,0,0.25), 0 8px 20px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -0.5px 0 rgba(0,0,0,0.1); }
+        .filter-btn.active { background: rgba(197, 160, 89, 0.10); border-color: rgba(197, 160, 89, 0.22); color: var(--gold); backdrop-filter: blur(40px) saturate(200%); -webkit-backdrop-filter: blur(40px) saturate(200%); box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -0.5px 0 rgba(0,0,0,0.08); transform: scale(1.03); }
         .filter-btn[data-category="personal-story"]{border-color:rgba(201,189,168,0.10);color:rgba(201,189,168,0.80)}
         .filter-btn[data-category="personal-story"]:hover{background:rgba(201,189,168,0.06);border-color:rgba(201,189,168,0.20);color:var(--cat-personal)}
         .filter-btn[data-category="science"]{border-color:rgba(107,155,170,0.10);color:rgba(107,155,170,0.80)}
@@ -646,33 +629,11 @@
         .filter-btn.active[data-category="tips"]{background:rgba(184,168,146,0.12);border-color:rgba(184,168,146,0.20);color:var(--cat-tips);box-shadow:0 2px 8px rgba(0,0,0,0.25),0 6px 16px rgba(0,0,0,0.10),inset 0 1px 0 rgba(184,168,146,0.12),inset 0 -0.5px 0 rgba(0,0,0,0.08)}
         .filter-btn.active[data-category="triggers"]{background:rgba(170,142,107,0.12);border-color:rgba(170,142,107,0.20);color:var(--cat-triggers);box-shadow:0 2px 8px rgba(0,0,0,0.25),0 6px 16px rgba(0,0,0,0.10),inset 0 1px 0 rgba(170,142,107,0.12),inset 0 -0.5px 0 rgba(0,0,0,0.08)}
         .filter-btn.active[data-category="understanding"]{background:rgba(123,165,192,0.12);border-color:rgba(123,165,192,0.20);color:var(--cat-understanding);box-shadow:0 2px 8px rgba(0,0,0,0.25),0 6px 16px rgba(0,0,0,0.10),inset 0 1px 0 rgba(123,165,192,0.12),inset 0 -0.5px 0 rgba(0,0,0,0.08)}
-        /* === GLASSMORPHISM CAPSULE CARDS === */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--sp-5);
-        }
-        .blog-card {
-            background: var(--surface-card);
-            backdrop-filter: blur(40px) saturate(180%);
-            -webkit-backdrop-filter: blur(40px) saturate(180%);
-            border: 1px solid var(--border-glass);
-            border-radius: 20px;
-            padding: var(--sp-6);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04), inset 0 -1px 0 rgba(0,0,0,0.05);
-        }
-        .blog-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            border-radius: 20px 20px 0 0;
-            transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-            opacity: 0.5;
-        }
+
+        /* === BLOG CARDS === */
+        .blog-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-5); }
+        .blog-card { background: var(--surface-card); backdrop-filter: blur(40px) saturate(180%); -webkit-backdrop-filter: blur(40px) saturate(180%); border: 1px solid var(--border-glass); border-radius: 20px; padding: var(--sp-6); transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04), inset 0 -1px 0 rgba(0,0,0,0.05); }
+        .blog-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; border-radius: 20px 20px 0 0; transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease; opacity: 0.5; }
         .blog-card:hover::before { height: 3px; opacity: 1; }
         .blog-card[data-category="personal-story"]::before{background:linear-gradient(90deg,transparent,var(--cat-personal),transparent)}
         .blog-card[data-category="science"]::before{background:linear-gradient(90deg,transparent,var(--cat-science),transparent)}
@@ -682,22 +643,8 @@
         .blog-card[data-category="tips"]::before{background:linear-gradient(90deg,transparent,var(--cat-tips),transparent)}
         .blog-card[data-category="triggers"]::before{background:linear-gradient(90deg,transparent,var(--cat-triggers),transparent)}
         .blog-card[data-category="understanding"]::before{background:linear-gradient(90deg,transparent,var(--cat-understanding),transparent)}
-        .blog-card::after {
-            content: '';
-            position: absolute;
-            bottom: -60px; left: 50%;
-            transform: translateX(-50%);
-            width: 80%; height: 80px;
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        }
-        .blog-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-8px) scale(1.01);
-            background: var(--surface-elevated);
-        }
+        .blog-card::after { content: ''; position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); width: 80%; height: 80px; border-radius: 50%; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; }
+        .blog-card:hover { border-color: var(--border-hover); transform: translateY(-8px) scale(1.01); background: var(--surface-elevated); }
         .blog-card:hover::after { opacity: 1; }
         .blog-card[data-category="personal-story"]::after{background:radial-gradient(ellipse,rgba(201,189,168,0.08) 0%,transparent 70%)}
         .blog-card[data-category="science"]::after{background:radial-gradient(ellipse,rgba(107,155,170,0.08) 0%,transparent 70%)}
@@ -716,21 +663,7 @@
         .blog-card[data-category="triggers"]:hover{box-shadow:0 24px 64px rgba(0,0,0,0.35),0 0 0 1px rgba(170,142,107,0.12),inset 0 1px 0 rgba(255,255,255,0.06)}
         .blog-card[data-category="understanding"]:hover{box-shadow:0 24px 64px rgba(0,0,0,0.35),0 0 0 1px rgba(123,165,192,0.12),inset 0 1px 0 rgba(255,255,255,0.06)}
         
-        /* === BLOG TAGS === */
-        .blog-tag {
-            display: inline-block;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 5px 14px;
-            border-radius: 20px;
-            margin-bottom: var(--sp-3);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
+        .blog-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: var(--sp-3); letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: relative; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
         .blog-card:hover .blog-tag { opacity: 1; transform: translateY(-1px); }
         .blog-card[data-category="personal-story"] .blog-tag{background:linear-gradient(135deg,rgba(201,189,168,0.10),rgba(201,189,168,0.06));border:1px solid rgba(201,189,168,0.15);color:var(--cat-personal);text-shadow:0 0 12px rgba(201,189,168,0.25);box-shadow:inset 0 1px 0 rgba(201,189,168,0.08),0 1px 3px rgba(0,0,0,0.2)}
         .blog-card[data-category="science"] .blog-tag{background:linear-gradient(135deg,rgba(107,155,170,0.10),rgba(107,155,170,0.06));border:1px solid rgba(107,155,170,0.15);color:var(--cat-science);text-shadow:0 0 12px rgba(107,155,170,0.25);box-shadow:inset 0 1px 0 rgba(107,155,170,0.08),0 1px 3px rgba(0,0,0,0.2)}
@@ -751,7 +684,6 @@
         .read-more:hover { color: #D5B069; }
         .read-more:hover .arrow { transform: translateX(5px); }
         
-        /* === COMING SOON === */
         .blog-card.coming-soon { opacity: 0.45; pointer-events: none; position: relative; }
         .blog-card.coming-soon::before { opacity: 0.25 !important; }
         .blog-card.coming-soon:hover { transform: none; border-color: var(--border-glass); background: var(--surface-card); }
@@ -761,7 +693,6 @@
         .coming-soon-card h3 { font-size: 1.05rem; color: var(--lavender); margin-bottom: var(--sp-2); font-weight: 600; }
         .coming-soon-card p { color: var(--text-muted); font-size: 0.88rem; }
         
-        /* === SHOW MORE === */
         .show-more-wrapper { text-align: center; margin-top: var(--sp-8); }
         .show-more-btn { background: rgba(35,35,37,0.45); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--border-default); border-radius: 14px; padding: 14px 40px; color: var(--cream); font-family: 'Comfortaa', cursive; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04); }
         .show-more-btn:hover { border-color: var(--border-hover); background: var(--surface-elevated); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06); }
@@ -769,14 +700,12 @@
         .no-results { grid-column: 1 / -1; text-align: center; padding: var(--sp-12) var(--sp-6); color: var(--text-muted); font-size: 0.95rem; }
         .no-results span { display: block; font-size: 2rem; margin-bottom: var(--sp-3); }
         
-        /* NEWSLETTER */
         .newsletter { margin-top: var(--sp-16); padding: var(--sp-12); background: rgba(35,35,37,0.45); backdrop-filter: blur(40px) saturate(180%); -webkit-backdrop-filter: blur(40px) saturate(180%); border: 1px solid rgba(197,160,89,0.08); border-radius: 20px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04); }
         .newsletter::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.4; }
         .newsletter h3 { font-size: 1.3rem; color: var(--cream); margin-bottom: var(--sp-2); font-weight: 700; }
         .newsletter p { color: var(--text-secondary); font-size: 0.92rem; margin-bottom: var(--sp-5); }
         .newsletter-note { color: var(--text-muted); font-size: 0.82rem; font-style: italic; }
         
-        /* FOOTER */
         footer { padding: var(--sp-10) 0; border-top: 1px solid var(--border-subtle); position: relative; z-index: 2; }
         .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--sp-5); }
         .footer-links { display: flex; gap: var(--sp-6); flex-wrap: wrap; }
@@ -784,7 +713,6 @@
         .footer-links a:hover { color: var(--lavender); }
         .copyright { color: var(--text-muted); font-size: 0.82rem; font-weight: 500; }
         
-        /* RESPONSIVE */
         @media (max-width: 1280px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 960px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
@@ -820,7 +748,8 @@
                 <a href="faq.html">FAQ</a>
                 <a href="collaborate.html">Collaborate</a>
                 <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
-<a href="ask-mi.html" style="color: var(--gold) !important; font-weight: 600;">✨ Ask Mi</a>
+                <a href="books.html">Books</a>
+                <a href="ask-mi.html" style="color: var(--gold) !important; font-weight: 600;">✨ Ask Mi</a>
                 
                 <div class="nav-download-wrapper">
                     <span class="nav-cta">Download</span>
@@ -848,6 +777,27 @@
     <main>
         <section class="blog-hero">
             <div class="blog-hero-bg"></div>
+
+            <!-- КНИГА СЛЕВА — Pocket Guide -->
+            <div class="hero-book-wrap left">
+                <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="hero-book">
+                    <div class="hero-book-inner">
+                        <img src="images/book-pocket-guide.jpg" alt="The Migraine Pocket Guide">
+                    </div>
+                    <div class="hero-book-label">📚 On Amazon</div>
+                </a>
+            </div>
+
+            <!-- КНИГА СПРАВА — The Brain That Won't Be Quiet -->
+            <div class="hero-book-wrap right">
+                <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="hero-book">
+                    <div class="hero-book-inner">
+                        <img src="images/book-brain-quiet.jpg" alt="The Brain That Won't Be Quiet">
+                    </div>
+                    <div class="hero-book-label">📚 On Amazon</div>
+                </a>
+            </div>
+
             <div class="container">
                 <h1>Stories from the Mystic Garden</h1>
                 <p>Insights, experiences, and wisdom about living with migraines — from those who understand.</p>
@@ -857,7 +807,6 @@
                 </form>
             </div>
         </section>
-
         <section class="blog-content">
             <div class="container">
                 
@@ -1232,6 +1181,7 @@
                         <div class="blog-meta"><span class="blog-date">📅 March 10, 2026</span><span class="blog-read-time">⏱ 7 min read</span></div>
                         <a href="article-prodrome-warning-signs.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
+
                     <article class="blog-card reveal" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Forbidden Molecule: Psilocybin, Psychedelics, and the Future of Migraine</h2>
@@ -1243,12 +1193,12 @@
                     <article class="blog-card reveal" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>The Migraine Map: How to Choose a City That Won't Attack You</h2>
-                        <p>Barometric swings. Air pollution. Altitude. Allergen seasons. Healthcare deserts. When you live with migraine, "where should I move?" isn't a lifestyle question — it's a medical one. A data-driven framework for choosing a city that works with your brain, not against it.</p>
+                        <p>Barometric swings. Air pollution. Altitude. Allergen seasons. Healthcare deserts. When you live with migraine, "where should I move?" isn't a lifestyle question — it's a medical one.</p>
                         <div class="blog-meta"><span class="blog-date">📅 March 11, 2026</span><span class="blog-read-time">⏱ 8 min read</span></div>
                         <a href="article-migraine-map.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
-                   <article class="blog-card reveal" data-category="science">
+                    <article class="blog-card reveal" data-category="science">
                         <span class="blog-tag">Science</span>
                         <h2>The Ozempic Effect: Why Weight Loss Drugs Are Reducing Migraines</h2>
                         <p>Patients on GLP-1 medications are reporting fewer attacks — and scientists are paying attention. The emerging link between metabolic health, obesity, neuroinflammation, and migraine chronification.</p>
@@ -1256,7 +1206,7 @@
                         <a href="article-ozempic-effect.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
-                     <article class="blog-card reveal" data-category="tips">
+                    <article class="blog-card reveal" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>The Side Effect Roulette: An Honest Guide to Migraine Preventive Medications</h2>
                         <p>"Dopamax" brain fog. Beta-blocker fatigue. Amitriptyline weight gain. Nobody tells you what preventive meds actually feel like. A no-shame guide to every major class — what to expect, when to push through, and when to switch.</p>
@@ -1264,7 +1214,7 @@
                         <a href="article-side-effect-roulette.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
-                   <article class="blog-card reveal" data-category="triggers">
+                    <article class="blog-card reveal" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Doom Scroll Spiral: Social Media, Dopamine, and Your Migraine Brain</h2>
                         <p>It's not just the screen light. It's the anxiety-triggering content, the dopamine loops, the neck bent at 45 degrees for hours. How mindless scrolling is becoming one of the most underrecognized migraine triggers of our time.</p>
@@ -1288,7 +1238,7 @@
                         <a href="article-stroke-aura-emergency.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
-                   <article class="blog-card reveal" data-category="self-care">
+                    <article class="blog-card reveal" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>Flying with a Ticking Clock: How to Survive Air Travel with Migraine</h2>
                         <p>Cabin pressure drops. Recycled air. Dehydration at 35,000 feet. Why airplanes are a perfect migraine storm — and a pre-flight, in-flight, and post-flight protocol that frequent flyers swear by.</p>
@@ -1328,7 +1278,7 @@
                         <a href="article-climate-migraine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
-                   <article class="blog-card reveal" data-category="understanding">
+                    <article class="blog-card reveal" data-category="understanding">
                         <span class="blog-tag">Understanding</span>
                         <h2>Why You Wake Up with a Migraine: The Mystery of Morning Attacks</h2>
                         <p>"I wake up with a migraine almost every day." The most common complaint in migraine communities — and the most overlooked. Sleep apnea, bruxism, circadian cortisol, overnight dehydration, and what your pillow can't fix.</p>
@@ -1344,7 +1294,7 @@
                         <a href="article-gepants-guide.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
-                 <article class="blog-card reveal" data-category="triggers">
+                    <article class="blog-card reveal" data-category="triggers">
                         <span class="blog-tag">Triggers</span>
                         <h2>The Cannabis Question: Relief, Trigger, or Both?</h2>
                         <p>Some swear it aborts attacks. Others say it makes them worse. As legalization expands and the first clinical trials report results, here's what science actually knows — and doesn't — about cannabis and migraine.</p>
@@ -1360,7 +1310,7 @@
                         <a href="article-pacap-revolution.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
-                 <article class="blog-card reveal" data-category="self-care">
+                    <article class="blog-card reveal" data-category="self-care">
                         <span class="blog-tag">Self-Care</span>
                         <h2>Learning to Control the Uncontrollable: Biofeedback for Migraine</h2>
                         <p>Sensors on your skin. Lines on a screen. And somehow, you learn to control your body's invisible responses. The surprising science of biofeedback training.</p>
@@ -1368,7 +1318,7 @@
                         <a href="article-biofeedback-migraine.html" class="read-more">Read full story <span class="arrow">→</span></a>
                     </article>
 
-                   <article class="blog-card reveal" data-category="tips">
+                    <article class="blog-card reveal" data-category="tips">
                         <span class="blog-tag">Tips</span>
                         <h2>Rose-Colored (or Green) Glasses: Do Tinted Lenses Actually Help?</h2>
                         <p>FL-41 rose tint. Axon Optics. Theraspecs. The claims are bold, and the prices aren't cheap. What research says about precision-tinted lenses for migraine.</p>
@@ -1429,7 +1379,7 @@
                         <div class="blog-meta"><span class="blog-date">✨ Coming soon</span><span class="blog-read-time">⏱ 8 min read</span></div>
                     </article>
 
-                     <article class="blog-card reveal coming-soon" data-category="narrative-therapy">
+                    <article class="blog-card reveal coming-soon" data-category="narrative-therapy">
                         <span class="blog-tag">Narrative Therapy</span>
                         <h2>The Grief Nobody Mentions: Mourning a Future That Never Happened</h2>
                         <p>The career you didn't pursue. The trip you cancelled. The child you hesitated to have. Chronic migraine steals futures — and nobody teaches you how to grieve something that never existed.</p>
@@ -1650,7 +1600,6 @@
     </footer>
 
     <script>
-    // === MOBILE MENU ===
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
 
@@ -1667,7 +1616,6 @@
         });
     }
 
-    // === CATEGORY FILTER + SEARCH + SHOW MORE ===
     const filterBtns = document.querySelectorAll('.filter-btn');
     const blogCards = Array.from(document.querySelectorAll('.blog-card'));
     const comingSoonCard = document.querySelector('.coming-soon-card');
@@ -1756,7 +1704,6 @@
 
     renderCards();
 
-    // === SCROLL REVEAL ===
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
@@ -1767,7 +1714,6 @@
     observeCards();
     new MutationObserver(() => observeCards()).observe(blogGrid, { attributes: true, subtree: true, attributeFilter: ['style'] });
 
-    // === HERO PARALLAX ===
     const heroBg = document.querySelector('.blog-hero-bg');
     if (heroBg && window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         let ticking = false;
@@ -1784,7 +1730,6 @@
         });
     }
 
-    // === FIREFLIES ===
     const fireflyContainer = document.getElementById('fireflies');
     if (fireflyContainer && window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const fireflyCount = 20;
