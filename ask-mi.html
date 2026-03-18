@@ -13,7 +13,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            color-scheme: dark; /* Темная тема для системных элементов */
+            color-scheme: dark;
             --surface-base: #131314;
             --surface-card: rgba(30, 30, 32, 0.72);
             --surface-elevated: rgba(43, 43, 45, 0.65);
@@ -41,37 +41,27 @@
             background: var(--surface-base);
             color: var(--text-body);
             height: 100%;
-            height: 100dvh; /* Поддержка динамической высоты на мобильных */
+            height: 100dvh;
             display: flex;
             flex-direction: column;
             -webkit-font-smoothing: antialiased;
             overflow: hidden;
         }
         body::before {
-            content: '';
-            position: fixed;
-            top: -200px; left: 50%;
-            transform: translateX(-50%);
-            width: 900px; height: 700px;
-            background: radial-gradient(ellipse, rgba(139, 122, 168, 0.05) 0%, transparent 70%);
+            content: ''; position: fixed; top: -200px; left: 50%; transform: translateX(-50%);
+            width: 900px; height: 700px; background: radial-gradient(ellipse, rgba(139, 122, 168, 0.05) 0%, transparent 70%);
             pointer-events: none; z-index: 0;
         }
         body::after {
-            content: '';
-            position: fixed;
-            bottom: -100px; right: -100px;
-            width: 500px; height: 500px;
-            background: radial-gradient(ellipse, rgba(197, 160, 89, 0.03) 0%, transparent 70%);
+            content: ''; position: fixed; bottom: -100px; right: -100px;
+            width: 500px; height: 500px; background: radial-gradient(ellipse, rgba(197, 160, 89, 0.03) 0%, transparent 70%);
             pointer-events: none; z-index: 0;
         }
         h1, h2, h3 { font-family: 'Comfortaa', cursive; }
         .header {
-            height: 56px; min-height: 56px;
-            background: rgba(19, 19, 20, 0.80);
-            backdrop-filter: saturate(180%) blur(24px);
-            -webkit-backdrop-filter: saturate(180%) blur(24px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex; align-items: center; padding: 0 24px;
+            height: 56px; min-height: 56px; background: rgba(19, 19, 20, 0.80);
+            backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; padding: 0 24px;
             flex-shrink: 0; z-index: 10; position: relative;
         }
         .header-inner { max-width:900px; width:100%; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
@@ -85,30 +75,26 @@
         .header-title .subtitle { font-family:'Cormorant Garamond',serif; font-size:0.85rem; color:var(--text-muted); font-weight:500; font-style:italic; margin-left:2px; }
         .new-chat-btn { display:flex; align-items:center; gap:5px; color:var(--text-muted); background:rgba(255,255,255,0.03); border:1px solid var(--border-glass); padding:6px 14px; border-radius:20px; font-size:0.78rem; font-weight:500; font-family:inherit; cursor:pointer; transition:all 0.35s cubic-bezier(0.16,1,0.3,1); }
         .new-chat-btn:hover { color:var(--cream); border-color:rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); }
+        
         .chat-area {
-            flex: 1 1 0;
-            overflow-y: auto;
-            overflow-x: hidden;
-            padding: 20px 24px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            z-index: 1;
-            min-height: 0;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(139,122,168,0.25) transparent;
+            flex: 1 1 0; overflow-y: auto; overflow-x: hidden; padding: 20px 24px;
+            display: flex; flex-direction: column; position: relative; z-index: 1;
+            min-height: 0; scrollbar-width: thin; scrollbar-color: rgba(139,122,168,0.25) transparent;
         }
         .chat-inner { max-width:800px; width:100%; margin:0 auto; display:flex; flex-direction:column; flex:1; min-height:0; }
         .chat-messages { flex:1 1 0; display:flex; flex-direction:column; gap:20px; min-height:0; padding-bottom: 20px; }
         .welcome { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 0 24px; min-height:0; }
+        
         @keyframes fade-up { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
         @keyframes fade-down { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+        
         .dev-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(139,122,168,0.06); border:1px solid rgba(139,122,168,0.12); border-radius:20px; padding:4px 14px; font-size:0.65rem; color:var(--lavender); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:16px; animation:fade-down 0.5s cubic-bezier(0.16,1,0.3,1); }
         .dev-badge svg { width:11px; height:11px; fill:currentColor; opacity:0.7; }
         .welcome-row { display:flex; align-items:center; gap:12px; margin-bottom:20px; animation:fade-up 0.5s cubic-bezier(0.16,1,0.3,1); }
         .welcome-avatar { width:44px; height:44px; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 24px rgba(197,160,89,0.05); }
         .welcome-text h1 { font-size:1.5rem; color:var(--cream); font-weight:700; line-height:1.2; }
         .welcome-text p { font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--text-secondary); font-size:0.95rem; font-weight:500; margin-top:1px; }
+        
         .info-card { width:100%; max-width:740px; background:var(--surface-card); backdrop-filter:blur(30px); -webkit-backdrop-filter:blur(30px); border:1px solid var(--border-default); border-radius:18px; padding:20px 24px; margin-bottom:20px; text-align:left; position:relative; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.04); animation:fade-up 0.5s 0.08s cubic-bezier(0.16,1,0.3,1) both; }
         .info-card::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:160px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0.3; }
         .info-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; }
@@ -125,6 +111,7 @@
         .info-icon.ic-price svg { fill:var(--gold); }
         .info-text h3 { font-size:0.72rem; font-weight:700; color:var(--cream); margin-bottom:2px; letter-spacing:0.01em; }
         .info-text p { font-size:0.78rem; color:var(--text-body); line-height:1.5; }
+        
         .starter-label { font-size:0.65rem; font-weight:600; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; animation:fade-up 0.5s 0.14s cubic-bezier(0.16,1,0.3,1) both; }
         .starter-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; max-width:740px; width:100%; animation:fade-up 0.5s 0.18s cubic-bezier(0.16,1,0.3,1) both; }
         .starter-card { background:var(--surface-card); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid var(--border-glass); border-radius:14px; padding:14px 16px; text-align:left; cursor:pointer; transition:all 0.45s cubic-bezier(0.16,1,0.3,1); position:relative; overflow:hidden; display:flex; align-items:center; gap:12px; box-shadow:0 2px 12px rgba(0,0,0,0.12),inset 0 1px 0 rgba(255,255,255,0.03); }
@@ -145,15 +132,12 @@
         .starter-card:nth-child(3) .card-orb svg { fill:var(--lavender); }
         .starter-card:nth-child(4) .card-orb { background:rgba(197,160,89,0.12); border:1px solid rgba(197,160,89,0.15); }
         .starter-card:nth-child(4) .card-orb svg { fill:var(--gold); }
-        .starter-card:nth-child(1):hover .card-orb { box-shadow:0 0 14px rgba(107,155,170,0.2); }
-        .starter-card:nth-child(2):hover .card-orb { box-shadow:0 0 14px rgba(106,170,122,0.2); }
-        .starter-card:nth-child(3):hover .card-orb { box-shadow:0 0 14px rgba(139,122,168,0.2); }
-        .starter-card:nth-child(4):hover .card-orb { box-shadow:0 0 14px rgba(197,160,89,0.2); }
         .card-content { flex:1; min-width:0; }
         .card-title { font-size:0.82rem; font-weight:600; color:var(--text-heading); line-height:1.3; margin-bottom:1px; transition:color 0.3s ease; }
         .card-desc { font-size:0.73rem; color:var(--text-muted); line-height:1.4; transition:color 0.3s ease; }
         .starter-card:hover .card-title { color:#fff; }
         .starter-card:hover .card-desc { color:var(--text-secondary); }
+        
         .message { display:flex; gap:12px; max-width:100%; animation:msg-in 0.5s cubic-bezier(0.16,1,0.3,1); }
         @keyframes msg-in { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
         .message.user { flex-direction:row-reverse; }
@@ -182,48 +166,57 @@
         .mi-typing-dots span:nth-child(3) { animation-delay:0.4s; }
         @keyframes typing-pulse { 0%,80%,100%{opacity:0.25;transform:scale(0.8)} 40%{opacity:1;transform:scale(1.15)} }
         .mi-typing-text { color:var(--text-muted); font-size:0.82rem; }
+        
+        /* ОБНОВЛЕННАЯ СЕКЦИЯ ПОЛЯ ВВОДА */
         .input-area { 
             flex-shrink:0; 
-            padding: 10px 24px calc(16px + env(safe-area-inset-bottom)); /* Поддержка отступа на iPhone */
+            padding: 10px 24px calc(16px + env(safe-area-inset-bottom)); 
             position:relative; 
             z-index:10; 
             background:var(--surface-base); 
         }
         .input-area::before { content:''; position:absolute; top:-20px; left:0; right:0; height:20px; background:linear-gradient(to top,var(--surface-base),transparent); pointer-events:none; }
+        
+        /* Ключевое исправление: добавлена обертка input-inner с position: relative */
+        .input-inner {
+            position: relative;
+            width: 100%;
+        }
+
         .input-box { 
             width:100%; 
             background:var(--surface-floating); 
-            backdrop-filter:blur(40px); 
-            -webkit-backdrop-filter:blur(40px); 
-            border:1px solid rgba(197,160,89,0.08); 
-            border-radius:16px; 
+            backdrop-filter:blur(40px); -webkit-backdrop-filter:blur(40px); 
+            border:1px solid rgba(197,160,89,0.08); border-radius:16px; 
             padding:14px 52px 14px 20px; 
-            color:var(--cream); 
-            font-family:inherit; 
-            font-size:0.9rem; 
-            line-height:1.5; 
-            outline:none; 
-            resize:none; 
-            min-height:48px; 
-            max-height:120px; 
+            color:var(--cream); font-family:inherit; font-size:0.9rem; line-height:1.5; 
+            outline:none; resize:none; min-height:48px; max-height:120px; 
             transition:border-color 0.35s ease,box-shadow 0.35s ease; 
             box-shadow:0 4px 24px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.04); 
-            -webkit-appearance:none; 
-            appearance:none; 
-            overflow-y: hidden; /* Скрываем белый скроллбар по умолчанию */
+            -webkit-appearance:none; appearance:none; 
+            overflow-y: hidden; 
         } 
-        /* Стилизация скроллбара для поля ввода */
         .input-box::-webkit-scrollbar { width:8px; }
         .input-box::-webkit-scrollbar-track { background:transparent; }
         .input-box::-webkit-scrollbar-thumb { background:rgba(139,122,168,0.25); border-radius:4px; }
         .input-box::-webkit-scrollbar-thumb:hover { background:rgba(139,122,168,0.4); }
-
         .input-box::placeholder { color:var(--text-muted); }
         .input-box:focus { border-color:rgba(197,160,89,0.25); box-shadow:0 4px 24px rgba(0,0,0,0.25),0 0 24px rgba(197,160,89,0.05); }
-        .send-btn { position:absolute; right:8px; bottom:8px; width:36px; height:36px; border-radius:50%; border:none; background:linear-gradient(135deg,var(--gold),#D5B069); color:var(--surface-base); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.35s cubic-bezier(0.16,1,0.3,1); opacity:0.4; box-shadow:0 2px 8px rgba(197,160,89,0.15); }
+        
+        /* Ключевое исправление кнопки: теперь она позиционируется внутри input-inner */
+        .send-btn { 
+            position:absolute; 
+            right:8px; 
+            bottom:6px; /* Выровнено по низу поля ввода */
+            width:36px; height:36px; border-radius:50%; border:none; 
+            background:linear-gradient(135deg,var(--gold),#D5B069); color:var(--surface-base); cursor:pointer; 
+            display:flex; align-items:center; justify-content:center; transition:all 0.35s cubic-bezier(0.16,1,0.3,1); 
+            opacity:0.4; box-shadow:0 2px 8px rgba(197,160,89,0.15); 
+        }
         .send-btn.active { opacity:1; }
         .send-btn.active:hover { transform:scale(1.08); box-shadow:0 4px 16px rgba(197,160,89,0.3); }
         .send-btn svg { width:15px; height:15px; fill:currentColor; }
+        
         .input-meta { display:flex; justify-content:space-between; align-items:center; margin-top:6px; padding:0 4px; }
         .input-disclaimer { font-size:0.65rem; color:var(--text-muted); opacity:0.6; }
         .trial-info { font-size:0.68rem; color:var(--text-muted); display:flex; align-items:center; gap:6px; }
@@ -232,12 +225,12 @@
         .trial-dot { width:6px; height:6px; border-radius:50%; border:1px solid rgba(197,160,89,0.25); background:transparent; transition:all 0.3s ease; }
         .trial-dot.used { background:var(--gold); border-color:var(--gold); box-shadow:0 0 6px rgba(197,160,89,0.25); }
         .trial-info.hidden { display:none; }
+        
         .pw-overlay { 
             display:none; position:fixed; top:0; left:0; right:0; bottom:0; 
             background:rgba(19,19,20,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); 
             z-index:1000; align-items:center; justify-content:center; 
-            padding: max(20px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom));
-            overflow-y: auto; 
+            padding: max(20px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom)); overflow-y: auto; 
         }
         .pw-overlay.visible { display:flex; }
         .pw-card { max-width:420px; width:100%; margin: auto; background:var(--surface-floating); backdrop-filter:blur(40px); -webkit-backdrop-filter:blur(40px); border:1px solid rgba(197,160,89,0.12); border-radius:24px; padding:40px 28px; text-align:center; position:relative; box-shadow:0 24px 80px rgba(0,0,0,0.5); animation:pw-in 0.5s cubic-bezier(0.16,1,0.3,1); }
@@ -272,16 +265,34 @@
             .chat-area { padding:12px 14px; }
             .welcome-text h1 { font-size:1.25rem; }
             .welcome-text p { font-size:0.85rem; }
-            .info-grid { grid-template-columns:1fr; gap:12px; }
-            .info-card { padding:16px 18px; }
+            
+            /* Ключевое исправление для скролла карточек на мобильных */
+            .info-card { padding: 16px 0; }
+            .info-grid { 
+                display: flex; 
+                flex-wrap: nowrap;
+                overflow-x: auto; 
+                scroll-snap-type: x mandatory;
+                gap: 12px; 
+                padding: 0 16px 8px 16px; 
+                scrollbar-width: none; 
+                -webkit-overflow-scrolling: touch;
+            }
+            .info-grid::-webkit-scrollbar { display: none; }
+            .info-item { 
+                flex: 0 0 85%; /* Каждая карточка занимает 85% ширины экрана */
+                scroll-snap-align: center;
+                background: rgba(255, 255, 255, 0.03); /* Легкий фон, чтобы карточки выделялись при скролле */
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 14px;
+                border-radius: 14px;
+            }
+            
             .starter-cards { grid-template-columns:1fr; max-width:400px; }
             .msg-bubble { max-width:92%; padding:12px 14px; font-size:0.84rem; }
             .input-area { padding: 8px 14px calc(14px + env(safe-area-inset-bottom)); }
-            .input-box { 
-                padding:12px 48px 12px 16px; 
-                font-size: 16px; /* Жестко 16px, чтобы iOS не приближал экран при вводе! */
-            }
-            .pw-card { padding: 28px 20px; } /* Делаем попап оплаты чуть компактнее для мобильных */
+            .input-box { padding:12px 48px 12px 16px; font-size: 16px; }
+            .pw-card { padding: 28px 20px; } 
         }
         
         .chat-area::-webkit-scrollbar { width:8px; }
@@ -369,6 +380,7 @@
             </div>
         </div>
     </div>
+    
     <div class="input-area">
         <div class="input-inner">
             <textarea class="input-box" id="inputBox" placeholder="Describe your migraine situation..." rows="1"></textarea>
@@ -388,6 +400,7 @@
             </div>
         </div>
     </div>
+
     <div class="pw-overlay" id="pwOverlay">
         <div class="pw-card">
             <div id="pwPrompt">
@@ -470,7 +483,6 @@
 
     document.querySelectorAll('.starter-card').forEach(card => { card.addEventListener('click', () => { inputBox.value = card.dataset.question; sendMessage(); }); });
     
-    // ОБНОВЛЕННАЯ ЛОГИКА АВТОРАСШИРЕНИЯ ПОЛЯ И СКРОЛЛБАРА
     inputBox.addEventListener('input', () => { 
         inputBox.style.height = 'auto'; 
         let newHeight = Math.min(inputBox.scrollHeight, 120);
