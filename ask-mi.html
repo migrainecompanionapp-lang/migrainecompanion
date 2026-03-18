@@ -167,7 +167,6 @@
         @keyframes typing-pulse { 0%,80%,100%{opacity:0.25;transform:scale(0.8)} 40%{opacity:1;transform:scale(1.15)} }
         .mi-typing-text { color:var(--text-muted); font-size:0.82rem; }
         
-        /* ОБНОВЛЕННАЯ СЕКЦИЯ ПОЛЯ ВВОДА */
         .input-area { 
             flex-shrink:0; 
             padding: 10px 24px calc(16px + env(safe-area-inset-bottom)); 
@@ -177,7 +176,6 @@
         }
         .input-area::before { content:''; position:absolute; top:-20px; left:0; right:0; height:20px; background:linear-gradient(to top,var(--surface-base),transparent); pointer-events:none; }
         
-        /* Ключевое исправление: добавлена обертка input-inner с position: relative */
         .input-inner {
             position: relative;
             width: 100%;
@@ -203,11 +201,10 @@
         .input-box::placeholder { color:var(--text-muted); }
         .input-box:focus { border-color:rgba(197,160,89,0.25); box-shadow:0 4px 24px rgba(0,0,0,0.25),0 0 24px rgba(197,160,89,0.05); }
         
-        /* Ключевое исправление кнопки: теперь она позиционируется внутри input-inner */
         .send-btn { 
             position:absolute; 
             right:8px; 
-            bottom:6px; /* Выровнено по низу поля ввода */
+            bottom:6px;
             width:36px; height:36px; border-radius:50%; border:none; 
             background:linear-gradient(135deg,var(--gold),#D5B069); color:var(--surface-base); cursor:pointer; 
             display:flex; align-items:center; justify-content:center; transition:all 0.35s cubic-bezier(0.16,1,0.3,1); 
@@ -266,26 +263,42 @@
             .welcome-text h1 { font-size:1.25rem; }
             .welcome-text p { font-size:0.85rem; }
             
-            /* Ключевое исправление для скролла карточек на мобильных */
-            .info-card { padding: 16px 0; }
+            /* ИСПРАВЛЕНИЕ КАРОУСЕЛИ */
+            /* 1. Делаем родителя прозрачным и убираем ограничения */
+            .info-card { 
+                padding: 0; 
+                background: transparent; 
+                border: none; 
+                box-shadow: none; 
+                overflow: visible; 
+                backdrop-filter: none; 
+                -webkit-backdrop-filter: none; 
+            }
+            .info-card::before { display: none; }
+            
+            /* 2. Настраиваем скролл от края до края экрана */
             .info-grid { 
                 display: flex; 
                 flex-wrap: nowrap;
                 overflow-x: auto; 
                 scroll-snap-type: x mandatory;
                 gap: 12px; 
-                padding: 0 16px 8px 16px; 
+                padding: 0 14px 16px 14px; 
+                margin: 0 -14px; 
                 scrollbar-width: none; 
                 -webkit-overflow-scrolling: touch;
             }
             .info-grid::-webkit-scrollbar { display: none; }
+            
+            /* 3. Превращаем элементы в полноценные карточки */
             .info-item { 
-                flex: 0 0 85%; /* Каждая карточка занимает 85% ширины экрана */
+                flex: 0 0 85%; 
                 scroll-snap-align: center;
-                background: rgba(255, 255, 255, 0.03); /* Легкий фон, чтобы карточки выделялись при скролле */
-                border: 1px solid rgba(255, 255, 255, 0.05);
-                padding: 14px;
-                border-radius: 14px;
+                background: var(--surface-card); 
+                border: 1px solid var(--border-default);
+                padding: 16px;
+                border-radius: 16px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.15);
             }
             
             .starter-cards { grid-template-columns:1fr; max-width:400px; }
@@ -337,6 +350,7 @@
                             <p>Your personal AI migraine advisor</p>
                         </div>
                     </div>
+                    
                     <div class="info-card">
                         <div class="info-grid">
                             <div class="info-item">
