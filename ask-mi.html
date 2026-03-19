@@ -175,12 +175,25 @@
             animation:fade-up 0.5s 0.25s cubic-bezier(0.16,1,0.3,1) both;
         }
         .starter-ribbon {
-            position: absolute; left: -60px; right: -60px;
-            top: 50%; transform: translateY(-50%);
+            position: absolute; left: -80px; right: -80px;
+            top: 50%; height: 54px; transform: translateY(-50%);
             pointer-events: none; z-index: 0;
-            opacity: 0.7;
+            background: linear-gradient(180deg,
+                rgba(160,140,100,0.35) 0%,
+                rgba(50,45,35,0.85) 8%,
+                rgba(30,28,24,0.95) 30%,
+                rgba(20,18,16,0.98) 50%,
+                rgba(30,28,24,0.95) 70%,
+                rgba(50,45,35,0.85) 92%,
+                rgba(160,140,100,0.35) 100%
+            );
+            border-top: 1px solid rgba(197,160,89,0.4);
+            border-bottom: 1px solid rgba(197,160,89,0.4);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
+            border-radius: 0 0 50% 50% / 0 0 8px 8px;
+            transform-origin: center;
+            transform: translateY(-50%) perspective(600px) rotateX(2deg);
         }
-        .starter-ribbon img { width: 100%; height: auto; display: block; }
         .starter-scroll {
             display: flex; gap: 12px; width: 100%;
             overflow-x: auto; padding: 4px 0 12px;
@@ -358,7 +371,7 @@
             .welcome-text h1 { font-size:1.7rem; }
             .cards-hero { max-width:95%; }
             .starter-img-card { width: 240px; }
-            .starter-ribbon { left: -30px; right: -30px; }
+            .starter-ribbon { left: -30px; right: -30px; height: 44px; }
             .comet-1 { width:160px; top:-20px; right:-10px; }
             .comet-2 { width:120px; bottom:40px; left:-20px; }
             .scroll-nav { display:none; }
@@ -368,7 +381,7 @@
         @media (max-width:480px) {
             .starter-img-card { width: 220px; }
             .cards-hero { max-width:100%; }
-            .starter-ribbon { left: -15px; right: -15px; }
+            .starter-ribbon { left: -15px; right: -15px; height: 40px; }
         }
     </style>
 </head>
@@ -427,7 +440,7 @@
 
                     <!-- Starter cards — on the ribbon track -->
                     <div class="starter-track">
-                        <div class="starter-ribbon"><img src="images/ask-mi-ribbon.png" alt=""></div>
+                        <div class="starter-ribbon"></div>
                         <div class="starter-scroll" id="starterScroll">
                             <div class="starter-img-card" data-question="I wake up with migraines almost every day and my jaw hurts in the morning">
                                 <img src="images/ask-mi-card-morning.png" alt="Morning migraines — Waking up with pain and jaw tension">
