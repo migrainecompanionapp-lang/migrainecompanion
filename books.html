@@ -33,7 +33,7 @@
             --cream: #F5F0E8;
             
             --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px;
-            --sp-6: 24px; --sp-8: 32px; --sp-12: 48px; --sp-16: 64px;
+            --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 48px; --sp-16: 64px;
         }
         
         body {
@@ -64,7 +64,7 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--sp-6); position: relative; z-index: 2; }
         h1, h2, h3 { font-family: 'Comfortaa', cursive; }
 
-        /* === HEADER (Same as Blog) === */
+        /* === HEADER === */
         header {
             position: fixed; width: 100%; top: 0; z-index: 100; height: 64px;
             background: rgba(19, 19, 20, 0.75); backdrop-filter: saturate(180%) blur(24px);
@@ -113,11 +113,11 @@
             margin: 0 auto;
         }
 
-        /* === BOOKS GRID === */
+        /* === BOOKS GRID — 3 columns === */
         .books-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 36px;
             padding: 40px 0 100px;
         }
 
@@ -127,7 +127,7 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-glass);
             border-radius: 24px;
-            padding: 50px 40px 40px;
+            padding: 44px 28px 36px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -145,17 +145,17 @@
         /* 3D FLOATING BOOK */
         .large-book-container {
             perspective: 1500px;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
             width: 100%;
             display: flex;
             justify-content: center;
-            height: 380px; /* Fixed height to prevent jumping */
+            height: 320px;
             align-items: center;
         }
 
         .large-book {
             position: relative;
-            width: 240px;
+            width: 200px;
             transform-style: preserve-3d;
             transform: rotateY(-22deg) rotateX(6deg) rotateZ(-2deg);
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -169,17 +169,16 @@
 
         @keyframes float-huge {
             0%, 100% { transform: translateY(0) rotateY(-22deg) rotateX(6deg) rotateZ(-2deg); }
-            50% { transform: translateY(-20px) rotateY(-18deg) rotateX(4deg) rotateZ(-1deg); }
+            50% { transform: translateY(-18px) rotateY(-18deg) rotateX(4deg) rotateZ(-1deg); }
         }
         
         @keyframes float-huge-right {
             0%, 100% { transform: translateY(0) rotateY(22deg) rotateX(6deg) rotateZ(2deg); }
-            50% { transform: translateY(-20px) rotateY(18deg) rotateX(4deg) rotateZ(1deg); }
+            50% { transform: translateY(-18px) rotateY(18deg) rotateX(4deg) rotateZ(1deg); }
         }
         
         .large-book.right-tilt { animation-name: float-huge-right; }
 
-        /* Hover states for the books */
         .book-item:hover .large-book, .book-item:hover .large-book.right-tilt {
             transform: translateY(-10px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.08) !important;
             animation-play-state: paused;
@@ -225,28 +224,28 @@
             color: var(--gold);
             padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            margin-bottom: var(--sp-4);
+            margin-bottom: var(--sp-3);
             border: 1px solid rgba(197, 160, 89, 0.2);
         }
         .book-info h2 {
-            font-size: 1.8rem;
+            font-size: 1.45rem;
             color: var(--cream);
-            line-height: 1.2;
+            line-height: 1.25;
             margin-bottom: var(--sp-2);
         }
         .book-subtitle {
             color: var(--lavender);
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 500;
-            margin-bottom: var(--sp-4);
+            margin-bottom: var(--sp-3);
             font-style: italic;
         }
         .book-desc {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             color: var(--text-body);
             margin-bottom: var(--sp-6);
             line-height: 1.7;
@@ -260,12 +259,13 @@
             background: linear-gradient(135deg, #D5B069, #C5A059);
             color: #131314;
             text-decoration: none;
-            padding: 14px 32px;
+            padding: 13px 28px;
             border-radius: 12px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.92rem;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+            margin-top: auto;
         }
         .amazon-btn:hover {
             transform: translateY(-2px);
@@ -283,12 +283,23 @@
         .copyright { color: var(--text-muted); font-size: 0.82rem; font-weight: 500; }
 
         /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .books-grid { grid-template-columns: 1fr; gap: 40px; }
-            .bookshelf-hero h1 { font-size: 2.8rem; }
-            .large-book-container { height: 320px; }
-            .large-book { width: 200px; }
-            .nav { display: none; } /* Add mobile menu logic here same as blog if needed */
+        @media (max-width: 1060px) {
+            .books-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .books-grid .book-item:last-child {
+                grid-column: 1 / -1;
+                max-width: 480px;
+                justify-self: center;
+            }
+        }
+        @media (max-width: 700px) {
+            .books-grid { grid-template-columns: 1fr; gap: 32px; }
+            .books-grid .book-item:last-child { max-width: none; }
+            .bookshelf-hero h1 { font-size: 2.5rem; }
+            .bookshelf-hero { padding: 130px 0 40px; }
+            .large-book-container { height: 300px; }
+            .large-book { width: 180px; }
+            .book-item { padding: 36px 24px 32px; }
+            .nav { display: none; }
         }
     </style>
 </head>
@@ -322,6 +333,7 @@
         <section class="container">
             <div class="books-grid">
                 
+                <!-- BOOK 1: Pocket Guide -->
                 <div class="book-item">
                     <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="large-book-container">
                         <div class="large-book">
@@ -331,8 +343,8 @@
                     <div class="book-info">
                         <span class="book-badge">Kindle & Paperback</span>
                         <h2>The Migraine Pocket Guide</h2>
-                        <p class="book-subtitle">Quick Relief & Prevention Strategies</p>
-                        <p class="book-desc">A no-fluff, highly practical toolkit built for the moments you need it most. Discover immediate relief techniques (like targeted vagus nerve breathing), clear trigger identification, and science-backed prevention strategies. Designed to be easily readable even through the fog of an attack.</p>
+                        <p class="book-subtitle">What to Pack · What to Do · What to Ask</p>
+                        <p class="book-desc">A no-fluff, highly practical toolkit built for the moments you need it most. Immediate relief techniques, clear trigger identification, and science-backed prevention strategies — readable even through the fog of an attack.</p>
                         <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="amazon-btn">
                             <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
                             Available on Amazon
@@ -340,17 +352,37 @@
                     </div>
                 </div>
 
+                <!-- BOOK 2: The Third Person in Every Room -->
+                <div class="book-item">
+                    <a href="https://www.amazon.com/dp/B0GT2RMCSR" target="_blank" rel="noopener" class="large-book-container">
+                        <div class="large-book right-tilt">
+                            <img src="images/book-third-person.jpg" alt="The Third Person in Every Room">
+                        </div>
+                    </a>
+                    <div class="book-info">
+                        <span class="book-badge">Kindle & Paperback</span>
+                        <h2>The Third Person in Every Room</h2>
+                        <p class="book-subtitle">How Migraine Lives in Your Relationships — and How to Live Back</p>
+                        <p class="book-desc">Migraine doesn't just live in your head — it sits at your dinner table, joins your conversations, and rewrites your plans. This book explores how chronic pain reshapes relationships and offers narrative therapy tools to reclaim the connection migraine tries to steal.</p>
+                        <a href="https://www.amazon.com/dp/B0GT2RMCSR" target="_blank" rel="noopener" class="amazon-btn">
+                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                            Available on Amazon
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BOOK 3: The Brain That Won't Be Quiet -->
                 <div class="book-item">
                     <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="large-book-container">
-                        <div class="large-book right-tilt">
+                        <div class="large-book">
                             <img src="images/book-brain-quiet.jpg" alt="The Brain That Won't Be Quiet">
                         </div>
                     </a>
                     <div class="book-info">
                         <span class="book-badge">Kindle & Paperback</span>
                         <h2>The Brain That Won't Be Quiet</h2>
-                        <p class="book-subtitle">Understanding the Migraine Mind</p>
-                        <p class="book-desc">Migraine isn't just a headache; it's a completely different way your brain processes the world. Dive into the deep neuroscience of your hyperexcitable mind and the emotional toll of invisible pain. Using narrative therapy, learn to separate your true self from the condition and find lasting peace.</p>
+                        <p class="book-subtitle">Understanding Migraine After 30 Years of Listening</p>
+                        <p class="book-desc">Migraine isn't just a headache — it's a completely different way your brain processes the world. Dive into the neuroscience of the hyperexcitable mind and the emotional toll of invisible pain. Using narrative therapy, learn to separate your true self from the condition.</p>
                         <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="amazon-btn">
                             <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
                             Available on Amazon
