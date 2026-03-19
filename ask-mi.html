@@ -88,10 +88,27 @@
         @keyframes fade-down { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
 
         .dev-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(139,122,168,0.06); border:1px solid rgba(139,122,168,0.12); border-radius:20px; padding:4px 14px; font-size:0.65rem; color:var(--lavender); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:16px; animation:fade-down 0.5s cubic-bezier(0.16,1,0.3,1); }
-        .welcome-row { display:flex; align-items:center; gap:12px; margin-bottom:20px; animation:fade-up 0.5s cubic-bezier(0.16,1,0.3,1); }
-        .welcome-avatar { width:44px; height:44px; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 24px rgba(197,160,89,0.05); }
-        .welcome-text h1 { font-size:1.5rem; color:var(--cream); font-weight:700; line-height:1.2; }
-        .welcome-text p { font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--text-secondary); font-size:0.95rem; font-weight:500; margin-top:1px; }
+        .welcome-row { display:flex; flex-direction:column; align-items:center; gap:4px; margin-bottom:28px; animation:fade-up 0.5s cubic-bezier(0.16,1,0.3,1); }
+        .welcome-text { text-align:center; }
+        .welcome-text h1 {
+            font-size:2.2rem; color:var(--cream); font-weight:700; line-height:1.1;
+            letter-spacing:-0.02em;
+            background:linear-gradient(135deg, var(--cream) 0%, var(--gold) 50%, var(--cream) 100%);
+            background-size:200% auto;
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+            background-clip:text;
+            animation:shimmer-text 4s ease infinite;
+        }
+        @keyframes shimmer-text {
+            0% { background-position:0% center; }
+            50% { background-position:100% center; }
+            100% { background-position:0% center; }
+        }
+        .welcome-text p {
+            font-family:'Cormorant Garamond',serif; font-style:italic;
+            color:var(--text-secondary); font-size:1.05rem; font-weight:500;
+            margin-top:6px; letter-spacing:0.01em;
+        }
 
         .info-card {
             width:100%; max-width:740px; background:transparent;
@@ -340,7 +357,6 @@
                 <div class="welcome" id="welcome">
 
                     <div class="welcome-row">
-                        <img src="images/mi-icon.png" alt="Mi" class="welcome-avatar">
                         <div class="welcome-text"><h1>Ask Mi</h1><p>Your personal AI migraine advisor</p></div>
                     </div>
                     <div class="info-card">
