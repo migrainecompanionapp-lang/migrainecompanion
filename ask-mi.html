@@ -165,6 +165,17 @@
         .input-meta { display:flex; justify-content:space-between; align-items:center; margin-top:6px; padding:0 4px; }
         .input-disclaimer { font-size:0.65rem; color:var(--text-muted); opacity:0.6; }
         .trial-info { font-size:0.68rem; color:var(--text-muted); display:flex; align-items:center; gap:6px; cursor:pointer; }
+        .trial-unlock {
+            font-size: 0.72rem; font-weight: 600; color: var(--gold);
+            background: rgba(197,160,89,0.1); border: 1px solid rgba(197,160,89,0.2);
+            padding: 4px 14px; border-radius: 20px; cursor: pointer;
+            transition: all 0.3s ease; animation: pulse-gold 2s ease infinite;
+        }
+        .trial-unlock:hover { background: rgba(197,160,89,0.18); border-color: rgba(197,160,89,0.35); }
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(197,160,89,0); }
+            50% { box-shadow: 0 0 0 4px rgba(197,160,89,0.1); }
+        }
         .sub-badge { display:none; font-size:0.6rem; font-weight:700; color:var(--gold); background:rgba(197,160,89,0.08); border:1px solid rgba(197,160,89,0.12); padding:2px 8px; border-radius:12px; margin-left:8px; }
         .sub-badge.visible { display:inline; }
 
@@ -277,7 +288,7 @@
         <div class="chat-inner">
             <div class="chat-messages" id="chatMessages">
                 <div class="welcome" id="welcome">
-                    <div class="dev-badge">Early Preview — Features being refined</div>
+
                     <div class="welcome-row">
                         <img src="images/mi-icon.png" alt="Mi" class="welcome-avatar">
                         <div class="welcome-text"><h1>Ask Mi</h1><p>Your personal AI migraine advisor</p></div>
@@ -455,9 +466,9 @@
         } else {
             document.getElementById('subBadge').classList.remove('visible');
             const remaining = FREE_Q - getUsed();
-            document.getElementById('trialText').textContent = remaining > 0
+            document.getElementById('trialText').innerHTML = remaining > 0
                 ? remaining + ' free question' + (remaining === 1 ? '' : 's')
-                : 'Unlock →';
+                : '<span class="trial-unlock">Unlock unlimited →</span>';
             document.getElementById('trialInfo').style.display = 'flex';
         }
     }
