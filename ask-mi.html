@@ -164,7 +164,7 @@
         .send-btn svg { width:15px; height:15px; fill:currentColor; }
         .input-meta { display:flex; justify-content:space-between; align-items:center; margin-top:6px; padding:0 4px; }
         .input-disclaimer { font-size:0.65rem; color:var(--text-muted); opacity:0.6; }
-        .trial-info { font-size:0.68rem; color:var(--text-muted); display:flex; align-items:center; gap:6px; }
+        .trial-info { font-size:0.68rem; color:var(--text-muted); display:flex; align-items:center; gap:6px; cursor:pointer; }
         .sub-badge { display:none; font-size:0.6rem; font-weight:700; color:var(--gold); background:rgba(197,160,89,0.08); border:1px solid rgba(197,160,89,0.12); padding:2px 8px; border-radius:12px; margin-left:8px; }
         .sub-badge.visible { display:inline; }
 
@@ -424,9 +424,10 @@
     function addUsed() { const n = getUsed() + 1; localStorage.setItem('mi_used', String(n)); return n; }
     function getSavedEmail() { return localStorage.getItem('mi_email') || ''; }
     function saveEmail(email) { localStorage.setItem('mi_email', email); }
-    function clearPro() { localStorage.removeItem('mi_sub'); }
 
     let isProActive = false;
+    // Временный grace period после оплаты — пока вебхук дойдёт
+    let paymentGracePeriod = false;
 
     // ─── ПРОВЕРКА ПОДПИСКИ ЧЕРЕЗ СЕРВЕР ───
     async function checkSubscription() {
@@ -441,6 +442,8 @@
             const data = await res.json();
             return data.active === true;
         } catch (e) {
+            // Если сервер недоступен и был PRO — даём grace period
+            if (localStorage.getItem('mi_was_pro') === 'true') return true;
             return false;
         }
     }
@@ -479,25 +482,44 @@
 
         // Возврат после оплаты Monobank
         if (isPaid && paidEmail) {
-            saveEmail(decodeURIComponent(paidEmail));
+            const decodedEmail = decodeURIComponent(paidEmail);
+            saveEmail(decodedEmail);
             history.replaceState({}, '', window.location.pathname);
-            // Небольшая пауза — вебхук может ещё не дойти
-            await new Promise(r => setTimeout(r, 1500));
-            const active = await checkSubscription();
-            if (active) {
-                isProActive = true;
-                updateTrialUI(true);
-                showOverlay('success');
-            } else {
-                // Вебхук ещё не пришёл — покажем успех и проверим чуть позже
-                isProActive = false;
-                updateTrialUI(false);
-                showOverlay('success');
-                // Попробуем ещё раз через 3 секунды
+
+            // Включаем grace period — разрешаем вопросы пока вебхук дойдёт
+            paymentGracePeriod = true;
+            isProActive = true;
+            updateTrialUI(true);
+            localStorage.setItem('mi_was_pro', 'true');
+            showOverlay('success');
+
+            // Проверяем в фоне — вебхук мог уже прийти
+            const checkAndConfirm = async () => {
+                const active = await checkSubscription();
+                if (active) {
+                    isProActive = true;
+                    paymentGracePeriod = false; // Вебхук подтвердил — grace period не нужен
+                    updateTrialUI(true);
+                }
+                return active;
+            };
+
+            // Пробуем сразу
+            await checkAndConfirm();
+            // Если не подтвердилось — пробуем через 3, 8, 15 секунд
+            if (paymentGracePeriod) {
+                setTimeout(async () => { if (paymentGracePeriod) await checkAndConfirm(); }, 3000);
+                setTimeout(async () => { if (paymentGracePeriod) await checkAndConfirm(); }, 8000);
                 setTimeout(async () => {
-                    const retry = await checkSubscription();
-                    if (retry) { isProActive = true; updateTrialUI(true); }
-                }, 3000);
+                    if (paymentGracePeriod) {
+                        const ok = await checkAndConfirm();
+                        if (!ok) {
+                            // Вебхук так и не пришёл за 15 секунд — но оплата прошла
+                            // Оставляем grace period на эту сессию
+                            console.warn('Webhook not confirmed after 15s — grace period active');
+                        }
+                    }
+                }, 15000);
             }
             return;
         }
@@ -568,6 +590,15 @@
         if (savedEmail) document.getElementById('pwEmail').value = savedEmail;
     });
 
+    // Клик на "Unlock →" в trial info тоже открывает paywall
+    document.getElementById('trialInfo').addEventListener('click', () => {
+        if (getUsed() >= FREE_Q && !isProActive) {
+            const savedEmail = getSavedEmail();
+            if (savedEmail) document.getElementById('pwEmail').value = savedEmail;
+            showOverlay('payment');
+        }
+    });
+
     // ─── ЧАТ ───
     let chatHistory = [];
     const chatMessages = document.getElementById('chatMessages');
@@ -596,8 +627,9 @@
         const text = inputBox.value.trim();
         if (!text) return;
 
-        // Проверка доступа
-        if (!isProActive && getUsed() >= FREE_Q) {
+        // Проверка доступа: PRO, grace period, или бесплатные вопросы
+        const hasAccess = isProActive || paymentGracePeriod || (getUsed() < FREE_Q);
+        if (!hasAccess) {
             const savedEmail = getSavedEmail();
             if (savedEmail) document.getElementById('pwEmail').value = savedEmail;
             showOverlay('payment');
@@ -623,7 +655,8 @@
             const answer = data.answer || data.message || 'Something went wrong.';
             addMessage('mi', answer);
             chatHistory.push({ role: 'user', text }, { role: 'mi', text: answer });
-            if (!isProActive) { addUsed(); updateTrialUI(false); }
+            // Считаем бесплатные вопросы только если НЕ PRO и НЕ grace period
+            if (!isProActive && !paymentGracePeriod) { addUsed(); updateTrialUI(false); }
         } catch (e) {
             typingEl.remove();
             addMessage('mi', 'Connection error. Please try again.');
@@ -634,6 +667,7 @@
         const msg = document.createElement('div');
         msg.className = 'message ' + role;
         const formatted = text
+            .replace(/##\s*(.*?)(?:\n|$)/g, '<h2>$1</h2>')
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color:var(--lavender);text-decoration:underline;text-underline-offset:2px;">$1</a>')
             .replace(/\n\n/g, '<br><br>')
