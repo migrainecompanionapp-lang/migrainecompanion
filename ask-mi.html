@@ -62,13 +62,14 @@
             overflow: hidden;
         }
         body::before {
-            content: ''; position: fixed; top: -200px; left: 50%; transform: translateX(-50%);
-            width: 900px; height: 700px; background: radial-gradient(ellipse, rgba(139, 122, 168, 0.05) 0%, transparent 70%);
+            content: ''; position: fixed; top: -80px; left: 50%; transform: translateX(-50%);
+            width: 700px; height: 500px;
+            background: radial-gradient(ellipse, rgba(160, 130, 70, 0.12) 0%, transparent 65%);
             pointer-events: none; z-index: 0;
         }
         body::after {
             content: ''; position: fixed; bottom: -100px; right: -100px;
-            width: 500px; height: 500px; background: radial-gradient(ellipse, rgba(197, 160, 89, 0.03) 0%, transparent 70%);
+            width: 500px; height: 500px; background: radial-gradient(ellipse, rgba(160, 130, 70, 0.025) 0%, transparent 70%);
             pointer-events: none; z-index: 0;
         }
         h1, h2, h3 { font-family: 'Comfortaa', cursive; }
@@ -100,7 +101,7 @@
         }
         .chat-inner { max-width:800px; width:100%; margin:0 auto; display:flex; flex-direction:column; flex:1; min-height:0; }
         .chat-messages { flex:1 1 0; display:flex; flex-direction:column; gap:var(--sp-md); min-height:0; padding-bottom:var(--sp-md); }
-        .welcome { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 0 6vh 0; min-height:0; flex:1; justify-content:center; }
+        .welcome { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 0 3vh 0; min-height:0; flex:1; justify-content:center; }
 
         @keyframes fade-up { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
         @keyframes fade-down { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
@@ -118,7 +119,7 @@
         }
         .welcome-text p {
             font-style:italic;
-            color:var(--text-secondary); font-size:var(--fs-base); font-weight:400;
+            color:var(--text-body); font-size:var(--fs-base); font-weight:400;
             margin-top:var(--sp-xs); line-height:1.5;
         }
 
@@ -171,7 +172,7 @@
         .info-tooltip-text strong { color:var(--cream); font-weight:600; }
 
         /* ─── STARTER CARDS — Ghost Bubbles ─── */
-        .starter-label { font-size:var(--fs-sm); font-weight:400; font-style:italic; color:var(--text-secondary); margin-bottom:var(--sp-sm); text-align:right; width:100%; animation:fade-up 0.5s 0.14s cubic-bezier(0.16,1,0.3,1) both; }
+        .starter-label { display:none; }
         .starter-cards {
             display:flex; flex-direction:column; gap:10px; width:100%;
             align-items:flex-end; /* right-aligned like user messages */
@@ -185,7 +186,7 @@
             border-radius: 18px; border-bottom-right-radius: 6px;
             padding: var(--sp-sm) var(--sp-md);
             cursor: pointer; position: relative;
-            max-width: 85%;
+            width: fit-content; max-width: 85%;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex; align-items: center; gap: var(--sp-sm);
             /* Subtle inner glow — premium glass hint */
@@ -439,17 +440,21 @@
 
                     <!-- #2 + #7 — 3 карточки, 1 колонка, от первого лица -->
                     <div class="starter-cards">
-                        <div class="starter-card" data-question="My migraines are becoming more frequent, I used to get them monthly but now it's almost weekly">
-                            <div class="card-orb"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg></div>
-                            <div class="card-content"><div class="card-title">They used to be monthly, now it's weekly</div><div class="card-desc">Attacks getting more frequent over time</div></div>
+                        <div class="starter-card" data-question="My migraines get worse around my period">
+                            <div class="card-orb"></div>
+                            <div class="card-content"><div class="card-title">Migraines get worse around my period</div><div class="card-desc">Hormonal patterns</div></div>
                         </div>
                         <div class="starter-card" data-question="I wake up with migraines almost every day and my jaw hurts in the morning">
-                            <div class="card-orb"><svg viewBox="0 0 24 24"><path d="M12.5 7.5a.5.5 0 0 0-1 0v5.21l-3.15 1.89a.5.5 0 0 0 .51.86l3.39-2.03A.5.5 0 0 0 12.5 13V7.5zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18.5a8.5 8.5 0 1 1 0-17 8.5 8.5 0 0 1 0 17z"/></svg></div>
+                            <div class="card-orb"></div>
                             <div class="card-content"><div class="card-title">I wake up with a migraine almost every day</div><div class="card-desc">Morning pain and jaw tension</div></div>
                         </div>
+                        <div class="starter-card" data-question="My migraines are becoming more frequent, I used to get them monthly but now it's almost weekly">
+                            <div class="card-orb"></div>
+                            <div class="card-content"><div class="card-title">They used to be monthly but now it's almost weekly</div><div class="card-desc">Attacks getting more frequent over time</div></div>
+                        </div>
                         <div class="starter-card" data-question="I drink 2-3 cups of coffee a day and always get migraines on weekends">
-                            <div class="card-orb"><svg viewBox="0 0 24 24"><path d="M2 21h18v-2H2v2zm2-3h14c1.1 0 2-.9 2-2v-5c0-.55-.45-1-1-1h-3V5c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v5H1c-.55 0-1 .45-1 1v5c0 1.1.9 2 2 2h2zm2-13h8v5H6V5zm14 6v4H4v-4h16z"/></svg></div>
-                            <div class="card-content"><div class="card-title">Weekends should be restful but I always get attacks</div><div class="card-desc">Coffee routine and weekend migraine pattern</div></div>
+                            <div class="card-orb"></div>
+                            <div class="card-content"><div class="card-title">Coffee helps during the week but weekends are always worse</div><div class="card-desc">Coffee routine and weekend migraine pattern</div></div>
                         </div>
                     </div>
                 </div>
