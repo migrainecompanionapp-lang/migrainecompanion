@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -95,7 +94,6 @@
         .welcome-text h1 { font-size:1.5rem; color:var(--cream); font-weight:700; line-height:1.2; }
         .welcome-text p { font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--text-secondary); font-size:0.95rem; font-weight:500; margin-top:1px; }
         
-        /* ИСПРАВЛЕНИЕ #1: Убрано overflow: hidden и увеличен padding для карточки */
         .info-card { 
             width:100%; max-width:740px; background:var(--surface-card); 
             backdrop-filter:blur(30px); -webkit-backdrop-filter:blur(30px); 
@@ -160,27 +158,9 @@
         .card-orb svg { width: 18px; height: 18px; position: relative; z-index: 2; transition: transform 0.3s ease; }
         .starter-card:hover .card-orb svg { transform: scale(1.1); }
         
-        .starter-card:nth-child(1) .card-orb { background: linear-gradient(135deg, rgba(107,155,170,0.2), rgba(107,155,170,0.05)); border: 1px solid rgba(107,155,170,0.3); box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), 0 4px 12px rgba(107,155,170,0.15); }
-        .starter-card:nth-child(1) .card-orb svg { fill: var(--teal); }
-        .starter-card:nth-child(1):hover .card-orb { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), 0 0 20px rgba(107,155,170,0.4); border-color: rgba(107,155,170,0.5); }
-        
-        .starter-card:nth-child(2) .card-orb { background: linear-gradient(135deg, rgba(106,170,122,0.2), rgba(106,170,122,0.05)); border: 1px solid rgba(106,170,122,0.3); box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), 0 4px 12px rgba(106,170,122,0.15); }
-        .starter-card:nth-child(2) .card-orb svg { fill: var(--green); }
-        .starter-card:nth-child(2):hover .card-orb { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), 0 0 20px rgba(106,170,122,0.4); border-color: rgba(106,170,122,0.5); }
-        
-        .starter-card:nth-child(3) .card-orb { background: linear-gradient(135deg, rgba(139,122,168,0.2), rgba(139,122,168,0.05)); border: 1px solid rgba(139,122,168,0.3); box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), 0 4px 12px rgba(139,122,168,0.15); }
-        .starter-card:nth-child(3) .card-orb svg { fill: var(--lavender); }
-        .starter-card:nth-child(3):hover .card-orb { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), 0 0 20px rgba(139,122,168,0.4); border-color: rgba(139,122,168,0.5); }
-        
-        .starter-card:nth-child(4) .card-orb { background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.05)); border: 1px solid rgba(197,160,89,0.3); box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), 0 4px 12px rgba(197,160,89,0.15); }
-        .starter-card:nth-child(4) .card-orb svg { fill: var(--gold); }
-        .starter-card:nth-child(4):hover .card-orb { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), 0 0 20px rgba(197,160,89,0.4); border-color: rgba(197,160,89,0.5); }
-        
         .card-content { flex:1; min-width:0; }
         .card-title { font-size:0.82rem; font-weight:600; color:var(--text-heading); line-height:1.3; margin-bottom:1px; transition:color 0.3s ease; }
         .card-desc { font-size:0.73rem; color:var(--text-muted); line-height:1.4; transition:color 0.3s ease; }
-        .starter-card:hover .card-title { color:#fff; }
-        .starter-card:hover .card-desc { color:var(--text-secondary); }
         
         .message { display:flex; gap:12px; max-width:100%; animation:msg-in 0.5s cubic-bezier(0.16,1,0.3,1); }
         @keyframes msg-in { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
@@ -191,25 +171,6 @@
         .msg-bubble { max-width:85%; padding:14px 18px; border-radius:18px; font-size:0.88rem; line-height:1.75; position:relative; }
         .message.user .msg-bubble { background:linear-gradient(135deg,rgba(139,122,168,0.15),rgba(139,122,168,0.08)); border:1px solid rgba(139,122,168,0.12); border-bottom-right-radius:6px; color:var(--cream); }
         .message.mi .msg-bubble { background:var(--surface-card); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(197,160,89,0.08); border-bottom-left-radius:6px; color:var(--text-body); box-shadow:0 4px 20px rgba(0,0,0,0.12); }
-        .msg-bubble h2 { font-family:'Comfortaa',cursive; font-size:0.88rem; color:var(--cream); margin:16px 0 6px 0; font-weight:600; }
-        .msg-bubble h2:first-child { margin-top:0; }
-        .msg-bubble p { margin-bottom:8px; }
-        .msg-bubble p:last-child { margin-bottom:0; }
-        .msg-bubble a { color:var(--lavender); text-decoration:none; border-bottom:1px solid rgba(139,122,168,0.20); transition:all 0.2s ease; }
-        .msg-bubble a:hover { color:var(--cream); border-color:var(--cream); }
-        .msg-bubble ul,.msg-bubble ol { padding-left:18px; margin:8px 0; }
-        .msg-bubble li { margin-bottom:4px; }
-        .msg-bubble strong { color:var(--sand); }
-        .msg-bubble em { color:var(--text-secondary); }
-        .msg-bubble hr { border:none; border-top:1px solid var(--border-subtle); margin:12px 0; }
-        .msg-bubble blockquote { border-left:2px solid var(--gold); padding-left:12px; margin:8px 0; color:var(--text-secondary); font-style:italic; }
-        .mi-typing { display:flex; align-items:center; gap:10px; padding:8px 0; }
-        .mi-typing-dots { display:flex; gap:4px; }
-        .mi-typing-dots span { width:7px; height:7px; background:var(--gold); border-radius:50%; animation:typing-pulse 1.4s ease-in-out infinite; }
-        .mi-typing-dots span:nth-child(2) { animation-delay:0.2s; }
-        .mi-typing-dots span:nth-child(3) { animation-delay:0.4s; }
-        @keyframes typing-pulse { 0%,80%,100%{opacity:0.25;transform:scale(0.8)} 40%{opacity:1;transform:scale(1.15)} }
-        .mi-typing-text { color:var(--text-muted); font-size:0.82rem; }
         
         .input-area { 
             flex-shrink:0; 
@@ -218,14 +179,6 @@
             z-index:10; 
             background:var(--surface-base); 
         }
-        .input-area::before { content:''; position:absolute; top:-20px; left:0; right:0; height:20px; background:linear-gradient(to top,var(--surface-base),transparent); pointer-events:none; }
-        
-        .input-inner {
-            position: relative;
-            width: 100%;
-        }
-
-        /* ИСПРАВЛЕНИЕ #2: Принудительная темная тема и подавление белого скроллбара */
         .input-box { 
             width:100%; 
             background:var(--surface-floating); 
@@ -236,107 +189,47 @@
             outline:none; resize:none; min-height:48px; max-height:120px; 
             transition:border-color 0.35s ease,box-shadow 0.35s ease; 
             box-shadow:0 4px 24px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.04); 
-            -webkit-appearance:none; appearance:none; 
             overflow-y: hidden;
-            color-scheme: dark; /* Заставляем Windows рендерить темный скроллбар */
+            color-scheme: dark;
         } 
-        .input-box::-webkit-scrollbar { width:6px; }
-        .input-box::-webkit-scrollbar-track { background:transparent !important; }
-        .input-box::-webkit-scrollbar-thumb { background:rgba(139,122,168,0.25) !important; border-radius:3px; }
-        .input-box::-webkit-scrollbar-thumb:hover { background:rgba(139,122,168,0.4) !important; }
-        
-        .input-box::placeholder { color:var(--text-muted); }
-        .input-box:focus { border-color:rgba(197,160,89,0.25); box-shadow:0 4px 24px rgba(0,0,0,0.25),0 0 24px rgba(197,160,89,0.05); }
-        
         .send-btn { 
             position:absolute; right:8px; bottom:6px;
             width:36px; height:36px; border-radius:50%; border:none; 
             background:linear-gradient(135deg,var(--gold),#D5B069); color:var(--surface-base); cursor:pointer; 
             display:flex; align-items:center; justify-content:center; transition:all 0.35s cubic-bezier(0.16,1,0.3,1); 
-            opacity:0.4; box-shadow:0 2px 8px rgba(197,160,89,0.15); 
+            opacity:0.4;
         }
         .send-btn.active { opacity:1; }
-        .send-btn.active:hover { transform:scale(1.08); box-shadow:0 4px 16px rgba(197,160,89,0.3); }
-        .send-btn svg { width:15px; height:15px; fill:currentColor; }
-        
-        .input-meta { display:flex; justify-content:space-between; align-items:center; margin-top:6px; padding:0 4px; }
-        .input-disclaimer { font-size:0.65rem; color:var(--text-muted); opacity:0.6; }
-        .trial-info { font-size:0.68rem; color:var(--text-muted); display:flex; align-items:center; gap:6px; }
-        .trial-info a { color:var(--gold); text-decoration:none; font-weight:600; }
-        .trial-dots { display:inline-flex; gap:4px; }
-        .trial-dot { width:6px; height:6px; border-radius:50%; border:1px solid rgba(197,160,89,0.25); background:transparent; transition:all 0.3s ease; }
-        .trial-dot.used { background:var(--gold); border-color:var(--gold); box-shadow:0 0 6px rgba(197,160,89,0.25); }
-        .trial-info.hidden { display:none; }
         
         .pw-overlay { 
             display:none; position:fixed; top:0; left:0; right:0; bottom:0; 
             background:rgba(19,19,20,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); 
             z-index:1000; align-items:center; justify-content:center; 
-            padding: max(20px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom)); overflow-y: auto; 
+            padding: 20px; overflow-y: auto; 
         }
         .pw-overlay.visible { display:flex; }
-        .pw-card { max-width:420px; width:100%; margin: auto; background:var(--surface-floating); backdrop-filter:blur(40px); -webkit-backdrop-filter:blur(40px); border:1px solid rgba(197,160,89,0.12); border-radius:24px; padding:40px 28px; text-align:center; position:relative; box-shadow:0 24px 80px rgba(0,0,0,0.5); animation:pw-in 0.5s cubic-bezier(0.16,1,0.3,1); }
-        @keyframes pw-in { from{opacity:0;transform:translateY(24px) scale(0.96)} to{opacity:1;transform:translateY(0) scale(1)} }
-        .pw-card::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:140px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0.4; }
-        .pw-avatar { width:56px; height:56px; border-radius:14px; margin:0 auto 16px; box-shadow:0 4px 20px rgba(0,0,0,0.3); }
-        .pw-card h2 { font-family:'Comfortaa',cursive; font-size:1.2rem; color:var(--cream); margin-bottom:8px; font-weight:700; }
-        .pw-sub { color:var(--text-secondary); font-size:0.85rem; line-height:1.6; margin-bottom:20px; }
-        .pw-features { text-align:left; margin-bottom:20px; padding:0 8px; }
-        .pw-feat { display:flex; align-items:flex-start; gap:10px; padding:5px 0; font-size:0.82rem; color:var(--text-body); line-height:1.5; }
-        .pw-chk { color:var(--green); font-size:0.85rem; flex-shrink:0; margin-top:2px; }
+        .pw-card { max-width:420px; width:100%; background:var(--surface-floating); border:1px solid rgba(197,160,89,0.12); border-radius:24px; padding:40px 28px; text-align:center; position:relative; box-shadow:0 24px 80px rgba(0,0,0,0.5); }
         .pw-price { margin-bottom:20px; padding:14px; background:rgba(197,160,89,0.04); border:1px solid rgba(197,160,89,0.08); border-radius:14px; }
         .pw-amt { font-family:'Comfortaa',cursive; font-size:2rem; font-weight:700; color:var(--cream); }
         .pw-per { color:var(--text-muted); font-size:0.85rem; }
-        .pw-note { color:var(--text-muted); font-size:0.7rem; margin-top:4px; }
-        .pw-cta { width:100%; padding:14px; border:none; border-radius:14px; background:linear-gradient(135deg,var(--gold),#D5B069); color:var(--surface-base); font-family:'Comfortaa',cursive; font-size:0.92rem; font-weight:700; cursor:pointer; transition:all 0.3s ease; margin-bottom:10px; box-shadow:0 4px 20px rgba(197,160,89,0.15); }
-        .pw-cta:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(197,160,89,0.25); }
-        .pw-skip { background:none; border:none; color:var(--text-muted); font-size:0.75rem; cursor:pointer; font-family:inherit; padding:6px; }
-        .pw-skip:hover { color:var(--text-secondary); }
-        .pw-ok { display:none; }
-        .pw-ok.visible { display:block; }
-        .pw-ok h2 { color:var(--green); }
-        .pw-ok-btn { width:100%; padding:14px; border:none; border-radius:14px; background:linear-gradient(135deg,var(--green),#7BC48A); color:var(--surface-base); font-family:'Comfortaa',cursive; font-size:0.92rem; font-weight:700; cursor:pointer; margin-top:16px; }
+        .pw-cta { width:100%; padding:14px; border:none; border-radius:14px; background:linear-gradient(135deg,var(--gold),#D5B069); color:var(--surface-base); font-family:'Comfortaa',cursive; font-size:0.92rem; font-weight:700; cursor:pointer; margin-bottom:10px; }
+        
         .sub-badge { display:none; font-size:0.6rem; font-weight:700; color:var(--gold); background:rgba(197,160,89,0.08); border:1px solid rgba(197,160,89,0.12); padding:2px 8px; border-radius:12px; letter-spacing:0.05em; margin-left:8px; }
         .sub-badge.visible { display:inline; }
-        
+
         @media (max-width:768px) {
-            .header { height:50px; min-height:50px; padding:0 14px; }
             .header-title .subtitle { display:none; }
-            .back-btn span { display:none; }
-            .new-chat-btn span { display:none; }
-            .chat-area { padding:12px 14px; }
-            .welcome-text h1 { font-size:1.25rem; }
-            .welcome-text p { font-size:0.85rem; }
-            
-            .info-card { padding: 0; background: transparent; border: none; box-shadow: none; overflow: visible; backdrop-filter: none; -webkit-backdrop-filter: none; }
-            .info-card::before { display: none; }
-            
-            .info-grid { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 0 14px 16px 14px; margin: 0 -14px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-            .info-grid::-webkit-scrollbar { display: none; }
-            
-            .info-item { flex: 0 0 85%; scroll-snap-align: center; background: var(--surface-card); border: 1px solid var(--border-default); padding: 16px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
-            
-            .starter-cards { grid-template-columns:1fr; max-width:400px; }
-            .msg-bubble { max-width:92%; padding:12px 14px; font-size:0.84rem; }
-            .input-area { padding: 8px 14px calc(14px + env(safe-area-inset-bottom)); }
-            .input-box { padding:12px 48px 12px 16px; font-size: 16px; }
-            .pw-card { padding: 28px 20px; } 
+            .info-grid { display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 12px; padding-bottom: 10px; }
+            .info-item { flex: 0 0 85%; background: var(--surface-card); padding: 16px; border-radius: 16px; }
+            .starter-cards { grid-template-columns:1fr; }
         }
-        
-        .chat-area::-webkit-scrollbar { width:8px; }
-        .chat-area::-webkit-scrollbar-track { background:rgba(255,255,255,0.03); border-radius:4px; }
-        .chat-area::-webkit-scrollbar-thumb { background:rgba(139,122,168,0.25); border-radius:4px; min-height:40px; }
-        .chat-area::-webkit-scrollbar-thumb:hover { background:rgba(139,122,168,0.4); }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="header-inner">
             <div class="header-left">
-                <a href="blog.html" class="back-btn">
-                    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-                    <span>Blog</span>
-                </a>
+                <a href="blog.html" class="back-btn"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg><span>Blog</span></a>
                 <div class="header-title">
                     <img src="images/mi-icon.png" alt="Mi">
                     <span class="name">Ask Mi</span>
@@ -344,45 +237,35 @@
                     <span class="subtitle">AI Migraine Advisor</span>
                 </div>
             </div>
-            <button class="new-chat-btn" id="newChatBtn">
-                <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-                <span>New chat</span>
-            </button>
+            <button class="new-chat-btn" id="newChatBtn"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>New chat</span></button>
         </div>
     </div>
     <div class="chat-area" id="chatArea">
-        <div class="chat-inner" id="chatInner">
+        <div class="chat-inner">
             <div class="chat-messages" id="chatMessages">
                 <div class="welcome" id="welcome">
-                    <div class="dev-badge">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                        Early Preview — Features being refined
-                    </div>
+                    <div class="dev-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Early Preview — Features being refined</div>
                     <div class="welcome-row">
                         <img src="images/mi-icon.png" alt="Mi" class="welcome-avatar">
-                        <div class="welcome-text">
-                            <h1>Ask Mi</h1>
-                            <p>Your personal AI migraine advisor</p>
-                        </div>
+                        <div class="welcome-text"><h1>Ask Mi</h1><p>Your personal AI migraine advisor</p></div>
                     </div>
-                    
                     <div class="info-card">
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="info-icon ic-what"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg></div>
-                                <div class="info-text"><h3>What is Ask Mi?</h3><p>AI advisor trained on 60+ peer-reviewed articles — and our research library grows every week.</p></div>
+                                <div class="info-text"><h3>What is Ask Mi?</h3><p>AI advisor trained on 60+ peer-reviewed articles.</p></div>
                             </div>
                             <div class="info-item">
                                 <div class="info-icon ic-how"><svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></div>
-                                <div class="info-text"><h3>How it works</h3><p>Describe your situation. Mi finds patterns across our research library.</p></div>
+                                <div class="info-text"><h3>How it works</h3><p>Describe your situation. Mi finds patterns in research.</p></div>
                             </div>
                             <div class="info-item">
                                 <div class="info-icon ic-value"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
-                                <div class="info-text"><h3>What you get</h3><p>Personalized insights, cross-article analysis, actionable steps.</p></div>
+                                <div class="info-text"><h3>What you get</h3><p>Personalized insights and actionable steps.</p></div>
                             </div>
                             <div class="info-item">
                                 <div class="info-icon ic-price"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
-                                <div class="info-text"><h3>Try free, then unlock</h3><p>3 free questions. Then $2.99/mo. Cancel anytime.</p></div>
+                                <div class="info-text"><h3>Try free, then unlock</h3><p>3 free questions. Then 123 ₴/mo. Cancel anytime.</p></div>
                             </div>
                         </div>
                     </div>
@@ -396,75 +279,53 @@
                             <div class="card-orb"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg></div>
                             <div class="card-content"><div class="card-title">Hormonal patterns</div><div class="card-desc">Attacks tied to menstrual cycle</div></div>
                         </div>
-                        <div class="starter-card" data-question="I drink 3-4 cups of coffee a day and get migraines on weekends when I sleep in">
-                            <div class="card-orb"><svg viewBox="0 0 24 24"><path d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7V8h1.5c1.38 0 2.5-1.12 2.5-2.5S19.88 3 18.5 3zM16 5v3H6V5h10zm2.5 1.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zM4 19h16v2H4v-2z"/></svg></div>
-                            <div class="card-content"><div class="card-title">Caffeine + weekends</div><div class="card-desc">Weekend migraines when sleeping in</div></div>
-                        </div>
-                        <div class="starter-card" data-question="My migraines are getting more frequent each month. I now take painkillers almost every day">
-                            <div class="card-orb"><svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg></div>
-                            <div class="card-content"><div class="card-title">Increasing frequency</div><div class="card-desc">More attacks, daily painkillers</div></div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
     <div class="input-area">
         <div class="input-inner">
             <textarea class="input-box" id="inputBox" placeholder="Describe your migraine situation..." rows="1"></textarea>
-            <button class="send-btn" id="sendBtn" aria-label="Send message">
-                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-            </button>
+            <button class="send-btn" id="sendBtn" aria-label="Send message"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
         </div>
         <div class="input-meta">
-            <span class="input-disclaimer">Mi is an AI advisor, not a doctor. Always consult your healthcare provider.</span>
+            <span class="input-disclaimer">Mi is an AI advisor, not a doctor. Consult your healthcare provider.</span>
             <div class="trial-info" id="trialInfo">
-                <span class="trial-dots">
-                    <span class="trial-dot" id="dot1"></span>
-                    <span class="trial-dot" id="dot2"></span>
-                    <span class="trial-dot" id="dot3"></span>
-                </span>
+                <span class="trial-dots"><span class="trial-dot" id="dot1"></span><span class="trial-dot" id="dot2"></span><span class="trial-dot" id="dot3"></span></span>
                 <span id="trialText">3 free questions</span>
             </div>
         </div>
     </div>
-
     <div class="pw-overlay" id="pwOverlay">
         <div class="pw-card">
             <div id="pwPrompt">
                 <img src="images/mi-icon.png" alt="Mi" class="pw-avatar">
                 <h2>Mi loved helping you!</h2>
-                <p class="pw-sub">Unlock unlimited access to your personal AI migraine advisor — powered by 55+ peer-reviewed articles and 600+ citations.</p>
+                <p class="pw-sub">Unlock unlimited access to your personal AI migraine advisor.</p>
                 <div class="pw-features">
                     <div class="pw-feat"><span class="pw-chk">✓</span><span>Unlimited questions with multi-turn dialog</span></div>
                     <div class="pw-feat"><span class="pw-chk">✓</span><span>Expert cross-article pattern analysis</span></div>
                     <div class="pw-feat"><span class="pw-chk">✓</span><span>Personalized action plans with specific steps</span></div>
-                    <div class="pw-feat"><span class="pw-chk">✓</span><span>New articles and intelligence added weekly</span></div>
                 </div>
                 <div class="pw-price">
-                    <div><span class="pw-amt">$2.99</span> <span class="pw-per">/ month</span></div>
-                    <div class="pw-note">Cancel anytime. Less than a cup of coffee.</div>
+                    <div><span class="pw-amt">123 ₴</span> <span class="pw-per">/ month</span></div>
+                    <div class="pw-note">Secure payment via Monobank. Approx. $2.99.</div>
                 </div>
-                <button class="pw-cta" id="pwUnlockBtn">Unlock Mi — $2.99/month</button>
+                <button class="pw-cta" id="pwUnlockBtn">Unlock Mi — 123 ₴/month</button>
                 <button class="pw-skip" id="pwSkipBtn">Maybe later</button>
             </div>
             <div class="pw-ok" id="pwOk">
                 <img src="images/mi-icon.png" alt="Mi" class="pw-avatar">
                 <h2>Welcome to unlimited Mi!</h2>
-                <p class="pw-sub">Your subscription is active. Ask Mi anything — no limits.</p>
+                <p class="pw-sub">Your subscription is active. Ask Mi anything.</p>
                 <button class="pw-ok-btn" id="pwOkBtn">Start asking Mi</button>
             </div>
         </div>
     </div>
     <script>
     const MI_WORKER_URL = 'https://mi-advisor.migrainecompanion-app.workers.dev';
-    const PADDLE_CLIENT_TOKEN = 'live_xxxxxxxxxxxxxxxxxxxxxxx';
-    const PADDLE_PRICE_ID = 'pri_xxxxxxxxxxxxxxxxxxxxxxx';
-    const PADDLE_ENV = 'sandbox';
-
-    if (PADDLE_ENV === 'sandbox') Paddle.Environment.set('sandbox');
-    Paddle.Initialize({ token: PADDLE_CLIENT_TOKEN, eventCallback: function(ev) { if (ev.name === 'checkout.completed') onSubSuccess(); } });
+    const MONO_PAY_URL = 'https://pay.monobank.ua/260319DFj8kAm9Xfevwz';
 
     const FREE_Q = 3;
     function getUsed() { return parseInt(localStorage.getItem('mi_used') || '0'); }
@@ -472,146 +333,134 @@
     function isSub() { return localStorage.getItem('mi_sub') === 'true'; }
     function setSub() { localStorage.setItem('mi_sub', 'true'); }
 
-    if (new URLSearchParams(location.search).get('subscribed') === 'true') { setSub(); history.replaceState({}, '', location.pathname); }
-
     const trialInfo = document.getElementById('trialInfo');
     const trialText = document.getElementById('trialText');
     const pwOverlay = document.getElementById('pwOverlay');
     const dots = [document.getElementById('dot1'), document.getElementById('dot2'), document.getElementById('dot3')];
 
     function updateTrialUI() {
-        if (isSub()) { trialInfo.classList.add('hidden'); document.getElementById('subBadge').classList.add('visible'); return; }
+        if (isSub()) { 
+            trialInfo.classList.add('hidden'); 
+            document.getElementById('subBadge').classList.add('visible'); 
+            return; 
+        }
         const used = getUsed();
         dots.forEach((d, i) => d.classList.toggle('used', i < used));
         const remaining = FREE_Q - used;
         if (remaining > 0) { trialText.textContent = remaining + ' free question' + (remaining > 1 ? 's' : ''); }
         else { trialText.innerHTML = '<a href="#" onclick="showPW();return false">Unlock unlimited →</a>'; }
     }
-    function showPW() { document.getElementById('pwPrompt').style.display = 'block'; document.getElementById('pwOk').style.display = 'none'; pwOverlay.classList.add('visible'); }
+
+    function showPW() { 
+        document.getElementById('pwPrompt').style.display = 'block'; 
+        document.getElementById('pwOk').style.display = 'none'; 
+        pwOverlay.classList.add('visible'); 
+    }
     function hidePW() { pwOverlay.classList.remove('visible'); }
     function canAsk() { if (isSub()) return true; if (getUsed() >= FREE_Q) { showPW(); return false; } return true; }
     function onAsked() { if (isSub()) return; addUsed(); updateTrialUI(); }
-    function onSubSuccess() { setSub(); document.getElementById('pwPrompt').style.display = 'none'; const ok = document.getElementById('pwOk'); ok.style.display = 'block'; ok.classList.add('visible'); updateTrialUI(); }
 
+    // --- MONOBANK INTEGRATION ---
     document.getElementById('pwUnlockBtn').addEventListener('click', () => {
-        Paddle.Checkout.open({ items: [{ priceId: PADDLE_PRICE_ID, quantity: 1 }], settings: { theme: 'dark', locale: 'en', successUrl: location.href + '?subscribed=true' } });
+        // Set a marker in case the user returns via "Back to site" button
+        localStorage.setItem('pending_sub', 'true');
+        window.location.href = MONO_PAY_URL;
     });
+
+    // Check for subscription on load (either via URL param or return marker)
+    window.addEventListener('load', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const hasSubParam = urlParams.get('subscribed') === 'true';
+        const hasReturnMarker = localStorage.getItem('pending_sub') === 'true' && document.referrer.includes('monobank.ua');
+
+        if (hasSubParam || hasReturnMarker) {
+            setSub();
+            localStorage.removeItem('pending_sub');
+            history.replaceState({}, '', window.location.pathname);
+            
+            // Show Success State
+            document.getElementById('pwPrompt').style.display = 'none';
+            const ok = document.getElementById('pwOk');
+            ok.style.display = 'block';
+            ok.classList.add('visible');
+            pwOverlay.classList.add('visible');
+            updateTrialUI();
+        }
+    });
+
     document.getElementById('pwSkipBtn').addEventListener('click', hidePW);
     document.getElementById('pwOkBtn').addEventListener('click', () => { hidePW(); inputBox.focus(); });
     updateTrialUI();
 
     let conversationHistory = [];
     let isLoading = false;
-    const MAX_TURNS = 8;
     const chatArea = document.getElementById('chatArea');
     const chatMessages = document.getElementById('chatMessages');
     const welcome = document.getElementById('welcome');
     const inputBox = document.getElementById('inputBox');
     const sendBtn = document.getElementById('sendBtn');
-    const newChatBtn = document.getElementById('newChatBtn');
 
     document.querySelectorAll('.starter-card').forEach(card => { card.addEventListener('click', () => { inputBox.value = card.dataset.question; sendMessage(); }); });
     
     inputBox.addEventListener('input', () => { 
         inputBox.style.height = 'auto'; 
-        let newHeight = Math.min(inputBox.scrollHeight, 120);
-        inputBox.style.height = newHeight + 'px'; 
-        // ИСПРАВЛЕНИЕ: Добавлен небольшой буфер (124px), чтобы скроллбар не прыгал из-за погрешностей
-        inputBox.style.overflowY = inputBox.scrollHeight > 124 ? 'auto' : 'hidden';
+        inputBox.style.height = Math.min(inputBox.scrollHeight, 120) + 'px'; 
         sendBtn.classList.toggle('active', inputBox.value.trim().length > 0); 
     });
     
     inputBox.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } });
     sendBtn.addEventListener('click', sendMessage);
-    newChatBtn.addEventListener('click', resetChat);
 
     async function sendMessage() {
         const text = inputBox.value.trim();
-        if (!text || isLoading) return;
-        if (!canAsk()) return;
+        if (!text || isLoading || !canAsk()) return;
         if (welcome) welcome.style.display = 'none';
         addMessage('user', text);
         conversationHistory.push({ role: 'user', text });
-        inputBox.value = ''; inputBox.style.height = 'auto'; inputBox.style.overflowY = 'hidden'; sendBtn.classList.remove('active');
+        inputBox.value = ''; inputBox.style.height = 'auto'; sendBtn.classList.remove('active');
         const typingEl = showTyping();
         isLoading = true;
         try {
-            const response = await fetch(MI_WORKER_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question: text, history: conversationHistory.slice(0, -1) }) });
+            const response = await fetch(MI_WORKER_URL, { 
+                method: 'POST', 
+                headers: { 'Content-Type': 'application/json' }, 
+                body: JSON.stringify({ question: text, history: conversationHistory.slice(0, -1) }) 
+            });
             const data = await response.json();
             typingEl.remove();
             isLoading = false;
-            if (data.error && !data.answer) { addMessage('mi', data.message || 'Something went wrong. Please try again.'); return; }
             const answer = data.answer || data.message || 'I could not generate a response.';
             addMessage('mi', answer, true);
             conversationHistory.push({ role: 'mi', text: answer });
             onAsked();
-            if (conversationHistory.length >= MAX_TURNS * 2) { addSystemNote('This conversation is getting long. Start a new chat for best results.'); }
-        } catch (err) { typingEl.remove(); isLoading = false; addMessage('mi', "Couldn't connect to Mi right now. Please check your connection and try again."); }
+        } catch (err) { typingEl.remove(); isLoading = false; addMessage('mi', "Couldn't connect to Mi. Please check your connection."); }
     }
 
     function addMessage(role, text, isMarkdown = false) {
         const msgDiv = document.createElement('div');
         msgDiv.className = 'message ' + role;
-        if (role === 'mi') {
-            msgDiv.innerHTML = '<img src="images/mi-icon.png" alt="Mi" class="msg-avatar"><div class="msg-bubble">' + (isMarkdown ? markdownToHtml(text) : escapeHtml(text)) + '</div>';
-        } else {
-            msgDiv.innerHTML = '<div class="msg-avatar user-avatar"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div><div class="msg-bubble">' + escapeHtml(text) + '</div>';
-        }
+        msgDiv.innerHTML = role === 'mi' ? 
+            `<img src="images/mi-icon.png" alt="Mi" class="msg-avatar"><div class="msg-bubble">${isMarkdown ? markdownToHtml(text) : escapeHtml(text)}</div>` :
+            `<div class="msg-avatar user-avatar"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div><div class="msg-bubble">${escapeHtml(text)}</div>`;
         chatMessages.appendChild(msgDiv);
-        scrollToBottom();
+        chatArea.scrollTop = chatArea.scrollHeight;
     }
 
     function showTyping() {
         const d = document.createElement('div');
         d.className = 'message mi';
-        d.innerHTML = '<img src="images/mi-icon.png" alt="Mi" class="msg-avatar"><div class="msg-bubble"><div class="mi-typing"><div class="mi-typing-dots"><span></span><span></span><span></span></div><span class="mi-typing-text">Analyzing across 55+ articles...</span></div></div>';
+        d.innerHTML = '<img src="images/mi-icon.png" alt="Mi" class="msg-avatar"><div class="msg-bubble"><div class="mi-typing"><div class="mi-typing-dots"><span></span><span></span><span></span></div><span class="mi-typing-text">Analyzing research...</span></div></div>';
         chatMessages.appendChild(d);
-        scrollToBottom();
+        chatArea.scrollTop = chatArea.scrollHeight;
         return d;
     }
 
-    function addSystemNote(text) {
-        const n = document.createElement('div');
-        n.style.cssText = 'text-align:center;padding:12px;font-size:0.75rem;color:var(--text-muted);';
-        n.textContent = text;
-        chatMessages.appendChild(n);
-        scrollToBottom();
-    }
-
-    function resetChat() {
-        conversationHistory = [];
-        chatMessages.innerHTML = '';
-        if (welcome) { chatMessages.appendChild(welcome); welcome.style.display = 'flex'; }
-        inputBox.value = ''; inputBox.style.height = 'auto'; inputBox.style.overflowY = 'hidden'; sendBtn.classList.remove('active'); inputBox.focus();
-    }
-
-    function scrollToBottom() {
-        chatArea.scrollTop = chatArea.scrollHeight;
-        [50, 200, 500, 1000, 2000, 3000].forEach(function(t) {
-            setTimeout(function() { chatArea.scrollTop = chatArea.scrollHeight; }, t);
-        });
-    }
-
     function escapeHtml(t) { const d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
-
     function markdownToHtml(md) {
-        if (!md) return '<p>No response received.</p>';
-        var h = md
-            .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-            .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/(?<!\[)\*([^*\n]+)\*(?!\])/g, '<em>$1</em>')
-            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-            .replace(/^[\-\•] (.*$)/gm, '::LI::$1::ENDLI::')
-            .replace(/^\d+\.\s+(.*$)/gm, '::OLI::$1::ENDOLI::')
-            .replace(/^---$/gm, '<hr>')
-            .replace(/^>\s?(.*$)/gm, '<blockquote>$1</blockquote>');
-        h = h.replace(/(::LI::.*?::ENDLI::\n?)+/gs, function(m) { return '<ul>' + m.replace(/::LI::(.*?)::ENDLI::\n?/gs, '<li>$1</li>') + '</ul>'; });
-        h = h.replace(/(::OLI::.*?::ENDOLI::\n?)+/gs, function(m) { return '<ol>' + m.replace(/::OLI::(.*?)::ENDOLI::\n?/gs, '<li>$1</li>') + '</ol>'; });
-        h = h.split('\n\n').map(function(b) { b = b.trim(); if (!b) return ''; if (/^<(h[1-6]|ul|ol|hr|blockquote)/.test(b)) return b; return '<p>' + b.replace(/\n/g, '<br>') + '</p>'; }).join('\n');
-        return h;
+        return md.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                 .replace(/\n/g, '<br>')
+                 .replace(/^### (.*$)/gm, '<h3>$1</h3>');
     }
-
     inputBox.focus();
     </script>
 </body>
