@@ -107,9 +107,12 @@
         }
         .bookshelf-hero p {
             font-size: 1.2rem;
-            color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
+            background: linear-gradient(110deg, var(--text-secondary) 0%, var(--cream) 50%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
         }
 
         /* === BOOKS GRID — 3 columns === */
@@ -215,7 +218,7 @@
             border-radius: 4px 12px 12px 4px; pointer-events: none;
         }
 
-        /* Book Info — flex stretch for aligned buttons */
+        /* Book Info */
         .book-info {
             flex: 1;
             display: flex;
