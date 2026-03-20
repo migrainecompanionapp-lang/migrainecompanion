@@ -13,22 +13,18 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             color-scheme: dark;
-            /* ─── SURFACES ─── */
             --surface-base: #131314;
             --surface-card: rgba(30, 30, 32, 0.72);
             --surface-elevated: rgba(43, 43, 45, 0.65);
             --surface-floating: rgba(50, 48, 54, 0.80);
-            /* ─── BORDERS ─── */
             --border-subtle: rgba(139, 122, 168, 0.06);
             --border-default: rgba(139, 122, 168, 0.10);
             --border-hover: rgba(139, 122, 168, 0.22);
             --border-glass: rgba(255, 255, 255, 0.06);
-            /* ─── TEXT ─── */
             --text-heading: #F5F0E8;
             --text-body: #D0C4AE;
-            --text-secondary: #A89E90;  /* warm grey hsl(36°,12%,61%) — was purple #B5A8C4 */
-            --text-muted: #918880;      /* warm grey hsl(30°,7%,53%) — was purple #9088A0 */
-            /* ─── BRAND ─── */
+            --text-secondary: #A89E90;
+            --text-muted: #918880;
             --lavender: #8B7AA8;
             --gold: #C5A059;
             --green: #6AAA7A;
@@ -36,14 +32,12 @@
             --sand: #D0C4AE;
             --cream: #F5F0E8;
             --paper: #F0EAD6;
-            /* ─── MODULAR SCALE (ratio 1.25 — Major Third) ─── */
-            --fs-xs:   0.64rem;   /* 10.2px — tiny meta, badges */
-            --fs-sm:   0.8rem;    /* 12.8px — labels, disclaimers, descriptions */
-            --fs-base: 1rem;      /* 16px   — body, cards, input */
-            --fs-md:   1.25rem;   /* 20px   — overlay titles, subheadings */
-            --fs-lg:   1.563rem;  /* 25px   — section headings */
-            --fs-xl:   1.953rem;  /* 31.3px — main heading */
-            /* ─── VERTICAL RHYTHM (base unit = 24px = 1rem × 1.5) ─── */
+            --fs-xs:   0.64rem;
+            --fs-sm:   0.8rem;
+            --fs-base: 1rem;
+            --fs-md:   1.25rem;
+            --fs-lg:   1.563rem;
+            --fs-xl:   1.953rem;
             --sp-xs:  6px;
             --sp-sm:  12px;
             --sp-md:  24px;
@@ -175,12 +169,11 @@
         .starter-label { display:none; }
         .starter-cards {
             display:flex; flex-direction:column; gap:10px; width:100%;
-            align-items:flex-end; /* right-aligned like user messages */
+            align-items:flex-end;
             animation:fade-up 0.5s 0.18s cubic-bezier(0.16,1,0.3,1) both;
         }
 
         .starter-card {
-            /* Visible ghost — solid but soft, not dashed */
             background: rgba(139,122,168,0.05);
             border: 1px solid rgba(139,122,168,0.14);
             border-radius: 18px; border-bottom-right-radius: 6px;
@@ -189,11 +182,9 @@
             width: fit-content; max-width: 85%;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex; align-items: center; gap: var(--sp-sm);
-            /* Subtle inner glow — premium glass hint */
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
         }
 
-        /* On hover: solidify into real user bubble */
         .starter-card:hover {
             background: linear-gradient(135deg, rgba(139,122,168,0.14), rgba(139,122,168,0.07));
             border-color: rgba(139,122,168,0.25);
@@ -201,7 +192,6 @@
             box-shadow: 0 4px 16px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.06);
         }
 
-        /* Send arrow hint */
         .starter-card::after {
             content: '→'; position: relative;
             font-size: var(--fs-sm); color: var(--gold);
@@ -210,7 +200,6 @@
         }
         .starter-card:hover::after { opacity: 0.6; transform: translateX(0); }
 
-        /* Hide orbs and desc */
         .card-orb { display: none; }
         .card-desc { display: none; }
         .card-content { flex: 1; min-width: 0; }
@@ -220,7 +209,6 @@
         }
         .starter-card:hover .card-title { color: var(--cream); }
 
-        /* Remove ::before accent line */
         .starter-card::before { display: none; }
 
         /* ─── CHAT MESSAGES ─── */
@@ -389,6 +377,9 @@
             .pw-card { border-radius:22px; }
             .pw-body { padding:var(--sp-sm) var(--sp-md) var(--sp-md); }
             .info-tooltip { width:calc(100vw - 32px); max-width:320px; }
+            .trial-unlock { white-space:nowrap; font-size:var(--fs-xs); padding:3px var(--sp-xs); }
+            .input-meta { gap:var(--sp-xs); }
+            .input-disclaimer { flex-shrink:1; min-width:0; font-size:var(--fs-xs); }
         }
     </style>
 </head>
@@ -420,7 +411,6 @@
                         <div class="welcome-text"><h1>Ask Mi</h1><p>Your personal AI migraine advisor</p></div>
                     </div>
 
-                    <!-- #1 — бейдж + tooltip вместо info-grid -->
                     <div class="info-badge-row">
                         <div class="info-badge">
                             <span>60+ studies</span>
@@ -438,7 +428,6 @@
 
                     <p class="starter-label">Try asking...</p>
 
-                    <!-- #2 + #7 — 3 карточки, 1 колонка, от первого лица -->
                     <div class="starter-cards">
                         <div class="starter-card" data-question="My migraines get worse around my period">
                             <div class="card-orb"></div>
@@ -556,7 +545,7 @@
         </div>
     </div>
 
-    <!-- Tooltip: direct body child, fixed positioning, outside scroll context -->
+    <!-- Tooltip -->
     <div class="info-tooltip" id="infoTip">
         <div class="info-tooltip-item">
             <div class="info-tooltip-icon ic-t"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg></div>
@@ -575,7 +564,6 @@
             <div class="info-tooltip-text"><strong>Try free, then unlock</strong><br>3 free questions. Then $2.99 for 30 days.</div>
         </div>
     </div>
-
     <script>
     const MI_WORKER_URL = 'https://mi-advisor.migrainecompanion-app.workers.dev';
     const FREE_Q = 3;
@@ -753,7 +741,6 @@
 
     function positionTooltip() {
         const rect = infoTipBtn.getBoundingClientRect();
-        // Temporarily show to measure
         infoTip.style.visibility = 'hidden';
         infoTip.style.display = 'block';
         const tipW = infoTip.offsetWidth;
@@ -762,11 +749,9 @@
 
         const btnCenterX = rect.left + rect.width / 2;
         let left = btnCenterX - tipW / 2;
-        // Keep within viewport
         left = Math.max(16, Math.min(left, window.innerWidth - tipW - 16));
         infoTip.style.top = (rect.bottom + 10) + 'px';
         infoTip.style.left = left + 'px';
-        // Move arrow to point at button center
         const arrowLeft = btnCenterX - left;
         infoTip.style.setProperty('--arrow-left', arrowLeft + 'px');
     }
@@ -790,10 +775,10 @@
     // ─── #5 — РОТИРУЮЩИЙ PLACEHOLDER ───
     const placeholders = [
         "My head hurts every morning...",
-        "Coffee helps but weekends are worse...",
+        "Weekends are always worse...",
         "Attacks come before my period...",
-        "They're getting more frequent lately...",
-        "Describe your migraine situation..."
+        "They're getting more frequent...",
+        "Describe your situation..."
     ];
     let phIndex = 0;
     let phInterval;
@@ -810,7 +795,6 @@
         }, 300);
     }
 
-    // Стиль для fade перехода placeholder
     const phStyle = document.createElement('style');
     phStyle.textContent = '.input-box.ph-fade::placeholder { opacity:0 !important; transition:opacity 0.3s ease; } .input-box::placeholder { transition:opacity 0.3s ease; }';
     document.head.appendChild(phStyle);
