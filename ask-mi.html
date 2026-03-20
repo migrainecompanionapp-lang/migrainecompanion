@@ -706,12 +706,12 @@
                 window.location.href = data.pageUrl;
             } else {
                 btn.disabled = false;
-                btn.textContent = 'Get 30-day access — 123 ₴';
+                btn.textContent = 'Get 30-day access — $2.99';
                 alert('Payment error: ' + (data.error || 'Unknown error'));
             }
         } catch (e) {
             btn.disabled = false;
-            btn.textContent = 'Get 30-day access — 123 ₴';
+            btn.textContent = 'Get 30-day access — $2.99';
             alert('Connection error. Please try again.');
         }
     }
