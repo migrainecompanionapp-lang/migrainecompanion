@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mi Lab explained: Caffeine Profile Quiz, Coffee Shop Card, What's in My Cup, and Gentle Exit — four tools built on CYP1A2 and ADORA2A genetics to give you personalized caffeine thresholds. 9 peer-reviewed sources.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="mi lab migraine companion, caffeine profile quiz, coffee shop card migraine, gentle exit caffeine tapering, CYP1A2 migraine caffeine, ADORA2A adenosine sensitivity, caffeine metabolism migraine, personalized caffeine limit migraine, migraine app features explained">
+    <title>Mi Lab Explained: Your Personal Migraine Laboratory | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://mi-companion.com/article-mi-lab-explained.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Mi Lab Explained: Your Personal Migraine Laboratory">
+    <meta property="og:description" content="Caffeine Profile Quiz. Coffee Shop Card. What's in My Cup. Gentle Exit. Four tools built on CYP1A2 and ADORA2A genetics to turn your habits into personalized thresholds.">
+    <meta property="og:image" content="https://mi-companion.com/images/mi_lab_hero.png">
+    <meta property="og:url" content="https://mi-companion.com/article-mi-lab-explained.html">
+    <meta property="article:published_time" content="2026-03-24">
+    <meta property="article:modified_time" content="2026-03-24">
+    <meta property="article:author" content="Rustam Iuldashov">
+    <meta property="article:section" content="App Guide">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://mi-companion.com/article-mi-lab-explained.html"
+        },
+        "headline": "Mi Lab Explained: Your Personal Migraine Laboratory",
+        "description": "Four Mi Lab tools explained — Caffeine Profile Quiz, Coffee Shop Card, What's in My Cup, and Gentle Exit — built on CYP1A2 and ADORA2A genetics research. 9 peer-reviewed sources.",
+        "image": "https://mi-companion.com/images/mi_lab_hero.png",
+        "datePublished": "2026-03-24",
+        "dateModified": "2026-03-24",
+        "author": {
+            "@type": "Person",
+            "name": "Rustam Iuldashov",
+            "url": "https://mi-companion.com/about",
+            "description": "Creator of Migraine Companion. 30 years of personal experience living with chronic migraine. Not a medical professional."
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Migraine Companion",
+            "logo": { "@type": "ImageObject", "url": "https://mi-companion.com/images/mi-icon.png" }
+        },
+        "about": [
+            { "@type": "MedicalCondition", "name": "Migraine" },
+            { "@type": "SoftwareApplication", "name": "Migraine Companion" }
+        ],
+        "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-subtitle", ".key-takeaways"] }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0d0d0d;
+            --surface: #141419;
+            --lavender: #8b7aa8;
+            --green: #6aaa7a;
+            --teal: #6b9baa;
+            --gold: #c5a059;
+            --lavender-soft: rgba(139,122,168,0.06);
+            --green-soft: rgba(106,170,122,0.06);
+            --teal-soft: rgba(107,155,170,0.06);
+            --gold-soft: rgba(197,160,89,0.06);
+            --lavender-border: rgba(139,122,168,0.18);
+            --green-border: rgba(106,170,122,0.18);
+            --teal-border: rgba(107,155,170,0.18);
+            --gold-border: rgba(197,160,89,0.18);
+            --text: #cdc6be;
+            --text-light: #a09890;
+            --text-dark: #847b73;
+            --text-warm: #c9bda8;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13,13,13,0.92);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid var(--gold-border);
+        }
+        .header-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.3rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; text-decoration: none; }
+        .logo span { color: var(--lavender); }
+        .back-link { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--gold); }
+
+        .article-hero { margin-top: 70px; position: relative; overflow: hidden; border-radius: 0 0 24px 24px; height: 600px; display: flex; align-items: center; justify-content: center; }
+        .article-hero img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+        .article-hero::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(13,13,13,0.08) 0%, rgba(13,13,13,0.78) 100%); z-index: 1; }
+        .article-header { position: relative; z-index: 2; text-align: center; padding: 0 24px; padding-top: 120px; }
+        .article-tag { display: inline-block; background: rgba(197,160,89,0.15); border: 1px solid rgba(197,160,89,0.40); color: var(--gold); font-size: 0.75rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 600; line-height: 1.2; color: #fff; margin-bottom: 16px; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.8); }
+        .article-subtitle { font-size: 1.15rem; font-weight: 500; color: rgba(255,255,255,0.85); font-style: italic; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
+        .article-meta { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+        .article-content { padding: 60px 0 80px; }
+        .article-section { margin-bottom: 48px; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; margin-bottom: 20px; letter-spacing: -0.01em; line-height: 1.3; }
+        h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+        p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; color: var(--text); }
+        strong { font-weight: 700; color: var(--text-warm); }
+        em { font-style: italic; color: var(--text-light); }
+        sup { color: var(--lavender); font-weight: 600; font-size: 0.75rem; }
+        ul, ol { padding-left: 24px; margin-bottom: 20px; }
+        li { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 10px; }
+        li strong { color: var(--text-warm); }
+        .article-section a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
+        .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
+
+        .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
+        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(197,160,89,0.20) 30%, rgba(197,160,89,0.35) 50%, rgba(197,160,89,0.20) 70%, transparent 100%); }
+        .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(197,160,89,0.30); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
+
+        .key-takeaways { background: linear-gradient(180deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.04) 100%); border: 1px solid var(--teal-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.15), inset 0 1px 0 rgba(107,155,170,0.12), inset 0 -1px 0 rgba(0,0,0,0.10); }
+        .key-takeaways::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.6; border-radius: 20px 20px 0 0; }
+        .key-takeaways h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; position: relative; z-index: 1; }
+        .key-takeaways ul { list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
+        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid rgba(107,155,170,0.06); margin-bottom: 0; }
+        .key-takeaways li:last-child { border-bottom: none; }
+        .key-takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--teal); font-weight: 600; }
+
+        .highlight-box { background: linear-gradient(90deg, rgba(106,170,122,0.10) 0%, rgba(106,170,122,0.03) 100%); border-left: 3px solid var(--green); padding: 28px 32px 28px 36px; border-radius: 0 16px 16px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), inset 0 1px 0 rgba(106,170,122,0.08); }
+        .highlight-box::before { content: '\201C'; position: absolute; top: 12px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; line-height: 1; color: rgba(106,170,122,0.12); pointer-events: none; }
+        .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; position: relative; z-index: 1; }
+
+        .data-card { background: linear-gradient(90deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.03) 100%); border-left: 3px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), inset 0 1px 0 rgba(107,155,170,0.08); }
+        .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
+        .data-card p:last-child { margin-bottom: 0; }
+
+        .insight-card { background: linear-gradient(90deg, rgba(139,122,168,0.10) 0%, rgba(139,122,168,0.03) 100%); border-left: 3px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), inset 0 1px 0 rgba(139,122,168,0.08); }
+        .insight-card p { margin-bottom: 0; font-size: 0.98rem; font-style: italic; color: var(--text-light); }
+
+        .action-box { background: linear-gradient(135deg, rgba(197,160,89,0.12) 0%, rgba(197,160,89,0.04) 100%); border: 1px solid var(--gold-border); border-radius: 20px; padding: 36px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.25); text-align: center; }
+        .action-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.8; }
+        .action-box h3 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 14px; position: relative; z-index: 1; }
+        .action-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 20px; position: relative; z-index: 1; }
+        .action-box p:last-of-type { margin-bottom: 28px; }
+        .action-box a.ask-mi-link { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(197,160,89,0.4); font-weight: 600; transition: all 0.3s; }
+        .action-box a.ask-mi-link:hover { background: var(--gold-soft); border-bottom-color: var(--gold); }
+
+        .emergency-box { background: linear-gradient(90deg, rgba(197,160,89,0.10) 0%, rgba(197,160,89,0.02) 100%); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 14px 14px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), inset 0 1px 0 rgba(197,160,89,0.10); }
+        .emergency-box h3 { color: var(--gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+        .emergency-box p { font-size: 0.98rem; margin-bottom: 12px; }
+        .emergency-box p:last-child { margin-bottom: 0; }
+
+        .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(197,160,89,0.10); box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.20), inset 0 0 0 1px rgba(255,255,255,0.03); }
+        .article-image img { width: 100%; height: auto; display: block; }
+        .article-image figcaption { background: linear-gradient(180deg, rgba(13,13,13,0.60) 0%, rgba(20,20,25,0.95) 100%); padding: 14px 20px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; border-top: 1px solid rgba(197,160,89,0.08); }
+
+        .article-image-phone { margin: 48px auto; max-width: 320px; border-radius: 24px; overflow: hidden; border: 1px solid rgba(197,160,89,0.15); box-shadow: 0 20px 60px rgba(0,0,0,0.40), 0 4px 12px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.04); }
+        .article-image-phone img { width: 100%; height: auto; display: block; }
+        .article-image-phone figcaption { background: linear-gradient(180deg, rgba(13,13,13,0.60) 0%, rgba(20,20,25,0.95) 100%); padding: 14px 20px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; border-top: 1px solid rgba(197,160,89,0.08); }
+
+        .related-box { margin: 60px 0; padding: 40px; background: rgba(197,160,89,0.03); border-radius: 24px; border: 1px solid var(--gold-border); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(197,160,89,0.06); }
+        .related-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.4; }
+        .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .related-card { display: block; text-decoration: none; background: rgba(255,255,255,0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 2px 12px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.03); }
+        .related-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--lavender), transparent); opacity: 0.3; transition: opacity 0.4s ease; }
+        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.04); border-color: rgba(139,122,168,0.30); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+        .related-card:hover::before { opacity: 0.7; }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
+        .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+
+        .full-disclaimer { background: rgba(139,122,168,0.04); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 48px 0; }
+        .full-disclaimer h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .full-disclaimer p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.7; }
+        .full-disclaimer p:last-child { margin-bottom: 0; }
+
+        .medical-disclaimer { font-size: 0.9rem; font-style: italic; color: var(--text-dark); text-align: center; padding: 16px 0; margin-bottom: 48px; border-bottom: 1px solid var(--gold-border); }
+
+        .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--gold-border); }
+        .author-card { display: flex; align-items: center; gap: 20px; background: linear-gradient(135deg, rgba(197,160,89,0.05) 0%, rgba(106,170,122,0.03) 100%); border: 1px solid var(--gold-border); border-radius: 20px; padding: 28px; margin-bottom: 32px; position: relative; overflow: hidden; }
+        .author-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(197,160,89,0.30), rgba(106,170,122,0.20), transparent); }
+        .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--green)); padding: 3px; flex-shrink: 0; }
+        .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .author-info h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+        .author-info p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+
+        .editorial-standards { background: rgba(197,160,89,0.03); border: 1px solid rgba(197,160,89,0.12); border-radius: 16px; padding: 28px; margin: 32px 0; }
+        .editorial-standards h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .editorial-standards ul { list-style: none; padding: 0; margin: 0; }
+        .editorial-standards li { font-size: 0.9rem; color: var(--text-light); padding: 8px 0; padding-left: 20px; position: relative; border-bottom: 1px solid rgba(197,160,89,0.05); margin-bottom: 0; }
+        .editorial-standards li:last-child { border-bottom: none; }
+        .editorial-standards li::before { content: '\2022'; position: absolute; left: 0; color: var(--gold); opacity: 0.6; }
+
+        .cta-box { background: linear-gradient(180deg, rgba(197,160,89,0.12) 0%, rgba(197,160,89,0.04) 100%); border: 1px solid var(--gold-border); border-radius: 20px; padding: 36px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
+        .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.7; }
+        .cta-box h3 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; position: relative; z-index: 1; }
+        .cta-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; position: relative; z-index: 1; }
+        .download-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(197,160,89,0.15), rgba(197,160,89,0.25)); border: 1px solid var(--gold); border-radius: 12px; color: var(--gold); text-decoration: none; font-weight: 600; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); flex: 1; max-width: 260px; justify-content: center; position: relative; z-index: 1; }
+        .download-btn:hover { background: var(--gold); color: var(--bg); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(197,160,89,0.25); }
+
+        .references { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--lavender-border); }
+        .references h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-light); margin-bottom: 16px; }
+        .references ol { padding-left: 24px; }
+        .references li { font-size: 0.84rem; color: var(--text-dark); margin-bottom: 4px; line-height: 1.6; padding: 8px 10px; border-radius: 6px; transition: background 0.2s ease; }
+        .references li:nth-child(odd) { background: rgba(197,160,89,0.03); }
+        .references li:hover { background: rgba(197,160,89,0.06); }
+        .references a { color: var(--lavender); text-decoration: none; font-weight: 500; }
+        .references a:hover { text-decoration: underline; }
+
+        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(197,160,89,0.10); }
+
+        footer { padding: 40px 0; border-top: 1px solid var(--gold-border); }
+        .copyright { text-align: center; color: var(--text-dark); font-size: 0.82rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: auto; min-height: 400px; align-items: flex-end; padding-bottom: 40px; }
+            p { font-size: 1rem; }
+            li { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .data-card, .emergency-box, .highlight-box, .insight-card { padding: 22px 24px; }
+            .cta-box, .action-box { padding: 28px; }
+            .article-meta { flex-direction: column; gap: 8px; }
+            .key-takeaways { padding: 24px; }
+            .related-box { padding: 28px; }
+            .article-image-phone { max-width: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+        <a href="blog.html" class="back-link">&larr; Back to Blog</a>
+    </div>
+</header>
+
+<main>
+    <div class="article-hero">
+        <img src="images/mi_lab_hero.png" alt="Atmospheric illustration of a scientific laboratory workbench at dawn — glass flasks with teal, amber, and lavender glowing liquids, a balance scale with a coffee bean, botanical specimens, and an open notebook with a caffeine decay curve. Dark forest background with colored light pools.">
+        <div class="article-header">
+            <span class="article-tag">App Guide</span>
+            <h1>Mi Lab Explained: Your Personal Migraine Laboratory</h1>
+            <p class="article-subtitle">Caffeine Profile Quiz. Coffee Shop Card. What&rsquo;s in My Cup. Gentle Exit. Four tools built on the same genetics your doctor probably hasn&rsquo;t mentioned.</p>
+            <div class="article-meta">
+                <span>&#x1F4C5; March 2026</span>
+                <span>&#x23F1; 6 min read</span>
+                <span>&#x270D;&#xFE0F; Rustam Iuldashov</span>
+            </div>
+        </div>
+    </div>
+
+    <article class="article-content">
+        <div class="container">
+
+            <div id="article-meta" style="text-align:center;padding:32px 0 16px;">
+                <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">By Rustam Iuldashov</p>
+                <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">30 years lived experience with chronic migraine | Sources: 9 peer-reviewed references including <em>Journal of Translational Medicine</em>&nbsp;(n=1,851,428), <em>Frontiers in Neurology</em> RCT, <em>The American Journal of Medicine</em>&nbsp;(n=98) | Last updated: March 2026</p>
+            </div>
+
+            <p class="medical-disclaimer">
+                <strong>Medical Review:</strong> This content is based on peer-reviewed research from the <em>Journal of Translational Medicine</em>, <em>Nutrition Reviews</em>, <em>Journal of Psychopharmacology</em>, <em>Frontiers in Neurology</em>, and <em>The American Journal of Medicine</em>.<br><br>
+                <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. The Mi Lab tools are behavioral and informational in nature. They do not diagnose, treat, or prevent migraine disease.
+            </p>
+
+            <div class="key-takeaways">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li>CYP1A2 and ADORA2A genetics drive most individual variation in caffeine response &mdash; the same dose produces completely different effects in different people&nbsp;<sup>[3][4][5]</sup></li>
+                    <li>The Caffeine Profile Quiz translates 12 behavioral signals into four evidence-based metabolic archetypes, each with its own personal rulebook</li>
+                    <li>&ldquo;What&rsquo;s in My Cup&rdquo; calculates real-time caffeine clearance using your personal half-life, not population averages&nbsp;<sup>[1]</sup></li>
+                    <li>The Coffee Shop Card externalizes your personal limits as a shareable tool for daily decision-making under pressure</li>
+                    <li>Gentle Exit uses a gradual substitution algorithm to prevent adenosine rebound &mdash; the primary mechanism behind withdrawal-triggered migraine&nbsp;<sup>[6][8]</sup></li>
+                    <li>Day-to-day caffeine variability predicts attacks more reliably than absolute amount &mdash; eliminating the surprise is the real intervention&nbsp;<sup>[9]</sup></li>
+                </ul>
+            </div>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>Generic Advice Has a Body Count</h2>
+                <p>&ldquo;Watch your caffeine.&rdquo;</p>
+                <p>Every neurologist says it. Every migraine article repeats it. It sounds like advice. It isn&rsquo;t. It&rsquo;s a placeholder &mdash; a way to say something without saying anything, because the real answer requires knowing who you are metabolically.</p>
+                <p>Here&rsquo;s what &ldquo;watch your caffeine&rdquo; ignores: the same 200&nbsp;mg dose of caffeine clears a fast metabolizer&rsquo;s bloodstream in roughly three hours. In a slow metabolizer, it is still half-present twelve hours later &mdash; circulating silently at midnight, disrupting sleep, quietly priming tomorrow&rsquo;s attack.&nbsp;<sup>[1][2]</sup></p>
+                <p>Two people. Same cup of coffee. Completely different pharmacological stories.</p>
+                <p>Mi Lab was built on one premise: generic advice fails because migraine is individual. The four tools inside don&rsquo;t offer population averages. They offer <em>your</em> numbers.</p>
+            </section>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>Two Genes. Everything Changes.</h2>
+                <p>Before the tools make sense, you need to know two genes. They explain more about your relationship with caffeine than any cup count ever will.</p>
+                <p><strong>CYP1A2</strong> builds the enzyme that metabolizes more than 95% of all the caffeine you consume.&nbsp;<sup>[3]</sup> A single common variant &mdash; rs762551 &mdash; splits the population roughly in half: fast metabolizers who clear caffeine in hours, and slow metabolizers who carry it into the night. Fast metabolizers process caffeine approximately four times faster than slow ones.&nbsp;<sup>[4]</sup></p>
+                <p><strong>ADORA2A</strong> encodes the adenosine receptor that caffeine blocks when you drink it. A variant in this gene predicts whether caffeine triggers anxiety and sleep disruption in you specifically.&nbsp;<sup>[5]</sup> It has nothing to do with being an anxious person. It is structural: your receptors are more reactive to the adenosine rebound when caffeine wears off.</p>
+                <p>DNA tests can confirm these variants precisely. But the evidence is already in your behavior. Does afternoon coffee keep you awake? Do you feel wired and jittery after a second cup? Do you wake up with a headache on Saturday morning after sleeping in? Your body has been answering these questions for years. The Caffeine Profile Quiz simply listens.</p>
+            </section>
+
+            <figure class="article-image">
+                <img src="images/mi_lab_two_genes.png" alt="Abstract atmospheric illustration of two luminous rivers of light flowing through a dark organic landscape — one warm gold representing CYP1A2 metabolism, one cool lavender representing ADORA2A sensitivity — converging at a single glowing node in the lower center, representing the unique intersection of each person's caffeine profile." loading="lazy">
+                <figcaption>CYP1A2 and ADORA2A: two independent biological rivers converging into one personal caffeine profile. The intersection determines your thresholds &mdash; no two people land in exactly the same place.&nbsp;<sup>[3][4][5]</sup></figcaption>
+            </figure>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>Tool 1: Caffeine Profile Quiz</h2>
+                <p>Twelve questions. Each one probes a behavioral marker of CYP1A2 speed or ADORA2A sensitivity.</p>
+                <p>When you sleep late on Saturday, do you wake with a dull throbbing pressure? That is a withdrawal sensitivity question &mdash; it reveals how fast your adenosine receptors rebound when caffeine disappears.&nbsp;<sup>[6]</sup> Does a second coffee make you edgy? That is a sensitivity marker tied to ADORA2A. Can you drink espresso at 9&nbsp;PM and fall asleep by 10? That is a speed signal for CYP1A2.</p>
+                <p>The quiz computes two scores &mdash; metabolism speed and receptor sensitivity &mdash; and their intersection produces one of four profiles:</p>
+                <ul>
+                    <li><strong>Speed Marathon</strong> <em>(Fast metabolizer, low sensitivity):</em> Caffeine clears quickly, so the risk is invisible. You drink more to compensate because you feel nothing dangerous. The accumulation is real; the warning signal isn&rsquo;t.</li>
+                    <li><strong>Nervous Sprinter</strong> <em>(Fast metabolizer, high sensitivity):</em> Your body clears caffeine rapidly, but the ADORA2A receptors fire intensely when it does. Anxiety and rebound are the dangers, not accumulation. The problem isn&rsquo;t how much you drink &mdash; it&rsquo;s how hard you land.</li>
+                    <li><strong>Quiet Accumulator</strong> <em>(Slow metabolizer, low sensitivity):</em> Caffeine lingers for twelve hours without obvious discomfort &mdash; until it erodes sleep and primes tomorrow&rsquo;s attack in silence. This is the profile most likely to say &ldquo;I don&rsquo;t even feel caffeine anymore.&rdquo;</li>
+                    <li><strong>Hypersensitive</strong> <em>(Slow metabolizer, high sensitivity):</em> Every cup lingers and lands hard. This profile benefits most from reduction &mdash; and also faces the most difficult withdrawal if it tries to quit too fast.</li>
+                </ul>
+                <p>Each profile generates a personal rulebook: a coffee deadline, a daily ceiling, a weekend strategy, a protocol for attack days. These aren&rsquo;t arbitrary numbers. They are calibrated to the pharmacokinetics of each metabolic type.</p>
+            </section>
+
+            <figure class="article-image-phone">
+                <img src="images/screenshot_profile_result.jpg" alt="Migraine Companion Caffeine Profile result screen showing Nervous Sprinter profile with a gold lightning bolt icon, Metabolism score bar at 60 and Sensitivity score bar at 100, and Your Personal Rules section listing Coffee Deadline 2:00 PM, Max Daily Dose 200mg, Main Enemy Anxiety overload, Weekend Strategy Same time half dose, During Attack Stop immediately, If Quitting Reduce 25% per week." loading="lazy">
+                <figcaption>The Caffeine Profile result screen &mdash; Nervous Sprinter: fast metabolizer, high ADORA2A sensitivity. Metabolism and Sensitivity scores shown as 3D progress bars. Personal Rules generated automatically from your genetic archetype.</figcaption>
+            </figure>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>Tool 2: What&rsquo;s in My Cup</h2>
+                <p>Knowing your profile is one thing. Knowing what you just consumed is another.</p>
+                <p>&ldquo;What&rsquo;s in My Cup&rdquo; is a real-time caffeine calculator. Select your drink, enter the time you consumed it, and the tool produces two outputs: the total milligrams in your system, and the precise time caffeine will have decayed to a clinically negligible level.</p>
+                <p>The math is exponential decay &mdash; the same equation used in pharmacokinetics. Your personal half-life is derived from your speed score: roughly three hours for fast metabolizers, up to twelve for slow ones.&nbsp;<sup>[1]</sup> Cold Brew at 200&nbsp;mg through a slow metabolizer&rsquo;s liver doesn&rsquo;t clear until the following morning. Knowing that changes the decision at the caf&eacute; counter.</p>
+                <p>The result appears as a zone signal: Safe, Caution, or Risk &mdash; color-coded against your personal deadline, with the exact biochemical reason spelled out. Not &ldquo;don&rsquo;t drink coffee too late.&rdquo; Instead: <em>at your metabolism rate, the caffeine you consume right now will still be measurably active at your target sleep time.</em></p>
+
+                <div class="highlight-box">
+                    <p>A vague instruction becomes a precise, personalized, time-stamped fact.</p>
+                </div>
+            </section>
+
+            <figure class="article-image-phone">
+                <img src="images/screenshot_whats_in_my_cup.jpg" alt="Migraine Companion What's in My Cup screen showing Cold Brew selected with 1 serving, displaying 200mg caffeine in large text, Clears your system by 3:22 PM notification, a Caffeine in your blood exponential decay chart with green curve showing half-life markers at Now, plus 7h 50%, and plus 29h approximately zero, and a Safe Zone card at the bottom confirming the user is within their safe window." loading="lazy">
+                <figcaption>&ldquo;What&rsquo;s in My Cup&rdquo; &mdash; 200&nbsp;mg Cold Brew through a Nervous Sprinter&rsquo;s half-life of&nbsp;~7h. The exponential decay curve shows exactly when caffeine becomes negligible. Safe Zone confirmed for a 10:51&nbsp;AM drink.&nbsp;<sup>[1]</sup></figcaption>
+            </figure>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>Tool 3: Coffee Shop Card</h2>
+                <p>Managing a migraine condition at home is one challenge. Managing it while standing at a caf&eacute; counter &mdash; under time pressure, seventeen options on the menu, no caffeine labels visible, someone waiting behind you &mdash; is another kind entirely.</p>
+                <p>The Coffee Shop Card closes that gap. Select any drink &mdash; Americano, Cold Brew, Matcha, Red Bull, Chai Latte &mdash; and the card instantly calculates how many servings fit inside your personal daily maximum, along with your deadline and dose ceiling. The card is shareable: designed to be shown to a partner, a friend, a barista, or anyone who needs to understand your limits without a lengthy explanation.</p>
+                <p>It is also, in the language of behavioral science, a commitment device &mdash; a visible, tangible statement of your own rules that makes them harder to override in the moment.&nbsp;<sup>[7]</sup> The moment of decision is the worst moment to do arithmetic. The card does the arithmetic in advance.</p>
+            </section>
+
+            <figure class="article-image-phone">
+                <img src="images/screenshot_coffee_shop_card.jpg" alt="Migraine Companion Coffee Shop Card screen showing Espresso selected with a highlighted chip among Coffee, Tea, Energy, and Soda categories. An info bar reads 63mg per shot 1 oz and your limit 200mg. Below, a dark card shows My Caffeine Card with Nervous Sprinter profile, My drink Espresso, Daily limit 3 shot per day, Deadline 2:00 PM, Max caffeine 200mg, and a Share Card green button at the bottom." loading="lazy">
+                <figcaption>Coffee Shop Card for Nervous Sprinter &mdash; Espresso selected. Instantly calculates 3&nbsp;shots/day within 200&nbsp;mg limit. Shareable with one tap. The caffeine arithmetic done before you reach the counter.&nbsp;<sup>[7]</sup></figcaption>
+            </figure>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>Tool 4: Gentle Exit</h2>
+                <p>Stopping caffeine abruptly is the single most reliable way to trigger a migraine in susceptible individuals. A randomized controlled trial published in <em>Frontiers in Neurology</em> had to stop early: abrupt withdrawal triggered severe migraine in seven out of nine participants within days of cessation.&nbsp;<sup>[6]</sup></p>
+                <p>The mechanism is adenosine rebound. Chronic caffeine use causes the brain to upregulate adenosine receptors &mdash; manufacturing extras to compensate for the constant blockade. Remove caffeine suddenly, and those extra receptors flood with adenosine. Blood vessels dilate. Neural excitability rises. The migraine threshold drops sharply.</p>
+                <p>Gradual tapering &mdash; reducing by 25&ndash;50% every few days &mdash; prevents this receptor storm.&nbsp;<sup>[8]</sup> But &ldquo;gradual&rdquo; is not a plan. It is a direction.</p>
+                <p>Gentle Exit builds the actual plan. You log your current drinks with their real caffeine content &mdash; Cold Brew at 200&nbsp;mg, espresso at 63&nbsp;mg, Mountain Dew at 55&nbsp;mg per can. You choose a target: caffeine-free, one tea per day, one light coffee. The algorithm generates a week-by-week substitution ladder, replacing drinks rather than simply removing them: energy drink becomes drip coffee, soda becomes green tea, matcha becomes decaf. Each step is sized to your profile&rsquo;s reduction rate, minimizing the weekly mg drop to stay below the rebound threshold.</p>
+
+                <div class="insight-card">
+                    <p>Fast metabolizers feel withdrawal symptoms earlier than slow ones, because their receptors rebound faster. Counterintuitively, they often need the <em>slower</em> taper &mdash; not the faster one. Feeling less discomfort is not the same as being less affected.</p>
+                </div>
+            </section>
+
+            <figure class="article-image-phone">
+                <img src="images/screenshot_gentle_exit.jpg" alt="Migraine Companion Gentle Exit weekly plan screen showing four week cards. Week 1: Mountain Dew to Green Tea, 83mg, green progress bar, Mt. Dew times 1 and Green Tea times 1 chips. Week 2: Mountain Dew to Green Tea, 56mg. Week 3: Green Tea to Decaf Coffee, 35mg. Week 4: Green Tea to Decaf Coffee, 14mg, Decaf times 2 chip. Each card has a tip in italic text beneath." loading="lazy">
+                <figcaption>Gentle Exit weekly substitution plan &mdash; 110&nbsp;mg/day to caffeine-free over 6&nbsp;weeks. Each step replaces rather than simply removes, keeping the adenosine rebound below the migraine threshold.&nbsp;<sup>[6][8]</sup></figcaption>
+            </figure>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>The Real Target: Consistency</h2>
+                <p>A 2019 prospective cohort study tracked 98 migraine patients &mdash; every drink, every headache, for weeks.&nbsp;<sup>[9]</sup> The finding surprised the researchers: it was not the amount of caffeine consumed that predicted attacks. It was the day-to-day <em>variability</em>.</p>
+                <p>People whose consumption fluctuated significantly were at markedly higher risk than those who drank the same amount consistently &mdash; whether that amount was high or low. Consistency itself was protective.</p>
+                <p>This finding reframes the entire goal. The objective is not necessarily to eliminate caffeine. It is to eliminate the biological surprise &mdash; the adenosine rebound, the sleep erosion, the unpredictable receptor state &mdash; that transforms a manageable habit into a trigger. For the full adenosine mechanism and the &ldquo;caffeine paradox,&rdquo; <a href="article-caffeine.html">The Caffeine Paradox</a> covers the biochemistry in depth.</p>
+                <p>Mi Lab&rsquo;s four tools address this from four angles. Who are you, metabolically? What did you just consume? What are your daily limits under real-world conditions? How do you exit safely if you decide to?</p>
+                <p>Together, they replace &ldquo;watch your caffeine&rdquo; with something your nervous system can actually use.</p>
+
+                <div class="highlight-box">
+                    <p>Your own numbers. In your own hands.</p>
+                </div>
+            </section>
+
+            <div class="separator"></div>
+
+            <div class="action-box">
+                <h3>&#x2728; Stop Guessing. Start Measuring.</h3>
+                <p>Mi Lab is available exclusively inside the Migraine Companion app &mdash; built by someone who has lived with migraine for 30 years and needed these tools to exist.</p>
+                <p>Take the Caffeine Profile Quiz today. Find your genetic archetype. Let the algorithm build your personal rulebook.</p>
+                <p><strong>Not sure if caffeine is your primary trigger?</strong> Chat with <a href="https://mi-companion.com/ask-mi.html" class="ask-mi-link" target="_blank">Ask&nbsp;Mi</a> on our website first &mdash; no download required. Describe your morning routine and attack patterns, and let the AI analyze whether you&rsquo;re showing signs of adenosine rebound before you commit to anything.</p>
+                <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
+                    <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        Download on App Store
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                        Get it on Google Play
+                    </a>
+                </div>
+            </div>
+
+            <div class="key-takeaways">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li>CYP1A2 and ADORA2A genetics drive most individual variation in caffeine response &mdash; the same dose produces completely different effects in different people&nbsp;<sup>[3][4][5]</sup></li>
+                    <li>The Caffeine Profile Quiz translates behavioral signals into four evidence-based metabolic archetypes, each with its own personal rulebook</li>
+                    <li>&ldquo;What&rsquo;s in My Cup&rdquo; calculates real-time caffeine clearance using your personal half-life, not population averages&nbsp;<sup>[1]</sup></li>
+                    <li>The Coffee Shop Card externalizes your personal limits as a shareable tool for daily decision-making under pressure&nbsp;<sup>[7]</sup></li>
+                    <li>Gentle Exit uses a gradual substitution algorithm to prevent adenosine rebound &mdash; the primary mechanism behind withdrawal-triggered migraine&nbsp;<sup>[6][8]</sup></li>
+                    <li>Day-to-day caffeine variability predicts attacks more reliably than absolute amount &mdash; eliminating the surprise is the intervention&nbsp;<sup>[9]</sup></li>
+                </ul>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="emergency-box">
+                <h3>&#x1FA7A; Before Changing Your Caffeine Intake</h3>
+                <p>If you take triptans, ergotamines, beta-blockers, or any other vasoactive medication, speak with your neurologist or headache specialist before making significant changes to your caffeine habits. Caffeine interacts with several headache medications and can affect their efficacy.</p>
+                <p>Mi Lab tools are behavioral and informational in nature. They do not replace clinical evaluation or a personalized treatment plan.</p>
+            </div>
+
+            <div class="related-box">
+                <h3>Deepen Your Understanding</h3>
+                <div class="related-grid">
+                    <a href="article-caffeine.html" class="related-card">
+                        <h4>The Caffeine Paradox: Friend, Foe, or Both?</h4>
+                        <p>The full adenosine mechanism explained &mdash; why caffeine both triggers and relieves the same headache, and why the answer depends entirely on your biology.</p>
+                    </a>
+                    <a href="the-goldilocks-problem-sleep-migraine.html" class="related-card">
+                        <h4>The Goldilocks Problem: Sleep and Migraine</h4>
+                        <p>Too little or too much &mdash; why sleep is one of the most reliable migraine triggers, and how your caffeine metabolism makes it worse or better.</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="full-disclaimer" id="medical-disclaimer">
+                <h3>&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
+                <p>This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
+                <p>All clinical claims in this article are sourced from peer-reviewed research published in indexed medical journals. Study designs and sample sizes are noted where applicable. The behavioral assessments in Mi Lab are not validated clinical diagnostic instruments.</p>
+                <p>Migraine Companion is a self-management tracking tool. It does not diagnose, treat, or prescribe. Always consult a qualified healthcare provider for questions about your individual health, medication interactions, or treatment decisions &mdash; particularly regarding changes to caffeine intake if you have cardiovascular conditions, are pregnant, or take medications that interact with CYP1A2 enzyme activity.</p>
+                <p>This content was last reviewed for accuracy in March 2026.</p>
+            </div>
+
+            <div id="references" class="references">
+                <h3>References</h3>
+                <ol>
+                    <li>Alstadhaug KB, Andreou AP. &ldquo;Caffeine and Primary (Migraine) Headaches &mdash; Friend or Foe?&rdquo; <em>Frontiers in Neurology</em>. 2019;10:1275. <a href="https://doi.org/10.3389/fneur.2019.01275" target="_blank">doi:10.3389/fneur.2019.01275</a>. Study design: Narrative review.</li>
+                    <li>Nowaczewska M, Wici&#x144;ski M, Ka&#x17A;mierczak W. &ldquo;The Ambiguous Role of Caffeine in Migraine Headache: From Trigger to Treatment.&rdquo; <em>Nutrients</em>. 2020;12(8):2259. <a href="https://doi.org/10.3390/nu12082259" target="_blank">doi:10.3390/nu12082259</a>. Study design: Systematic review. n=28 studies.</li>
+                    <li>Low JJ, et al. &ldquo;Genetic susceptibility to caffeine intake and metabolism: a systematic review.&rdquo; <em>Journal of Translational Medicine</em>. 2024;22:961. <a href="https://doi.org/10.1186/s12967-024-05737-z" target="_blank">doi:10.1186/s12967-024-05737-z</a>. Study design: Systematic review. n=1,851,428.</li>
+                    <li>Kapellou A, King A, Graham CAM, Pilic L, Mavrommatis Y. &ldquo;Genetics of caffeine and brain-related outcomes.&rdquo; <em>Nutrition Reviews</em>. 2023;81(12):1571&ndash;1598. <a href="https://doi.org/10.1093/nutrit/nuad029" target="_blank">doi:10.1093/nutrit/nuad029</a>. Study design: Systematic review. n=22 studies (15 RCTs).</li>
+                    <li>Kapellou A, Pilic L, Mavrommatis Y. &ldquo;Habitual caffeine intake, genetics and cognitive performance.&rdquo; <em>Journal of Psychopharmacology</em>. 2025. <a href="https://doi.org/10.1177/02698811241303601" target="_blank">doi:10.1177/02698811241303601</a>. Study design: Cross-sectional. n=134.</li>
+                    <li>Alstadhaug KB, Ofte HK, M&uuml;ller KI, Andreou AP. &ldquo;Sudden Caffeine Withdrawal Triggers Migraine &mdash; A Randomized Controlled Trial.&rdquo; <em>Frontiers in Neurology</em>. 2020;11:1002. <a href="https://doi.org/10.3389/fneur.2020.01002" target="_blank">doi:10.3389/fneur.2020.01002</a>. Study design: RCT (crossover). n=10.</li>
+                    <li>Ariely D, Wertenbroch K. &ldquo;Procrastination, Deadlines, and Performance: Self-Control by Precommitment.&rdquo; <em>Psychological Science</em>. 2002;13(3):219&ndash;224. <a href="https://doi.org/10.1111/1467-9280.00441" target="_blank">doi:10.1111/1467-9280.00441</a>. Study design: RCT. n=60.</li>
+                    <li>StatPearls. &ldquo;Caffeine Withdrawal.&rdquo; <em>NCBI Bookshelf</em>. Updated December 2025. Study design: Clinical review.</li>
+                    <li>Mostofsky E, et al. &ldquo;Prospective Cohort Study of Caffeinated Beverage Intake as a Potential Trigger of Headaches among Migraineurs.&rdquo; <em>The American Journal of Medicine</em>. 2019;132(8):984&ndash;991. <a href="https://doi.org/10.1016/j.amjmed.2019.02.015" target="_blank">doi:10.1016/j.amjmed.2019.02.015</a>. Study design: Prospective cohort. n=98.</li>
+                </ol>
+            </div>
+
+            <div id="about-author" class="article-footer">
+                <div class="author-card">
+                    <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
+                    <div class="author-info">
+                        <h3>Rustam Iuldashov</h3>
+                        <p><strong>Creator &amp; Developer</strong> &mdash; 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. Mi Lab was built to solve the problem he faced personally: no tool existed that treated caffeine as a personalized pharmacological question rather than a generic warning.</p>
+                        <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Transparency &amp; Conflict of Interest Disclosure: Rustam is the developer of the Migraine Companion app and all Mi Lab tools described in this article. This article was written to explain the science behind the tools, not to promote features for commercial gain. All scientific claims are independently sourced from peer-reviewed literature. The author has no financial relationships with any pharmaceutical companies, neurologists, or insurance providers.</em></p>
+                        <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);">&#x1F4E7; Contact: mi-companion.com/contact &middot; &#x1F310; Website: mi-companion.com</p>
+                    </div>
+                </div>
+
+                <div class="editorial-standards">
+                    <h3>How We Create Content</h3>
+                    <ul>
+                        <li><strong>Peer-reviewed sources only.</strong> Journal of Translational Medicine, Nutrition Reviews, Journal of Psychopharmacology, Frontiers in Neurology, The American Journal of Medicine, Psychological Science, NCBI StatPearls.</li>
+                        <li><strong>Study transparency.</strong> Study design and sample sizes noted for all clinical references.</li>
+                        <li><strong>Source verification.</strong> All claims backed by numbered references with DOI links.</li>
+                        <li><strong>Experience + Science.</strong> 30 years personal migraine experience combined with peer-reviewed genetics and pharmacology research.</li>
+                        <li><strong>Regular updates.</strong> Articles reviewed when significant new research on CYP1A2 or ADORA2A variants emerges.</li>
+                        <li><strong>No conflicts of interest.</strong> No funding from any pharmaceutical or medical device company.</li>
+                    </ul>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Discover Your Caffeine Profile Today</h3>
+                    <p>Mi Lab turns the generic instruction &ldquo;watch your caffeine&rdquo; into four personalized tools grounded in real genetics research. Built by someone with 30 years of migraine experience who needed them to exist.</p>
+                    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                            Get it on Google Play
+                        </a>
+                    </div>
+                </div>
+
+                <div class="review-dates">
+                    <p><em>Last reviewed: March 2026</em></p>
+                    <p><em>Next scheduled review: September 2026</em></p>
+                </div>
+            </div>
+
+        </div>
+    </article>
+</main>
+
+<footer>
+    <div class="container">
+        <p class="copyright">&copy; 2026 Migraine Companion. Made with &#x1F49C; in Ukraine.</p>
+    </div>
+</footer>
+
+</body>
+</html>
