@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Designed for the Dark: Mi's Features for When Light Is the Enemy">
-    <meta property="og:description" content="When a migraine hits, picking up your phone feels like a gamble. Here's why Mi was built around the science of photophobia — and how every design choice serves your most vulnerable moments.">
+    <meta property="og:description" content="When a migraine hits, picking up your phone feels like a gamble. One wrong screen and the pain doubles. Here's why Mi was built around the science of photophobia — and how every design choice serves your most vulnerable moments.">
     <meta property="og:image" content="https://mi-companion.com/images/dark_theme_hero.png">
     <meta property="og:url" content="https://mi-companion.com/article-dark-theme.html">
     <meta property="article:published_time" content="2026-03-25">
@@ -130,7 +130,7 @@
         .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(197,160,89,0.20) 30%, rgba(197,160,89,0.35) 50%, rgba(197,160,89,0.20) 70%, transparent 100%); }
         .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(197,160,89,0.30); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
 
-        .key-takeaways { background: linear-gradient(180deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.04) 100%); border: 1px solid var(--teal-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.15), inset 0 1px 0 rgba(107,155,170,0.12), inset 0 -1px 0 rgba(0,0,0,0.10); }
+        .key-takeaways { background: linear-gradient(180deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.04) 100%); border: 1px solid var(--teal-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.20), inset 0 1px 0 rgba(107,155,170,0.12); }
         .key-takeaways::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.6; border-radius: 20px 20px 0 0; }
         .key-takeaways h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; position: relative; z-index: 1; }
         .key-takeaways ul { list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
@@ -149,11 +149,10 @@
         .insight-card { background: linear-gradient(90deg, rgba(139,122,168,0.10) 0%, rgba(139,122,168,0.03) 100%); border-left: 3px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), inset 0 1px 0 rgba(139,122,168,0.08); }
         .insight-card p { margin-bottom: 0; font-size: 0.98rem; font-style: italic; color: var(--text-light); }
 
-        .action-box { background: linear-gradient(135deg, rgba(197,160,89,0.12) 0%, rgba(197,160,89,0.04) 100%); border: 1px solid var(--gold-border); border-radius: 20px; padding: 36px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.25); text-align: center; }
-        .action-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.8; }
+        .action-box { background: linear-gradient(135deg, rgba(197,160,89,0.08) 0%, rgba(197,160,89,0.03) 100%); border: 1px solid var(--gold-border); border-radius: 20px; padding: 36px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.20); text-align: center; }
+        .action-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.6; }
         .action-box h3 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 14px; position: relative; z-index: 1; }
-        .action-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 20px; position: relative; z-index: 1; }
-        .action-box p:last-of-type { margin-bottom: 28px; }
+        .action-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 0; position: relative; z-index: 1; }
 
         .emergency-box { background: linear-gradient(90deg, rgba(197,160,89,0.10) 0%, rgba(197,160,89,0.02) 100%); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 14px 14px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), inset 0 1px 0 rgba(197,160,89,0.10); }
         .emergency-box h3 { color: var(--gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
@@ -382,17 +381,7 @@
             <div class="action-box">
                 <h3>&#x1F319; Built for the Dark Moments</h3>
                 <p>Mi was designed from the first line of code around a single assumption: sometimes your user can barely open their eyes. Every color, every tap, every brightness decision reflects that.</p>
-                <p>Built by someone who has lived with migraine for 30 years and needed this app to exist.</p>
-                <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
-                    <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                        Download on App Store
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
-                        Get it on Google Play
-                    </a>
-                </div>
+                <p style="margin-top:12px;margin-bottom:0;">Built by someone who has lived with migraine for 30 years and needed this app to exist.</p>
             </div>
 
             <div class="key-takeaways">
