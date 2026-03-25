@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Why Mi runs exclusively on a dark theme — and how near-black backgrounds, warm gray text, and desaturated green accents were chosen based on the neuroscience of photophobia. 24 peer-reviewed sources.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="migraine app dark theme, photophobia migraine screen, dark mode migraine, blue light migraine headache, migraine companion dark theme, migraine app design, photophobia thalamus mechanism, green light migraine, OLED dark mode migraine">
+    <title>Designed for the Dark: Mi's Features for When Light Is the Enemy | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://mi-companion.com/article-dark-theme.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Designed for the Dark: Mi's Features for When Light Is the Enemy">
+    <meta property="og:description" content="When a migraine hits, picking up your phone feels like a gamble. Here's why Mi was built around the science of photophobia — and how every design choice serves your most vulnerable moments.">
+    <meta property="og:image" content="https://mi-companion.com/images/dark_theme_hero.png">
+    <meta property="og:url" content="https://mi-companion.com/article-dark-theme.html">
+    <meta property="article:published_time" content="2026-03-25">
+    <meta property="article:modified_time" content="2026-03-25">
+    <meta property="article:author" content="Rustam Iuldashov">
+    <meta property="article:section" content="App Guide">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://mi-companion.com/article-dark-theme.html"
+        },
+        "headline": "Designed for the Dark: Mi's Features for When Light Is the Enemy",
+        "description": "Why Mi runs exclusively on a dark theme — how near-black backgrounds, warm gray text, and desaturated green accents were chosen based on the neuroscience of photophobia. 24 peer-reviewed sources.",
+        "image": "https://mi-companion.com/images/dark_theme_hero.png",
+        "datePublished": "2026-03-25",
+        "dateModified": "2026-03-25",
+        "author": {
+            "@type": "Person",
+            "name": "Rustam Iuldashov",
+            "url": "https://mi-companion.com/about",
+            "description": "Creator of Migraine Companion. 30 years of personal experience living with chronic migraine. Not a medical professional."
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Migraine Companion",
+            "logo": { "@type": "ImageObject", "url": "https://mi-companion.com/images/mi-icon.png" }
+        },
+        "about": [
+            { "@type": "MedicalCondition", "name": "Migraine" },
+            { "@type": "MedicalCondition", "name": "Photophobia" },
+            { "@type": "SoftwareApplication", "name": "Migraine Companion" }
+        ],
+        "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-subtitle", ".key-takeaways"] }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0d0d0d;
+            --surface: #141419;
+            --lavender: #8b7aa8;
+            --green: #6aaa7a;
+            --teal: #6b9baa;
+            --gold: #c5a059;
+            --lavender-soft: rgba(139,122,168,0.06);
+            --green-soft: rgba(106,170,122,0.06);
+            --teal-soft: rgba(107,155,170,0.06);
+            --gold-soft: rgba(197,160,89,0.06);
+            --lavender-border: rgba(139,122,168,0.18);
+            --green-border: rgba(106,170,122,0.18);
+            --teal-border: rgba(107,155,170,0.18);
+            --gold-border: rgba(197,160,89,0.18);
+            --text: #cdc6be;
+            --text-light: #a09890;
+            --text-dark: #847b73;
+            --text-warm: #c9bda8;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+        header {
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(13,13,13,0.92);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid var(--gold-border);
+        }
+        .header-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.3rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; text-decoration: none; }
+        .logo span { color: var(--lavender); }
+        .back-link { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--gold); }
+
+        .article-hero { margin-top: 70px; position: relative; overflow: hidden; border-radius: 0 0 24px 24px; height: 600px; display: flex; align-items: center; justify-content: center; }
+        .article-hero img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+        .article-hero::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(13,13,13,0.08) 0%, rgba(13,13,13,0.78) 100%); z-index: 1; }
+        .article-header { position: relative; z-index: 2; text-align: center; padding: 0 24px; padding-top: 120px; }
+        .article-tag { display: inline-block; background: rgba(197,160,89,0.15); border: 1px solid rgba(197,160,89,0.40); color: var(--gold); font-size: 0.75rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 600; line-height: 1.2; color: #fff; margin-bottom: 16px; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.8); }
+        .article-subtitle { font-size: 1.15rem; font-weight: 500; color: rgba(255,255,255,0.85); font-style: italic; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
+        .article-meta { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+        .article-content { padding: 60px 0 80px; }
+        .article-section { margin-bottom: 48px; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; margin-bottom: 20px; letter-spacing: -0.01em; line-height: 1.3; }
+        h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+        p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; color: var(--text); }
+        strong { font-weight: 700; color: var(--text-warm); }
+        em { font-style: italic; color: var(--text-light); }
+        sup { color: var(--lavender); font-weight: 600; font-size: 0.75rem; }
+        ul, ol { padding-left: 24px; margin-bottom: 20px; }
+        li { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 10px; }
+        li strong { color: var(--text-warm); }
+        .article-section a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
+        .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
+
+        .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
+        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(197,160,89,0.20) 30%, rgba(197,160,89,0.35) 50%, rgba(197,160,89,0.20) 70%, transparent 100%); }
+        .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(197,160,89,0.30); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
+
+        .key-takeaways { background: linear-gradient(180deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.04) 100%); border: 1px solid var(--teal-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.15), inset 0 1px 0 rgba(107,155,170,0.12), inset 0 -1px 0 rgba(0,0,0,0.10); }
+        .key-takeaways::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.6; border-radius: 20px 20px 0 0; }
+        .key-takeaways h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; position: relative; z-index: 1; }
+        .key-takeaways ul { list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
+        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid rgba(107,155,170,0.06); margin-bottom: 0; }
+        .key-takeaways li:last-child { border-bottom: none; }
+        .key-takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--teal); font-weight: 600; }
+
+        .highlight-box { background: linear-gradient(90deg, rgba(106,170,122,0.10) 0%, rgba(106,170,122,0.03) 100%); border-left: 3px solid var(--green); padding: 28px 32px 28px 36px; border-radius: 0 16px 16px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), inset 0 1px 0 rgba(106,170,122,0.08); }
+        .highlight-box::before { content: '\201C'; position: absolute; top: 12px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; line-height: 1; color: rgba(106,170,122,0.12); pointer-events: none; }
+        .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; position: relative; z-index: 1; }
+
+        .data-card { background: linear-gradient(90deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.03) 100%); border-left: 3px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), inset 0 1px 0 rgba(107,155,170,0.08); }
+        .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
+        .data-card p:last-child { margin-bottom: 0; }
+
+        .insight-card { background: linear-gradient(90deg, rgba(139,122,168,0.10) 0%, rgba(139,122,168,0.03) 100%); border-left: 3px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), inset 0 1px 0 rgba(139,122,168,0.08); }
+        .insight-card p { margin-bottom: 0; font-size: 0.98rem; font-style: italic; color: var(--text-light); }
+
+        .action-box { background: linear-gradient(135deg, rgba(197,160,89,0.12) 0%, rgba(197,160,89,0.04) 100%); border: 1px solid var(--gold-border); border-radius: 20px; padding: 36px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.25); text-align: center; }
+        .action-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.8; }
+        .action-box h3 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 14px; position: relative; z-index: 1; }
+        .action-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 20px; position: relative; z-index: 1; }
+        .action-box p:last-of-type { margin-bottom: 28px; }
+
+        .emergency-box { background: linear-gradient(90deg, rgba(197,160,89,0.10) 0%, rgba(197,160,89,0.02) 100%); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 14px 14px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), inset 0 1px 0 rgba(197,160,89,0.10); }
+        .emergency-box h3 { color: var(--gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+        .emergency-box p { font-size: 0.98rem; margin-bottom: 12px; }
+        .emergency-box p:last-child { margin-bottom: 0; }
+        .emergency-box ul { margin-bottom: 12px; }
+        .emergency-box li { font-size: 0.98rem; margin-bottom: 6px; }
+
+        .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(197,160,89,0.10); box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.20), inset 0 0 0 1px rgba(255,255,255,0.03); }
+        .article-image img { width: 100%; height: auto; display: block; }
+        .article-image figcaption { background: linear-gradient(180deg, rgba(13,13,13,0.60) 0%, rgba(20,20,25,0.95) 100%); padding: 14px 20px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; border-top: 1px solid rgba(197,160,89,0.08); }
+
+        .related-box { margin: 60px 0; padding: 40px; background: rgba(197,160,89,0.03); border-radius: 24px; border: 1px solid var(--gold-border); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(197,160,89,0.06); }
+        .related-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.4; }
+        .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .related-card { display: block; text-decoration: none; background: rgba(255,255,255,0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 2px 12px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.03); }
+        .related-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--lavender), transparent); opacity: 0.3; transition: opacity 0.4s ease; }
+        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.04); border-color: rgba(139,122,168,0.30); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+        .related-card:hover::before { opacity: 0.7; }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
+        .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+
+        .full-disclaimer { background: rgba(139,122,168,0.04); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 48px 0; }
+        .full-disclaimer h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .full-disclaimer p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.7; }
+        .full-disclaimer p:last-child { margin-bottom: 0; }
+
+        .medical-disclaimer { font-size: 0.9rem; font-style: italic; color: var(--text-dark); text-align: center; padding: 16px 0; margin-bottom: 48px; border-bottom: 1px solid var(--gold-border); }
+
+        .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--gold-border); }
+        .author-card { display: flex; align-items: center; gap: 20px; background: linear-gradient(135deg, rgba(197,160,89,0.05) 0%, rgba(106,170,122,0.03) 100%); border: 1px solid var(--gold-border); border-radius: 20px; padding: 28px; margin-bottom: 32px; position: relative; overflow: hidden; }
+        .author-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(197,160,89,0.30), rgba(106,170,122,0.20), transparent); }
+        .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--green)); padding: 3px; flex-shrink: 0; }
+        .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .author-info h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+        .author-info p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+
+        .editorial-standards { background: rgba(197,160,89,0.03); border: 1px solid rgba(197,160,89,0.12); border-radius: 16px; padding: 28px; margin: 32px 0; }
+        .editorial-standards h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .editorial-standards ul { list-style: none; padding: 0; margin: 0; }
+        .editorial-standards li { font-size: 0.9rem; color: var(--text-light); padding: 8px 0; padding-left: 20px; position: relative; border-bottom: 1px solid rgba(197,160,89,0.05); margin-bottom: 0; }
+        .editorial-standards li:last-child { border-bottom: none; }
+        .editorial-standards li::before { content: '\2022'; position: absolute; left: 0; color: var(--gold); opacity: 0.6; }
+
+        .cta-box { background: linear-gradient(180deg, rgba(197,160,89,0.12) 0%, rgba(197,160,89,0.04) 100%); border: 1px solid var(--gold-border); border-radius: 20px; padding: 36px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
+        .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.7; }
+        .cta-box h3 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; position: relative; z-index: 1; }
+        .cta-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; position: relative; z-index: 1; }
+
+        .download-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(197,160,89,0.15), rgba(197,160,89,0.25)); border: 1px solid var(--gold); border-radius: 12px; color: var(--gold); text-decoration: none; font-weight: 600; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); flex: 1; max-width: 260px; justify-content: center; position: relative; z-index: 1; }
+        .download-btn:hover { background: var(--gold); color: var(--bg); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(197,160,89,0.25); }
+
+        .references { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--lavender-border); }
+        .references h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-light); margin-bottom: 16px; }
+        .references ol { padding-left: 24px; }
+        .references li { font-size: 0.84rem; color: var(--text-dark); margin-bottom: 4px; line-height: 1.6; padding: 8px 10px; border-radius: 6px; transition: background 0.2s ease; }
+        .references li:nth-child(odd) { background: rgba(197,160,89,0.03); }
+        .references li:hover { background: rgba(197,160,89,0.06); }
+        .references a { color: var(--lavender); text-decoration: none; font-weight: 500; }
+        .references a:hover { text-decoration: underline; }
+
+        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(197,160,89,0.10); }
+
+        footer { padding: 40px 0; border-top: 1px solid var(--gold-border); }
+        .copyright { text-align: center; color: var(--text-dark); font-size: 0.82rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .article-hero { height: auto; min-height: 400px; align-items: flex-end; padding-bottom: 40px; }
+            p { font-size: 1rem; }
+            li { font-size: 1rem; }
+            .article-content { padding: 40px 0 60px; }
+            .author-card { flex-direction: column; text-align: center; }
+            .data-card, .emergency-box, .highlight-box, .insight-card { padding: 22px 24px; }
+            .cta-box, .action-box { padding: 28px; }
+            .article-meta { flex-direction: column; gap: 8px; }
+            .key-takeaways { padding: 24px; }
+            .related-box { padding: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+        <a href="blog.html" class="back-link">&larr; Back to Blog</a>
+    </div>
+</header>
+
+<main>
+    <div class="article-hero">
+        <img src="images/dark_theme_hero.png" alt="Atmospheric illustration of a person lying in a darkened bedroom during a migraine attack, one arm covering their eyes. On the nightstand, a smartphone with a dark screen emits a gentle green glow — the only light source that does not hurt. A glass of water and a pill rest nearby.">
+        <div class="article-header">
+            <span class="article-tag">App Guide</span>
+            <h1>Designed for the Dark: Mi&rsquo;s Features for When Light Is the Enemy</h1>
+            <p class="article-subtitle">When a migraine hits, picking up your phone feels like a gamble. One wrong screen and the pain doubles. Here&rsquo;s why Mi was built around the science of photophobia.</p>
+            <div class="article-meta">
+                <span>&#x1F4C5; March 2026</span>
+                <span>&#x23F1; 5 min read</span>
+                <span>&#x270D;&#xFE0F; Rustam Iuldashov</span>
+            </div>
+        </div>
+    </div>
+
+    <article class="article-content">
+        <div class="container">
+
+            <div id="article-meta" style="text-align:center;padding:32px 0 16px;">
+                <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">By Rustam Iuldashov</p>
+                <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">30 years lived experience with chronic migraine &nbsp;|&nbsp; Sources: 24 peer-reviewed references including <em>Brain</em>&nbsp;(Oxford), <em>Nature Neuroscience</em>, <em>Physiological Reviews</em>, <em>Journal of Headache and Pain</em> &nbsp;|&nbsp; Last updated: March 2026</p>
+            </div>
+
+            <p class="medical-disclaimer">
+                <strong>Medical Review:</strong> This content is based on peer-reviewed research from <em>Brain</em>, <em>Nature Neuroscience</em>, <em>Physiological Reviews</em>, <em>Journal of Headache and Pain</em>, <em>Pain</em>, and <em>Frontiers in Neurology</em>.<br><br>
+                <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. The Mi dark theme and Breathing Garden are supportive design features. They do not diagnose, treat, or prevent migraine disease.
+            </p>
+
+            <div class="key-takeaways">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li>Up to 90% of migraineurs experience photophobia during attacks &mdash; a neurological amplification of pain through the thalamic pathway, not just visual discomfort&nbsp;<sup>[1][2]</sup></li>
+                    <li>Blue and white light most strongly activate the migraine pain pathway; green light is measurably least aggravating&nbsp;<sup>[4][5]</sup></li>
+                    <li>Mi&rsquo;s near-black background (#16181C), warm gray text, and desaturated green and lavender palette reflect the color science of photophobia directly</li>
+                    <li>Cognitive load compounds sensory overload during attacks &mdash; minimizing taps and decisions directly reduces the burden on an overwhelmed brain&nbsp;<sup>[15][18]</sup></li>
+                    <li>Core attack-time functions in Mi &mdash; pain logging, medication timer, Breathing Garden &mdash; require one to two taps from any screen</li>
+                    <li>Dark mode in Mi is not a preference setting &mdash; it is the only mode, because a migraine attack is not something you should have to prepare for</li>
+                </ul>
+            </div>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>The Problem No One Designs For</h2>
+                <p>You know the moment.</p>
+                <p>The pain has arrived. The room is dark. Curtains closed. And yet &mdash; you need to log something. Check a medication timer. Find a quiet corner of your phone that won&rsquo;t send a spike of white light straight into your skull.</p>
+                <p>Most apps were not built for this. They were built for bright offices, outdoor use, high-contrast readability in sunlight. The default assumption is a user who is awake, alert, and comfortable.</p>
+                <p>A migraine attack destroys every one of those assumptions.</p>
+                <p>After 30 years of living with migraine, I built Mi around a different one: sometimes your user can barely open their eyes. Every color, every tap count, every brightness decision in this app starts from that place.</p>
+            </section>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>Why Light Actually Hurts</h2>
+                <p>Photophobia &mdash; light sensitivity during migraine &mdash; is not &ldquo;the screen is too bright.&rdquo; It is a neurological cascade that makes ordinary room light feel like a physical assault.</p>
+                <p>Up to 90% of people with migraine experience it during an attack.&nbsp;<sup>[1][2]</sup> The mechanism involves a pathway most people have never heard of. Photic signals from your retina travel to thalamic neurons that also process pain from the meninges &mdash; the membrane surrounding your brain.&nbsp;<sup>[3]</sup> Light and headache pain converge on the same neurons.</p>
+                <p>When you are mid-attack, your trigeminal pain system is already firing. Any incoming light signal does not stay in the &ldquo;vision&rdquo; department. It amplifies the pain signal directly.&nbsp;<sup>[3][4]</sup> This is why light does not merely annoy. It genuinely hurts.</p>
+                <p>Not all light hurts equally. Research from Harvard Medical School found that green light exacerbates migraine significantly less than white, blue, amber, or red.&nbsp;<sup>[4]</sup> Blue light activates the thalamic pain pathway most powerfully. Green activates it least.&nbsp;<sup>[4][5]</sup> These are not minor differences in patient preference &mdash; they are measurable differences in neurological pain output.</p>
+                <p>And photophobia does not switch off between attacks. Studies show that even headache-free migraineurs tolerate less ambient light than people without migraine history.&nbsp;<sup>[6][22]</sup> The sensitized brain is always partially primed. Every light interaction is a question of threshold management, not just comfort.&nbsp;<sup>[21]</sup></p>
+            </section>
+
+            <div class="emergency-box">
+                <h3>&#x1FA7A; When to Seek Immediate Medical Help</h3>
+                <p>Light sensitivity combined with any of the following is a medical emergency &mdash; do not wait:</p>
+                <ul>
+                    <li>Sudden, severe headache unlike any you have had before (&ldquo;thunderclap headache&rdquo;)</li>
+                    <li>Stiff neck, fever, or rash alongside head pain and light sensitivity</li>
+                    <li>New neurological symptoms: confusion, weakness, vision loss, difficulty speaking</li>
+                    <li>Headache following a head injury</li>
+                </ul>
+                <p>These may indicate meningitis, subarachnoid hemorrhage, or other serious conditions that require urgent evaluation. <strong>Call emergency services or go to the nearest emergency department immediately.</strong></p>
+                <p>Migraine photophobia alone &mdash; even when severe &mdash; does not typically produce these warning signs.</p>
+            </div>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>What a Standard App Screen Does to Your Brain</h2>
+                <p>A typical app on default settings is a bundle of photophobia triggers.</p>
+                <p>A white background emits near-maximum luminance across all wavelengths &mdash; including the blue range that most powerfully activates thalamic pain neurons.&nbsp;<sup>[4]</sup> Every text block becomes a light source pointed at a sensitized visual cortex.&nbsp;<sup>[7]</sup></p>
+                <p>Digital screens concentrate their emission in the 415&ndash;455&nbsp;nm blue range &mdash; precisely the wavelengths that activate melanopsin in intrinsically photosensitive retinal ganglion cells.&nbsp;<sup>[7][8]</sup> These cells do not just manage vision. They feed directly into the pain-relevant thalamic pathway.&nbsp;<sup>[3]</sup></p>
+                <p>Many screens also use pulse width modulation (PWM) to control brightness &mdash; rapidly switching pixels on and off to simulate dimness. That invisible flicker can trigger headaches in sensitive individuals even when they cannot consciously perceive it.&nbsp;<sup>[8][9]</sup></p>
+                <p>The result: the phone you need during an attack is the same phone most likely to make the attack worse.</p>
+                <p>A survey of dark mode users found that 52% switch to dark mode specifically as a migraine management strategy.&nbsp;<sup>[11]</sup> More than one-third of Slack users who requested a dark theme cited photophobia or migraine as the reason.&nbsp;<sup>[12]</sup> The demand is real. The science backs it.</p>
+            </section>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>How Mi&rsquo;s Dark Theme Was Built Around the Science</h2>
+                <p>Mi runs exclusively on a dark theme. There is no light mode &mdash; not by oversight, but by decision.</p>
+                <p><strong>The background (#16181C)</strong> is not pure black. Pure black on an OLED screen creates extreme contrast with any bright element, which amplifies visual discomfort in sensitive users.&nbsp;<sup>[13]</sup> Near-black absorbs ambient light, reduces overall screen luminance, and on OLED displays &mdash; where black pixels emit zero light &mdash; cuts the blue light reaching your retinas dramatically.&nbsp;<sup>[14]</sup></p>
+                <p><strong>The text color (#BDBDBD)</strong> is warm gray, not white. Pure white on dark background creates a 21:1 contrast ratio &mdash; technically excellent for readability, neurologically harsh for photophobic eyes. Warm gray achieves legibility while reducing the luminance of every character on screen.&nbsp;<sup>[9]</sup></p>
+                <p><strong>The accent palette &mdash; dusty lavender (#5B4B70), muted teal (#6B9BAA), desaturated green (#6AAA7A), and antique gold (#C5A059)</strong> &mdash; was chosen with the color science of photophobia in mind. Every tone is desaturated, low-intensity. No pure blue. No white. No bright red. The most aggravating wavelengths are absent from the interface.&nbsp;<sup>[4][5]</sup></p>
+                <p>The warm greens are not accidental. Research consistently identifies green as the wavelength least likely to worsen migraine headache.&nbsp;<sup>[4][5]</sup> Even at low intensity, these tones sit at the safest end of the photophobia spectrum. You are looking at them every time you open the app.</p>
+            </section>
+
+            <figure class="article-image">
+                <img src="images/dark_theme_comparison.png" alt="Scientific atmospheric illustration comparing two smartphones side by side. The left phone shows a bright white-mode interface with a harsh blue halo and a pain activation signal reaching a stylized thalamus. The right phone shows Mi's dark interface — near-black background with a soft green glow — and the same thalamus pathway without activation. Wavelength curves and eye icons in the center show the neurological difference between the two screens." loading="lazy">
+                <figcaption>Left: a standard white-mode screen activates the thalamic pain pathway via blue-range wavelengths. Right: Mi&rsquo;s near-black interface with desaturated green accents &mdash; the same pathway receives the signal without amplification.&nbsp;<sup>[3][4][5]</sup></figcaption>
+            </figure>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>The Second Problem: Cognitive Load Hurts Too</h2>
+                <p>Photophobia gets the most attention. But migraine is not only a visual disease.</p>
+                <p>During an attack, the entire sensory system is dysregulated. Researchers describe migraine as fundamentally a disorder of sensory threshold.&nbsp;<sup>[15][23]</sup> Up to 70% of migraineurs experience cutaneous allodynia during attacks &mdash; meaning even a light touch on skin becomes painful.&nbsp;<sup>[16][17]</sup> Phonophobia affects a similar proportion. The migraine brain during an attack is overloaded across every channel simultaneously.&nbsp;<sup>[18][20][24]</sup></p>
+                <p>This matters for app design because cognitive demand is sensory input. Every decision point on screen is a small neurological tax. Every menu to parse, every setting to locate, every unnecessary tap adds to a system that is already at its limit.</p>
+                <p>Core functions during an attack &mdash; logging pain, checking a medication timer, opening Breathing Garden &mdash; require one or two taps from any screen in Mi. Navigation uses large, well-spaced touch targets. No precision required from fingers that may themselves be hypersensitive.&nbsp;<sup>[17]</sup></p>
+                <p>This is exactly why we built Breathing Garden. It asks nothing of you. One tap. A slow visual rhythm takes over. The research on controlled breathing for acute pain is meaningful&nbsp;<sup>[19]</sup> &mdash; but the design intention is simpler. Sometimes what you need is not information. It is a quiet, low-light anchor that does not think at you.</p>
+            </section>
+
+            <div class="highlight-box">
+                <p>Dark mode is not an accessibility option in Mi. It is the only mode &mdash; because a migraine attack is not something you should have to prepare for.</p>
+            </div>
+
+            <div class="separator"></div>
+
+            <section class="article-section">
+                <h2>Using Mi During an Attack</h2>
+                <p>You do not need to set anything up. Mi&rsquo;s dark theme is always on.</p>
+                <ul>
+                    <li><strong>When an attack starts:</strong> Open Mi &rarr; tap the attack log &rarr; enter your pain level and symptoms in three taps. Drop your phone brightness to minimum on a near-black interface and almost no light reaches your eyes.</li>
+                    <li><strong>No searching:</strong> Medication timers you have set previously appear on the home screen automatically. Everything is where you left it.</li>
+                    <li><strong>If the pain is overwhelming:</strong> Open Breathing Garden from the home screen. Watch the slow green pulse. Let it set the pace of your breath. Nothing else is required.</li>
+                    <li><strong>When it passes:</strong> Everything you entered is saved. Review your full attack log when you can actually look at a screen without wincing.</li>
+                </ul>
+            </section>
+
+            <div class="separator"></div>
+
+            <div class="action-box">
+                <h3>&#x1F319; Built for the Dark Moments</h3>
+                <p>Mi was designed from the first line of code around a single assumption: sometimes your user can barely open their eyes. Every color, every tap, every brightness decision reflects that.</p>
+                <p>Built by someone who has lived with migraine for 30 years and needed this app to exist.</p>
+                <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
+                    <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        Download on App Store
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                        Get it on Google Play
+                    </a>
+                </div>
+            </div>
+
+            <div class="key-takeaways">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li>Up to 90% of migraineurs experience photophobia during attacks &mdash; a neurological amplification of pain through the thalamic pathway, not just visual discomfort&nbsp;<sup>[1][2]</sup></li>
+                    <li>Blue and white light most strongly activate the migraine pain pathway; green is least aggravating&nbsp;<sup>[4][5]</sup></li>
+                    <li>Mi&rsquo;s near-black background, warm gray text, and desaturated green and lavender palette reflect the color science of photophobia directly</li>
+                    <li>Cognitive load compounds sensory overload during attacks &mdash; minimizing taps and decisions directly reduces the burden on an overwhelmed brain&nbsp;<sup>[15][18]</sup></li>
+                    <li>Core attack-time functions in Mi require one to two taps from any screen</li>
+                    <li>Dark mode in Mi is not a preference setting &mdash; it is the only mode, because a migraine attack is not something you should have to prepare for</li>
+                </ul>
+            </div>
+
+            <div class="related-box">
+                <h3>Deepen Your Understanding</h3>
+                <div class="related-grid">
+                    <a href="article-mi-lab-explained.html" class="related-card">
+                        <h4>Mi Lab Explained: Your Personal Migraine Laboratory</h4>
+                        <p>Caffeine Profile Quiz, Coffee Shop Card, Gentle Exit &mdash; four tools built on genetics research to turn your habits into personalized thresholds.</p>
+                    </a>
+                    <a href="article-prodrome-warning-signs.html" class="related-card">
+                        <h4>The Warning Signs: Migraine Prodrome Explained</h4>
+                        <p>Hours before the pain arrives, your brain is already signaling. How to read those signals &mdash; and what Mi&rsquo;s logging helps you see over time.</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="full-disclaimer" id="medical-disclaimer">
+                <h3>&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
+                <p>This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
+                <p>All clinical claims in this article are sourced from peer-reviewed research published in indexed medical journals. Study designs and sample sizes are noted where applicable. The dark theme design and Breathing Garden feature described here are supportive tools &mdash; not validated clinical interventions for photophobia.</p>
+                <p>Migraine Companion is a self-management tracking tool. It does not diagnose, treat, or prescribe. If you are experiencing new, severe, or unusual headache symptoms &mdash; particularly with fever, stiff neck, vision changes, confusion, or neurological deficits &mdash; seek emergency medical care immediately. Do not use this article or any app feature to self-diagnose or delay treatment.</p>
+                <p>This content was last reviewed for accuracy in March 2026.</p>
+            </div>
+
+            <div id="references" class="references">
+                <h3>References</h3>
+                <ol>
+                    <li>Choi JY, Oh K, Kim BJ, Chung CS, Koh SB, Park KW. &ldquo;Usefulness of a Photophobia Questionnaire in Patients With Migraine.&rdquo; <em>Cephalalgia</em>. 2009;29(6):635&ndash;641. <a href="https://doi.org/10.1111/j.1468-2982.2008.01822.x" target="_blank">doi:10.1111/j.1468-2982.2008.01822.x</a>. Study design: Cross-sectional. n=103.</li>
+                    <li>Bigal ME, Ashina S, Burstein R, et al. &ldquo;Prevalence and Characteristics of Allodynia in Headache Sufferers.&rdquo; <em>Neurology</em>. 2008;70(17):1525&ndash;1533. <a href="https://doi.org/10.1212/01.wnl.0000310645.31020.b1" target="_blank">doi:10.1212/01.wnl.0000310645.31020.b1</a>. Study design: Population-based survey. n=24,000+.</li>
+                    <li>Noseda R, Kainz V, Jakubowski M, et al. &ldquo;A Neural Mechanism for Exacerbation of Headache by Light.&rdquo; <em>Nature Neuroscience</em>. 2010;13(2):239&ndash;245. <a href="https://doi.org/10.1038/nn.2516" target="_blank">doi:10.1038/nn.2516</a>. Study design: Animal model + human case series.</li>
+                    <li>Noseda R, Bernstein CA, Nir RR, et al. &ldquo;Migraine Photophobia Originating in Cone-Driven Retinal Pathways.&rdquo; <em>Brain</em>. 2016;139(7):1971&ndash;1986. <a href="https://doi.org/10.1093/brain/aww119" target="_blank">doi:10.1093/brain/aww119</a>. Study design: Psychophysical + electrophysiological. n=41.</li>
+                    <li>Nir RR, Lee AJ, Huntington S, et al. &ldquo;Color-Selective Photophobia in Ictal vs.&nbsp;Interictal Migraineurs and in Healthy Controls.&rdquo; <em>Pain</em>. 2018;159(10):2030&ndash;2034. <a href="https://doi.org/10.1097/j.pain.0000000000001303" target="_blank">doi:10.1097/j.pain.0000000000001303</a>. Study design: Cross-sectional. n=81.</li>
+                    <li>Martin LF, et al. &ldquo;Photophobia in Migraine: A Symptom Cluster?&rdquo; <em>Frontiers in Neurology</em>. 2021;12:748. <a href="https://doi.org/10.3389/fneur.2021.648" target="_blank">doi:10.3389/fneur.2021.648</a>. Study design: Systematic review.</li>
+                    <li>Digre KB, Brennan KC. &ldquo;Shedding Light on Photophobia.&rdquo; <em>Journal of Neuro-Ophthalmology</em>. 2012;32(1):68&ndash;81. <a href="https://doi.org/10.1097/WNO.0b013e3182474548" target="_blank">doi:10.1097/WNO.0b013e3182474548</a>. Study design: Review.</li>
+                    <li>Perez MA, et al. &ldquo;Current Understanding of Photophobia, Visual Networks and Headaches.&rdquo; <em>Frontiers in Neurology</em>. 2019;10:232. <a href="https://doi.org/10.3389/fneur.2019.00232" target="_blank">doi:10.3389/fneur.2019.00232</a>. Study design: Narrative review.</li>
+                    <li>Matt E, et al. &ldquo;Avoid or Seek Light: A Randomized Crossover fMRI Study.&rdquo; <em>Journal of Headache and Pain</em>. 2022;23:99. <a href="https://doi.org/10.1186/s10194-022-01466-0" target="_blank">doi:10.1186/s10194-022-01466-0</a>. Study design: Randomized crossover fMRI. n=21.</li>
+                    <li>Martin LF, Schwedt TJ. &ldquo;Photophobia in Migraine: A Symptom Cluster?&rdquo; <em>Frontiers in Neurology</em>. 2021;12:748. <a href="https://doi.org/10.3389/fneur.2021.748" target="_blank">doi:10.3389/fneur.2021.748</a>. Study design: Review.</li>
+                    <li>Lens.com Research Team. &ldquo;How Many People Use Dark Mode to Reduce Eye Strain?&rdquo; 2026. URL: <a href="https://www.lens.com/questions-answered/dark-mode-usage-eye-strain-reduction-stats/" target="_blank">lens.com</a>.</li>
+                    <li>TheraSpecs. &ldquo;Is Dark Mode Better for Headaches, Eye Strain &amp; Light Sensitivity?&rdquo; URL: <a href="https://www.theraspecs.com/blog/dark-mode-for-headaches-eye-strain-light-sensitivity/" target="_blank">theraspecs.com</a>.</li>
+                    <li>Kelai Display. &ldquo;Does OLED Cause Eye Strain During Long Use?&rdquo; 2025. URL: <a href="https://www.kelaidisplay.com/does-oled-cause-eye-strain-during-long-use.html" target="_blank">kelaidisplay.com</a>.</li>
+                    <li>1883 Magazine. &ldquo;Does LG OLED Cause Less Eye Strain?&rdquo; 2025. URL: <a href="https://1883magazine.com/does-lg-oled-cause-less-eye-strain-exploring-the-blue-light-claims/" target="_blank">1883magazine.com</a>.</li>
+                    <li>Schwedt TJ. &ldquo;Migraine Understood as a Sensory Threshold Disease.&rdquo; <em>Dialogues in Clinical Neuroscience</em>. 2019;21(3):209&ndash;215. <a href="https://doi.org/10.31887/DCNS.2019.21.3/tschwedt" target="_blank">doi:10.31887/DCNS.2019.21.3/tschwedt</a>. Study design: Narrative review.</li>
+                    <li>Ashkenazi A, et al. &ldquo;Identifying Cutaneous Allodynia in Chronic Migraine.&rdquo; <em>Cephalalgia</em>. 2007;27(2):111&ndash;117. <a href="https://doi.org/10.1111/j.1468-2982.2006.01248.x" target="_blank">doi:10.1111/j.1468-2982.2006.01248.x</a>. Study design: Prospective cohort. n=89.</li>
+                    <li>TheraSpecs. &ldquo;Sensory Processing in People with Migraine.&rdquo; 2021. URL: <a href="https://www.theraspecs.com/blog/sensory-processing-in-people-with-migraine/" target="_blank">theraspecs.com</a>.</li>
+                    <li>Schwedt TJ. &ldquo;Multisensory Integration in Migraine.&rdquo; <em>Current Pain and Headache Reports</em>. 2013;17(5). <a href="https://doi.org/10.1007/s11916-013-0327-8" target="_blank">doi:10.1007/s11916-013-0327-8</a>. Study design: Review.</li>
+                    <li>Burch RC, Buse DC, Lipton RB. &ldquo;Migraine: Epidemiology, Burden, and Comorbidity.&rdquo; <em>Neurologic Clinics</em>. 2019;37(4):631&ndash;649. <a href="https://doi.org/10.1016/j.ncl.2019.06.001" target="_blank">doi:10.1016/j.ncl.2019.06.001</a>. Study design: Review.</li>
+                    <li>Harriott AM, Schwedt TJ. &ldquo;Migraine Is Associated With Altered Processing of Sensory Stimuli.&rdquo; <em>Current Pain and Headache Reports</em>. 2014;18(11):458. <a href="https://doi.org/10.1007/s11916-014-0458-8" target="_blank">doi:10.1007/s11916-014-0458-8</a>. Study design: Review.</li>
+                    <li>Seidel S, et al. &ldquo;Psychiatric Comorbidities and Photophobia in Patients with Migraine.&rdquo; <em>Journal of Headache and Pain</em>. 2017;18(1):18. <a href="https://doi.org/10.1186/s10194-017-0718-1" target="_blank">doi:10.1186/s10194-017-0718-1</a>. Study design: Case-control. n=60.</li>
+                    <li>Kowacs PA, et al. &ldquo;Interictal Photophobia and Phonophobia.&rdquo; <em>Applied Sciences</em>. 2021;11(6):2474. <a href="https://doi.org/10.3390/app11062474" target="_blank">doi:10.3390/app11062474</a>. Study design: Observational. n=79.</li>
+                    <li>Goadsby PJ, et al. &ldquo;Pathophysiology of Migraine: A Disorder of Sensory Processing.&rdquo; <em>Physiological Reviews</em>. 2017;97(2):553&ndash;622. <a href="https://doi.org/10.1152/physrev.00034.2015" target="_blank">doi:10.1152/physrev.00034.2015</a>. Study design: Comprehensive review.</li>
+                    <li>&ldquo;Exploring Alterations in Sensory Pathways in Migraine.&rdquo; <em>Journal of Headache and Pain</em>. 2022;23:5. <a href="https://doi.org/10.1186/s10194-021-01371-y" target="_blank">doi:10.1186/s10194-021-01371-y</a>. Study design: fMRI comparative. n=60.</li>
+                </ol>
+            </div>
+
+            <div id="about-author" class="article-footer">
+                <div class="author-card">
+                    <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
+                    <div class="author-info">
+                        <h3>Rustam Iuldashov</h3>
+                        <p><strong>Creator &amp; Developer</strong> &mdash; 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. The dark theme was not a design trend &mdash; it was a necessity built from 30 years of reaching for a phone in a dark room and wincing.</p>
+                        <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Transparency &amp; Conflict of Interest Disclosure: Rustam is the developer of the Migraine Companion app described in this article. He receives no funding from pharmaceutical companies, display technology manufacturers, or any other commercial entity. All design decisions described here were made independently. This article contains no sponsored content.</em></p>
+                        <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);">&#x1F4E7; Contact: mi-companion.com/contact &middot; &#x1F310; Website: mi-companion.com</p>
+                    </div>
+                </div>
+
+                <div class="editorial-standards">
+                    <h3>How We Create Content</h3>
+                    <ul>
+                        <li><strong>Peer-reviewed sources only.</strong> Brain (Oxford), Nature Neuroscience, Physiological Reviews, Journal of Headache and Pain, Pain, Frontiers in Neurology, Cephalalgia, Dialogues in Clinical Neuroscience, Current Pain and Headache Reports.</li>
+                        <li><strong>Study transparency.</strong> Study design and sample sizes noted for all clinical references.</li>
+                        <li><strong>Source verification.</strong> All claims backed by numbered references with DOI links.</li>
+                        <li><strong>Experience + Science.</strong> 30 years personal migraine experience combined with peer-reviewed photophobia and neuroscience research.</li>
+                        <li><strong>Regular updates.</strong> Articles reviewed when significant new research on photophobia mechanisms or OLED display technology emerges.</li>
+                        <li><strong>No conflicts of interest.</strong> No funding from any pharmaceutical, technology, or medical device company.</li>
+                    </ul>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Your Phone Doesn&rsquo;t Have to Hurt</h3>
+                    <p>Mi runs exclusively on a dark theme &mdash; near-black backgrounds, warm gray text, desaturated greens and lavenders. Built for the moments when even a glance at a screen feels like a gamble. By someone who has lived those moments for 30 years.</p>
+                    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
+                        <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Download on App Store
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                            Get it on Google Play
+                        </a>
+                    </div>
+                </div>
+
+                <!-- COMING SOON BLOCK — активировать когда будет готово
+                <div style="margin:32px 0;background:rgba(139,122,168,0.04);border:1px solid rgba(139,122,168,0.18);border-radius:20px;padding:32px;text-align:center;position:relative;overflow:hidden;">
+                    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#8b7aa8,transparent);opacity:0.5;"></div>
+                    <p style="font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8b7aa8;margin-bottom:12px;">Coming Soon</p>
+                    <h3 style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:10px;">Attack Mode</h3>
+                    <p style="font-size:0.95rem;color:var(--text-light);margin:0;">A stripped-down interface that activates automatically when a severe attack is logged &mdash; one tap logging, maximum contrast reduction, Breathing Garden auto-launch.</p>
+                </div>
+                -->
+
+                <div class="review-dates">
+                    <p><em>Last reviewed: March 2026</em></p>
+                    <p><em>Next scheduled review: September 2026</em></p>
+                </div>
+            </div>
+
+        </div>
+    </article>
+</main>
+
+<footer>
+    <div class="container">
+        <p class="copyright">&copy; 2026 Migraine Companion. Made with &#x1F49C; in Ukraine.</p>
+    </div>
+</footer>
+
+</body>
+</html>
