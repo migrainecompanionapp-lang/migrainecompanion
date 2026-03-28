@@ -181,7 +181,7 @@
         .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
         .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
 
-        .full-disclaimer { background: rgba(139,122,168, 0.04); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 48px 0; box-shadow: 0 2px 12px rgba(0,0,0, 0.10), inset 0 1px 0 rgba(139,122,168, 0.04); }
+        .full-disclaimer { background: rgba(139,122,168, 0.04); border: 1px solid rgba(139,122,168, 0.12); border-radius: 16px; padding: 28px; margin: 48px 0; box-shadow: 0 2px 12px rgba(0,0,0, 0.10), inset 0 1px 0 rgba(139,122,168, 0.04); }
         .full-disclaimer h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
         .full-disclaimer p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.7; }
         .full-disclaimer p:last-child { margin-bottom: 0; }
@@ -218,7 +218,7 @@
         .references li:nth-child(odd) { background: rgba(139,122,168, 0.03); }
         .references li:hover { background: rgba(139,122,168, 0.06); }
         .references a { color: var(--lavender); text-decoration: none; font-weight: 500; }
-      0.references a:hover { text-decoration: underline; }
+        .references a:hover { text-decoration: underline; }
 
         .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(139,122,168, 0.10); }
 
@@ -257,8 +257,8 @@
                 <p class="article-subtitle">The pain is gone but you&rsquo;re wrecked. What to eat, drink, and do &mdash; and what to avoid &mdash; during the postdrome. Practical hacks from the migraine community that actually help you recover faster.</p>
                 <div class="article-meta">
                     <span>&#x1F4C5; March 11, 2026</span>
-                  <span>&#x23F1; 6 min read</span>
-                  <span>&#x270D;&#xFE0F; Rustam Iuldashov</span>
+                    <span>&#x23F1; 6 min read</span>
+                    <span>&#x270D;&#xFE0F; Rustam Iuldashov</span>
                 </div>
             </div>
         </div>
@@ -291,7 +291,9 @@
 
                 <div class="separator"></div>
 
-                                <section class="article-section">
+                <!-- ======================== INTRO ======================== -->
+
+                <section class="article-section">
                     <p>The headache lifts. You open your eyes. And something is wrong.</p>
                     <p>Not pain &mdash; not exactly. Something deeper. A bone-level exhaustion that no amount of coffee can touch. A brain wrapped in wet cotton. The sense that someone drained your battery overnight, unplugged the charger, and left.</p>
                     <p>Welcome to the migraine postdrome. Neurologists call it the final phase of a migraine attack. The millions of people who drag themselves through it have a better name: the migraine hangover.</p>
@@ -300,10 +302,13 @@
 
                 <div class="separator"></div>
 
-                                <section class="article-section">
+                <!-- ======================== YOUR BRAIN ISN'T DONE ======================== -->
+
+                <section class="article-section">
                     <h2>Your Brain Isn&rsquo;t Done Yet</h2>
-                    <p>Here&rsquo;s the fact that changed how I think about the day after: the postdrome is not &ldquo;being tired after a bad headache.&rdquo; It is a <a href="article-postdrome.html">distinct neurological event</a> with measurable, visible changes in your brain.</p>
+                    <p>Here&rsquo;s the fact that changed how I think about the day after: the postdrome is not &ldquo;being tired after a bad headache.&rdquo; It is a distinct neurological event with measurable, visible changes in your brain.</p>
                     <p>A landmark prospective study tracked 120 migraine patients through electronic diaries over three months. The result: <strong>81% reported at least one nonheadache symptom</strong> after the pain had stopped.<sup>[1]</sup> Fatigue. Brain fog. A stiff neck. A ghostly residual discomfort &mdash; not quite a headache, but a shadow of one.</p>
+                    <p>And 81% may be an undercount. A 2023 meta-analysis pooling data across multiple studies found the proportion was likely even higher: <strong>97% in the only population-based study, 86% in clinic-based samples</strong>.<sup>[2]</sup> The most common individual symptoms? Fatigue (52%), concentration difficulties (35%), and mood changes (29%).<sup>[2]</sup></p>
 
                     <div class="highlight-box">
                         <p>If you feel destroyed the day after a migraine, you are not weak. You are in the overwhelming majority.</p>
@@ -314,7 +319,9 @@
 
                 <div class="separator"></div>
 
-                                <section class="article-section">
+                <!-- ======================== NEUROLOGICAL MARATHON ======================== -->
+
+                <section class="article-section">
                     <h2>The Neurological Marathon Aftermath</h2>
                     <p>Functional brain imaging has revealed something remarkable about the postdrome. Using arterial spin labeling MRI, researchers found <strong>widespread reduction in cerebral blood flow</strong> &mdash; in the frontal lobes, temporal lobes, thalamus, hypothalamus, and brainstem.<sup>[4][5]</sup> These are the regions that govern executive function, mood regulation, energy, and sensory processing. Essentially, every system you need to feel like a functioning human.</p>
                     <p>The analogy is almost too perfect: during a migraine, your brain runs a neurological marathon. The postdrome is the aftermath. Neural circuits depleted. Blood flow reduced. Processing power at a crawl.</p>
@@ -322,25 +329,29 @@
                     <p>And it explains something that frustrated me for years. One critical finding across studies: <strong>abortive medications &mdash; NSAIDs, triptans &mdash; resolve the headache but do not shorten the postdrome</strong>.<sup>[1][7]</sup> The pain stops. The recovery doesn&rsquo;t speed up. This isn&rsquo;t a failure of your medication. It&rsquo;s evidence that the postdrome is a separate biological process &mdash; not residual pain, but your brain&rsquo;s way of rebooting.</p>
                 </section>
 
-                                <figure class="article-image">
+                <!-- ======= INLINE IMAGE: THE RECOVERY TIMELINE ======= -->
+
+                <figure class="article-image">
                     <img src="images/postdrome_recovery_timeline.png" alt="The Recovery Timeline infographic showing migraine postdrome symptoms fading over 24 hours — fatigue, concentration difficulty, stiff neck, and light sensitivity above a horizontal timeline, with recovery actions below: sleep, electrolytes and water, complex carbs and protein, and a slow 10-minute walk. 81% experience postdrome symptoms, 93% return to normal within 24 hours." loading="lazy">
                     <figcaption>The Recovery Timeline: what happens in the 24 hours after the pain stops &mdash; and what to do about it. Data from Giffin et al., Neurology, 2016 (n=120) and Kelman, Cephalalgia, 2006 (n=827).</figcaption>
                 </figure>
 
                 <div class="separator"></div>
 
-                                <section class="article-section">
+                <!-- ======================== RECOVERY PLAYBOOK ======================== -->
+
+                <section class="article-section">
                     <h2>What Actually Helps: The Recovery Playbook</h2>
                     <p>No clinical trial has ever tested a treatment designed specifically for the postdrome. That&rsquo;s a gap in the research, and a significant one. But the science of what&rsquo;s happening in your brain &mdash; combined with decades of collective patient wisdom &mdash; points to clear, practical strategies.</p>
 
                     <h3>Hydrate Smarter, Not Just More</h3>
-                    <p>Your brain is roughly 75% water. Even a 1&ndash;2% drop in body water impairs cognition and worsens headache.<sup>[8]</sup> After a migraine &mdash; especially one involving vomiting, hours curled in a dark room, or simply forgetting to drink &mdash; your <a href="article-dehydration-equation.html">fluid and electrolyte balance</a> is disrupted.</p>
+                    <p>Your brain is roughly 75% water. Even a 1&ndash;2% drop in body water impairs cognition and worsens headache.<sup>[8]</sup> After a migraine &mdash; especially one involving vomiting, hours curled in a dark room, or simply forgetting to drink &mdash; your fluid and electrolyte balance is disrupted.</p>
                     <p>Plain water helps. But it&rsquo;s not enough. Adding electrolytes &mdash; sodium, potassium, magnesium &mdash; improves intestinal absorption and supports the nerve signaling your depleted brain needs.<sup>[9]</sup> A warm bone broth. Coconut water. A low-sugar electrolyte solution. These work better than water alone.</p>
                     <p>One key principle: <strong>small, frequent sips beat gulping a big glass</strong>. Drinking too much plain water without electrolytes can actually dilute your sodium levels, making things worse.<sup>[9]</sup></p>
                     <p>A cross-sectional study of 256 women with migraine found that those who drank 1.5 liters or more daily had significantly lower headache severity and disability.<sup>[10]</sup> Hydration won&rsquo;t cure migraine. But underhydrating certainly feeds it.</p>
 
                     <h3>Eat for Recovery, Not Comfort</h3>
-                    <p>Your brain&rsquo;s energy reserves are spent. The <a href="article-glucose-migraine.html">steady glucose</a> is what the brain craves: the hypothalamus drives food-seeking behavior as part of the recovery process.<sup>[11]</sup> Your brain is hungry. Literally.</p>
+                    <p>Your brain&rsquo;s energy reserves are spent. The craving for fast carbohydrates &mdash; bread, sugar, chocolate &mdash; may be biological: the hypothalamus drives food-seeking behavior as part of the recovery process.<sup>[11]</sup> Your brain is hungry. Literally.</p>
                     <p>But a blood sugar spike followed by a crash can deepen the cognitive fog. The better play: <strong>complex carbohydrates paired with protein</strong>. Oatmeal with nuts. Eggs on whole-grain toast. Avocado on a rice cake. These deliver steady glucose without the rollercoaster.</p>
                     <p>Pay special attention to magnesium-rich foods: dark leafy greens, bananas, pumpkin seeds, almonds. Electrolyte imbalances &mdash; particularly low magnesium &mdash; have been linked to heightened neuronal excitability.<sup>[9][12]</sup> Restoring magnesium may help calm the overactive circuits that are keeping you in recovery mode.</p>
 
@@ -363,27 +374,33 @@
 
                 <div class="separator"></div>
 
-                                <section class="article-section">
+                <!-- ======================== PERMISSION ======================== -->
+
+                <section class="article-section">
                     <h2>The Most Important Hack Is Permission</h2>
                     <p>Here is the thing nobody tells you about the migraine postdrome: the biggest obstacle to recovery is guilt.</p>
-                    <p>In one study, <strong>82.8% of postdrome patients reported a meaningful impact on their <a href="article-anxious-brain.html">quality of life</a></strong>.<sup>[7]</sup> Yet many of us push through &mdash; powering back to work, overriding the exhaustion, pretending we&rsquo;re fine because the headache is &ldquo;over.&rdquo;</p>
+                    <p>In one study, <strong>82.8% of postdrome patients reported a meaningful impact on their quality of life</strong>.<sup>[7]</sup> Yet many of us push through &mdash; powering back to work, overriding the exhaustion, pretending we&rsquo;re fine because the headache is &ldquo;over.&rdquo;</p>
                     <p>The postdrome is not weakness. It is not drama. It is your brain completing a biological process. Brain imaging proves it. Pushing too hard risks extending the recovery &mdash; or triggering a rebound attack.</p>
 
                     <div class="highlight-box">
-                        <p>Grant yourself the same grace you&rsquo;ve give someone recovering from the flu. Because neurologically, the comparison isn&rsquo;t far off.</p>
+                        <p>Grant yourself the same grace you&rsquo;d give someone recovering from the flu. Because neurologically, the comparison isn&rsquo;t far off.</p>
                     </div>
                 </section>
 
                 <div class="separator"></div>
 
-                                <div class="emergency-box">
+                <!-- ======================== EMERGENCY ======================== -->
+
+                <div class="emergency-box">
                     <h3>&#x26A0;&#xFE0F; When to Seek Emergency Care</h3>
                     <p>Seek immediate medical attention if you experience a <strong>sudden headache distinctly different</strong> from your usual migraine and more severe than any you&rsquo;ve had before, <strong>new neurological symptoms</strong> such as vision loss, one-sided weakness, confusion, or difficulty speaking, headache accompanied by <strong>fever and stiff neck</strong>, or symptoms that <strong>progressively worsen</strong> instead of gradually resolving.</p>
                 </div>
 
                 <div class="separator"></div>
 
-                                <div class="related-box">
+                <!-- ======================== RELATED ======================== -->
+
+                <div class="related-box">
                     <h3>Deepen Your Understanding</h3>
                     <div class="related-grid">
                         <a href="article-emergency-kit.html" class="related-card">
@@ -397,7 +414,9 @@
                     </div>
                 </div>
 
-                                <div class="full-disclaimer">
+                <!-- ======================== FULL DISCLAIMER ======================== -->
+
+                <div class="full-disclaimer">
                     <h3>&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
                     <p>This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
                     <p>All clinical claims in this article are sourced from peer-reviewed research published in indexed medical journals. Study designs and sample sizes are noted where applicable.</p>
@@ -405,11 +424,13 @@
                     <p>Hydration and nutritional strategies described in this article are general wellness recommendations and should complement &mdash; never replace &mdash; professional medical care. This content was last reviewed for accuracy on March 11, 2026.</p>
                 </div>
 
-                                <div id="references" class="references">
+                <!-- ======================== REFERENCES ======================== -->
+
+                <div id="references" class="references">
                     <h3>References</h3>
                     <ol>
                         <li>Giffin NJ, Lipton RB, Silberstein SD, Olesen J, Goadsby PJ. &ldquo;The migraine postdrome: An electronic diary study.&rdquo; <em>Neurology</em>, 87(3):309&ndash;313 (2016). <a href="https://doi.org/10.1212/WNL.0000000000002789" target="_blank">doi:10.1212/WNL.0000000000002789</a>. Study design: Prospective electronic diary study. n=120.</li>
-                        <li>Christensen RH, Eigenbrodt AK, Ashina H, Steiner TJ, Ashina M. &ldquo;What proportion of people with migraine report postdromal symptoms? A systematic review and meta-analysis of observational studies reporting prevalence or relative frequency.&rdquo; <em>Cephalalgia</em>, 43(10):3331024231206376 (2023). <a href="https://doi.org/10.1177/03331024231206376" target="_blank">doi:10.1177/03331024231206376</a>. Study design: Systematic review and meta-analysis. n=14 studies pooled.</li>
+                        <li>Christensen RH, Eigenbrodt AK, Ashina H, Steiner TJ, Ashina M. &ldquo;What proportion of people with migraine report postdromal symptoms? A systematic review and meta-analysis of observational studies.&rdquo; <em>Cephalalgia</em>, 43(10):3331024231206376 (2023). <a href="https://doi.org/10.1177/03331024231206376" target="_blank">doi:10.1177/03331024231206376</a>. Study design: Systematic review and meta-analysis. n=14 studies pooled.</li>
                         <li>Kelman L. &ldquo;The postdrome of the acute migraine attack.&rdquo; <em>Cephalalgia</em>, 26(2):214&ndash;220 (2006). <a href="https://doi.org/10.1111/j.1468-2982.2005.01026.x" target="_blank">doi:10.1111/j.1468-2982.2005.01026.x</a>. Study design: Retrospective clinical survey. n=827.</li>
                         <li>Bose P, Karsan N, Zelaya F, Goadsby PJ. &ldquo;Alterations in cerebral blood flow during the postdrome phase of a migraine attack captured with arterial spin labelled (ASL) MRI.&rdquo; <em>Journal of Neurology, Neurosurgery &amp; Psychiatry</em>, 88:A9 (2017). <a href="https://doi.org/10.1136/jnnp-2017-ABN.26" target="_blank">doi:10.1136/jnnp-2017-ABN.26</a>. Study design: Functional neuroimaging study. n=12.</li>
                         <li>Bose P, Karsan N, Goadsby PJ. &ldquo;The Migraine Postdrome.&rdquo; <em>Continuum (Minneap Minn)</em>, 24(4):1023&ndash;1031 (2018). <a href="https://doi.org/10.1212/CON.0000000000000626" target="_blank">doi:10.1212/CON.0000000000000626</a>. Study design: Clinical review.</li>
@@ -432,7 +453,9 @@
                     </ol>
                 </div>
 
-                                <div id="about-author" class="article-footer">
+                <!-- ======================== AUTHOR + EDITORIAL + CTA ======================== -->
+
+                <div id="about-author" class="article-footer">
                     <div class="author-card">
                         <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
                         <div class="author-info">
@@ -457,7 +480,7 @@
 
                     <div class="cta-box">
                         <h3>Track Your Recovery. Understand Your Patterns.</h3>
-                        <p>Migraine Companion helps you log every phase of an attack &mdash; including the postdrome. See how long your recovery really takes, what helps, and <a href="article-building-migraine-team.html">share the data with your doctor</a>.</p>
+                        <p>Migraine Companion helps you log every phase of an attack &mdash; including the postdrome. See how long your recovery really takes, what helps, and share the data with your doctor.</p>
                         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
                             <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
