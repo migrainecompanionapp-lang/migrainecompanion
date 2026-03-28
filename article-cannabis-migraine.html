@@ -110,7 +110,9 @@
         .highlight-box { background: var(--green-soft); border-left: 3px solid var(--green); padding: 24px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; }
         .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; }
 
-        .separator { text-align: center; margin: 60px 0; color: var(--lavender); font-size: 1.5rem; opacity: 0.5; }
+        .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
+        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168, 0.25) 30%, rgba(139,122,168, 0.40) 50%, rgba(139,122,168, 0.25) 70%, transparent 100%); }
+        .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(139,122,168, 0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
 
         .data-card { background: var(--teal-soft); border-left: 4px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 12px 12px 0; }
         .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
@@ -199,7 +201,7 @@
                 <h1>The Cannabis Question: Relief, Trigger, or Both?</h1>
                 <p class="article-subtitle">Some swear it aborts attacks. Others say it makes them worse. As legalization expands and the first clinical trials report results, here&rsquo;s what science actually knows &mdash; and doesn&rsquo;t &mdash; about cannabis and migraine.</p>
                 <div class="article-meta">
-                    <span>&#x1F4C5; March 2026</span>
+                    <span>&#x1F4C5; March 13, 2026</span>
                     <span>&#x23F1; 8 min read</span>
                     <span>&#x270D;&#xFE00; Rustam Iuldashov</span>
                 </div>
@@ -231,7 +233,7 @@
                     </ul>
                 </div>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <p>In 1892, Sir William Osler &mdash; a founder of modern medicine &mdash; called cannabis &ldquo;probably the most satisfactory remedy&rdquo; for migraine. Doctors prescribed it for the next 45 years. Then prohibition arrived, research stopped, and a century of silence followed.</p>
@@ -241,7 +243,7 @@
                     <p>Welcome to the most complicated question in migraine medicine.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Your Brain Already Makes Cannabis</h2>
@@ -262,7 +264,7 @@
                     <figcaption>The Endocannabinoid Gap &mdash; chronic migraine patients have dramatically lower anandamide levels in cerebrospinal fluid compared to healthy controls. The deficit that may explain why cannabis helps some migraine patients. Sarchielli et al., Neuropsychopharmacology (2007), n=35. [3]</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Trial That Changed the Conversation</h2>
@@ -279,7 +281,7 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The CGRP Connection Hiding in Plain Sight</h2>
@@ -295,7 +297,7 @@
                     <p>These may be signs of a stroke or other life-threatening event. Do not use this article to self-diagnose or self-treat.</p>
                 </div>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Dark Side: When Relief Becomes Rebound</h2>
@@ -312,13 +314,13 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Estrogen Factor</h2>
                     <p>Migraine affects three times more women than men. The endocannabinoid story has a gender chapter &mdash; and it may be the most underappreciated angle in this entire field.</p>
                     <p>Women with migraine show heightened activity of FAAH, the enzyme that breaks down anandamide, along with increased activity of the anandamide membrane transporter in their platelets.<sup>[14, 15]</sup> The net effect: faster anandamide destruction, lower levels.</p>
-                    <p>The driver? Estrogen. It regulates FAAH expression. When estrogen drops &mdash; during menstruation, perimenopause, or postmenopause &mdash; FAAH activity rises, anandamide plummets, and the pain threshold falls.<sup>[15, 16]</sup> This may partly explain why menstrual migraine is so notoriously difficult to treat, and why some women report that cannabis provides specific relief during their period.</p>
+                    <p>The driver? Estrogen. It regulates FAAH expression. When estrogen drops &mdash; during menstruation, perimenopause, or postmenopause &mdash; FAAH activity rises, anandamide plумmets, and the pain threshold falls.<sup>[15, 16]</sup> This may partly explain why menstrual migraine is so notoriously difficult to treat, and why some women report that cannabis provides specific relief during their period.</p>
                     <p>Preclinical research consistently finds female rodents more sensitive to THC&rsquo;s effects than males.<sup>[16]</sup> At the University of Arizona, researcher Tally Largent-Milnes has been mapping endocannabinoid system expression in brain regions tied to migraine &mdash; including the periaqueductal gray &mdash; and finding it fundamentally different between sexes.</p>
                     <p>&ldquo;This seems to be a female-mediated system,&rdquo; Largent-Milnes said. &ldquo;It&rsquo;s likely that hormone regulation of the endocannabinoid system is driving female susceptibility to headache.&rdquo;<sup>[17]</sup></p>
                     <p>Her lab is now investigating whether boosting 2-AG &mdash; the second major endocannabinoid, which has been largely overlooked in migraine research &mdash; could offer targeted relief without the side effects of plant cannabis.<sup>[17]</sup> It&rsquo;s early. But it points toward a future where the treatment isn&rsquo;t the plant itself, but drugs designed to enhance what your body already makes.</p>
@@ -328,7 +330,7 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>What This Means for You</h2>
