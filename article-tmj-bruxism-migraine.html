@@ -64,16 +64,16 @@
             --teal: #6b9baa;
             --gold: #c5a059;
             --understanding: #7BA5C0;
-            --lavender-soft: rgba(139,122,168, 0.06);
-            --green-soft: rgba(106,170,122, 0.06);
-            --teal-soft: rgba(107,155,170, 0.06);
-            --gold-soft: rgba(197,160,89, 0.06);
-            --understanding-soft: rgba(123,165,192, 0.06);
-            --lavender-border: rgba(139,122,168, 0.18);
-            --green-border: rgba(106,170,122, 0.18);
-            --teal-border: rgba(107,155,170, 0.18);
-            --gold-border: rgba(197,160,89, 0.18);
-            --understanding-border: rgba(123,165,192, 0.18);
+            --lavender-soft: rgba(139,122,168,0.06);
+            --green-soft: rgba(106,170,122,0.06);
+            --teal-soft: rgba(107,155,170,0.06);
+            --gold-soft: rgba(197,160,89,0.06);
+            --understanding-soft: rgba(123,165,192,0.06);
+            --lavender-border: rgba(139,122,168,0.18);
+            --green-border: rgba(106,170,122,0.18);
+            --teal-border: rgba(107,155,170,0.18);
+            --gold-border: rgba(197,160,89,0.18);
+            --understanding-border: rgba(123,165,192,0.18);
             --text: #cdc6be;
             --text-light: #a09890;
             --text-dark: #847b73;
@@ -128,59 +128,54 @@
         .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
 
         .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
-        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168, 0.25) 30%, rgba(139,122,168, 0.40) 50%, rgba(139,122,168, 0.25) 70%, transparent 100%); }
-        .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(139,122,168, 0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
+        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168,0.25) 30%, rgba(139,122,168,0.40) 50%, rgba(139,122,168,0.25) 70%, transparent 100%); }
+        .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(139,122,168,0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
 
-        .key-takeaways { background: linear-gradient(180deg, rgba(107,155,170, 0.10) 0%, rgba(107,155,170, 0.04) 100%); border: 1px solid var(--teal-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0, 0.20), 0 1px 3px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(107,155,170, 0.12), inset 0 -1px 0 rgba(0,0,0, 0.10); }
+        .key-takeaways { background: linear-gradient(180deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.04) 100%); border: 1px solid var(--teal-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.15), inset 0 1px 0 rgba(107,155,170,0.12), inset 0 -1px 0 rgba(0,0,0,0.10); }
         .key-takeaways::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.6; border-radius: 20px 20px 0 0; }
-        .key-takeaways::after { content: ''; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); width: 70%; height: 60px; background: radial-gradient(ellipse, rgba(107,155,170, 0.08) 0%, transparent 70%); pointer-events: none; }
+        .key-takeaways::after { content: ''; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); width: 70%; height: 60px; background: radial-gradient(ellipse, rgba(107,155,170,0.08) 0%, transparent 70%); pointer-events: none; }
         .key-takeaways h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; position: relative; z-index: 1; }
         .key-takeaways ul { list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
-        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid rgba(107,155,170, 0.06); }
+        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid rgba(107,155,170,0.06); }
         .key-takeaways li:last-child { border-bottom: none; }
         .key-takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--teal); font-weight: 600; }
 
-        .highlight-box { background: linear-gradient(90deg, rgba(106,170,122, 0.10) 0%, rgba(106,170,122, 0.03) 100%); border-left: 3px solid var(--green); padding: 28px 32px 28px 36px; border-radius: 0 16px 16px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(106,170,122, 0.08), inset 0 -1px 0 rgba(0,0,0, 0.08); }
-        .highlight-box::before { content: '\201C'; position: absolute; top: 12px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; line-height: 1; color: rgba(106,170,122, 0.12); pointer-events: none; }
+        .highlight-box { background: linear-gradient(90deg, rgba(106,170,122,0.10) 0%, rgba(106,170,122,0.03) 100%); border-left: 3px solid var(--green); padding: 28px 32px 28px 36px; border-radius: 0 16px 16px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12), inset 0 1px 0 rgba(106,170,122,0.08), inset 0 -1px 0 rgba(0,0,0,0.08); }
+        .highlight-box::before { content: '\201C'; position: absolute; top: 12px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; line-height: 1; color: rgba(106,170,122,0.12); pointer-events: none; }
         .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; position: relative; z-index: 1; }
 
-        .data-card { background: linear-gradient(90deg, rgba(107,155,170, 0.10) 0%, rgba(107,155,170, 0.03) 100%); border-left: 3px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(107,155,170, 0.08), inset 0 -1px 0 rgba(0,0,0, 0.08); }
-        .data-card::before { content: ''; position: absolute; top: 0; left: 3px; right: 0; height: 1px; background: linear-gradient(90deg, rgba(107,155,170, 0.30), transparent 80%); border-radius: 0 14px 0 0; }
+        .data-card { background: linear-gradient(90deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.03) 100%); border-left: 3px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12), inset 0 1px 0 rgba(107,155,170,0.08), inset 0 -1px 0 rgba(0,0,0,0.08); }
+        .data-card::before { content: ''; position: absolute; top: 0; left: 3px; right: 0; height: 1px; background: linear-gradient(90deg, rgba(107,155,170,0.30), transparent 80%); border-radius: 0 14px 0 0; }
         .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
         .data-card p:last-child { margin-bottom: 0; }
 
-        .insight-card { background: linear-gradient(135deg, rgba(139,122,168, 0.10) 0%, rgba(139,122,168, 0.02) 100%); border-left: 3px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(139,122,168, 0.08), inset 0 -1px 0 rgba(0,0,0, 0.08); }
-        .insight-card::after { content: ''; position: absolute; bottom: -20px; right: 10%; width: 40%; height: 40px; background: radial-gradient(ellipse, rgba(139,122,168, 0.06) 0%, transparent 70%); pointer-events: none; }
+        .insight-card { background: linear-gradient(135deg, rgba(139,122,168,0.10) 0%, rgba(139,122,168,0.02) 100%); border-left: 3px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12), inset 0 1px 0 rgba(139,122,168,0.08), inset 0 -1px 0 rgba(0,0,0,0.08); }
+        .insight-card::after { content: ''; position: absolute; bottom: -20px; right: 10%; width: 40%; height: 40px; background: radial-gradient(ellipse, rgba(139,122,168,0.06) 0%, transparent 70%); pointer-events: none; }
         .insight-card p { margin-bottom: 16px; font-size: 0.98rem; position: relative; z-index: 1; }
         .insight-card p:last-child { margin-bottom: 0; }
 
-        .action-box { background: linear-gradient(90deg, rgba(106,170,122, 0.08) 0%, rgba(106,170,122, 0.02) 100%); border: 1px solid var(--green-border); border-radius: 16px; padding: 28px 32px; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), inset 0 1px 0 rgba(106,170,122, 0.06); }
-        .action-box h3 { color: var(--green); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
-        .action-box p { font-size: 0.98rem; margin-bottom: 12px; }
-        .action-box p:last-child { margin-bottom: 0; }
-
-        .emergency-box { background: linear-gradient(90deg, rgba(197,160,89, 0.10) 0%, rgba(197,160,89, 0.02) 100%); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 14px 14px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(197,160,89, 0.10), inset 0 -1px 0 rgba(0,0,0, 0.08); }
-        .emergency-box::after { content: ''; position: absolute; top: 20px; left: -2px; width: 40px; height: 40px; background: radial-gradient(circle, rgba(197,160,89, 0.12) 0%, transparent 70%); pointer-events: none; }
+        .emergency-box { background: linear-gradient(90deg, rgba(197,160,89,0.10) 0%, rgba(197,160,89,0.02) 100%); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 14px 14px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12), inset 0 1px 0 rgba(197,160,89,0.10), inset 0 -1px 0 rgba(0,0,0,0.08); }
+        .emergency-box::after { content: ''; position: absolute; top: 20px; left: -2px; width: 40px; height: 40px; background: radial-gradient(circle, rgba(197,160,89,0.12) 0%, transparent 70%); pointer-events: none; }
         .emergency-box h3 { color: var(--gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
         .emergency-box p { font-size: 0.98rem; margin-bottom: 12px; }
         .emergency-box p:last-child { margin-bottom: 0; }
 
-        .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(139,122,168, 0.10); box-shadow: 0 20px 60px rgba(0,0,0, 0.35), 0 4px 12px rgba(0,0,0, 0.20), inset 0 0 0 1px rgba(255,255,255, 0.03); }
+        .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(139,122,168,0.10); box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.20), inset 0 0 0 1px rgba(255,255,255,0.03); }
         .article-image img { width: 100%; height: auto; display: block; }
-        .article-image figcaption { background: linear-gradient(180deg, rgba(13,13,13, 0.60) 0%, rgba(20,20,25, 0.95) 100%); padding: 14px 20px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; border-top: 1px solid rgba(139,122,168, 0.08); }
+        .article-image figcaption { background: linear-gradient(180deg, rgba(13,13,13,0.60) 0%, rgba(20,20,25,0.95) 100%); padding: 14px 20px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; border-top: 1px solid rgba(139,122,168,0.08); }
 
-        .related-box { margin: 60px 0; padding: 40px; background: rgba(107,155,170, 0.03); border-radius: 24px; border: 1px solid var(--teal-border); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0, 0.18), inset 0 1px 0 rgba(107,155,170, 0.06); }
+        .related-box { margin: 60px 0; padding: 40px; background: rgba(107,155,170,0.03); border-radius: 24px; border: 1px solid var(--teal-border); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(107,155,170,0.06); }
         .related-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.4; }
         .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; position: relative; z-index: 1; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
-        .related-card { display: block; text-decoration: none; background: rgba(255,255,255, 0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 12px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(255,255,255, 0.03); }
+        .related-card { display: block; text-decoration: none; background: rgba(255,255,255,0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 2px 12px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.03); }
         .related-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--lavender), transparent); opacity: 0.3; transition: opacity 0.4s ease; }
-        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255, 0.04); border-color: rgba(139,122,168, 0.30); box-shadow: 0 12px 40px rgba(0,0,0, 0.25), 0 0 0 1px rgba(139,122,168, 0.10), inset 0 1px 0 rgba(255,255,255, 0.05); }
+        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.04); border-color: rgba(139,122,168,0.30); box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(139,122,168,0.10), inset 0 1px 0 rgba(255,255,255,0.05); }
         .related-card:hover::before { opacity: 0.7; }
         .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
         .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
 
-        .full-disclaimer { background: rgba(139,122,168, 0.04); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 48px 0; box-shadow: 0 2px 12px rgba(0,0,0, 0.10), inset 0 1px 0 rgba(139,122,168, 0.04); }
+        .full-disclaimer { background: rgba(139,122,168,0.04); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 48px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.10), inset 0 1px 0 rgba(139,122,168,0.04); }
         .full-disclaimer h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
         .full-disclaimer p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.7; }
         .full-disclaimer p:last-child { margin-bottom: 0; }
@@ -188,38 +183,38 @@
         .medical-disclaimer { font-size: 0.9rem; font-style: italic; color: var(--text-dark); text-align: center; padding: 16px 0; margin-bottom: 48px; border-bottom: 1px solid var(--lavender-border); }
 
         .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--lavender-border); }
-        .author-card { display: flex; align-items: center; gap: 20px; background: linear-gradient(135deg, rgba(139,122,168, 0.05) 0%, rgba(106,170,122, 0.03) 100%); border: 1px solid var(--lavender-border); border-radius: 20px; padding: 28px; margin-bottom: 32px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(255,255,255, 0.04), inset 0 -1px 0 rgba(0,0,0, 0.06); }
-        .author-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(139,122,168, 0.25), rgba(106,170,122, 0.20), transparent); }
+        .author-card { display: flex; align-items: center; gap: 20px; background: linear-gradient(135deg, rgba(139,122,168,0.05) 0%, rgba(106,170,122,0.03) 100%); border: 1px solid var(--lavender-border); border-radius: 20px; padding: 28px; margin-bottom: 32px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04), inset 0 -1px 0 rgba(0,0,0,0.06); }
+        .author-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(139,122,168,0.25), rgba(106,170,122,0.20), transparent); }
         .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--lavender), var(--green)); padding: 3px; flex-shrink: 0; }
         .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
         .author-info h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
         .author-info p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
 
-        .editorial-standards { background: rgba(139,122,168, 0.03); border: 1px solid rgba(139,122,168, 0.12); border-radius: 16px; padding: 28px; margin: 32px 0; box-shadow: 0 2px 12px rgba(0,0,0, 0.08), inset 0 1px 0 rgba(139,122,168, 0.04); }
+        .editorial-standards { background: rgba(139,122,168,0.03); border: 1px solid rgba(139,122,168,0.12); border-radius: 16px; padding: 28px; margin: 32px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.08), inset 0 1px 0 rgba(139,122,168,0.04); }
         .editorial-standards h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
         .editorial-standards ul { list-style: none; padding: 0; margin: 0; }
-        .editorial-standards li { font-size: 0.9rem; color: var(--text-light); padding: 8px 0; padding-left: 20px; position: relative; border-bottom: 1px solid rgba(139,122,168, 0.05); }
+        .editorial-standards li { font-size: 0.9rem; color: var(--text-light); padding: 8px 0; padding-left: 20px; position: relative; border-bottom: 1px solid rgba(139,122,168,0.05); }
         .editorial-standards li:last-child { border-bottom: none; }
         .editorial-standards li::before { content: '\2022'; position: absolute; left: 0; color: var(--lavender); opacity: 0.6; }
 
-        .cta-box { background: linear-gradient(180deg, rgba(123,165,192, 0.10) 0%, rgba(123,165,192, 0.03) 100%); border: 1px solid var(--understanding-border); border-radius: 20px; padding: 36px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0, 0.25), 0 2px 6px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(123,165,192, 0.15), inset 0 -1px 0 rgba(0,0,0, 0.08); }
+        .cta-box { background: linear-gradient(180deg, rgba(123,165,192,0.10) 0%, rgba(123,165,192,0.03) 100%); border: 1px solid var(--understanding-border); border-radius: 20px; padding: 36px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.15), inset 0 1px 0 rgba(123,165,192,0.15), inset 0 -1px 0 rgba(0,0,0,0.08); }
         .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--understanding), transparent); opacity: 0.7; }
-        .cta-box::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60%; height: 60%; background: radial-gradient(ellipse, rgba(123,165,192, 0.06) 0%, transparent 70%); pointer-events: none; }
+        .cta-box::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 60%; height: 60%; background: radial-gradient(ellipse, rgba(123,165,192,0.06) 0%, transparent 70%); pointer-events: none; }
         .cta-box h3 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; position: relative; z-index: 1; }
         .cta-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; position: relative; z-index: 1; }
-        .download-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(123,165,192,0.15), rgba(123,165,192,0.25)); border: 1px solid var(--understanding); border-radius: 12px; color: var(--understanding); text-decoration: none; font-weight: 600; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); flex: 1; max-width: 260px; justify-content: center; position: relative; z-index: 1; box-shadow: 0 2px 8px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(123,165,192, 0.10); }
-        .download-btn:hover { background: var(--understanding); color: var(--bg); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(123,165,192, 0.25), 0 2px 6px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(255,255,255, 0.20); }
+        .download-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(123,165,192,0.15), rgba(123,165,192,0.25)); border: 1px solid var(--understanding); border-radius: 12px; color: var(--understanding); text-decoration: none; font-weight: 600; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); flex: 1; max-width: 260px; justify-content: center; position: relative; z-index: 1; box-shadow: 0 2px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(123,165,192,0.10); }
+        .download-btn:hover { background: var(--understanding); color: var(--bg); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(123,165,192,0.25), 0 2px 6px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.20); }
 
         .references { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--lavender-border); }
         .references h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-light); margin-bottom: 16px; }
         .references ol { padding-left: 24px; }
         .references li { font-size: 0.84rem; color: var(--text-dark); margin-bottom: 4px; line-height: 1.6; padding: 8px 10px; border-radius: 6px; transition: background 0.2s ease; }
-        .references li:nth-child(odd) { background: rgba(139,122,168, 0.03); }
-        .references li:hover { background: rgba(139,122,168, 0.06); }
+        .references li:nth-child(odd) { background: rgba(139,122,168,0.03); }
+        .references li:hover { background: rgba(139,122,168,0.06); }
         .references a { color: var(--lavender); text-decoration: none; font-weight: 500; }
         .references a:hover { text-decoration: underline; }
 
-        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(139,122,168, 0.10); }
+        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(139,122,168,0.10); }
 
         footer { padding: 40px 0; border-top: 1px solid var(--lavender-border); }
         .copyright { text-align: center; color: var(--text-dark); font-size: 0.82rem; }
@@ -248,11 +243,11 @@
     </header>
     <main>
         <div class="article-hero">
-            <img src="images/tmj_night_shift_hero.png" alt="Person sleeping on their side in a dark bedroom, jaw visibly clenched with a warm amber glow at the masseter muscle, three luminous neural pathways rising from the jaw toward the forehead &mdash; V1 migraine zone in lavender, V2 cheek and teeth in teal, V3 jaw in green &mdash; revealing the hidden conversation between bruxism and migraine">
+            <img src="images/tmj_night_shift_hero.png" alt="Person sleeping on their side in a dark bedroom, jaw visibly clenched with a warm amber glow at the masseter muscle, three luminous neural pathways rising from the jaw toward the forehead — V1 migraine zone in lavender, V2 cheek and teeth in teal, V3 jaw in green — revealing the hidden conversation between bruxism and migraine">
             <div class="article-header">
                 <span class="article-tag">Understanding</span>
                 <h1>The Jaw You Clench at Night</h1>
-                <p class="article-subtitle">You wake up with head pain and blame the pillow. But your jaw has been clenching for hours. The surprising link between your teeth, your trigeminal nerve, and your migraine &mdash; and the simple device that might help.</p>
+                <p class="article-subtitle">You wake up with head pain and blame the pillow. But your jaw has been clenching for hours. The surprising link between your teeth, your trigeminal nerve, and your migraine — and the simple device that might help.</p>
                 <div class="article-meta">
                     <span>&#x1F4C5; March 12, 2026</span>
                     <span>&#x23F1; 7 min read</span>
@@ -278,28 +273,28 @@
                     <h3>Key Takeaways</h3>
                     <ul>
                         <li>TMD and migraine co-occur in roughly <strong>60% of cases</strong>, connected by the trigeminal nerve and CGRP pathways<sup>[1]</sup></li>
-                        <li>Bruxism &mdash; often undetected &mdash; can feed the neural sensitization cycle that sustains chronic migraine</li>
+                        <li>Bruxism — often undetected — can feed the neural sensitization cycle that sustains chronic migraine</li>
                         <li>Sleep bruxism and awake bruxism are <strong>distinct behaviors</strong> with different mechanisms and triggers<sup>[15]</sup></li>
-                        <li>The NTI-tss device is <strong>FDA-cleared</strong> for migraine prevention &mdash; in the pivotal trial, 82% of users saw a 77% reduction in events<sup>[19]</sup></li>
+                        <li>The NTI-tss device is <strong>FDA-cleared</strong> for migraine prevention — in the pivotal trial, 82% of users saw a 77% reduction in events<sup>[19]</sup></li>
                         <li>Treating TMD reduced headache disability by up to <strong>39%</strong> and analgesic use by up to <strong>46%</strong> at three months<sup>[17]</sup></li>
-                        <li>Your teeth should not touch except when eating &mdash; <strong>jaw awareness alone</strong> is a powerful first step</li>
+                        <li>Your teeth should not touch except when eating — <strong>jaw awareness alone</strong> is a powerful first step</li>
                     </ul>
                 </div>
 
                 <div class="separator"></div>
 
                 <section class="article-section">
-                    <p>You wake up with a headache and run through the usual suspects. Bad sleep. Weather. Stress. You reach for your triptan. But here&rsquo;s what you probably didn&rsquo;t check: your jaw.</p>
-                    <p>While you slept, your teeth were locked together with up to 250 pounds of force per square inch. Your masseter muscles &mdash; the strongest in the human body relative to their size &mdash; had been contracting for hours. And every contraction sent a signal straight to the nerve that also drives your migraine.</p>
-                    <p>This is the overlooked story of bruxism, TMJ disorders, and a pain pathway that roughly 60% of migraine patients share &mdash; most without knowing it.<sup>[1]</sup></p>
+                    <p>You wake up with a headache and run through the usual suspects. <a href="the-goldilocks-problem-sleep-migraine.html">Bad sleep</a>. Weather. <a href="article-anxious-brain.html">Stress</a>. You reach for your triptan. But here&rsquo;s what you probably didn&rsquo;t check: your jaw.</p>
+                    <p>While you slept, your teeth were locked together with up to 250 pounds of force per square inch. Your masseter muscles — the strongest in the human body relative to their size — had been contracting for hours. And every contraction sent a signal straight to the nerve that also drives your migraine.</p>
+                    <p>This is the overlooked story of bruxism, TMJ disorders, and a pain pathway that roughly 60% of migraine patients share — most without knowing it.<sup>[1]</sup></p>
                 </section>
 
                 <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Joint That Runs Everything</h2>
-                    <p>The temporomandibular joint sits just in front of each ear, connecting jawbone to skull. It is one of the body&rsquo;s most complex joints: a hinge that also slides, letting you chew, talk, yawn &mdash; and, unfortunately, clench. When this joint or the muscles surrounding it become painful and dysfunctional, the condition is called a temporomandibular disorder, or TMD.<sup>[2]</sup></p>
-                    <p>TMD is staggeringly common. Around 31% of adults show clinical signs.<sup>[3]</sup> As many as 40% to 70% of the general population experience at least some symptoms &mdash; jaw pain, clicking, limited mouth opening &mdash; at some point in their lives.<sup>[4]</sup> Women are affected twice as often as men. Peak onset: ages 20 to 50.<sup>[4]</sup></p>
+                    <p>The temporomandibular joint sits just in front of each ear, connecting jawbone to skull. It is one of the body&rsquo;s most complex joints: a hinge that also slides, letting you chew, talk, yawn — and, unfortunately, clench. When this joint or the muscles surrounding it become painful and dysfunctional, the condition is called a temporomandibular disorder, or TMD.<sup>[2]</sup></p>
+                    <p>TMD is staggeringly common. Around 31% of adults show clinical signs.<sup>[3]</sup> As many as 40% to 70% of the general population experience at least some symptoms — jaw pain, clicking, limited mouth opening — at some point in their lives.<sup>[4]</sup> Women are affected twice as often as men. Peak onset: ages 20 to 50.<sup>[4]</sup></p>
                     <p>Those numbers should look familiar. Migraine follows a nearly identical demographic curve. That overlap is not a coincidence.</p>
                 </section>
 
@@ -308,13 +303,13 @@
                 <section class="article-section">
                     <h2>The Nerve That Connects Your Jaw to Your Migraine</h2>
                     <p>Your trigeminal nerve is the largest cranial nerve, and it does more work than most people realize. Its three branches divide the face into territories. V1, the ophthalmic branch, covers the forehead and eyes. V2, the maxillary branch, covers the cheeks and upper teeth. V3, the mandibular branch, governs the lower jaw and every muscle you use to chew.<sup>[5]</sup></p>
-                    <p>Here is the critical detail: the meningeal lining of your brain &mdash; where migraine pain begins &mdash; is innervated primarily by V1, but it also receives fibers from V2 and V3.<sup>[4]</sup> All three branches converge in a single relay station deep inside your skull: the trigeminal ganglion.</p>
-                    <p>Think of the ganglion as a telephone switchboard. When one line rings &mdash; say V3, firing because your jaw muscles have been clenched for six hours &mdash; the signal spills over. V1 picks up the call. V2 picks up the call. In animal studies, injecting an irritant into the jaw muscles triggered a rapid increase in CGRP expression across all three branches, not just the one that was stimulated.<sup>[6]</sup> Jaw pain activated the migraine pathway directly.</p>
+                    <p>Here is the critical detail: the meningeal lining of your brain — where migraine pain begins — is innervated primarily by V1, but it also receives fibers from V2 and V3.<sup>[4]</sup> All three branches converge in a single relay station deep inside your skull: the trigeminal ganglion.</p>
+                    <p>Think of the ganglion as a telephone switchboard. When one line rings — say V3, firing because your jaw muscles have been clenched for six hours — the signal spills over. V1 picks up the call. V2 picks up the call. In animal studies, injecting an irritant into the jaw muscles triggered a rapid increase in CGRP expression across all three branches, not just the one that was stimulated.<sup>[6]</sup> Jaw pain activated the migraine pathway directly.</p>
                     <p>Scientists call this cross-excitation. It helps explain something clinicians have long observed: many migraine patients feel pain in their jaw, teeth, or cheeks during an attack. And many TMD patients develop headaches that look and feel exactly like migraine.<sup>[4][7]</sup> The two conditions are wired into the same neural circuit.</p>
 
                     <figure class="article-image">
-                        <img src="images/tmj_switchboard_trigeminal.png" alt="Scientific infographic showing the trigeminal ganglion as a telephone switchboard &mdash; green nerve impulses enter from V3 jaw branch, pass through the central relay hub where CGRP is released, and exit as lavender signals toward V1 migraine zone and teal signals toward V2 cheek branch, demonstrating cross-excitation" loading="lazy">
-                        <figcaption>The Switchboard: How your jaw talks to your migraine through one shared relay station. When V3 fires from bruxism, CGRP-mediated cross-excitation carries the signal to V1 &mdash; the migraine branch. [6]</figcaption>
+                        <img src="images/tmj_switchboard_trigeminal.png" alt="Scientific infographic showing the trigeminal ganglion as a telephone switchboard — green nerve impulses enter from V3 jaw branch, pass through the central relay hub where CGRP is released, and exit as lavender signals toward V1 migraine zone and teal signals toward V2 cheek branch, demonstrating cross-excitation" loading="lazy">
+                        <figcaption>The Switchboard: How your jaw talks to your migraine through one shared relay station. When V3 fires from bruxism, CGRP-mediated cross-excitation carries the signal to V1 — the migraine branch. [6]</figcaption>
                     </figure>
                 </section>
 
@@ -322,9 +317,9 @@
 
                 <section class="article-section">
                     <h2>CGRP: The Shared Currency of Pain</h2>
-                    <p>If you have followed migraine science in recent years, you know this molecule. CGRP &mdash; calcitonin gene-related peptide &mdash; is the target of the newest migraine medications: the monoclonal antibodies like erenumab and fremanezumab, and the gepants like rimegepant and ubrogepant.<sup>[8]</sup> During a migraine attack, trigeminal nerve endings release CGRP, causing vasodilation, neurogenic inflammation, and the sensitization of pain pathways that turns mild stimuli into agony.<sup>[8]</sup></p>
+                    <p>If you have followed migraine science in recent years, you know this molecule. CGRP — calcitonin gene-related peptide — is the target of the newest migraine medications: the monoclonal antibodies like erenumab and fremanezumab, and the gepants like rimegepant and ubrogepant.<sup>[8]</sup> During a migraine attack, trigeminal nerve endings release CGRP, causing vasodilation, neurogenic inflammation, and the sensitization of pain pathways that turns mild stimuli into agony.<sup>[8]</sup></p>
                     <p>But CGRP is not exclusive to migraine.</p>
-                    <p>When jaw muscles sustain chronic injury from bruxism, the trigeminal nerve fibers in the V3 region release CGRP into the ganglion.<sup>[6][9]</sup> That CGRP stimulates satellite glial cells. The glial cells release inflammatory cytokines. Those cytokines sensitize neighboring neurons in V1 and V2. The result is a bidirectional feedback loop: jaw problems amplify migraine, and migraine amplifies jaw problems &mdash; mediated by the exact same molecule your CGRP medication is designed to block.<sup>[9][10]</sup></p>
+                    <p>When jaw muscles sustain chronic injury from bruxism, the trigeminal nerve fibers in the V3 region release CGRP into the ganglion.<sup>[6][9]</sup> That CGRP stimulates satellite glial cells. The glial cells release inflammatory cytokines. Those cytokines sensitize neighboring neurons in V1 and V2. The result is a bidirectional feedback loop: jaw problems amplify migraine, and migraine amplifies jaw problems — mediated by the exact same <a href="article-cgrp-revolution.html">CGRP medication</a> your treatment is designed to block.<sup>[9][10]</sup></p>
 
                     <div class="highlight-box">
                         <p>This is why a headache specialist who ignores your jaw, or a dentist who ignores your migraine, may each be treating only half the problem.</p>
@@ -335,19 +330,19 @@
 
                 <section class="article-section">
                     <h2>The Clencher You Don&rsquo;t Know You Are</h2>
-                    <p>Bruxism &mdash; the repetitive clenching or grinding of teeth &mdash; comes in two forms. Sleep bruxism happens involuntarily during the night and is driven by central nervous system arousal. Awake bruxism happens during the day, often triggered by stress, concentration, or anxiety.<sup>[11]</sup> Globally, about one in five adults has one or both forms: sleep bruxism affects roughly 21%, awake bruxism about 23%.<sup>[12]</sup></p>
+                    <p>Bruxism — the repetitive clenching or grinding of teeth — comes in two forms. Sleep bruxism happens involuntarily during the night and is driven by central nervous system arousal. Awake bruxism happens during the day, often triggered by stress, concentration, or anxiety.<sup>[11]</sup> Globally, about one in five adults has one or both forms: sleep bruxism affects roughly 21%, awake bruxism about 23%.<sup>[12]</sup></p>
                     <p>Those numbers likely undercount. Many bruxers have no idea they grind.</p>
-                    <p>The pandemic revealed the scale. In a 2020 American Dental Association survey, 59% of dentists reported increased bruxism among their patients. By 2021, over 70% confirmed the trend.<sup>[13]</sup> Researchers dubbed it &ldquo;COVID clenching&rdquo; &mdash; a stress response that bypassed conscious awareness and went straight to the jaw. One study following 587 Israeli adults found that the odds of developing painful TMD in the post-pandemic period were 3.3 times higher than before the pandemic began.<sup>[14]</sup> Lockdowns ended. The clenching did not.</p>
+                    <p>The pandemic revealed the scale. In a 2020 American Dental Association survey, 59% of dentists reported increased bruxism among their patients. By 2021, over 70% confirmed the trend.<sup>[13]</sup> Researchers dubbed it &ldquo;COVID clenching&rdquo; — a stress response that bypassed conscious awareness and went straight to the jaw. One study following 587 Israeli adults found that the odds of developing painful TMD in the post-pandemic period were 3.3 times higher than before the pandemic began.<sup>[14]</sup> Lockdowns ended. The clenching did not.</p>
 
                     <div class="action-box">
                         <h3>Try This Right Now: The 60-Second Morning Jaw Test</h3>
-                        <p>Most bruxers have no idea they clench in their sleep. Before you reach for your morning migraine medication, run this quick mechanical check.</p>
-                        <p><strong>The Tongue Scallop.</strong> Stick out your tongue and look at the edges. Are they scalloped or wavy &mdash; like the crust of a pie? This happens when a clenched jaw presses your tongue against your teeth all night long.</p>
-                        <p><strong>The Cheek Line.</strong> Run your tongue along the inside of your cheeks. Can you feel a raised, horizontal ridge of tissue? That is linea alba &mdash; a friction callus from chronic clamping.<sup>[11]</sup></p>
-                        <p><strong>The Temple Press.</strong> Press firmly on your temples, then on the thick muscles at the angle of your jaw &mdash; the masseters. Do they feel bruised, sore, or deeply fatigued? This is not normal morning stiffness.</p>
+                        <p>Most bruxers have no idea they clench in their sleep. Before you reach for your <a href="article-morning-migraine.html">morning migraine medication</a>, run this quick mechanical check.</p>
+                        <p><strong>The Tongue Scallop.</strong> Stick out your tongue and look at the edges. Are they scalloped or wavy — like the crust of a pie? This happens when a clenched jaw presses your tongue against your teeth all night long.</p>
+                        <p><strong>The Cheek Line.</strong> Run your tongue along the inside of your cheeks. Can you feel a raised, horizontal ridge of tissue? That is linea alba — a friction callus from chronic clamping.<sup>[11]</sup></p>
+                        <p><strong>The Temple Press.</strong> Press firmly on your temples, then on the thick muscles at the angle of your jaw — the masseters. Do they feel bruised, sore, or deeply fatigued? This is not normal morning stiffness.</p>
                         <p><strong>The Straight Line Test.</strong> Open your mouth slowly in front of a mirror. Does your jaw drop straight down, or does it zigzag or deviate to one side before fully opening?</p>
                         <p><strong>The Flat Edge.</strong> Look closely at your canines and front teeth. Are the tips flattened, visibly worn down, or micro-chipped?</p>
-                        <p><strong>The Verdict:</strong> If you answered &ldquo;yes&rdquo; to two or more of these, your jaw is likely firing distress signals into your trigeminal nerve while you sleep. These are the same signs a dentist screens for during a TMD evaluation.<sup>[2]</sup> Bring these specific findings to both your neurologist and your dentist &mdash; they bridge the diagnostic gap between the two specialties.</p>
+                        <p><strong>The Verdict:</strong> If you answered &ldquo;yes&rdquo; to two or more of these, your jaw is likely firing distress signals into your trigeminal nerve while you sleep. These are the same signs a dentist screens for during a TMD evaluation.<sup>[2]</sup> Bring these specific findings to both your neurologist and your dentist — they bridge the diagnostic gap between the two specialties.</p>
                     </div>
 
                     <p>The relationship between bruxism and migraine is well-documented but nuanced. A 2024 review in the journal <em>Pain</em> emphasized that sleep and awake bruxism likely affect headache through different pathways. Awake bruxism, linked to anxiety, associates more closely with tension-type headache. Sleep bruxism, linked to central arousal, may share deeper pathophysiological roots with migraine.<sup>[15]</sup> In clinical reality, the lines blur. Many patients have both headache types. And the relentless muscle overactivity from either form of bruxism feeds into the trigeminal sensitization cascade that sustains chronic migraine.<sup>[15]</sup></p>
@@ -357,9 +352,9 @@
 
                 <section class="article-section">
                     <h2>The 60% Overlap You Need to Know About</h2>
-                    <p>The numbers are striking. A 2022 systematic review and meta-analysis pooling 31 studies found that approximately 59% of migraine patients also had TMD, and approximately 62% of TMD patients also had headaches.<sup>[1]</sup> The overlap was strongest for muscle-related TMD &mdash; the type most closely linked to bruxism.<sup>[1]</sup></p>
-                    <p>A large Korean cohort study tracking over 500,000 people from 2002 to 2015 confirmed the direction of risk: patients diagnosed with TMD had a significantly higher hazard ratio for developing migraine, particularly migraine without aura &mdash; the most common subtype.<sup>[16]</sup></p>
-                    <p>But the most practical finding comes from a treatment study. When chronic headache patients received TMD stabilization appliance therapy plus self-management, headache disability scores dropped 17%, analgesic consumption fell 18%, and headache symptoms decreased 19% &mdash; all within five weeks. Those who continued treatment reached 23%, 46%, and 39% improvements respectively at three months.<sup>[17]</sup></p>
+                    <p>The numbers are striking. A 2022 systematic review and meta-analysis pooling 31 studies found that approximately 59% of migraine patients also had TMD, and approximately 62% of TMD patients also had headaches.<sup>[1]</sup> The overlap was strongest for muscle-related TMD — the type most closely linked to bruxism.<sup>[1]</sup></p>
+                    <p>A large Korean cohort study tracking over 500,000 people from 2002 to 2015 confirmed the direction of risk: patients diagnosed with TMD had a significantly higher hazard ratio for developing migraine, particularly migraine without aura — the most common subtype.<sup>[16]</sup></p>
+                    <p>But the most practical finding comes from a treatment study. When chronic headache patients received TMD stabilization appliance therapy plus self-management, headache disability scores dropped 17%, analgesic consumption fell 18%, and headache symptoms decreased 19% — all within five weeks. Those who continued treatment reached 23%, 46%, and 39% improvements respectively at three months.<sup>[17]</sup></p>
 
                     <div class="data-card">
                         <p><strong>~59%</strong> of migraine patients also had TMD<sup>[1]</sup></p>
@@ -375,23 +370,23 @@
 
                 <section class="article-section">
                     <h2>What Actually Helps</h2>
-                    <p>If you recognize yourself in this article, here is where science meets action. Treatment works best as a layered strategy &mdash; mechanical, medical, and behavioral &mdash; tailored to the severity of your symptoms.</p>
+                    <p>If you recognize yourself in this article, here is where science meets action. Treatment works best as a layered strategy — mechanical, medical, and behavioral — tailored to the severity of your symptoms.</p>
 
                     <h3>Layer 1: The Mechanical Fix</h3>
                     <p>The front line is your mouth. A custom-fitted stabilization splint worn at night keeps the jaw in a neutral position and distributes bite forces evenly. Evidence supports its use for reducing both TMD pain and bruxism-related muscle overactivity.<sup>[18]</sup> One critical caveat: over-the-counter guards often fit poorly and can make things worse. A poorly fitted guard shifts your bite and can increase clenching. Custom means custom.</p>
-                    <p>For migraine specifically, the NTI-tss device deserves attention. This small anterior bite stop covers only the front teeth, preventing molars and canines from making contact &mdash; and dramatically reducing clenching force. It is FDA-cleared for migraine and tension-type headache prevention. In the pivotal trial, 82% of migraine patients experienced a 77% reduction in migraine events.<sup>[19]</sup> A systematic review of five RCTs confirmed its potential, though regular dental follow-up is essential to prevent unwanted bite changes.<sup>[20]</sup></p>
+                    <p>For migraine specifically, the NTI-tss device deserves attention. This small anterior bite stop covers only the front teeth, preventing molars and canines from making contact — and dramatically reducing clenching force. It is FDA-cleared for migraine and tension-type headache prevention. In the pivotal trial, 82% of migraine patients experienced a 77% reduction in migraine events.<sup>[19]</sup> A systematic review of five RCTs confirmed its potential, though regular dental follow-up is essential to prevent unwanted bite changes.<sup>[20]</sup></p>
 
                     <h3>Layer 2: The Chemical Block</h3>
-                    <p>When mechanical approaches are not enough, pharmacology adds another layer. Botulinum toxin &mdash; already approved for chronic migraine through the PREEMPT protocol &mdash; is increasingly used off-label in the masseter and temporalis muscles for bruxism and TMD. A 2026 review concluded it can be effective for myogenous TMD refractory to conventional therapy, especially when comorbid headache disorders are present.<sup>[21]</sup> A 2025 prospective study of 58 chronic migraine patients with bruxism found that two Botox cycles improved both migraine outcomes and bruxism-related pain, with no serious adverse events.<sup>[22]</sup></p>
+                    <p>When mechanical approaches are not enough, pharmacology adds another layer. <a href="article-botox-chronic-migraine.html">Botox</a> — already approved for chronic migraine through the PREEMPT protocol — is increasingly used off-label in the masseter and temporalis muscles for bruxism and TMD. A 2026 review concluded it can be effective for myogenous TMD refractory to conventional therapy, especially when comorbid headache disorders are present.<sup>[21]</sup> A 2025 prospective study of 58 chronic migraine patients with bruxism found that two Botox cycles improved both migraine outcomes and bruxism-related pain, with no serious adverse events.<sup>[22]</sup></p>
 
                     <div class="insight-card">
-                        <p>And here is a detail many patients miss: if you are already on a CGRP-targeting medication for migraine, you may be partially treating the TMD link without realizing it. CGRP mediates both conditions through the same trigeminal ganglion pathways.<sup>[9][10]</sup> This does not replace TMD-specific treatment &mdash; but it explains why some patients notice unexpected jaw relief on erenumab or fremanezumab.</p>
+                        <p>And here is a detail many patients miss: if you are already on a CGRP-targeting medication for migraine, you may be partially treating the TMD link without realizing it. CGRP mediates both conditions through the same trigeminal ganglion pathways.<sup>[9][10]</sup> This does not replace TMD-specific treatment — but it explains why some patients notice unexpected jaw relief on erenumab or fremanezumab.</p>
                     </div>
 
                     <h3>Layer 3: The Daily Reset</h3>
                     <p>Deceptively simple. Surprisingly powerful. These habits cost nothing and can begin today.</p>
-                    <p>Your teeth should never touch except when eating. Lips together, teeth apart, tongue resting gently on the roof of your mouth. This is the resting jaw position &mdash; and for most clenchers, it feels foreign at first. Set a phone alarm every two hours. Check your jaw. Unclench. Repeat until it becomes instinct.</p>
-                    <p>Gentle jaw stretches help: slow opening against the light resistance of your own hand placed under your chin. Heat or cold applied to the masseter &mdash; the thick muscle at the angle of your jaw, the one you can feel tighten when you bite down. And one intervention almost everyone overlooks: posture. Forward head position strains the jaw and neck muscles that feed directly into the trigeminal system.<sup>[23]</sup></p>
+                    <p>Your teeth should never touch except when eating. Lips together, teeth apart, tongue resting gently on the roof of your mouth. This is the resting jaw position — and for most clenchers, it feels foreign at first. Set a phone alarm every two hours. Check your jaw. Unclench. Repeat until it becomes instinct.</p>
+                    <p>Gentle jaw stretches help: slow opening against the light resistance of your own hand placed under your chin. Heat or cold applied to the masseter — the thick muscle at the angle of your jaw, the one you can feel tighten when you bite down. And one intervention almost everyone overlooks: posture. Forward head position strains the jaw and neck muscles that feed directly into the trigeminal system.<sup>[23]</sup></p>
 
                     <h3>Layer 4: The Professional Reset</h3>
                     <p>Physical therapy targeting the jaw and cervical spine can reduce both TMD symptoms and headache frequency. Randomized trials have demonstrated that orofacial manual therapy improves not only jaw function but also cervical movement and headache outcomes.<sup>[24]</sup> If your migraine has a jaw component, a physical therapist trained in orofacial pain can be the missing link between your neurologist&rsquo;s office and your dentist&rsquo;s chair.</p>
@@ -400,8 +395,8 @@
                 <div class="emergency-box">
                     <h3>&#x26A0;&#xFE0F; When to Seek Emergency Help</h3>
                     <p>Jaw pain combined with sudden onset of the worst headache of your life, numbness on one side of the face, difficulty speaking, or jaw locking that prevents you from opening your mouth demands immediate medical evaluation. Do not wait.</p>
-                    <p>If you experience sudden, severe headache unlike any previous migraine &mdash; especially with facial numbness, vision loss, or difficulty speaking &mdash; call your local emergency number immediately. Do not use this article to self-diagnose.</p>
-                    <p>For non-emergency symptoms that persist for more than two weeks, seek evaluation from both a headache specialist and a dentist or orofacial pain specialist. The evidence increasingly supports that managing TMD and migraine together &mdash; rather than treating either condition in isolation &mdash; produces better outcomes for both.<sup>[10][25]</sup></p>
+                    <p>If you experience sudden, severe headache unlike any previous migraine — especially with facial numbness, vision loss, or difficulty speaking — call your local emergency number immediately. Do not use this article to self-diagnose.</p>
+                    <p>For non-emergency symptoms that persist for more than two weeks, seek evaluation from both a headache specialist and a dentist or orofacial pain specialist. The evidence increasingly supports that managing TMD and migraine together — rather than treating either condition in isolation — produces better outcomes for both.<sup>[10][25]</sup></p>
                 </div>
 
                 <div class="related-box">
@@ -411,9 +406,9 @@
                             <h4>The CGRP Revolution</h4>
                             <p>The molecule that changed migraine treatment forever. How erenumab, fremanezumab, and the gepants target the same neuropeptide that links your jaw to your migraine.</p>
                         </a>
-                        <a href="article-vagus-nerve.html" class="related-card">
+                        <a href="article-vagus-nerve-migraine.html" class="related-card">
                             <h4>The Vagus Nerve Reset</h4>
-                            <p>Six evidence-based techniques to calm the nervous system that drives both migraine and jaw tension &mdash; from cold water to humming to slow breathing.</p>
+                            <p>Six evidence-based techniques to calm the nervous system that drives both migraine and jaw tension — from cold water to humming to slow breathing.</p>
                         </a>
                     </div>
                 </div>
@@ -422,7 +417,7 @@
                     <h3>&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
                     <p>This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, dentist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
                     <p>All clinical claims in this article are sourced from peer-reviewed research published in indexed medical journals. Study designs and sample sizes are noted where applicable.</p>
-                    <p>Always consult a qualified healthcare provider &mdash; whether a neurologist, headache specialist, dentist, or orofacial pain specialist &mdash; for questions about your individual health, TMD evaluation, bruxism treatment, or medication decisions. Occlusal splints and dental devices should only be prescribed and monitored by a qualified dental professional.</p>
+                    <p>Always consult a qualified healthcare provider — whether a neurologist, headache specialist, dentist, or orofacial pain specialist — for questions about your individual health, TMD evaluation, bruxism treatment, or medication decisions. Occlusal splints and dental devices should only be prescribed and monitored by a qualified dental professional.</p>
                     <p>This content was last reviewed for accuracy on March 12, 2026.</p>
                 </div>
 
@@ -430,29 +425,29 @@
                     <h3>References</h3>
                     <ol>
                         <li>Yakkaphan P, Smith JG, Chana P, Renton T, Lambru G. &ldquo;Temporomandibular disorder and headache prevalence: A systematic review and meta-analysis.&rdquo; <em>SAGE Open Medicine</em>, 10 (2022). <a href="https://doi.org/10.1177/25158163221097352" target="_blank">doi:10.1177/25158163221097352</a>. Study design: Systematic review &amp; meta-analysis. n=31 studies pooled.</li>
-                        <li>Schiffman E, Ohrbach R, Truelove E, et al. &ldquo;Diagnostic Criteria for Temporomandibular Disorders (DC/TMD) for clinical and research applications.&rdquo; <em>Journal of Oral &amp; Facial Pain and Headache</em>, 28(1):6&ndash;27 (2014). <a href="https://doi.org/10.11607/jop.1151" target="_blank">doi:10.11607/jop.1151</a>. Study design: Expert consensus/diagnostic criteria.</li>
+                        <li>Schiffman E, Ohrbach R, Truelove E, et al. &ldquo;Diagnostic Criteria for Temporomandibular Disorders (DC/TMD) for clinical and research applications.&rdquo; <em>Journal of Oral &amp; Facial Pain and Headache</em>, 28(1):6–27 (2014). <a href="https://doi.org/10.11607/jop.1151" target="_blank">doi:10.11607/jop.1151</a>. Study design: Expert consensus/diagnostic criteria.</li>
                         <li>Wieckiewicz M, et al. &ldquo;The continuous adverse impact of COVID-19 on temporomandibular disorders and bruxism.&rdquo; <em>BMC Oral Health</em>, 23:710 (2023). <a href="https://doi.org/10.1186/s12903-023-03447-4" target="_blank">doi:10.1186/s12903-023-03447-4</a>. Study design: Cross-sectional comparative. n=587.</li>
                         <li>Nature BDJ Editorial. &ldquo;Is painful temporomandibular disorder a real headache for many patients?&rdquo; <em>British Dental Journal</em>, 236 (2024). <a href="https://doi.org/10.1038/s41415-024-7178-1" target="_blank">doi:10.1038/s41415-024-7178-1</a>. Study design: Narrative review.</li>
-                        <li>Iyengar S, Ossipov MH, Johnson KW. &ldquo;CGRP and the Trigeminal System in Migraine.&rdquo; <em>Headache</em>, 59(5):659&ndash;681 (2019). <a href="https://doi.org/10.1111/head.13529" target="_blank">doi:10.1111/head.13529</a>. Study design: Narrative review.</li>
-                        <li>Thalakoti S, Patil VV, Damodaram S, et al. &ldquo;Neuron&ndash;Glia Signaling in Trigeminal Ganglion: Implications for Migraine Pathology.&rdquo; <em>Headache</em>, 47(7):1008&ndash;1023 (2007). <a href="https://doi.org/10.1111/j.1526-4610.2007.00854.x" target="_blank">doi:10.1111/j.1526-4610.2007.00854.x</a>. Study design: Preclinical (animal model).</li>
-                        <li>Gon&ccedil;alves DAG, Camparis CM, Speciali JG, et al. &ldquo;How to investigate and treat: migraine in patients with temporomandibular disorders.&rdquo; <em>Current Pain and Headache Reports</em>, 16(4):359&ndash;364 (2012). <a href="https://doi.org/10.1007/s11916-012-0268-9" target="_blank">doi:10.1007/s11916-012-0268-9</a>. Study design: Expert review.</li>
-                        <li>Goadsby PJ, Holland PR, Martins-Oliveira M, et al. &ldquo;Pathophysiology of migraine: a disorder of sensory processing.&rdquo; <em>Physiological Reviews</em>, 97(2):553&ndash;622 (2017). <a href="https://doi.org/10.1152/physrev.00034.2015" target="_blank">doi:10.1152/physrev.00034.2015</a>. Study design: Comprehensive review.</li>
+                        <li>Iyengar S, Ossipov MH, Johnson KW. &ldquo;CGRP and the Trigeminal System in Migraine.&rdquo; <em>Headache</em>, 59(5):659–681 (2019). <a href="https://doi.org/10.1111/head.13529" target="_blank">doi:10.1111/head.13529</a>. Study design: Narrative review.</li>
+                        <li>Thalakoti S, Patil VV, Damodaram S, et al. &ldquo;Neuron–Glia Signaling in Trigeminal Ganglion: Implications for Migraine Pathology.&rdquo; <em>Headache</em>, 47(7):1008–1023 (2007). <a href="https://doi.org/10.1111/j.1526-4610.2007.00854.x" target="_blank">doi:10.1111/j.1526-4610.2007.00854.x</a>. Study design: Preclinical (animal model).</li>
+                        <li>Gon&ccedil;alves DAG, Camparis CM, Speciali JG, et al. &ldquo;How to investigate and treat: migraine in patients with temporomandibular disorders.&rdquo; <em>Current Pain and Headache Reports</em>, 16(4):359–364 (2012). <a href="https://doi.org/10.1007/s11916-012-0268-9" target="_blank">doi:10.1007/s11916-012-0268-9</a>. Study design: Expert review.</li>
+                        <li>Goadsby PJ, Holland PR, Martins-Oliveira M, et al. &ldquo;Pathophysiology of migraine: a disorder of sensory processing.&rdquo; <em>Physiological Reviews</em>, 97(2):553–622 (2017). <a href="https://doi.org/10.1152/physrev.00034.2015" target="_blank">doi:10.1152/physrev.00034.2015</a>. Study design: Comprehensive review.</li>
                         <li>Sangalli L, Bhatt P, Bhatt A, et al. &ldquo;Calcitonin Gene-Related Peptide-Mediated Trigeminal Ganglionitis: The Biomolecular Link between Temporomandibular Disorders and Chronic Headaches.&rdquo; <em>Medicina</em>, 59(8):1379 (2023). <a href="https://doi.org/10.3390/medicina59081379" target="_blank">doi:10.3390/medicina59081379</a>. Study design: Scoping review.</li>
                         <li>Romero-Reyes M, Akerman S, Rapoport AM. &ldquo;Optimising combined treatment for migraine and temporomandibular disorders (TMDs).&rdquo; <em>Cephalalgia</em>, 45 (2025). <a href="https://doi.org/10.1177/03331024251368882" target="_blank">doi:10.1177/03331024251368882</a>. Study design: Expert review.</li>
-                        <li>Lobbezoo F, Ahlberg J, Raphael KG, et al. &ldquo;International consensus on the assessment of bruxism.&rdquo; <em>Journal of Oral Rehabilitation</em>, 45(11):837&ndash;844 (2018). <a href="https://doi.org/10.1111/joor.12663" target="_blank">doi:10.1111/joor.12663</a>. Study design: Expert consensus.</li>
+                        <li>Lobbezoo F, Ahlberg J, Raphael KG, et al. &ldquo;International consensus on the assessment of bruxism.&rdquo; <em>Journal of Oral Rehabilitation</em>, 45(11):837–844 (2018). <a href="https://doi.org/10.1111/joor.12663" target="_blank">doi:10.1111/joor.12663</a>. Study design: Expert consensus.</li>
                         <li>Nowak Z, et al. &ldquo;Global Prevalence of Sleep Bruxism and Awake Bruxism in Pediatric and Adult Populations: A Systematic Review and Meta-Analysis.&rdquo; <em>Journal of Clinical Medicine</em>, 13(14):4068 (2024). <a href="https://doi.org/10.3390/jcm13144068" target="_blank">doi:10.3390/jcm13144068</a>. Study design: Systematic review &amp; meta-analysis.</li>
-                        <li>American Dental Association. &ldquo;ADA Health Policy Institute &mdash; COVID-19 Impact on Dental Practices.&rdquo; (2020&ndash;2021). Survey data. n=nationwide U.S. dentist survey.</li>
+                        <li>American Dental Association. &ldquo;ADA Health Policy Institute — COVID-19 Impact on Dental Practices.&rdquo; (2020–2021). Survey data. n=nationwide U.S. dentist survey.</li>
                         <li>Wieckiewicz M, et al. &ldquo;The continuous adverse impact of COVID-19 on temporomandibular disorders and bruxism.&rdquo; <em>BMC Oral Health</em>, 23:710 (2023). <a href="https://doi.org/10.1186/s12903-023-03447-4" target="_blank">doi:10.1186/s12903-023-03447-4</a>. Study design: Cross-sectional comparative. n=587.</li>
-                        <li>Vo&szlig; LC, Basedau H, Svensson P, May A. &ldquo;Bruxism, temporomandibular disorders, and headache: a narrative review of correlations and causalities.&rdquo; <em>Pain</em>, 165(11):2409&ndash;2418 (2024). <a href="https://doi.org/10.1097/j.pain.0000000000003277" target="_blank">doi:10.1097/j.pain.0000000000003277</a>. Study design: Narrative review.</li>
+                        <li>Vo&szlig; LC, Basedau H, Svensson P, May A. &ldquo;Bruxism, temporomandibular disorders, and headache: a narrative review of correlations and causalities.&rdquo; <em>Pain</em>, 165(11):2409–2418 (2024). <a href="https://doi.org/10.1097/j.pain.0000000000003277" target="_blank">doi:10.1097/j.pain.0000000000003277</a>. Study design: Narrative review.</li>
                         <li>Kim SY, Min C, Oh DJ, Choi HG. &ldquo;Increased Risk of Migraine in Patients with Temporomandibular Disorder.&rdquo; <em>Journal of Clinical Medicine</em>, 9(9):3005 (2020). <a href="https://doi.org/10.3390/jcm9093005" target="_blank">doi:10.3390/jcm9093005</a>. Study design: Longitudinal cohort. n=3,884 TMD + 15,536 controls.</li>
-                        <li>Wright EF. &ldquo;Headache improvement through TMD stabilization appliance and self-management therapies.&rdquo; <em>Cranio</em>, 24(2):104&ndash;111 (2006). <a href="https://doi.org/10.1179/crn.2006.017" target="_blank">doi:10.1179/crn.2006.017</a>. Study design: Prospective intervention. n=20.</li>
-                        <li>T&uuml;rp JC, Stapelmann H. &ldquo;The NTI-tss device for the therapy of bruxism, temporomandibular disorders, and headache &mdash; Where do we stand? A qualitative systematic review.&rdquo; <em>BMC Oral Health</em>, 8:22 (2008). <a href="https://doi.org/10.1186/1472-6831-8-22" target="_blank">doi:10.1186/1472-6831-8-22</a>. Study design: Systematic review. n=5 RCTs.</li>
-                        <li>Shankland WE. &ldquo;Migraine and tension-type headache reduction through pericranial muscular suppression.&rdquo; <em>Cranio</em>, 19(4):269&ndash;278 (2001). <a href="https://doi.org/10.1080/08869634.2001.11746178" target="_blank">doi:10.1080/08869634.2001.11746178</a>. Study design: RCT. n=94.</li>
+                        <li>Wright EF. &ldquo;Headache improvement through TMD stabilization appliance and self-management therapies.&rdquo; <em>Cranio</em>, 24(2):104–111 (2006). <a href="https://doi.org/10.1179/crn.2006.017" target="_blank">doi:10.1179/crn.2006.017</a>. Study design: Prospective intervention. n=20.</li>
+                        <li>T&uuml;rp JC, Stapelmann H. &ldquo;The NTI-tss device for the therapy of bruxism, temporomandibular disorders, and headache — Where do we stand? A qualitative systematic review.&rdquo; <em>BMC Oral Health</em>, 8:22 (2008). <a href="https://doi.org/10.1186/1472-6831-8-22" target="_blank">doi:10.1186/1472-6831-8-22</a>. Study design: Systematic review. n=5 RCTs.</li>
+                        <li>Shankland WE. &ldquo;Migraine and tension-type headache reduction through pericranial muscular suppression.&rdquo; <em>Cranio</em>, 19(4):269–278 (2001). <a href="https://doi.org/10.1080/08869634.2001.11746178" target="_blank">doi:10.1080/08869634.2001.11746178</a>. Study design: RCT. n=94.</li>
                         <li>T&uuml;rp JC, Stapelmann H. Same as [18].</li>
                         <li>&ldquo;The Management of Myogenous Temporomandibular Disorders with Botulinum Toxin: A Narrative Review and Management Recommendations.&rdquo; <em>Current Pain and Headache Reports</em> (2026). <a href="https://doi.org/10.1007/s11916-025-01463-3" target="_blank">doi:10.1007/s11916-025-01463-3</a>. Study design: Narrative review.</li>
                         <li>Mitsikostas DD, et al. &ldquo;OnabotulinumtoxinA to Prevent Chronic Migraine with Comorbid Bruxism: Real-World Data from the GRASP Study Group.&rdquo; <em>Toxins</em>, 17(11):547 (2025). <a href="https://doi.org/10.3390/toxins17110547" target="_blank">doi:10.3390/toxins17110547</a>. Study design: Prospective observational. n=58.</li>
                         <li>Colonna A, et al. &ldquo;COVID-19 Pandemic and the Psyche, Bruxism, Temporomandibular Disorders Triangle.&rdquo; <em>Cranio</em> (2021). <a href="https://doi.org/10.1080/08869634.2021.2002043" target="_blank">doi:10.1080/08869634.2021.2002043</a>. Study design: Expert review.</li>
-                        <li>von Piekartz H, Hall T. &ldquo;Orofacial manual therapy improves cervical movement impairment associated with headache and features of temporomandibular dysfunction.&rdquo; <em>Manual Therapy</em>, 18(4):345&ndash;350 (2013). <a href="https://doi.org/10.1016/j.math.2012.12.005" target="_blank">doi:10.1016/j.math.2012.12.005</a>. Study design: RCT.</li>
+                        <li>von Piekartz H, Hall T. &ldquo;Orofacial manual therapy improves cervical movement impairment associated with headache and features of temporomandibular dysfunction.&rdquo; <em>Manual Therapy</em>, 18(4):345–350 (2013). <a href="https://doi.org/10.1016/j.math.2012.12.005" target="_blank">doi:10.1016/j.math.2012.12.005</a>. Study design: RCT.</li>
                         <li>Basedau H, Vo&szlig; LC, May A, Svensson P. &ldquo;Temporomandibular disorders patients with migraine symptoms have increased disease burden due to psychological conditions.&rdquo; <em>BMC Oral Health</em>, 25:468 (2025). <a href="https://doi.org/10.1186/s12903-025-05815-0" target="_blank">doi:10.1186/s12903-025-05815-0</a>. Study design: Prospective clinical. n=64.</li>
                     </ol>
                 </div>
@@ -462,9 +457,9 @@
                         <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
                         <div class="author-info">
                             <h3>Rustam Iuldashov</h3>
-                            <p><strong>Creator &amp; Developer</strong> &mdash; 30 years living with migraine. I&rsquo;ve spent decades waking up with headaches and blaming the pillow &mdash; until a dentist pointed to my jaw. That discovery changed how I understand my migraine, and it&rsquo;s why I wrote this article. Solo developer from Ukraine who built Migraine Companion during wartime. His approach combines first-hand patient experience with peer-reviewed medical research and narrative therapy principles (Michael White &amp; David Epston). He is not a medical professional.</p>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. I&rsquo;ve spent decades waking up with headaches and blaming the pillow — until a dentist pointed to my jaw. That discovery changed how I understand my migraine, and it&rsquo;s why I wrote this article. Solo developer from Ukraine who built Migraine Companion during wartime. His approach combines first-hand patient experience with peer-reviewed medical research and narrative therapy principles (Michael White &amp; David Epston). He is not a medical professional.</p>
                             <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Transparency &amp; Conflict of Interest Disclosure: Rustam is the developer of the Migraine Companion app. This article was written to educate and inform, not to promote the app. All scientific claims are independently sourced from peer-reviewed literature. The author has no financial relationships with any dental device manufacturer, pharmaceutical company producing CGRP medications, or botulinum toxin manufacturer mentioned in this article.</em></p>
-                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);">&#x1F4E7; Contact: mi-companion.com/contact &middot; &#x1F310; Website: mi-companion.com</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);">&#x1F4E7; Contact: mi-companion.com/contact · &#x1F310; Website: mi-companion.com</p>
                         </div>
                     </div>
 
@@ -482,7 +477,7 @@
 
                     <div class="cta-box">
                         <h3>Your Jaw Is Talking. Start Listening.</h3>
-                        <p>Migraine Companion helps you track jaw tension, clenching patterns, and morning symptoms alongside your migraine diary. Over time, the connection between your jaw and your head pain becomes visible &mdash; and actionable.</p>
+                        <p>Migraine Companion helps you track jaw tension, clenching patterns, and morning symptoms alongside your migraine diary. Over time, the connection between your jaw and your head pain becomes visible — and actionable.</p>
                         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
                             <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
