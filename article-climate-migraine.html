@@ -111,6 +111,7 @@
         .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; }
 
         .separator { text-align: center; margin: 60px 0; color: var(--lavender); font-size: 1.5rem; opacity: 0.5; }
+        .separator::after { content: '\25C6'; }
 
         .data-card { background: var(--teal-soft); border-left: 4px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 12px 12px 0; }
         .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
@@ -183,9 +184,8 @@
 
         @media (max-width: 768px) { h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } .article-hero { height: auto; min-height: 400px; align-items: flex-end; padding-bottom: 40px; } p { font-size: 1rem; } .article-content { padding: 40px 0 60px; } .author-card { flex-direction: column; text-align: center; } .data-card, .insight-card, .emergency-box { padding: 20px 24px; } .action-box { padding: 24px; } .article-meta { flex-direction: column; gap: 8px; } }
     </style>
-    <link rel="stylesheet" href="article-category-colors.css">
 </head>
-<body data-category="triggers">
+<body>
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
@@ -202,7 +202,7 @@
                 <div class="article-meta">
                     <span>&#x1F4C5; March 2026</span>
                     <span>&#x23F1; 8 min read</span>
-                    <span>&#x270D;&#xFE0F; Rustam Iuldashov</span>
+                    <span>&#x270D;&#xFE00; Rustam Iuldashov</span>
                 </div>
             </div>
         </div>
@@ -232,22 +232,20 @@
                     </ul>
                 </div>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- INTRO -->
                 <section class="article-section">
-                    <p>You know it before the forecast confirms it. The air thickens. Humidity presses against your temples like a slow hand. The weather app says 95&deg;F. Your brain says something worse.</p>
+                    <p><a href="article-prodrome-warning-signs.html">You know it</a> before the forecast confirms it. The air thickens. Humidity presses against your temples like a slow hand. The weather app says 95&deg;F. Your brain says something worse.</p>
                     <p>For the billion people worldwide living with migraine, climate change is not a policy debate. It&rsquo;s a prediction of pain &mdash; written in temperature, barometric pressure, and the invisible chemistry of polluted air. And the science is finally catching up with what your body has been telling you for years.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- THE 6% RULE -->
                 <section class="article-section">
                     <h2>The 6% Rule</h2>
                     <p>In 2024, Vincent Martin and colleagues at the University of Cincinnati cross-referenced 71,030 daily headache diary entries from 660 migraine patients with weather stations across the United States.<sup>[1]</sup> The finding was blunt: for every 10&deg;F increase in daily temperature, headache occurrence rose by 6%.<sup>[1]</sup></p>
                     <p>Six percent sounds small. It isn&rsquo;t. Climate models project average summer temperatures climbing 3&ndash;10&deg;F over the coming decades, depending on where you live. Compound that with day after day of accumulating heat, and you have a slow-motion amplifier for a disease that already affects one in seven adults.</p>
-                    <p>The biology is direct. Heat forces the body to shed warmth &mdash; blood vessels near the skin dilate, sweat glands fire, fluid and electrolytes drain. Dehydration follows. And dehydration lowers the migraine threshold: that invisible line between a normal day and an attack.<sup>[2]</sup> Your brain&rsquo;s trigeminal nerve &mdash; the master alarm system for migraine pain &mdash; grows more reactive in the process.</p>
+                    <p>The biology is direct. Heat forces the body to shed warmth &mdash; blood vessels near the skin dilate, sweat glands fire, fluid and electrolytes drain. <a href="article-dehydration-equation.html">Dehydration lowers the migraine threshold</a>: that invisible line between a normal day and an attack.<sup>[2]</sup> Your brain&rsquo;s trigeminal nerve &mdash; the master alarm system for migraine pain &mdash; grows more reactive in the process.</p>
                     <p>How reactive? A Beth Israel Deaconess Medical Center study of over 7,000 emergency patients found that a 5&deg;C rise in mean temperature within 24 hours raised the risk of a migraine-related ER visit by 7.5%.<sup>[3]</sup> Emergency rooms measure what epidemiologists count: more heat, more headache.</p>
 
                     <div class="data-card">
@@ -255,9 +253,8 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- 400K PEOPLE -->
                 <section class="article-section">
                     <h2>400,000 People. Twelve Years. One Warning.</h2>
                     <p>Temperature makes existing migraine worse. But what if it also creates new migraine patients?</p>
@@ -275,14 +272,13 @@
                     <figcaption>The Trigger Stack &mdash; climate delivers four triggers simultaneously. Each one lowers the migraine threshold. The last one tips you over. Heat + pollution synergy: 18% increased risk vs. ~2% from pollution alone on cooler days. [1, 9, 11, 12]</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- BRAIN'S WEATHER STATION -->
                 <section class="article-section">
                     <h2>Your Brain&rsquo;s Weather Station</h2>
                     <p>Why does climate hit the migraine brain harder than the average brain? The answer lives in a network called the trigeminovascular system &mdash; the nerve fibers and blood vessels that generate migraine pain.<sup>[5]</sup></p>
                     <p>Think of it as a home security system. In most brains, the alarm threshold is high. It takes a serious intrusion to set it off. In a migraine brain, the threshold is genetically lower. The alarm trips more easily. And climate delivers not one trigger but several &mdash; simultaneously.<sup>[6]</sup></p>
-                    <p>Heat drains fluids and disrupts serotonin, the neurotransmitter that helps regulate pain signaling.<sup>[7]</sup> When serotonin drops, the trigeminal system activates more easily, releasing calcitonin gene-related peptide &mdash; CGRP &mdash; the molecule now recognized as the central driver of migraine pain.<sup>[8]</sup></p>
+                    <p>Heat drains fluids and disrupts serotonin, the neurotransmitter that helps regulate pain signaling.<sup>[7]</sup> When serotonin drops, the trigeminal system activates more easily, releasing calcitonin gene-related peptide &mdash; CGRP &mdash; the molecule now recognized as the <a href="article-cgrp-revolution.html">central driver of migraine pain</a>.<sup>[8]</sup></p>
                     <p>Barometric pressure drops &mdash; common before storms and weather fronts &mdash; shift the pressure balance across sinus cavities and meningeal membranes, potentially triggering pain signals in sensitized nerves.<sup>[9]</sup> A Japanese study analyzing 336,951 headache events from 4,375 diary users found that a barometric drop within 6 hours was one of the strongest weather predictors of an attack.<sup>[9]</sup></p>
                     <p>Air pollution adds the third strike. Fine particulate matter (PM2.5) and NO&#x2082; don&rsquo;t just damage lungs. They cross into the bloodstream, drive systemic inflammation, and activate the same trigeminal pathways that produce migraine.<sup>[10]</sup> A 2025 meta-analysis of 31 studies confirmed significant associations between migraine attacks and PM2.5, PM10, NO&#x2082;, carbon monoxide, and ozone.<sup>[11]</sup></p>
                     <p>Here&rsquo;s what makes climate change uniquely dangerous for the migraine brain: these triggers don&rsquo;t add. They multiply. A Seoul study of 18,921 migraine ER visits found that the effect of particulate matter on migraine risk jumped dramatically on hot days &mdash; an 18% increase when pollution and heat collided, versus roughly 2% from pollution alone on cooler days.<sup>[12]</sup></p>
@@ -292,18 +288,16 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- EMERGENCY BOX -->
                 <div class="emergency-box">
-                    <h3>&#x26A0;&#xFE0F; When to Seek Emergency Help</h3>
+                    <h3>&#x26A0;&#xFE00; When to Seek Emergency Help</h3>
                     <p>Seek immediate medical attention if you experience a sudden, severe headache unlike anything you&rsquo;ve felt before (&ldquo;thunderclap headache&rdquo;), a headache with fever, stiff neck, confusion, seizures, double vision, weakness, numbness, or difficulty speaking, or a headache after a head injury.</p>
                     <p>Heat-related headache with altered consciousness, hot dry skin, or body temperature above 103&deg;F may indicate heat stroke &mdash; a medical emergency. Call your local emergency number immediately. Do not use this article to self-diagnose.</p>
                 </div>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- WHEN THE AIR BURNS -->
                 <section class="article-section">
                     <h2>When the Air Burns</h2>
                     <p>Wildfires are climate change&rsquo;s most visible signal &mdash; and their smoke is migraine fuel.</p>
@@ -316,9 +310,8 @@
                     <figcaption>When wildfire season becomes migraine season &mdash; the barrier between filtered indoor air and toxic outdoor air. Wildfire PM2.5 associated with 17% increase in headache ER visits per 10 &mu;g/m&sup3;. [13]</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- DISABILITY PARADOX -->
                 <section class="article-section">
                     <h2>The Disability Paradox</h2>
                     <p>Here&rsquo;s the part that rarely makes headlines.</p>
@@ -331,29 +324,26 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- LANCET WARNING -->
                 <section class="article-section">
                     <h2>The Lancet Warning</h2>
                     <p>In 2024, The Lancet Neurology published a sweeping review of 332 studies spanning 1968 to 2023, examining climate change across 19 neurological conditions.<sup>[15]</sup> The conclusion was direct: climate change is likely to increase attack frequency in people who already have migraine and contribute to new cases in susceptible individuals.<sup>[15]</sup></p>
-                    <p>Temperature extremes &mdash; both hot and cold &mdash; to which populations are unaccustomed posed the broadest threat.<sup>[15]</sup> So did wide daily temperature fluctuations. Nighttime temperatures drew particular concern: heat-disrupted sleep is a potent migraine trigger on its own.<sup>[15]</sup></p>
+                    <p>Temperature extremes &mdash; both hot and cold &mdash; to which populations are unaccustomed posed the broadest threat.<sup>[15]</sup> So did wide daily temperature fluctuations. Nighttime temperatures drew particular concern: heat-disrupted <a href="the-goldilocks-problem-sleep-migraine.html">sleep is a potent migraine trigger</a> on its own.<sup>[15]</sup></p>
                     <p>Lead author Sanjay Sisodiya of University College London noted that conditions are worsening faster than the research can track them, and factors that weren&rsquo;t severe enough to affect brain health in earlier studies may now be crossing critical thresholds.<sup>[15]</sup></p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- A NEW TRIGGER CATEGORY -->
                 <section class="article-section">
                     <h2>A New Trigger Category</h2>
                     <p>Traditional trigger management assumes you can avoid the offender. Skip the aged cheese. Dim the lights. Keep a steady sleep schedule. But you can&rsquo;t avoid the atmosphere.</p>
-                    <p>This is where trigger stacking becomes the essential concept.<sup>[16]</sup> Climate-related factors rarely act alone. A hot day with high humidity, falling barometric pressure, and poor air quality is a four-trigger assault on a migraine brain. Each one nudges the threshold lower. The last one pushes you over.</p>
+                    <p>This is where <a href="article-understanding-triggers.html">trigger stacking</a> becomes the essential concept.<sup>[16]</sup> Climate-related factors rarely act alone. A hot day with high humidity, falling barometric pressure, and poor air quality is a four-trigger assault on a migraine brain. Each one nudges the threshold lower. The last one pushes you over.</p>
                     <p>Understanding the stack is the first step toward defending against it.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
-                <!-- WHAT YOU CAN DO -->
                 <section class="article-section">
                     <h2>What You Can Do</h2>
                     <p>Knowledge of the mechanism gives you tools.</p>
@@ -379,7 +369,6 @@
                     <figcaption>The Climate Defense Kit &mdash; everyday tools of climate-migraine defense. A headache diary tracking weather data, air quality monitoring, hydration, preventive medication, and air filtration. You have more control than you think.</figcaption>
                 </figure>
 
-                <!-- THE BIGGER PICTURE -->
                 <section class="article-section">
                     <h2>The Bigger Picture</h2>
                     <p>Climate change is rewriting the conditions under which the migraine brain operates. Rising temperatures, shifting weather patterns, deteriorating air quality, and more frequent extreme events are converging on the most common neurological disorder on the planet.</p>
@@ -390,7 +379,6 @@
                     </div>
                 </section>
 
-                <!-- RELATED -->
                 <div class="related-box">
                     <h3>Deepen Your Understanding</h3>
                     <div class="related-grid">
@@ -405,7 +393,6 @@
                     </div>
                 </div>
 
-                <!-- FULL MEDICAL DISCLAIMER -->
                 <div id="medical-disclaimer" style="background:var(--lavender-soft);border:1px solid var(--lavender-border);border-radius:16px;padding:28px;margin:48px 0;">
                     <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:16px;">&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
                     <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
@@ -414,7 +401,6 @@
                     <p style="font-size:0.9rem;color:var(--text-light);margin:0;">Climate-related triggers interact differently with each person&rsquo;s physiology, and any changes to preventive medication, hydration strategies, or exposure management should be discussed with your doctor. This content was last reviewed for accuracy on March 2026.</p>
                 </div>
 
-                <!-- REFERENCES -->
                 <div id="references" class="references">
                     <h3>References</h3>
                     <ol>
@@ -438,12 +424,11 @@
                         <li>Yang AC, Fuh JL, Huang NE, Shia BC, Wang SJ. &ldquo;Patients with migraine are right about their perception of temperature as a trigger: time series analysis of headache diary data.&rdquo; <em>The Journal of Headache and Pain</em>, 16:34 (2015). <a href="https://doi.org/10.1186/s10194-015-0533-5" target="_blank">doi:10.1186/s10194-015-0533-5</a>. Study design: Prospective diary study. n=66.</li>
                         <li>Li W, Bertisch SM, Engeda J, et al. &ldquo;Weather, ambient air pollution, and risk of migraine headache onset among patients with migraine.&rdquo; <em>Environment International</em>, 143:105949 (2020). <a href="https://doi.org/10.1016/j.envint.2020.105949" target="_blank">doi:10.1016/j.envint.2020.105949</a>. Study design: Prospective self-controlled case series. n=98.</li>
                         <li>Szyszkowicz M, Kaplan GG, Grafstein E, Rowe BH. &ldquo;Air pollution and daily ED visits for migraine and headache in Edmonton, Canada.&rdquo; <em>American Journal of Emergency Medicine</em>, 27(4):391&ndash;396 (2009). <a href="https://doi.org/10.1016/j.ajem.2008.03.013" target="_blank">doi:10.1016/j.ajem.2008.03.013</a>. Study design: Ecological time-series. n=56,241 migraine ED visits.</li>
-                        <li>Casey JA, Kioumourtzoglou MA, Padula A, et al. &ldquo;Air pollution, methane super-emitters, and oil and gas wells in Northern California: the relationship with migraine headache prevalence and exacerbation.&rdquo; <em>Environmental Health</em>, 20:45 (2021). <a href="https://doi.org/10.1186/s12940-021-00727-w" target="_blank">doi:10.1186/s12940-021-00727-w</a>. Study design: Case-control. n=89,575 migraine cases.</li>
+                        <li>Casey JA, Kioumourtzoglou MA, Padula A, et al. &ldquo;Air pollution, methane super-emitters, and oil and gas wells in Northern California: the relationship with migraine headache prevalence and exacerbation.&rdquo; <em>Environmental Health</em>, 20:45 (2021). <a href="https://doi.org/10.1186/s12940-021-00727-w" target="_blank">doi:12940-021-00727-w</a>. Study design: Case-control. n=89,575 migraine cases.</li>
                         <li>Louis S, Carlson AK, Suresh A, et al. &ldquo;Impacts of climate change and air pollution on neurologic health, disease, and practice: a scoping review.&rdquo; <em>Neurology</em>, 100(10):474&ndash;483 (2023). <a href="https://doi.org/10.1212/WNL.0000000000201630" target="_blank">doi:10.1212/WNL.0000000000201630</a>. Study design: Scoping review.</li>
                     </ol>
                 </div>
 
-                <!-- ABOUT AUTHOR -->
                 <div id="about-author" class="article-footer">
                     <div class="author-card">
                         <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
