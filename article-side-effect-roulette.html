@@ -161,11 +161,6 @@
         .emergency-box p { font-size: 0.98rem; margin-bottom: 12px; }
         .emergency-box p:last-child { margin-bottom: 0; }
 
-        .action-box { background: linear-gradient(90deg, rgba(106,170,122, 0.08) 0%, rgba(106,170,122, 0.02) 100%); border: 1px solid var(--green-border); padding: 28px 32px; border-radius: 16px; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12); }
-        .action-box h3 { color: var(--green); font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; }
-        .action-box p { font-size: 0.98rem; margin-bottom: 12px; }
-        .action-box p:last-child { margin-bottom: 0; }
-
         .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(139,122,168, 0.10); box-shadow: 0 20px 60px rgba(0,0,0, 0.35), 0 4px 12px rgba(0,0,0, 0.20), inset 0 0 0 1px rgba(255,255,255, 0.03); }
         .article-image img { width: 100%; height: auto; display: block; }
         .article-image figcaption { background: linear-gradient(180deg, rgba(13,13,13, 0.60) 0%, rgba(20,20,25, 0.95) 100%); padding: 14px 20px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; border-top: 1px solid rgba(139,122,168, 0.08); }
@@ -174,14 +169,14 @@
         .related-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.4; }
         .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; position: relative; z-index: 1; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
-        .related-card { display: block; text-decoration: none; background: rgba(255,255,255, 0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 12px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(255,255,255, 0.03); }
+        .related-card { display: block; text-decoration: none; background: rgba(255,255,255,0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 12px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(255,255,255, 0.03); }
         .related-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--lavender), transparent); opacity: 0.3; transition: opacity 0.4s ease; }
-        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255, 0.04); border-color: rgba(139,122,168, 0.30); box-shadow: 0 12px 40px rgba(0,0,0, 0.25), 0 0 0 1px rgba(139,122,168, 0.10), inset 0 1px 0 rgba(255,255,255, 0.05); }
+        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255, 0.04); border-color: rgba(139,122,168, 0.30); box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(139,122,168, 0.10), inset 0 1px 0 rgba(255,255,255, 0.05); }
         .related-card:hover::before { opacity: 0.7; }
         .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
         .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
 
-        .full-disclaimer { background: rgba(139,122,168, 0.04); border: 1px solid rgba(139,122,168, 0.12); border-radius: 16px; padding: 28px; margin: 48px 0; box-shadow: 0 2px 12px rgba(0,0,0, 0.10), inset 0 1px 0 rgba(139,122,168, 0.04); }
+        .full-disclaimer { background: rgba(139,122,168, 0.04); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 48px 0; box-shadow: 0 2px 12px rgba(0,0,0, 0.10), inset 0 1px 0 rgba(139,122,168, 0.04); }
         .full-disclaimer h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
         .full-disclaimer p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.7; }
         .full-disclaimer p:last-child { margin-bottom: 0; }
@@ -222,8 +217,8 @@
 
         .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(139,122,168, 0.10); }
 
-        footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--lavender-border); }
-        .copyright { color: var(--text-dark); font-size: 0.85rem; }
+        footer { padding: 40px 0; border-top: 1px solid var(--lavender-border); }
+        .copyright { text-align: center; color: var(--text-dark); font-size: 0.82rem; }
 
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
@@ -232,16 +227,15 @@
             p { font-size: 1rem; }
             .article-content { padding: 40px 0 60px; }
             .author-card { flex-direction: column; text-align: center; }
-            .data-card, .insight-card, .emergency-box, .highlight-box, .action-box { padding: 22px 24px; }
+            .data-card, .insight-card, .emergency-box, .highlight-box { padding: 22px 24px; }
             .cta-box { padding: 28px; }
             .article-meta { flex-direction: column; gap: 8px; }
             .key-takeaways { padding: 24px; }
             .related-box { padding: 28px; }
         }
     </style>
-    <link rel="stylesheet" href="article-category-colors.css">
 </head>
-<body data-category="tips">
+<body>
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
@@ -291,16 +285,12 @@
 
                 <div class="separator"></div>
 
-                <!-- ======================== INTRO ======================== -->
-
                 <section class="article-section">
                     <p>The prescription takes thirty seconds. The Google search takes thirty minutes. And somewhere around midnight, between a Reddit thread titled &ldquo;Topamax ruined my life&rdquo; and a forum post that ends with &ldquo;I couldn&rsquo;t remember my own phone number,&rdquo; you start wondering whether the cure is worse than the disease.</p>
                     <p>It isn&rsquo;t. Not usually. But the gap between what clinical trials measure and what patients actually experience is wide enough to lose people in &mdash; and that&rsquo;s exactly what happens. A retrospective analysis of 8,707 chronic migraine patients found that roughly half discontinued their oral preventive within 60 days.<sup>[4]</sup> Not because the drugs failed. Because of how they felt. Adverse effects drove 24% of topiramate dropouts and 17% of amitriptyline dropouts.<sup>[4]</sup> At one year, only 35% to 56% remained on their medication.<sup>[4]</sup></p>
                     <p>Those aren&rsquo;t numbers. Those are people who gave up.</p>
-                    <p>I&rsquo;ve been one of them. Over 30 years with migraine, I&rsquo;ve sat across from neurologists, taken the prescription, endured the side effects, and sometimes quit without saying a word. I&rsquo;m not a doctor. But I know what the evidence says about how these drugs actually feel &mdash; and I know the conversations most patients never get to have.</p>
+                    <p>I&rsquo;ve been one of them. Over 30 years with migraine, I&rsquo;ve sat across from neurologists, taken the prescription, endured the side effects, and sometimes quit without saying a word. I&rsquo;m not a doctor. But I know what the evidence says about how these drugs actually feel &mdash; and I know the conversations most patients never get to have during their <a href="article-first-neurologist-visit.html">first neurologist visit</a>.</p>
                 </section>
-
-                <!-- ======= INLINE IMAGE 1: THE SIDE EFFECT LANDSCAPE ======= -->
 
                 <figure class="article-image">
                     <img src="images/side_effects_landscape_infographic.png" alt="The Side Effect Landscape infographic comparing six migraine preventive medication classes — topiramate, propranolol, amitriptyline, valproate, CGRP monoclonal antibodies, and Botox — showing key side effects, onset timing patterns, and 12-month adherence rates for each class" loading="lazy">
@@ -309,11 +299,9 @@
 
                 <div class="separator"></div>
 
-                <!-- ======================== TOPIRAMATE ======================== -->
-
                 <section class="article-section">
                     <h2>Topiramate: The Drug That Stole Your Words</h2>
-                    <p>You know the word. You can see the concept &mdash; it&rsquo;s right there, hovering behind your eyes. But the name won&rsquo;t come. This is topiramate&rsquo;s signature: a theft so precise it takes your vocabulary and leaves everything else intact.</p>
+                    <p>You know the word. You can see the concept &mdash; it&rsquo;s right there, hovering behind your eyes. But the name won&rsquo;t come. This is topiramate&rsquo;s signature: a theft so precise it takes your vocabulary and leaves everything else intact. This is often the trade-off for a brain that stays in a state of <a href="article-hyperexcitable-brain.html">hyperexcitability</a>.</p>
                     <p>The nickname &ldquo;Dopamax&rdquo; didn&rsquo;t come from a marketing department. It came from patients. And the clinical data backs them up. At the standard 100 mg/day dose, 22% of patients in pivotal trials reported cognitive adverse events &mdash; confusion, psychomotor slowing, memory difficulty, word-finding problems.<sup>[5]</sup> Memory complaints hit 7% at 100 mg. Attention difficulties reached 6%. Language problems, 6%. These aren&rsquo;t rare.<sup>[5]</sup></p>
                     <p>But here&rsquo;s what the forums won&rsquo;t tell you: the timing matters enormously. A detailed time-course analysis of the pivotal trials found that nearly all adverse events cluster in the titration phase &mdash; the first four to eight weeks.<sup>[7]</sup> Paresthesia (that strange tingling in your hands and face) reached a cumulative incidence of 45.5% by day 28, but almost no new cases appeared after day 42.<sup>[7]</sup> Cognitive symptoms followed the same pattern. The drug front-loads its punishment.</p>
                     <p>Which means if you survive two months, you&rsquo;ll likely keep what you&rsquo;ve gained. And topiramate does deliver: clinical trials involving nearly 3,000 patients confirmed significant reductions in migraine frequency.<sup>[1]</sup> Unlike almost every other preventive, it causes weight <em>loss</em> &mdash; an average of 2.5 kg at 100 mg/day &mdash; which for patients emerging from an amitriptyline-induced weight spiral can feel like oxygen.<sup>[7][8]</sup></p>
@@ -324,8 +312,6 @@
                 </section>
 
                 <div class="separator"></div>
-
-                <!-- ======================== BETA-BLOCKERS ======================== -->
 
                 <section class="article-section">
                     <h2>Beta-Blockers: The Energy Tax</h2>
@@ -341,13 +327,11 @@
 
                 <div class="separator"></div>
 
-                <!-- ======================== AMITRIPTYLINE ======================== -->
-
                 <section class="article-section">
                     <h2>Amitriptyline: The Comfortable Trap</h2>
                     <p>There&rsquo;s something seductive about a drug that helps you sleep. After months &mdash; years &mdash; of migraine-disrupted nights, amitriptyline at bedtime can feel like mercy. And it works: roughly 75% of patients in a long-term study reported headache improvement on low doses.<sup>[13]</sup> Response arrives faster than with beta-blockers, sometimes within four weeks.<sup>[12][14]</sup></p>
                     <p>The trap is what happens on the scale.</p>
-                    <p>Research consistently ranks amitriptyline among the antidepressants most likely to cause weight gain &mdash; 1.3 to 2.9 pounds per month, potentially exceeding ten pounds by six months.<sup>[15]</sup> The mechanism is ruthlessly efficient: histamine receptor blockade drives appetite up, while shifts in leptin, insulin, and cortisol push metabolism toward storage.<sup>[15][16]</sup> In a study of 49 migraine patients, BMI, leptin, C-peptide, and insulin levels all climbed significantly after just 12 weeks.<sup>[16]</sup></p>
+                    <p>Research consistently ranks amitriptyline among the antidepressants most likely to cause weight gain &mdash; 1.3 to 2.9 pounds per month, potentially exceeding ten pounds by six months.<sup>[15]</sup> The mechanism is ruthlessly efficient: histamine receptor blockade drives appetite up, while shifts in leptin, insulin, and cortisol push metabolism toward storage.<sup>[15][16]</sup> In a study of 49 migraine patients, BMI, leptin, C-peptide, and insulin levels all climbed significantly after just 12 weeks.<sup>[16]</sup> This connection between weight and migraine is part of the broader <a href="article-ozempic-effect.html">metabolic side of the equation</a>.</p>
                     <p>This matters beyond vanity. Overweight and obese patients with migraine face increased attack frequency and severity.<sup>[15]</sup> The very drug meant to reduce migraines can, through weight gain, make them harder to control. A review of weight-change data across migraine preventives confirmed that amitriptyline and divalproex carry the highest incidence of weight gain among first-line agents.<sup>[15]</sup></p>
                     <p>The anticholinergic effects &mdash; dry mouth, constipation, morning grogginess &mdash; are the daily friction. But the longer shadow is cognitive: long-term anticholinergic use has been associated with increased dementia risk, though evidence specific to the low doses used for migraine remains thin.<sup>[17]</sup></p>
 
@@ -357,8 +341,6 @@
                 </section>
 
                 <div class="separator"></div>
-
-                <!-- ======================== VALPROATE ======================== -->
 
                 <section class="article-section">
                     <h2>Valproate: The Drug With the Black Box</h2>
@@ -380,11 +362,9 @@
 
                 <div class="separator"></div>
 
-                <!-- ======================== CGRP ======================== -->
-
                 <section class="article-section">
                     <h2>CGRP Antibodies: Better, But Not Perfect</h2>
-                    <p>For decades, every migraine preventive was a borrowed drug &mdash; a beta-blocker designed for hearts, an antidepressant designed for mood, an anticonvulsant designed for seizures. The anti-CGRP monoclonal antibodies were the first medications designed <em>for migraine</em>. They target calcitonin gene-related peptide &mdash; a molecule released by the trigeminal nerve, the primary pain highway of migraine &mdash; rather than broadly suppressing brain activity or heart rate.<sup>[25][26]</sup></p>
+                    <p>For decades, every migraine preventive was a borrowed drug &mdash; a beta-blocker designed for hearts, an antidepressant designed for mood, an anticonvulsant designed for seizures. The anti-CGRP monoclonal antibodies were the first medications designed <em>for migraine</em>. They target calcitonin gene-related peptide &mdash; a molecule released by the trigeminal nerve, the primary pain highway of migraine &mdash; rather than broadly suppressing brain activity or heart rate.<sup>[25][26]</sup> You can explore the full history of this breakthrough in <a href="article-cgrp-revolution.html">The CGRP Revolution</a>.</p>
                     <p>And the difference shows. A 2023 network meta-analysis of 74 trials and nearly 33,000 patients found, with high certainty, that CGRP antibodies offer the best combined safety and efficacy of all available preventives.<sup>[25]</sup> Fewer adverse events. Fewer dropouts. Higher adherence &mdash; about 55% at 12 months, compared to roughly 35% for oral drugs.<sup>[27]</sup> The 2024 APPRAISE trial made the comparison visceral: 56% of erenumab patients halved their migraine days, versus just 16% on traditional oral medications.<sup>[26]</sup></p>
                     <p>Then real-world data arrived, and the picture grew more complicated.</p>
                     <p>Constipation became the defining side effect &mdash; especially for erenumab, which blocks the CGRP <em>receptor</em> rather than the peptide itself. A retrospective study of 317 chronic migraine patients found constipation in 51.5% of erenumab users, compared to 4.2% on fremanezumab and 12.9% on galcanezumab.<sup>[28]</sup> That&rsquo;s not a footnote. That&rsquo;s a majority. The FDA adverse event database analysis flagged additional signals: alopecia, Raynaud&rsquo;s phenomenon, and a new worry &mdash; possible hypertension.<sup>[29]</sup> Reports from specialty clinics describe effects not captured in trials: weight changes, brain fog, mood shifts, affecting up to 25% of patients.<sup>[30]</sup></p>
@@ -397,13 +377,9 @@
 
                 <div class="separator"></div>
 
-                <!-- ======================== BOTOX ======================== -->
-
                 <section class="article-section">
                     <h2>Botox: 31 Needles, Quarterly</h2>
                     <p>OnabotulinumtoxinA &mdash; Botox &mdash; occupies its own category: FDA-approved exclusively for <em>chronic</em> migraine (15 or more headache days per month), delivered by a physician, 31 injections across the forehead, temples, skull base, neck, and shoulders every 12 weeks. The injection map isn&rsquo;t random &mdash; those 31 points trace the branches of the trigeminal nerve, the same pain pathway that CGRP antibodies target from the inside.<sup>[31]</sup> Botox blocks it from the outside, intercepting pain signals before they reach the brain.</p>
-
-                    <!-- ======= INLINE IMAGE 2: THE 31 POINTS ======= -->
 
                     <figure class="article-image">
                         <img src="images/botox_31_points_trigeminal.png" alt="Scientific infographic showing the Botox injection map for chronic migraine — 31 injection sites across 7 muscle groups mapped onto a simplified head and neck diagram with trigeminal nerve branches V1 V2 V3 and occipital nerves highlighted, plus the PREEMPT protocol details: 155 units, 31 sites, 7 muscle groups, every 12 weeks" loading="lazy">
@@ -419,17 +395,13 @@
 
                 <div class="separator"></div>
 
-                <!-- ======================== THE CONVERSATION ======================== -->
-
                 <section class="article-section">
                     <h2>The Conversation Your Doctor Needs You to Have</h2>
                     <p>Side effects aren&rsquo;t failure. They&rsquo;re data.</p>
-                    <p>The biggest mistake isn&rsquo;t trying a drug and experiencing side effects. It&rsquo;s quitting without telling your doctor why. &ldquo;The brain fog was unbearable.&rdquo; &ldquo;I gained 15 pounds.&rdquo; &ldquo;I couldn&rsquo;t run anymore.&rdquo; Each of those sentences narrows the search for the drug that will actually fit your life. Without them, your neurologist is guessing blind.</p>
+                    <p>The biggest mistake isn&rsquo;t trying a drug and experiencing side effects. It&rsquo;s quitting without telling your doctor why. &ldquo;The brain fog was unbearable.&rdquo; &ldquo;I gained 15 pounds.&rdquo; &ldquo;I couldn&rsquo;t run anymore.&rdquo; Each of those sentences narrows the search for the drug that will actually fit your life. Without them, your neurologist is guessing blind. This is why <a href="article-building-migraine-team.html">building your migraine team</a> is so critical; you need a partner who values your lived experience as much as the clinical data.</p>
                     <p>Most preventive side effects are frontloaded &mdash; worst during the first six to eight weeks, then fading.<sup>[5][7]</sup> Many patients who would eventually tolerate a medication stop just before the corner. But some side effects don&rsquo;t fade. Persistent cognitive impairment. Unrelenting weight gain. An energy deficit that empties your life of everything migraine hasn&rsquo;t already taken. Those deserve a switch, not suffering.</p>
                     <p>A 2023 meta-analysis put it plainly: CGRP antibodies and gepants cause the fewest adverse events leading to discontinuation, while valproate and amitriptyline cause the most.<sup>[25]</sup> That doesn&rsquo;t make older drugs useless &mdash; propranolol remains an excellent first choice for many, and amitriptyline&rsquo;s sleep benefits are genuinely transformative for the right patient. But the hierarchy of tolerability now has evidence behind it, and you deserve to know it exists.</p>
                     <p>You are not a clinical trial participant. You&rsquo;re a person with a job, a body, relationships, and a limited supply of patience. The right preventive isn&rsquo;t just the one that reduces your migraine days. It&rsquo;s the one you can actually keep taking.</p>
-
-                    <!-- ======= INLINE IMAGE 3: THE CONVERSATION ======= -->
 
                     <figure class="article-image">
                         <img src="images/side_effects_doctor_conversation.png" alt="Warm atmospheric illustration of a patient and doctor sitting across from each other at a desk in a non-clinical setting, with an open migraine diary between them — the patient pointing at data, the doctor listening attentively, two pens suggesting collaboration" loading="lazy">
@@ -438,8 +410,6 @@
                 </section>
 
                 <div class="separator"></div>
-
-                <!-- ======================== RELATED ======================== -->
 
                 <div class="related-box">
                     <h3>Deepen Your Understanding</h3>
@@ -455,8 +425,6 @@
                     </div>
                 </div>
 
-                <!-- ======================== FULL DISCLAIMER ======================== -->
-
                 <div class="full-disclaimer">
                     <h3>&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
                     <p>This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
@@ -464,8 +432,6 @@
                     <p>Never start, stop, or change a preventive medication without consulting your prescribing physician. Abrupt discontinuation of beta-blockers, antiepileptics, and antidepressants can cause serious withdrawal effects. Dosing decisions, drug interactions, and reproductive safety assessments require individualized medical evaluation.</p>
                     <p>This content was last reviewed for accuracy on March 11, 2026.</p>
                 </div>
-
-                <!-- ======================== REFERENCES ======================== -->
 
                 <div id="references" class="references">
                     <h3>References</h3>
@@ -505,8 +471,6 @@
                         <li>Siddiqui M, Shah PV, et al. &ldquo;Long-term management of migraine with OnabotulinumtoxinA vs calcitonin gene-related peptide antibodies.&rdquo; <em>Cureus</em>, 15(10):e46893 (2023). <a href="https://doi.org/10.7759/cureus.46893" target="_blank">doi:10.7759/cureus.46893</a>. Study design: Literature review.</li>
                     </ol>
                 </div>
-
-                <!-- ======================== AUTHOR + EDITORIAL + CTA ======================== -->
 
                 <div id="about-author" class="article-footer">
                     <div class="author-card">
