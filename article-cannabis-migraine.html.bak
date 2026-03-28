@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The first placebo-controlled RCT of cannabis for migraine found THC+CBD superior to placebo — but CBD alone did nothing. Meanwhile, cannabis users face 6× rebound headache risk. 24 peer-reviewed sources on what science actually knows.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="cannabis migraine, THC CBD migraine, endocannabinoid deficiency migraine, clinical endocannabinoid deficiency, cannabis rebound headache, medication overuse headache cannabis, CGRP cannabis, vaporized cannabis migraine RCT, CBD migraine placebo, anandamide migraine, cannabis migraine trigger">
+    <title>The Cannabis Question: Relief, Trigger, or Both? | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://mi-companion.com/article-cannabis-migraine.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Cannabis Question: Relief, Trigger, or Both?">
+    <meta property="og:description" content="The first RCT of cannabis for migraine found THC+CBD beats placebo — but CBD alone did nothing. And frequent users face 6× rebound risk. 24 peer-reviewed sources.">
+    <meta property="og:image" content="https://mi-companion.com/images/cannabis_migraine_hero.png">
+    <meta property="og:url" content="https://mi-companion.com/article-cannabis-migraine.html">
+    <meta property="article:published_time" content="2026-03-13">
+    <meta property="article:modified_time" content="2026-03-13">
+    <meta property="article:author" content="Rustam Iuldashov">
+    <meta property="article:section" content="Triggers">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+            "@type": "MedicalWebPage",
+            "@id": "https://mi-companion.com/article-cannabis-migraine.html",
+            "lastReviewed": "2026-03-13",
+            "medicalAudience": { "@type": "Patient" }
+        },
+        "headline": "The Cannabis Question: Relief, Trigger, or Both?",
+        "description": "Evidence-based guide to cannabis and migraine. Covers the first placebo-controlled RCT (THC+CBD vs placebo), clinical endocannabinoid deficiency, CGRP-cannabinoid overlap, medication overuse headache risk, and sex differences in the endocannabinoid system. 24 peer-reviewed sources.",
+        "image": "https://mi-companion.com/images/cannabis_migraine_hero.png",
+        "datePublished": "2026-03-13",
+        "dateModified": "2026-03-13",
+        "author": {
+            "@type": "Person",
+            "name": "Rustam Iuldashov",
+            "url": "https://mi-companion.com/about",
+            "description": "Creator of Migraine Companion. 30 years of personal experience living with chronic migraine. Not a medical professional."
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Migraine Companion",
+            "logo": { "@type": "ImageObject", "url": "https://mi-companion.com/images/mi-icon.png" }
+        },
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Migraine"
+        },
+        "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-subtitle", ".key-takeaways"] }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0d0d0d;
+            --surface: #141419;
+            --lavender: #8b7aa8;
+            --lavender-soft: rgba(139,122,168,0.08);
+            --lavender-border: rgba(139,122,168,0.15);
+            --green: #6aaa7a;
+            --green-soft: rgba(106,170,122,0.08);
+            --green-border: rgba(106,170,122,0.2);
+            --teal: #6b9baa;
+            --teal-soft: rgba(107,155,170,0.08);
+            --teal-border: rgba(107,155,170,0.2);
+            --gold: #c5a059;
+            --gold-soft: rgba(197,160,89,0.08);
+            --gold-border: rgba(197,160,89,0.2);
+            --text: #d0d0d0;
+            --text-light: #a0a0a0;
+            --text-dark: #888;
+            --text-warm: #c9bda8;
+        }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+        header { padding: 16px 0; position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(13,13,13,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--lavender-border); }
+        .header-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.3rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; text-decoration: none; }
+        .logo span { color: var(--lavender); }
+        .back-link { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--lavender); }
+
+        .article-hero { margin-top: 70px; position: relative; overflow: hidden; border-radius: 0 0 24px 24px; height: 600px; display: flex; align-items: center; justify-content: center; }
+        .article-hero img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+        .article-hero::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(13,13,13,0.05) 0%, rgba(13,13,13,0.75) 100%); z-index: 1; }
+        .article-header { position: relative; z-index: 2; text-align: center; padding: 0 24px; }
+        .article-tag { display: inline-block; background: rgba(106,170,122,0.15); border: 1px solid rgba(106,170,122,0.35); color: var(--green); font-size: 0.75rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 600; line-height: 1.2; color: #fff; margin-bottom: 16px; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.8); }
+        .article-subtitle { font-size: 1.15rem; font-weight: 500; color: rgba(255,255,255,0.85); font-style: italic; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
+        .article-meta { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+        .article-content { padding: 60px 0 80px; }
+        .article-section { margin-bottom: 48px; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; margin-bottom: 20px; letter-spacing: -0.01em; line-height: 1.3; }
+        h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+        p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; color: var(--text); }
+        strong { font-weight: 700; color: var(--text-warm); }
+        em { font-style: italic; color: var(--text-light); }
+        sup { color: var(--lavender); font-weight: 600; font-size: 0.75rem; }
+
+        .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+        .article-image img { width: 100%; height: auto; display: block; }
+        .article-image figcaption { background: var(--lavender-soft); padding: 12px 16px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; }
+
+        .highlight-box { background: var(--green-soft); border-left: 3px solid var(--green); padding: 24px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; }
+        .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; }
+
+        .separator { text-align: center; margin: 60px 0; color: var(--lavender); font-size: 1.5rem; opacity: 0.5; }
+
+        .data-card { background: var(--teal-soft); border-left: 4px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 12px 12px 0; }
+        .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
+        .data-card p:last-child { margin-bottom: 0; }
+
+        .insight-card { background: var(--lavender-soft); border-left: 4px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 12px 12px 0; }
+        .insight-card p { margin-bottom: 16px; font-size: 0.98rem; }
+        .insight-card p:last-child { margin-bottom: 0; }
+
+        .action-box { background: var(--green-soft); border: 1px solid var(--green-border); border-radius: 16px; padding: 36px; margin: 44px 0; }
+        .action-box h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--green); margin-bottom: 8px; margin-top: 24px; }
+        .action-box h3:first-child { margin-top: 0; }
+        .action-box p { font-size: 0.98rem; margin-bottom: 14px; }
+        .action-box p:last-child { margin-bottom: 0; }
+
+        .emergency-box { background: var(--gold-soft); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 12px 12px 0; margin: 36px 0; }
+        .emergency-box h3 { color: var(--gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+        .emergency-box p { font-size: 0.98rem; margin-bottom: 12px; }
+        .emergency-box p:last-child { margin-bottom: 0; }
+
+        .key-takeaways { background: var(--teal-soft); border: 1px solid var(--teal-border); border-radius: 16px; padding: 28px; margin: 48px 0; }
+        .key-takeaways h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 8px 0; padding-left: 24px; position: relative; }
+        .key-takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--teal); }
+
+        .article-section a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
+        .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
+
+        .medical-disclaimer { font-size: 0.9rem; font-style: italic; color: var(--text-dark); text-align: center; padding: 16px 0; margin-bottom: 48px; border-bottom: 1px solid var(--lavender-border); }
+
+        .related-box { margin: 60px 0; padding: 40px; background: rgba(107,155,170,0.04); border-radius: 24px; border: 1px solid var(--teal-border); }
+        .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .related-card { display: block; text-decoration: none; background: rgba(255,255,255,0.03); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); transition: all 0.3s; }
+        .related-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.05); border-color: var(--lavender); }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
+        .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+
+        .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--lavender-border); }
+        .author-card { display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.03); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 24px; margin-bottom: 32px; }
+        .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--lavender), var(--green)); padding: 3px; flex-shrink: 0; }
+        .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .author-info h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+        .author-info p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+
+        .editorial-standards { background: var(--lavender-soft); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 32px 0; }
+        .editorial-standards h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .editorial-standards ul { list-style: none; padding: 0; margin: 0; }
+        .editorial-standards li { font-size: 0.9rem; color: var(--text-light); padding: 6px 0; padding-left: 20px; position: relative; }
+        .editorial-standards li::before { content: '\2022'; position: absolute; left: 0; color: var(--lavender); }
+
+        .cta-box { background: var(--green-soft); border: 1px solid var(--green-border); border-radius: 16px; padding: 32px; text-align: center; }
+        .cta-box h3 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+        .cta-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; }
+        .download-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(106,170,122,0.15), rgba(106,170,122,0.25)); border: 1px solid var(--green); border-radius: 12px; color: var(--green); text-decoration: none; font-weight: 600; transition: all 0.3s; flex: 1; max-width: 260px; justify-content: center; }
+        .download-btn:hover { background: var(--green); color: var(--bg); transform: translateY(-2px); }
+
+        .references { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--lavender-border); }
+        .references h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-light); margin-bottom: 16px; }
+        .references ol { padding-left: 20px; }
+        .references li { font-size: 0.85rem; color: var(--text-dark); margin-bottom: 8px; line-height: 1.5; }
+        .references a { color: var(--lavender); text-decoration: none; }
+        .references a:hover { text-decoration: underline; }
+
+        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--lavender-border); }
+
+        footer { padding: 40px 0; border-top: 1px solid var(--lavender-border); text-align: center; }
+        .copyright { color: var(--text-dark); font-size: 0.85rem; }
+
+        @media (max-width: 768px) { h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } .article-hero { height: auto; min-height: 400px; align-items: flex-end; padding-bottom: 40px; } p { font-size: 1rem; } .article-content { padding: 40px 0 60px; } .author-card { flex-direction: column; text-align: center; } .data-card, .insight-card, .emergency-box { padding: 20px 24px; } .action-box { padding: 24px; } .article-meta { flex-direction: column; gap: 8px; } }
+    </style>
+    <link rel="stylesheet" href="article-category-colors.css">
+</head>
+<body data-category="triggers">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">&larr; Back to Blog</a>
+        </div>
+    </header>
+    <main>
+        <div class="article-hero">
+            <img src="images/cannabis_migraine_hero.png" alt="Atmospheric illustration of a stylized cannabis leaf split into two halves — one intact with a soft green healing glow, the other fragmenting into amber shards — representing the duality of cannabis as both migraine relief and potential trigger">
+            <div class="article-header">
+                <span class="article-tag">Triggers</span>
+                <h1>The Cannabis Question: Relief, Trigger, or Both?</h1>
+                <p class="article-subtitle">Some swear it aborts attacks. Others say it makes them worse. As legalization expands and the first clinical trials report results, here&rsquo;s what science actually knows &mdash; and doesn&rsquo;t &mdash; about cannabis and migraine.</p>
+                <div class="article-meta">
+                    <span>&#x1F4C5; March 2026</span>
+                    <span>&#x23F1; 8 min read</span>
+                    <span>&#x270D;&#xFE0F; Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <div class="container">
+
+                <div id="article-meta" style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">By Rustam Iuldashov</p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">30 years lived experience with chronic migraine | Sources: 24 peer-reviewed references including <em>Headache</em> (n=92 RCT), <em>Neuropsychopharmacology</em> (n=35), <em>The Journal of Headache and Pain</em> (2024 review), <em>Cephalalgia</em> (2025 preclinical) | Last updated: March 2026</p>
+                </div>
+
+                <p class="medical-disclaimer">
+                    <strong>Medical Review:</strong> This content is based on peer-reviewed research from Headache, Neuropsychopharmacology, The Journal of Headache and Pain, Cephalalgia, Cannabis and Cannabinoid Research, The Journal of Pain, and Frontiers in Neuroscience.<br><br>
+                    <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. The author is not a licensed physician or healthcare professional. Always consult your doctor before making changes to your treatment plan.
+                </p>
+
+                <div class="key-takeaways">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>The first placebo-controlled RCT found vaporized THC+CBD superior to placebo for acute migraine pain relief (67.2% vs. 46.6%), pain freedom, and most bothersome symptom freedom at 2 hours, with benefits sustained at 24 and 48 hours<sup>[1]</sup></li>
+                        <li>CBD alone performed no better than placebo for any outcome &mdash; despite years of marketing as a migraine remedy<sup>[1]</sup></li>
+                        <li>People with chronic migraine have significantly lower anandamide levels in their cerebrospinal fluid, supporting the Clinical Endocannabinoid Deficiency hypothesis<sup>[3, 4]</sup></li>
+                        <li>Cannabis users with chronic migraine were six times more likely to develop medication overuse (rebound) headache compared to non-users<sup>[11]</sup></li>
+                        <li>Cannabinoids interact with the same CGRP pathway targeted by the newest migraine drugs, potentially offering complementary mechanisms &mdash; but this remains untested in humans<sup>[7, 8]</sup></li>
+                        <li>Women may be disproportionately affected by endocannabinoid deficits due to estrogen-regulated anandamide breakdown that fluctuates across the menstrual cycle<sup>[14, 15, 16]</sup></li>
+                    </ul>
+                </div>
+
+                <div class="separator">* * *</div>
+
+                <!-- INTRO -->
+                <section class="article-section">
+                    <p>In 1892, Sir William Osler &mdash; a founder of modern medicine &mdash; called cannabis &ldquo;probably the most satisfactory remedy&rdquo; for migraine. Doctors prescribed it for the next 45 years. Then prohibition arrived, research stopped, and a century of silence followed.</p>
+                    <p>That silence just broke.</p>
+                    <p>In 2024, researchers at the University of California, San Diego published results from the first placebo-controlled trial of cannabis for acute migraine &mdash; 92 participants, four treatments, double-blind crossover design.<sup>[1]</sup> The findings cracked open a door that mainstream neurology had kept locked for decades.</p>
+                    <p>But the cannabis-migraine story doesn&rsquo;t end at &ldquo;it works.&rdquo; The same plant that can abort an attack may also be priming you for more of them.</p>
+                    <p>Welcome to the most complicated question in migraine medicine.</p>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- YOUR BRAIN ALREADY MAKES CANNABIS -->
+                <section class="article-section">
+                    <h2>Your Brain Already Makes Cannabis</h2>
+                    <p>Before you touch a single leaf, your body runs its own cannabis-like system. The endocannabinoid system (ECS) is a network of receptors, enzymes, and signaling molecules that helps regulate pain, inflammation, mood, and nausea.<sup>[2]</sup> Its two lead molecules &mdash; anandamide (AEA) and 2-arachidonoylglycerol (2-AG) &mdash; act like dimmer switches on pain signals. Turn them up, and the volume drops.</p>
+                    <p>Here&rsquo;s where migraine enters the picture.</p>
+                    <p>In 2007, researchers at the University of Perugia measured anandamide in the cerebrospinal fluid &mdash; the liquid that bathes the brain &mdash; of people with chronic migraine. The gap stunned them: migraine patients had dramatically lower anandamide levels than healthy controls, with a p-value below 0.0001.<sup>[3]</sup> That&rsquo;s the kind of statistical confidence researchers almost never see.</p>
+                    <p>This finding became the cornerstone of a hypothesis first proposed by neurologist Ethan Russo in 2004: Clinical Endocannabinoid Deficiency. The idea is elegant. Migraine, fibromyalgia, and irritable bowel syndrome &mdash; three conditions that frequently overlap and resist standard treatment &mdash; might share a single root: an endocannabinoid system running on empty.<sup>[4, 5]</sup></p>
+                    <p>If true, supplementing that system with plant-derived cannabinoids isn&rsquo;t masking symptoms. It&rsquo;s replacing something the body fails to produce in sufficient quantities.</p>
+                    <p>An elegant theory. But until recently, it lacked a critical piece: a proper trial.</p>
+
+                    <div class="data-card">
+                        <p><strong>The endocannabinoid gap:</strong> Chronic migraine patients showed significantly lower anandamide levels in cerebrospinal fluid vs. healthy controls (p&lt;0.0001).<sup>[3]</sup> This deficit may underlie the overlap between migraine, fibromyalgia, and IBS &mdash; three conditions that share hyperalgesia, central sensitization, and treatment resistance.<sup>[4, 5]</sup></p>
+                    </div>
+                </section>
+
+                <figure class="article-image">
+                    <img src="images/cannabis_anandamide_gap.png" alt="Data visualization showing two stylized reservoirs — one filled to 75% in green representing healthy anandamide levels, the other filled to only 20% in amber representing chronic migraine levels — with a downward arrow labeled The Gap between them" loading="lazy">
+                    <figcaption>The Endocannabinoid Gap &mdash; chronic migraine patients have dramatically lower anandamide levels in cerebrospinal fluid compared to healthy controls. The deficit that may explain why cannabis helps some migraine patients. Sarchielli et al., Neuropsychopharmacology (2007), n=35. [3]</figcaption>
+                </figure>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE TRIAL THAT CHANGED THE CONVERSATION -->
+                <section class="article-section">
+                    <h2>The Trial That Changed the Conversation</h2>
+                    <p>The UC San Diego trial, led by headache neurologist Nathaniel Schuster, gave each participant four treatments for four separate migraine attacks: vaporized 6% THC, 11% CBD, a combination of 6% THC plus 11% CBD, or placebo cannabis flower with the active compounds chemically extracted. Nobody &mdash; not patients, not researchers &mdash; knew which was which.<sup>[1, 6]</sup></p>
+                    <p>At two hours, the THC-CBD combination told a clear story. Pain relief: 67.2% versus 46.6% for placebo. Complete pain freedom &mdash; the toughest endpoint in migraine research &mdash; reached 34.5% compared to 15.5%. Freedom from the most bothersome symptom: 60.3% versus 34.5%. Benefits held at 24 and 48 hours.<sup>[1]</sup></p>
+                    <p>Two findings forced a double-take.</p>
+                    <p>First, THC alone reduced pain (68.9% vs. 46.6%) but failed to achieve pain freedom or most bothersome symptom freedom. CBD alone? It performed no better than placebo on any measure.<sup>[1, 6]</sup> This matters enormously. The CBD industry has marketed cannabidiol as a migraine remedy for years. This trial says otherwise &mdash; at least for acute attacks. It&rsquo;s the combination that works.</p>
+                    <p>Second &mdash; and this is the hidden gem of the data &mdash; the THC-CBD combination specifically reduced photophobia and phonophobia but not nausea.<sup>[1]</sup> Why does that matter? THC is a well-known anti-nausea agent. If the benefit came simply from the &ldquo;high&rdquo; dampening symptom awareness, nausea should improve first. Instead, the combination targeted the exact sensory processing abnormalities that define migraine as a neurological event. Not just pain. The disease itself.</p>
+                    <p>&ldquo;This is the first real &mdash; to me &mdash; compelling evidence for the anti-migraine effects of cannabis in humans,&rdquo; Schuster said when presenting final results at the 2025 American Headache Society meeting.<sup>[6]</sup> He also emphasized a point that deserves repeating: patients who treated earlier &mdash; within the first two hours of an attack &mdash; responded better than those who waited. Early treatment wins. Always.</p>
+                    <p>The question the trial couldn&rsquo;t answer is <em>why</em> the combination worked &mdash; and that answer lives in a molecule you may already know.</p>
+
+                    <div class="insight-card">
+                        <p><strong>CBD alone doesn&rsquo;t work for acute migraine.</strong> In the first placebo-controlled trial, CBD-only cannabis performed no better than placebo on any measure &mdash; pain relief, pain freedom, or most bothersome symptom freedom. Only the THC+CBD combination achieved significant results.<sup>[1]</sup></p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE CGRP CONNECTION -->
+                <section class="article-section">
+                    <h2>The CGRP Connection Hiding in Plain Sight</h2>
+                    <p>If you&rsquo;ve followed migraine science, you know CGRP &mdash; calcitonin gene-related peptide &mdash; the molecule behind the newest migraine drugs, from Aimovig to Nurtec. When the trigeminal nerve fires during an attack, it floods the meninges with CGRP, igniting inflammation and pain.<sup>[7]</sup></p>
+                    <p>Cannabinoids intersect this pathway in ways that startled researchers.</p>
+                    <p>Anandamide &mdash; the same molecule found depleted in migraine patients&rsquo; spinal fluid &mdash; directly inhibits CGRP release from trigeminal nerve fibers through CB1 receptor activation.<sup>[7, 8]</sup> In animal models, a synthetic anandamide analog reduced CGRP levels in plasma, trigeminal ganglia, and the brainstem while blocking mast cell degranulation &mdash; one of the key inflammatory events in migraine.<sup>[9]</sup></p>
+                    <p>A 2024 review in The Journal of Headache and Pain mapped six immune cell types that carry both cannabinoid receptors and CGRP receptors: macrophages, monocytes, mast cells, dendritic cells, B cells, and T cells.<sup>[7]</sup> The implication is provocative: cannabinoids could theoretically modulate the same pathway targeted by existing CGRP-blocking drugs. Nobody has tested this combination clinically. But the molecular framework is there, and research teams from Iowa to Brazil are building the case.</p>
+                    <p>In early 2025, a preclinical study in Cephalalgia confirmed the pattern across three different mouse migraine models and two independent laboratories. Photophobia improved only with a CBD-THC combination &mdash; not with either compound alone.<sup>[10]</sup> The mirror image of the human trial. Two species. Same answer.</p>
+                </section>
+
+                <!-- EMERGENCY BOX -->
+                <div class="emergency-box">
+                    <h3>&#x26A0;&#xFE0F; When to Seek Emergency Help</h3>
+                    <p>Cannabis can cause elevated heart rate, blood pressure changes, and in rare cases, cerebral vasoconstriction. If you experience a sudden, explosive headache unlike anything you&rsquo;ve had before (&ldquo;thunderclap headache&rdquo;), sudden vision loss, one-sided weakness, slurred speech, or confusion after using cannabis or any other substance &mdash; call your local emergency number immediately.</p>
+                    <p>These may be signs of a stroke or other life-threatening event. Do not use this article to self-diagnose or self-treat.</p>
+                </div>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE DARK SIDE -->
+                <section class="article-section">
+                    <h2>The Dark Side: When Relief Becomes Rebound</h2>
+                    <p>Now for the part nobody wants to hear.</p>
+                    <p>In 2021, Stanford University researchers reviewed records of 368 chronic migraine patients. Among cannabis users, 81% had medication overuse headache &mdash; the dreaded &ldquo;rebound.&rdquo; Among non-users, the rate was 41%. After adjusting for every available confounder, cannabis users were six times more likely to suffer rebound headache.<sup>[11]</sup></p>
+                    <p>Six times. That number demands attention.</p>
+                    <p>The researchers also uncovered a bidirectional link between cannabis and opioid use: people using one were significantly more likely to use the other.<sup>[11]</sup> Both substances influence the periaqueductal gray &mdash; a brainstem region that acts as a master volume knob for pain processing &mdash; and both can recalibrate the brain&rsquo;s pain threshold when used too frequently.<sup>[11, 12]</sup></p>
+                    <p>The paradox cuts deep. The very endocannabinoid system running low in migraine can become further dysregulated by too-frequent external cannabinoid exposure. It&rsquo;s structurally identical to the triptan paradox &mdash; the most effective acute treatment becomes the engine of chronic headache when overused.</p>
+                    <p>A separate analysis of over 12,000 cannabis-treated headache sessions found that while acute severity dropped by roughly 50%, doses escalated over time &mdash; users needed progressively more to achieve the same effect.<sup>[13]</sup> For general headache, efficacy also declined with repeated use. For migraine specifically, efficacy appeared more stable, though consumption still crept upward.<sup>[13]</sup> Tolerance in one domain. Not the other. Nobody fully understands why.</p>
+                    <p>The lead researcher of the Stanford study was candid about its limits: because the design was retrospective, the direction of causality remains unclear. Were patients using cannabis because they already had rebound headache? Or did cannabis contribute to developing it? The data can&rsquo;t separate the two.<sup>[11]</sup> But the signal is strong enough to warrant caution.</p>
+
+                    <div class="data-card">
+                        <p><strong>The rebound risk in numbers:</strong> Among 368 chronic migraine patients, cannabis users were 6&times; more likely to have medication overuse headache (81% vs. 41%; adjusted OR 6.3, p&lt;0.0001).<sup>[11]</sup> Separately, across 12,293 cannabis-treated headache sessions, doses escalated over time while efficacy for general headache declined &mdash; suggesting tolerance development.<sup>[13]</sup></p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- THE ESTROGEN FACTOR -->
+                <section class="article-section">
+                    <h2>The Estrogen Factor</h2>
+                    <p>Migraine affects three times more women than men. The endocannabinoid story has a gender chapter &mdash; and it may be the most underappreciated angle in this entire field.</p>
+                    <p>Women with migraine show heightened activity of FAAH, the enzyme that breaks down anandamide, along with increased activity of the anandamide membrane transporter in their platelets.<sup>[14, 15]</sup> The net effect: faster anandamide destruction, lower levels.</p>
+                    <p>The driver? Estrogen. It regulates FAAH expression. When estrogen drops &mdash; during menstruation, perimenopause, or postmenopause &mdash; FAAH activity rises, anandamide plummets, and the pain threshold falls.<sup>[15, 16]</sup> This may partly explain why menstrual migraine is so notoriously difficult to treat, and why some women report that cannabis provides specific relief during their period.</p>
+                    <p>Preclinical research consistently finds female rodents more sensitive to THC&rsquo;s effects than males.<sup>[16]</sup> At the University of Arizona, researcher Tally Largent-Milnes has been mapping endocannabinoid system expression in brain regions tied to migraine &mdash; including the periaqueductal gray &mdash; and finding it fundamentally different between sexes.</p>
+                    <p>&ldquo;This seems to be a female-mediated system,&rdquo; Largent-Milnes said. &ldquo;It&rsquo;s likely that hormone regulation of the endocannabinoid system is driving female susceptibility to headache.&rdquo;<sup>[17]</sup></p>
+                    <p>Her lab is now investigating whether boosting 2-AG &mdash; the second major endocannabinoid, which has been largely overlooked in migraine research &mdash; could offer targeted relief without the side effects of plant cannabis.<sup>[17]</sup> It&rsquo;s early. But it points toward a future where the treatment isn&rsquo;t the plant itself, but drugs designed to enhance what your body already makes.</p>
+
+                    <div class="highlight-box">
+                        <p>The endocannabinoid system is sexually dimorphic. Estrogen regulates anandamide breakdown. When estrogen falls, so does the pain threshold. This may be one reason migraine disproportionately affects women.</p>
+                    </div>
+                </section>
+
+                <div class="separator">* * *</div>
+
+                <!-- WHAT THIS MEANS FOR YOU -->
+                <section class="article-section">
+                    <h2>What This Means for You</h2>
+                    <p>The science draws clear lines in some places &mdash; and honest blanks in others.</p>
+                    <p><strong>What we know:</strong> A specific combination of low-dose THC and CBD, delivered by vaporization early in a migraine attack, outperforms placebo in the first rigorous trial of its kind.<sup>[1]</sup> CBD alone doesn&rsquo;t work for acute attacks.<sup>[1]</sup> The endocannabinoid system is measurably disrupted in chronic migraine.<sup>[3, 4, 5]</sup> Cannabis interacts with the same CGRP pathway targeted by the newest migraine medications.<sup>[7, 8]</sup> And frequent use carries a real, quantifiable risk of medication overuse headache.<sup>[11, 12]</sup></p>
+                    <p><strong>What we don&rsquo;t know:</strong> The optimal dose for prevention. Whether cannabis can safely combine with CGRP-targeting drugs. How long-term use affects migraine frequency over years. Whether edibles or tinctures offer a safer profile than inhalation. Whether certain genetic profiles predict who benefits and who doesn&rsquo;t.</p>
+                    <p>Schuster himself put it plainly: standard treatments &mdash; triptans, gepants &mdash; should be tried first. Cannabis is a conversation to have with your doctor when conventional options haven&rsquo;t worked, not a first-line choice.<sup>[6]</sup></p>
+                    <p>After 30 years of living with migraine, what strikes me most is that we&rsquo;re finally having this conversation with data instead of anecdotes. For a century, patients who found relief with cannabis had nothing but their own experience as evidence. Now there&rsquo;s a randomized controlled trial in <em>Headache</em>, a landmark CSF study in <em>Neuropsychopharmacology</em>, and a growing body of preclinical work connecting cannabinoids to the molecular architecture of migraine itself.</p>
+                    <p>The question was never really whether cannabis &ldquo;works.&rdquo; It was whether we&rsquo;d take it seriously enough to find out how, for whom, and at what cost.</p>
+
+                    <div class="highlight-box">
+                        <p>That work has begun.</p>
+                    </div>
+                </section>
+
+                <!-- RELATED -->
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-cgrp-revolution.html" class="related-card">
+                            <h4>The CGRP Revolution</h4>
+                            <p>The molecule that changed everything in migraine treatment &mdash; and why it matters for understanding cannabis mechanisms.</p>
+                        </a>
+                        <a href="article-caffeine-migraine.html" class="related-card">
+                            <h4>Caffeine &amp; Migraine</h4>
+                            <p>Another substance that both helps and hurts. The parallels between caffeine and cannabis in migraine are striking.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FULL MEDICAL DISCLAIMER -->
+                <div id="medical-disclaimer" style="background:var(--lavender-soft);border:1px solid var(--lavender-border);border-radius:16px;padding:28px;margin:48px 0;">
+                    <h3 style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:16px;">&#x2695;&#xFE0F; Important Medical Disclaimer</h3>
+                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
+                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">All clinical claims in this article are sourced from peer-reviewed research published in indexed medical journals. Study designs and sample sizes are noted where applicable.</p>
+                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">Always consult a qualified healthcare provider for questions about your individual health, migraine treatment, or medication decisions.</p>
+                    <p style="font-size:0.9rem;color:var(--text-light);margin:0;">Cannabis remains a controlled substance in many jurisdictions. Legal status varies by country and state. Nothing in this article should be interpreted as encouragement to obtain, use, or distribute cannabis in violation of applicable law. The efficacy data presented here comes from a research setting with standardized, NIDA-supplied cannabis flower &mdash; not commercial dispensary products, which may vary widely in composition and potency. This content was last reviewed for accuracy on March 2026.</p>
+                </div>
+
+                <!-- REFERENCES -->
+                <div id="references" class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Schuster NM, Wallace MS, Marcotte TD, Buse DC, Lee E, Liu L, Sexton M. &ldquo;Vaporized Cannabis versus Placebo for Acute Migraine: A Randomized, Double-Blind, Placebo-Controlled Crossover Trial.&rdquo; <em>Headache</em> (2025). <a href="https://doi.org/10.1111/head.70025" target="_blank">doi:10.1111/head.70025</a>. Study design: RCT (double-blind, crossover). n=92.</li>
+                        <li>Cristino L, Bisogno T, Di Marzo V. &ldquo;Cannabinoids and the Expanded Endocannabinoid System in Neurological Disorders.&rdquo; <em>Nature Reviews Neurology</em>, 16(1):9&ndash;29 (2020). <a href="https://doi.org/10.1038/s41582-019-0284-z" target="_blank">doi:10.1038/s41582-019-0284-z</a>. Study design: Review.</li>
+                        <li>Sarchielli P, Pini LA, Coppola F, Rossi C, Baldi A, Mancini ML, Calabresi P. &ldquo;Endocannabinoids in Chronic Migraine: CSF Findings Suggest a System Failure.&rdquo; <em>Neuropsychopharmacology</em>, 32(6):1384&ndash;1390 (2007). <a href="https://doi.org/10.1038/sj.npp.1301246" target="_blank">doi:10.1038/sj.npp.1301246</a>. Study design: Cross-sectional. n=35.</li>
+                        <li>Russo EB. &ldquo;Clinical Endocannabinoid Deficiency (CECD): Can This Concept Explain Therapeutic Benefits of Cannabis in Migraine, Fibromyalgia, Irritable Bowel Syndrome and Other Treatment-Resistant Conditions?&rdquo; <em>Neuroendocrinology Letters</em>, 25(1/2):31&ndash;39 (2004). Study design: Theoretical review.</li>
+                        <li>Russo EB. &ldquo;Clinical Endocannabinoid Deficiency Reconsidered: Current Research Supports the Theory in Migraine, Fibromyalgia, Irritable Bowel, and Other Treatment-Resistant Syndromes.&rdquo; <em>Cannabis and Cannabinoid Research</em>, 1(1):154&ndash;165 (2016). <a href="https://doi.org/10.1089/can.2016.0009" target="_blank">doi:10.1089/can.2016.0009</a>. Study design: Narrative review.</li>
+                        <li>Schuster NM. &ldquo;Final Analyses Highlight Efficacy of THC-CBD Combination Therapy for Acute Migraine.&rdquo; Presentation at 2025 American Headache Society Annual Meeting, Minneapolis, MN, June 19&ndash;22, 2025. Study design: Conference presentation (from RCT data).</li>
+                        <li>Zorrilla E, Della Pietra A, Russo AF. &ldquo;Interplay Between Cannabinoids and the Neuroimmune System in Migraine.&rdquo; <em>The Journal of Headache and Pain</em>, 25(1):178 (2024). <a href="https://doi.org/10.1186/s10194-024-01883-3" target="_blank">doi:10.1186/s10194-024-01883-3</a>. Study design: Narrative review.</li>
+                        <li>Akerman S, Holland PR, Goadsby PJ. &ldquo;Cannabinoid (CB1) Receptor Activation Inhibits Trigeminovascular Neurons.&rdquo; <em>Journal of Pharmacology and Experimental Therapeutics</em>, 320(1):64&ndash;71 (2007). <a href="https://doi.org/10.1124/jpet.106.106971" target="_blank">doi:10.1124/jpet.106.106971</a>. Study design: Preclinical (animal model).</li>
+                        <li>Greco R, Demartini C, Zanaboni AM, et al. &ldquo;Endocannabinoid System and Migraine Pain: An Update.&rdquo; <em>Frontiers in Neuroscience</em>, 12:172 (2018). <a href="https://doi.org/10.3389/fnins.2018.00172" target="_blank">doi:10.3389/fnins.2018.00172</a>. Study design: Review.</li>
+                        <li>Zorrilla E, et al. &ldquo;Combined Effects of Cannabidiol and &Delta;9-Tetrahydrocannabinol Alleviate Migraine-Like Symptoms in Mice.&rdquo; <em>Cephalalgia</em>, 45(2):3331024251314487 (2025). <a href="https://doi.org/10.1177/03331024251314487" target="_blank">doi:10.1177/03331024251314487</a>. Study design: Preclinical (multi-model, multi-lab). n=multiple cohorts.</li>
+                        <li>Zhang N, Woldeamanuel YW. &ldquo;Medication Overuse Headache in Chronic Migraine Patients Using Cannabis: A Case-Referent Study.&rdquo; <em>Headache</em>, 61(8):1237&ndash;1246 (2021). <a href="https://doi.org/10.1111/head.14185" target="_blank">doi:10.1111/head.14185</a>. Study design: Retrospective case-referent. n=368.</li>
+                        <li>Pini LA, Guerzoni S, Cainazzo MM, et al. &ldquo;Nabilone for the Treatment of Medication Overuse Headache: Results of a Preliminary Double-Blind, Active-Controlled, Randomized Trial.&rdquo; <em>The Journal of Headache and Pain</em>, 13(8):677&ndash;684 (2012). <a href="https://doi.org/10.1007/s10194-012-0490-1" target="_blank">doi:10.1007/s10194-012-0490-1</a>. Study design: RCT (double-blind, crossover). n=30.</li>
+                        <li>Cuttler C, Spradlin A, Cleveland MJ, Craft RM. &ldquo;Short- and Long-Term Effects of Cannabis on Headache and Migraine.&rdquo; <em>The Journal of Pain</em>, 21(5&ndash;6):722&ndash;730 (2020). <a href="https://doi.org/10.1016/j.jpain.2019.11.001" target="_blank">doi:10.1016/j.jpain.2019.11.001</a>. Study design: Observational (app data). n=12,293 headache sessions, 7,441 migraine sessions.</li>
+                        <li>Cupini LM, Bari M, Battista N, et al. &ldquo;Biochemical Changes in Endocannabinoid System Are Expressed in Platelets of Female but Not Male Migraineurs.&rdquo; <em>Cephalalgia</em>, 26(3):277&ndash;281 (2006). <a href="https://doi.org/10.1111/j.1468-2982.2005.01031.x" target="_blank">doi:10.1111/j.1468-2982.2005.01031.x</a>. Study design: Cross-sectional. n=38.</li>
+                        <li>Lichte AB, et al. &ldquo;The Use of Cannabis for Headache Disorders.&rdquo; <em>Cannabis and Cannabinoid Research</em>, 2(1):61&ndash;71 (2017). <a href="https://doi.org/10.1089/can.2016.0033" target="_blank">doi:10.1089/can.2016.0033</a>. Study design: Review.</li>
+                        <li>Craft RM. &ldquo;Sex Differences in the Endocannabinoid System in Pain.&rdquo; <em>Pharmacology, Biochemistry and Behavior</em>, 202:173107 (2021). <a href="https://doi.org/10.1016/j.pbb.2021.173107" target="_blank">doi:10.1016/j.pbb.2021.173107</a>. Study design: Review.</li>
+                        <li>Largent-Milnes TM. Research summary, University of Arizona Health Sciences (2022). Study design: Preclinical.</li>
+                        <li>Nicolodi M, Sicuteri F. Presented at 3rd Congress of the European Academy of Neurology, Amsterdam (2017). THC-CBD vs. amitriptyline for migraine prevention. n=79. Study design: Open-label, controlled.</li>
+                        <li>Rhyne DN, Anderson SL, Gedde M, Borgelt LM. &ldquo;Effects of Medical Marijuana on Migraine Headache Frequency in an Adult Population.&rdquo; <em>Pharmacotherapy</em>, 36(5):505&ndash;510 (2016). <a href="https://doi.org/10.1002/phar.1673" target="_blank">doi:10.1002/phar.1673</a>. Study design: Retrospective chart review. n=121.</li>
+                        <li>Biringer RG. &ldquo;Treatment of Migraine With Phytocannabinoids, the Involvement of Endocannabinoids in Migraine, and Potential Mechanisms of Action.&rdquo; <em>Pain Research and Management</em> (2025). <a href="https://doi.org/10.1155/prm/7210953" target="_blank">doi:10.1155/prm/7210953</a>. Study design: Review.</li>
+                        <li>Cuttler C, Mischley LK, Sexton M. &ldquo;Sex Differences in Cannabis Use and Effects: A Cross-Sectional Survey of Cannabis Users.&rdquo; <em>Cannabis and Cannabinoid Research</em>, 1(1):166&ndash;175 (2016). <a href="https://doi.org/10.1089/can.2016.0010" target="_blank">doi:10.1089/can.2016.0010</a>. Study design: Cross-sectional survey. n=2,374.</li>
+                        <li>Rossi C, Pini LA, Cupini ML, et al. &ldquo;Endocannabinoids in Platelets of Chronic Migraine Patients and Medication-Overuse Headache Patients: Relation with Serotonin Levels.&rdquo; <em>European Journal of Clinical Pharmacology</em>, 64(1):1&ndash;8 (2008). <a href="https://doi.org/10.1007/s00228-007-0391-4" target="_blank">doi:10.1007/s00228-007-0391-4</a>. Study design: Cross-sectional. n=60.</li>
+                        <li>El-Dessouki AM. &ldquo;Bridging Gaps in Migraine Management: A Comprehensive Review.&rdquo; <em>Pharmaceuticals</em>, 18(2):139 (2025). <a href="https://doi.org/10.3390/ph18020139" target="_blank">doi:10.3390/ph18020139</a>. Study design: Review.</li>
+                        <li>Perrotta A, Arce-Leal N, Tassorelli C, et al. &ldquo;Acute Reduction of Anandamide-Hydrolase (FAAH) Activity Is Coupled with a Reduction of Nociceptive Pathways Facilitation in Medication-Overuse Headache Subjects After Withdrawal Treatment.&rdquo; <em>Headache</em>, 52(9):1350&ndash;1361 (2012). <a href="https://doi.org/10.1111/j.1526-4610.2012.02171.x" target="_blank">doi:10.1111/j.1526-4610.2012.02171.x</a>. Study design: Prospective cohort. n=27.</li>
+                    </ol>
+                </div>
+
+                <!-- ABOUT AUTHOR -->
+                <div id="about-author" class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> &mdash; 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. His approach combines first-hand patient experience with peer-reviewed medical research and narrative therapy principles (Michael White &amp; David Epston). He is not a medical professional.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Transparency &amp; Conflict of Interest Disclosure: Rustam is the developer of the Migraine Companion app mentioned in this article. He has no financial relationship with any cannabis company, pharmaceutical manufacturer, dispensary, or advocacy organization. This article was written to educate and inform, not to promote any product. All scientific claims are independently sourced from peer-reviewed literature.</em></p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);">&#x1F4E7; Contact: mi-companion.com/contact &middot; &#x1F310; Website: mi-companion.com</p>
+                        </div>
+                    </div>
+
+                    <div class="editorial-standards">
+                        <h3>How We Create Content</h3>
+                        <ul>
+                            <li><strong>Peer-reviewed sources only.</strong> Headache, Neuropsychopharmacology, The Journal of Headache and Pain, Cephalalgia, Cannabis and Cannabinoid Research, The Journal of Pain, Frontiers in Neuroscience, Journal of Pharmacology and Experimental Therapeutics, European Journal of Clinical Pharmacology, Pharmacology Biochemistry and Behavior.</li>
+                            <li><strong>Study transparency.</strong> Study design and sample sizes noted for all clinical references.</li>
+                            <li><strong>Source verification.</strong> All claims backed by numbered references with DOI links.</li>
+                            <li><strong>Experience + Science.</strong> 30 years personal migraine experience combined with peer-reviewed evidence.</li>
+                            <li><strong>Regular updates.</strong> Articles reviewed when significant new research emerges.</li>
+                            <li><strong>No conflicts of interest.</strong> No funding from cannabis companies, pharmaceutical manufacturers, dispensaries, or advocacy organizations.</li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-box">
+                        <h3>Track What Your Doctor Can&rsquo;t See</h3>
+                        <p>If you&rsquo;re exploring cannabis for migraine &mdash; or any treatment &mdash; a detailed diary is the most powerful tool you have. Log your attacks, triggers, treatments, and outcomes. Build the personal dataset that turns guesswork into evidence your neurologist can use.</p>
+                        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
+                            <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                                Download on App Store
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                                Get it on Google Play
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="review-dates">
+                        <p><em>Last reviewed: March 2026</em></p>
+                        <p><em>Next scheduled review: September 2026</em></p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 Migraine Companion. Made with &#x1F49C; in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>

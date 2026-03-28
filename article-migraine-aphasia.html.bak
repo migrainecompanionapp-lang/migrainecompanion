@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Understanding migraine aphasia — the terrifying language disruption that can steal your words mid-sentence. Evidence-based guide covering causes, cortical spreading depression, Mayo Clinic speech research, and what to do when it happens. Written by someone with 30 years of migraine experience.">
+    <meta name="author" content="Rustam Iuldashov">
+    <meta name="keywords" content="migraine aphasia, transient aphasia migraine, migraine speech problems, migraine language disruption, migraine aura speech, cortical spreading depression, migraine vs stroke, migraine words disappear">
+    <title>When Words Disappear: The Terror of Migraine Aphasia | Migraine Companion</title>
+    <link rel="icon" type="image/png" href="images/mi-icon.png">
+    <link rel="canonical" href="https://mi-companion.com/article-migraine-aphasia.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="When Words Disappear: The Terror of Migraine Aphasia">
+    <meta property="og:description" content="Understanding the language disruption that can steal your words mid-sentence — and why it is temporary. By someone with 30 years of migraine experience.">
+    <meta property="og:image" content="https://mi-companion.com/images/hero-words-disappear.png">
+    <meta property="og:url" content="https://mi-companion.com/article-migraine-aphasia.html">
+    <meta property="article:published_time" content="2026-03-06">
+    <meta property="article:modified_time" content="2026-03-06">
+    <meta property="article:author" content="Rustam Iuldashov">
+    <meta property="article:section" content="Migraine Science">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+            "@type": "MedicalWebPage",
+            "@id": "https://mi-companion.com/article-migraine-aphasia.html",
+            "lastReviewed": "2026-03-06",
+            "medicalAudience": { "@type": "Patient" }
+        },
+        "headline": "When Words Disappear: The Terror of Migraine Aphasia",
+        "description": "Evidence-based guide to migraine aphasia — the temporary language disruption caused by cortical spreading depression during migraine aura.",
+        "image": "https://mi-companion.com/images/hero-words-disappear.png",
+        "datePublished": "2026-03-06",
+        "dateModified": "2026-03-06",
+        "author": {
+            "@type": "Person",
+            "name": "Rustam Iuldashov",
+            "url": "https://mi-companion.com/about",
+            "description": "Creator of Migraine Companion. 30 years of personal experience living with chronic migraine. Not a medical professional."
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Migraine Companion",
+            "logo": { "@type": "ImageObject", "url": "https://mi-companion.com/images/mi-icon.png" }
+        },
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Migraine with Aura",
+            "associatedAnatomy": { "@type": "AnatomicalStructure", "name": "Cerebral Cortex" }
+        },
+        "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-subtitle", ".key-takeaways"] }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --lavender: #8b7aa8; --gold: #C5A059; --antique-gold: #D5B069; --bg: #0d0d0d; --text: #d0d0d0; --text-light: #a0a0a0; --text-dark: #888; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+        header { padding: 16px 0; position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(13,13,13,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(139,122,168,0.15); }
+        .header-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.3rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; text-decoration: none; }
+        .logo span { color: var(--lavender); }
+        .back-link { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--lavender); }
+        .article-hero { margin-top: 70px; position: relative; overflow: hidden; border-radius: 0 0 24px 24px; height: 600px; display: flex; align-items: center; justify-content: center; }
+        .article-hero img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+        .article-hero::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, rgba(13,13,13,0.8) 100%); z-index: 1; }
+        .article-header { position: relative; z-index: 2; text-align: center; padding: 0 24px; }
+        .article-tag { display: inline-block; background: rgba(197,160,89,0.2); border: 1px solid rgba(197,160,89,0.4); color: var(--gold); font-size: 0.75rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 600; line-height: 1.2; color: #fff; margin-bottom: 16px; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.8); }
+        .article-subtitle { font-size: 1.15rem; font-weight: 500; color: rgba(255,255,255,0.85); font-style: italic; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
+        .article-meta { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+        .article-content { padding: 60px 0 80px; }
+        .article-section { margin-bottom: 48px; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; margin-bottom: 20px; letter-spacing: -0.01em; line-height: 1.3; }
+        p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; color: var(--text); }
+        strong { font-weight: 700; color: var(--antique-gold); }
+        em { font-style: italic; color: var(--text-light); }
+        sup { color: var(--lavender); font-weight: 600; font-size: 0.75rem; }
+        .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+        .article-image img { width: 100%; height: auto; display: block; }
+        .article-image figcaption { background: rgba(139,122,168,0.1); padding: 12px 16px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; }
+        .highlight-box { background: rgba(197,160,89,0.08); border-left: 3px solid var(--gold); padding: 24px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; }
+        .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--antique-gold); margin: 0; line-height: 1.7; }
+        .quote-box { background: rgba(139,122,168,0.08); border-left: 3px solid var(--lavender); padding: 24px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; }
+        .quote-box p { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: #fff; margin: 0; line-height: 1.7; }
+        .quote-box .src { font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.85rem; color: var(--text-light); margin-top: 10px; }
+        .separator { text-align: center; margin: 60px 0; color: var(--lavender); font-size: 1.5rem; opacity: 0.5; }
+        .data-card { background: rgba(139,122,168,0.08); border-left: 4px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 12px 12px 0; }
+        .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
+        .data-card p:last-child { margin-bottom: 0; }
+        .action-box { background: rgba(197,160,89,0.06); border: 1px solid rgba(197,160,89,0.2); border-radius: 16px; padding: 36px; margin: 44px 0; }
+        .action-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: #fff; margin-bottom: 10px; margin-top: 28px; }
+        .action-box h3:first-child { margin-top: 0; }
+        .action-box p { font-size: 0.98rem; margin-bottom: 14px; }
+        .action-box p:last-child { margin-bottom: 0; }
+        .emergency-box { background: rgba(197,160,89,0.08); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 12px 12px 0; margin: 36px 0; }
+        .emergency-box h3 { color: var(--gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+        .emergency-box p { font-size: 0.98rem; margin-bottom: 12px; }
+        .emergency-box p:last-child { margin-bottom: 0; }
+        .key-takeaways { background: rgba(139,122,168,0.08); border: 1px solid rgba(139,122,168,0.2); border-radius: 16px; padding: 28px; margin: 48px 0; }
+        .key-takeaways h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 8px 0; padding-left: 24px; position: relative; }
+        .key-takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--lavender); }
+        .when-to-see-doctor { background: rgba(197,160,89,0.05); border: 1px solid rgba(197,160,89,0.2); border-radius: 16px; padding: 28px; margin: 32px 0; }
+        .when-to-see-doctor h3 { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 16px; }
+        .when-to-see-doctor ul { list-style: none; padding: 0; margin: 0 0 16px 0; }
+        .when-to-see-doctor li { font-size: 0.9rem; color: var(--text); padding: 6px 0; padding-left: 20px; position: relative; }
+        .when-to-see-doctor li::before { content: '\26A0'; position: absolute; left: 0; font-size: 0.8rem; }
+        .when-to-see-doctor p { font-size: 0.9rem; color: var(--text-light); margin: 0; font-style: italic; }
+        .medical-disclaimer { font-size: 0.9rem; font-style: italic; color: var(--text-dark); text-align: center; padding: 16px 0; margin-bottom: 48px; border-bottom: 1px solid rgba(139,122,168,0.1); }
+        .related-box { margin: 60px 0; padding: 40px; background: rgba(139,122,168,0.05); border-radius: 24px; border: 1px solid rgba(139,122,168,0.1); }
+        .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .related-card { display: block; text-decoration: none; background: rgba(255,255,255,0.03); padding: 24px; border-radius: 16px; border: 1px solid rgba(139,122,168,0.1); transition: all 0.3s; }
+        .related-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.05); border-color: var(--lavender); }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
+        .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+        .article-section a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
+        .article-section a:hover { border-bottom-color: var(--lavender); background: rgba(139,122,168,0.05); }
+        .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(139,122,168,0.15); }
+        .author-card { display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(139,122,168,0.12); border-radius: 16px; padding: 24px; margin-bottom: 32px; }
+        .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--lavender), var(--gold)); padding: 3px; flex-shrink: 0; }
+        .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .author-info h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+        .author-info p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
+        .editorial-standards { background: rgba(139,122,168,0.05); border: 1px solid rgba(139,122,168,0.15); border-radius: 16px; padding: 28px; margin: 32px 0; }
+        .editorial-standards h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .editorial-standards ul { list-style: none; padding: 0; margin: 0; }
+        .editorial-standards li { font-size: 0.9rem; color: var(--text-light); padding: 6px 0; padding-left: 20px; position: relative; }
+        .editorial-standards li::before { content: '\2022'; position: absolute; left: 0; color: var(--lavender); }
+        .cta-box { background: rgba(197,160,89,0.08); border: 1px solid rgba(197,160,89,0.2); border-radius: 16px; padding: 32px; text-align: center; }
+        .cta-box h3 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+        .cta-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; }
+        .download-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3)); border: 1px solid var(--gold); border-radius: 12px; color: var(--gold); text-decoration: none; font-weight: 600; transition: all 0.3s; flex: 1; max-width: 260px; justify-content: center; }
+        .download-btn:hover { background: var(--gold); color: var(--bg); transform: translateY(-2px); }
+        .references { margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(139,122,168,0.1); }
+        .references h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-light); margin-bottom: 16px; }
+        .references ol { padding-left: 20px; }
+        .references li { font-size: 0.85rem; color: var(--text-dark); margin-bottom: 8px; line-height: 1.5; }
+        .references a { color: var(--lavender); text-decoration: none; }
+        .references a:hover { text-decoration: underline; }
+        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(139,122,168,0.1); }
+        footer { padding: 40px 0; border-top: 1px solid rgba(139,122,168,0.12); text-align: center; }
+        .copyright { color: var(--text-dark); font-size: 0.85rem; }
+        @media (max-width: 768px) { h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } .article-hero { height: auto; min-height: 400px; align-items: flex-end; padding-bottom: 40px; } p { font-size: 1rem; } .article-content { padding: 40px 0 60px; } .author-card { flex-direction: column; text-align: center; } .data-card { padding: 20px 24px; } .action-box { padding: 24px; } .article-meta { flex-direction: column; gap: 8px; } }
+    </style>
+    <link rel="stylesheet" href="article-category-colors.css">
+</head>
+<body data-category="understanding">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
+            <a href="blog.html" class="back-link">&larr; Back to Blog</a>
+        </div>
+    </header>
+    <main>
+        <div class="article-hero">
+            <img src="images/hero-words-disappear.png" alt="Migraine aphasia visualization: translucent letters and words dissolving from a woman's mind into particles of light against a dark background">
+            <div class="article-header">
+                <span class="article-tag">Understanding</span>
+                <h1>When Words Disappear</h1>
+                <p class="article-subtitle">You know the word. It's right there. But your mouth won't say it. Understanding the language disruptions that can accompany migraine &mdash; and why they're temporary.</p>
+                <div class="article-meta">
+                    <span>&#x1F4C5; March 6, 2026</span>
+                    <span>&#x23F1; 5 min read</span>
+                    <span>&#x270D;&#xFE0F; Rustam Iuldashov</span>
+                </div>
+            </div>
+        </div>
+        <article class="article-content">
+            <div class="container">
+                <div style="text-align:center;padding:32px 0 16px;">
+                    <p style="font-size:1rem;font-weight:600;color:#ffffff;margin-bottom:8px;">By Rustam Iuldashov</p>
+                    <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">30 years lived experience with chronic migraine | Sources: 24 peer-reviewed references including REFORM (n=227), Mayo Clinic (n=30, 56,767 samples), Nature Reviews Neurology | Last updated: March 6, 2026</p>
+                </div>
+                <p class="medical-disclaimer">
+                    <strong>Medical Review:</strong> This content is based on peer-reviewed research from Cephalalgia, The Journal of Headache and Pain, Nature Reviews Neurology, Frontiers in Neurology, Headache, Brain Research, and ICHD-3 clinical guidelines.<br><br>
+                    <strong>Important Notice:</strong> This article is for informational purposes only and does not replace professional medical advice. The author is not a licensed physician or healthcare professional. If you experience sudden speech difficulty for the first time, call emergency services immediately &mdash; it could indicate a stroke.
+                </p>
+                <section class="article-section">
+                    <p>She knew exactly what she wanted to say.</p>
+                    <p>February 13, 2011. Grammy Awards night. Tens of millions watching live. CBS reporter Serene Branson stands outside the Staples Center in Los Angeles, microphone in hand, and opens her mouth to deliver a routine broadcast update. What comes out is not English. It is not any language at all &mdash; just fractured syllables folding into each other, as if the words themselves have shattered somewhere between thought and tongue.<sup>[1]</sup></p>
+                    <p>The clip went viral within hours. Social media erupted with a single question: <em>Did we just watch someone <a href="article-stroke-aura-emergency.html">have a stroke</a> on live television?</em></p>
+                    <p>The answer came the next morning from Dr. Andrew Charles, director of the Headache Research and Treatment Program at UCLA. The diagnosis: complex migraine with aura. The specific neurological feature: dysphasic language dysfunction &mdash; a condition in which the brain forms sentences perfectly, but cannot deliver them to the mouth.<sup>[1]</sup></p>
+                    <div class="quote-box">
+                        <p>&ldquo;I wanted to say, &lsquo;Lady Antebellum swept the Grammys.&rsquo; And I could think of the words, but I could not get them coming out properly.&rdquo;</p>
+                        <p class="src">&mdash; Serene Branson, CBS reporter, describing her on-air migraine aphasia episode<sup>[2]</sup></p>
+                    </div>
+                    <p>One sentence. Perfectly imagined. Completely imprisoned.</p>
+                    <p>For the estimated one billion people worldwide who live with migraine, that description doesn't sound like a news story. It sounds like a confession. Because the most terrifying thing about migraine aphasia is not the silence. It's the loneliness of being trapped behind it &mdash; fully conscious, fully aware, and completely unable to reach anyone.</p>
+                </section>
+                <div class="separator">* * *</div>
+                <section class="article-section">
+                    <h2>The Aura Nobody Sees</h2>
+                    <p>Ask someone to describe <a href="article-aura.html">migraine aura</a> and they'll almost always reach for the same word: <em>visual</em>. Zigzag lines. Shimmering halos. Blind spots that bloom across the field of vision like ink spreading through water.</p>
+                    <p>They're not wrong. The 2024 REFORM study &mdash; one of the most detailed prospective analyses of migraine aura ever conducted, involving 227 adults in a Danish tertiary care center &mdash; confirmed that 94.7% of participants experienced visual aura.<sup>[3]</sup> It is, overwhelmingly, what migraine aura looks like from the outside.</p>
+                    <p>But the REFORM data revealed something else. Something far less visible and far more isolating. Among those same 227 participants, 31 &mdash; that's 13.7% &mdash; experienced speech and language aura.<sup>[3]</sup> Not numbness. Not tingling. The temporary inability to use human language.</p>
+                    <p>A separate Italian multicenter study from the Italian Headache Registry, examining 272 patients with confirmed migraine with aura, put the figure even higher: 25.6%.<sup>[4]</sup> One in four. The difference likely reflects a simple and uncomfortable truth &mdash; many clinicians never ask about language symptoms, and many patients never volunteer them. You don't complain about words you couldn't say.</p>
+                    <div class="data-card">
+                        <p><strong>REFORM Study (2024):</strong> 94.7% visual aura, 35.7% somatosensory aura, <strong>13.7% speech/language aura</strong>. Prospective cohort, n=227, Danish tertiary center, enrollment 2020&ndash;2022.<sup>[3]</sup></p>
+                        <p><strong>Italian Headache Registry (RICe):</strong> <strong>25.6% speech/language aura</strong>. Multicenter cross-sectional, n=272.<sup>[4]</sup></p>
+                        <p><strong>Aura sequence (REFORM):</strong> Visual first (69.6%), then somatosensory (23.2%), speech/language last (3.6%) &mdash; reflecting the anatomical path of cortical spreading depression.<sup>[3]</sup></p>
+                    </div>
+                    <p>This makes speech and language disruption the third most common type of migraine aura, after visual and somatosensory.<sup>[3, 5]</sup> And it follows a consistent anatomical logic. The REFORM study found that when multiple aura types occur in sequence, vision goes first, then sensation, and speech arrives last<sup>[3]</sup> &mdash; each symptom reflecting the path of a single electrical wave traveling forward through the brain. We'll return to that wave shortly. It is the villain of this story.</p>
+                    <p>But first: a number that changes the conversation.</p>
+                </section>
+                <div class="separator">* * *</div>
+                <section class="article-section">
+                    <h2>56,767 Whispers</h2>
+                    <p>In 2019, neurologist Todd Schwedt at Mayo Clinic did something no one had done before. He gave 15 people with episodic migraine and 15 healthy controls a mobile app, asked them to record speech samples three times a day, and waited. For months. Until the team had collected 56,767 individual speech recordings &mdash; one of the largest speech-monitoring datasets in migraine history.<sup>[6]</sup></p>
+                    <p>Then they listened.</p>
+                    <p>Not with ears. With algorithms. They measured six features of each sample: speaking rate, articulation rate, articulation precision, average pitch, pitch variance, and phonatory duration. And what they found upended a basic assumption about migraine and language.</p>
+                    <p>During the pre-attack phase &mdash; hours <em>before</em> the headache &mdash; measurable changes appeared. Speaking rate dropped. Articulation lost precision. Vowel sounds shifted. The participants' voices were deteriorating in ways too subtle for human perception, but clear as daylight to a machine.<sup>[6]</sup></p>
+                    <div class="highlight-box">
+                        <p>80% of participants who showed objective speech changes had no idea anything was different about their voice. Their migraines were rewriting their speech &mdash; and they couldn't hear it happening.<sup>[6, 7]</sup></p>
+                    </div>
+                    <p>A 2024 follow-up in <em>Headache</em> confirmed the pattern and added a dose-response dimension: the more intense the headache, the slower the speech and the longer the pauses.<sup>[8]</sup> Pain, it turns out, doesn't just hurt. It silences.</p>
+                    <p>What does this mean practically? It means speech monitoring &mdash; through an app on a phone you already carry &mdash; could one day serve as an early warning system, flagging an incoming migraine before you feel a thing. Schwedt's team said as much: the relative ease of mobile speech collection makes it an appealing objective marker for oncoming attacks.<sup>[6]</sup></p>
+                </section>
+                <figure class="article-image">
+                    <img src="images/speech-waveforms-mayo.png" alt="Data visualization of 56,767 speech samples from Mayo Clinic migraine study showing interictal versus pre-attack waveform differences">
+                    <figcaption>56,767 Whispers &mdash; Speech waveforms from the Mayo Clinic study. Left (teal): interictal phase. Center (gold): pre-attack degradation. Right (lavender): during attack. Data: Schwedt et al., Cephalalgia, 2019.</figcaption>
+                </figure>
+                <div class="separator">* * *</div>
+                <section class="article-section">
+                    <h2>Three Millimeters Per Minute</h2>
+                    <p>Now for the villain.</p>
+                    <p>In 1944, a Brazilian physiologist named Aristides Le&atilde;o was studying epilepsy in a rabbit's exposed brain when he noticed something that didn't fit his experiment: a slow, massive wave of electrical depolarization rolling across the cortical surface, followed by minutes of eerie silence. He called it cortical spreading depression &mdash; CSD.<sup>[9, 10]</sup></p>
+                    <p>Eighty years later, CSD remains the leading explanation for migraine aura. Here's what it does, and why it matters for language.</p>
+                    <p>CSD is not a nerve impulse. A nerve impulse travels at meters per second. CSD crawls at 3 to 5 millimeters per minute<sup>[11]</sup> &mdash; slower than a garden snail. But what it lacks in speed, it makes up for in devastation. As CSD passes through cortical tissue, every neuron in its path undergoes massive depolarization. Calcium and sodium flood inward. Potassium pours outward. Extracellular glutamate surges.<sup>[12]</sup> The affected neurons fire intensely for a brief moment &mdash; then fall silent, their energy reserves exhausted, <a href="article-scattered-brain-cognition.html">their signaling capacity temporarily offline</a>.</p>
+                    <p>Think of it this way. Imagine a power grid where a surge rolls city block by city block: each block lights up brilliantly for a few seconds, then goes dark. The lights always come back on. But while the darkness is passing through your neighborhood, nothing works.</p>
+                    <p>When this wave crosses the occipital cortex, you see zigzags. When it crosses the somatosensory cortex, your hand goes numb. And when it reaches Broca's area &mdash; the region responsible for organizing speech &mdash; or Wernicke's area &mdash; the region that decodes language meaning &mdash; words stop.<sup>[13]</sup> Not gradually. Not partially. They stop. You can think, but you cannot speak. You can understand, but you cannot reply.</p>
+                </section>
+                <figure class="article-image">
+                    <img src="images/csd-wave-brain.png" alt="Scientific visualization of cortical spreading depression wave moving across the brain, silencing language areas">
+                    <figcaption>The Wave That Silences &mdash; CSD moves at 3&ndash;5 mm/min from visual cortex toward language areas. Gold: active neurons. Blue: wavefront. Purple: silenced tissue.</figcaption>
+                </figure>
+                <section class="article-section">
+                    <p>A 2025 systematic review confirmed the clinical implication: when aura lasts longer than 60 minutes, the probability of speech involvement rises to 31%, likely because CSD has more time to propagate into anterior brain regions.<sup>[5]</sup> Time, in other words, is territory. The longer the wave travels, the more of you it takes.</p>
+                    <p>But &mdash; and this is the sentence worth remembering &mdash; CSD does not destroy. A landmark 1988 study by Nedergaard and Hansen demonstrated that spreading depression does not cause neuronal injury in normal, healthy brain tissue.<sup>[14]</sup> The blackout is temporary. The neurons recover. The words return.</p>
+                    <p>Every single time.</p>
+                </section>
+                <div class="separator">* * *</div>
+                <section class="article-section">
+                    <h2>The Sixty-Minute Question</h2>
+                    <p>There is, however, a line. And every person with migraine aphasia needs to know where it sits.</p>
+                    <p>According to the International Classification of Headache Disorders, third edition (ICHD-3), a typical migraine aura should last between 5 and 60 minutes.<sup>[15]</sup> The median duration for speech and language aura is approximately 20 minutes.<sup>[5]</sup> Twenty minutes of silence. Long enough to terrify you. Short enough to resolve before the ambulance arrives.</p>
+                    <p>But what if it doesn't resolve?</p>
+                    <div class="emergency-box">
+                        <h3>&#x26A0;&#xFE0F; When to Seek Emergency Help</h3>
+                        <p>Any new onset of sudden speech loss demands emergency evaluation. <strong>Period. No exceptions.</strong> A 2024 review in <em>Frontiers in Neurology</em> reported that migraine accounted for &gt;1% of all stroke unit evaluations, and <strong>18% of incorrect thrombolytic treatments</strong> were administered to patients actually experiencing migraine, not stroke.<sup>[16]</sup></p>
+                        <p>If you are experiencing sudden speech difficulty, facial drooping, arm weakness, or any new neurological symptom &mdash; <strong>call your local emergency number immediately.</strong> Do not use this article to self-diagnose.</p>
+                    </div>
+                    <p>The critical clinical distinction: in stroke, neurological symptoms arrive suddenly and are maximal from onset. In migraine aura, they develop gradually, spreading over 5 or more minutes, and typically march through a recognizable sequence &mdash; vision, then sensation, then language.<sup>[3, 15, 17]</sup> Stroke is a slammed door. Migraine aura is a slow tide.</p>
+                    <p>But in the first minutes, before the pattern reveals itself? Even experienced neurologists can struggle.<sup>[17]</sup> Which is why the rule is simple: if your speech fails and you've never had this evaluated, call emergency services. If you have an established pattern confirmed by a neurologist, you still track it &mdash; because the one time it's different could be the one time it matters most.</p>
+                </section>
+                <figure class="article-image">
+                    <img src="images/stroke-vs-migraine-comparison.png" alt="Infographic comparing stroke versus migraine aura onset patterns">
+                    <figcaption>The Critical Distinction &mdash; Stroke: sudden onset, maximal from start. Migraine aura: gradual spread, 5+ minutes. Both can cause aphasia. Only one is an emergency.</figcaption>
+                </figure>
+                <div class="separator">* * *</div>
+                <section class="article-section">
+                    <h2>A Kit for the Silence</h2>
+                    <p>Once you know that migraine aphasia is part of your pattern, preparation replaces panic.</p>
+                    <div class="action-box">
+                        <h3>Build your emergency note now.</h3>
+                        <p>On your phone, create a lock-screen-accessible note: <em>&ldquo;I am experiencing a migraine aura. I cannot speak right now. This is temporary. I do not need an ambulance unless symptoms last more than 60 minutes or are different from my usual pattern.&rdquo;</em> Add your neurologist's number and current medications.<sup>[18]</sup></p>
+                        <h3>Learn your sequence.</h3>
+                        <p>The REFORM data showed that aura types tend to follow a consistent personal order.<sup>[3]</sup> If your pattern is vision &rarr; tingling &rarr; speech loss, then the moment your hand goes numb, you know what's likely next. That foreknowledge alone can halve the fear.</p>
+                        <h3>Track everything.</h3>
+                        <p>Recording the type, order, duration, and context of each aura episode builds a personal dataset your neurologist can actually use. In the Migraine Companion app, <a href="article-first-7-days-with-mi.html">Mi helps you log these moments</a> &mdash; because your diary shouldn't require the very ability you've temporarily lost.</p>
+                        <h3>Don't fight the silence.</h3>
+                        <p>Trying to force speech during transient aphasia is like trying to run on a sleeping leg. The hardware is temporarily offline.<sup>[13]</sup> Rest in a quiet, dark room. Breathe. The language centers will come back online as CSD passes. They always do.</p>
+                    </div>
+                </section>
+                <div class="separator">* * *</div>
+                <section class="article-section">
+                    <h2>Coming Home to Language</h2>
+                    <p>I have lived with migraine for thirty years. I have experienced the zigzags, the numbness, the nausea, the throbbing that makes you negotiate with the dark. But nothing &mdash; nothing &mdash; compares to the loneliness of reaching for a word and finding empty air where it used to be.</p>
+                    <p>The first time it happened, I was certain something irreversible had broken inside my skull. I didn't know about cortical spreading depression. I didn't know about Le&atilde;o's rabbits, or Schwedt's 56,767 recordings, or the elegant cruelty of a wave that moves slower than a snail but silences everything it touches. I only knew that my thoughts were intact and my mouth was useless, and the gap between them felt like drowning on dry land.</p>
+                    <p>I know now what I didn't know then. The wave passes. The neurons recover. The words come back.</p>
+                    <p>They came back for Serene Branson, who returned to broadcasting and became an advocate for migraine awareness.<sup>[19]</sup> They come back for the 13.7% of people with migraine aura who experience this invisible, underdiscussed, profoundly frightening symptom.<sup>[3]</sup> And they will come back for you.</p>
+                    <p>This article opened with a woman who lost her words on live television. It closes with a promise grounded in eighty years of neuroscience: the silence is temporary. Your voice is not gone. It's just waiting for the storm to pass.</p>
+                    <p>Mi will be there when it does.</p>
+                </section>
+                <figure class="article-image">
+                    <img src="images/words-returning-light.png" alt="Scattered letter-particles reassembling into words in warm golden light, symbolizing the return of language after migraine aphasia">
+                    <figcaption>Coming Home &mdash; The words always return. CSD does not cause permanent damage in healthy brain tissue. The silence is temporary.</figcaption>
+                </figure>
+                <div class="key-takeaways">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>Migraine aphasia affects 13.7&ndash;25.6% of people with migraine aura &mdash; the third most common aura type<sup>[3, 4]</sup></li>
+                        <li>It's caused by cortical spreading depression (CSD), a slow depolarization wave first described by Le&atilde;o in 1944<sup>[9, 10]</sup></li>
+                        <li>CSD moves at 3&ndash;5 mm/min and temporarily silences neurons without causing permanent damage in healthy tissue<sup>[11, 14]</sup></li>
+                        <li>Mayo Clinic collected 56,767 speech samples and found migraine alters voice <em>before</em> the attack &mdash; 80% of affected people don't notice<sup>[6]</sup></li>
+                        <li>Higher headache intensity = slower speech and more pauses<sup>[8]</sup></li>
+                        <li>Speech aura typically lasts 5&ndash;60 min (median ~20 min), sequence: vision &rarr; sensation &rarr; language<sup>[3, 5, 15]</sup></li>
+                        <li>Any <em>new</em> speech loss is a medical emergency &mdash; migraine aura accounts for &gt;1% of stroke unit evaluations<sup>[16]</sup></li>
+                        <li>Preparation (ICE notes, sequence tracking, migraine diary) transforms panic into protocol</li>
+                    </ul>
+                </div>
+                <div class="related-box">
+                    <h3>Deepen Your Understanding</h3>
+                    <div class="related-grid">
+                        <a href="article-aura.html" class="related-card">
+                            <h4>Understanding Migraine Aura</h4>
+                            <p>The visual, sensory, and language disturbances that can precede or accompany migraine attacks.</p>
+                        </a>
+                        <a href="article-prediction.html" class="related-card">
+                            <h4>Can Your Brain Predict a Migraine?</h4>
+                            <p>The science of prodrome, premonitory symptoms, and early warning systems.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="when-to-see-doctor">
+                    <h3>When to See a Doctor</h3>
+                    <ul>
+                        <li>You experience speech or language difficulty during a migraine for the first time</li>
+                        <li>Your aura symptoms last longer than 60 minutes or differ from your usual pattern</li>
+                        <li>You experience sudden speech loss, facial drooping, or arm weakness at any time</li>
+                        <li>Your migraine aura has changed in type, duration, or frequency</li>
+                        <li>You experience aphasia without any headache (aura without migraine requires evaluation)</li>
+                    </ul>
+                    <p>This article is a starting point for conversation with your doctor, not a replacement for medical care.</p>
+                </div>
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Charles A. &ldquo;Grammy Reporter Serene Branson Suffered Complex Migraine.&rdquo; <em>ABC News</em>, Feb 17, 2011. <a href="https://abcnews.com/Health/Wellness/cbs-reporter-serene-branson-suffered-complex-migraine-stroke/story?id=12944345" target="_blank">abcnews.com</a></li>
+                        <li>Branson S. &ldquo;CBS Reporter Serene Branson &lsquo;Terrified&rsquo; After On-Air Complex Migraine.&rdquo; <em>ABC News</em>, Feb 18, 2011. <a href="https://abcnews.com/Health/Wellness/cbs-reporter-serene-branson-terrified-confused-suffering-complex/story?id=12946962" target="_blank">abcnews.com</a></li>
+                        <li>Vries T, et al. &ldquo;Clinical features of migraine with aura: a REFORM study.&rdquo; <em>J Headache Pain</em>, 25:23 (2024). <a href="https://doi.org/10.1186/s10194-024-01718-1" target="_blank">doi:10.1186/s10194-024-01718-1</a>. Prospective cohort, n=227.</li>
+                        <li>Italian Headache Registry (RICe). Multicenter cross-sectional, n=272. Speech/language aura 25.6%. <em>J Headache Pain</em> (2024).</li>
+                        <li>Noseda R, et al. &ldquo;What does a migraine aura look like?&rdquo; <em>J Headache Pain</em>, 26:156 (2025). <a href="https://doi.org/10.1186/s10194-025-02080-6" target="_blank">doi:10.1186/s10194-025-02080-6</a>. Systematic review.</li>
+                        <li>Schwedt TJ, et al. &ldquo;Altered speech with migraine attacks.&rdquo; <em>Cephalalgia</em>, 39(11):1390&ndash;1400 (2019). <a href="https://doi.org/10.1177/0333102418815505" target="_blank">doi:10.1177/0333102418815505</a>. n=30, 56,767 samples. Mayo Clinic.</li>
+                        <li>MDLinx. &ldquo;Migraines can cause altered speech.&rdquo; <a href="https://www.mdlinx.com/article/migraines-can-cause-altered-speech/lfc-3171" target="_blank">mdlinx.com</a></li>
+                        <li>Smith DC, et al. &ldquo;Impact of headache intensity on speech.&rdquo; <em>Headache</em>, 64(9) (2024). <a href="https://doi.org/10.1111/head.14809" target="_blank">doi:10.1111/head.14809</a>.</li>
+                        <li>Le&atilde;o AAP. &ldquo;Spreading depression of activity in the cerebral cortex.&rdquo; <em>J Neurophysiol</em>, 7:359&ndash;390 (1944). <a href="https://doi.org/10.1152/jn.1947.10.6.409" target="_blank">doi:10.1152/jn.1947.10.6.409</a>.</li>
+                        <li>Somjen GG. &ldquo;Aristides Le&atilde;o's discovery of CSD.&rdquo; <em>J Neurophysiol</em>, 94:2&ndash;4 (2005). <a href="https://doi.org/10.1152/classicessays.00031.2005" target="_blank">doi:10.1152/classicessays.00031.2005</a>.</li>
+                        <li>Charles AC, Baca SM. &ldquo;Cortical spreading depression and migraine.&rdquo; <em>Nat Rev Neurol</em>, 9:637&ndash;644 (2013). <a href="https://doi.org/10.1038/nrneurol.2013.192" target="_blank">doi:10.1038/nrneurol.2013.192</a>.</li>
+                        <li>Pietrobon D, et al. &ldquo;CSD as a target for anti-migraine agents.&rdquo; <em>J Headache Pain</em>, 14:62 (2013). <a href="https://doi.org/10.1186/1129-2377-14-62" target="_blank">doi:10.1186/1129-2377-14-62</a>.</li>
+                        <li>Teixeira M. &ldquo;Crossed aphasia during migraine aura.&rdquo; <em>J Neurol Neurosurg Psychiatry</em>, 76(8):1168 (2005). <a href="https://doi.org/10.1136/jnnp.2004.058917" target="_blank">doi:10.1136/jnnp.2004.058917</a>.</li>
+                        <li>Nedergaard M, Hansen AJ. &ldquo;Spreading depression is not associated with neuronal injury in the normal brain.&rdquo; <em>Brain Res</em>, 449:395&ndash;398 (1988). <a href="https://doi.org/10.1016/0006-8993(88)91062-1" target="_blank">doi:10.1016/0006-8993(88)91062-1</a>.</li>
+                        <li>Headache Classification Committee. &ldquo;ICHD-3.&rdquo; <em>Cephalalgia</em>, 38(1):1&ndash;211 (2018). <a href="https://doi.org/10.1177/0333102417738202" target="_blank">doi:10.1177/0333102417738202</a>.</li>
+                        <li>Poursadeghfard M, et al. &ldquo;Migraine pathophysiology and stroke risk.&rdquo; <em>Front Neurol</em>, 15:1435208 (2024). <a href="https://doi.org/10.3389/fneur.2024.1435208" target="_blank">doi:10.3389/fneur.2024.1435208</a>.</li>
+                        <li>Mackenzie A, et al. &ldquo;Stroke mimics.&rdquo; <em>Ann Med</em>, 53(1):420&ndash;436 (2021). <a href="https://doi.org/10.1080/07853890.2021.1890205" target="_blank">doi:10.1080/07853890.2021.1890205</a>.</li>
+                        <li>MigraineBuddy. &ldquo;Migraine Aphasia: Symptoms and Cause.&rdquo; (2023). <a href="https://migrainebuddy.com/migraine-aphasia-symptoms-and-cause/" target="_blank">migrainebuddy.com</a></li>
+                        <li>CBS LA. &ldquo;Serene Branson Looks Back.&rdquo; Feb 14, 2012. <a href="https://www.cbsnews.com/losangeles/news/a-year-later-cbs2-reporter-serene-branson-looks-back-at-her-on-air-medical-emergency/" target="_blank">cbsnews.com</a></li>
+                        <li>Close LN, et al. &ldquo;CSD as a site of origin for migraine: Role of CGRP.&rdquo; <em>Cephalalgia</em>, 39(3):428&ndash;434 (2019). <a href="https://doi.org/10.1177/0333102418774299" target="_blank">doi:10.1177/0333102418774299</a>.</li>
+                        <li>Hadjikhani N, et al. &ldquo;Mechanisms of migraine aura revealed by fMRI.&rdquo; <em>PNAS</em>, 98(8):4687&ndash;4692 (2001). <a href="https://doi.org/10.1073/pnas.071582498" target="_blank">doi:10.1073/pnas.071582498</a>.</li>
+                        <li>Ayata C, Lauritzen M. &ldquo;Spreading depression and cerebral vasculature.&rdquo; <em>Physiol Rev</em>, 95(3):953&ndash;993 (2015). <a href="https://doi.org/10.1152/physrev.00027.2014" target="_blank">doi:10.1152/physrev.00027.2014</a>.</li>
+                        <li>Chung CS, Caplan LR. &ldquo;The Migraine&ndash;Stroke Connection.&rdquo; <em>J Stroke</em>, 18(2):146&ndash;156 (2016). <a href="https://doi.org/10.5853/jos.2015.01683" target="_blank">doi:10.5853/jos.2015.01683</a>.</li>
+                        <li>Schwedt TJ. &ldquo;Mayo Clinic Using AI to Pinpoint Migraine Treatments.&rdquo; <em>Mayo Clinic Magazine</em>, Jan 2026. <a href="https://mayomagazine.mayoclinic.org/2026/01/using-ai-to-pinpoint-migraine-treatments/" target="_blank">mayomagazine.mayoclinic.org</a></li>
+                    </ol>
+                </div>
+                <div class="article-footer">
+                    <div class="author-card">
+                        <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
+                        <div class="author-info">
+                            <h3>Rustam Iuldashov</h3>
+                            <p><strong>Creator &amp; Developer</strong> &mdash; 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. This article reflects both personal experience and current neuroscience.</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Disclosure: The author is the creator of Migraine Companion. This article was written independently and is not sponsored by any pharmaceutical or medical technology company. All scientific claims are independently sourced from peer-reviewed literature.</em></p>
+                        </div>
+                    </div>
+                    <div class="editorial-standards">
+                        <h3>How We Create Content</h3>
+                        <ul>
+                            <li><strong>Peer-reviewed sources only.</strong> Cephalalgia, J Headache Pain, Nature Reviews Neurology, Frontiers in Neurology, Headache, Brain Research, ICHD-3.</li>
+                            <li><strong>Study transparency.</strong> Study design and sample sizes noted for all clinical references.</li>
+                            <li><strong>Source verification.</strong> All claims backed by numbered references with DOI links.</li>
+                            <li><strong>Experience + Science.</strong> 30 years personal migraine experience combined with peer-reviewed evidence.</li>
+                            <li><strong>Regular updates.</strong> Articles reviewed when significant new research emerges.</li>
+                            <li><strong>No conflicts of interest.</strong> No funding from pharma, device manufacturers, or supplement companies.</li>
+                        </ul>
+                    </div>
+                    <div class="cta-box">
+                        <h3>Track Your Aura Patterns with Mi</h3>
+                        <p>Migraine Companion helps you log aura type, sequence, and duration &mdash; building the personal dataset your neurologist needs.</p>
+                        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
+    <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download on App Store
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+        Get it on Google Play
+    </a>
+</div>
+                    </div>
+                    <div class="review-dates">
+                        <p><em>Last reviewed: March 2026</em></p>
+                        <p><em>Next scheduled review: September 2026</em></p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 Migraine Companion. Made with &#x1F49C; in Ukraine.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -299,13 +299,9 @@
             line-height: 1.7;
         }
         
-        .separator {
-            text-align: center;
-            margin: 60px 0;
-            color: var(--lavender);
-            font-size: 1.5rem;
-            opacity: 0.5;
-        }
+        .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
+        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168, 0.25) 30%, rgba(139,122,168, 0.40) 50%, rgba(139,122,168, 0.25) 70%, transparent 100%); }
+        .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(139,122,168, 0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
         
         .article-footer {
             margin-top: 60px;
@@ -560,7 +556,7 @@
                     <p>The phase finally got its name: <strong>postdrome</strong>. Its nickname came from the patients themselves: <em>migraine hangover</em>.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Inside the Recovering Brain</h2>
@@ -592,7 +588,7 @@
                     <p>Scientists now suspect the non-headache symptoms form a continuous thread running through the entire attack. We just can't see them during the pain phase. The agony demands all our attention.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Tyranny of "Should"</h2>
@@ -628,7 +624,7 @@
                     <p><strong>Move — gently.</strong> Light activity supports recovery. A slow walk. Careful stretching. Restorative yoga. Save the intense workouts for when you feel genuinely whole again.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Invisible Wound</h2>
@@ -666,7 +662,7 @@
                     <p>Stop apologizing for needing time to heal.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Morning After (Reprise)</h2>

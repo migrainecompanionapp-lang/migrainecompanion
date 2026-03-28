@@ -425,13 +425,9 @@
             color: #ff6b7a;
         }
         
-        .separator {
-            text-align: center;
-            margin: 60px 0;
-            color: var(--lavender);
-            font-size: 1.5rem;
-            opacity: 0.5;
-        }
+        .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
+        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168, 0.25) 30%, rgba(139,122,168, 0.40) 50%, rgba(139,122,168, 0.25) 70%, transparent 100%); }
+        .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(139,122,168, 0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
         
         .article-footer {
             margin-top: 60px;
@@ -804,7 +800,7 @@
                     <p>Two words can begin to close that gap: <em>migraine</em> and <em>tension</em>. They feel different. They behave differently. And distinguishing them is simpler than most people expect.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Walk Up a Flight of Stairs</h2>
@@ -827,7 +823,7 @@
                     <figcaption>The staircase test: migraine pain surges with each step. Tension headache remains unmoved. One question that separates two conditions.</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>What Each One Actually Feels Like</h2>
@@ -854,7 +850,7 @@
                     <figcaption>Two headaches, two realities. Migraine: pulsating, one-sided, with sensory overload. Tension: pressing, bilateral, dull but manageable.</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Grey Zone Is Real</h2>
@@ -877,7 +873,7 @@
                     <figcaption>A headache diary over four weeks reveals what a single episode hides. Migraine clusters emerge. Tension dots scatter. The pattern becomes undeniable.</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Why the Right Answer Changes Everything</h2>
@@ -891,7 +887,7 @@
                     <p>And this is not an edge case. Population-based data from Europe indicate that only 2 to 14 percent of people eligible for migraine prevention actually receive it.<sup>[12]</sup> The gap between what medicine knows and what patients get remains, in the words of a European Headache Federation consensus statement, a substantial public health challenge.<sup>[12]</sup></p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Your Move</h2>
