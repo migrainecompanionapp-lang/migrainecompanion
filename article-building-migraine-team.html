@@ -68,7 +68,6 @@
             --green-soft: rgba(106,170,122, 0.06);
             --teal-soft: rgba(107,155,170, 0.06);
             --gold-soft: rgba(197,160,89, 0.06);
-            --tips-soft: rgba(184,168,146, 0.06);
             --lavender-border: rgba(139,122,168, 0.18);
             --green-border: rgba(106,170,122, 0.18);
             --teal-border: rgba(107,155,170, 0.18);
@@ -170,7 +169,7 @@
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
         .related-card { display: block; text-decoration: none; background: rgba(255,255,255, 0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 12px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(255,255,255, 0.03); }
         .related-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--lavender), transparent); opacity: 0.3; transition: opacity 0.4s ease; }
-        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255, 0.04); border-color: rgba(139,122,168, 0.30); box-shadow: 0 12px 40px rgba(0,0,0, 0.25), 0 0 0 1px rgba(139,122,168, 0.10), inset 0 1px 0 rgba(255,255,255, 0.05); }
+        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255, 0.04); border-color: rgba(139,122,168, 0.30); box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(139,122,168, 0.10), inset 0 1px 0 rgba(255,255,255, 0.05); }
         .related-card:hover::before { opacity: 0.7; }
         .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
         .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
@@ -302,14 +301,10 @@
                 <section class="article-section">
                     <h2>Your GP: More Powerful Than You Think</h2>
                     <p>Your general practitioner handles roughly 70% of all migraine care.<sup>[3]</sup> For episodic migraine that responds to acute treatment, a capable GP may be all you need.</p>
-                    <p>But there&rsquo;s a catch. Medical schools historically devoted about one hour to headache education. Neurology residents received roughly three.<sup>[4]</sup> The landscape has improved &mdash; but not enough. A GP juggling diabetes, hypertension, and depression may not have time to track whether your migraine pattern has shifted from episodic to chronic, or whether you&rsquo;re overusing acute medication and sliding toward medication-overuse headache.</p>
+                    <p>But there&rsquo;s a catch. Medical schools historically devoted about one hour to headache education. Neurology residents received roughly three.<sup>[4]</sup> The landscape has improved &mdash; but not enough. A GP juggling diabetes, hypertension, and depression may not have time to track whether your migraine pattern has shifted from episodic to chronic, or whether you&rsquo;re overusing acute medication and sliding toward <a href="article-moh.html">medication-overuse headache</a>.</p>
                     <p>Two questions can change the trajectory of your care:</p>
                     <p>&ldquo;Have I been screened for chronic migraine?&rdquo; and &ldquo;Am I a candidate for preventive treatment?&rdquo;</p>
                     <p>That&rsquo;s it. If your GP hesitates on either answer, you&rsquo;ve found the edge of their comfort zone &mdash; and the moment to bring a specialist onto the field.</p>
-
-                    <div class="highlight-box">
-                        <p>Bring data, not memories. A headache diary with dates, severity, medication use, and functional impact communicates in ten seconds what a verbal history takes ten minutes to convey.</p>
-                    </div>
                 </section>
 
                 <div class="separator"></div>
@@ -320,16 +315,14 @@
                     <p>The distinction is not semantic. It&rsquo;s clinical.</p>
                     <p>One patient described switching from a general neurologist to a headache specialist and being asked, in her very first 30-minute visit, questions she&rsquo;d never heard before. She left with a complete protocol: preventive medication, acute treatment, emergency plan, and a direct line to her specialist during crises.<sup>[6]</sup> In 30 minutes, she received what years of general neurology hadn&rsquo;t delivered.</p>
                     <p>The problem is math. The US has approximately 700 fellowship-trained headache specialists. That&rsquo;s one for every 80,000 people who need one.<sup>[4][5]</sup> Wait times stretch to six months. Entire states have none.</p>
-                    <p><strong>When to seek one:</strong> Four or more migraine days per month. Two or more failed treatments. Unusual symptoms &mdash; prolonged aura, numbness, attacks lasting beyond 72 hours. A provider unfamiliar with CGRP therapies or neuromodulation.<sup>[5]</sup></p>
-
-                    <div class="emergency-box">
-                        <h3>&#x26A0;&#xFE0F; When to Seek Emergency Help</h3>
-                        <p>If you experience a sudden, severe headache unlike anything you&rsquo;ve felt before &mdash; especially if accompanied by fever, stiff neck, confusion, seizures, double vision, weakness on one side of the body, or loss of consciousness &mdash; call your local emergency number immediately. A new, explosive headache is not migraine until proven otherwise.</p>
-                        <p>Do not use this article to self-diagnose.</p>
-                    </div>
-
-                    <p><strong>When you can&rsquo;t find a specialist locally:</strong> Telehealth has changed the equation. A 2023 study of 186 patients at a virtual headache center reported a <strong>55% median reduction in monthly headache days</strong> within 90 days &mdash; plus a 66% drop in emergency room visits.<sup>[7]</sup> Multiple randomized trials confirm that video consultations for headache are non-inferior to face-to-face visits in both clinical outcomes and patient satisfaction.<sup>[8]</sup> The specialist you need might be 500 miles away. A screen can close that distance.</p>
+                    <p><strong>When to seek one:</strong> Four or more migraine days per month. Two or more failed treatments. Unusual symptoms &mdash; prolonged aura, numbness, attacks lasting beyond 72 hours. A provider unfamiliar with <a href="article-cgrp-revolution.html">CGRP therapies</a> or neuromodulation.<sup>[5]</sup></p>
                 </section>
+
+                <div class="emergency-box">
+                    <h3>&#x26A0;&#xFE0F; When to Seek Emergency Help</h3>
+                    <p>If you experience a sudden, severe headache unlike anything you&rsquo;ve felt before &mdash; especially if accompanied by fever, stiff neck, confusion, seizures, double vision, weakness on one side of the body, or loss of consciousness &mdash; call your local emergency number immediately. A new, explosive headache is not migraine until proven otherwise.</p>
+                    <p>Do not use this article to self-diagnose.</p>
+                </div>
 
                 <figure class="article-image">
                     <img src="images/migraine_team_listening.png" alt="Atmospheric illustration of two people in a warm, intimate conversation — one listening intently, the other speaking with visible relief — representing the moment when a migraine patient finally finds a provider who truly hears them" loading="lazy">
@@ -340,13 +333,9 @@
 
                 <section class="article-section">
                     <h2>Your Therapist: Rewiring the Pain Response</h2>
-                    <p>Let&rsquo;s be direct: CBT for migraine is not about being told to relax. It&rsquo;s a structured clinical intervention that retrains how your nervous system processes pain signals and stress cascades.</p>
+                    <p>Let&rsquo;s be direct: CBT for migraine is not about being told to relax. It&rsquo;s a structured clinical intervention that retrains how your nervous system processes pain signals and <a href="article-anxious-brain.html">stress cascades</a>.</p>
                     <p>The evidence is substantial. A 2025 systematic review examined 50 trials involving over 6,000 adults and found that CBT, relaxation training, and mindfulness-based therapies each independently reduced migraine frequency.<sup>[9]</sup> A meta-analysis of 11 RCTs confirmed significant reductions in both headache frequency and disability scores as measured by MIDAS.<sup>[10]</sup> In children and adolescents, CBT produced odds ratios of 9.11 for clinically meaningful improvement &mdash; effects that held at long-term follow-up.<sup>[11]</sup></p>
                     <p>One detail that changes everything: a 2024 meta-analysis found digital CBT equally effective as face-to-face therapy for headache prevention.<sup>[12]</sup> You don&rsquo;t need a specialist therapist in your zip code. You need a structured program &mdash; and the discipline to follow it.</p>
-
-                    <div class="insight-card">
-                        <p>Ask a prospective therapist one question: &ldquo;Have you treated migraine patients before?&rdquo; CBT for migraine includes specific techniques &mdash; biofeedback, progressive muscle relaxation, trigger desensitization &mdash; that differ from standard depression-focused CBT. A therapist trained in chronic pain understands that your brain isn&rsquo;t broken. It&rsquo;s hypersensitive. Those are different problems requiring different tools.</p>
-                    </div>
                 </section>
 
                 <div class="separator"></div>
@@ -354,7 +343,7 @@
                 <section class="article-section">
                     <h2>Your Physical Therapist: The Neck Connection</h2>
                     <p>That tight band at the base of your skull. The jaw clenching you notice only when someone points it out. The dizziness that arrives with or between attacks.</p>
-                    <p>Your neck has a story to tell. And a physical therapist trained in headache can read it.</p>
+                    <p>Your <a href="article-neck-connection.html">neck has a story to tell</a>. And a physical therapist trained in headache can read it.</p>
                     <p>A 2023 systematic review and meta-analysis of RCTs found that manual therapy combined with medication significantly reduced both headache intensity and headache days per month in chronic migraine.<sup>[13]</sup> Aerobic exercise earned a B-grade recommendation in clinical practice guidelines for migraine.<sup>[14]</sup> Physical therapists working with migraine patients focus on two distinct targets: cervical spine musculoskeletal dysfunction &mdash; particularly trigger points and joint restrictions &mdash; and vestibular rehabilitation for migraine-related balance and dizziness problems.<sup>[15]</sup></p>
                     <p><strong>The key detail:</strong> Not every physical therapist understands the connection between your C2-C3 joint and your temporal pain. Ask specifically for someone experienced with headache patients or trained in cervical manual therapy. The right PT can reduce your headache days. The wrong one will stretch your hamstrings and send you home.</p>
                 </section>
@@ -374,15 +363,11 @@
                     <h2>You Are the Hub</h2>
                     <p>Here is the uncomfortable truth that no guideline will say plainly: your providers don&rsquo;t talk to each other. Different records. Different systems. Different priorities. The StatPearls chapter on migraine interprofessional management specifically recommends that all team members document changes and communicate promptly.<sup>[18]</sup> In practice, that coordination falls on one person.</p>
                     <p>You.</p>
-                    <p>This isn&rsquo;t a burden &mdash; it&rsquo;s a superpower. Nobody else has the complete picture. Nobody else lives in your body, tracks your patterns, and sits in every appointment. You are the only person who sees the whole board.</p>
+                    <p>This isn&rsquo;t a burden &mdash; it&rsquo;s a superpower. Nobody else has the complete picture. Nobody else lives in your body, <a href="article-prediction.html">tracks your patterns</a>, and sits in every appointment. You are the only person who sees the whole board.</p>
                     <p><strong>Build your coordination system in three steps:</strong></p>
                     <p>First, create one document. Every provider&rsquo;s name and contact. Every medication with dose and start date. Every treatment tried and why it stopped. Keep it on your phone.</p>
                     <p>Second, before each appointment, send a brief update: current headache frequency, medication changes since last visit, any new symptoms. Two minutes of preparation can save fifteen minutes of repetition.</p>
                     <p>Third, close the communication loop. When your headache specialist changes your treatment, tell your GP the same day. When your therapist identifies a stress pattern, mention it at your next neurology visit. When your physical therapist finds cervical restriction, note it in your shared document. You are the signal passing between nodes that otherwise exist in isolation.</p>
-
-                    <div class="highlight-box">
-                        <p>No system will coordinate your care for you. A shared document, a two-minute pre-appointment update, and closing the communication loop between providers &mdash; that&rsquo;s the infrastructure of a functioning team.</p>
-                    </div>
                 </section>
 
                 <div class="related-box">
@@ -404,7 +389,6 @@
                     <p>This article is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. The author, Rustam Iuldashov, is not a licensed physician, neurologist, or healthcare professional. He is a patient advocate with 30 years of personal experience living with chronic migraine.</p>
                     <p>All clinical claims in this article are sourced from peer-reviewed research published in indexed medical journals. Study designs and sample sizes are noted where applicable.</p>
                     <p>Always consult a qualified healthcare provider for questions about your individual health, migraine treatment, or medication decisions. Building a care team is a personal process &mdash; the recommendations here are starting points, not prescriptions. Your needs may differ based on your specific migraine type, frequency, comorbidities, and insurance coverage.</p>
-                    <p>This content was last reviewed for accuracy on March 11, 2026.</p>
                 </div>
 
                 <div id="references" class="references">
