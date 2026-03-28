@@ -63,14 +63,14 @@
             --green: #6aaa7a;
             --teal: #6b9baa;
             --gold: #c5a059;
-            --lavender-soft: rgba(139,122,168, 0.06);
-            --green-soft: rgba(106,170,122, 0.06);
-            --teal-soft: rgba(107,155,170, 0.06);
-            --gold-soft: rgba(197,160,89, 0.06);
-            --lavender-border: rgba(139,122,168, 0.18);
-            --green-border: rgba(106,170,122, 0.18);
-            --teal-border: rgba(107,155,170, 0.18);
-            --gold-border: rgba(197,160,89, 0.18);
+            --lavender-soft: rgba(139,122,168,0.06);
+            --green-soft: rgba(106,170,122,0.06);
+            --teal-soft: rgba(107,155,170,0.06);
+            --gold-soft: rgba(197,160,89,0.06);
+            --lavender-border: rgba(139,122,168,0.18);
+            --green-border: rgba(106,170,122,0.18);
+            --teal-border: rgba(107,155,170,0.18);
+            --gold-border: rgba(197,160,89,0.18);
             --text: #cdc6be;
             --text-light: #a09890;
             --text-dark: #847b73;
@@ -125,45 +125,45 @@
         .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
 
         .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
-        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168, 0.25) 30%, rgba(139,122,168, 0.40) 50%, rgba(139,122,168, 0.25) 70%, transparent 100%); }
-        .separator::after { content: '◆'; position: relative; z-index: 1; color: rgba(139,122,168, 0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
+        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168,0.25) 30%, rgba(139,122,168,0.40) 50%, rgba(139,122,168,0.25) 70%, transparent 100%); }
+        .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(139,122,168,0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
 
-        .key-takeaways { background: linear-gradient(180deg, rgba(107,155,170, 0.10) 0%, rgba(107,155,170, 0.04) 100%); border: 1px solid var(--teal-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0, 0.20), 0 1px 3px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(107,155,170, 0.12), inset 0 -1px 0 rgba(0,0,0, 0.10); }
+        .key-takeaways { background: linear-gradient(180deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.04) 100%); border: 1px solid var(--teal-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.15), inset 0 1px 0 rgba(107,155,170,0.12), inset 0 -1px 0 rgba(0,0,0,0.10); }
         .key-takeaways::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.6; border-radius: 20px 20px 0 0; }
         .key-takeaways h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; position: relative; z-index: 1; }
         .key-takeaways ul { list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
-        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid rgba(107,155,170, 0.06); }
+        .key-takeaways li { font-size: 0.95rem; color: var(--text); padding: 10px 0; padding-left: 28px; position: relative; border-bottom: 1px solid rgba(107,155,170,0.06); }
         .key-takeaways li:last-child { border-bottom: none; }
         .key-takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--teal); font-weight: 600; }
 
-        .highlight-box { background: linear-gradient(90deg, rgba(106,170,122, 0.10) 0%, rgba(106,170,122, 0.03) 100%); border-left: 3px solid var(--green); padding: 28px 32px 28px 36px; border-radius: 0 16px 16px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(106,170,122, 0.08), inset 0 -1px 0 rgba(0,0,0, 0.08); }
-        .highlight-box::before { content: '\201C'; position: absolute; top: 12px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; line-height: 1; color: rgba(106,170,122, 0.12); pointer-events: none; }
+        .highlight-box { background: linear-gradient(90deg, rgba(106,170,122,0.10) 0%, rgba(106,170,122,0.03) 100%); border-left: 3px solid var(--green); padding: 28px 32px 28px 36px; border-radius: 0 16px 16px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12), inset 0 1px 0 rgba(106,170,122,0.08), inset 0 -1px 0 rgba(0,0,0,0.08); }
+        .highlight-box::before { content: '\201C'; position: absolute; top: 12px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; line-height: 1; color: rgba(106,170,122,0.12); pointer-events: none; }
         .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; position: relative; z-index: 1; }
 
-        .data-card { background: linear-gradient(90deg, rgba(107,155,170, 0.10) 0%, rgba(107,155,170, 0.03) 100%); border-left: 3px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(107,155,170, 0.08), inset 0 -1px 0 rgba(0,0,0, 0.08); }
-        .data-card::before { content: ''; position: absolute; top: 0; left: 3px; right: 0; height: 1px; background: linear-gradient(90deg, rgba(107,155,170, 0.30), transparent 80%); border-radius: 0 14px 0 0; }
+        .data-card { background: linear-gradient(90deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.03) 100%); border-left: 3px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12), inset 0 1px 0 rgba(107,155,170,0.08), inset 0 -1px 0 rgba(0,0,0,0.08); }
+        .data-card::before { content: ''; position: absolute; top: 0; left: 3px; right: 0; height: 1px; background: linear-gradient(90deg, rgba(107,155,170,0.30), transparent 80%); border-radius: 0 14px 0 0; }
         .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
         .data-card p:last-child { margin-bottom: 0; }
 
-        .insight-card { background: linear-gradient(135deg, rgba(139,122,168, 0.10) 0%, rgba(139,122,168, 0.02) 100%); border-left: 3px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(139,122,168, 0.08), inset 0 -1px 0 rgba(0,0,0, 0.08); }
+        .insight-card { background: linear-gradient(135deg, rgba(139,122,168,0.10) 0%, rgba(139,122,168,0.02) 100%); border-left: 3px solid var(--lavender); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12), inset 0 1px 0 rgba(139,122,168,0.08), inset 0 -1px 0 rgba(0,0,0,0.08); }
         .insight-card p { margin-bottom: 16px; font-size: 0.98rem; position: relative; z-index: 1; }
         .insight-card p:last-child { margin-bottom: 0; }
 
-        .emergency-box { background: linear-gradient(90deg, rgba(197,160,89, 0.10) 0%, rgba(197,160,89, 0.02) 100%); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 14px 14px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18), 0 1px 3px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(197,160,89, 0.10), inset 0 -1px 0 rgba(0,0,0, 0.08); }
+        .emergency-box { background: linear-gradient(90deg, rgba(197,160,89,0.10) 0%, rgba(197,160,89,0.02) 100%); border-left: 4px solid var(--gold); padding: 28px 32px; border-radius: 0 14px 14px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12), inset 0 1px 0 rgba(197,160,89,0.10), inset 0 -1px 0 rgba(0,0,0,0.08); }
         .emergency-box h3 { color: var(--gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
         .emergency-box p { font-size: 0.98rem; margin-bottom: 12px; }
         .emergency-box p:last-child { margin-bottom: 0; }
 
-        .action-box { background: transparent; border: 1px solid var(--green-border); border-radius: 16px; padding: 28px 32px; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.12); }
+        .action-box { background: transparent; border: 1px solid var(--green-border); border-radius: 16px; padding: 28px 32px; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
         .action-box h3 { color: var(--green); margin-top: 16px; font-size: 1.1rem; }
         .action-box h3:first-child { margin-top: 0; }
         .action-box p { font-size: 0.95rem; }
 
-        .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(139,122,168, 0.10); box-shadow: 0 20px 60px rgba(0,0,0, 0.35), 0 4px 12px rgba(0,0,0, 0.20), inset 0 0 0 1px rgba(255,255,255, 0.03); }
+        .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(139,122,168,0.10); box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.20), inset 0 0 0 1px rgba(255,255,255,0.03); }
         .article-image img { width: 100%; height: auto; display: block; }
-        .article-image figcaption { background: linear-gradient(180deg, rgba(13,13,13, 0.60) 0%, rgba(20,20,25, 0.95) 100%); padding: 14px 20px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; border-top: 1px solid rgba(139,122,168, 0.08); }
+        .article-image figcaption { background: linear-gradient(180deg, rgba(13,13,13,0.60) 0%, rgba(20,20,25,0.95) 100%); padding: 14px 20px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; border-top: 1px solid rgba(139,122,168,0.08); }
 
-        .checklist-box { background: linear-gradient(180deg, rgba(106,170,122, 0.10) 0%, rgba(106,170,122, 0.03) 100%); border: 1px solid var(--green-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0, 0.20), inset 0 1px 0 rgba(106,170,122, 0.12); }
+        .checklist-box { background: linear-gradient(180deg, rgba(106,170,122,0.10) 0%, rgba(106,170,122,0.03) 100%); border: 1px solid var(--green-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.20), inset 0 1px 0 rgba(106,170,122,0.12); }
         .checklist-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--green), transparent); opacity: 0.6; border-radius: 20px 20px 0 0; }
         .checklist-box h3 { color: #fff; margin-top: 0; font-size: 1.3rem; font-weight: 700; text-align: center; margin-bottom: 8px; }
         .checklist-box h4 { color: var(--green); font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 700; margin: 24px 0 12px; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -175,15 +175,15 @@
         .checklist-btn { padding: 10px 20px; border-radius: 10px; border: 1px solid var(--green); background: linear-gradient(135deg, rgba(106,170,122,0.1), rgba(106,170,122,0.2)); color: var(--green); font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.3s; font-family: 'Inter', sans-serif; }
         .checklist-btn:hover { background: var(--green); color: var(--bg); transform: translateY(-2px); }
 
-        .related-box { margin: 60px 0; padding: 40px; background: rgba(107,155,170, 0.03); border-radius: 24px; border: 1px solid var(--teal-border); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0, 0.18), inset 0 1px 0 rgba(107,155,170, 0.06); }
+        .related-box { margin: 60px 0; padding: 40px; background: rgba(107,155,170,0.03); border-radius: 24px; border: 1px solid var(--teal-border); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(107,155,170,0.06); }
         .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
-        .related-card { display: block; text-decoration: none; background: rgba(255,255,255, 0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 12px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(255,255,255, 0.03); }
-        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255, 0.04); border-color: rgba(139,122,168, 0.30); box-shadow: 0 12px 40px rgba(0,0,0, 0.25); }
+        .related-card { display: block; text-decoration: none; background: rgba(255,255,255,0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 12px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.03); }
+        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.04); border-color: rgba(139,122,168,0.30); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
         .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
         .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
 
-        .full-disclaimer { background: rgba(139,122,168, 0.04); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 48px 0; box-shadow: 0 2px 12px rgba(0,0,0, 0.10); }
+        .full-disclaimer { background: rgba(139,122,168,0.04); border: 1px solid var(--lavender-border); border-radius: 16px; padding: 28px; margin: 48px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.10); }
         .full-disclaimer h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
         .full-disclaimer p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.7; }
         .full-disclaimer p:last-child { margin-bottom: 0; }
@@ -191,36 +191,36 @@
         .medical-disclaimer { font-size: 0.9rem; font-style: italic; color: var(--text-dark); text-align: center; padding: 16px 0; margin-bottom: 48px; border-bottom: 1px solid var(--lavender-border); }
 
         .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--lavender-border); }
-        .author-card { display: flex; align-items: center; gap: 20px; background: linear-gradient(135deg, rgba(139,122,168, 0.05) 0%, rgba(106,170,122, 0.03) 100%); border: 1px solid var(--lavender-border); border-radius: 20px; padding: 28px; margin-bottom: 32px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(255,255,255, 0.04); }
+        .author-card { display: flex; align-items: center; gap: 20px; background: linear-gradient(135deg, rgba(139,122,168,0.05) 0%, rgba(106,170,122,0.03) 100%); border: 1px solid var(--lavender-border); border-radius: 20px; padding: 28px; margin-bottom: 32px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04); }
         .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--lavender), var(--green)); padding: 3px; flex-shrink: 0; }
         .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
         .author-info h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
         .author-info p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
 
-        .editorial-standards { background: rgba(139,122,168, 0.03); border: 1px solid rgba(139,122,168, 0.12); border-radius: 16px; padding: 28px; margin: 32px 0; }
+        .editorial-standards { background: rgba(139,122,168,0.03); border: 1px solid rgba(139,122,168,0.12); border-radius: 16px; padding: 28px; margin: 32px 0; }
         .editorial-standards h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
         .editorial-standards ul { list-style: none; padding: 0; margin: 0; }
-        .editorial-standards li { font-size: 0.9rem; color: var(--text-light); padding: 8px 0; padding-left: 20px; position: relative; border-bottom: 1px solid rgba(139,122,168, 0.05); }
+        .editorial-standards li { font-size: 0.9rem; color: var(--text-light); padding: 8px 0; padding-left: 20px; position: relative; border-bottom: 1px solid rgba(139,122,168,0.05); }
         .editorial-standards li:last-child { border-bottom: none; }
         .editorial-standards li::before { content: '\2022'; position: absolute; left: 0; color: var(--lavender); opacity: 0.6; }
 
-        .cta-box { background: linear-gradient(180deg, rgba(106,170,122, 0.10) 0%, rgba(106,170,122, 0.03) 100%); border: 1px solid var(--green-border); border-radius: 20px; padding: 36px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0, 0.25); }
+        .cta-box { background: linear-gradient(180deg, rgba(106,170,122,0.10) 0%, rgba(106,170,122,0.03) 100%); border: 1px solid var(--green-border); border-radius: 20px; padding: 36px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
         .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--green), transparent); opacity: 0.7; }
         .cta-box h3 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; position: relative; z-index: 1; }
         .cta-box p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; position: relative; z-index: 1; }
         .download-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(106,170,122,0.15), rgba(106,170,122,0.25)); border: 1px solid var(--green); border-radius: 12px; color: var(--green); text-decoration: none; font-weight: 600; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); flex: 1; max-width: 260px; justify-content: center; position: relative; z-index: 1; }
-        .download-btn:hover { background: var(--green); color: var(--bg); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(106,170,122, 0.25); }
+        .download-btn:hover { background: var(--green); color: var(--bg); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(106,170,122,0.25); }
 
         .references { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--lavender-border); }
         .references h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-light); margin-bottom: 16px; }
         .references ol { padding-left: 24px; }
         .references li { font-size: 0.84rem; color: var(--text-dark); margin-bottom: 4px; line-height: 1.6; padding: 8px 10px; border-radius: 6px; transition: background 0.2s ease; }
-        .references li:nth-child(odd) { background: rgba(139,122,168, 0.03); }
-        .references li:hover { background: rgba(139,122,168, 0.06); }
+        .references li:nth-child(odd) { background: rgba(139,122,168,0.03); }
+        .references li:hover { background: rgba(139,122,168,0.06); }
         .references a { color: var(--lavender); text-decoration: none; font-weight: 500; }
         .references a:hover { text-decoration: underline; }
 
-        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(139,122,168, 0.10); }
+        .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(139,122,168,0.10); }
 
         footer { border-top: 1px solid var(--lavender-border); padding: 32px 0; margin-top: 48px; }
         .copyright { text-align: center; font-size: 0.85rem; color: var(--text-dark); }
@@ -252,9 +252,8 @@
             .related-grid { grid-template-columns: 1fr; }
         }
     </style>
-    <link rel="stylesheet" href="article-category-colors.css">
 </head>
-<body data-category="self-care">
+<body>
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
@@ -292,7 +291,7 @@
                 <div class="key-takeaways">
                     <h3>Key Takeaways</h3>
                     <ul>
-                        <li>Airplane cabins impose sustained mild hypoxia. Controlled research shows low-oxygen conditions trigger migraine in up to <strong>63% of susceptible individuals</strong> and progressively elevate CGRP &mdash; the key migraine neuropeptide &mdash; throughout exposure.<sup>[4][5]</sup></li>
+                        <li>Airplane cabins impose sustained mild hypoxia. Controlled research shows low-oxygen conditions trigger migraine in up to <strong>63% of susceptible individuals</strong> and progressively elevate CGRP — the key migraine neuropeptide — throughout exposure.<sup>[4][5]</sup></li>
                         <li>The airport is the first trigger zone. Fluorescent lighting, noise, crowds, and stress hormones load your system before boarding. <strong>FL-41 or precision-tinted lenses</strong> and noise-canceling headphones are functional migraine tools, not luxury items.<sup>[9][10]</sup></li>
                         <li>Descent is the most dangerous phase. Rapid pressure changes during landing activate <strong>trigeminal pain pathways</strong> already sensitized by hours of reduced oxygen.<sup>[11][13]</sup></li>
                         <li>Early medication timing transforms outcomes. Treating while pain is mild produces an <strong>84% pain-free rate</strong> at two hours versus 53% when pain has escalated.<sup>[16]</sup></li>
@@ -304,24 +303,24 @@
                 <div class="separator"></div>
 
                 <section class="article-section">
-                    <p>Seat 14C. Seatbelt sign on. The captain announces initial descent. And somewhere behind your left eye, a familiar tightness begins &mdash; not from nerves, but from physics. You have forty minutes to landing. Your migraine brain has already started its countdown.</p>
-                    <p>For the billion people worldwide who live with migraine, boarding a plane is not boarding a plane.<sup>[1]</sup> It is stepping into a sealed metal tube where oxygen drops, pressure shifts, humidity vanishes, and every fluorescent bulb, engine hum, and recycled perfume cloud converges on a nervous system already running close to its limit. An airplane cabin does not add one trigger. It fires them all at once.</p>
-                    <p>But here is what 30 years of migraine have taught me: flying does not have to mean surrendering. The difference between a ruined trip and a manageable flight comes down to protocol &mdash; understanding what the cabin does to your brain, and intervening before the cascade begins.</p>
+                    <p>Seat 14C. Seatbelt sign on. The captain announces initial descent. And somewhere behind your left eye, a familiar tightness begins — not from nerves, but from physics. You have forty minutes to landing. Your migraine brain has already started its countdown.</p>
+                    <p>For the billion people worldwide who live with migraine, boarding a plane is not boarding a plane.<sup>[1]</sup> It is stepping into a sealed metal tube where oxygen drops, pressure shifts, humidity vanishes, and every fluorescent bulb, engine hum, and recycled perfume cloud converges on a nervous system already running close to its limit. An airplane cabin does not add one <a href="article-understanding-triggers.html">trigger</a>. It fires them all at once.</p>
+                    <p>But here is what 30 years of migraine have taught me: flying does not have to mean surrendering. The difference between a ruined trip and a manageable flight comes down to protocol — understanding what the cabin does to your brain, and intervening before the cascade begins.</p>
                 </section>
 
                 <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Oxygen You Are Not Getting</h2>
-                    <p>At cruising altitude, cabin pressure simulates roughly 1,800&ndash;2,400 meters above sea level.<sup>[2]</sup> You are breathing thinner air than at ground level. Most passengers notice nothing. A migraine brain notices everything.</p>
+                    <p>At cruising altitude, cabin pressure simulates roughly 1,800–2,400 meters above sea level.<sup>[2]</sup> You are breathing thinner air than at ground level. Most passengers notice nothing. A migraine brain notices everything.</p>
                     <p>A pressure chamber study placed seven airplane headache sufferers alongside seven matched controls in a simulated cabin environment. Healthy participants saw oxygen saturation drop from 98% to 96%. The headache group plunged from 98% to 92%.<sup>[3]</sup> Six percentage points. In neurological terms, a chasm.</p>
-                    <p>Hypoxia &mdash; reduced oxygen reaching the brain &mdash; is now recognized as one of the most potent experimental migraine triggers in research. At the University of Innsbruck, 30 migraine patients breathed low-oxygen air simulating 4,500 meters for up to six hours. Eighty percent developed headache. Sixty-three percent developed full migraine &mdash; nausea, photophobia, phonophobia. Seventeen percent experienced aura, including two people who had never had aura before in their lives.<sup>[4]</sup></p>
-                    <p>The mechanism is molecular. Hypoxia generates reactive oxygen species that activate pain-sensitive TRP channels on meningeal nerve fibers &mdash; the trigeminal pathways that drive migraine pain.<sup>[4]</sup> The longer the exposure, the higher the blood levels of CGRP, the neuropeptide at the center of migraine inflammation. In a follow-up study measuring CGRP throughout a hypoxic challenge, levels rose progressively with every passing hour.<sup>[5]</sup></p>
-                    <p>A commercial cabin is not a laboratory at 4,500 meters. But it is a sustained, hours-long, low-oxygen box &mdash; and for a brain already primed for migraine, even moderate hypoxia can lower the threshold from stable to attack.</p>
+                    <p>Hypoxia — reduced oxygen reaching the brain — is now recognized as one of the most potent experimental migraine triggers in research. At the University of Innsbruck, 30 migraine patients breathed low-oxygen air simulating 4,500 meters for up to six hours. Eighty percent developed headache. Sixty-three percent developed full migraine — nausea, photophobia, phonophobia. Seventeen percent experienced <a href="article-aura.html">aura</a>, including two people who had never had aura before in their lives.<sup>[4]</sup></p>
+                    <p>The mechanism is molecular. Hypoxia generates reactive oxygen species that activate pain-sensitive TRP channels on meningeal nerve fibers — the trigeminal pathways that drive migraine pain.<sup>[4]</sup> The longer the exposure, the higher the blood levels of CGRP, the neuropeptide at the center of migraine inflammation. In a follow-up study measuring CGRP throughout a hypoxic challenge, levels rose progressively with every passing hour.<sup>[5]</sup></p>
+                    <p>A commercial cabin is not a laboratory at 4,500 meters. But it is a sustained, hours-long, low-oxygen box — and for a brain already primed for migraine, even moderate hypoxia can lower the threshold from stable to attack.</p>
                 </section>
 
                 <figure class="article-image">
-                    <img src="images/flight_oxygen_brain.png" alt="Scientific infographic showing four cabin environment threat vectors &mdash; hypoxia, cabin pressure, CGRP elevation, and rapid descent &mdash; converging on a cross-section of a migraine brain inside an airplane fuselage at cruising altitude" loading="lazy">
+                    <img src="images/flight_oxygen_brain.png" alt="Scientific infographic showing four cabin environment threat vectors — hypoxia, cabin pressure, CGRP elevation, and rapid descent — converging on a cross-section of a migraine brain inside an airplane fuselage at cruising altitude" loading="lazy">
                     <figcaption>The Perfect Storm at 35,000 Feet: four cabin environment factors converge on the migraine brain during flight. Data from references [3], [4], [5].</figcaption>
                 </figure>
 
@@ -330,9 +329,9 @@
                 <section class="article-section">
                     <h2>The Sensory Gauntlet Before You Even Board</h2>
                     <p>Most travel advice ignores this: your migraine clock does not start at takeoff. It starts at the airport door.</p>
-                    <p>An airport terminal is a sensory assault designed by people who do not get migraines. Fluorescent lighting dominates every corridor, every security lane, every gate &mdash; and those tubes flicker at frequencies invisible to the eye but fully registrable by the migraine brain.<sup>[6]</sup> Research shows that fluorescent light provokes abnormal cortical activation in migraine patients even between attacks, triggering photophobia, eye pain, and sometimes a full-blown episode.<sup>[7]</sup> Over 90% of migraine sufferers report light sensitivity during attacks. Many are chronically photosensitive between them.<sup>[8]</sup></p>
-                    <p>Now add PA announcements. Crowd noise. Jet fuel on the jetway. A perfume cloud in duty-free. Stress hormones climbing as you sprint through security. By the time you reach your gate, the trigger cascade is well underway &mdash; and you have not left the ground.</p>
-                    <p>FL-41 tinted lenses were originally developed to neutralize fluorescent light sensitivity. In a randomized trial of children with migraine, FL-41 lenses cut attack frequency from 6.2 to 1.6 per month.<sup>[9]</sup> Newer optical notch filters that selectively block 480nm wavelengths &mdash; the range most activating for migraine brains &mdash; improved Headache Impact Test scores in chronic migraine patients over just two weeks.<sup>[10]</sup> These are not accessories. For airports, they are armor.</p>
+                    <p>An airport terminal is a sensory assault designed by people who do not get migraines. Fluorescent lighting dominates every corridor, every security lane, every gate — and those tubes flicker at frequencies invisible to the eye but fully registrable by the migraine brain.<sup>[6]</sup> Research shows that fluorescent light provokes abnormal cortical activation in migraine patients even between attacks, triggering photophobia, eye pain, and sometimes a full-blown episode.<sup>[7]</sup> Over 90% of migraine sufferers report <a href="article-migraine-friendly-lighting.html">light sensitivity</a> during attacks. Many are chronically photosensitive between them.<sup>[8]</sup></p>
+                    <p>Now add PA announcements. Crowd noise. Jet fuel on the jetway. A perfume cloud in duty-free. Stress hormones climbing as you sprint through security. By the time you reach your gate, the trigger cascade is well underway — and you have not left the ground.</p>
+                    <p>FL-41 tinted lenses were originally developed to neutralize fluorescent light sensitivity. In a randomized trial of children with migraine, FL-41 lenses cut attack frequency from 6.2 to 1.6 per month.<sup>[9]</sup> Newer optical notch filters that selectively block 480nm wavelengths — the range most activating for migraine brains — improved Headache Impact Test scores in chronic migraine patients over just two weeks.<sup>[10]</sup> These are not accessories. For airports, they are armor.</p>
                 </section>
 
                 <div class="separator"></div>
@@ -340,8 +339,8 @@
                 <section class="article-section">
                     <h2>Why Descent Is the Danger Zone</h2>
                     <p>If migraine could pick its favorite moment on a flight, it would choose landing.</p>
-                    <p>A systematic review of 39 studies confirmed that airplane headache strikes most often during the descent phase, when cabin pressure changes are steepest and fastest.<sup>[11]</sup> The physics follow Boyle&rsquo;s law: as external pressure rises during descent, air trapped in the sinuses contracts. The result is a vacuum effect &mdash; what aviation medicine calls &ldquo;the squeeze.&rdquo;<sup>[12]</sup> This pressure differential irritates the ethmoidal nerve, a branch of the trigeminal system, directly activating the same pain architecture that drives migraine.<sup>[13]</sup></p>
-                    <p>The timing is cruel. By descent, you have breathed reduced oxygen for hours. Your meningeal nociceptors are sensitized. Your CGRP levels have been climbing. The rapid pressure shift of landing becomes the final trigger &mdash; the one that tips a primed system into full attack.</p>
+                    <p>A systematic review of 39 studies confirmed that airplane headache strikes most often during the descent phase, when cabin pressure changes are steepest and fastest.<sup>[11]</sup> The physics follow Boyle&rsquo;s law: as external pressure rises during descent, air trapped in the sinuses contracts. The result is a vacuum effect — what aviation medicine calls &ldquo;the squeeze.&rdquo;<sup>[12]</sup> This pressure differential irritates the ethmoidal nerve, a branch of the trigeminal system, directly activating the same pain architecture that drives migraine.<sup>[13]</sup></p>
+                    <p>The timing is cruel. By descent, you have breathed reduced oxygen for hours. Your meningeal nociceptors are sensitized. Your CGRP levels have been climbing. The rapid pressure shift of landing becomes the final trigger — the one that tips a primed system into full attack.</p>
                     <p>Danish researchers tested this precisely. Volunteers who regularly experienced airplane headache entered a pressure chamber mimicking descent. They developed identical symptoms. Controls felt nothing.<sup>[14]</sup> The vulnerability is neurological. Not imagined.</p>
                 </section>
 
@@ -349,10 +348,10 @@
 
                 <section class="article-section">
                     <h2>Your Medication Strategy: Timing Is Everything</h2>
-                    <p>On the ground, most migraineurs know the rule: treat early. In the air, this rule becomes life-or-death for your trip &mdash; because you cannot pull over, lie down in a dark room, or walk to a pharmacy at 35,000 feet.</p>
-                    <p>The TEMPO study tracked 144 migraine patients through multiple attacks. Taking a triptan within one hour of headache onset produced pain-free status at two hours in 53% of cases. Waiting longer &mdash; just an hour longer &mdash; dropped that rate to 30%.<sup>[15]</sup> A separate analysis was more dramatic: treating during the mild pain phase yielded an <strong>84% pain-free rate</strong> at two hours. Waiting until moderate-to-severe pain cut it nearly in half, to 53%.<sup>[16]</sup></p>
-                    <p>On an airplane, this means one thing: your acute medication cannot be in the overhead bin. It belongs in the seat-back pocket. In your jacket. Within arm&rsquo;s reach. And you need to recognize your prodrome &mdash; yawning, neck stiffness, light sensitivity, difficulty concentrating &mdash; because at altitude, those are not minor inconveniences. They are a 40-minute warning siren.</p>
-                    <p>One more complication. During migraine, the stomach slows. Gastric motility drops, delaying oral medication absorption.<sup>[17]</sup> At altitude, this effect may worsen. For frequent flyers, nasal spray or orally disintegrating tablet formulations bypass the gastrointestinal tract entirely &mdash; offering more reliable absorption when your stomach has stopped cooperating. Discuss these options with your neurologist before your next flight.</p>
+                    <p>On the ground, most migraineurs know the rule: treat early. In the air, this rule becomes life-or-death for your trip — because you cannot pull over, lie down in a dark room, or walk to a pharmacy at 35,000 feet.</p>
+                    <p>The TEMPO study tracked 144 migraine patients through multiple attacks. Taking a triptan within one hour of headache onset produced pain-free status at two hours in 53% of cases. Waiting longer — just an hour longer — dropped that rate to 30%.<sup>[15]</sup> A separate analysis was more dramatic: treating during the mild pain phase yielded an <strong>84% pain-free rate</strong> at two hours. Waiting until moderate-to-severe pain cut it nearly in half, to 53%.<sup>[16]</sup></p>
+                    <p>On an airplane, this means one thing: your acute medication cannot be in the overhead bin. It belongs in the seat-back pocket. In your jacket. Within arm&rsquo;s reach. And you need to recognize your <a href="article-prodrome-warning-signs.html">prodrome</a> — yawning, neck stiffness, light sensitivity, difficulty concentrating — because at altitude, those are not minor inconveniences. They are a 40-minute warning siren.</p>
+                    <p>One more complication. During migraine, the stomach slows. Gastric motility drops, delaying oral medication absorption.<sup>[17]</sup> At altitude, this effect may worsen. For frequent flyers, nasal spray or orally disintegrating tablet formulations bypass the gastrointestinal tract entirely — offering more reliable absorption when your stomach has stopped cooperating. Discuss these options with your neurologist before your next flight.</p>
                 </section>
 
                 <div class="separator"></div>
@@ -360,13 +359,13 @@
                 <section class="article-section">
                     <h2>Getting Your Medications Through Security</h2>
                     <p>This worry keeps many migraineurs anxious before travel. It should not.</p>
-                    <p>In the United States, the TSA permits all prescription and over-the-counter medications in carry-on baggage. Pill-form medications have no quantity restrictions. Liquid medications are exempt from the standard 3.4-ounce rule when medically necessary &mdash; though you must declare them at the screening checkpoint.<sup>[18]</sup></p>
-                    <p>International travel demands more preparation. The CDC recommends keeping all medications in original, labeled containers with your name and prescribing physician clearly visible.<sup>[19]</sup> Some countries require a doctor&rsquo;s letter for injectables or controlled substances. Pill organizers &mdash; convenient as they are &mdash; can create identification problems at foreign customs checkpoints.<sup>[19]</sup></p>
+                    <p>In the United States, the TSA permits all prescription and over-the-counter medications in carry-on baggage. Pill-form medications have no quantity restrictions. Liquid medications are exempt from the standard 3.4-ounce rule when medically necessary — though you must declare them at the screening checkpoint.<sup>[18]</sup></p>
+                    <p>International travel demands more preparation. The CDC recommends keeping all medications in original, labeled containers with your name and prescribing physician clearly visible.<sup>[19]</sup> Some countries require a doctor&rsquo;s letter for injectables or controlled substances. Pill organizers — convenient as they are — can create identification problems at foreign customs checkpoints.<sup>[19]</sup></p>
                     <p>The non-negotiable rule: never check your migraine medication. Checked bags get lost, delayed, and baked in cargo holds. Your acute treatment stays on your body. In a clear pouch, in your personal item, accessible without standing up.</p>
                 </section>
 
                 <figure class="article-image">
-                    <img src="images/flight_migraine_kit.png" alt="Top-down knolling illustration of a complete migraineur flight survival kit organized by three flight phases: Airport, In-Flight, and Descent and Arrival &mdash; including FL-41 lenses, noise-canceling headphones, electrolytes, water bottle, compression socks, peppermint oil, eye mask, medication kit, melatonin, and prescription documents" loading="lazy">
+                    <img src="images/flight_migraine_kit.png" alt="Top-down knolling illustration of a complete migraineur flight survival kit organized by three flight phases: Airport, In-Flight, and Descent and Arrival — including FL-41 lenses, noise-canceling headphones, electrolytes, water bottle, compression socks, peppermint oil, eye mask, medication kit, melatonin, and prescription documents" loading="lazy">
                     <figcaption>The Flight Kit: what 30 years of migraine taught me to pack. Every item addresses a peer-reviewed trigger.</figcaption>
                 </figure>
 
@@ -376,20 +375,20 @@
                     <h2>The 3-Phase Flight Protocol</h2>
 
                     <div class="action-box">
-                        <h3>Phase 1 &mdash; The Airport (Pre-Board)</h3>
-                        <p>FL-41 or precision-tinted lenses go on at the terminal door. Noise-canceling headphones or earplugs go in at security. Eat a real meal before boarding &mdash; blood sugar drops amplify migraine susceptibility. Start sipping electrolyte water at least two hours before departure. Arrive early. Rushing through an airport spikes cortisol, and the crash after you sit down is a documented migraine trigger: in the first six hours after stress declines, migraine risk is nearly five times baseline.<sup>[20]</sup></p>
+                        <h3>Phase 1 — The Airport (Pre-Board)</h3>
+                        <p>FL-41 or precision-tinted lenses go on at the terminal door. Noise-canceling headphones or earplugs go in at security. Eat a real meal before boarding — blood sugar drops amplify migraine susceptibility. Start sipping electrolyte water at least two hours before departure. Arrive early. Rushing through an airport spikes cortisol, and the crash after you sit down is a documented migraine trigger: in the first six hours after stress declines, migraine risk is nearly five times baseline.<sup>[20]</sup></p>
 
-                        <h3>Phase 2 &mdash; In-Flight</h3>
-                        <p>Request a window seat over the wing &mdash; least cabin motion, plus control over the shade. Compression socks on immediately. Water: 200&ndash;250 ml every hour, timer set. Alcohol: none. It accelerates dehydration in the already-desiccated cabin and is an independent migraine trigger.<sup>[21]</sup> If smells bother you &mdash; other passengers&rsquo; meals, perfume, cleaning products &mdash; keep peppermint oil on your wrist. A clinical trial found intranasal peppermint oil comparable to lidocaine for reducing migraine intensity.<sup>[22]</sup> During descent, try the Valsalva maneuver (gently blowing against a pinched nose) every 30 seconds to equalize sinus pressure and soften the &ldquo;squeeze&rdquo; on trigeminal nerve endings.</p>
+                        <h3>Phase 2 — In-Flight</h3>
+                        <p>Request a window seat over the wing — least cabin motion, plus control over the shade. Compression socks on immediately. Water: 200–250 ml every hour, timer set. Alcohol: none. It accelerates <a href="article-dehydration-equation.html">dehydration</a> in the already-desiccated cabin and is an independent migraine trigger.<sup>[21]</sup> If smells bother you — other passengers&rsquo; meals, perfume, cleaning products — keep peppermint oil on your wrist. A clinical trial found intranasal peppermint oil comparable to lidocaine for reducing migraine intensity.<sup>[22]</sup> During descent, try the Valsalva maneuver (gently blowing against a pinched nose) every 30 seconds to equalize sinus pressure and soften the &ldquo;squeeze&rdquo; on trigeminal nerve endings.</p>
 
-                        <h3>Phase 3 &mdash; After Landing</h3>
-                        <p>The first two hours on the ground are your highest-risk window. Cortisol is crashing. Your circadian rhythm is dislocated. Your brain is recovering from hours of mild hypoxia. Do not schedule anything demanding. Rest. Continue hydrating. If you crossed two or more time zones, take melatonin (0.5&ndash;3 mg) at your destination&rsquo;s bedtime to start resetting your internal clock.<sup>[23]</sup> Switch all medication schedules to local time immediately &mdash; no gradual transition.</p>
+                        <h3>Phase 3 — After Landing</h3>
+                        <p>The first two hours on the ground are your highest-risk window. Cortisol is crashing. Your circadian rhythm is dislocated. Your brain is recovering from hours of mild hypoxia. Do not schedule anything demanding. Rest. Continue hydrating. If you crossed two or more time zones, take melatonin (0.5–3 mg) at your destination&rsquo;s bedtime to start resetting your internal clock.<sup>[23]</sup> Switch all medication schedules to local time immediately — no gradual transition.</p>
                     </div>
                 </section>
 
                 <div class="emergency-box">
                     <h3>&#x26A0;&#xFE0F; When to Seek Emergency Help</h3>
-                    <p>A sudden, severe headache during or after a flight that feels fundamentally different from your usual migraine &mdash; especially one you would describe as the worst headache of your life &mdash; demands emergency evaluation. Do not dismiss it as &ldquo;just a bad migraine.&rdquo;</p>
+                    <p>A sudden, severe headache during or after a flight that feels fundamentally different from your usual migraine — especially one you would describe as the worst headache of your life — demands emergency evaluation. Do not dismiss it as &ldquo;just a bad migraine.&rdquo;</p>
                     <p>If you experience confusion, vision changes, loss of coordination, slurred speech, or one-sided weakness at any point during air travel, call for help immediately. Flight attendants carry emergency medical kits and can contact ground-based physicians in-flight.</p>
                 </div>
                 <div class="checklist-box" id="checklist">
@@ -411,7 +410,7 @@
                     <h4>Phase 2: In-Flight (Cruising)</h4>
                     <ul>
                         <li><strong>Secure the environment.</strong> Window shade DOWN. Compression socks ON.</li>
-                        <li><strong>The Water Timer.</strong> Drink 200&ndash;250 ml every hour. Set an actual phone alarm.</li>
+                        <li><strong>The Water Timer.</strong> Drink 200–250 ml every hour. Set an actual phone alarm.</li>
                         <li><strong>Zero Alcohol.</strong> None. It accelerates dehydration in an already low-oxygen cabin.<sup>[21]</sup></li>
                         <li><strong>Scent block.</strong> Peppermint oil on your wrist to mask food, perfume, or fuel odors.<sup>[22]</sup></li>
                         <li><strong>The 40-Minute Rule.</strong> At the first sign of prodrome (yawning, stiff neck), take your acute meds. Do not wait for the pain.<sup>[15][16]</sup></li>
@@ -422,7 +421,7 @@
                         <li><strong>Beat the squeeze.</strong> Valsalva maneuver every 30 seconds during descent.</li>
                         <li><strong>Guard the 2-Hour Window.</strong> First two hours on the ground = highest risk. No heavy lifting, no intense meetings. Rest.</li>
                         <li><strong>Time shift.</strong> Switch all medication schedules to local time immediately.</li>
-                        <li><strong>Time zones (2+).</strong> Melatonin 0.5&ndash;3 mg at destination bedtime.<sup>[23]</sup></li>
+                        <li><strong>Time zones (2+).</strong> Melatonin 0.5–3 mg at destination bedtime.<sup>[23]</sup></li>
                     </ul>
                 </div>
 
@@ -431,11 +430,11 @@
                     <div class="related-grid">
                         <a href="article-traveling-with-migraine.html" class="related-card">
                             <h4>Traveling with a Monster: A Migraine Survival Guide</h4>
-                            <p>The complete guide to all travel triggers &mdash; altitude, time zones, dehydration, motion sickness, and the let-down effect. 29 peer-reviewed sources.</p>
+                            <p>The complete guide to all travel triggers — altitude, time zones, dehydration, motion sickness, and the let-down effect. 29 peer-reviewed sources.</p>
                         </a>
                         <a href="article-caffeine-migraine.html" class="related-card">
                             <h4>Caffeine &amp; Migraine: The Double-Edged Molecule</h4>
-                            <p>How your CYP1A2 genetics determine whether coffee helps or hurts your migraine brain &mdash; and why airports are the worst place to test the question.</p>
+                            <p>How your CYP1A2 genetics determine whether coffee helps or hurts your migraine brain — and why airports are the worst place to test the question.</p>
                         </a>
                     </div>
                 </div>
@@ -451,31 +450,31 @@
                 <div id="references" class="references">
                     <h3>References</h3>
                     <ol>
-                        <li>GBD 2016 Headache Collaborators. &ldquo;Global, regional, and national burden of migraine and tension-type headache, 1990&ndash;2016.&rdquo; <em>The Lancet Neurology</em>, 17(11):954&ndash;976 (2018). <a href="https://doi.org/10.1016/S1474-4422(18)30322-3" target="_blank">doi:10.1016/S1474-4422(18)30322-3</a>. Study design: Systematic analysis (Global Burden of Disease). n=global population estimates.</li>
+                        <li>GBD 2016 Headache Collaborators. &ldquo;Global, regional, and national burden of migraine and tension-type headache, 1990–2016.&rdquo; <em>The Lancet Neurology</em>, 17(11):954–976 (2018). <a href="https://doi.org/10.1016/S1474-4422(18)30322-3" target="_blank">doi:10.1016/S1474-4422(18)30322-3</a>. Study design: Systematic analysis (Global Burden of Disease). n=global population estimates.</li>
                         <li>CDC Yellow Book. &ldquo;Air Travel.&rdquo; <em>Centers for Disease Control and Prevention</em> (2025). Guideline.</li>
                         <li>Bui SBD, Petersen T, Poulsen JN, Gazerani P. &ldquo;Simulated airplane headache: a proxy towards identification of underlying mechanisms.&rdquo; <em>The Journal of Headache and Pain</em>, 18(1):9 (2017). <a href="https://doi.org/10.1186/s10194-017-0724-3" target="_blank">doi:10.1186/s10194-017-0724-3</a>. Study design: Experimental (pressure chamber). n=14.</li>
-                        <li>Frank F, Faulhaber M, Messlinger K, et al. &ldquo;Migraine and aura triggered by normobaric hypoxia.&rdquo; <em>Cephalalgia</em>, 40(14):1561&ndash;1573 (2020). <a href="https://doi.org/10.1177/0333102420949202" target="_blank">doi:10.1177/0333102420949202</a>. Study design: Prospective experimental. n=30.</li>
+                        <li>Frank F, Faulhaber M, Messlinger K, et al. &ldquo;Migraine and aura triggered by normobaric hypoxia.&rdquo; <em>Cephalalgia</em>, 40(14):1561–1573 (2020). <a href="https://doi.org/10.1177/0333102420949202" target="_blank">doi:10.1177/0333102420949202</a>. Study design: Prospective experimental. n=30.</li>
                         <li>Frank F, Messlinger K, Accinelli C, et al. &ldquo;Short Report of Longitudinal CGRP-Measurements in Migraineurs During a Hypoxic Challenge.&rdquo; <em>Frontiers in Neurology</em>, 13:925748 (2022). <a href="https://doi.org/10.3389/fneur.2022.925748" target="_blank">doi:10.3389/fneur.2022.925748</a>. Study design: Longitudinal experimental. n=30.</li>
-                        <li>Wilkins AJ, Nimmo-Smith I, Slater AI, Bedocs L. &ldquo;Fluorescent lighting, headaches and eye-strain.&rdquo; <em>Lighting Research &amp; Technology</em>, 21(1):11&ndash;18 (1989). <a href="https://doi.org/10.1177/096032718902100102" target="_blank">doi:10.1177/096032718902100102</a>. Study design: Experimental. n=36.</li>
+                        <li>Wilkins AJ, Nimmo-Smith I, Slater AI, Bedocs L. &ldquo;Fluorescent lighting, headaches and eye-strain.&rdquo; <em>Lighting Research &amp; Technology</em>, 21(1):11–18 (1989). <a href="https://doi.org/10.1177/096032718902100102" target="_blank">doi:10.1177/096032718902100102</a>. Study design: Experimental. n=36.</li>
                         <li>Coppola G, Parisi V, Di Lorenzo C, et al. &ldquo;Lateral inhibition in visual cortex of migraine patients between attacks.&rdquo; <em>The Journal of Headache and Pain</em>, 14:20 (2013). <a href="https://doi.org/10.1186/1129-2377-14-20" target="_blank">doi:10.1186/1129-2377-14-20</a>. Study design: Experimental (electrophysiology). n=30.</li>
-                        <li>Noseda R, Bernstein CA, Nber R-A, et al. &ldquo;Migraine photophobia originating in cone-driven retinal pathways.&rdquo; <em>Brain</em>, 139(7):1971&ndash;1986 (2016). <a href="https://doi.org/10.1093/brain/aww119" target="_blank">doi:10.1093/brain/aww119</a>. Study design: Experimental (preclinical + clinical). n=69.</li>
-                        <li>Good PA, Taylor RH, Mortimer MJ. &ldquo;The use of tinted glasses in childhood migraine.&rdquo; <em>Headache</em>, 31(8):533&ndash;536 (1991). <a href="https://doi.org/10.1111/j.1526-4610.1991.hed3108533.x" target="_blank">doi:10.1111/j.1526-4610.1991.hed3108533.x</a>. Study design: RCT. n=20.</li>
-                        <li>Hoggan RN, Subhash A, Blair S, et al. &ldquo;Thin-film optical notch filter spectacle coatings for the treatment of migraine and photophobia.&rdquo; <em>Journal of Clinical Neuroscience</em>, 28:71&ndash;76 (2016). <a href="https://doi.org/10.1016/j.jocn.2015.09.024" target="_blank">doi:10.1016/j.jocn.2015.09.024</a>. Study design: Prospective case series. n=37.</li>
-                        <li>Bui SBD, Petersen T, Poulsen JN, Gazerani P. &ldquo;Headache attributed to airplane travel: diagnosis, pathophysiology, and treatment &mdash; a systematic review.&rdquo; <em>The Journal of Headache and Pain</em>, 18(1):84 (2017). <a href="https://doi.org/10.1186/s10194-017-0788-0" target="_blank">doi:10.1186/s10194-017-0788-0</a>. Study design: Systematic review. n=39 papers.</li>
-                        <li>Berilgen MS, M&uuml;ngen B. &ldquo;A new type of headache, headache associated with airplane travel: Preliminary diagnostic criteria and possible mechanisms of aetiopathogenesis.&rdquo; <em>Cephalalgia</em>, 31(12):1266&ndash;1273 (2011). <a href="https://doi.org/10.1177/0333102411413159" target="_blank">doi:10.1177/0333102411413159</a>. Study design: Prospective case series. n=21.</li>
+                        <li>Noseda R, Bernstein CA, Nber R-A, et al. &ldquo;Migraine photophobia originating in cone-driven retinal pathways.&rdquo; <em>Brain</em>, 139(7):1971–1986 (2016). <a href="https://doi.org/10.1093/brain/aww119" target="_blank">doi:10.1093/brain/aww119</a>. Study design: Experimental (preclinical + clinical). n=69.</li>
+                        <li>Good PA, Taylor RH, Mortimer MJ. &ldquo;The use of tinted glasses in childhood migraine.&rdquo; <em>Headache</em>, 31(8):533–536 (1991). <a href="https://doi.org/10.1111/j.1526-4610.1991.hed3108533.x" target="_blank">doi:10.1111/j.1526-4610.1991.hed3108533.x</a>. Study design: RCT. n=20.</li>
+                        <li>Hoggan RN, Subhash A, Blair S, et al. &ldquo;Thin-film optical notch filter spectacle coatings for the treatment of migraine and photophobia.&rdquo; <em>Journal of Clinical Neuroscience</em>, 28:71–76 (2016). <a href="https://doi.org/10.1016/j.jocn.2015.09.024" target="_blank">doi:10.1016/j.jocn.2015.09.024</a>. Study design: Prospective case series. n=37.</li>
+                        <li>Bui SBD, Petersen T, Poulsen JN, Gazerani P. &ldquo;Headache attributed to airplane travel: diagnosis, pathophysiology, and treatment — a systematic review.&rdquo; <em>The Journal of Headache and Pain</em>, 18(1):84 (2017). <a href="https://doi.org/10.1186/s10194-017-0788-0" target="_blank">doi:10.1186/s10194-017-0788-0</a>. Study design: Systematic review. n=39 papers.</li>
+                        <li>Berilgen MS, M&uuml;ngen B. &ldquo;A new type of headache, headache associated with airplane travel: Preliminary diagnostic criteria and possible mechanisms of aetiopathogenesis.&rdquo; <em>Cephalalgia</em>, 31(12):1266–1273 (2011). <a href="https://doi.org/10.1177/0333102411413159" target="_blank">doi:10.1177/0333102411413159</a>. Study design: Prospective case series. n=21.</li>
                         <li>Mainardi F, Maggioni F, Lisotto C, Zanchin G. &ldquo;Diagnosis and management of headache attributed to airplane travel.&rdquo; <em>Current Neurology and Neuroscience Reports</em>, 13:335 (2013). <a href="https://doi.org/10.1007/s11910-012-0335-y" target="_blank">doi:10.1007/s11910-012-0335-y</a>. Study design: Review.</li>
-                        <li>Bui SBD, Gazerani P. &ldquo;Headache attributed to airplane travel is common and debilitating: A survey of 806 Danish participants.&rdquo; <em>Cephalalgia</em>, 37(4):365&ndash;373 (2017). <a href="https://doi.org/10.1177/0333102416646163" target="_blank">doi:10.1177/0333102416646163</a>. Study design: Cross-sectional survey. n=806.</li>
-                        <li>Lant&eacute;ri-Minet M, Mick G, Allaf B. &ldquo;Early dosing and efficacy of triptans in acute migraine treatment: the TEMPO study.&rdquo; <em>Cephalalgia</em>, 32(3):226&ndash;235 (2012). <a href="https://doi.org/10.1177/0333102411433042" target="_blank">doi:10.1177/0333102411433042</a>. Study design: Prospective, multicenter, two-phase. n=144.</li>
-                        <li>Mathew NT, Finlayson G, Smith TR, et al. &ldquo;Within-patient early versus delayed treatment of migraine attacks with almotriptan: the sooner the better.&rdquo; <em>Headache</em>, 42(suppl 1):s3&ndash;s8 (2002). <a href="https://doi.org/10.1046/j.1526-4610.42.s1.6.x" target="_blank">doi:10.1046/j.1526-4610.42.s1.6.x</a>. Study design: Post hoc analysis of open-label trial. n=118 (708 attacks).</li>
-                        <li>Aurora SK, Kori SH, Barrodale P, et al. &ldquo;Gastric stasis in migraine: more than just a paroxysmal abnormality during a migraine attack.&rdquo; <em>Headache</em>, 46(1):57&ndash;63 (2006). <a href="https://doi.org/10.1111/j.1526-4610.2006.00311.x" target="_blank">doi:10.1111/j.1526-4610.2006.00311.x</a>. Study design: Prospective. n=48.</li>
+                        <li>Bui SBD, Gazerani P. &ldquo;Headache attributed to airplane travel is common and debilitating: A survey of 806 Danish participants.&rdquo; <em>Cephalalgia</em>, 37(4):365–373 (2017). <a href="https://doi.org/10.1177/0333102416646163" target="_blank">doi:10.1177/0333102416646163</a>. Study design: Cross-sectional survey. n=806.</li>
+                        <li>Lant&eacute;ри-Minet M, Mick G, Allaf B. &ldquo;Early dosing and efficacy of triptans in acute migraine treatment: the TEMPO study.&rdquo; <em>Cephalalgia</em>, 32(3):226–235 (2012). <a href="https://doi.org/10.1177/0333102411433042" target="_blank">doi:10.1177/0333102411433042</a>. Study design: Prospective, multicenter, two-phase. n=144.</li>
+                        <li>Mathew NT, Finlayson G, Smith TR, et al. &ldquo;Within-patient early versus delayed treatment of migraine attacks with almotriptan: the sooner the better.&rdquo; <em>Headache</em>, 42(suppl 1):s3–s8 (2002). <a href="https://doi.org/10.1046/j.1526-4610.42.s1.6.x" target="_blank">doi:10.1046/j.1526-4610.42.s1.6.x</a>. Study design: Post hoc analysis of open-label trial. n=118 (708 attacks).</li>
+                        <li>Aurora SK, Kori SH, Barrodale P, et al. &ldquo;Gastric stasis in migraine: more than just a paroxysmal abnormality during a migraine attack.&rdquo; <em>Headache</em>, 46(1):57–63 (2006). <a href="https://doi.org/10.1111/j.1526-4610.2006.00311.x" target="_blank">doi:10.1111/j.1526-4610.2006.00311.x</a>. Study design: Prospective. n=48.</li>
                         <li>Transportation Security Administration. &ldquo;Medications.&rdquo; <em>tsa.gov</em> (2026). Federal guideline.</li>
                         <li>CDC Yellow Book. &ldquo;Traveling with Prohibited or Restricted Medications.&rdquo; <em>Centers for Disease Control and Prevention</em> (2026). Guideline.</li>
-                        <li>Lipton RB, Buse DC, Hall CB, et al. &ldquo;Reduction in perceived stress as a migraine trigger: Testing the &lsquo;let-down headache&rsquo; hypothesis.&rdquo; <em>Neurology</em>, 82(16):1395&ndash;1401 (2014). <a href="https://doi.org/10.1212/WNL.0000000000000332" target="_blank">doi:10.1212/WNL.0000000000000332</a>. Study design: Prospective electronic diary study. n=17.</li>
-                        <li>Panconesi A. &ldquo;Alcohol and migraine: trigger factor, consumption, mechanisms. A review.&rdquo; <em>The Journal of Headache and Pain</em>, 9(1):19&ndash;27 (2008). <a href="https://doi.org/10.1007/s10194-008-0006-1" target="_blank">doi:10.1007/s10194-008-0006-1</a>. Study design: Narrative review.</li>
+                        <li>Lipton RB, Buse DC, Hall CB, et al. &ldquo;Reduction in perceived stress as a migraine trigger: Testing the &lsquo;let-down headache&rsquo; hypothesis.&rdquo; <em>Neurology</em>, 82(16):1395–1401 (2014). <a href="https://doi.org/10.1212/WNL.0000000000000332" target="_blank">doi:10.1212/WNL.0000000000000332</a>. Study design: Prospective electronic diary study. n=17.</li>
+                        <li>Panconesi A. &ldquo;Alcohol and migraine: trigger factor, consumption, mechanisms. A review.&rdquo; <em>The Journal of Headache and Pain</em>, 9(1):19–27 (2008). <a href="https://doi.org/10.1007/s10194-008-0006-1" target="_blank">doi:10.1007/s10194-008-0006-1</a>. Study design: Narrative review.</li>
                         <li>Rafieian-Kopaei M, Hasanpour-Dehkordi A, Lorigooini Z, et al. &ldquo;Comparing the Effect of Intranasal Lidocaine 4% with Peppermint Essential Oil Drop 1.5% on Migraine Attacks: A Double-Blind Clinical Trial.&rdquo; <em>International Journal of Preventive Medicine</em>, 10:121 (2019). <a href="https://doi.org/10.4103/ijpvm.IJPVM_530_17" target="_blank">doi:10.4103/ijpvm.IJPVM_530_17</a>. Study design: RCT, double-blind. n=120.</li>
                         <li>Burgess HJ. &ldquo;Using bright light and melatonin to reduce jet lag.&rdquo; <em>Behavioral Treatments for Sleep Disorders</em>, Ch. 16 (2011). <a href="https://doi.org/10.1016/B978-0-12-381522-4.00016-4" target="_blank">doi:10.1016/B978-0-12-381522-4.00016-4</a>. Study design: Clinical guideline/Review.</li>
                         <li>Konrad B, Frank F, Gall M, et al. &ldquo;Hypoxia-related mechanisms inducing acute mountain sickness and migraine.&rdquo; <em>Frontiers in Physiology</em>, 13:994469 (2022). <a href="https://doi.org/10.3389/fphys.2022.994469" target="_blank">doi:10.3389/fphys.2022.994469</a>. Study design: Narrative review.</li>
-                        <li>Pellegrino ABW, Davis-Martin RE, Houle TT, et al. &ldquo;Perceived triggers of primary headache disorders: A meta-analysis.&rdquo; <em>Cephalalgia</em>, 38(6):1188&ndash;1198 (2018). <a href="https://doi.org/10.1177/0333102417727535" target="_blank">doi:10.1177/0333102417727535</a>. Study design: Meta-analysis. n=27,122.</li>
+                        <li>Pellegrino ABW, Davis-Martin RE, Houle TT, et al. &ldquo;Perceived triggers of primary headache disorders: A meta-analysis.&rdquo; <em>Cephalalgia</em>, 38(6):1188–1198 (2018). <a href="https://doi.org/10.1177/0333102417727535" target="_blank">doi:10.1177/0333102417727535</a>. Study design: Meta-analysis. n=27,122.</li>
                     </ol>
                 </div>
 
@@ -484,9 +483,9 @@
                         <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
                         <div class="author-info">
                             <h3>Rustam Iuldashov</h3>
-                            <p><strong>Creator &amp; Developer</strong> &mdash; 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. His approach combines first-hand patient experience with peer-reviewed medical research and narrative therapy principles (Michael White &amp; David Epston). He is not a medical professional.</p>
+                            <p><strong>Creator &amp; Developer</strong> — 30 years living with migraine. Solo developer from Ukraine who built Migraine Companion during wartime. His approach combines first-hand patient experience with peer-reviewed medical research and narrative therapy principles (Michael White &amp; David Epston). He is not a medical professional.</p>
                             <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);"><em>Transparency &amp; Conflict of Interest Disclosure: Rustam is the developer of the Migraine Companion app. This article was written to educate and inform, not to promote the app. All scientific claims are independently sourced from peer-reviewed literature. The author has no financial relationships with pharmaceutical companies, airline companies, optical lens manufacturers, or any travel industry partners mentioned in this article.</em></p>
-                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);">&#x1F4E7; Contact: mi-companion.com/contact &middot; &#x1F310; Website: mi-companion.com</p>
+                            <p style="margin-top:8px;font-size:0.8rem;color:var(--text-dark);">&#x1F4E7; Contact: mi-companion.com/contact · &#x1F310; Website: mi-companion.com</p>
                         </div>
                     </div>
 
@@ -504,7 +503,7 @@
 
                     <div class="cta-box">
                         <h3>Track Your Flight Triggers in Real Time</h3>
-                        <p>Migraine Companion helps you log triggers as they happen &mdash; at the airport, in the air, across time zones. Build your personal flight pattern. Know your threshold before you pack.</p>
+                        <p>Migraine Companion helps you log triggers as they happen — at the airport, in the air, across time zones. Build your personal flight pattern. Know your threshold before you pack.</p>
                         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
                             <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
