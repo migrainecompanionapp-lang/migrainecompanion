@@ -63,14 +63,17 @@
             --green: #6aaa7a;
             --teal: #6b9baa;
             --gold: #c5a059;
+            --tips: #B8A892;
             --lavender-soft: rgba(139,122,168, 0.06);
             --green-soft: rgba(106,170,122, 0.06);
             --teal-soft: rgba(107,155,170, 0.06);
             --gold-soft: rgba(197,160,89, 0.06);
+            --tips-soft: rgba(184,168,146, 0.06);
             --lavender-border: rgba(139,122,168, 0.18);
             --green-border: rgba(106,170,122, 0.18);
             --teal-border: rgba(107,155,170, 0.18);
             --gold-border: rgba(197,160,89, 0.18);
+            --tips-border: rgba(184,168,146, 0.18);
             --text: #cdc6be;
             --text-light: #a09890;
             --text-dark: #847b73;
@@ -126,7 +129,7 @@
 
         .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
         .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168, 0.25) 30%, rgba(139,122,168, 0.40) 50%, rgba(139,122,168, 0.25) 70%, transparent 100%); }
-        .separator::after { content: '&#x25C6;'; position: relative; z-index: 1; color: rgba(139,122,168, 0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
+        .separator::after { content: '◆'; position: relative; z-index: 1; color: rgba(139,122,168, 0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
 
         .key-takeaways { background: linear-gradient(180deg, rgba(107,155,170, 0.10) 0%, rgba(107,155,170, 0.04) 100%); border: 1px solid var(--teal-border); border-radius: 20px; padding: 32px; margin: 48px 0; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0, 0.20), 0 1px 3px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(107,155,170, 0.12), inset 0 -1px 0 rgba(0,0,0, 0.10); }
         .key-takeaways::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.6; border-radius: 20px 20px 0 0; }
@@ -159,7 +162,7 @@
 
         .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(139,122,168, 0.10); box-shadow: 0 20px 60px rgba(0,0,0, 0.35), 0 4px 12px rgba(0,0,0, 0.20), inset 0 0 0 1px rgba(255,255,255, 0.03); }
         .article-image img { width: 100%; height: auto; display: block; }
-        .article-image figcaption { background: linear-gradient(180deg, rgba(13,13,13, 0.60) 0%, rgba(20,20,25, 0.95) 100%); padding: 14px 20px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; border-top: 1px solid rgba(139,122,168, 0.08); }
+        .article-image figcaption { background: linear-gradient(180deg, rgba(13,13,13, 0.60) 0%, rgba(20,20,25, 0.95) 100%); padding: 14px 20px; font-size: 0.85rem; color: var(--text-light); text-align: center; font-style: italic; border-top: 1px solid rgba(139,122,168,0.08); }
 
         .related-box { margin: 60px 0; padding: 40px; background: rgba(107,155,170, 0.03); border-radius: 24px; border: 1px solid var(--teal-border); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0, 0.18), inset 0 1px 0 rgba(107,155,170, 0.06); }
         .related-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.4; }
@@ -167,7 +170,7 @@
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
         .related-card { display: block; text-decoration: none; background: rgba(255,255,255, 0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 12px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(255,255,255, 0.03); }
         .related-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--lavender), transparent); opacity: 0.3; transition: opacity 0.4s ease; }
-        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255, 0.04); border-color: rgba(139,122,168, 0.30); box-shadow: 0 12px 40px rgba(0,0,0, 0.25), 0 0 0 1px rgba(139,122,168, 0.10), inset 0 1px 0 rgba(255,255,255, 0.05); }
+        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255, 0.04); border-color: rgba(139,122,168, 0.30); box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(139,122,168, 0.10), inset 0 1px 0 rgba(255,255,255, 0.05); }
         .related-card:hover::before { opacity: 0.7; }
         .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
         .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
@@ -282,8 +285,7 @@
 
                 <section class="article-section">
                     <p>The patients came for diabetes. They came for weight loss. They did not come for migraine.</p>
-                    <p>But something kept happening. People prescribed semaglutide, liraglutide, or other GLP-1 receptor agonists started reporting an unexpected change: their headaches were vanishing. Not tapering off over months. Dropping &mdash; fast, dramatically, in ways that couldn&rsquo;t be explained by the number on the scale. Ozempic may be the name everyone knows, but it&rsquo;s just one member of a drug class called GLP-1 receptor agonists &mdash; and the science points to the entire family, not a single brand.</p>
-                    <p>Neurologists noticed. Then researchers noticed. Now the science is catching up to the anecdotes.</p>
+                    <p>But something kept happening. People prescribed semaglutide, liraglutide, or other GLP-1 receptor agonists started reporting an unexpected change: their headaches were vanishing. Not tapering off over months. Dropping &mdash; fast, dramatically, in ways that couldn&rsquo;t be explained by the number on the scale. Ozempic may be the name everyone knows, but it&rsquo;s just one member of a drug class called GLP-1 receptor agonists &mdash; and the science points to the entire family, not a single brand. Neurologists noticed. Then researchers noticed. Now the science is catching up to the anecdotes. It's a reminder that we are still <a href="article-understanding-triggers.html">uncovering the patterns</a> of this disease.</p>
                 </section>
 
                 <div class="separator"></div>
@@ -308,7 +310,7 @@
                     <h2>Why Obesity Makes Migraine Worse</h2>
                     <p>To understand why GLP-1 drugs might help migraine, you first need to understand how obesity fuels it.</p>
                     <p>A 2019 meta-analysis pooling 16 observational studies found a <strong>29% higher risk of migraine</strong> in people with obesity.<sup>[2]</sup> But the numbers tell a sharper story when you look at chronic migraine specifically. There, obesity raised the risk by <strong>75%</strong>.<sup>[3]</sup> A 2015 meta-analysis found the association was particularly strong in women &mdash; a roughly 40% increase.<sup>[3]</sup></p>
-                    <p>In 2025, a large Korean cohort study published in <em>Neurology</em> added prospective evidence: obesity increased migraine risk in a dose-dependent manner, and waist circumference predicted risk more robustly than BMI.<sup>[4]</sup> Visceral fat &mdash; the metabolically active fat wrapped around your organs &mdash; appeared to matter more than total body weight.</p>
+                    <p>In 2025, a large Korean cohort study published in <em>Neurology</em> added prospective evidence: obesity increased migraine risk in a dose-dependent manner, and waist circumference predicted risk more robustly than BMI.<sup>[4]</sup> Visceral fat &mdash; the metabolically active fat wrapped around your organs &mdash; appeared to matter more than total body weight. These same signals activate the trigeminal nerve system, the brain’s alarm network, and increase production of CGRP... contributing to a <a href="article-hyperexcitable-brain.html">hyperexcitable brain</a>.</p>
                     <p>This makes biological sense. Visceral fat is not passive storage. It is an endocrine organ. It pumps inflammatory molecules &mdash; IL-6, TNF-&alpha;, adipokines &mdash; into the bloodstream, where they sensitize pain pathways in the brain.<sup>[5]</sup> These same signals activate the trigeminal nerve system, the brain&rsquo;s alarm network, and increase production of CGRP (calcitonin gene-related peptide) &mdash; the molecule that drives migraine attacks.<sup>[5][6]</sup></p>
                     <p>The result is a trap. Obesity fuels inflammation. Inflammation worsens migraine. Frequent migraines reduce activity and alter eating patterns. Inactivity promotes weight gain.<sup>[7]</sup> Round and round.</p>
                 </section>
@@ -338,7 +340,7 @@
 
                     <h3>Silencing the Pain Signal</h3>
                     <p>CGRP is the molecular villain of modern migraine science. It is the target of every new migraine drug class &mdash; the monoclonal antibodies (erenumab, fremanezumab, galcanezumab) and the gepants (rimegepant, ubrogepant). Billions of dollars of drug development aimed at one molecule.</p>
-                    <p>GLP-1 drugs appear to suppress CGRP too &mdash; through an entirely different door.</p>
+                    <p>GLP-1 drugs appear to suppress CGRP too — through an entirely different door than the <a href="article-cgrp-revolution.html">CGRP-targeted treatments</a>.</p>
                     <p>In a 2021 study published in <em>The Journal of Headache and Pain</em>, researchers used a chronic migraine mouse model and found that liraglutide reduced CGRP expression in the trigeminal nucleus caudalis (TNC) &mdash; the brainstem region where migraine pain signals converge.<sup>[12]</sup> The mechanism: liraglutide activated GLP-1 receptors on microglia, the brain&rsquo;s resident immune cells, suppressing inflammation through the PI3K/Akt pathway.<sup>[12]</sup> It also reduced c-fos expression, a marker of neural activation, and cut production of pro-inflammatory cytokines IL-1&beta; and TNF-&alpha;.<sup>[12]</sup></p>
                     <p>A 2023 follow-up revealed another layer. Liraglutide stimulated release of IL-10 &mdash; one of the body&rsquo;s most powerful anti-inflammatory molecules &mdash; in the TNC.<sup>[13]</sup> When researchers administered IL-10 alone, it was sufficient to alleviate migraine-like pain in the animal model.<sup>[13]</sup> The GLP-1 drug was not just blocking pain. It was recruiting the brain&rsquo;s own peacekeeping forces.</p>
 
@@ -347,7 +349,7 @@
                     </div>
 
                     <h3>Breaking the Metabolic Trap</h3>
-                    <p>Obesity does not only cause inflammation. It drives insulin resistance, hypothalamic dysfunction, and mitochondrial impairment &mdash; a cascade of metabolic failures that a 2025 review identified as increasingly central to migraine biology.<sup>[5]</sup> Hyperinsulinism sensitizes TRPV1 receptors (pain channels), increases CGRP release, and amplifies oxidative stress.<sup>[5]</sup></p>
+                    <p>Obesity does not only cause inflammation. It drives insulin resistance, hypothalamic dysfunction, and mitochondrial impairment &mdash; a cascade of metabolic failures that a 2025 review identified as increasingly central to migraine biology.<sup>[5]</sup> Hyperinsulinism sensitizes TRPV1 receptors (pain channels), increases CGRP release, and amplifies oxidative stress. Which is why understanding the <a href="article-glucose-migraine.html">glucose-migraine connection</a> is becoming vital for modern management.<sup>[5]</sup></p>
                     <p>GLP-1 drugs address this entire cascade. They restore insulin sensitivity. They reduce systemic inflammation. They rebalance hormonal signaling.</p>
                     <p>This may explain why bariatric surgery &mdash; which also transforms metabolic status &mdash; consistently improves migraine. A 2020 meta-analysis of 10 studies (n=473) found that weight loss produced significant reductions in headache frequency, pain severity, disability, and attack duration.<sup>[14]</sup> The surprise: improvement did not correlate with how much weight patients lost. Whether weight was lost through surgery or behavioral changes, the migraine benefits were comparable.<sup>[14]</sup></p>
 
@@ -385,7 +387,7 @@
                     <h2>What This Means for You</h2>
                     <p>If you live with migraine and you&rsquo;re reading this with rising hope &mdash; hold it steady. Do not reach for a prescription pad.</p>
                     <p>GLP-1 receptor agonists are not approved for migraine treatment. The strongest direct human evidence comes from one pilot study of 31 patients,<sup>[1]</sup> one small RCT in IIH patients (n=16),<sup>[11]</sup> and one large observational study.<sup>[15]</sup> No large, randomized, placebo-controlled trial has tested these drugs specifically for migraine prevention. That trial is being planned &mdash; but it has not been completed.<sup>[1]</sup></p>
-                    <p>The side effects matter too. About 38% of participants in the Naples study experienced gastrointestinal issues, mainly nausea and constipation, though none stopped treatment.<sup>[1]</sup> GLP-1 drugs require ongoing medical supervision and carry their own risk profile.</p>
+                    <p>The side effects matter too. About 38% of participants in the Naples study experienced gastrointestinal issues, mainly nausea and constipation. Navigating this <a href="article-side-effect-roulette.html">side effect roulette</a> requires careful clinical oversight, though none stopped treatment in the pilot.<sup>[1]</sup> GLP-1 drugs require ongoing medical supervision and carry their own risk profile.</p>
                     <p>But if you already take a GLP-1 medication for diabetes or weight management and you&rsquo;ve noticed your migraines retreating &mdash; you are not imagining it. Three independent biological mechanisms now support what you&rsquo;re feeling. Mention it to your neurologist. Track it in your migraine diary. Your experience is part of the evidence.</p>
                     <p>The randomized trial will come. The approval process will follow &mdash; or it won&rsquo;t. Science moves at its own pace. But for the first time, a class of drugs designed for metabolism is opening a window into migraine biology that no one expected. And for millions of people living at the intersection of obesity and chronic migraine, that window lets in light.</p>
                 </section>
