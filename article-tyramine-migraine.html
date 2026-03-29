@@ -116,7 +116,9 @@
         .highlight-box { background: var(--triggers-soft); border-left: 3px solid var(--triggers); padding: 24px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; }
         .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--triggers); margin: 0; line-height: 1.7; }
 
-        .separator { text-align: center; margin: 60px 0; color: var(--lavender); font-size: 1.5rem; opacity: 0.5; }
+        .separator { position: relative; margin: 60px 0; height: 1px; }
+        .separator::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--lavender), transparent); }
+        .separator::after { content: '\25C6'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--lavender); font-size: 0.7rem; background: var(--bg); padding: 0 12px; opacity: 0.5; }
 
         .data-card { background: var(--teal-soft); border-left: 4px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 12px 12px 0; }
         .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
@@ -243,7 +245,7 @@
                     </ul>
                 </div>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- INTRO -->
                 <section class="article-section">
@@ -254,7 +256,7 @@
                     <p>The compound at the center of it all: tyramine.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- WHAT IS TYRAMINE -->
                 <section class="article-section">
@@ -262,10 +264,10 @@
                     <p>Tyramine isn&rsquo;t added to food. It isn&rsquo;t a preservative or a flavor agent. It&rsquo;s a byproduct of time.</p>
                     <p>When bacteria break down the amino acid tyrosine &mdash; found naturally in all protein-rich foods &mdash; they produce tyramine through a process called decarboxylation.<sup>[1]</sup> The older, more fermented, more aged the food, the higher the load. A fresh block of mozzarella has almost none. A wedge of Stilton left at room temperature for a few hours can carry a meaningful amount. The same piece of meat you ate fresh on Monday becomes a different food by Wednesday.</p>
                     <p>Tyramine belongs to a class of molecules called biogenic amines &mdash; small compounds with outsized effects on the nervous system.<sup>[2]</sup> It doesn&rsquo;t stimulate your system directly. Instead, it acts as a trigger: it forces the release of norepinephrine &mdash; your fight-or-flight neurotransmitter &mdash; from nerve endings, causing blood vessels to contract and heart rate to climb.<sup>[3]</sup></p>
-                    <p>For a brain already wired for migraine, that&rsquo;s a dangerous cascade.</p>
+                    <p>For <a href="article-hyperexcitable-brain.html">a brain already wired for migraine</a>, that&rsquo;s a dangerous cascade.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- FIREWALL -->
                 <section class="article-section">
@@ -282,7 +284,7 @@
                     <figcaption>The MAO-A enzymatic firewall: in most people, tyramine is neutralized before reaching the bloodstream. In those with reduced MAO-A enzyme activity &mdash; determined by genetic variants &mdash; molecules slip through the gut lining and enter circulation. Based on&nbsp;[4,&nbsp;8].</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- GENETICS -->
                 <section class="article-section">
@@ -294,7 +296,7 @@
                         <li>Tyramine floods sympathetic nerve endings and triggers mass norepinephrine release</li>
                         <li>Blood vessels constrict sharply</li>
                         <li>Rebound vasodilation follows</li>
-                        <li>The trigeminal nerve &mdash; already hypersensitive in most migraineurs &mdash; fires</li>
+                        <li>The <a href="article-migraine-map.html">trigeminal nerve</a> &mdash; already hypersensitive in most migraineurs &mdash; fires</li>
                     </ol>
                     <p>The migraine arrives. Often 12 to 24 hours after the meal.</p>
                     <p>This same mechanism explains why people taking MAOI antidepressants face serious, sometimes life-threatening reactions to high-tyramine foods. MAOIs intentionally block MAO-A to treat depression. Strip away that enzyme entirely, and even a small tyramine load from food can trigger a severe adrenergic storm. Clinical thresholds are stark: 6&ndash;10&nbsp;mg of tyramine causes a mild response in MAOI patients; 10&ndash;25&nbsp;mg can precipitate a hypertensive crisis.<sup>[9, 10]</sup></p>
@@ -314,7 +316,7 @@
                     <p>Even without MAOIs: a migraine accompanied by fever, stiff neck, confusion, or sudden severe &ldquo;thunderclap&rdquo; onset warrants immediate emergency evaluation to rule out serious neurological causes.</p>
                 </div>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- HOW COMMON -->
                 <section class="article-section">
@@ -331,7 +333,7 @@
                     <p>The hard part is finding out which group you&rsquo;re in.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- FOOD MAP -->
                 <section class="article-section">
@@ -340,7 +342,7 @@
                     <p><strong>Dairy.</strong> Aged cheeses are the main culprits: Stilton, blue, cheddar, Parmesan, Gruy&egrave;re, Camembert, Swiss, feta, provolone. Fresh cheeses &mdash; ricotta, cottage, cream cheese, fresh mozzarella &mdash; contain very little. This is a meaningful distinction. It&rsquo;s not cheese that&rsquo;s the problem; it&rsquo;s <em>aged</em> cheese.</p>
                     <p><strong>Meats.</strong> Dry, cured, smoked, or fermented: salami, pepperoni, summer sausage, liverwurst, smoked fish. Fresh meat bought and cooked the same day is low in tyramine. The same cut, left in the refrigerator for three days, is a different story.</p>
                     <p><strong>Fermented foods.</strong> Sauerkraut, kimchi, miso, tempeh, certain forms of tofu. Soy sauce, fish sauce, teriyaki sauce, and bouillon-based condiments concentrate tyramine significantly.</p>
-                    <p><strong>Alcohol.</strong> Tap beer and home-brewed beer are high. Red wine, vermouth, and sherry sit in the moderate range. Bottled or canned beer and distilled spirits &mdash; vodka, gin, rum &mdash; are generally much lower.</p>
+                    <p><strong>Alcohol.</strong> Tap beer and home-brewed beer are high. <a href="alcohol-migraine-24-hour-rule.html">Red wine</a>, vermouth, and sherry sit in the moderate range. Bottled or canned beer and distilled spirits &mdash; vodka, gin, rum &mdash; are generally much lower.</p>
                     <p><strong>Overripe fruit.</strong> Ripe bananas, avocados, and pineapple accumulate tyramine as they age. The browner the banana, the higher the load.</p>
 
                     <div class="insight-card">
@@ -348,14 +350,14 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- 24 HOUR DELAY -->
                 <section class="article-section">
                     <h2>The 24-Hour Delay Trap</h2>
                     <p>One reason tyramine is so hard to pin down as a personal trigger: the migraine it causes often doesn&rsquo;t arrive until 12&ndash;24 hours after the meal.<sup>[16]</sup></p>
                     <p>That&rsquo;s long enough to break the mental connection entirely. The Parmesan-covered pasta from Tuesday dinner becomes invisible by the time Wednesday&rsquo;s migraine strikes. Stress gets the blame. Weather gets the blame. Sleep gets the blame. The meal that set the cascade in motion the day before goes unnoticed.</p>
-                    <p>This is why standard migraine diaries often miss dietary triggers. You need to log everything you eat in the 48 hours <em>preceding</em> an attack &mdash; not just what you had right before it. Migraine Companion was built with exactly this pattern in mind: its food and trigger logging architecture is designed to surface delayed correlations that a paper diary &mdash; or memory alone &mdash; will almost always miss.</p>
+                    <p>This is why standard migraine diaries often miss dietary triggers. You need to log everything you eat in the 48 hours <em>preceding</em> an attack &mdash; not just what you had right before it. Migraine Companion was built with exactly this pattern in mind: its <a href="food-detective.html">food and trigger logging</a> architecture is designed to surface delayed correlations that a paper diary &mdash; or memory alone &mdash; will almost always miss.</p>
                 </section>
 
                 <!-- INLINE IMAGE 2: Timeline -->
@@ -364,7 +366,7 @@
                     <figcaption>The invisible clock: the meal that triggers a tyramine migraine often happens a full day before the attack arrives. This 12&ndash;24 hour gap is the primary reason dietary triggers go undetected. Logging 48 hours of intake before each attack is the only reliable way to see the pattern.<sup>[16]</sup></figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- HOW TO TEST -->
                 <section class="article-section">
@@ -375,13 +377,13 @@
                     <p>If a consistent pattern emerges &mdash; the same category reliably preceded attacks &mdash; you&rsquo;ve identified a real personal trigger. If attacks continue unchanged during elimination, or return inconsistently with reintroduction, tyramine probably isn&rsquo;t your driver.</p>
 
                     <div class="highlight-box">
-                        <p>Food triggers almost never act alone. Tyramine may only cross your threshold when combined with other stressors &mdash; poor sleep, hormonal shifts, accumulated stress. The bucket model of migraine: factors pile up until the brain&rsquo;s threshold is breached. No single trigger overflows it alone.</p>
+                        <p>Food triggers almost never act alone. Tyramine may only cross your threshold when combined with other stressors &mdash; <a href="the-goldilocks-problem-sleep-migraine.html">poor sleep</a>, hormonal shifts, accumulated stress. The bucket model of migraine: factors pile up until the brain&rsquo;s threshold is breached. No single trigger overflows it alone.</p>
                     </div>
 
                     <p>After 30 years living with migraine, I can say this firsthand: the triggers that seem random often follow a logic. You just need the right tracking system to see it.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- PRACTICAL SWAPS -->
                 <section class="article-section">
@@ -414,6 +416,14 @@
                         <a href="article-caffeine.html" class="related-card">
                             <h4>Caffeine &amp; Migraine</h4>
                             <p>Caffeine modulates norepinephrine &mdash; the same neurotransmitter tyramine floods into circulation. Understanding how they interact completes your trigger picture.</p>
+                        </a>
+                        <a href="article-understanding-triggers.html" class="related-card">
+                            <h4>Your Personal Trigger Map</h4>
+                            <p>Tyramine is one piece of a larger puzzle. A framework for identifying, testing, and ranking all the factors that contribute to your attacks.</p>
+                        </a>
+                        <a href="article-dopamine-diet-migraine.html" class="related-card">
+                            <h4>The Dopamine Diet Connection</h4>
+                            <p>Another neurotransmitter, another dietary link. How dopamine-driven food cravings in the prodrome phase can mimic &mdash; or mask &mdash; real triggers.</p>
                         </a>
                     </div>
                 </div>
