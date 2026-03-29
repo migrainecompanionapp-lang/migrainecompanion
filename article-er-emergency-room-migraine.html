@@ -124,6 +124,18 @@
         .article-section a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
         .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
 
+        /* Link colors for all box types — prevent default blue */
+        .highlight-box a { color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(106,170,122,0.4); transition: all 0.3s ease; }
+        .highlight-box a:hover { border-bottom-color: var(--green); background: var(--green-soft); }
+        .data-card a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(107,155,170,0.4); transition: all 0.3s ease; }
+        .data-card a:hover { border-bottom-color: var(--teal); background: var(--teal-soft); }
+        .insight-card a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
+        .insight-card a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
+        .action-box a { color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(106,170,122,0.4); transition: all 0.3s ease; }
+        .action-box a:hover { border-bottom-color: var(--green); background: var(--green-soft); }
+        .emergency-box a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(197,160,89,0.4); transition: all 0.3s ease; }
+        .emergency-box a:hover { border-bottom-color: var(--gold); background: var(--gold-soft); }
+
         .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
         .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168,0.25) 30%, rgba(139,122,168,0.40) 50%, rgba(139,122,168,0.25) 70%, transparent 100%); }
         .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(139,122,168,0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
@@ -316,7 +328,7 @@
             <section class="article-section">
                 <h2>The ER Was Not Built for You</h2>
                 <p>Emergency departments have one job: prevent death.</p>
-                <p>Not manage chronic conditions. Not treat pain that isn&rsquo;t immediately fatal. Not provide the kind of thoughtful, individualized care a headache specialist might offer. Their protocols exist to identify what will kill you in the next few hours &mdash; heart attacks, hemorrhages, strokes, sepsis &mdash; and stop it.</p>
+                <p>Not manage chronic conditions. Not treat pain that isn&rsquo;t immediately fatal. Not provide the kind of thoughtful, individualized care a <a href="article-building-migraine-team.html">headache specialist</a> might offer. Their protocols exist to identify what will kill you in the next few hours &mdash; heart attacks, hemorrhages, strokes, sepsis &mdash; and stop it.</p>
                 <p>Migraine won&rsquo;t kill you. That&rsquo;s the fundamental mismatch.</p>
                 <p>When you arrive with a migraine attack, you&rsquo;re entering a system that genuinely wasn&rsquo;t designed for what you have. The staff aren&rsquo;t necessarily cruel. Many are exhausted, working under impossible patient loads, and trained to triage by mortality risk. Migraine scores low on that scale, regardless of what you&rsquo;re experiencing.<sup>[4]</sup> One ER physician described the dynamic honestly: once it&rsquo;s determined a patient doesn&rsquo;t need intervention to survive, the instruction becomes &ldquo;follow up with primary care or a specialist.&rdquo;<sup>[5]</sup></p>
                 <p>That&rsquo;s not a moral failure. It&rsquo;s a structural one. And it explains almost everything about what migraine patients experience in emergency departments &mdash; the waits, the skepticism, the sense of being an inconvenience in a room built for other emergencies.</p>
@@ -330,7 +342,7 @@
                 <p>For decades, opioids were the standard ER treatment for severe headache. Morphine. Hydromorphone. Meperidine. They were handed out freely &mdash; and predictably, headache became the second most common symptom among patients seeking opioids for non-medical reasons, behind only back pain.<sup>[6]</sup></p>
                 <p>The opioid crisis arrived. Emergency medicine braced. And in the defensive crouch that followed, &ldquo;drug seeker&rdquo; became an informal diagnosis &mdash; one that attached itself most readily to patients who most frequently presented with invisible, hard-to-verify, severe pain.</p>
                 <p>People with migraine.</p>
-                <p>Here is the sharpest irony of all: the <strong>2025 American Headache Society guidelines</strong> now state that IV opioids &mdash; specifically hydromorphone &mdash; <em>must not</em> be offered for migraine in the emergency department.<sup>[7]</sup> Not because they&rsquo;re addictive. Because they don&rsquo;t work. They provide less relief than antiemetics, extend ER stays, and are directly associated with higher rates of repeat visits.<sup>[8]</sup> The very drugs that triggered mass suspicion are now officially contraindicated.</p>
+                <p>Here is the sharpest irony of all: the <strong>2025 American Headache Society guidelines</strong> now state that IV opioids &mdash; specifically hydromorphone &mdash; <em>must not</em> be offered for migraine in the emergency department.<sup>[7]</sup> Not because they&rsquo;re addictive. Because they don&rsquo;t work. They provide less relief than antiemetics, extend ER stays, and are directly associated with higher rates of repeat visits and <a href="article-moh.html">medication overuse</a>.<sup>[8]</sup> The very drugs that triggered mass suspicion are now officially contraindicated.</p>
 
                 <div class="highlight-box">
                     <p>The science moved on. The suspicion didn&rsquo;t.</p>
@@ -347,7 +359,7 @@
                 <h2>The Gender Tax</h2>
                 <p>Migraine is three to four times more common in women than in men.<sup>[10]</sup> And research is increasingly clear that women&rsquo;s pain is systematically undermanaged in emergency settings.</p>
                 <p>A 2023 review by the American Medical Women&rsquo;s Association found that women&rsquo;s pain is consistently underestimated and dismissed &mdash; regardless of the treating physician&rsquo;s gender &mdash; and that women are far more likely to receive antidepressants than analgesics for the same presenting pain.<sup>[11]</sup> Women are also more frequently &ldquo;under-triaged,&rdquo; their conditions coded as lower priority, leading to longer stays and worse outcomes.<sup>[11]</sup></p>
-                <p>For migraineurs &mdash; a predominantly female population, presenting with an invisible condition, often appearing outwardly composed even in severe pain &mdash; this bias lands on top of existing stigma like a second weight. Dismissed because it&rsquo;s &ldquo;just a headache.&rdquo; Dismissed, also, because of who you are.<sup>[12]</sup></p>
+                <p>For migraineurs &mdash; a predominantly female population, presenting with an invisible condition, often appearing outwardly composed even in severe pain &mdash; this bias lands on top of existing stigma like a second weight. This is <a href="article-medical-gaslighting.html">medical gaslighting</a> compounded by gender. Dismissed because it&rsquo;s &ldquo;just a headache.&rdquo; Dismissed, also, because of who you are.<sup>[12]</sup></p>
                 <p>The data makes this structural, not anecdotal: 85% of participants in migraine clinical trials are women, yet until recently, almost no research examined sex-specific differences in treatment response.<sup>[12]</sup> The field was built on data about women and applied without thinking too hard about what that means.</p>
             </section>
 
@@ -391,7 +403,7 @@
             <section class="article-section">
                 <h2>When You Must Go. No Negotiation.</h2>
                 <p>In the United States, an ER visit can cost thousands of dollars &mdash; with or without insurance. That financial reality is why so many migraine patients wait too long, hoping the attack breaks on its own. That calculation makes sense for a typical attack. But if you are experiencing a thunderclap headache, new neurological symptoms, or a migraine that has not broken in 72 hours &mdash; cost cannot be the deciding factor. <strong>This is a question of survival, not a question of your deductible.</strong></p>
-                <p>The critical concept is <strong>thunderclap headache</strong> &mdash; a headache that reaches maximum intensity within seconds, like a sudden detonation.<sup>[13]</sup> This is nothing like the gradual build of a typical migraine. In research studies, thunderclap headache is caused by subarachnoid hemorrhage &mdash; bleeding around the brain &mdash; in 11 to 25% of cases.<sup>[14]</sup> Other vascular emergencies account for many more.</p>
+                <p>The critical concept is <strong>thunderclap headache</strong> &mdash; a headache that reaches maximum intensity within seconds, like a sudden detonation.<sup>[13]</sup> This is nothing like the gradual build of a typical migraine. In research studies, thunderclap headache is caused by <a href="article-stroke-aura-emergency.html">subarachnoid hemorrhage</a> &mdash; bleeding around the brain &mdash; in 11 to 25% of cases.<sup>[14]</sup> Other vascular emergencies account for many more.</p>
 
                 <div class="emergency-box">
                     <h3>&#x26A0;&#xFE0F; When to Seek Emergency Help Immediately</h3>
@@ -409,7 +421,7 @@
                     <p>Financial concerns, past dismissal, and fear of stigma are real &mdash; but none of them are reasons to delay when these symptoms are present. Call your local emergency number immediately.</p>
                 </div>
 
-                <p><strong>Status migrainosus</strong> deserves its own sentence. It affects up to one in five migraine patients at some point. Prolonged attacks trigger central sensitization &mdash; a neurological feedback loop where pain pathways become increasingly reactive &mdash; making the attack harder to break with every passing hour and raising the risk of episodic migraine becoming chronic.<sup>[16]</sup> IV medications can interrupt this cycle in ways that nothing you take at home can.</p>
+                <p><strong>Status migrainosus</strong> deserves its own sentence. It affects up to one in five migraine patients at some point. Prolonged attacks trigger central sensitization &mdash; a neurological feedback loop where pain pathways become increasingly reactive &mdash; making the attack harder to break with every passing hour and raising the risk of <a href="article-chronic-migraine-15-day-line.html">episodic migraine becoming chronic</a>.<sup>[16]</sup> IV medications can interrupt this cycle in ways that nothing you take at home can.</p>
             </section>
 
             <div class="separator"></div>
@@ -426,7 +438,7 @@
                 <div class="action-box">
                     <h3>Your Four-Part ER Kit</h3>
                     <ul>
-                        <li><strong>A letter from your doctor &mdash; with your personal Migraine Cocktail Protocol.</strong> Ask your neurologist or headache specialist to write a brief letter that includes your diagnosis, your typical attack pattern, and a specific treatment protocol: IV fluids, the medications that have worked for you (for example, prochlorperazine, magnesium, metoclopramide), and anything you cannot tolerate. When you arrive in the ER with a signed protocol from a specialist, you give the ER physician a clear path forward. It&rsquo;s far easier for them to follow an existing order than to improvise treatment for a condition they see every day but rarely specialize in.<sup>[3]</sup></li>
+                        <li><strong>A letter from your doctor &mdash; with your personal Migraine Cocktail Protocol.</strong> Ask your neurologist or <a href="article-building-migraine-team.html">headache specialist</a> to write a brief letter that includes your diagnosis, your typical attack pattern, and a specific treatment protocol: IV fluids, the medications that have worked for you (for example, prochlorperazine, magnesium, metoclopramide), and anything you cannot tolerate. When you arrive in the ER with a signed protocol from a specialist, you give the ER physician a clear path forward. It&rsquo;s far easier for them to follow an existing order than to improvise treatment for a condition they see every day but rarely specialize in.<sup>[3]</sup></li>
                         <li><strong>Your medication list.</strong> Everything you take &mdash; preventive and acute &mdash; written out clearly. What you already took before arriving. What has caused reactions. What worked in past ER visits. Keep it on paper and in your phone.</li>
                         <li><strong>A comfort kit.</strong> An ER waiting room is an assault on every migraine sensitivity &mdash; fluorescent lights, noise, sharp smells, cold air, hard chairs. Pack: dark sunglasses, earplugs, an eye mask that fully blocks light, a small pillow, a light blanket. Bring water and snacks for the wait after treatment, when driving may not be safe.<sup>[17]</sup></li>
                         <li><strong>An advocate.</strong> Someone who knows your history. When pain is severe, you lose precision &mdash; you forget medication names, you can&rsquo;t push back when needed, you accept dismissal because you don&rsquo;t have the energy to fight. An advocate speaks when you can&rsquo;t.<sup>[5]</sup></li>
@@ -492,13 +504,21 @@
             <div class="related-box">
                 <h3>Deepen Your Understanding</h3>
                 <div class="related-grid">
+                    <a href="article-medical-gaslighting.html" class="related-card">
+                        <h4>Medical Gaslighting: When &ldquo;It&rsquo;s Just a Headache&rdquo; Becomes Trauma</h4>
+                        <p>The systemic dismissal behind the ER experience — gender bias, epistemic injustice, and how to fight back with evidence.</p>
+                    </a>
+                    <a href="article-building-migraine-team.html" class="related-card">
+                        <h4>Building Your Migraine Team</h4>
+                        <p>The doctor&rsquo;s letter that changes your ER visit starts with the right specialist. How to find and build your care team.</p>
+                    </a>
                     <a href="article-prodrome-warning-signs.html" class="related-card">
                         <h4>The Prodrome: Your Early Warning System</h4>
-                        <p>The hours before the headache hit are full of signals. Learning to read them is the difference between catching an attack and being ambushed by one.</p>
+                        <p>The hours before the headache are full of signals — catching them early can prevent the ER trip entirely.</p>
                     </a>
                     <a href="article-moh.html" class="related-card">
                         <h4>Medication Overuse Headache</h4>
-                        <p>The trap that catches people who go to the ER too often &mdash; or use acute medications too frequently. What it is, how it happens, and how to get out.</p>
+                        <p>The trap that catches people who use acute medications too frequently. What it is and how to get out.</p>
                     </a>
                 </div>
             </div>
