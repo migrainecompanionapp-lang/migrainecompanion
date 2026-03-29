@@ -124,6 +124,12 @@
         .article-section a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
         .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
 
+        /* Link colors for all box types — prevent default blue */
+        .action-box a { color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(106,170,122,0.4); transition: all 0.3s ease; }
+        .action-box a:hover { border-bottom-color: var(--green); background: var(--green-soft); }
+        .emergency-box a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(197,160,89,0.4); transition: all 0.3s ease; }
+        .emergency-box a:hover { border-bottom-color: var(--gold); background: var(--gold-soft); }
+
         .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
         .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168, 0.25) 30%, rgba(139,122,168, 0.40) 50%, rgba(139,122,168, 0.25) 70%, transparent 100%); }
         .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(139,122,168, 0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
@@ -301,7 +307,7 @@
                     <h2>The Second Problem Nobody Names</h2>
                     <p>Cognitive dysfunction is the <strong>second largest cause of disability</strong> in people with migraine, after pain itself.<sup>[1]</sup> That&rsquo;s not a fringe finding. It&rsquo;s the conclusion of a 2024 narrative review in <em>The Journal of Headache and Pain</em>, produced by researchers across King&rsquo;s College London, Vilnius University, and the European Headache Federation.<sup>[1]</sup></p>
                     <p>The specific domains affected are consistent across studies: <strong>information processing speed</strong>, <strong>working memory</strong>, <strong>sustained attention</strong>, <strong>verbal fluency</strong>, and <strong>executive function</strong>.<sup>[1][2]</sup> These are not abstract neuropsychological categories. They are the skills you use to finish a sentence. To follow a conversation. To make a decision under pressure. To remember why you opened the email.</p>
-                    <p>During an attack, the impairment is measurable and severe. Computerized cognitive tests show that working memory and reaction time both drop during the headache phase and the postdrome &mdash; the &ldquo;migraine hangover&rdquo; that follows pain.<sup>[1]</sup> One study found that scores on the Mini-Mental State Examination &mdash; a clinical tool used to screen for dementia &mdash; declined significantly during active attacks in patients who were perfectly healthy on their pain-free days.<sup>[1]</sup></p>
+                    <p>During an attack, the impairment is measurable and severe. Computerized cognitive tests show that working memory and reaction time both drop during the headache phase and the <a href="article-postdrome.html">postdrome</a> &mdash; the &ldquo;migraine hangover&rdquo; that follows pain.<sup>[1]</sup> One study found that scores on the Mini-Mental State Examination &mdash; a clinical tool used to screen for dementia &mdash; declined significantly during active attacks in patients who were perfectly healthy on their pain-free days.<sup>[1]</sup></p>
                     <p>But the part that surprises most people isn&rsquo;t the attack itself.</p>
                 </section>
 
@@ -321,7 +327,7 @@
                     <h2>Three Things Going Wrong at Once</h2>
                     <p>The migraine brain is not simply a headache machine. It processes sensory information differently before, during, and after attacks &mdash; and those differences leave structural and functional traces.</p>
                     <p>Three mechanisms help explain why cognition suffers.</p>
-                    <p><strong>Cortical spreading depression.</strong> In migraine with aura, a slow wave of electrical depolarization &mdash; called cortical spreading depression, or CSD &mdash; sweeps across the brain, temporarily silencing entire cortical regions.<sup>[5]</sup> This wave can reach the hippocampus, disrupting the internal rhythms of the CA3 region, which is the brain&rsquo;s gateway for encoding new memories.<sup>[5][6]</sup> Even without aura, researchers believe subtler versions of this neural disruption may interfere with cognitive network function across the migraine cycle.<sup>[6]</sup></p>
+                    <p><strong>Cortical spreading depression.</strong> In <a href="article-aura.html">migraine with aura</a>, a slow wave of electrical depolarization &mdash; called cortical spreading depression, or CSD &mdash; sweeps across the brain, temporarily silencing entire cortical regions.<sup>[5]</sup> This wave can reach the hippocampus, disrupting the internal rhythms of the CA3 region, which is the brain&rsquo;s gateway for encoding new memories.<sup>[5][6]</sup> Even without aura, researchers believe subtler versions of this neural disruption may interfere with cognitive network function across the migraine cycle.<sup>[6]</sup></p>
                     <p><strong>Altered network connectivity.</strong> Resting-state fMRI consistently reveals abnormal connectivity patterns in the migraine brain during pain-free periods. Two networks are particularly disrupted: the <strong>Default Mode Network</strong> &mdash; which handles episodic memory, social cognition, and mental time travel &mdash; and the <strong>Central Executive Network</strong>, responsible for working memory and complex attention.<sup>[7]</sup> In migraineurs, the connections between these networks and the insula are measurably altered, and the severity of that disruption correlates with migraine duration.<sup>[7]</sup></p>
                     <p><strong>White matter hyperintensities.</strong> A 2023 meta-analysis pooling 30 studies and 3,502 migraineurs found that <strong>44% of migraine patients have white matter hyperintensities (WMHs)</strong> on brain MRI &mdash; a rate significantly higher than age-matched controls.<sup>[8]</sup> These are small areas of vascular damage in the brain&rsquo;s white matter &mdash; the wiring that connects thinking regions to each other. WMHs are more common in those with aura, higher attack frequency, and longer migraine history.<sup>[8][9]</sup> A 2024 longitudinal study confirmed that migraine with aura is associated with faster WMH progression over time, particularly in women.<sup>[9]</sup></p>
                     <p>Together, these three findings describe a brain that &mdash; over years and decades &mdash; is quietly being rewired.</p>
@@ -334,7 +340,7 @@
 
                 <section class="article-section">
                     <h2>Why Chronic Migraine Is Different</h2>
-                    <p>Not all migraine brains accumulate the same damage. Those with <strong>chronic migraine</strong> (15 or more headache days per month) show deeper structural changes than those with episodic migraine.</p>
+                    <p>Not all migraine brains accumulate the same damage. Those with <strong><a href="article-chronic-migraine-15-day-line.html">chronic migraine</a></strong> (15 or more headache days per month) show deeper structural changes than those with episodic migraine.</p>
                     <p>A 2025 longitudinal MRI study found that chronic migraine patients had reduced cortical surface area in regions including the precuneus, superior frontal gyrus, and supramarginal gyrus &mdash; areas critical for attention, self-referential processing, and language.<sup>[10]</sup> When those same patients improved to episodic migraine through treatment, some structural differences partially reversed.<sup>[10]</sup></p>
 
                     <div class="highlight-box">
@@ -346,7 +352,7 @@
 
                 <div class="emergency-box">
                     <h3>&#x26A0;&#xFE0F; When to Seek Emergency Care</h3>
-                    <p>Sudden severe confusion, abrupt memory loss, speech difficulty, or one-sided weakness occurring alongside or instead of your typical headache may indicate stroke or hemiplegic migraine &mdash; not standard migraine fog. <strong>Call emergency services immediately.</strong> People with migraine with aura have an elevated stroke risk compared to the general population.</p>
+                    <p>Sudden severe confusion, abrupt memory loss, speech difficulty, or one-sided weakness occurring alongside or instead of your typical headache may indicate <a href="article-stroke-aura-emergency.html">stroke</a> or <a href="article-hemiplegic-migraine.html">hemiplegic migraine</a> &mdash; not standard migraine fog. <strong>Call emergency services immediately.</strong> People with migraine with aura have an elevated stroke risk compared to the general population.</p>
                     <p>Inform your neurologist urgently if your aura symptoms change in character, duration, or frequency, or if you develop any new neurological symptoms.</p>
                 </div>
 
@@ -357,7 +363,7 @@
                     <p>Here&rsquo;s where this story enters new territory.</p>
                     <p>A 2024 Argentine study used machine learning combined with voxel-based morphometry &mdash; a technique that maps tiny differences in brain structure &mdash; to classify migraine patients by cognitive burden rather than by headache day count.<sup>[12]</sup> The finding was striking: <strong>cognitive and psychological alterations predicted migraine disability more accurately than the standard diagnostic threshold</strong> of 15 headache days per month.<sup>[12]</sup></p>
                     <p>That means your headache calendar may be a poor proxy for how much migraine is actually costing your brain. Two people with identical headache diaries might have profoundly different cognitive profiles &mdash; and very different levels of invisible, daily impairment.</p>
-                    <p>Separately, a 2023 Norwegian study trained machine learning models on wearable sensor data &mdash; heart rate, skin temperature, EMG &mdash; combined with daily mobile diary entries.<sup>[13]</sup> The best-performing model, a random forest classifier, could predict next-day migraine attacks with meaningful accuracy.<sup>[13]</sup> The future being built here is one where your phone knows a migraine is coming before you do &mdash; and where early intervention becomes possible.</p>
+                    <p>Separately, a 2023 Norwegian study trained machine learning models on wearable sensor data &mdash; heart rate, skin temperature, EMG &mdash; combined with daily mobile diary entries.<sup>[13]</sup> The best-performing model, a random forest classifier, could <a href="article-prediction.html">predict next-day migraine attacks</a> with meaningful accuracy.<sup>[13]</sup> The future being built here is one where your phone knows a migraine is coming before you do &mdash; and where early intervention becomes possible.</p>
 
                     <div class="insight-card">
                         <p><strong>For those of us who have lived with migraine for 30 years, as I have, none of this is abstract.</strong></p>
@@ -378,7 +384,7 @@
 
                     <div class="action-box">
                         <h3>Reduce Attack Frequency</h3>
-                        <p>This is the single most powerful intervention. More attacks, more cognitive impact &mdash; consistently, across studies. Every evidence-based preventive strategy &mdash; CGRP inhibitors, topiramate, lifestyle approaches &mdash; also protects cognition, not just pain tolerance.<sup>[11]</sup></p>
+                        <p>This is the single most powerful intervention. More attacks, more cognitive impact &mdash; consistently, across studies. Every evidence-based preventive strategy &mdash; <a href="article-cgrp-revolution.html">CGRP inhibitors</a>, topiramate, lifestyle approaches &mdash; also protects cognition, not just pain tolerance.<sup>[11]</sup></p>
                     </div>
 
                     <div class="action-box">
@@ -388,7 +394,7 @@
 
                     <div class="action-box">
                         <h3>Protect Your Sleep</h3>
-                        <p>The networks most disrupted by migraine &mdash; the Default Mode and Central Executive Networks &mdash; are profoundly sleep-sensitive. Consistent sleep schedules support the same systems that migraine destabilizes.<sup>[1]</sup> Sleep is not passive recovery. For the migraine brain, it is active maintenance.</p>
+                        <p>The networks most disrupted by migraine &mdash; the Default Mode and Central Executive Networks &mdash; are profoundly sleep-sensitive. <a href="the-goldilocks-problem-sleep-migraine.html">Consistent sleep schedules</a> support the same systems that migraine destabilizes.<sup>[1]</sup> Sleep is not passive recovery. For the migraine brain, it is active maintenance.</p>
                     </div>
 
                     <div class="action-box">
@@ -407,6 +413,14 @@
                         <a href="article-prodrome-warning-signs.html" class="related-card">
                             <h4>The Warning Signs Before the Storm</h4>
                             <p>Yawning, mood shifts, cravings, neck tension &mdash; the prodrome phase is your brain signaling trouble hours before the pain arrives. How to read it.</p>
+                        </a>
+                        <a href="article-aura.html" class="related-card">
+                            <h4>The Aura Experience</h4>
+                            <p>Visual distortions, sensory waves, speech disruption &mdash; what cortical spreading depression does to your brain and why it matters for cognition.</p>
+                        </a>
+                        <a href="article-prediction.html" class="related-card">
+                            <h4>Your Brain Can Predict the Future</h4>
+                            <p>Wearables, machine learning, and migraine diaries &mdash; how technology is learning to forecast attacks before symptoms start.</p>
                         </a>
                     </div>
                 </div>
