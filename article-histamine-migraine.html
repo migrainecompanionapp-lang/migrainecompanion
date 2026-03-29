@@ -114,7 +114,9 @@
         .highlight-box { background: var(--green-soft); border-left: 3px solid var(--green); padding: 24px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; }
         .highlight-box p { font-size: 1.1rem; font-weight: 600; color: var(--green); margin: 0; line-height: 1.7; }
 
-        .separator { text-align: center; margin: 60px 0; color: var(--lavender); font-size: 1.5rem; opacity: 0.5; }
+        .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
+        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168, 0.25) 30%, rgba(139,122,168, 0.40) 50%, rgba(139,122,168, 0.25) 70%, transparent 100%); }
+        .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(139,122,168, 0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
 
         .data-card { background: var(--teal-soft); border-left: 4px solid var(--teal); padding: 28px 32px; margin: 36px 0; border-radius: 0 12px 12px 0; }
         .data-card p { margin-bottom: 16px; font-size: 0.98rem; }
@@ -237,17 +239,17 @@
                     </ul>
                 </div>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- INTRO -->
                 <section class="article-section">
                     <p>You did everything right.</p>
                     <p>You swapped processed food for fermented vegetables. Replaced soda with kombucha. Built your Saturday mornings around avocado toast and aged Gouda. You ate the way the wellness blogs told you to eat.</p>
                     <p>And your migraines got worse.</p>
-                    <p>If that sounds familiar, the problem might not be stress or sleep or screen time. It might be hiding inside the very foods you chose <em>because</em> they&rsquo;re healthy. The culprit has a name: histamine. And your body may have lost the ability to handle it.</p>
+                    <p>If that sounds familiar, the problem might not be <a href="article-understanding-triggers.html">stress or sleep or screen time</a>. It might be hiding inside the very foods you chose <em>because</em> they&rsquo;re healthy. The culprit has a name: histamine. And your body may have lost the ability to handle it.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- THE MOLECULE -->
                 <section class="article-section">
@@ -262,16 +264,16 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- FEEDBACK LOOP -->
                 <section class="article-section">
                     <h2>The Feedback Loop That Hijacks Your Brain</h2>
-                    <p>To understand why histamine triggers migraine, you need to meet two key players: mast cells and CGRP.</p>
+                    <p>To understand why histamine triggers migraine, you need to meet two key players: mast cells and <a href="article-cgrp-revolution.html">CGRP</a>.</p>
                     <p>Mast cells are immune sentinels packed with histamine, stationed throughout your body &mdash; including the meninges, the delicate membranes surrounding your brain.<sup>[9, 10]</sup> Think of them as smoke detectors loaded with inflammatory chemicals. When they activate, they degranulate: they dump histamine into the surrounding tissue.</p>
                     <p>Here&rsquo;s where migraine begins. Histamine binds to H1 receptors on meningeal blood vessels, triggering vasodilation and the release of nitric oxide &mdash; a known migraine provoker.<sup>[1, 11]</sup> But that&rsquo;s only the opening act.</p>
                     <p>The real damage comes from a feedback loop. Histamine activates sensory nerve endings in the trigeminal system &mdash; your brain&rsquo;s main pain highway. Those nerves respond by releasing CGRP and substance P, neuropeptides that cause <em>more</em> mast cell degranulation.<sup>[9, 10, 12]</sup> More histamine. More CGRP. More pain. The loop feeds itself.</p>
-                    <p>Animal studies confirm the connection directly: histamine applied to nasal mucosa triggered CGRP release from trigeminal neurons, and injected histamine caused CGRP to flood the cerebrospinal fluid.<sup>[10, 13]</sup> This is the same CGRP that gepants and anti-CGRP antibodies &mdash; the newest generation of migraine medications &mdash; are designed to block.<sup>[14]</sup></p>
+                    <p>Animal studies confirm the connection directly: histamine applied to nasal mucosa triggered CGRP release from trigeminal neurons, and injected histamine caused CGRP to flood the cerebrospinal fluid.<sup>[10, 13]</sup> This is the same CGRP that <a href="article-gepants-guide.html">gepants and anti-CGRP antibodies</a> &mdash; the newest generation of migraine medications &mdash; are designed to block.<sup>[14]</sup></p>
 
                     <div class="insight-card">
                         <p><strong>The same target:</strong> Histamine from your lunch may activate the same inflammatory cascade that your most expensive migraine medication tries to shut down. The mast cell&ndash;CGRP feedback loop is both the mechanism of food-triggered attacks and the target of modern anti-CGRP therapies.<sup>[9, 10, 14]</sup></p>
@@ -284,12 +286,12 @@
                     <figcaption>The self-reinforcing pain cycle: histamine triggers CGRP release, which triggers more histamine &mdash; the same loop that modern anti-CGRP medications are designed to break. Based on Guan et al., Molecular Pain (2023) and Spekker et al., Biomedicines (2022). [9, 10]</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- GUT TO BRAIN -->
                 <section class="article-section">
                     <h2>A Highway From Gut to Brain</h2>
-                    <p>A 2024 review in <em>Drug Discovery Today</em> proposed something striking: food histamine may drive migraine through a direct gut-to-trigeminovascular connection.<sup>[15]</sup></p>
+                    <p>A 2024 review in <em>Drug Discovery Today</em> proposed something striking: food histamine may drive migraine through a direct <a href="the-second-brain.html">gut-to-trigeminovascular connection</a>.<sup>[15]</sup></p>
                     <p>The theory works like this. You eat high-histamine food. Your DAO can&rsquo;t clear it. Undigested histamine enters the bloodstream and alters the dynamics of meningeal blood vessels &mdash; provoking endothelial nitric oxide release and systemic inflammatory signaling that reaches the trigeminovascular system, igniting the mast cell&ndash;CGRP loop.<sup>[1, 11, 15]</sup></p>
                     <p>But there&rsquo;s a second pathway. Sensory nerve endings in the intestinal wall also release CGRP when exposed to mast cell products &mdash; including histamine.<sup>[15]</sup> These gut-based signals sensitize spinal afferents and amplify pain processing in the central nervous system. The gut doesn&rsquo;t just absorb histamine. It transmits the alarm.</p>
                     <p>This aligns with a growing consensus. As Schnedl and Enko argued in their 2021 review: histamine intolerance is fundamentally a gastrointestinal condition. Anything that damages the intestinal lining &mdash; inflammatory bowel disease, celiac disease, gut dysbiosis, even certain medications &mdash; can suppress DAO activity and tip the balance toward migraine.<sup>[4, 24]</sup> The connection between celiac disease and impaired DAO has been documented specifically: patients with celiac disease and non-celiac gluten sensitivity show reduced DAO activity, which may explain the high comorbidity of migraine in these populations.<sup>[24]</sup> And the vulnerability isn&rsquo;t only acquired &mdash; genetic variants in the DAO gene (rs10156191 and rs2052129) have been associated with increased migraine risk in a case-control study of over 1,000 participants.<sup>[23]</sup></p>
@@ -299,7 +301,7 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- HEALTHY FOODS -->
                 <section class="article-section">
@@ -314,7 +316,7 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- FRESHNESS -->
                 <section class="article-section">
@@ -324,7 +326,7 @@
                     <p>This means meal prep &mdash; another wellness staple &mdash; can inadvertently raise histamine exposure in sensitive individuals. The simplest fix? Freeze leftovers immediately after cooking rather than refrigerating them for days.<sup>[16, 17]</sup> Freshness isn&rsquo;t just about taste. For the histamine-sensitive brain, it&rsquo;s about prevention.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- TESTING -->
                 <section class="article-section">
@@ -338,7 +340,7 @@
                     </div>
 
                     <p>No single definitive test exists for histamine intolerance.<sup>[4, 7]</sup> Serum DAO levels can be measured and may support a diagnosis, but they don&rsquo;t perfectly reflect DAO activity in the gut.<sup>[4]</sup> The gold standard remains a structured elimination trial: remove high-histamine foods for two to four weeks, then reintroduce them systematically while monitoring symptoms.<sup>[6, 20]</sup></p>
-                    <p>During this process, keep a detailed food and migraine diary. Note not just what you ate, but how fresh it was, how it was stored, and what you combined it with. The pattern may reveal your personal threshold &mdash; the point at which the bucket tips. And that&rsquo;s exactly the goal: not to restrict these foods forever, but to map your individual tolerance so you can make informed choices. Many people discover they can handle moderate histamine loads &mdash; just not the perfect storm of aged cheese, red wine, and leftovers all in one meal.<sup>[6, 25]</sup></p>
+                    <p>During this process, keep a detailed <a href="food-detective.html">food and migraine diary</a>. Note not just what you ate, but how fresh it was, how it was stored, and what you combined it with. The pattern may reveal your personal threshold &mdash; the point at which the bucket tips. And that&rsquo;s exactly the goal: not to restrict these foods forever, but to map your individual tolerance so you can make informed choices. Many people discover they can handle moderate histamine loads &mdash; just not the perfect storm of aged cheese, red wine, and leftovers all in one meal.<sup>[6, 25]</sup></p>
                     <p>For those with confirmed DAO deficiency, two interventions show early promise.</p>
                     <p><strong>A low-histamine diet</strong> produced significant improvement in 73% of chronic headache patients after four weeks in one prospective study (n=45). Eight participants &mdash; nearly one in five &mdash; achieved complete remission. Headache frequency, duration, and intensity all decreased (p &lt; 0.001).<sup>[21]</sup></p>
                     <p><strong>DAO supplementation</strong> was tested in the first double-blind randomized trial of its kind (n=100, episodic migraine patients with DAO deficiency). One month of supplementation reduced migraine attack duration by 1.4 hours compared to baseline, and the treatment group used 20% fewer triptans.<sup>[22]</sup> The results are encouraging but preliminary &mdash; the study was small, single-center, and short-term. Larger trials are underway.</p>
@@ -354,7 +356,7 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <!-- WHAT THIS MEANS -->
                 <section class="article-section">
@@ -381,6 +383,14 @@
                         <a href="article-dopamine-diet-migraine.html" class="related-card">
                             <h4>The Dopamine Diet</h4>
                             <p>Many high-histamine foods are also high in tyramine &mdash; another biogenic amine linked to migraine. The overlap between histamine and dopamine pathways runs deeper than you&rsquo;d expect.</p>
+                        </a>
+                        <a href="article-tyramine-migraine.html" class="related-card">
+                            <h4>The Tyramine Connection</h4>
+                            <p>Histamine&rsquo;s biochemical cousin &mdash; found in the same aged and fermented foods. How tyramine triggers migraine through a different but overlapping pathway.</p>
+                        </a>
+                        <a href="article-migraine-safe-kitchen.html" class="related-card">
+                            <h4>The Migraine-Safe Kitchen</h4>
+                            <p>Practical strategies for food storage, cooking methods, and meal planning that keep both histamine and tyramine levels low without sacrificing nutrition.</p>
                         </a>
                     </div>
                 </div>
