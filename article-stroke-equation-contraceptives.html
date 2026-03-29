@@ -77,27 +77,10 @@
             --text-warm: #c9bda8;
         }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
         .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
 
-        header {
-            padding: 16px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(13,13,13,0.92);
-            backdrop-filter: blur(16px) saturate(180%);
-            -webkit-backdrop-filter: blur(16px) saturate(180%);
-            border-bottom: 1px solid var(--lavender-border);
-        }
+        header { padding: 16px 0; position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(13,13,13,0.92); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); border-bottom: 1px solid var(--lavender-border); }
         .header-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.3rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; text-decoration: none; }
         .logo span { color: var(--lavender); }
@@ -161,6 +144,9 @@
         .action-box h3 { color: var(--green); font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; }
         .action-box p { font-size: 0.95rem; margin-bottom: 12px; }
         .action-box p:last-child { margin-bottom: 0; }
+        /* Link colors for action-box — prevent default blue */
+        .action-box a { color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(106,170,122,0.4); transition: all 0.3s ease; }
+        .action-box a:hover { border-bottom-color: var(--green); background: var(--green-soft); }
 
         .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(139,122,168, 0.10); box-shadow: 0 20px 60px rgba(0,0,0, 0.35), 0 4px 12px rgba(0,0,0, 0.20), inset 0 0 0 1px rgba(255,255,255, 0.03); }
         .article-image img { width: 100%; height: auto; display: block; }
@@ -296,7 +282,7 @@
                 <section class="article-section">
                     <h2>The Brain&rsquo;s Electrical Storm</h2>
                     <p>To understand why aura changes everything, you need to understand what it does to your brain.</p>
-                    <p>Those shimmering zigzag lines, expanding blind spots, tingling fingers, or sudden difficulty finding words &mdash; migraine aura is caused by a phenomenon called <strong>cortical spreading depression</strong>. Picture a slow-motion wave rolling across the surface of the brain. First comes a surge of electrical hyperactivity. Then, like the silence after a thunderclap, a wave of suppressed function follows, creeping at roughly 3 to 5 millimeters per&nbsp;minute.<sup>[3]</sup>&nbsp;<sup>[4]</sup></p>
+                    <p>Those shimmering zigzag lines, expanding blind spots, tingling fingers, or sudden difficulty finding words &mdash; migraine aura is caused by a phenomenon called <strong><a href="article-aura.html">cortical spreading depression</a></strong>. Picture a slow-motion wave rolling across the surface of the brain. First comes a surge of electrical hyperactivity. Then, like the silence after a thunderclap, a wave of suppressed function follows, creeping at roughly 3 to 5 millimeters per&nbsp;minute.<sup>[3]</sup>&nbsp;<sup>[4]</sup></p>
                     <p>The visual fireworks are only part of the story. That wave temporarily breaches the blood-brain barrier, triggers inflammatory cascades, and disrupts how blood vessels in the brain respond. In healthy tissue, this is briefly dramatic but usually harmless. Yet cortical spreading depression also damages the endothelium &mdash; the delicate inner lining of blood vessels &mdash; shifting the blood toward a clotting-prone&nbsp;state.<sup>[5]</sup></p>
                     <p>Now add synthetic estrogen to this already volatile environment. You are not just adding risk. You are lighting a match near a gas leak.</p>
                 </section>
@@ -305,7 +291,7 @@
 
                 <section class="article-section">
                     <h2>The Numbers That Should Change the Conversation</h2>
-                    <p>The landmark 2017 Champaloux study, drawing from a database of over 33 million women, laid out the stakes plainly. Compared to women with neither migraine nor contraceptive use, the odds ratio for ischemic stroke among women with migraine with aura who used combined hormonal contraceptives was&nbsp;6.1.<sup>[1]</sup> Six times the baseline risk.</p>
+                    <p>The landmark 2017 Champaloux study, drawing from a database of over 33 million women, laid out the stakes plainly. Compared to women with neither migraine nor contraceptive use, the odds ratio for <a href="article-stroke-aura-emergency.html">ischemic stroke</a> among women with migraine with aura who used combined hormonal contraceptives was&nbsp;6.1.<sup>[1]</sup> Six times the baseline risk.</p>
                     <p>Break it apart and the math is sobering. Migraine with aura alone &mdash; no contraceptives &mdash; raises stroke risk to 2.7 times&nbsp;baseline.<sup>[1]</sup> Combined hormonal contraceptives alone raise it to about 1.8&nbsp;times.<sup>[6]</sup> But combine them, and the risk does not simply add. It multiplies.</p>
 
                     <div class="data-card">
@@ -332,7 +318,6 @@
                     <p>And the hope that lower-dose pills would fix the problem has not materialized. The Danish data showed that ischemic stroke risk was similar whether the pill contained 30&ndash;40 or 20 micrograms of&nbsp;ethinylestradiol.<sup>[6]</sup> Some risk persists at every dose.</p>
                     <p>Progestin-only contraceptives tell a different story entirely. No meta-analysis has linked progestin-only pills, implants, or levonorgestrel-releasing IUDs to increased stroke&nbsp;risk.<sup>[9]</sup> The Danish cohort data even suggest that levonorgestrel IUDs may carry a slightly <em>reduced</em> stroke risk, though the mechanism remains&nbsp;unclear.<sup>[10]</sup></p>
                 </section>
-
                 <div class="separator"></div>
 
                 <section class="article-section">
@@ -387,12 +372,12 @@
 
                     <div class="action-box">
                         <h3>Know Your Migraine Type</h3>
-                        <p>This is the single most important step. The classic visual aura &mdash; zigzag lines, shimmering crescents, blind spots that expand over 5 to 60 minutes &mdash; is the most recognized form. But aura can also be sensory (a tingling wave that spreads across your hand and up your arm), speech-based (difficulty finding words mid-sentence), or rarely, motor (temporary one-sided weakness). If you are unsure, describe your pre-headache symptoms to a neurologist. Precision here is not pedantic. It is&nbsp;protective.<sup>[19]</sup></p>
+                        <p>This is the single most important step. The classic visual aura &mdash; zigzag lines, shimmering crescents, blind spots that expand over 5 to 60 minutes &mdash; is the most recognized form. But aura can also be sensory (a tingling wave that spreads across your hand and up your arm), speech-based (difficulty finding words mid-sentence), or rarely, <a href="article-hemiplegic-migraine.html">motor (temporary one-sided weakness)</a>. If you are unsure, describe your pre-headache symptoms to a <a href="article-first-neurologist-visit.html">neurologist</a>. Precision here is not pedantic. It is&nbsp;protective.<sup>[19]</sup></p>
                     </div>
 
                     <div class="action-box">
                         <h3>Make Your Specialists Talk to Each Other</h3>
-                        <p>Gynecologists and neurologists often treat the same woman in separate silos. Your gynecologist needs to know your migraine type. Your neurologist needs to know your contraceptive method. If they have not communicated, you may need to be the bridge between them.</p>
+                        <p>Gynecologists and neurologists often treat the same woman in separate silos. Your gynecologist needs to know your migraine type. Your neurologist needs to know your contraceptive method. If they have not communicated, you may need to <a href="article-building-migraine-team.html">be the bridge between them</a>.</p>
                     </div>
 
                     <div class="action-box">
@@ -420,13 +405,21 @@
                 <div class="related-box">
                     <h3>Deepen Your Understanding</h3>
                     <div class="related-grid">
+                        <a href="article-aura.html" class="related-card">
+                            <h4>Migraine Aura Explained</h4>
+                            <p>The visual, sensory, and motor disturbances that define aura &mdash; and why understanding them is the first step in the stroke equation.</p>
+                        </a>
+                        <a href="article-hemiplegic-migraine.html" class="related-card">
+                            <h4>The Paralysis Fear: Hemiplegic Migraine</h4>
+                            <p>When aura invades the motor cortex and one side of your body goes weak. The rarest migraine type &mdash; and what to do about it.</p>
+                        </a>
                         <a href="article-prodrome-warning-signs.html" class="related-card">
-                            <h4>The Warning Signs Before the Storm</h4>
-                            <p>Yawning, mood shifts, cravings, neck tension &mdash; the prodrome phase is your brain signaling trouble hours before pain arrives. How to read the signals.</p>
+                            <h4>Prodrome Warning Signs</h4>
+                            <p>Your brain signals trouble hours before pain arrives. Learning to read the prodrome changes your relationship with every attack.</p>
                         </a>
                         <a href="article-cgrp-revolution.html" class="related-card">
                             <h4>The CGRP Revolution</h4>
-                            <p>How a tiny peptide created the first migraine-specific treatments &mdash; and what the science of CGRP reveals about the vascular biology driving your attacks.</p>
+                            <p>How a tiny peptide created the first migraine-specific treatments &mdash; and what CGRP reveals about vascular biology.</p>
                         </a>
                     </div>
                 </div>
