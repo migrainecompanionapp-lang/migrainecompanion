@@ -371,6 +371,31 @@
         .pw-expired h2 { font-family:'Comfortaa',cursive; color:var(--cream); font-size:var(--fs-md); margin-bottom:var(--sp-xs); line-height:1.2; }
         .pw-expired p { color:var(--text-secondary); font-size:var(--fs-base); line-height:1.5; margin-bottom:var(--sp-md); }
 
+        /* ─── RESTORE ACCESS OVERLAY ─── */
+        .restore-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(10,10,12,0.88); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); z-index:1000; align-items:center; justify-content:center; padding:var(--sp-md); animation:overlay-in 0.3s ease; }
+        .restore-overlay.visible { display:flex; }
+        .restore-card { max-width:380px; width:100%; background:linear-gradient(160deg,rgba(38,36,44,0.95) 0%,rgba(28,27,32,0.98) 100%); border:1px solid rgba(139,122,168,0.18); border-radius:22px; padding:var(--sp-md); position:relative; box-shadow:0 32px 80px rgba(0,0,0,0.6); animation:card-in 0.45s cubic-bezier(0.16,1,0.3,1) both; }
+        .restore-icon { width:48px; height:48px; border-radius:14px; background:linear-gradient(135deg,rgba(139,122,168,0.15),rgba(139,122,168,0.05)); border:1px solid rgba(139,122,168,0.2); display:flex; align-items:center; justify-content:center; margin:0 auto var(--sp-sm); }
+        .restore-icon svg { width:22px; height:22px; fill:var(--lavender); }
+        .restore-title { font-family:'Comfortaa',cursive; font-size:var(--fs-md); font-weight:700; color:var(--cream); text-align:center; margin-bottom:var(--sp-xs); }
+        .restore-subtitle { font-size:var(--fs-sm); color:var(--text-secondary); text-align:center; margin-bottom:var(--sp-md); line-height:1.5; }
+        .restore-input { width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(139,122,168,0.15); border-radius:var(--sp-sm); padding:var(--sp-sm); color:var(--cream); font-family:inherit; font-size:var(--fs-base); outline:none; transition:border-color 0.25s ease,box-shadow 0.25s ease; color-scheme:dark; margin-bottom:var(--sp-sm); }
+        .restore-input:focus { border-color:rgba(139,122,168,0.4); box-shadow:0 0 0 3px rgba(139,122,168,0.08); }
+        .restore-input::placeholder { color:var(--text-muted); }
+        .restore-msg { font-size:var(--fs-sm); margin-bottom:var(--sp-sm); display:none; text-align:center; }
+        .restore-msg.error { color:#e07070; }
+        .restore-msg.success { color:var(--green); }
+        .restore-cta { width:100%; padding:var(--sp-sm); border:none; border-radius:14px; background:linear-gradient(135deg,rgba(139,122,168,0.25),rgba(139,122,168,0.12)); color:var(--cream); font-family:'Comfortaa',cursive; font-size:var(--fs-sm); font-weight:600; cursor:pointer; transition:all 0.3s ease; border:1px solid rgba(139,122,168,0.2); }
+        .restore-cta:hover { background:linear-gradient(135deg,rgba(139,122,168,0.35),rgba(139,122,168,0.18)); border-color:rgba(139,122,168,0.3); }
+        .restore-cta:disabled { opacity:0.5; cursor:not-allowed; }
+        .restore-skip { display:block; width:100%; margin-top:var(--sp-sm); background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:var(--fs-sm); cursor:pointer; padding:var(--sp-xs); transition:color 0.25s ease; }
+        .restore-skip:hover { color:var(--text-secondary); }
+
+        /* ─── RESTORE LINK in footer ─── */
+        .meta-right { display:flex; align-items:center; gap:var(--sp-sm); flex-shrink:0; }
+        .restore-link { font-size:var(--fs-sm); color:var(--lavender); cursor:pointer; opacity:0.6; transition:opacity 0.25s ease; border:none; background:none; font-family:inherit; padding:0; white-space:nowrap; }
+        .restore-link:hover { opacity:1; text-decoration:underline; text-underline-offset:2px; }
+
         @media (max-width:768px) {
             .header-title .subtitle { display:none; }
             .starter-cards { max-width:100%; align-items:flex-end; }
@@ -380,6 +405,9 @@
             .trial-unlock { white-space:nowrap; font-size:var(--fs-xs); padding:3px var(--sp-xs); }
             .input-meta { gap:var(--sp-xs); }
             .input-disclaimer { flex-shrink:1; min-width:0; font-size:var(--fs-xs); }
+            .meta-right { gap:var(--sp-xs); }
+            .restore-link { font-size:var(--fs-xs); }
+            .restore-card { border-radius:18px; padding:var(--sp-sm) var(--sp-md) var(--sp-md); margin:var(--sp-sm); }
         }
     </style>
 </head>
@@ -458,8 +486,11 @@
         </div>
         <div class="input-meta">
             <span class="input-disclaimer">Mi is an AI advisor, not a doctor.</span>
-            <div class="trial-info" id="trialInfo">
-                <span id="trialText">3 free questions</span>
+            <div class="meta-right">
+                <button class="restore-link" id="restoreAccessBtn" style="display:none;">Already paid?</button>
+                <div class="trial-info" id="trialInfo">
+                    <span id="trialText">3 free questions</span>
+                </div>
             </div>
         </div>
     </div>
@@ -545,6 +576,22 @@
         </div>
     </div>
 
+    <!-- RESTORE ACCESS OVERLAY -->
+    <div class="restore-overlay" id="restoreOverlay">
+        <div class="restore-card">
+            <div class="restore-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <div class="restore-title">Restore access</div>
+            <div class="restore-subtitle">Enter the email you used when purchasing Ask Mi PRO.</div>
+            <input type="email" class="restore-input" id="restoreEmail" placeholder="you@example.com" autocomplete="email">
+            <div class="restore-msg error" id="restoreError">No active subscription found for this email</div>
+            <div class="restore-msg success" id="restoreSuccess">Access restored!</div>
+            <button class="restore-cta" id="restoreBtn">Check subscription</button>
+            <button class="restore-skip" id="restoreSkipBtn">Cancel</button>
+        </div>
+    </div>
+
     <!-- Tooltip -->
     <div class="info-tooltip" id="infoTip">
         <div class="info-tooltip-item">
@@ -607,6 +654,7 @@
                 : '<span class="trial-unlock">Unlock unlimited →</span>';
             document.getElementById('trialInfo').style.display = 'flex';
         }
+        updateRestoreLink();
     }
 
     function showOverlay(state) {
@@ -619,6 +667,81 @@
     function hideOverlay() {
         document.getElementById('pwOverlay').classList.remove('visible');
     }
+
+    // ─── RESTORE ACCESS ───
+    function updateRestoreLink() {
+        const btn = document.getElementById('restoreAccessBtn');
+        if (btn) {
+            btn.style.display = (!isProActive && !paymentGracePeriod) ? 'inline' : 'none';
+        }
+    }
+
+    document.getElementById('restoreAccessBtn').addEventListener('click', () => {
+        const restoreError = document.getElementById('restoreError');
+        const restoreSuccess = document.getElementById('restoreSuccess');
+        restoreError.style.display = 'none';
+        restoreSuccess.style.display = 'none';
+        document.getElementById('restoreBtn').disabled = false;
+        document.getElementById('restoreBtn').textContent = 'Check subscription';
+        document.getElementById('restoreEmail').value = '';
+        document.getElementById('restoreOverlay').classList.add('visible');
+        setTimeout(() => document.getElementById('restoreEmail').focus(), 100);
+    });
+
+    document.getElementById('restoreSkipBtn').addEventListener('click', () => {
+        document.getElementById('restoreOverlay').classList.remove('visible');
+    });
+
+    async function restoreAccess() {
+        const email = document.getElementById('restoreEmail').value.trim().toLowerCase();
+        const restoreError = document.getElementById('restoreError');
+        const restoreSuccess = document.getElementById('restoreSuccess');
+        const restoreBtn = document.getElementById('restoreBtn');
+
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            restoreError.textContent = 'Please enter a valid email';
+            restoreError.style.display = 'block';
+            restoreSuccess.style.display = 'none';
+            return;
+        }
+
+        restoreBtn.disabled = true;
+        restoreBtn.textContent = 'Checking...';
+        restoreError.style.display = 'none';
+
+        try {
+            const res = await fetch(MI_WORKER_URL + '/check-sub', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            const data = await res.json();
+
+            if (data.active) {
+                saveEmail(email);
+                localStorage.setItem('mi_was_pro', 'true');
+                isProActive = true;
+                restoreSuccess.style.display = 'block';
+                restoreError.style.display = 'none';
+                restoreBtn.textContent = 'Access restored!';
+                updateTrialUI(true);
+                setTimeout(() => document.getElementById('restoreOverlay').classList.remove('visible'), 1200);
+            } else {
+                restoreError.textContent = 'No active subscription found for this email';
+                restoreError.style.display = 'block';
+                restoreBtn.disabled = false;
+                restoreBtn.textContent = 'Check subscription';
+            }
+        } catch (e) {
+            restoreError.textContent = 'Connection error. Please try again.';
+            restoreError.style.display = 'block';
+            restoreBtn.disabled = false;
+            restoreBtn.textContent = 'Check subscription';
+        }
+    }
+
+    document.getElementById('restoreBtn').addEventListener('click', restoreAccess);
+    document.getElementById('restoreEmail').addEventListener('keydown', e => { if (e.key === 'Enter') restoreAccess(); });
 
     // ─── ИНИЦИАЛИЗАЦИЯ ───
     window.addEventListener('load', async () => {
