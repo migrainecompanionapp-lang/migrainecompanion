@@ -17,13 +17,27 @@
         }
         
         :root {
-            --lavender: #8b7aa8;
-            --gold: #C5A059;
-            --antique-gold: #D5B069;
             --bg: #0d0d0d;
-            --text: #d0d0d0;
-            --text-light: #a0a0a0;
-            --text-dark: #888;
+            --surface: #141419;
+            --lavender: #8b7aa8;
+            --green: #6aaa7a;
+            --teal: #6b9baa;
+            --gold: #c5a059;
+            --understanding: #7BA5C0;
+            --understanding-soft: rgba(123,165,192,0.06);
+            --understanding-border: rgba(123,165,192,0.18);
+            --lavender-soft: rgba(139,122,168,0.06);
+            --green-soft: rgba(106,170,122,0.06);
+            --teal-soft: rgba(107,155,170,0.06);
+            --gold-soft: rgba(197,160,89,0.06);
+            --lavender-border: rgba(139,122,168,0.18);
+            --green-border: rgba(106,170,122,0.18);
+            --teal-border: rgba(107,155,170,0.18);
+            --gold-border: rgba(197,160,89,0.18);
+            --text: #cdc6be;
+            --text-light: #a09890;
+            --text-dark: #847b73;
+            --text-warm: #c9bda8;
         }
 
         /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
@@ -35,15 +49,15 @@
         }
         .article-section a:hover {
             border-bottom-color: var(--lavender);
-            background: rgba(139, 122, 168, 0.05);
+            background: var(--lavender-soft);
         }
 
         .related-box {
             margin: 60px 0;
             padding: 40px;
-            background: rgba(139, 122, 168, 0.05);
+            background: rgba(107, 155, 170, 0.05);
             border-radius: 24px;
-            border: 1px solid rgba(139, 122, 168, 0.1);
+            border: 1px solid rgba(107, 155, 170, 0.1);
         }
         .related-box h3 {
             font-family: 'Cormorant Garamond', serif;
@@ -97,7 +111,7 @@
             z-index: 100;
             background: rgba(13, 13, 13, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+            border-bottom: 1px solid var(--lavender-border);
         }
         
         .header-content {
@@ -118,7 +132,7 @@
         }
         
         .logo span {
-            color: var(--lavender);
+            color: var(--understanding);
         }
         
         .back-link {
@@ -177,9 +191,9 @@
         
         .article-tag {
             display: inline-block;
-            background: rgba(197, 160, 89, 0.2);
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            color: var(--gold);
+            background: rgba(123, 165, 192, 0.15);
+            border: 1px solid rgba(123, 165, 192, 0.4);
+            color: var(--understanding);
             font-size: 0.75rem;
             font-weight: 600;
             padding: 6px 14px;
@@ -245,7 +259,7 @@
         
         strong {
             font-weight: 700;
-            color: var(--antique-gold);
+            color: var(--text-warm);
         }
         
         em {
@@ -258,6 +272,7 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border: 1px solid rgba(139, 122, 168, 0.10);
         }
         
         .article-image img {
@@ -267,8 +282,8 @@
         }
         
         .highlight-box {
-            background: rgba(197, 160, 89, 0.08);
-            border-left: 3px solid var(--gold);
+            background: rgba(106, 170, 122, 0.08);
+            border-left: 3px solid var(--green);
             padding: 24px 28px;
             border-radius: 0 12px 12px 0;
             margin: 36px 0;
@@ -277,7 +292,7 @@
         .highlight-box p {
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--antique-gold);
+            color: var(--green);
             margin: 0;
             line-height: 1.7;
         }
@@ -302,15 +317,34 @@
         .separator {
             text-align: center;
             margin: 60px 0;
-            color: var(--lavender);
-            font-size: 1.5rem;
-            opacity: 0.5;
+            position: relative;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .separator::before {
+            content: '';
+            position: absolute;
+            left: 15%;
+            right: 15%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(139,122,168,0.20) 30%, rgba(139,122,168,0.35) 50%, rgba(139,122,168,0.20) 70%, transparent 100%);
+        }
+        .separator::after {
+            content: '\25C6';
+            position: relative;
+            z-index: 1;
+            color: rgba(139,122,168,0.30);
+            font-size: 0.55rem;
+            background: var(--bg);
+            padding: 0 16px;
         }
         
         .article-footer {
             margin-top: 60px;
             padding-top: 40px;
-            border-top: 1px solid rgba(139, 122, 168, 0.15);
+            border-top: 1px solid var(--lavender-border);
         }
         
         .author-card {
@@ -328,7 +362,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            background: linear-gradient(135deg, var(--lavender), var(--green));
             padding: 3px;
             flex-shrink: 0;
         }
@@ -355,8 +389,8 @@
         }
         
         .cta-box {
-            background: rgba(197, 160, 89, 0.08);
-            border: 1px solid rgba(197, 160, 89, 0.2);
+            background: linear-gradient(180deg, rgba(123,165,192,0.10) 0%, rgba(123,165,192,0.03) 100%);
+            border: 1px solid var(--understanding-border);
             border-radius: 16px;
             padding: 32px;
             text-align: center;
@@ -380,10 +414,10 @@
             align-items: center;
             gap: 12px;
             padding: 14px 28px;
-            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
-            border: 1px solid var(--gold);
+            background: linear-gradient(135deg, rgba(123,165,192,0.15), rgba(123,165,192,0.25));
+            border: 1px solid var(--understanding);
             border-radius: 12px;
-            color: var(--gold);
+            color: var(--understanding);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
@@ -393,7 +427,7 @@
         }
         
         .download-btn:hover {
-            background: var(--gold);
+            background: var(--understanding);
             color: var(--bg);
             transform: translateY(-2px);
         }
@@ -401,7 +435,7 @@
         .references {
             margin-top: 48px;
             padding-top: 32px;
-            border-top: 1px solid rgba(139, 122, 168, 0.1);
+            border-top: 1px solid var(--lavender-border);
         }
         
         .references h3 {
@@ -421,6 +455,20 @@
             margin-bottom: 8px;
             line-height: 1.5;
         }
+
+        .references li:nth-child(odd) {
+            background: rgba(139,122,168,0.03);
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139,122,168,0.3);
+            transition: all 0.3s ease;
+        }
+        .references a:hover {
+            border-bottom-color: var(--lavender);
+        }
         
         sup {
             color: var(--lavender);
@@ -429,7 +477,7 @@
         
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            border-top: 1px solid var(--lavender-border);
             text-align: center;
         }
         
@@ -445,12 +493,12 @@
             text-align: center;
             padding: 16px 0;
             margin-bottom: 48px;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+            border-bottom: 1px solid var(--lavender-border);
         }
         
         .key-takeaways {
-            background: rgba(139, 122, 168, 0.08);
-            border: 1px solid rgba(139, 122, 168, 0.2);
+            background: linear-gradient(180deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.04) 100%);
+            border: 1px solid var(--teal-border);
             border-radius: 16px;
             padding: 28px;
             margin: 48px 0;
@@ -481,7 +529,17 @@
             content: '→';
             position: absolute;
             left: 0;
+            color: var(--teal);
+        }
+
+        .key-takeaways a {
             color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139,122,168,0.4);
+            transition: all 0.3s ease;
+        }
+        .key-takeaways a:hover {
+            border-bottom-color: var(--lavender);
         }
         
         @media (max-width: 768px) {
@@ -560,7 +618,7 @@
                     <p>The phase finally got its name: <strong>postdrome</strong>. Its nickname came from the patients themselves: <em>migraine hangover</em>.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Inside the Recovering Brain</h2>
@@ -592,7 +650,7 @@
                     <p>Scientists now suspect the non-headache symptoms form a continuous thread running through the entire attack. We just can't see them during the pain phase. The agony demands all our attention.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Tyranny of "Should"</h2>
@@ -628,7 +686,7 @@
                     <p><strong>Move — gently.</strong> Light activity supports recovery. A slow walk. Careful stretching. Restorative yoga. Save the intense workouts for when you feel genuinely whole again.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Invisible Wound</h2>
@@ -666,7 +724,7 @@
                     <p>Stop apologizing for needing time to heal.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Morning After (Reprise)</h2>
