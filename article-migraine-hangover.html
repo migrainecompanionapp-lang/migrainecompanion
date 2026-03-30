@@ -103,7 +103,7 @@
         }
         .header-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.3rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; text-decoration: none; }
-        .logo span { color: var(--lavender); }
+        .logo span { color: var(--tips); }
         .back-link { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
         .back-link:hover { color: var(--lavender); }
 
@@ -157,10 +157,12 @@
         .emergency-box p { font-size: 0.98rem; margin-bottom: 12px; }
         .emergency-box p:last-child { margin-bottom: 0; }
 
-        .action-box { background: linear-gradient(90deg, rgba(106,170,122,0.08) 0%, rgba(106,170,122,0.02) 100%); border: 1px solid var(--green-border); padding: 28px 32px; border-radius: 16px; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12); }
-        .action-box h3 { color: var(--green); font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; }
+        .action-box { background: linear-gradient(90deg, rgba(184,168,146,0.08) 0%, rgba(184,168,146,0.02) 100%); border: 1px solid var(--tips-border); padding: 28px 32px; border-radius: 16px; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 1px 3px rgba(0,0,0,0.12); }
+        .action-box h3 { color: var(--tips); font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; }
         .action-box p { font-size: 0.98rem; margin-bottom: 12px; }
         .action-box p:last-child { margin-bottom: 0; }
+        .action-box a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
+        .action-box a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
 
         .article-image { margin: 48px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(139,122,168,0.10); box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.20), inset 0 0 0 1px rgba(255,255,255,0.03); }
         .article-image img { width: 100%; height: auto; display: block; }
@@ -181,6 +183,8 @@
         .full-disclaimer h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
         .full-disclaimer p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.7; }
         .full-disclaimer p:last-child { margin-bottom: 0; }
+        .full-disclaimer a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); }
+        .full-disclaimer a:hover { border-bottom-color: var(--lavender); }
 
         .medical-disclaimer { font-size: 0.9rem; font-style: italic; color: var(--text-dark); text-align: center; padding: 16px 0; margin-bottom: 48px; border-bottom: 1px solid var(--lavender-border); }
 
@@ -212,12 +216,17 @@
         .references li { font-size: 0.84rem; color: var(--text-dark); margin-bottom: 4px; line-height: 1.6; padding: 8px 10px; border-radius: 6px; transition: background 0.2s ease; }
         .references li:nth-child(odd) { background: rgba(139,122,168,0.03); }
         .references li:hover { background: rgba(139,122,168,0.06); }
+        .references li::marker { color: var(--lavender); font-weight: 600; }
         .references a { color: var(--lavender); text-decoration: none; font-weight: 500; }
         .references a:hover { text-decoration: underline; }
 
         .review-dates { text-align: center; font-size: 0.8rem; color: var(--text-dark); margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(139,122,168,0.10); }
 
-        footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--lavender-border); }
+        footer { padding: 40px 0; border-top: 1px solid var(--lavender-border); }
+        .footer-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-dark); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--lavender); }
         .copyright { color: var(--text-dark); font-size: 0.85rem; }
 
         @media (max-width: 768px) {
@@ -232,10 +241,13 @@
             .article-meta { flex-direction: column; gap: 8px; }
             .key-takeaways { padding: 24px; }
             .related-box { padding: 28px; }
+            .footer-content { flex-direction: column; text-align: center; justify-content: center; }
+            .footer-links { justify-content: center; }
         }
     </style>
+    <link rel="stylesheet" href="article-category-colors.css">
 </head>
-<body>
+<body data-category="tips">
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
@@ -477,8 +489,14 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p class="copyright">&copy; 2026 Migraine Companion. Made with &#x1F49C; in Ukraine.</p>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="disclaimer.html">Medical Disclaimer</a>
+                <a href="https://sites.google.com/view/migrainecompanion/privacy-policy" target="_blank">Privacy Policy</a>
+                <a href="https://sites.google.com/view/migrainecompanion/terms-of-use" target="_blank">Terms of Use</a>
+                <a href="https://sites.google.com/view/migrainecompanion/support" target="_blank">Support</a>
+            </div>
+            <p class="copyright">&copy; 2026 Migraine Companion. Made with care in Ukraine.</p>
         </div>
     </footer>
 </body>
