@@ -53,17 +53,30 @@
         }
         
         :root {
-            --lavender: #8b7aa8;
-            --gold: #C5A059;
-            --antique-gold: #D5B069;
             --bg: #0d0d0d;
-            --text: #d0d0d0;
-            --text-light: #a0a0a0;
-            --text-dark: #888;
+            --surface: #141419;
+            --lavender: #8b7aa8;
+            --green: #6aaa7a;
+            --teal: #6b9baa;
+            --gold: #c5a059;
+            --understanding: #7BA5C0;
+            --understanding-soft: rgba(123,165,192,0.06);
+            --understanding-border: rgba(123,165,192,0.18);
+            --lavender-soft: rgba(139,122,168,0.06);
+            --green-soft: rgba(106,170,122,0.06);
+            --teal-soft: rgba(107,155,170,0.06);
+            --gold-soft: rgba(197,160,89,0.06);
+            --lavender-border: rgba(139,122,168,0.18);
+            --green-border: rgba(106,170,122,0.18);
+            --teal-border: rgba(107,155,170,0.18);
+            --gold-border: rgba(197,160,89,0.18);
+            --text: #cdc6be;
+            --text-light: #a09890;
+            --text-dark: #847b73;
+            --text-warm: #c9bda8;
         }
 
         /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
-        /* Contextual inline links - exclude references and buttons */
         .article-content a:not(.references a):not(.download-btn) {
             color: var(--lavender);
             text-decoration: none;
@@ -72,16 +85,15 @@
         }
         .article-content a:not(.references a):not(.download-btn):hover {
             border-bottom-color: var(--lavender);
-            background: rgba(139, 122, 168, 0.05);
+            background: var(--lavender-soft);
         }
 
-        /* Related Articles Box */
         .related-box {
             margin: 60px 0;
             padding: 40px;
-            background: rgba(139, 122, 168, 0.05);
+            background: rgba(107, 155, 170, 0.05);
             border-radius: 24px;
-            border: 1px solid rgba(139, 122, 168, 0.1);
+            border: 1px solid rgba(107, 155, 170, 0.1);
         }
         .related-box h3 {
             font-family: 'Cormorant Garamond', serif;
@@ -147,7 +159,7 @@
             z-index: 100;
             background: rgba(13, 13, 13, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+            border-bottom: 1px solid var(--lavender-border);
         }
         
         .header-content {
@@ -168,7 +180,7 @@
         }
         
         .logo span {
-            color: var(--lavender);
+            color: var(--understanding);
         }
         
         .back-link {
@@ -227,9 +239,9 @@
         
         .article-tag {
             display: inline-block;
-            background: rgba(197, 160, 89, 0.2);
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            color: var(--gold);
+            background: rgba(123, 165, 192, 0.15);
+            border: 1px solid rgba(123, 165, 192, 0.4);
+            color: var(--understanding);
             font-size: 0.75rem;
             font-weight: 600;
             padding: 6px 14px;
@@ -304,7 +316,7 @@
         
         strong {
             font-weight: 700;
-            color: var(--antique-gold);
+            color: var(--text-warm);
         }
         
         em {
@@ -317,6 +329,7 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border: 1px solid rgba(139, 122, 168, 0.10);
         }
         
         .article-image img {
@@ -335,8 +348,8 @@
         }
         
         .highlight-box {
-            background: rgba(197, 160, 89, 0.08);
-            border-left: 3px solid var(--gold);
+            background: rgba(106, 170, 122, 0.08);
+            border-left: 3px solid var(--green);
             padding: 24px 28px;
             border-radius: 0 12px 12px 0;
             margin: 36px 0;
@@ -345,7 +358,7 @@
         .highlight-box p {
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--antique-gold);
+            color: var(--green);
             margin: 0;
             line-height: 1.7;
         }
@@ -367,37 +380,67 @@
             line-height: 1.7;
         }
         
-        .warning-box {
-            background: rgba(220, 53, 69, 0.1);
-            border-left: 3px solid #dc3545;
+        /* Emergency box — ALWAYS gold, NO RED */
+        .emergency-box {
+            background: linear-gradient(90deg, rgba(197,160,89,0.10) 0%, rgba(197,160,89,0.02) 100%);
+            border-left: 4px solid var(--gold);
             padding: 24px 28px;
             border-radius: 0 12px 12px 0;
             margin: 36px 0;
         }
         
-        .warning-box p {
+        .emergency-box p {
             font-size: 1rem;
-            color: #ff6b7a;
+            color: var(--text);
             margin: 0;
             line-height: 1.7;
         }
         
-        .warning-box strong {
-            color: #ff6b7a;
+        .emergency-box strong {
+            color: var(--gold);
+        }
+
+        .emergency-box a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(197,160,89,0.4);
+            transition: all 0.3s ease;
+        }
+        .emergency-box a:hover {
+            border-bottom-color: var(--gold);
         }
         
         .separator {
             text-align: center;
             margin: 60px 0;
-            color: var(--lavender);
-            font-size: 1.5rem;
-            opacity: 0.5;
+            position: relative;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .separator::before {
+            content: '';
+            position: absolute;
+            left: 15%;
+            right: 15%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(139,122,168,0.20) 30%, rgba(139,122,168,0.35) 50%, rgba(139,122,168,0.20) 70%, transparent 100%);
+        }
+        .separator::after {
+            content: '\25C6';
+            position: relative;
+            z-index: 1;
+            color: rgba(139,122,168,0.30);
+            font-size: 0.55rem;
+            background: var(--bg);
+            padding: 0 16px;
         }
         
         .article-footer {
             margin-top: 60px;
             padding-top: 40px;
-            border-top: 1px solid rgba(139, 122, 168, 0.15);
+            border-top: 1px solid var(--lavender-border);
         }
         
         .author-card {
@@ -415,7 +458,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            background: linear-gradient(135deg, var(--lavender), var(--green));
             padding: 3px;
             flex-shrink: 0;
         }
@@ -443,8 +486,8 @@
         }
         
         .cta-box {
-            background: rgba(197, 160, 89, 0.08);
-            border: 1px solid rgba(197, 160, 89, 0.2);
+            background: linear-gradient(180deg, rgba(123,165,192,0.10) 0%, rgba(123,165,192,0.03) 100%);
+            border: 1px solid var(--understanding-border);
             border-radius: 16px;
             padding: 32px;
             text-align: center;
@@ -469,20 +512,20 @@
             align-items: center;
             gap: 12px;
             padding: 14px 28px;
-            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
-            border: 1px solid var(--gold);
+            background: linear-gradient(135deg, rgba(123,165,192,0.15), rgba(123,165,192,0.25));
+            border: 1px solid var(--understanding);
             border-radius: 12px;
-            color: var(--gold);
+            color: var(--understanding);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
             flex: 1;
-max-width: 260px;
-justify-content: center;
+            max-width: 260px;
+            justify-content: center;
         }
         
         .download-btn:hover {
-            background: var(--gold);
+            background: var(--understanding);
             color: var(--bg);
             transform: translateY(-2px);
         }
@@ -490,7 +533,7 @@ justify-content: center;
         .references {
             margin-top: 48px;
             padding-top: 32px;
-            border-top: 1px solid rgba(139, 122, 168, 0.1);
+            border-top: 1px solid var(--lavender-border);
         }
         
         .references h3 {
@@ -511,6 +554,20 @@ justify-content: center;
             margin-bottom: 8px;
             line-height: 1.5;
         }
+
+        .references li:nth-child(odd) {
+            background: rgba(139,122,168,0.03);
+        }
+        
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139,122,168,0.3);
+            transition: all 0.3s ease;
+        }
+        .references a:hover {
+            border-bottom-color: var(--lavender);
+        }
         
         sup {
             color: var(--lavender);
@@ -519,7 +576,7 @@ justify-content: center;
         
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            border-top: 1px solid var(--lavender-border);
             text-align: center;
         }
         
@@ -535,12 +592,12 @@ justify-content: center;
             text-align: center;
             padding: 16px 0;
             margin-bottom: 48px;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+            border-bottom: 1px solid var(--lavender-border);
         }
         
         .key-takeaways {
-            background: rgba(139, 122, 168, 0.08);
-            border: 1px solid rgba(139, 122, 168, 0.2);
+            background: linear-gradient(180deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.04) 100%);
+            border: 1px solid var(--teal-border);
             border-radius: 16px;
             padding: 28px;
             margin: 48px 0;
@@ -572,7 +629,7 @@ justify-content: center;
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--lavender);
+            color: var(--teal);
         }
         
         .faq-section {
@@ -674,6 +731,7 @@ justify-content: center;
             color: #ffffff;
             border-bottom-color: var(--lavender);
         }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
@@ -738,7 +796,7 @@ justify-content: center;
                     </ul>
                 </div>
 
-                <div class="warning-box">
+                <div class="emergency-box">
                     <p><strong>⚠️ When to Seek Emergency Care:</strong> If symptoms are new, sudden, severe, or different from your usual pattern — call emergency services immediately. This article helps you understand typical aura, but never self-diagnose during a crisis.</p>
                 </div>
 
@@ -756,7 +814,7 @@ justify-content: center;
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Man Who Timed His Own Brain</h2>
@@ -774,7 +832,7 @@ justify-content: center;
                     <p>Two men. Two continents. One wave.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Inside the Storm</h2>
@@ -790,7 +848,7 @@ justify-content: center;
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>What You See</h2>
@@ -813,7 +871,7 @@ justify-content: center;
                     <figcaption>The three most common types of visual aura. Each follows the same underlying mechanism: cortical spreading depression moving across the visual cortex.</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Question Everyone Asks</h2>
@@ -830,13 +888,13 @@ justify-content: center;
                     
                     <p>Stroke symptoms persist. They don't resolve.</p>
                     
-                    <p>Aura symptoms march and retreat. They peak. They fade. Almost always within an hour.</    >
+                    <p>Aura symptoms march and retreat. They peak. They fade. Almost always within an hour.</p>
                     
                     <p>Stroke often steals strength—facial drooping, arm weakness, stumbling.</p>
                     
                     <p>Aura rarely causes true weakness. Tingling, yes. Numbness, sometimes. Paralysis, almost never.</p>
                     
-                    <div class="warning-box">
+                    <div class="emergency-box">
                         <p><strong>The rule:</strong> If symptoms are new, sudden, severe, or different—call for help immediately. Don't guess. Don't wait. Don't diagnose yourself mid-crisis.</p>
                     </div>
                     
@@ -848,7 +906,7 @@ justify-content: center;
                     <figcaption>The critical difference: stroke is sudden and persistent; aura is gradual and resolving. When in doubt, always seek emergency care.</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Gift</h2>
@@ -859,7 +917,7 @@ justify-content: center;
                     
                     <p>What will you do with that time?</p>
                     
-                    <p><strong>Act fast.</strong> Triptans, gepants, and even simple painkillers work dramatically better when taken early.<sup>[4]</sup> Studies show early intervention can <a href="article-medication.html">take the pill now</a> severity in half. The shimmer is your signal: take the pill now.</p>
+                    <p><strong>Act fast.</strong> Triptans, gepants, and even simple painkillers work dramatically better when taken early.<sup>[4]</sup> Studies show early intervention can reduce severity in half. The shimmer is your signal: take the pill now.</p>
                     
                     <p><strong>Get safe.</strong> If you're driving, pull over. If you're in a meeting, excuse yourself. Aura can temporarily blind you. Don't operate machinery with half a visual field.</p>
                     
@@ -881,14 +939,14 @@ justify-content: center;
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>What We Don't Know</h2>
                     
                     <p>Eighty years after Leão's rabbits and Lashley's stopwatch, mysteries remain.</p>
                     
-                    <p>We don't know what triggers the wave. Stress, sleep disruption, hormonal shifts, and certain foods lower the <a href="article-triggers.html">triggers</a>—but the exact mechanism that tips a stable brain into tsunami mode? Unknown.</p>
+                    <p>We don't know what triggers the wave. Stress, sleep disruption, hormonal shifts, and certain foods lower the threshold—but the exact mechanism that tips a stable brain into tsunami mode? Unknown.</p>
                     
                     <p>We don't know why some people get aura and others don't. About seventy percent of migraineurs never see the shimmer.<sup>[5]</sup> Genetics play a role. Which genes, and why? Incomplete picture.</p>
                     
@@ -897,7 +955,7 @@ justify-content: center;
                     <p>What we know: the phenomenon is real, it follows predictable rules, and it isn't harming you.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Barbara's Story</h2>
@@ -917,7 +975,7 @@ justify-content: center;
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Reframe</h2>
@@ -939,20 +997,20 @@ justify-content: center;
                     <p>Then use the time you've been given.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
-                    <p><em>The most powerful tool in migraine management is pattern recognition. <a href="article-moh.html">track your auras</a>. Document what you see. Note how long they last. Record what comes next. Over time, those patterns become your early warning system—and your path toward control.</em></p>
+                    <p><em>The most powerful tool in migraine management is pattern recognition. <a href="article-moh.html">Track your auras</a>. Document what you see. Note how long they last. Record what comes next. Over time, those patterns become your early warning system—and your path toward control.</em></p>
                 </section>
 
                 <div class="related-box">
                     <h3>Deepen Your Understanding</h3>
                     <div class="related-grid">
-                        <a href="weather-migraine-myth.html" class="related-card">
+                        <a href="article-understanding-triggers.html" class="related-card">
                             <h4>The Trigger Myth</h4>
                             <p>We say weather triggers migraine. Science says it's more complicated. Understanding the "bucket" theory of migraine triggers.</p>
                         </a>
-                        <a href="invisible-pain.html" class="related-card">
+                        <a href="article-invisible-pain.html" class="related-card">
                             <h4>You Don't Look Sick</h4>
                             <p>The aura is invisible to others. This personal reflection explores the stigma of invisible illness and finding validation.</p>
                         </a>
@@ -960,7 +1018,7 @@ justify-content: center;
                 </div>
 
                 <div class="faq-section">
-                    <h2>❓ Frequently Asked Questions</h2>
+                    <h2>Frequently Asked Questions</h2>
                     
                     <div class="faq-item">
                         <h4>Can migraine aura cause permanent damage?</h4>
@@ -1002,7 +1060,7 @@ justify-content: center;
                 </div>
 
                 <div class="references">
-                    <h3>📚 References</h3>
+                    <h3>References</h3>
                     <ol>
                         <li>Lashley KS. Patterns of cerebral integration indicated by the scotomas of migraine. <em>Archives of Neurology & Psychiatry</em>. 1941;46(2):331-339.</li>
                         <li>Leão AAP. Spreading depression of activity in the cerebral cortex. <em>Journal of Neurophysiology</em>. 1944;7(6):359-390.</li>
