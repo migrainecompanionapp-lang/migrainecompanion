@@ -7,46 +7,72 @@
     <meta name="author" content="Rustam Iuldashov">
     <title>The Caffeine Paradox: Friend, Foe, or Both? | Migraine Companion</title>
     <link rel="icon" type="image/png" href="images/mi-icon.png">
-    <link rel="canonical" href="https://mi-companion.com/caffeine-paradox.html">
+    <link rel="canonical" href="https://mi-companion.com/article-caffeine.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.css" />
+    <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.js" async></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Coffee & Migraine: Friend or Foe?",
+      "description": "Why your afternoon coffee might be triggering tomorrow's migraine — fast vs slow caffeine metabolizers explained.",
+      "thumbnailUrl": "https://img.youtube.com/vi/f_cYdmG14r0/maxresdefault.jpg",
+      "uploadDate": "2026-02-16",
+      "contentUrl": "https://www.youtube.com/watch?v=f_cYdmG14r0",
+      "embedUrl": "https://www.youtube.com/embed/f_cYdmG14r0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Migraine Companion",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mi-companion.com/images/mi-icon.png"
+        }
+      }
+    }
+    </script>
     
     <style>
         /* ============================================================
            MIGRAINE COMPANION — PREMIUM ARTICLE DESIGN SYSTEM v2.0
            
-           Theme: Triggers (Gold/Amber Accents)
-           No Red / No Solid Yellow texts
+           Theme: Triggers (#AA8E6B)
+           Design System: Mystic Garden
            ============================================================ */
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            /* === FOUNDATION === */
             --bg: #0d0d0d;
             --surface: #141419;
-            
-            /* === ACCENT COLORS (TRIGGERS) === */
-            --accent: #C5A059;
-            --accent-light: #E0C895;
-            --accent-border: rgba(197, 160, 89, 0.18);
-            
-            /* === TEXT === */
+            --triggers: #AA8E6B;
+            --triggers-soft: rgba(170,142,107,0.06);
+            --triggers-border: rgba(170,142,107,0.18);
+            --lavender: #8b7aa8;
+            --lavender-soft: rgba(139,122,168,0.06);
+            --lavender-border: rgba(139,122,168,0.18);
+            --teal: #6b9baa;
+            --teal-border: rgba(107,155,170,0.18);
+            --green: #6aaa7a;
+            --gold: #c5a059;
+            --gold-border: rgba(197,160,89,0.18);
             --text: #cdc6be;
             --text-light: #a09890;
             --text-dark: #847b73;
+            --text-warm: #c9bda8;
         }
         
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
         .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
 
-        /* === HEADER === */
-        header { padding: 16px 0; position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(13,13,13,0.92); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); border-bottom: 1px solid var(--accent-border); }
+        /* === HEADER (Triggers → lavender-border) === */
+        header { padding: 16px 0; position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(13,13,13,0.92); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); border-bottom: 1px solid var(--lavender-border); }
         .header-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.3rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; text-decoration: none; }
-        .logo span { color: var(--accent); }
+        .logo span { color: var(--triggers); }
         .back-link { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
-        .back-link:hover { color: var(--accent); }
+        .back-link:hover { color: var(--lavender); }
 
         /* === HERO === */
         .article-hero { margin-top: 70px; position: relative; overflow: hidden; border-radius: 0 0 24px 24px; height: 500px; display: flex; align-items: center; justify-content: center; }
@@ -54,94 +80,110 @@
         .article-hero::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(13,13,13,0.3) 0%, rgba(13,13,13,0.85) 100%); z-index: 1; }
         .article-header { position: relative; z-index: 2; text-align: center; padding: 0 24px; }
         
-        .article-tag { display: inline-block; background: rgba(197, 160, 89, 0.15); border: 1px solid rgba(197, 160, 89, 0.35); color: var(--accent); font-size: 0.75rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+        .article-tag { display: inline-block; background: rgba(170,142,107,0.15); border: 1px solid rgba(170,142,107,0.40); color: var(--triggers); font-size: 0.75rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
         h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 600; line-height: 1.2; color: #fff; margin-bottom: 16px; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.8); }
         .article-subtitle { font-size: 1.15rem; font-weight: 500; color: rgba(255,255,255,0.85); font-style: italic; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
         .article-meta { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.7); font-weight: 500; }
 
-        /* === CONTENT TYPOGRAPHY === */
+        /* === CONTENT === */
         .article-content { padding: 60px 0 80px; }
         .article-section { margin-bottom: 48px; }
         h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #fff; margin-bottom: 20px; letter-spacing: -0.01em; line-height: 1.3; }
         h3 { font-family: 'Inter', sans-serif; font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; margin-top: 36px; line-height: 1.3; }
         p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; color: var(--text); }
-        strong { font-weight: 700; color: #fff; }
+        strong { font-weight: 700; color: var(--text-warm); }
         em { font-style: italic; color: var(--text-light); }
-        .citation, sup { color: var(--accent); font-size: 0.8em; vertical-align: super; font-weight: 700; padding: 0 2px; }
+        .citation, sup { color: var(--lavender); font-size: 0.8em; vertical-align: super; font-weight: 700; padding: 0 2px; }
         
-        .article-section a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(197, 160, 89, 0.4); transition: all 0.3s ease; }
-        .article-section a:hover { border-bottom-color: var(--accent); background: rgba(197, 160, 89, 0.06); }
+        /* Links → lavender */
+        .article-section a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168,0.4); transition: all 0.3s ease; }
+        .article-section a:hover { border-bottom-color: var(--lavender); background: var(--lavender-soft); }
 
-        /* === COMPONENT: NOTICES & DISCLAIMERS === */
+        /* === NOTICES === */
         .notice-box { background: linear-gradient(135deg, rgba(255,255,255, 0.04) 0%, rgba(255,255,255, 0.01) 100%); border: 1px solid rgba(255,255,255, 0.08); border-radius: 16px; padding: 28px; margin: 36px 0; box-shadow: 0 4px 20px rgba(0,0,0, 0.15); position: relative; overflow: hidden; }
-        .notice-box-accent { background: linear-gradient(135deg, rgba(197, 160, 89, 0.08) 0%, rgba(255,255,255, 0.02) 100%); border: 1px solid var(--accent-border); }
+        .notice-box-triggers { background: linear-gradient(135deg, rgba(170,142,107, 0.08) 0%, rgba(255,255,255, 0.02) 100%); border: 1px solid var(--triggers-border); }
         .notice-box h4 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 12px; margin-top: 0; letter-spacing: 0.5px; text-transform: uppercase; }
         .notice-box p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.6; }
         
-        /* === STANDARD HIGHLIGHTS & QUOTES === */
+        /* === SEPARATOR → lavender === */
         .separator { text-align: center; margin: 60px 0; position: relative; height: 20px; display: flex; align-items: center; justify-content: center; }
-        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(197, 160, 89, 0.25) 30%, rgba(197, 160, 89, 0.40) 50%, rgba(197, 160, 89, 0.25) 70%, transparent 100%); }
-        .separator::after { content: '◆'; position: relative; z-index: 1; color: rgba(197, 160, 89, 0.35); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
+        .separator::before { content: ''; position: absolute; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(139,122,168, 0.20) 30%, rgba(139,122,168, 0.35) 50%, rgba(139,122,168, 0.20) 70%, transparent 100%); }
+        .separator::after { content: '\25C6'; position: relative; z-index: 1; color: rgba(139,122,168, 0.30); font-size: 0.55rem; background: var(--bg); padding: 0 16px; }
 
-        .quote-box { background: linear-gradient(90deg, rgba(197, 160, 89, 0.10) 0%, rgba(197, 160, 89, 0.03) 100%); border-left: 3px solid var(--accent); padding: 28px 32px 28px 36px; border-radius: 0 16px 16px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18); }
-        .quote-box::before { content: '\201C'; position: absolute; top: 12px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; line-height: 1; color: rgba(197, 160, 89, 0.12); pointer-events: none; }
+        /* quote-box → lavender */
+        .quote-box { background: linear-gradient(90deg, rgba(139,122,168, 0.10) 0%, rgba(139,122,168, 0.03) 100%); border-left: 3px solid var(--lavender); padding: 28px 32px 28px 36px; border-radius: 0 16px 16px 0; margin: 36px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18); }
+        .quote-box::before { content: '\201C'; position: absolute; top: 12px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; line-height: 1; color: rgba(139,122,168, 0.12); pointer-events: none; }
         .quote-box p { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; color: #fff; margin: 0; line-height: 1.6; position: relative; z-index: 1; }
 
-        .highlight-box { background: linear-gradient(135deg, rgba(197, 160, 89, 0.10) 0%, rgba(197, 160, 89, 0.02) 100%); border-left: 3px solid var(--accent); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18); }
-        .highlight-box p { font-size: 1.05rem; font-weight: 500; color: #fff; margin: 0; line-height: 1.7; position: relative; z-index: 1; }
+        /* highlight-box → Triggers: triggers border + triggers text */
+        .highlight-box { background: linear-gradient(135deg, rgba(170,142,107, 0.10) 0%, rgba(170,142,107, 0.02) 100%); border-left: 3px solid var(--triggers); padding: 28px 32px; margin: 36px 0; border-radius: 0 14px 14px 0; position: relative; box-shadow: 0 4px 20px rgba(0,0,0, 0.18); }
+        .highlight-box p { font-size: 1.05rem; font-weight: 500; color: var(--triggers); margin: 0; line-height: 1.7; position: relative; z-index: 1; }
 
-        /* === COMPONENT: DATA TABLES === */
-        .table-container { overflow-x: auto; margin: 36px 0; border-radius: 12px; border: 1px solid var(--accent-border); background: linear-gradient(180deg, rgba(255,255,255, 0.03) 0%, rgba(255,255,255, 0.01) 100%); }
+        /* === DATA TABLES === */
+        .table-container { overflow-x: auto; margin: 36px 0; border-radius: 12px; border: 1px solid var(--triggers-border); background: linear-gradient(180deg, rgba(255,255,255, 0.03) 0%, rgba(255,255,255, 0.01) 100%); }
         .data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; text-align: left; }
-        .data-table th { background: rgba(197, 160, 89, 0.1); color: #fff; font-weight: 600; padding: 16px 20px; border-bottom: 2px solid var(--accent-border); }
+        .data-table th { background: rgba(170,142,107, 0.1); color: #fff; font-weight: 600; padding: 16px 20px; border-bottom: 2px solid var(--triggers-border); }
         .data-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255, 0.05); color: var(--text); }
         .data-table tr:last-child td { border-bottom: none; }
         .data-table tr:hover { background: rgba(255,255,255, 0.03); }
 
-        .video-embed-container { margin: 48px auto; text-align: center; background: linear-gradient(180deg, rgba(197, 160, 89, 0.05) 0%, rgba(255,255,255, 0.01) 100%); padding: 24px; border-radius: 20px; border: 1px solid var(--accent-border); max-width: 360px; box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+        /* === VIDEO (vertical 9:16) === */
+        .video-embed-container { margin: 48px auto; text-align: center; background: linear-gradient(180deg, rgba(170,142,107, 0.05) 0%, rgba(255,255,255, 0.01) 100%); padding: 24px; border-radius: 20px; border: 1px solid var(--triggers-border); max-width: 360px; box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
         .video-embed-container iframe { border-radius: 12px; width: 100%; aspect-ratio: 9 / 16; border: none; background: #000; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        .video-embed-container lite-youtube { border-radius: 12px; width: 100%; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.4); aspect-ratio: 9 / 16; }
+        .video-embed-container lite-youtube::before { content: none; }
         .video-caption { margin-top: 16px; font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
-        .video-caption a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(197, 160, 89, 0.3); transition: all 0.3s; font-weight: 500; }
-        .video-caption a:hover { color: #ffffff; border-bottom-color: var(--accent); }
+        .video-caption a { color: var(--lavender); text-decoration: none; border-bottom: 1px solid rgba(139,122,168, 0.3); transition: all 0.3s; font-weight: 500; }
+        .video-caption a:hover { color: #ffffff; border-bottom-color: var(--lavender); }
 
-        /* === BLOCK: REFERENCES === */
-        .references { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--accent-border); background: rgba(255, 255, 255, 0.01); border-radius: 16px; padding: 32px; }
+        /* === REFERENCES → lavender === */
+        .references { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--lavender-border); background: rgba(255, 255, 255, 0.01); border-radius: 16px; padding: 32px; }
         .references h3 { font-size: 1.3rem; font-weight: 600; color: #fff; margin-bottom: 20px; font-family: 'Cormorant Garamond', serif; margin-top: 0; }
         .references ol { padding-left: 24px; color: var(--text-light); font-size: 0.84rem; }
         .references li { margin-bottom: 8px; line-height: 1.6; padding: 6px 10px; border-radius: 6px; transition: background 0.2s ease; }
-        .references li:nth-child(odd) { background: rgba(255,255,255, 0.02); }
-        .references li:hover { background: rgba(197, 160, 89, 0.05); }
-        .references li::marker { color: var(--accent); font-weight: 600; }
-        .references a { color: var(--accent); text-decoration: none; word-break: break-all; }
+        .references li:nth-child(odd) { background: rgba(139,122,168, 0.03); }
+        .references li:hover { background: rgba(139,122,168, 0.06); }
+        .references li::marker { color: var(--lavender); font-weight: 600; }
+        .references a { color: var(--lavender); text-decoration: none; word-break: break-all; }
         .references a:hover { text-decoration: underline; }
 
-        /* === RELATED & FOOTER === */
-        .related-box { margin: 60px 0; padding: 40px; background: rgba(197, 160, 89, 0.03); border-radius: 24px; border: 1px solid var(--accent-border); position: relative; overflow: hidden; }
+        /* === RELATED BOX → teal container === */
+        .related-box { margin: 60px 0; padding: 40px; background: rgba(107,155,170, 0.03); border-radius: 24px; border: 1px solid var(--teal-border); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0, 0.18), inset 0 1px 0 rgba(107,155,170, 0.06); }
+        .related-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.4; }
         .related-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 24px; text-align: center; margin-top: 0; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
-        .related-card { display: block; text-decoration: none; background: rgba(255,255,255, 0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--accent-border); transition: all 0.4s ease; box-shadow: 0 2px 12px rgba(0,0,0, 0.12); }
-        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255, 0.04); border-color: rgba(197, 160, 89, 0.4); box-shadow: 0 12px 40px rgba(0,0,0, 0.25); }
-        .related-card h4 { color: var(--accent); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
+        /* related-card → lavender */
+        .related-card { display: block; text-decoration: none; background: rgba(255,255,255, 0.02); padding: 24px; border-radius: 16px; border: 1px solid var(--lavender-border); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 12px rgba(0,0,0, 0.12), inset 0 1px 0 rgba(255,255,255, 0.03); position: relative; overflow: hidden; }
+        .related-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--lavender), transparent); opacity: 0.3; transition: opacity 0.4s ease; }
+        .related-card:hover { transform: translateY(-4px); background: rgba(255,255,255, 0.04); border-color: rgba(139,122,168, 0.30); box-shadow: 0 12px 40px rgba(0,0,0, 0.25), 0 0 0 1px rgba(139,122,168, 0.10), inset 0 1px 0 rgba(255,255,255, 0.05); }
+        .related-card:hover::before { opacity: 0.7; }
+        .related-card h4 { color: var(--lavender); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600; margin-top: 0; }
         .related-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.5; }
 
-        .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--accent-border); }
-        .author-card { display: flex; align-items: center; gap: 20px; background: linear-gradient(135deg, rgba(197, 160, 89, 0.05) 0%, rgba(255,255,255, 0.02) 100%); border: 1px solid var(--accent-border); border-radius: 20px; padding: 28px; margin-bottom: 32px; box-shadow: 0 4px 20px rgba(0,0,0, 0.15); }
-        .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-light)); padding: 3px; flex-shrink: 0; }
+        /* === AUTHOR → lavender border, gradient(lavender, triggers) === */
+        .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--lavender-border); }
+        .author-card { display: flex; align-items: center; gap: 20px; background: linear-gradient(135deg, rgba(139,122,168, 0.05) 0%, rgba(139,122,168, 0.02) 100%); border: 1px solid var(--lavender-border); border-radius: 20px; padding: 28px; margin-bottom: 32px; box-shadow: 0 4px 20px rgba(0,0,0, 0.15); position: relative; overflow: hidden; }
+        .author-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(139,122,168, 0.25), transparent); }
+        .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--lavender), var(--triggers)); padding: 3px; flex-shrink: 0; }
         .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
         .author-info h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; margin-top: 0; }
         .author-info p { font-size: 0.9rem; color: var(--text-light); margin: 0; line-height: 1.5; }
 
-        .cta-box-accent { background: linear-gradient(180deg, rgba(197, 160, 89, 0.10) 0%, rgba(197, 160, 89, 0.03) 100%); border: 1px solid var(--accent-border); border-radius: 20px; padding: 36px; text-align: center; position: relative; box-shadow: 0 8px 32px rgba(0,0,0, 0.25); }
-        .cta-box-accent h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: #fff; margin-bottom: 12px; margin-top: 0; }
-        .cta-box-accent p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; }
-        .download-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(197, 160, 89,0.15), rgba(197, 160, 89,0.25)); border: 1px solid var(--accent); border-radius: 12px; color: var(--accent-light); text-decoration: none; font-weight: 600; transition: all 0.4s ease; flex: 1; max-width: 260px; justify-content: center; }
-        .download-btn:hover { background: var(--accent); color: var(--bg); transform: translateY(-2px); }
+        /* === CTA → triggers color === */
+        .cta-box-triggers { background: linear-gradient(180deg, rgba(170,142,107, 0.10) 0%, rgba(170,142,107, 0.03) 100%); border: 1px solid var(--triggers-border); border-radius: 20px; padding: 36px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0, 0.25), 0 2px 6px rgba(0,0,0, 0.15), inset 0 1px 0 rgba(170,142,107, 0.15); }
+        .cta-box-triggers::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--triggers), transparent); opacity: 0.7; }
+        .cta-box-triggers h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: #fff; margin-bottom: 12px; margin-top: 0; position: relative; z-index: 1; }
+        .cta-box-triggers p { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; position: relative; z-index: 1; }
+        .download-btn-triggers { display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px; background: linear-gradient(135deg, rgba(170,142,107,0.15), rgba(170,142,107,0.25)); border: 1px solid var(--triggers); border-radius: 12px; color: var(--triggers); text-decoration: none; font-weight: 600; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); flex: 1; max-width: 260px; justify-content: center; position: relative; z-index: 1; box-shadow: 0 2px 8px rgba(0,0,0, 0.15); }
+        .download-btn-triggers:hover { background: var(--triggers); color: var(--bg); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(170,142,107, 0.25); }
+        .download-btn-triggers:hover svg { fill: var(--bg); }
 
-        footer { padding: 40px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center; }
+        /* === FOOTER → lavender === */
+        footer { padding: 40px 0; border-top: 1px solid var(--lavender-border); text-align: center; }
         .footer-content { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
         .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
         .footer-links a { color: var(--text-dark); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
-        .footer-links a:hover { color: var(--accent); }
+        .footer-links a:hover { color: var(--lavender); }
         .copyright { color: var(--text-dark); font-size: 0.85rem; }
 
         @media (max-width: 768px) {
@@ -153,7 +195,7 @@
             .article-content { padding: 40px 0 60px; }
             .author-card { flex-direction: column; text-align: center; }
             .quote-box, .highlight-box, .notice-box { padding: 24px; }
-            .cta-box-accent { padding: 28px; }
+            .cta-box-triggers { padding: 28px; }
             .article-meta { flex-direction: column; gap: 8px; }
             .related-box { padding: 28px; }
             .footer-content { flex-direction: column; text-align: center; justify-content: center; }
@@ -161,6 +203,7 @@
             .data-table th, .data-table td { padding: 12px; font-size: 0.85rem; }
         }
     </style>
+    <link rel="stylesheet" href="article-category-colors.css">
 </head>
 <body data-category="triggers">
     <header>
@@ -195,7 +238,7 @@
                     <p style="font-size:0.9rem;font-weight:500;color:var(--text-light);margin:0;">30 years lived experience with chronic migraine | Last updated: January 31, 2026</p>
                 </div>
                 
-                <div class="notice-box notice-box-accent">
+                <div class="notice-box notice-box-triggers">
                     <p><strong>Medical Disclaimer:</strong> This article is for educational purposes only and does not constitute medical advice. All claims are supported by peer-reviewed research. For personalized recommendations, consult your healthcare provider.</p>
                 </div>
 
@@ -238,8 +281,6 @@
                     <p>Result: migraine attacks, triggered on demand.<sup>[4]</sup></p>
                     <p>This wasn't coincidence. This was causation.</p>
                     <p>Adenosine is your brain's brake pedal. It accumulates throughout the day, slowing neural activity, dilating blood vessels, making you drowsy. That heaviness you feel by 10 PM? Adenosine has been building for sixteen hours.</p>
-                    
-                    
 
                     <p>Now here's the twist that makes pharmacologists smile: caffeine's molecular structure is nearly identical to adenosine.<sup>[5]</sup> So similar it slips into adenosine's receptors like a counterfeit bill into a vending machine.</p>
                     <p>But caffeine doesn't activate those receptors.</p>
@@ -322,8 +363,6 @@
                             </tbody>
                         </table>
                     </div>
-                    
-                    
 
                     <p>"Those who inherit two copies of the fast metabolizing gene process coffee four times faster than their slow-metabolizing counterparts," explains Dr. Tiffany Lester.<sup>[15]</sup></p>
                     <p><strong>Four times faster.</strong></p>
@@ -331,14 +370,10 @@
                     <p>You, lying awake at 3 AM after a single afternoon latte? Probably slow.</p>
                     
                     <div class="video-embed-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/f_cYdmG14r0" 
-                            title="Coffee and Migraine: Fast vs Slow Metabolizers" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                        </iframe>
+                        <lite-youtube videoid="f_cYdmG14r0" playlabel="Play: Coffee and Migraine: Fast vs Slow Metabolizers" style="aspect-ratio: 9 / 16;"></lite-youtube>
                         <p class="video-caption">Here is exactly why your afternoon coffee might be triggering tomorrow's migraine. <br><a href="https://www.youtube.com/@MICompanion" target="_blank">Subscribe to our YouTube</a> 💜</p>
                     </div>
+
                     <p>Why this matters for migraines: <a href="the-goldilocks-problem-sleep-migraine.html">Sleep disruption</a> is one of the most reliable migraine triggers known to science.<sup>[16]</sup> If you're a slow metabolizer, that 3 PM pick-me-up might still be active at midnight &mdash; sabotaging your sleep, priming tomorrow's attack.</p>
                     <p>Genetic testing isn't routine yet. But you can infer: Does evening caffeine keep you awake?</p>
                     <p>Your body already knows the answer.</p>
@@ -351,7 +386,7 @@
                     <p>Now for the finding that makes neurologists pause mid-sentence.</p>
                     <p>The assumption: You drink coffee, therefore you get a migraine. Cause &rarr; effect.</p>
                     <p>The alternative: <strong>Your approaching migraine makes you crave coffee.</strong> Effect &rarr; cause.</p>
-                    <p>Consider the <a href="article-prediction.html">prodrome</a> &mdash; that 2-48 hour window before a migraine attack when something feels off.<sup>[18]</sup> Patients report yawning. Fatigue. Difficulty concentrating. Cravings.</p>
+                    <p>Consider the <a href="article-prodrome-warning-signs.html">prodrome</a> &mdash; that 2-48 hour window before a migraine attack when something feels off.<sup>[18]</sup> Patients report yawning. Fatigue. Difficulty concentrating. Cravings.</p>
                     <p>Cravings for what? Often, stimulants. Often, caffeine.</p>
                     
                     <div class="quote-box">
@@ -411,8 +446,6 @@
                     <p>Their discovery: the caffeine-migraine relationship isn't linear.</p>
                     <p><strong>It's S-shaped.</strong></p>
 
-                    
-
                     <p>What this means:</p>
                     <p>&bull; <strong>0-50 mg</strong> (half a cup): Minimal impact either way<br>
                     &bull; <strong>50-200 mg</strong> (1-2 cups): Risk increases in susceptible individuals<br>
@@ -423,7 +456,7 @@
 
                 <div class="separator"></div>
 
-                <div class="notice-box notice-box-accent" style="text-align: center;">
+                <div class="notice-box notice-box-triggers" style="text-align: center;">
                     <p>🩺 Before making changes to your caffeine consumption, talk to your healthcare provider &mdash; especially if you take medications or have frequent migraines. What follows are general principles, not personalized medical advice.</p>
                 </div>
 
@@ -593,15 +626,15 @@
                         </div>
                     </div>
 
-                    <div class="cta-box-accent">
+                    <div class="cta-box-triggers">
                         <h3>Track Your Caffeine Patterns with Mi</h3>
                         <p>Mi helps you discover what works for your unique biology. No judgment. Just data.</p>
                         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;">
-                            <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                            <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn-triggers" target="_blank">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
                                 Download on App Store
                             </a>
-                            <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
+                            <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn-triggers" target="_blank">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
                                 Get it on Google Play
                             </a>
