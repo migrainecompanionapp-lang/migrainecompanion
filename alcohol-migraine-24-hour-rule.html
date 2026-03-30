@@ -17,15 +17,27 @@
         }
 
         :root {
-            --lavender: #8b7aa8;
-            --gold: #C5A059;
-            --antique-gold: #D5B069;
-            --wine-red: #722F37;
-            --wine-light: #9B4D54;
             --bg: #0d0d0d;
-            --text: #d0d0d0;
-            --text-light: #a0a0a0;
-            --text-dark: #888;
+            --surface: #141419;
+            --lavender: #8b7aa8;
+            --green: #6aaa7a;
+            --teal: #6b9baa;
+            --gold: #c5a059;
+            --triggers: #AA8E6B;
+            --triggers-soft: rgba(170,142,107,0.06);
+            --triggers-border: rgba(170,142,107,0.18);
+            --lavender-soft: rgba(139,122,168,0.06);
+            --green-soft: rgba(106,170,122,0.06);
+            --teal-soft: rgba(107,155,170,0.06);
+            --gold-soft: rgba(197,160,89,0.06);
+            --lavender-border: rgba(139,122,168,0.18);
+            --green-border: rgba(106,170,122,0.18);
+            --teal-border: rgba(107,155,170,0.18);
+            --gold-border: rgba(197,160,89,0.18);
+            --text: #cdc6be;
+            --text-light: #a09890;
+            --text-dark: #847b73;
+            --text-warm: #c9bda8;
         }
 
         /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
@@ -37,15 +49,15 @@
         }
         .article-content a:not(.references a):not(.download-btn):hover {
             border-bottom-color: var(--lavender);
-            background: rgba(139, 122, 168, 0.05);
+            background: var(--lavender-soft);
         }
 
         .related-box {
             margin: 60px 0;
             padding: 40px;
-            background: rgba(139, 122, 168, 0.05);
+            background: rgba(107, 155, 170, 0.05);
             border-radius: 24px;
-            border: 1px solid rgba(139, 122, 168, 0.1);
+            border: 1px solid rgba(107, 155, 170, 0.1);
         }
         .related-box h3 {
             font-family: 'Cormorant Garamond', serif;
@@ -111,7 +123,7 @@
             z-index: 100;
             background: rgba(13, 13, 13, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+            border-bottom: 1px solid var(--lavender-border);
         }
 
         .header-content {
@@ -132,7 +144,7 @@
         }
 
         .logo span {
-            color: var(--lavender);
+            color: var(--triggers);
         }
 
         .back-link {
@@ -191,9 +203,9 @@
 
         .article-tag {
             display: inline-block;
-            background: rgba(114, 47, 55, 0.3);
-            border: 1px solid rgba(155, 77, 84, 0.5);
-            color: var(--wine-light);
+            background: rgba(170, 142, 107, 0.15);
+            border: 1px solid rgba(170, 142, 107, 0.4);
+            color: var(--triggers);
             font-size: 0.75rem;
             font-weight: 600;
             padding: 6px 14px;
@@ -261,7 +273,7 @@
 
         strong {
             font-weight: 700;
-            color: var(--antique-gold);
+            color: var(--text-warm);
         }
 
         em {
@@ -274,6 +286,7 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border: 1px solid rgba(139, 122, 168, 0.10);
         }
 
         .article-image img {
@@ -291,9 +304,10 @@
             font-style: italic;
         }
 
+        /* Triggers: highlight-box = triggers border + triggers text */
         .highlight-box {
-            background: rgba(197, 160, 89, 0.08);
-            border-left: 3px solid var(--gold);
+            background: rgba(170, 142, 107, 0.08);
+            border-left: 3px solid var(--triggers);
             padding: 24px 28px;
             border-radius: 0 12px 12px 0;
             margin: 36px 0;
@@ -302,14 +316,14 @@
         .highlight-box p {
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--antique-gold);
+            color: var(--triggers);
             margin: 0;
             line-height: 1.7;
         }
 
         .quote-box {
-            background: rgba(114, 47, 55, 0.1);
-            border-left: 3px solid var(--wine-light);
+            background: rgba(139, 122, 168, 0.08);
+            border-left: 3px solid var(--lavender);
             padding: 24px 28px;
             border-radius: 0 12px 12px 0;
             margin: 36px 0;
@@ -333,14 +347,31 @@
             display: block;
         }
 
-        .separator-roman {
-            font-family: 'Cormorant Garamond', serif;
+        .separator {
             text-align: center;
-            margin: 50px 0 30px;
-            color: var(--wine-light);
-            font-size: 1.3rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
+            margin: 60px 0;
+            position: relative;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .separator::before {
+            content: '';
+            position: absolute;
+            left: 15%;
+            right: 15%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(170,142,107,0.20) 30%, rgba(170,142,107,0.35) 50%, rgba(170,142,107,0.20) 70%, transparent 100%);
+        }
+        .separator::after {
+            content: '\25C6';
+            position: relative;
+            z-index: 1;
+            color: rgba(170,142,107,0.30);
+            font-size: 0.55rem;
+            background: var(--bg);
+            padding: 0 16px;
         }
 
         .practical-list {
@@ -363,7 +394,7 @@
         .practical-item h4 {
             font-size: 1rem;
             font-weight: 700;
-            color: var(--antique-gold);
+            color: var(--text-warm);
             margin-bottom: 8px;
         }
 
@@ -373,45 +404,57 @@
             color: var(--text);
         }
 
-        .warning-box {
-            background: rgba(114, 47, 55, 0.15);
-            border: 1px solid rgba(155, 77, 84, 0.3);
-            border-radius: 12px;
+        /* Emergency box — ALWAYS gold, NO RED */
+        .emergency-box {
+            background: linear-gradient(90deg, rgba(197,160,89,0.10) 0%, rgba(197,160,89,0.02) 100%);
+            border-left: 4px solid var(--gold);
             padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
             margin: 36px 0;
         }
 
-        .warning-box h4 {
+        .emergency-box h4 {
             font-size: 1rem;
             font-weight: 700;
-            color: var(--wine-light);
+            color: var(--gold);
             margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .warning-box p {
+        .emergency-box p {
             font-size: 0.95rem;
             margin: 0;
             color: var(--text);
+            line-height: 1.7;
         }
 
-        .warning-box ul {
+        .emergency-box ul {
             margin: 12px 0 0 0;
             padding-left: 20px;
         }
 
-        .warning-box li {
+        .emergency-box li {
             font-size: 0.95rem;
             color: var(--text);
             margin-bottom: 6px;
         }
 
+        .emergency-box a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(197,160,89,0.4);
+            transition: all 0.3s ease;
+        }
+        .emergency-box a:hover {
+            border-bottom-color: var(--gold);
+        }
+
         .article-footer {
             margin-top: 60px;
             padding-top: 40px;
-            border-top: 1px solid rgba(139, 122, 168, 0.15);
+            border-top: 1px solid var(--lavender-border);
         }
 
         .author-card {
@@ -429,7 +472,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            background: linear-gradient(135deg, var(--lavender), var(--triggers));
             padding: 3px;
             flex-shrink: 0;
         }
@@ -456,8 +499,8 @@
         }
 
         .cta-box {
-            background: rgba(197, 160, 89, 0.08);
-            border: 1px solid rgba(197, 160, 89, 0.2);
+            background: linear-gradient(180deg, rgba(170,142,107,0.10) 0%, rgba(170,142,107,0.03) 100%);
+            border: 1px solid var(--triggers-border);
             border-radius: 16px;
             padding: 32px;
             text-align: center;
@@ -481,10 +524,10 @@
             align-items: center;
             gap: 12px;
             padding: 14px 28px;
-            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
-            border: 1px solid var(--gold);
+            background: linear-gradient(135deg, rgba(170,142,107,0.15), rgba(170,142,107,0.25));
+            border: 1px solid var(--triggers);
             border-radius: 12px;
-            color: var(--gold);
+            color: var(--triggers);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
@@ -494,7 +537,7 @@
         }
 
         .download-btn:hover {
-            background: var(--gold);
+            background: var(--triggers);
             color: var(--bg);
             transform: translateY(-2px);
         }
@@ -502,7 +545,7 @@
         .references {
             margin-top: 48px;
             padding-top: 32px;
-            border-top: 1px solid rgba(139, 122, 168, 0.1);
+            border-top: 1px solid var(--lavender-border);
         }
 
         .references h3 {
@@ -523,13 +566,18 @@
             line-height: 1.5;
         }
 
+        .references li:nth-child(odd) {
+            background: rgba(139,122,168,0.03);
+        }
+
         .references a {
             color: var(--lavender);
             text-decoration: none;
+            border-bottom: 1px solid rgba(139,122,168,0.3);
+            transition: all 0.3s ease;
         }
-
         .references a:hover {
-            text-decoration: underline;
+            border-bottom-color: var(--lavender);
         }
 
         sup {
@@ -539,7 +587,7 @@
 
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            border-top: 1px solid var(--lavender-border);
             text-align: center;
         }
 
@@ -555,12 +603,12 @@
             text-align: center;
             padding: 16px 0;
             margin-bottom: 48px;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+            border-bottom: 1px solid var(--lavender-border);
         }
 
         .key-takeaways {
-            background: rgba(139, 122, 168, 0.08);
-            border: 1px solid rgba(139, 122, 168, 0.2);
+            background: linear-gradient(180deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.04) 100%);
+            border: 1px solid var(--teal-border);
             border-radius: 16px;
             padding: 28px;
             margin: 48px 0;
@@ -592,53 +640,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--lavender);
-        }
-
-        .medical-attention {
-            background: rgba(114, 47, 55, 0.1);
-            border: 1px solid rgba(155, 77, 84, 0.25);
-            border-radius: 16px;
-            padding: 28px;
-            margin: 48px 0;
-        }
-
-        .medical-attention h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--wine-light);
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .medical-attention ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .medical-attention li {
-            font-size: 0.95rem;
-            color: var(--text);
-            padding: 6px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .medical-attention li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--wine-light);
-        }
-
-        .medical-attention p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin: 16px 0 0 0;
-            font-style: italic;
+            color: var(--teal);
         }
 
         @media (max-width: 768px) {
@@ -700,7 +702,7 @@
                     <p>But what if thirty years of advice were wrong?</p>
                 </section>
 
-                <p class="separator-roman">I.</p>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <p>The conventional wisdom sounds absolute. Alcohol triggers migraines. One in three migraine sufferers names it as a culprit.<sup>[1]</sup> Neurologists list it alongside stress, weather, and hormonal shifts. The logic seems bulletproof: you drink, you suffer.</p>
@@ -716,7 +718,7 @@
                     <p>How could this be?</p>
                 </section>
 
-                <p class="separator-roman">II.</p>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Wrong Suspects</h2>
@@ -725,11 +727,11 @@
                     <p>Except dried apricots contain ten times more sulfites than wine.<sup>[3]</sup> Nobody calls them a migraine trigger.</p>
                     <p><strong>Histamine</strong> drew attention next. Red wine holds 20 to 200 times more histamine than white.<sup>[4]</sup> The compound dilates blood vessels, triggers inflammation. A plausible mechanism.</p>
                     <p>But aged cheese packs even more histamine. Sauerkraut and soy sauce, too. The headache pattern didn't match.</p>
-                    <p><strong>Tyramine, tannins, congeners</strong> — one by one, the suspects failed interrogation. Each theory crumbled under scrutiny.<sup>[3,4]</sup></p>
+                    <p><strong>Tyramine, tannins, congeners</strong> — one by one, the suspects failed interrogation. Each theory crumbled under scrutiny.<sup>[3,&nbsp;4]</sup></p>
                     <p>The real culprit hid in plain sight.</p>
                 </section>
 
-                <p class="separator-roman">III.</p>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Quercetin Discovery</h2>
@@ -752,7 +754,7 @@
                     <figcaption>The quercetin pathway: from grape skin to headache</figcaption>
                 </figure>
 
-                <p class="separator-roman">IV.</p>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Why Red Wine Hurts More</h2>
@@ -761,7 +763,7 @@
                     <p>Quercetin concentrates in grape skins. Red wine ferments with skins for days or weeks, extracting flavonoids. White wine touches skins only briefly, then separates. The difference in quercetin content: roughly tenfold.<sup>[6]</sup></p>
                     <p>But here's the twist that surprised even the scientists.</p>
                     <p><strong>Not all red wines are equal.</strong></p>
-                    <p>Grapes produce quercetin as sunscreen — protection against ultraviolet light. Vineyards that expose their grapes to sun generate more of it. Premium Napa Valley wines, with their carefully trained vines and sun-drenched clusters, can contain four to five times more quercetin than mass-produced wines from shaded vineyards.<sup>[5,6]</sup></p>
+                    <p>Grapes produce quercetin as sunscreen — protection against ultraviolet light. Vineyards that expose their grapes to sun generate more of it. Premium Napa Valley wines, with their carefully trained vines and sun-drenched clusters, can contain four to five times more quercetin than mass-produced wines from shaded vineyards.<sup>[5,&nbsp;6]</sup></p>
 
                     <div class="highlight-box">
                         <p>The expensive bottle might be the dangerous one.</p>
@@ -773,16 +775,16 @@
                     <figcaption>Sun exposure increases quercetin content in grape skins — premium wines may carry higher risk</figcaption>
                 </figure>
 
-                <p class="separator-roman">V.</p>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Personal Equation</h2>
                     <p>The 2022 study carries a crucial caveat.</p>
                     <p>It didn't prove alcohol is safe for everyone with migraines. It proved something more nuanced: <strong>the relationship between drinking and headaches is intensely personal.</strong></p>
-                    <p>Some people metabolize acetaldehyde slowly. Roughly 40 percent of East Asian populations carry genetic variants that impair ALDH2 function.<sup>[5,7]</sup> These individuals flush easily and may be hypersensitive to alcohol's effects.</p>
+                    <p>Some people metabolize acetaldehyde slowly. Roughly 40 percent of East Asian populations carry genetic variants that impair ALDH2 function.<sup>[5,&nbsp;7]</sup> These individuals flush easily and may be hypersensitive to alcohol's effects.</p>
                     <p>Others lack that vulnerability entirely.</p>
                     <p>The study also revealed a hidden variable: <em>selection bias</em>. People who experience severe alcohol-triggered migraines tend to stop drinking. The remaining drinkers may represent a naturally resistant population.<sup>[2]</sup></p>
-                    <p>Context matters too. The same glass of wine might pass harmlessly on a relaxed Saturday but devastate you after a stressful workweek. <a href="the-goldilocks-problem-sleep-migraine.html">Sleep deprivation</a>, dehydration, hormonal fluctuations — all lower the threshold.<sup>[8,9]</sup></p>
+                    <p>Context matters too. The same glass of wine might pass harmlessly on a relaxed Saturday but devastate you after a stressful workweek. <a href="the-goldilocks-problem-sleep-migraine.html">Sleep deprivation</a>, dehydration, hormonal fluctuations — all lower the threshold.<sup>[8,&nbsp;9]</sup></p>
 
                     <div class="quote-box">
                         <p>Your trigger today might not be your trigger tomorrow.</p>
@@ -794,7 +796,7 @@
                     <figcaption>Same wine, different outcomes: genetics, sleep, stress, and hydration all influence your response</figcaption>
                 </figure>
 
-                <p class="separator-roman">VI.</p>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Expert View</h2>
@@ -809,7 +811,7 @@
                     <p><em>"Our patients get a little demoralized when we tell them they can't do fun things, eat something tasty, or have a beer."</em></p>
                 </section>
 
-                <p class="separator-roman">VII.</p>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>What This Means for You</h2>
@@ -844,16 +846,16 @@
                     </div>
                 </section>
 
-                <p class="separator-roman">VIII.</p>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>When to Be Cautious</h2>
                     <p>Some situations call for caution regardless.</p>
 
-                    <div class="warning-box">
+                    <div class="emergency-box">
                         <h4>⚠️ Consider avoiding alcohol if:</h4>
                         <ul>
-                            <li>You feel the subtle warning signs of an approaching migraine (the <a href="article-prediction.html">prodrome</a>) — the vague unease, the light sensitivity, the difficulty finding words — alcohol will likely accelerate the attack</li>
+                            <li>You feel the subtle warning signs of an approaching migraine (the <a href="article-prodrome-warning-signs.html">prodrome</a>) — the vague unease, the light sensitivity, the difficulty finding words — alcohol will likely accelerate the attack</li>
                             <li>You take MAO inhibitors or certain other medications — wine's tyramine content poses genuine risks beyond headache</li>
                             <li>Your migraines have increased recently in frequency or severity — adding variables makes diagnosis harder</li>
                             <li>Tomorrow holds something unmissable — a presentation, a wedding, a flight — the gamble may not be worth the potential cost</li>
@@ -863,7 +865,7 @@
                     <p style="margin-top:16px;">Sometimes the sparkling water, garnished with lime, served in a wine glass, offers more genuine pleasure than any actual wine could. The pleasure of presence without fear.</p>
                 </section>
 
-                <p class="separator-roman">IX.</p>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Science Moves Forward</h2>
@@ -874,7 +876,7 @@
                     <p>For others, informed moderation may be possible — with the right drink, in the right amount, at the right time.</p>
                 </section>
 
-                <p class="separator-roman">X.</p>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Beyond the Wine Glass</h2>
@@ -920,8 +922,8 @@
                     </div>
                 </div>
 
-                <div class="medical-attention">
-                    <h3>⚕️ When to See a Doctor</h3>
+                <div class="emergency-box" style="margin:48px 0;">
+                    <h4>⚕️ When to See a Doctor</h4>
                     <ul>
                         <li>A sudden, severe headache unlike any you've had before ("thunderclap headache")</li>
                         <li>Headache with fever, stiff neck, confusion, seizures, double vision, weakness, or numbness</li>
@@ -929,7 +931,7 @@
                         <li>New headache pain if you are over 50</li>
                         <li>Significant increase in headache frequency or severity</li>
                     </ul>
-                    <p>This article discusses general research and does not address your individual medical situation. Always discuss changes to your diet or lifestyle with your physician.</p>
+                    <p style="margin-top:16px;font-style:italic;color:var(--text-light);">This article discusses general research and does not address your individual medical situation. Always discuss changes to your diet or lifestyle with your physician.</p>
                 </div>
 
                 <div class="references">
