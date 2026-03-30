@@ -18,13 +18,27 @@
         }
         
         :root {
-            --lavender: #8b7aa8;
-            --gold: #C5A059;
-            --antique-gold: #D5B069;
             --bg: #0d0d0d;
-            --text: #d0d0d0;
-            --text-light: #a0a0a0;
-            --text-dark: #888;
+            --surface: #141419;
+            --lavender: #8b7aa8;
+            --green: #6aaa7a;
+            --teal: #6b9baa;
+            --gold: #c5a059;
+            --cat: #c5a059;
+            --cat-soft: rgba(197,160,89,0.06);
+            --cat-border: rgba(197,160,89,0.18);
+            --lavender-soft: rgba(139,122,168,0.06);
+            --green-soft: rgba(106,170,122,0.06);
+            --teal-soft: rgba(107,155,170,0.06);
+            --gold-soft: rgba(197,160,89,0.06);
+            --lavender-border: rgba(139,122,168,0.18);
+            --green-border: rgba(106,170,122,0.18);
+            --teal-border: rgba(107,155,170,0.18);
+            --gold-border: rgba(197,160,89,0.18);
+            --text: #cdc6be;
+            --text-light: #a09890;
+            --text-dark: #847b73;
+            --text-warm: #c9bda8;
         }
 
         /* --- INTERNAL LINKING & RELATED BOX STYLES --- */
@@ -36,15 +50,15 @@
         }
         .article-content a:not(.references a):not(.download-btn):hover {
             border-bottom-color: var(--lavender);
-            background: rgba(139, 122, 168, 0.05);
+            background: var(--lavender-soft);
         }
 
         .related-box {
             margin: 60px 0;
             padding: 40px;
-            background: rgba(139, 122, 168, 0.05);
+            background: rgba(197, 160, 89, 0.05);
             border-radius: 24px;
-            border: 1px solid rgba(139, 122, 168, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.1);
         }
         .related-box h3 {
             font-family: 'Cormorant Garamond', serif;
@@ -110,7 +124,7 @@
             z-index: 100;
             background: rgba(13, 13, 13, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+            border-bottom: 1px solid var(--gold-border);
         }
         
         .header-content {
@@ -131,7 +145,7 @@
         }
         
         .logo span {
-            color: var(--lavender);
+            color: var(--gold);
         }
         
         .back-link {
@@ -146,7 +160,7 @@
         }
         
         .back-link:hover {
-            color: var(--lavender);
+            color: var(--gold);
         }
         
         .article-hero {
@@ -190,7 +204,7 @@
         
         .article-tag {
             display: inline-block;
-            background: rgba(197, 160, 89, 0.2);
+            background: rgba(197, 160, 89, 0.15);
             border: 1px solid rgba(197, 160, 89, 0.4);
             color: var(--gold);
             font-size: 0.75rem;
@@ -269,7 +283,7 @@
         
         strong {
             font-weight: 700;
-            color: var(--antique-gold);
+            color: var(--text-warm);
         }
         
         em {
@@ -282,6 +296,7 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border: 1px solid rgba(197, 160, 89, 0.10);
         }
         
         .article-image img {
@@ -299,9 +314,10 @@
             background: rgba(255,255,255,0.02);
         }
         
+        /* Personal Story: highlight-box = green border + --text color (NOT green text) */
         .highlight-box {
-            background: rgba(197, 160, 89, 0.08);
-            border-left: 3px solid var(--gold);
+            background: rgba(106, 170, 122, 0.08);
+            border-left: 3px solid var(--green);
             padding: 24px 28px;
             border-radius: 0 12px 12px 0;
             margin: 36px 0;
@@ -310,7 +326,7 @@
         .highlight-box p {
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--antique-gold);
+            color: var(--text);
             margin: 0;
             line-height: 1.7;
         }
@@ -343,24 +359,48 @@
         .separator {
             text-align: center;
             margin: 60px 0;
-            color: var(--lavender);
-            font-size: 1.5rem;
-            opacity: 0.5;
+            position: relative;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .separator::before {
+            content: '';
+            position: absolute;
+            left: 15%;
+            right: 15%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(197,160,89,0.20) 30%, rgba(197,160,89,0.35) 50%, rgba(197,160,89,0.20) 70%, transparent 100%);
+        }
+        .separator::after {
+            content: '\25C6';
+            position: relative;
+            z-index: 1;
+            color: rgba(197,160,89,0.30);
+            font-size: 0.55rem;
+            background: var(--bg);
+            padding: 0 16px;
         }
         
-        .warning-box {
-            background: rgba(220, 53, 69, 0.1);
-            border-left: 3px solid #dc3545;
-            padding: 20px 24px;
+        /* Emergency box — ALWAYS gold, NO RED */
+        .emergency-box {
+            background: linear-gradient(90deg, rgba(197,160,89,0.10) 0%, rgba(197,160,89,0.02) 100%);
+            border-left: 4px solid var(--gold);
+            padding: 24px 28px;
             border-radius: 0 12px 12px 0;
             margin: 36px 0;
         }
         
-        .warning-box p {
-            font-size: 0.95rem;
-            color: #ff6b6b;
+        .emergency-box p {
+            font-size: 1rem;
+            color: var(--text);
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.7;
+        }
+        
+        .emergency-box strong {
+            color: var(--gold);
         }
         
         .advice-list {
@@ -374,7 +414,7 @@
         .article-footer {
             margin-top: 60px;
             padding-top: 40px;
-            border-top: 1px solid rgba(139, 122, 168, 0.15);
+            border-top: 1px solid var(--gold-border);
         }
         
         .author-card {
@@ -382,7 +422,7 @@
             align-items: center;
             gap: 20px;
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(139, 122, 168, 0.12);
+            border: 1px solid rgba(197, 160, 89, 0.12);
             border-radius: 16px;
             padding: 24px;
             margin-bottom: 32px;
@@ -392,7 +432,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            background: linear-gradient(135deg, var(--gold), var(--lavender));
             padding: 3px;
             flex-shrink: 0;
         }
@@ -420,8 +460,8 @@
         }
         
         .cta-box {
-            background: rgba(197, 160, 89, 0.08);
-            border: 1px solid rgba(197, 160, 89, 0.2);
+            background: linear-gradient(180deg, rgba(197,160,89,0.10) 0%, rgba(197,160,89,0.03) 100%);
+            border: 1px solid var(--gold-border);
             border-radius: 16px;
             padding: 32px;
             text-align: center;
@@ -446,7 +486,7 @@
             align-items: center;
             gap: 12px;
             padding: 14px 28px;
-            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
+            background: linear-gradient(135deg, rgba(197,160,89,0.15), rgba(197,160,89,0.25));
             border: 1px solid var(--gold);
             border-radius: 12px;
             color: var(--gold);
@@ -466,8 +506,10 @@
         
         .references {
             margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(139, 122, 168, 0.1);
+            padding: 32px;
+            background: var(--surface);
+            border-radius: 16px;
+            border: 1px solid rgba(197,160,89,0.10);
         }
         
         .references h3 {
@@ -488,14 +530,19 @@
             margin-bottom: 8px;
             line-height: 1.5;
         }
+
+        .references li:nth-child(odd) {
+            background: rgba(139,122,168,0.03);
+        }
         
         .references a {
             color: var(--lavender);
             text-decoration: none;
+            border-bottom: 1px solid rgba(139,122,168,0.3);
+            transition: all 0.3s ease;
         }
-        
         .references a:hover {
-            text-decoration: underline;
+            border-bottom-color: var(--lavender);
         }
         
         sup {
@@ -505,7 +552,7 @@
         
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            border-top: 1px solid rgba(197,160,89,0.08);
             text-align: center;
         }
         
@@ -521,12 +568,12 @@
             text-align: center;
             padding: 16px 0;
             margin-bottom: 48px;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+            border-bottom: 1px solid var(--cat-border);
         }
         
         .key-takeaways {
-            background: rgba(139, 122, 168, 0.08);
-            border: 1px solid rgba(139, 122, 168, 0.2);
+            background: linear-gradient(180deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.04) 100%);
+            border: 1px solid var(--teal-border);
             border-radius: 16px;
             padding: 28px;
             margin: 48px 0;
@@ -558,13 +605,13 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--lavender);
+            color: var(--teal);
         }
         
         .faq-section {
             margin: 48px 0;
             padding: 32px;
-            background: rgba(139, 122, 168, 0.05);
+            background: rgba(197, 160, 89, 0.05);
             border-radius: 16px;
         }
         
@@ -577,7 +624,7 @@
         .faq-item {
             margin-bottom: 24px;
             padding-bottom: 24px;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
         }
         
         .faq-item:last-child {
@@ -589,7 +636,7 @@
         .faq-item h4 {
             font-size: 1rem;
             font-weight: 600;
-            color: var(--antique-gold);
+            color: #ffffff;
             margin-bottom: 8px;
         }
         
@@ -603,9 +650,9 @@
         .content-standards {
             margin-top: 32px;
             padding: 20px;
-            background: rgba(255,255,255,0.02);
+            background: var(--cat-soft);
             border-radius: 12px;
-            border: 1px solid rgba(139, 122, 168, 0.08);
+            border: 1px solid var(--cat-border);
         }
         
         .content-standards h4 {
@@ -686,7 +733,7 @@
                 </p>
 
                 <div class="key-takeaways">
-                    <h3>📋 Key Takeaways</h3>
+                    <h3>Key Takeaways</h3>
                     <ul>
                         <li><strong>72%</strong> of people with chronic migraine feel they would be better partners without their condition</li>
                         <li><strong>71.7%</strong> believe they would be better parents — guilt shapes the experience more than pain</li>
@@ -698,7 +745,7 @@
                     </ul>
                 </div>
 
-                <div class="warning-box">
+                <div class="emergency-box">
                     <p><strong>⚠️ Important Note:</strong> If you or your partner are experiencing relationship distress, communication breakdown, or mental health challenges related to chronic illness, consider seeking support from a licensed therapist or counselor who specializes in chronic illness and family dynamics.</p>
                 </div>
 
@@ -720,7 +767,7 @@
                     <p>This is what happens <em>between people</em> when pain moves in.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Numbers Behind Closed Doors</h2>
@@ -772,7 +819,7 @@
                     <p>They would be happier if you weren't in pain.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Invisible Made Visible</h2>
@@ -833,7 +880,7 @@
                     <p>And honest conversation is where healing starts.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Children Who Watch and Learn</h2>
@@ -892,7 +939,7 @@
                     <h3>For People with Migraine</h3>
                     
                     <div class="advice-list">
-                        <p><strong>Communicate before, during, and after.</strong> Don't let your partner guess. "I'm feeling <a href="article-prediction.html">prodrome symptoms</a> — tomorrow might be rough" gives everyone time to adjust.</p>
+                        <p><strong>Communicate before, during, and after.</strong> Don't let your partner guess. "I'm feeling <a href="article-prodrome-warning-signs.html">prodrome symptoms</a> — tomorrow might be rough" gives everyone time to adjust.</p>
                         
                         <p><strong>Release the guilt spiral.</strong> Easier said than done, but essential. You didn't choose this. Apologizing constantly trains both of you to see migraine as moral failure rather than medical reality.</p>
                         
@@ -904,7 +951,7 @@
                     </div>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Conversation That Changes Everything</h2>
@@ -958,7 +1005,7 @@
                 <div class="related-box">
                     <h3>Deepen Your Understanding</h3>
                     <div class="related-grid">
-                        <a href="invisible-pain.html" class="related-card">
+                        <a href="article-invisible-pain.html" class="related-card">
                             <h4>You Don't Look Sick</h4>
                             <p>Explore the stigma of invisible illness and how to explain your reality to those who can't see your pain.</p>
                         </a>
@@ -970,46 +1017,46 @@
                 </div>
 
                 <div class="faq-section">
-                    <h2>❓ Frequently Asked Questions</h2>
+                    <h2>Frequently Asked Questions</h2>
                     
                     <div class="faq-item">
-                        <h4>Q: How common is relationship strain from migraine?</h4>
+                        <h4>How common is relationship strain from migraine?</h4>
                         <p>Very common. Research shows 51.4% of couples report disrupted one-on-one time, and 20.1% believe migraine has caused or nearly caused a breakup. However, many couples who communicate openly report stronger relationships over time.</p>
                     </div>
                     
                     <div class="faq-item">
-                        <h4>Q: Should I feel guilty about how migraine affects my family?</h4>
+                        <h4>Should I feel guilty about how migraine affects my family?</h4>
                         <p>Guilt is a natural response, but research shows people with migraine are often harder on themselves than their families are. Migraine is a neurological condition, not a moral failing. Separating the disease from your identity is an important step toward healthier family dynamics.</p>
                     </div>
                     
                     <div class="faq-item">
-                        <h4>Q: How do I explain migraine to my children?</h4>
+                        <h4>How do I explain migraine to my children?</h4>
                         <p>Use age-appropriate language. For young children: "Sometimes my head really hurts, so I need quiet time to feel better. It's not your fault, and I'll be back soon." For teenagers, more detailed conversations about the condition can build understanding and even strengthen your bond.</p>
                     </div>
                     
                     <div class="faq-item">
-                        <h4>Q: My partner doesn't seem to believe how bad my migraines are. What can I do?</h4>
+                        <h4>My partner doesn't seem to believe how bad my migraines are. What can I do?</h4>
                         <p>This is more common than you might think — 29.8% of patients perceive partner disbelief. Try using concrete metaphors like "spoon theory," sharing educational resources, or inviting your partner to a medical appointment. Sometimes seeing a doctor validate your experience helps partners understand.</p>
                     </div>
                     
                     <div class="faq-item">
-                        <h4>Q: How can I support my partner with migraine without burning out?</h4>
+                        <h4>How can I support my partner with migraine without burning out?</h4>
                         <p>Caregiver burnout is real. Maintain your own friendships and activities, communicate your own needs honestly, and consider joining a support group for partners of people with chronic illness. Your wellbeing matters too — you can't pour from an empty cup.</p>
                     </div>
                     
                     <div class="faq-item">
-                        <h4>Q: Should we see a couples therapist?</h4>
+                        <h4>Should we see a couples therapist?</h4>
                         <p>If chronic illness is straining your relationship, couples therapy can be very helpful — especially with a therapist who understands chronic illness dynamics. The four-step conversation in this article is a starting point, but professional guidance can provide deeper tools.</p>
                     </div>
                     
                     <div class="faq-item">
-                        <h4>Q: Do children of parents with migraine have long-term problems?</h4>
+                        <h4>Do children of parents with migraine have long-term problems?</h4>
                         <p>Research shows mixed outcomes. While children may experience some impacts on well-being, many also develop remarkable empathy, self-reliance, and compassion. Open, age-appropriate communication is the key factor in positive outcomes.</p>
                     </div>
                 </div>
 
                 <div class="references">
-                    <h3>📚 Sources & References</h3>
+                    <h3>Sources & References</h3>
                     <ol>
                         <li>Buse DC, Scher AI, Dodick DW, et al. Impact of migraine on the family: perspectives of people with migraine and their spouse/domestic partner in the CaMEO Study. <em>Mayo Clinic Proceedings</em>. 2016;91(7):901-912. <a href="https://doi.org/10.1016/j.mayocp.2016.04.022" target="_blank">doi:10.1016/j.mayocp.2016.04.022</a></li>
                         <li>Buse DC, Rupnow MF, Lipton RB. Assessing and managing all aspects of migraine: migraine attacks, migraine-related functional impairment, common comorbidities, and quality of life. <em>Mayo Clinic Proceedings</em>. 2009;84(5):422-435.</li>
@@ -1025,7 +1072,7 @@
                 </div>
 
                 <div class="content-standards">
-                    <h4>✅ Content Standards</h4>
+                    <h4>Content Standards</h4>
                     <table>
                         <tr>
                             <td>Evidence-based</td>
