@@ -39,27 +39,12 @@
             {
                 "@type": "MedicalCondition",
                 "name": "Migraine",
-                "code": {
-                    "@type": "MedicalCode",
-                    "code": "G43",
-                    "codingSystem": "ICD-10"
-                }
+                "code": { "@type": "MedicalCode", "code": "G43", "codingSystem": "ICD-10" }
             },
             {
                 "@type": "MedicalCondition",
                 "name": "Tension-type headache",
-                "code": {
-                    "@type": "MedicalCode",
-                    "code": "G44.2",
-                    "codingSystem": "ICD-10"
-                }
-            }
-        ],
-        "citation": [
-            {
-                "@type": "ScholarlyArticle",
-                "name": "Poor patient awareness and frequent misdiagnosis of migraine",
-                "url": "https://doi.org/10.1111/ene.14114"
+                "code": { "@type": "MedicalCode", "code": "G44.2", "codingSystem": "ICD-10" }
             }
         ],
         "mainEntityOfPage": {
@@ -77,13 +62,27 @@
         }
         
         :root {
-            --lavender: #8b7aa8;
-            --gold: #C5A059;
-            --antique-gold: #D5B069;
             --bg: #0d0d0d;
-            --text: #d0d0d0;
-            --text-light: #a0a0a0;
-            --text-dark: #888;
+            --surface: #141419;
+            --lavender: #8b7aa8;
+            --green: #6aaa7a;
+            --teal: #6b9baa;
+            --gold: #c5a059;
+            --understanding: #7BA5C0;
+            --understanding-soft: rgba(123,165,192,0.06);
+            --understanding-border: rgba(123,165,192,0.18);
+            --lavender-soft: rgba(139,122,168,0.06);
+            --green-soft: rgba(106,170,122,0.06);
+            --teal-soft: rgba(107,155,170,0.06);
+            --gold-soft: rgba(197,160,89,0.06);
+            --lavender-border: rgba(139,122,168,0.18);
+            --green-border: rgba(106,170,122,0.18);
+            --teal-border: rgba(107,155,170,0.18);
+            --gold-border: rgba(197,160,89,0.18);
+            --text: #cdc6be;
+            --text-light: #a09890;
+            --text-dark: #847b73;
+            --text-warm: #c9bda8;
         }
         
         body {
@@ -108,7 +107,7 @@
             z-index: 100;
             background: rgba(13, 13, 13, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(139, 122, 168, 0.15);
+            border-bottom: 1px solid var(--lavender-border);
         }
         
         .header-content {
@@ -129,7 +128,7 @@
         }
         
         .logo span {
-            color: var(--lavender);
+            color: var(--understanding);
         }
         
         .back-link {
@@ -188,9 +187,9 @@
         
         .article-tag {
             display: inline-block;
-            background: rgba(197, 160, 89, 0.2);
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            color: var(--gold);
+            background: rgba(123, 165, 192, 0.15);
+            border: 1px solid rgba(123, 165, 192, 0.4);
+            color: var(--understanding);
             font-size: 0.75rem;
             font-weight: 600;
             padding: 6px 14px;
@@ -265,7 +264,7 @@
         
         strong {
             font-weight: 700;
-            color: var(--antique-gold);
+            color: var(--text-warm);
         }
         
         em {
@@ -283,15 +282,15 @@
         
         .article-content a:not(.references a):not(.download-btn):hover {
             border-bottom-color: var(--lavender);
-            background: rgba(139, 122, 168, 0.05);
+            background: var(--lavender-soft);
         }
 
         .related-box {
             margin: 60px 0;
             padding: 40px;
-            background: rgba(139, 122, 168, 0.05);
+            background: rgba(107, 155, 170, 0.05);
             border-radius: 24px;
-            border: 1px solid rgba(139, 122, 168, 0.1);
+            border: 1px solid rgba(107, 155, 170, 0.1);
         }
         
         .related-box h3 {
@@ -341,7 +340,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* --- BUTTON FIX --- */
         .download-buttons {
             display: flex;
             gap: 16px;
@@ -356,6 +354,7 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border: 1px solid rgba(139, 122, 168, 0.10);
         }
         
         .article-image img {
@@ -373,9 +372,10 @@
             font-style: italic;
         }
         
+        /* Understanding: highlight-box = green border + green text */
         .highlight-box {
-            background: rgba(197, 160, 89, 0.08);
-            border-left: 3px solid var(--gold);
+            background: rgba(106, 170, 122, 0.08);
+            border-left: 3px solid var(--green);
             padding: 24px 28px;
             border-radius: 0 12px 12px 0;
             margin: 36px 0;
@@ -384,7 +384,7 @@
         .highlight-box p {
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--antique-gold);
+            color: var(--green);
             margin: 0;
             line-height: 1.7;
         }
@@ -406,37 +406,37 @@
             line-height: 1.7;
         }
         
-        .warning-box {
-            background: rgba(220, 53, 69, 0.1);
-            border-left: 3px solid #dc3545;
-            padding: 24px 28px;
-            border-radius: 0 12px 12px 0;
-            margin: 36px 0;
-        }
-        
-        .warning-box p {
-            font-size: 1rem;
-            color: #ff6b7a;
-            margin: 0;
-            line-height: 1.7;
-        }
-        
-        .warning-box strong {
-            color: #ff6b7a;
-        }
-        
         .separator {
             text-align: center;
             margin: 60px 0;
-            color: var(--lavender);
-            font-size: 1.5rem;
-            opacity: 0.5;
+            position: relative;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .separator::before {
+            content: '';
+            position: absolute;
+            left: 15%;
+            right: 15%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(139,122,168,0.20) 30%, rgba(139,122,168,0.35) 50%, rgba(139,122,168,0.20) 70%, transparent 100%);
+        }
+        .separator::after {
+            content: '\25C6';
+            position: relative;
+            z-index: 1;
+            color: rgba(139,122,168,0.30);
+            font-size: 0.55rem;
+            background: var(--bg);
+            padding: 0 16px;
         }
         
         .article-footer {
             margin-top: 60px;
             padding-top: 40px;
-            border-top: 1px solid rgba(139, 122, 168, 0.15);
+            border-top: 1px solid var(--lavender-border);
         }
         
         .author-card {
@@ -454,7 +454,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--lavender), var(--gold));
+            background: linear-gradient(135deg, var(--lavender), var(--green));
             padding: 3px;
             flex-shrink: 0;
         }
@@ -482,8 +482,8 @@
         }
         
         .cta-box {
-            background: rgba(197, 160, 89, 0.08);
-            border: 1px solid rgba(197, 160, 89, 0.2);
+            background: linear-gradient(180deg, rgba(123,165,192,0.10) 0%, rgba(123,165,192,0.03) 100%);
+            border: 1px solid var(--understanding-border);
             border-radius: 16px;
             padding: 32px;
             text-align: center;
@@ -508,10 +508,10 @@
             align-items: center;
             gap: 12px;
             padding: 14px 28px;
-            background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.3));
-            border: 1px solid var(--gold);
+            background: linear-gradient(135deg, rgba(123,165,192,0.15), rgba(123,165,192,0.25));
+            border: 1px solid var(--understanding);
             border-radius: 12px;
-            color: var(--gold);
+            color: var(--understanding);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
@@ -522,7 +522,7 @@
         }
         
         .download-btn:hover {
-            background: var(--gold);
+            background: var(--understanding);
             color: var(--bg);
             transform: translateY(-2px);
         }
@@ -530,7 +530,7 @@
         .references {
             margin-top: 48px;
             padding-top: 32px;
-            border-top: 1px solid rgba(139, 122, 168, 0.1);
+            border-top: 1px solid var(--lavender-border);
         }
         
         .references h3 {
@@ -551,6 +551,20 @@
             margin-bottom: 8px;
             line-height: 1.5;
         }
+
+        .references li:nth-child(odd) {
+            background: rgba(139,122,168,0.03);
+        }
+
+        .references a {
+            color: var(--lavender);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139,122,168,0.3);
+            transition: all 0.3s ease;
+        }
+        .references a:hover {
+            border-bottom-color: var(--lavender);
+        }
         
         sup {
             color: var(--lavender);
@@ -559,7 +573,7 @@
         
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(139, 122, 168, 0.12);
+            border-top: 1px solid var(--lavender-border);
             text-align: center;
         }
         
@@ -575,12 +589,12 @@
             text-align: center;
             padding: 16px 0;
             margin-bottom: 48px;
-            border-bottom: 1px solid rgba(139, 122, 168, 0.1);
+            border-bottom: 1px solid var(--lavender-border);
         }
 
         .key-takeaways {
-            background: rgba(139, 122, 168, 0.08);
-            border: 1px solid rgba(139, 122, 168, 0.2);
+            background: linear-gradient(180deg, rgba(107,155,170,0.10) 0%, rgba(107,155,170,0.04) 100%);
+            border: 1px solid var(--teal-border);
             border-radius: 16px;
             padding: 28px;
             margin: 48px 0;
@@ -612,7 +626,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--lavender);
+            color: var(--teal);
         }
         
         .faq-section {
@@ -642,7 +656,7 @@
         .faq-item h4 {
             font-size: 1rem;
             font-weight: 600;
-            color: var(--antique-gold);
+            color: #ffffff;
             margin-bottom: 8px;
         }
         
@@ -715,6 +729,7 @@
             color: #ffffff;
             border-bottom-color: var(--lavender);
         }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
@@ -769,7 +784,7 @@
                 </p>
 
                 <div class="key-takeaways">
-                    <h3>📋 Key Takeaways</h3>
+                    <h3>Key Takeaways</h3>
                     <ul>
                         <li>94% of patients with a non-migraine diagnosis actually met the clinical criteria for migraine</li>
                         <li>The average delay between first attack and correct diagnosis is nearly 8 years</li>
@@ -804,7 +819,7 @@
                     <p>Two words can begin to close that gap: <em>migraine</em> and <em>tension</em>. They feel different. They behave differently. And distinguishing them is simpler than most people expect.</p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Walk Up a Flight of Stairs</h2>
@@ -827,7 +842,7 @@
                     <figcaption>The staircase test: migraine pain surges with each step. Tension headache remains unmoved. One question that separates two conditions.</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>What Each One Actually Feels Like</h2>
@@ -854,7 +869,7 @@
                     <figcaption>Two headaches, two realities. Migraine: pulsating, one-sided, with sensory overload. Tension: pressing, bilateral, dull but manageable.</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>The Grey Zone Is Real</h2>
@@ -877,7 +892,7 @@
                     <figcaption>A headache diary over four weeks reveals what a single episode hides. Migraine clusters emerge. Tension dots scatter. The pattern becomes undeniable.</figcaption>
                 </figure>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Why the Right Answer Changes Everything</h2>
@@ -891,7 +906,7 @@
                     <p>And this is not an edge case. Population-based data from Europe indicate that only 2 to 14 percent of people eligible for migraine prevention actually receive it.<sup>[12]</sup> The gap between what medicine knows and what patients get remains, in the words of a European Headache Federation consensus statement, a substantial public health challenge.<sup>[12]</sup></p>
                 </section>
 
-                <div class="separator">* * *</div>
+                <div class="separator"></div>
 
                 <section class="article-section">
                     <h2>Your Move</h2>
@@ -926,7 +941,7 @@
                 </div>
 
                 <div class="faq-section">
-                    <h2>❓ Frequently Asked Questions</h2>
+                    <h2>Frequently Asked Questions</h2>
                     
                     <div class="faq-item">
                         <h4>Can I have both migraine and tension headache?</h4>
@@ -968,7 +983,7 @@
                 </div>
 
                 <div class="references">
-                    <h3>📚 References</h3>
+                    <h3>References</h3>
                     <ol>
                         <li>Viana M, Khaliq F, Zecca C, et al. Poor patient awareness and frequent misdiagnosis of migraine: findings from a large transcontinental cohort. <em>European Journal of Neurology.</em> 2020;27(3):536-541. <a href="https://doi.org/10.1111/ene.14114" target="_blank">doi:10.1111/ene.14114</a></li>
                         <li>Lipton RB, Stewart WF, Diamond S, et al. Prevalence and burden of migraine in the United States: data from the American Migraine Study II. <em>Headache.</em> 2001;41(7):646-657. <a href="https://doi.org/10.1046/j.1526-4610.2001.041007646.x" target="_blank">doi:10.1046/j.1526-4610.2001.041007646.x</a></li>
