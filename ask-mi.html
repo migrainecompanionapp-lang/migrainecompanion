@@ -276,10 +276,16 @@
             position: relative;
             z-index: 9;
             background: var(--surface-base);
-            transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+            max-height: 200px;
+            overflow: hidden;
         }
-        .constellation-area.compact {
-            padding: 4px var(--sp-md) 2px;
+        .constellation-area.hidden {
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            opacity: 0;
+            pointer-events: none;
         }
         .constellation-badge {
             max-width: 800px; margin: 0 auto;
@@ -292,39 +298,103 @@
             backdrop-filter: blur(20px) saturate(140%);
             -webkit-backdrop-filter: blur(20px) saturate(140%);
             box-shadow: 0 2px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.05);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
-            overflow: hidden;
         }
-        .constellation-badge.compact {
-            padding: 4px 12px;
-            border-radius: 10px;
-            gap: 8px;
-            background: linear-gradient(135deg, rgba(106, 170, 122, 0.07), rgba(122, 91, 168, 0.05));
-            border-color: rgba(106, 170, 122, 0.15);
+
+        /* ─── STAR BADGE in header (after first chat message) ─── */
+        .constellation-star {
+            display: none;
+            width: 24px; height: 24px;
+            align-items: center; justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(106, 170, 122, 0.20), rgba(106, 170, 122, 0.08));
+            border: 1px solid rgba(106, 170, 122, 0.35);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+            margin-left: 4px;
+            position: relative;
+            box-shadow: 0 0 8px rgba(106, 170, 122, 0.15);
         }
-        .constellation-badge.compact:hover {
-            background: linear-gradient(135deg, rgba(106, 170, 122, 0.10), rgba(122, 91, 168, 0.07));
-            border-color: rgba(106, 170, 122, 0.22);
+        .constellation-star.visible {
+            display: inline-flex;
+            animation: star-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .constellation-badge.compact .constellation-icon {
-            width: 18px; height: 18px;
-            border-radius: 5px;
-            box-shadow: 0 0 8px rgba(106, 170, 122, 0.12);
+        .constellation-star:hover {
+            background: linear-gradient(135deg, rgba(106, 170, 122, 0.30), rgba(106, 170, 122, 0.14));
+            border-color: rgba(106, 170, 122, 0.50);
+            transform: scale(1.05);
         }
-        .constellation-badge.compact .constellation-icon svg {
-            width: 9px; height: 9px;
+        .constellation-star svg { width: 12px; height: 12px; fill: var(--green); }
+        @keyframes star-in {
+            from { opacity: 0; transform: scale(0.6); }
+            to { opacity: 1; transform: scale(1); }
         }
-        .constellation-badge.compact .constellation-title {
+
+        /* Star popup — same look as help popup */
+        .constellation-popup {
+            display: none; position: absolute; top: calc(100% + 8px); right: 0;
+            width: 280px; background: #1e1c24;
+            border: 1px solid rgba(106, 170, 122, 0.20); border-radius: 14px; padding: var(--sp-md);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.6), 0 4px 16px rgba(0,0,0,0.3);
+            z-index: 100;
+            text-align: left;
+        }
+        .constellation-popup::before {
+            content: ''; position: absolute; top: -6px; right: 12px;
+            width: 12px; height: 12px; background: #1e1c24; transform: rotate(45deg);
+            border-left: 1px solid rgba(106, 170, 122, 0.20);
+            border-top: 1px solid rgba(106, 170, 122, 0.20);
+        }
+        .constellation-popup.visible { display: block; animation: help-in 0.2s ease forwards; }
+        .constellation-popup-title {
+            font-family: 'Comfortaa', cursive;
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 4px;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .constellation-popup-title svg { width: 12px; height: 12px; fill: var(--green); }
+        .constellation-popup-text {
+            font-size: var(--fs-sm);
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: var(--sp-sm);
+        }
+        .constellation-popup-actions {
+            display: flex; gap: 8px;
+        }
+        .constellation-popup-btn {
+            flex: 1;
             font-size: var(--fs-xs);
             font-weight: 500;
-            color: var(--text-secondary);
+            color: var(--lavender);
+            background: rgba(122, 91, 168, 0.12);
+            border: 1px solid rgba(122, 91, 168, 0.22);
+            padding: 6px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.25s ease;
         }
-        .constellation-badge.compact .constellation-subtitle {
-            display: none;
+        .constellation-popup-btn:hover {
+            background: rgba(122, 91, 168, 0.20);
+            border-color: rgba(122, 91, 168, 0.35);
+            color: var(--cream);
         }
-        .constellation-badge.compact .constellation-actions {
-            display: none;
+        .constellation-popup-btn.danger {
+            color: var(--text-muted);
+            background: transparent;
+            border-color: rgba(255,255,255,0.08);
+            flex: 0 0 auto;
+            padding: 6px 12px;
+        }
+        .constellation-popup-btn.danger:hover {
+            color: #e07070;
+            background: rgba(224, 112, 112, 0.08);
+            border-color: rgba(224, 112, 112, 0.20);
         }
         .constellation-badge:hover {
             background: linear-gradient(135deg, rgba(122, 91, 168, 0.14), rgba(139, 122, 168, 0.09));
@@ -611,16 +681,13 @@
             .restore-card { border-radius:18px; padding:var(--sp-sm) var(--sp-md) var(--sp-md); margin:var(--sp-sm); }
             .help-popup { width:calc(100vw - 32px); max-width:280px; right:-8px; }
             .constellation-area { padding: 10px var(--sp-sm) var(--sp-xs); }
-            .constellation-area.compact { padding: 6px var(--sp-sm) 2px; }
             .constellation-badge { padding: 8px 10px; gap: 8px; }
-            .constellation-badge.compact { padding: 4px 10px; }
             .constellation-icon { width: 24px; height: 24px; }
             .constellation-icon svg { width: 12px; height: 12px; }
-            .constellation-badge.compact .constellation-icon { width: 16px; height: 16px; }
-            .constellation-badge.compact .constellation-icon svg { width: 8px; height: 8px; }
             .constellation-title { font-size: var(--fs-xs); }
             .constellation-subtitle { font-size: var(--fs-xs); }
             .constellation-btn { font-size: var(--fs-xs); padding: 4px 8px; }
+            .constellation-popup { width: calc(100vw - 32px); max-width: 280px; right: -8px; }
         }
     </style>
 </head>
@@ -633,6 +700,20 @@
                     <img src="images/mi-icon.png" alt="Mi">
                     <span class="name">Ask Mi</span>
                     <span class="sub-badge" id="subBadge">PRO</span>
+                    <button class="constellation-star" id="constellationStar" aria-label="Constellation loaded">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.27 5.79 21l2.39-7.15L2 9.36h7.61L12 2z"/></svg>
+                        <div class="constellation-popup" id="constellationPopup">
+                            <div class="constellation-popup-title">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.27 5.79 21l2.39-7.15L2 9.36h7.61L12 2z"/></svg>
+                                <span>Mi knows you</span>
+                            </div>
+                            <div class="constellation-popup-text" id="constellationPopupText">Your Constellation is loaded · 3 of 5 profiles</div>
+                            <div class="constellation-popup-actions">
+                                <button class="constellation-popup-btn" id="constellationPopupUpdate">Update</button>
+                                <button class="constellation-popup-btn danger" id="constellationPopupClear" aria-label="Clear">×</button>
+                            </div>
+                        </div>
+                    </button>
                     <span class="subtitle">AI Migraine Advisor</span>
                 </div>
             </div>
@@ -1027,6 +1108,10 @@
         `;
         document.getElementById('constellationReuploadBtn').addEventListener('click', () => constellationInput.click());
         document.getElementById('constellationClearBtn').addEventListener('click', clearConstellation);
+        // Sync popup text if star is visible (user is in chat)
+        if (constellationPopupText) {
+            constellationPopupText.textContent = `Your Constellation is loaded · ${profileText}`;
+        }
     }
 
     function setConstellationEmpty() {
@@ -1160,38 +1245,69 @@
     document.getElementById('constellationUploadBtn').addEventListener('click', () => constellationInput.click());
 
     constellationBadge.addEventListener('click', (e) => {
-        // If compact and clicked — expand to full
-        if (constellationBadge.classList.contains('compact')) {
-            expandConstellation();
-            return;
-        }
         if (hasConstellation) return;
         if (e.target.closest('.constellation-btn')) return;
         constellationInput.click();
     });
 
-    // ─── Collapse/expand constellation badge ───
+    // ─── Hide badge / show star (after first chat message) ───
     const constellationArea = document.getElementById('constellationArea');
+    const constellationStar = document.getElementById('constellationStar');
+    const constellationPopup = document.getElementById('constellationPopup');
+    const constellationPopupText = document.getElementById('constellationPopupText');
 
-    function collapseConstellation() {
+    function hideBadgeShowStar() {
         if (!hasConstellation) return;
-        constellationBadge.classList.add('compact');
-        constellationArea.classList.add('compact');
+        constellationArea.classList.add('hidden');
+        constellationStar.classList.add('visible');
     }
 
-    function expandConstellation() {
-        constellationBadge.classList.remove('compact');
-        constellationArea.classList.remove('compact');
-        // Auto-collapse again after 5 seconds if user doesn't interact
-        clearTimeout(window._constellationCollapseTimer);
-        if (chatHistory && chatHistory.length > 0) {
-            window._constellationCollapseTimer = setTimeout(() => {
-                if (hasConstellation && chatHistory.length > 0) {
-                    collapseConstellation();
-                }
-            }, 5000);
-        }
+    function showBadgeHideStar() {
+        constellationArea.classList.remove('hidden');
+        constellationStar.classList.remove('visible');
+        constellationPopup.classList.remove('visible');
     }
+
+    function updatePopupText() {
+        const subtitle = document.getElementById('constellationSubtitle').textContent;
+        constellationPopupText.textContent = subtitle || 'Your Constellation is loaded';
+    }
+
+    // Star click → toggle popup
+    constellationStar.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (constellationPopup.contains(e.target) && e.target !== constellationStar) return;
+        // Close other popups
+        if (typeof helpPopup !== 'undefined') helpPopup.classList.remove('visible');
+        if (typeof infoTip !== 'undefined') infoTip.classList.remove('visible');
+        updatePopupText();
+        constellationPopup.classList.toggle('visible');
+    });
+
+    // Close popup on outside click
+    document.addEventListener('click', (e) => {
+        if (!constellationStar.contains(e.target)) {
+            constellationPopup.classList.remove('visible');
+        }
+    });
+    window.addEventListener('resize', () => { constellationPopup.classList.remove('visible'); });
+
+    // Popup buttons
+    document.getElementById('constellationPopupUpdate').addEventListener('click', (e) => {
+        e.stopPropagation();
+        constellationPopup.classList.remove('visible');
+        constellationInput.click();
+    });
+    document.getElementById('constellationPopupClear').addEventListener('click', async (e) => {
+        e.stopPropagation();
+        constellationPopup.classList.remove('visible');
+        await clearConstellation();
+        // After clear: hide star and show badge again (it will show empty state)
+        if (!hasConstellation) {
+            constellationStar.classList.remove('visible');
+            constellationArea.classList.remove('hidden');
+        }
+    });
 
     // ─── ИНИЦИАЛИЗАЦИЯ ───
     window.addEventListener('load', async () => {
@@ -1422,10 +1538,8 @@
         chatHistory = [];
         chatMessages.innerHTML = '';
         if (welcome) { welcome.style.display = 'flex'; chatMessages.appendChild(welcome); }
-        // Expand constellation badge back to full view on new chat
-        constellationBadge.classList.remove('compact');
-        constellationArea.classList.remove('compact');
-        clearTimeout(window._constellationCollapseTimer);
+        // Show full badge again, hide star (start of new conversation)
+        showBadgeHideStar();
     });
 
     async function sendMessage() {
@@ -1446,8 +1560,8 @@
         inputBox.style.height = 'auto';
         sendBtn.classList.remove('active');
 
-        // Collapse constellation badge to give chat more space
-        collapseConstellation();
+        // Hide badge completely, show star in header (gives chat full space)
+        hideBadgeShowStar();
 
         const typingEl = addTyping();
 
