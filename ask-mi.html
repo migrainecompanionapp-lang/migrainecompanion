@@ -332,18 +332,18 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* Star popup — same look as help popup */
+        /* Star popup — fixed positioning controlled by JS (like info-tooltip) */
         .constellation-popup {
-            display: none; position: absolute; top: calc(100% + 8px); right: 0;
-            width: 280px; background: #1e1c24;
+            display: none; position: fixed;
+            width: 260px; background: #1e1c24;
             border: 1px solid rgba(106, 170, 122, 0.20); border-radius: 14px; padding: var(--sp-md);
             box-shadow: 0 16px 48px rgba(0,0,0,0.6), 0 4px 16px rgba(0,0,0,0.3);
-            z-index: 100;
+            z-index: 9999;
             text-align: left;
         }
         .constellation-popup::before {
-            content: ''; position: absolute; top: -6px; right: 12px;
-            width: 12px; height: 12px; background: #1e1c24; transform: rotate(45deg);
+            content: ''; position: absolute; top: -6px; left: var(--cstar-arrow-left, 50%); transform: translateX(-50%) rotate(45deg);
+            width: 12px; height: 12px; background: #1e1c24;
             border-left: 1px solid rgba(106, 170, 122, 0.20);
             border-top: 1px solid rgba(106, 170, 122, 0.20);
         }
@@ -687,7 +687,7 @@
             .constellation-title { font-size: var(--fs-xs); }
             .constellation-subtitle { font-size: var(--fs-xs); }
             .constellation-btn { font-size: var(--fs-xs); padding: 4px 8px; }
-            .constellation-popup { width: calc(100vw - 32px); max-width: 280px; right: -8px; }
+            .constellation-popup { width: calc(100vw - 32px); max-width: 280px; }
         }
     </style>
 </head>
@@ -702,17 +702,6 @@
                     <span class="sub-badge" id="subBadge">PRO</span>
                     <button class="constellation-star" id="constellationStar" aria-label="Constellation loaded">
                         <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.27 5.79 21l2.39-7.15L2 9.36h7.61L12 2z"/></svg>
-                        <div class="constellation-popup" id="constellationPopup">
-                            <div class="constellation-popup-title">
-                                <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.27 5.79 21l2.39-7.15L2 9.36h7.61L12 2z"/></svg>
-                                <span>Mi knows you</span>
-                            </div>
-                            <div class="constellation-popup-text" id="constellationPopupText">Your Constellation is loaded · 3 of 5 profiles</div>
-                            <div class="constellation-popup-actions">
-                                <button class="constellation-popup-btn" id="constellationPopupUpdate">Update</button>
-                                <button class="constellation-popup-btn danger" id="constellationPopupClear" aria-label="Clear">×</button>
-                            </div>
-                        </div>
                     </button>
                     <span class="subtitle">AI Migraine Advisor</span>
                 </div>
@@ -917,6 +906,19 @@
             <div class="restore-msg success" id="restoreSuccess">Access restored!</div>
             <button class="restore-cta" id="restoreBtn">Check subscription</button>
             <button class="restore-skip" id="restoreSkipBtn">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Constellation popup (positioned by JS like info-tooltip) -->
+    <div class="constellation-popup" id="constellationPopup">
+        <div class="constellation-popup-title">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.27 5.79 21l2.39-7.15L2 9.36h7.61L12 2z"/></svg>
+            <span>Mi knows you</span>
+        </div>
+        <div class="constellation-popup-text" id="constellationPopupText">Your Constellation is loaded · 3 of 5 profiles</div>
+        <div class="constellation-popup-actions">
+            <button class="constellation-popup-btn" id="constellationPopupUpdate">Update</button>
+            <button class="constellation-popup-btn danger" id="constellationPopupClear" aria-label="Clear">×</button>
         </div>
     </div>
 
@@ -1273,20 +1275,42 @@
         constellationPopupText.textContent = subtitle || 'Your Constellation is loaded';
     }
 
+    // Position popup relative to star (clamps to viewport on mobile)
+    function positionConstellationPopup() {
+        const rect = constellationStar.getBoundingClientRect();
+        constellationPopup.style.visibility = 'hidden';
+        constellationPopup.style.display = 'block';
+        const popW = constellationPopup.offsetWidth;
+        constellationPopup.style.display = '';
+        constellationPopup.style.visibility = '';
+
+        const starCenterX = rect.left + rect.width / 2;
+        let left = starCenterX - popW / 2;
+        left = Math.max(16, Math.min(left, window.innerWidth - popW - 16));
+        constellationPopup.style.top = (rect.bottom + 10) + 'px';
+        constellationPopup.style.left = left + 'px';
+        const arrowLeft = starCenterX - left;
+        constellationPopup.style.setProperty('--cstar-arrow-left', arrowLeft + 'px');
+    }
+
     // Star click → toggle popup
     constellationStar.addEventListener('click', (e) => {
         e.stopPropagation();
-        if (constellationPopup.contains(e.target) && e.target !== constellationStar) return;
         // Close other popups
         if (typeof helpPopup !== 'undefined') helpPopup.classList.remove('visible');
         if (typeof infoTip !== 'undefined') infoTip.classList.remove('visible');
-        updatePopupText();
-        constellationPopup.classList.toggle('visible');
+        if (constellationPopup.classList.contains('visible')) {
+            constellationPopup.classList.remove('visible');
+        } else {
+            updatePopupText();
+            positionConstellationPopup();
+            constellationPopup.classList.add('visible');
+        }
     });
 
     // Close popup on outside click
     document.addEventListener('click', (e) => {
-        if (!constellationStar.contains(e.target)) {
+        if (!constellationStar.contains(e.target) && !constellationPopup.contains(e.target)) {
             constellationPopup.classList.remove('visible');
         }
     });
