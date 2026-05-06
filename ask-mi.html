@@ -272,10 +272,14 @@
         /* ─── CONSTELLATION BADGE (Mi memory) ─── */
         .constellation-area {
             flex-shrink: 0;
-            padding: 0 var(--sp-md) var(--sp-xs);
+            padding: 8px var(--sp-md) var(--sp-xs);
             position: relative;
             z-index: 9;
             background: var(--surface-base);
+            transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .constellation-area.compact {
+            padding: 4px var(--sp-md) 2px;
         }
         .constellation-badge {
             max-width: 800px; margin: 0 auto;
@@ -288,8 +292,39 @@
             backdrop-filter: blur(20px) saturate(140%);
             -webkit-backdrop-filter: blur(20px) saturate(140%);
             box-shadow: 0 2px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.05);
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
+            overflow: hidden;
+        }
+        .constellation-badge.compact {
+            padding: 4px 12px;
+            border-radius: 10px;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(106, 170, 122, 0.07), rgba(122, 91, 168, 0.05));
+            border-color: rgba(106, 170, 122, 0.15);
+        }
+        .constellation-badge.compact:hover {
+            background: linear-gradient(135deg, rgba(106, 170, 122, 0.10), rgba(122, 91, 168, 0.07));
+            border-color: rgba(106, 170, 122, 0.22);
+        }
+        .constellation-badge.compact .constellation-icon {
+            width: 18px; height: 18px;
+            border-radius: 5px;
+            box-shadow: 0 0 8px rgba(106, 170, 122, 0.12);
+        }
+        .constellation-badge.compact .constellation-icon svg {
+            width: 9px; height: 9px;
+        }
+        .constellation-badge.compact .constellation-title {
+            font-size: var(--fs-xs);
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .constellation-badge.compact .constellation-subtitle {
+            display: none;
+        }
+        .constellation-badge.compact .constellation-actions {
+            display: none;
         }
         .constellation-badge:hover {
             background: linear-gradient(135deg, rgba(122, 91, 168, 0.14), rgba(139, 122, 168, 0.09));
@@ -575,10 +610,14 @@
             .restore-link { font-size:var(--fs-xs); }
             .restore-card { border-radius:18px; padding:var(--sp-sm) var(--sp-md) var(--sp-md); margin:var(--sp-sm); }
             .help-popup { width:calc(100vw - 32px); max-width:280px; right:-8px; }
-            .constellation-area { padding: 0 var(--sp-sm) var(--sp-xs); }
+            .constellation-area { padding: 10px var(--sp-sm) var(--sp-xs); }
+            .constellation-area.compact { padding: 6px var(--sp-sm) 2px; }
             .constellation-badge { padding: 8px 10px; gap: 8px; }
+            .constellation-badge.compact { padding: 4px 10px; }
             .constellation-icon { width: 24px; height: 24px; }
             .constellation-icon svg { width: 12px; height: 12px; }
+            .constellation-badge.compact .constellation-icon { width: 16px; height: 16px; }
+            .constellation-badge.compact .constellation-icon svg { width: 8px; height: 8px; }
             .constellation-title { font-size: var(--fs-xs); }
             .constellation-subtitle { font-size: var(--fs-xs); }
             .constellation-btn { font-size: var(--fs-xs); padding: 4px 8px; }
@@ -1121,10 +1160,38 @@
     document.getElementById('constellationUploadBtn').addEventListener('click', () => constellationInput.click());
 
     constellationBadge.addEventListener('click', (e) => {
+        // If compact and clicked — expand to full
+        if (constellationBadge.classList.contains('compact')) {
+            expandConstellation();
+            return;
+        }
         if (hasConstellation) return;
         if (e.target.closest('.constellation-btn')) return;
         constellationInput.click();
     });
+
+    // ─── Collapse/expand constellation badge ───
+    const constellationArea = document.getElementById('constellationArea');
+
+    function collapseConstellation() {
+        if (!hasConstellation) return;
+        constellationBadge.classList.add('compact');
+        constellationArea.classList.add('compact');
+    }
+
+    function expandConstellation() {
+        constellationBadge.classList.remove('compact');
+        constellationArea.classList.remove('compact');
+        // Auto-collapse again after 5 seconds if user doesn't interact
+        clearTimeout(window._constellationCollapseTimer);
+        if (chatHistory && chatHistory.length > 0) {
+            window._constellationCollapseTimer = setTimeout(() => {
+                if (hasConstellation && chatHistory.length > 0) {
+                    collapseConstellation();
+                }
+            }, 5000);
+        }
+    }
 
     // ─── ИНИЦИАЛИЗАЦИЯ ───
     window.addEventListener('load', async () => {
@@ -1355,6 +1422,10 @@
         chatHistory = [];
         chatMessages.innerHTML = '';
         if (welcome) { welcome.style.display = 'flex'; chatMessages.appendChild(welcome); }
+        // Expand constellation badge back to full view on new chat
+        constellationBadge.classList.remove('compact');
+        constellationArea.classList.remove('compact');
+        clearTimeout(window._constellationCollapseTimer);
     });
 
     async function sendMessage() {
@@ -1374,6 +1445,9 @@
         inputBox.value = '';
         inputBox.style.height = 'auto';
         sendBtn.classList.remove('active');
+
+        // Collapse constellation badge to give chat more space
+        collapseConstellation();
 
         const typingEl = addTyping();
 
