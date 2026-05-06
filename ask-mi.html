@@ -26,6 +26,7 @@
             --text-secondary: #A89E90;
             --text-muted: #918880;
             --lavender: #8B7AA8;
+            --amethyst: #7A5BA8;
             --gold: #C5A059;
             --green: #6AAA7A;
             --teal: #6B9BAA;
@@ -268,6 +269,132 @@
         }
         .msg-bubble h2 { font-family:'Comfortaa',cursive; font-size:var(--fs-base); color:var(--cream); margin:var(--sp-sm) 0 var(--sp-xs) 0; font-weight:600; }
 
+        /* ─── CONSTELLATION BADGE (Mi memory) ─── */
+        .constellation-area {
+            flex-shrink: 0;
+            padding: 0 var(--sp-md) var(--sp-xs);
+            position: relative;
+            z-index: 9;
+            background: var(--surface-base);
+        }
+        .constellation-badge {
+            max-width: 800px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            gap: var(--sp-sm);
+            padding: 10px 14px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(122, 91, 168, 0.10), rgba(139, 122, 168, 0.06));
+            border: 1px solid rgba(122, 91, 168, 0.18);
+            backdrop-filter: blur(20px) saturate(140%);
+            -webkit-backdrop-filter: blur(20px) saturate(140%);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.05);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+        .constellation-badge:hover {
+            background: linear-gradient(135deg, rgba(122, 91, 168, 0.14), rgba(139, 122, 168, 0.09));
+            border-color: rgba(122, 91, 168, 0.28);
+        }
+        .constellation-badge.loaded {
+            cursor: default;
+            background: linear-gradient(135deg, rgba(106, 170, 122, 0.10), rgba(122, 91, 168, 0.08));
+            border-color: rgba(106, 170, 122, 0.22);
+        }
+        .constellation-badge.loaded:hover {
+            background: linear-gradient(135deg, rgba(106, 170, 122, 0.13), rgba(122, 91, 168, 0.10));
+            border-color: rgba(106, 170, 122, 0.28);
+        }
+        .constellation-left {
+            display: flex; align-items: center; gap: 10px;
+            flex: 1; min-width: 0;
+        }
+        .constellation-icon {
+            width: 28px; height: 28px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(122, 91, 168, 0.25), rgba(139, 122, 168, 0.12));
+            border: 1px solid rgba(122, 91, 168, 0.30);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 12px rgba(122, 91, 168, 0.15);
+        }
+        .constellation-badge.loaded .constellation-icon {
+            background: linear-gradient(135deg, rgba(106, 170, 122, 0.25), rgba(106, 170, 122, 0.12));
+            border-color: rgba(106, 170, 122, 0.30);
+            box-shadow: 0 0 12px rgba(106, 170, 122, 0.18);
+        }
+        .constellation-icon svg { width: 14px; height: 14px; fill: var(--lavender); }
+        .constellation-badge.loaded .constellation-icon svg { fill: var(--green); }
+        .constellation-text {
+            display: flex; flex-direction: column; gap: 2px;
+            min-width: 0; flex: 1;
+        }
+        .constellation-title {
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            color: var(--cream);
+            line-height: 1.3;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .constellation-subtitle {
+            font-size: var(--fs-xs);
+            color: var(--text-secondary);
+            line-height: 1.4;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .constellation-actions {
+            display: flex; align-items: center; gap: 6px;
+            flex-shrink: 0;
+        }
+        .constellation-btn {
+            font-size: var(--fs-xs);
+            font-weight: 500;
+            color: var(--lavender);
+            background: rgba(122, 91, 168, 0.12);
+            border: 1px solid rgba(122, 91, 168, 0.22);
+            padding: 5px 11px;
+            border-radius: 16px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+        .constellation-btn:hover {
+            background: rgba(122, 91, 168, 0.20);
+            border-color: rgba(122, 91, 168, 0.35);
+            color: var(--cream);
+        }
+        .constellation-btn.clear {
+            color: var(--text-muted);
+            background: transparent;
+            border-color: rgba(255,255,255,0.08);
+            padding: 4px 8px;
+        }
+        .constellation-btn.clear:hover {
+            color: #e07070;
+            background: rgba(224, 112, 112, 0.08);
+            border-color: rgba(224, 112, 112, 0.20);
+        }
+        .constellation-input { display: none; }
+        .constellation-msg {
+            max-width: 800px; margin: 6px auto 0;
+            font-size: var(--fs-xs);
+            color: var(--text-muted);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            min-height: 14px;
+        }
+        .constellation-msg.visible { opacity: 1; }
+        .constellation-msg.error { color: #e07070; }
+        .constellation-msg.success { color: var(--green); }
+        @keyframes constellation-pulse {
+            0%, 100% { box-shadow: 0 0 12px rgba(122, 91, 168, 0.15); }
+            50% { box-shadow: 0 0 20px rgba(122, 91, 168, 0.30); }
+        }
+        .constellation-icon.uploading {
+            animation: constellation-pulse 1.2s ease infinite;
+        }
+
         /* ─── INPUT AREA ─── */
         .input-area { flex-shrink:0; padding:var(--sp-sm) var(--sp-md) calc(var(--sp-sm) + env(safe-area-inset-bottom)); position:relative; z-index:10; background:var(--surface-base); }
         .input-area::before { content:''; position:absolute; top:-30px; left:0; right:0; height:30px; background:linear-gradient(to top,var(--surface-base),transparent); pointer-events:none; }
@@ -448,6 +575,13 @@
             .restore-link { font-size:var(--fs-xs); }
             .restore-card { border-radius:18px; padding:var(--sp-sm) var(--sp-md) var(--sp-md); margin:var(--sp-sm); }
             .help-popup { width:calc(100vw - 32px); max-width:280px; right:-8px; }
+            .constellation-area { padding: 0 var(--sp-sm) var(--sp-xs); }
+            .constellation-badge { padding: 8px 10px; gap: 8px; }
+            .constellation-icon { width: 24px; height: 24px; }
+            .constellation-icon svg { width: 12px; height: 12px; }
+            .constellation-title { font-size: var(--fs-xs); }
+            .constellation-subtitle { font-size: var(--fs-xs); }
+            .constellation-btn { font-size: var(--fs-xs); padding: 4px 8px; }
         }
     </style>
 </head>
@@ -531,6 +665,26 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- ─── CONSTELLATION BADGE (Mi memory) ─── -->
+    <div class="constellation-area" id="constellationArea">
+        <div class="constellation-badge" id="constellationBadge">
+            <div class="constellation-left">
+                <div class="constellation-icon" id="constellationIcon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.27 5.79 21l2.39-7.15L2 9.36h7.61L12 2z"/></svg>
+                </div>
+                <div class="constellation-text">
+                    <div class="constellation-title" id="constellationTitle">Make Mi personal</div>
+                    <div class="constellation-subtitle" id="constellationSubtitle">Upload your Constellation from MI Lab</div>
+                </div>
+            </div>
+            <div class="constellation-actions" id="constellationActions">
+                <button class="constellation-btn" id="constellationUploadBtn">Upload</button>
+            </div>
+        </div>
+        <input type="file" class="constellation-input" id="constellationInput" accept=".json,application/json">
+        <div class="constellation-msg" id="constellationMsg"></div>
     </div>
 
     <div class="input-area">
@@ -677,6 +831,7 @@
 
     let isProActive = false;
     let paymentGracePeriod = false;
+    let hasConstellation = false;
 
     // ─── ПРОВЕРКА ПОДПИСКИ ЧЕРЕЗ СЕРВЕР ───
     async function checkSubscription() {
@@ -779,6 +934,7 @@
                 restoreError.style.display = 'none';
                 restoreBtn.textContent = 'Access restored!';
                 updateTrialUI(true);
+                checkConstellationStatus();
                 setTimeout(() => document.getElementById('restoreOverlay').classList.remove('visible'), 1200);
             } else {
                 restoreError.textContent = 'No active subscription found for this email';
@@ -797,6 +953,179 @@
     document.getElementById('restoreBtn').addEventListener('click', restoreAccess);
     document.getElementById('restoreEmail').addEventListener('keydown', e => { if (e.key === 'Enter') restoreAccess(); });
 
+    // ═══════════════════════════════════════════════
+    // ─── CONSTELLATION (Mi memory feature) ───
+    // ═══════════════════════════════════════════════
+
+    const constellationBadge = document.getElementById('constellationBadge');
+    const constellationIcon = document.getElementById('constellationIcon');
+    const constellationTitle = document.getElementById('constellationTitle');
+    const constellationSubtitle = document.getElementById('constellationSubtitle');
+    const constellationActions = document.getElementById('constellationActions');
+    const constellationInput = document.getElementById('constellationInput');
+    const constellationMsg = document.getElementById('constellationMsg');
+
+    function showConstellationMsg(text, type) {
+        constellationMsg.textContent = text;
+        constellationMsg.className = 'constellation-msg visible ' + (type || '');
+        setTimeout(() => {
+            constellationMsg.classList.remove('visible');
+        }, 4000);
+    }
+
+    function setConstellationLoaded(profilesCompleted, uploadedAt) {
+        hasConstellation = true;
+        constellationBadge.classList.add('loaded');
+        constellationIcon.classList.remove('uploading');
+        constellationTitle.textContent = '✓ Your Constellation is loaded';
+        const profileText = profilesCompleted === 1
+            ? '1 profile · Mi knows you'
+            : `${profilesCompleted} of 5 profiles · Mi knows you`;
+        constellationSubtitle.textContent = profileText;
+        constellationActions.innerHTML = `
+            <button class="constellation-btn" id="constellationReuploadBtn">Update</button>
+            <button class="constellation-btn clear" id="constellationClearBtn" aria-label="Clear">×</button>
+        `;
+        document.getElementById('constellationReuploadBtn').addEventListener('click', () => constellationInput.click());
+        document.getElementById('constellationClearBtn').addEventListener('click', clearConstellation);
+    }
+
+    function setConstellationEmpty() {
+        hasConstellation = false;
+        constellationBadge.classList.remove('loaded');
+        constellationIcon.classList.remove('uploading');
+        constellationTitle.textContent = 'Make Mi personal';
+        constellationSubtitle.textContent = 'Upload your Constellation from MI Lab';
+        constellationActions.innerHTML = `<button class="constellation-btn" id="constellationUploadBtn">Upload</button>`;
+        document.getElementById('constellationUploadBtn').addEventListener('click', () => constellationInput.click());
+    }
+
+    async function checkConstellationStatus() {
+        const email = getSavedEmail();
+        if (!email) {
+            setConstellationEmpty();
+            return;
+        }
+        try {
+            const res = await fetch(`${MI_WORKER_URL}/profile-status?email=${encodeURIComponent(email)}`);
+            const data = await res.json();
+            if (data.hasProfile) {
+                setConstellationLoaded(data.profiles_completed || 0, data.uploaded_at);
+            } else {
+                setConstellationEmpty();
+            }
+        } catch (e) {
+            console.error('Constellation status check failed:', e);
+            setConstellationEmpty();
+        }
+    }
+
+    async function uploadConstellation(file) {
+        if (!file) return;
+
+        if (!file.name.toLowerCase().endsWith('.json')) {
+            showConstellationMsg('Please select a .json file', 'error');
+            return;
+        }
+        if (file.size > 200000) {
+            showConstellationMsg('File too large (max 200KB)', 'error');
+            return;
+        }
+
+        let email = getSavedEmail();
+        if (!email) {
+            email = prompt('Enter your email to save your Constellation:');
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showConstellationMsg('Please enter a valid email', 'error');
+                return;
+            }
+            email = email.toLowerCase().trim();
+            saveEmail(email);
+        }
+
+        constellationIcon.classList.add('uploading');
+        constellationTitle.textContent = 'Uploading...';
+        constellationSubtitle.textContent = 'Sending your Constellation to Mi';
+
+        try {
+            const text = await file.text();
+            let profileJson;
+            try {
+                profileJson = JSON.parse(text);
+            } catch (e) {
+                throw new Error('Invalid JSON file');
+            }
+
+            if (!profileJson || typeof profileJson !== 'object') {
+                throw new Error('Invalid profile format');
+            }
+            if (profileJson.schema_version !== '1.0') {
+                throw new Error('Unsupported schema version. Please export from the latest version of MIgraine Companion.');
+            }
+
+            const res = await fetch(MI_WORKER_URL + '/upload-profile', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, profileJson })
+            });
+            const data = await res.json();
+
+            if (!res.ok || !data.ok) {
+                throw new Error(data.message || data.error || 'Upload failed');
+            }
+
+            setConstellationLoaded(data.profiles_completed || 0, data.uploaded_at);
+            showConstellationMsg('✓ Mi now knows you. Ask anything.', 'success');
+
+        } catch (e) {
+            console.error('Upload error:', e);
+            showConstellationMsg(e.message || 'Upload failed. Please try again.', 'error');
+            await checkConstellationStatus();
+        } finally {
+            constellationInput.value = '';
+        }
+    }
+
+    async function clearConstellation() {
+        if (!confirm('Clear your Constellation from Mi\'s memory? You can upload it again later.')) return;
+
+        const email = getSavedEmail();
+        if (!email) {
+            setConstellationEmpty();
+            return;
+        }
+
+        try {
+            const res = await fetch(MI_WORKER_URL + '/profile', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            const data = await res.json();
+            if (data.ok) {
+                setConstellationEmpty();
+                showConstellationMsg('Constellation cleared from Mi\'s memory', 'success');
+            } else {
+                showConstellationMsg('Could not clear. Please try again.', 'error');
+            }
+        } catch (e) {
+            showConstellationMsg('Connection error. Please try again.', 'error');
+        }
+    }
+
+    constellationInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) uploadConstellation(file);
+    });
+
+    document.getElementById('constellationUploadBtn').addEventListener('click', () => constellationInput.click());
+
+    constellationBadge.addEventListener('click', (e) => {
+        if (hasConstellation) return;
+        if (e.target.closest('.constellation-btn')) return;
+        constellationInput.click();
+    });
+
     // ─── ИНИЦИАЛИЗАЦИЯ ───
     window.addEventListener('load', async () => {
         const urlParams = new URLSearchParams(window.location.search);
@@ -813,6 +1142,7 @@
             updateTrialUI(true);
             localStorage.setItem('mi_was_pro', 'true');
             showOverlay('success');
+            checkConstellationStatus();
 
             const checkAndConfirm = async () => {
                 const active = await checkSubscription();
@@ -852,6 +1182,8 @@
         } else {
             updateTrialUI(false);
         }
+
+        checkConstellationStatus();
     });
 
     // ─── КНОПКА ОПЛАТЫ ───
@@ -1046,10 +1378,14 @@
         const typingEl = addTyping();
 
         try {
+            const savedEmail = getSavedEmail();
+            const requestBody = { question: text, history: chatHistory };
+            if (savedEmail) requestBody.email = savedEmail;
+
             const response = await fetch(MI_WORKER_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ question: text, history: chatHistory })
+                body: JSON.stringify(requestBody)
             });
             const data = await response.json();
             typingEl.remove();
