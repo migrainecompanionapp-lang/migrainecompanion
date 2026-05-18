@@ -454,6 +454,53 @@
         }
 
         /* ═══════════════════════════════════════════
+           WHO MI IS FOR (new section)
+        ═══════════════════════════════════════════ */
+        .who-its-for{background:linear-gradient(to bottom,var(--malachite-dark) 0%,var(--malachite) 100%);position:relative;overflow:hidden;padding:80px 0}
+        .who-its-for .container{position:relative;z-index:2}
+        .audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:880px;margin:0 auto 24px}
+        .audience-card{padding:28px 26px;border-radius:18px;text-align:left;position:relative;transition:transform .4s ease,box-shadow .4s ease}
+        .audience-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.25)}
+        .audience-card.audience-primary{background:rgba(106,170,122,0.08);border:1px solid rgba(106,170,122,0.45)}
+        .audience-card.audience-secondary{background:rgba(213,176,105,0.06);border:1px solid rgba(213,176,105,0.35)}
+        .audience-tag{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+        .audience-tag-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+        .audience-primary .audience-tag-dot{background:var(--green-mi)}
+        .audience-secondary .audience-tag-dot{background:var(--antique-gold)}
+        .audience-tag span{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;font-family:'Inter',sans-serif}
+        .audience-primary .audience-tag span{color:var(--green-mi)}
+        .audience-secondary .audience-tag span{color:var(--antique-gold)}
+        .audience-card h3{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--paper);margin:0 0 4px;font-weight:500;letter-spacing:.02em;text-transform:none;text-shadow:none}
+        .audience-frequency{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;margin:0 0 14px;font-weight:500}
+        .audience-primary .audience-frequency{color:var(--green-mi)}
+        .audience-secondary .audience-frequency{color:var(--antique-gold)}
+        .audience-desc{font-size:.92rem;color:rgba(240,234,214,0.8);line-height:1.65;margin:0 0 16px}
+        .audience-desc strong{color:var(--paper);font-weight:500}
+        .audience-features{display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:0.5px solid rgba(255,255,255,0.08)}
+        .audience-features div{font-size:.82rem;color:rgba(240,234,214,0.7);line-height:1.45}
+        .audience-primary .audience-features div::before{content:'✦ ';color:var(--green-mi)}
+        .audience-secondary .audience-features div::before{content:'✦ ';color:var(--antique-gold)}
+        .audience-universal{max-width:880px;margin:0 auto;padding:28px 26px;background:rgba(139,122,168,0.06);border:1px solid rgba(139,122,168,0.35);border-radius:18px}
+        .audience-universal-tag{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+        .audience-universal-tag .audience-tag-dot{background:var(--lavender-light)}
+        .audience-universal-tag span{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--lavender-light);font-family:'Inter',sans-serif}
+        .audience-universal h4{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--paper);margin:0 0 6px;font-weight:500;letter-spacing:.02em;text-transform:none;text-shadow:none}
+        .audience-universal-intro{font-size:.92rem;color:rgba(240,234,214,0.8);line-height:1.6;margin:0 0 22px}
+        .audience-universal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+        .universal-feature{padding:18px 16px;background:rgba(0,0,0,0.2);border-radius:12px;border:0.5px solid rgba(255,255,255,0.05)}
+        .universal-icon{font-size:1.6rem;margin-bottom:10px;display:block}
+        .universal-feature h5{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--paper);margin:0 0 6px;font-weight:500;letter-spacing:.02em;text-transform:none;text-shadow:none}
+        .universal-feature p{font-size:.82rem;color:rgba(240,234,214,0.7);line-height:1.55;margin:0}
+        .universal-feature p strong{color:var(--lavender-light);font-weight:500}
+        @media (max-width:768px){
+            .who-its-for{padding:60px 0}
+            .audience-grid{grid-template-columns:1fr;gap:14px}
+            .audience-card{padding:24px 22px}
+            .audience-universal{padding:24px 22px}
+            .audience-universal-grid{grid-template-columns:1fr;gap:12px}
+        }
+
+        /* ═══════════════════════════════════════════
            MI LAB SECTION
         ═══════════════════════════════════════════ */
         .mi-lab-section{background:linear-gradient(to bottom,var(--malachite) 0%,var(--charcoal) 100%);position:relative;overflow:hidden}
@@ -1192,6 +1239,74 @@
                         </div>
                     </div>
                     <p class="validation-footnote"><strong>Honest framing:</strong> Mi is BETA. Per-user prediction accuracy targets 70% (consumer wearable standard), with the system adapting its thresholds based on your real outcomes. Validation study results will be published openly — including limitations, confounders, and what we got wrong.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="who-its-for">
+            <div class="container">
+                <span class="section-badge section-badge-gold">✦ Who Mi Is For</span>
+                <h2 class="section-title fade-in">Built for Episodic Migraine</h2>
+                <p class="section-strap fade-in">Honest about who benefits most from prediction.<br>Clinical-grade safety tracking for everyone.</p>
+
+                <div class="audience-grid fade-in">
+                    <div class="audience-card audience-primary">
+                        <div class="audience-tag">
+                            <span class="audience-tag-dot"></span>
+                            <span>Best fit · Primary design target</span>
+                        </div>
+                        <h3>Episodic Migraine</h3>
+                        <p class="audience-frequency">3–14 attacks per month</p>
+                        <p class="audience-desc">Mi Watch's four-layer personalization works best for episodic migraine — <strong>enough attacks to learn your signature, enough recovery between attacks to establish a clean baseline.</strong> This is what Mi was designed for.</p>
+                        <div class="audience-features">
+                            <div>Full prodrome prediction · 12-24h vulnerable + 1-6h alert</div>
+                            <div>Four-layer personalization fully active</div>
+                            <div>Adaptive threshold calibration · learns your accuracy</div>
+                            <div>Phenotype priors personalize every alert</div>
+                        </div>
+                    </div>
+
+                    <div class="audience-card audience-secondary">
+                        <div class="audience-tag">
+                            <span class="audience-tag-dot"></span>
+                            <span>Clinical complement · Not a replacement</span>
+                        </div>
+                        <h3>Chronic Migraine</h3>
+                        <p class="audience-frequency">15+ attacks per month</p>
+                        <p class="audience-desc">Mi Watch's prediction is <strong>less precise with chronic patterns</strong> — overlapping prodrome and recovery windows challenge baseline detection. Mi still helps in important ways alongside <strong>specialist care from a headache neurologist.</strong></p>
+                        <div class="audience-features">
+                            <div>Medication limit tracking · prevents MOH</div>
+                            <div>CGRP therapy effectiveness monitoring</div>
+                            <div>Pattern documentation for your neurologist</div>
+                            <div>Mi Lab phenotype profiles work fully</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audience-universal fade-in">
+                    <div class="audience-universal-tag">
+                        <span class="audience-tag-dot"></span>
+                        <span>For everyone · Always active</span>
+                    </div>
+                    <h4>Universal safety tracking</h4>
+                    <p class="audience-universal-intro">Regardless of attack frequency, these features work for every user — built into Mi from day one.</p>
+                    <div class="audience-universal-grid">
+                        <div class="universal-feature">
+                            <span class="universal-icon">💊</span>
+                            <h5>MOH Prevention</h5>
+                            <p>Medication limit tracking prevents <strong>medication overuse headache</strong> — the most common but invisible trap for frequent users (triptans &gt;10 days/month, gepants &gt;15 days/month).</p>
+                        </div>
+                        <div class="universal-feature">
+                            <span class="universal-icon">📊</span>
+                            <h5>CGRP Effectiveness</h5>
+                            <p>Before/after tracking for <strong>CGRP therapy</strong> (Aimovig, Ajovy, Emgality, Vyepti, Ubrelvy, Nurtec) — see what's actually working, share the data with your neurologist.</p>
+                        </div>
+                        <div class="universal-feature">
+                            <span class="universal-icon">🩺</span>
+                            <h5>Specialist Support</h5>
+                            <p>Mi is <strong>not a replacement</strong> for medical care. If you have 15+ attacks per month, please work with a headache specialist — Mi complements, never replaces.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
