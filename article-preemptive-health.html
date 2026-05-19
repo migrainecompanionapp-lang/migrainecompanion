@@ -662,8 +662,22 @@ footer a:hover { color: var(--lavender); }
 @media (max-width: 768px) {
     header { padding: 16px 20px; }
     .article-container { padding: 40px 20px; }
-    .article-section h2 { font-size: 26px; }
-    .author-card { flex-direction: column; align-items: center; text-align: center; }
+    .article-section h2 { font-size: 26px; margin-top: 48px; }
+    .article-section h3 { font-size: 21px; }
+    .article-section p { font-size: 16px; }
+    .article-section p:first-of-type::first-letter { font-size: 44px; margin: 4px 8px 0 0; }
+    .author-card { flex-direction: column; align-items: center; text-align: center; padding: 24px; }
+    .data-card, .insight-card { padding: 20px 22px; }
+    .key-takeaways { padding: 22px 24px; }
+    .key-takeaways li { font-size: 15px; }
+    .cta-box { padding: 28px 22px; }
+    .cta-box h3 { font-size: 24px; }
+    .references li { padding: 16px 16px 16px 44px; font-size: 13px; }
+    .references li::before { left: 14px; top: 16px; }
+    .article-meta { padding: 0 20px; gap: 14px; }
+    .medical-disclaimer-wrap { padding: 0 20px; }
+    footer { padding: 32px 20px; }
+    .editorial-standards, .full-disclaimer { padding: 20px 22px; }
 }
 </style>
 </head>
@@ -883,7 +897,7 @@ footer a:hover { color: var(--lavender); }
         <div class="author-info">
             <h4>Rustam Iuldashov</h4>
             <p class="author-credentials">Founder · Mi Companion · 30 years lived experience with chronic migraine</p>
-            <p>Rustam built Mi Companion as a solo founder over three years, learning Flutter and Swift with AI assistance during active wartime conditions in Dnipro, Ukraine. He is the author of three books on migraine and 103+ peer-reviewed articles. <a href="https://linkedin.com/in/rustam-iuldashov-022450135">Connect on LinkedIn</a>.</p>
+            <p>Rustam built Mi Companion as a solo founder over three years, learning Flutter and Swift with AI assistance during active wartime conditions in Dnipro, Ukraine. He is the author of three books on migraine and 103+ peer-reviewed articles. <a href="https://www.linkedin.com/in/rustam-iuldashov-022450135/">Connect on LinkedIn</a>.</p>
             <p class="author-conflicts"><strong>Conflict of interest disclosure ·</strong> The author is the founder of Mi Companion and has commercial interest in Mi Watch, the personalized prodrome detection system referenced in this article. This article reflects the author's perspective on the broader category of preemptive health, with acknowledgment that he is building one specific implementation within it.</p>
         </div>
     </div>
@@ -922,15 +936,15 @@ footer a:hover { color: var(--lavender); }
 
     <!-- FULL DISCLAIMER -->
     <div class="full-disclaimer">
-        <strong>Medical disclaimer ·</strong> This article is provided for educational purposes only and does not constitute medical advice, diagnosis, or treatment. Information about medications, prodrome detection, and chronic conditions discussed here is general in nature. Always consult a qualified healthcare provider — neurologist, primary care physician, or other appropriate specialist — for personal medical decisions, especially regarding migraine medications or chronic condition management. The author is not your physician; this article does not establish a clinical relationship. If you experience severe or sudden symptoms, contact emergency services or your healthcare provider immediately. For more information, see our <a href="medical-disclaimer.html">complete medical disclaimer</a>.
+        <strong>Medical disclaimer ·</strong> This article is provided for educational purposes only and does not constitute medical advice, diagnosis, or treatment. Information about medications, prodrome detection, and chronic conditions discussed here is general in nature. Always consult a qualified healthcare provider — neurologist, primary care physician, or other appropriate specialist — for personal medical decisions, especially regarding migraine medications or chronic condition management. The author is not your physician; this article does not establish a clinical relationship. If you experience severe or sudden symptoms, contact emergency services or your healthcare provider immediately. For more information, see our <a href="https://mi-companion.com/disclaimer.html">complete medical disclaimer</a>.
     </div>
 
 </div>
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2026 Mi Companion · <a href="mi-companion.com">mi-companion.com</a> · Dnipro, Ukraine</p>
-    <p style="margin-top: 8px;"><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></p>
+    <p>© 2026 Mi Companion · <a href="https://mi-companion.com">mi-companion.com</a> · Dnipro, Ukraine</p>
+    <p style="margin-top: 8px;"><a href="https://sites.google.com/view/migrainecompanion/privacy-policy">Privacy policy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></p>
 </footer>
 
 </body>
