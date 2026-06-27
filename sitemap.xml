@@ -751,6 +751,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- === NEW — added 2026-06-27 === -->
+  <url>
+    <loc>https://mi-companion.com/article-visual-snow-syndrome.html</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- === SERVICE PAGES === -->
   <url>
     <loc>https://mi-companion.com/collaborate.html</loc>
