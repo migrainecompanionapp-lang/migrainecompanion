@@ -115,15 +115,18 @@
             color: transparent;
         }
 
-        /* === BOOKS GRID — 3 columns === */
+        /* === BOOKS GRID — flexbox, centers orphan rows === */
         .books-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 36px;
             padding: 40px 0 100px;
         }
 
         .book-item {
+            flex: 1 1 320px;
+            max-width: 360px;
             background: var(--surface-card);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -292,21 +295,15 @@
 
         /* RESPONSIVE */
         @media (max-width: 1060px) {
-            .books-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-            .books-grid .book-item:last-child {
-                grid-column: 1 / -1;
-                max-width: 480px;
-                justify-self: center;
-            }
+            .books-grid { gap: 32px; }
         }
         @media (max-width: 700px) {
-            .books-grid { grid-template-columns: 1fr; gap: 32px; }
-            .books-grid .book-item:last-child { max-width: none; }
+            .books-grid { gap: 32px; }
+            .book-item { flex-basis: 100%; max-width: none; padding: 36px 24px 32px; }
             .bookshelf-hero h1 { font-size: 2.5rem; }
             .bookshelf-hero { padding: 130px 0 40px; }
             .large-book-container { height: 300px; }
             .large-book { width: 180px; }
-            .book-item { padding: 36px 24px 32px; }
             .nav { display: none; }
         }
     </style>
@@ -340,27 +337,65 @@
 
         <section class="container">
             <div class="books-grid">
-                
-                <!-- BOOK 1: Pocket Guide -->
+
+                <!-- BOOK: The Migraine on Your Plate -->
                 <div class="book-item">
-                    <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="large-book-container">
+                    <a href="https://www.amazon.com/dp/B0H2V81FQR" target="_blank" rel="noopener" class="large-book-container">
                         <div class="large-book">
-                            <img src="images/book-pocket-guide.jpg" alt="The Migraine Pocket Guide">
+                            <img src="images/book-on-your-plate.jpg" alt="The Migraine on Your Plate">
                         </div>
                     </a>
                     <div class="book-info">
                         <span class="book-badge">Kindle & Paperback</span>
-                        <h2>The Migraine Pocket Guide</h2>
-                        <p class="book-subtitle">What to Pack · What to Do · What to Ask</p>
-                        <p class="book-desc">A no-fluff, highly practical toolkit built for the moments you need it most. Immediate relief techniques, clear trigger identification, and science-backed prevention strategies — readable even through the fog of an attack.</p>
-                        <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="amazon-btn">
+                        <h2>The Migraine on Your Plate</h2>
+                        <p class="book-subtitle">Food, Fuel, and the Hidden Deficiencies Behind Your Attacks</p>
+                        <p class="book-desc">You cut out chocolate, cheese, and wine — and the attacks kept coming. For many people, most of that list is innocent. This book reveals how blood-sugar swings, the deficiencies your "normal" bloodwork quietly missed, and your own genetics shape your attacks — and how to find the two or three triggers that are truly yours.</p>
+                        <a href="https://www.amazon.com/dp/B0H2V81FQR" target="_blank" rel="noopener" class="amazon-btn">
                             <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
                             Available on Amazon
                         </a>
                     </div>
                 </div>
 
-                <!-- BOOK 2: The Third Person in Every Room -->
+                <!-- BOOK: The Migraine That Wakes You -->
+                <div class="book-item">
+                    <a href="https://www.amazon.com/dp/B0H6V8LXFF" target="_blank" rel="noopener" class="large-book-container">
+                        <div class="large-book right-tilt">
+                            <img src="images/book-that-wakes-you.jpg" alt="The Migraine That Wakes You">
+                        </div>
+                    </a>
+                    <div class="book-info">
+                        <span class="book-badge">Kindle & Paperback</span>
+                        <h2>The Migraine That Wakes You</h2>
+                        <p class="book-subtitle">Sleep, the Brain's Night Shift, and the Hours That Decide Tomorrow</p>
+                        <p class="book-desc">Attacks that begin at 3 a.m. Waking already in pain. Paying for a weekend lie-in. Almost nothing is written for the migraines that rise from sleep itself. This book explores what your brain does in the dark, why your own rest can turn against you — and how to take the night back.</p>
+                        <a href="https://www.amazon.com/dp/B0H6V8LXFF" target="_blank" rel="noopener" class="amazon-btn">
+                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                            Available on Amazon
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BOOK: The Brain That Won't Be Quiet -->
+                <div class="book-item">
+                    <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="large-book-container">
+                        <div class="large-book">
+                            <img src="images/book-brain-quiet.jpg" alt="The Brain That Won't Be Quiet">
+                        </div>
+                    </a>
+                    <div class="book-info">
+                        <span class="book-badge">Kindle & Paperback</span>
+                        <h2>The Brain That Won't Be Quiet</h2>
+                        <p class="book-subtitle">Understanding Migraine After 30 Years of Listening</p>
+                        <p class="book-desc">Migraine isn't just a headache — it's a completely different way your brain processes the world. Dive into the neuroscience of the hyperexcitable mind and the emotional toll of invisible pain. Using narrative therapy, learn to separate your true self from the condition.</p>
+                        <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="amazon-btn">
+                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                            Available on Amazon
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BOOK: The Third Person in Every Room -->
                 <div class="book-item">
                     <a href="https://www.amazon.com/dp/B0GT2RMCSR" target="_blank" rel="noopener" class="large-book-container">
                         <div class="large-book right-tilt">
@@ -379,19 +414,19 @@
                     </div>
                 </div>
 
-                <!-- BOOK 3: The Brain That Won't Be Quiet -->
+                <!-- BOOK: The Migraine Pocket Guide -->
                 <div class="book-item">
-                    <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="large-book-container">
+                    <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="large-book-container">
                         <div class="large-book">
-                            <img src="images/book-brain-quiet.jpg" alt="The Brain That Won't Be Quiet">
+                            <img src="images/book-pocket-guide.jpg" alt="The Migraine Pocket Guide">
                         </div>
                     </a>
                     <div class="book-info">
                         <span class="book-badge">Kindle & Paperback</span>
-                        <h2>The Brain That Won't Be Quiet</h2>
-                        <p class="book-subtitle">Understanding Migraine After 30 Years of Listening</p>
-                        <p class="book-desc">Migraine isn't just a headache — it's a completely different way your brain processes the world. Dive into the neuroscience of the hyperexcitable mind and the emotional toll of invisible pain. Using narrative therapy, learn to separate your true self from the condition.</p>
-                        <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="amazon-btn">
+                        <h2>The Migraine Pocket Guide</h2>
+                        <p class="book-subtitle">What to Pack · What to Do · What to Ask</p>
+                        <p class="book-desc">A no-fluff, highly practical toolkit built for the moments you need it most. Immediate relief techniques, clear trigger identification, and science-backed prevention strategies — readable even through the fog of an attack.</p>
+                        <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="amazon-btn">
                             <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
                             Available on Amazon
                         </a>
