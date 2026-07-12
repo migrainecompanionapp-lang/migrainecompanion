@@ -115,13 +115,53 @@
             color: transparent;
         }
 
+        /* === COLLECTIONS === */
+        .collections-wrap { padding: 30px 0 70px; }
+
+        .collection { margin: 0 0 96px; }
+        .collection:last-child { margin-bottom: 30px; }
+
+        .collection-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 46px;
+        }
+        .collection-diamonds {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .collection-diamonds span {
+            width: 7px; height: 7px;
+            transform: rotate(45deg);
+            background: var(--gold);
+            box-shadow: 0 0 10px rgba(197,160,89,0.35);
+        }
+        .collection-diamonds span:nth-child(2) { background: var(--lavender); box-shadow: 0 0 10px rgba(139,122,168,0.4); }
+        .collection-title {
+            font-size: 2.1rem;
+            color: var(--cream);
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+        .collection-desc {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.32rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            margin: 0 auto;
+        }
+
         /* === BOOKS GRID — flexbox, centers orphan rows === */
         .books-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 36px;
-            padding: 40px 0 100px;
+            padding: 0;
         }
 
         .book-item {
@@ -305,6 +345,9 @@
             .large-book-container { height: 300px; }
             .large-book { width: 180px; }
             .nav { display: none; }
+            .collection { margin-bottom: 72px; }
+            .collection-title { font-size: 1.7rem; }
+            .collection-desc { font-size: 1.15rem; }
         }
     </style>
 </head>
@@ -335,181 +378,296 @@
             </div>
         </section>
 
-        <section class="container">
-            <div class="books-grid">
+        <section class="container collections-wrap">
 
-                <!-- BOOK: The Migraine Prodrome Kitchen -->
-                <div class="book-item">
-                    <a href="https://www.amazon.com/dp/B0GXDGRS8F" target="_blank" rel="noopener" class="large-book-container">
-                        <div class="large-book">
-                            <img src="images/book-prodrome-kitchen.jpg" alt="The Migraine Prodrome Kitchen">
-                        </div>
-                    </a>
-                    <div class="book-info">
-                        <span class="book-badge">New Release</span>
-                        <h2>The Migraine Prodrome Kitchen</h2>
-                        <p class="book-subtitle">Fast, Steadying Meals for the Hours Before a Migraine Strikes</p>
-                        <p class="book-desc">Your brain knows before you do. Hours before the pain, a craving or a wave of fatigue is already a signal — not a trigger. This cookbook is built for that warning window: 56 recipes, every one in 10 minutes or less, that decode a craving and answer it safely, steady your blood sugar, and calm early nausea while you act. Includes The Craving Decoder — what your craving is really asking for.</p>
-                        <a href="https://www.amazon.com/dp/B0GXDGRS8F" target="_blank" rel="noopener" class="amazon-btn">
-                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
-                            Available on Amazon
-                        </a>
-                    </div>
+            <!-- ============ COLLECTION: THE KITCHEN TRILOGY ============ -->
+            <div class="collection">
+                <div class="collection-header">
+                    <div class="collection-diamonds"><span></span><span></span><span></span></div>
+                    <h2 class="collection-title">The Kitchen Trilogy</h2>
+                    <p class="collection-desc">Cooking at home, phase by phase — before the pain, between attacks, and the fragile day after.</p>
                 </div>
+                <div class="books-grid">
 
-                <!-- BOOK: The Migraine-Friendly Kitchen -->
-                <div class="book-item">
-                    <a href="https://www.amazon.com/dp/B0H7NHJXY8" target="_blank" rel="noopener" class="large-book-container">
-                        <div class="large-book right-tilt">
-                            <img src="images/book-friendly-kitchen.jpg" alt="The Migraine-Friendly Kitchen">
-                        </div>
-                    </a>
-                    <div class="book-info">
-                        <span class="book-badge">Kindle &amp; Paperback</span>
-                        <h2>The Migraine-Friendly Kitchen</h2>
-                        <p class="book-subtitle">100 Everyday Recipes to Calm Your Brain, Steady Your Energy, and Eat Without Fear</p>
-                        <p class="book-desc">You cut out chocolate, cheese, and wine — and still felt afraid of your own plate. This is the everyday cookbook that gives food back: 100 recipes built on what steadies the migraine brain — blood-sugar balance, magnesium, and the triggers that are truly yours — so you can cook with confidence, not fear. The heart of the phase trilogy: how to eat well between attacks.</p>
-                        <a href="https://www.amazon.com/dp/B0H7NHJXY8" target="_blank" rel="noopener" class="amazon-btn">
-                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
-                            Available on Amazon
+                    <!-- The Migraine Prodrome Kitchen -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0GXDGRS8F" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book">
+                                <img src="images/book-prodrome-kitchen.jpg" alt="The Migraine Prodrome Kitchen">
+                            </div>
                         </a>
-                    </div>
-                </div>
-
-                <!-- BOOK: The Migraine Recovery Kitchen -->
-                <div class="book-item">
-                    <a href="https://www.amazon.com/dp/B0H2PB276D" target="_blank" rel="noopener" class="large-book-container">
-                        <div class="large-book">
-                            <img src="images/book-recovery-kitchen.jpg" alt="The Migraine Recovery Kitchen">
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Migraine Prodrome Kitchen</h2>
+                            <p class="book-subtitle">Fast, Steadying Meals for the Hours Before a Migraine Strikes</p>
+                            <p class="book-desc">Your brain knows before you do. Hours before the pain, a craving or a wave of fatigue is already a signal — not a trigger. This cookbook is built for that warning window: 56 recipes, every one in 10 minutes or less, that decode a craving and answer it safely, steady your blood sugar, and calm early nausea while you act. Includes The Craving Decoder — what your craving is really asking for.</p>
+                            <a href="https://www.amazon.com/dp/B0GXDGRS8F" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
                         </div>
-                    </a>
-                    <div class="book-info">
-                        <span class="book-badge">Kindle &amp; Paperback</span>
-                        <h2>The Migraine Recovery Kitchen</h2>
-                        <p class="book-subtitle">Gentle Meals to Help You Recover After a Migraine Attack</p>
-                        <p class="book-desc">The pain has passed, but you're wrung out — foggy, tender, drained. This is the cookbook for the postdrome, the forgotten "hangover" phase almost no one writes about. Gentle, restoring recipes to rehydrate, replenish, and ease you back to yourself — rebuilding energy without triggering the next attack. The final book in the phase trilogy: before, during, and after.</p>
-                        <a href="https://www.amazon.com/dp/B0H2PB276D" target="_blank" rel="noopener" class="amazon-btn">
-                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
-                            Available on Amazon
-                        </a>
                     </div>
-                </div>
 
-                <!-- BOOK: The Migraine That Rewrote You -->
-                <div class="book-item">
-                    <a href="https://www.amazon.com/dp/B0H6XQ58WP" target="_blank" rel="noopener" class="large-book-container">
-                        <div class="large-book right-tilt">
-                            <img src="images/book-that-rewrote-you.jpg" alt="The Migraine That Rewrote You">
+                    <!-- The Migraine-Friendly Kitchen -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0H7NHJXY8" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book right-tilt">
+                                <img src="images/book-friendly-kitchen.jpg" alt="The Migraine-Friendly Kitchen">
+                            </div>
+                        </a>
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Migraine-Friendly Kitchen</h2>
+                            <p class="book-subtitle">100 Everyday Recipes to Calm Your Brain, Steady Your Energy, and Eat Without Fear</p>
+                            <p class="book-desc">You cut out chocolate, cheese, and wine — and still felt afraid of your own plate. This is the everyday cookbook that gives food back: 100 recipes built on what steadies the migraine brain — blood-sugar balance, magnesium, and the triggers that are truly yours — so you can cook with confidence, not fear. The heart of the phase trilogy: how to eat well between attacks.</p>
+                            <a href="https://www.amazon.com/dp/B0H7NHJXY8" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
                         </div>
-                    </a>
-                    <div class="book-info">
-                        <span class="book-badge">New Release</span>
-                        <h2>The Migraine That Rewrote You</h2>
-                        <p class="book-subtitle">Reclaiming Your Identity, Your Emotions, and the Self Beneath the Pain</p>
-                        <p class="book-desc">Thirty years of pain doesn't just take your days — it quietly edits who you think you are. You apologize for resting; you call yourself flaky, lazy, "too much." Using narrative therapy, this book separates you from the illness, untangles the cruel inner voice from your own, and hands you back the pen — completing a trilogy on the mind, your relationships, and the self.</p>
-                        <a href="https://www.amazon.com/dp/B0H6XQ58WP" target="_blank" rel="noopener" class="amazon-btn">
-                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
-                            Available on Amazon
-                        </a>
                     </div>
-                </div>
 
-                <!-- BOOK: The Migraine on Your Plate -->
-                <div class="book-item">
-                    <a href="https://www.amazon.com/dp/B0H2V81FQR" target="_blank" rel="noopener" class="large-book-container">
-                        <div class="large-book">
-                            <img src="images/book-on-your-plate.jpg" alt="The Migraine on Your Plate">
+                    <!-- The Migraine Recovery Kitchen -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0H2PB276D" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book">
+                                <img src="images/book-recovery-kitchen.jpg" alt="The Migraine Recovery Kitchen">
+                            </div>
+                        </a>
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Migraine Recovery Kitchen</h2>
+                            <p class="book-subtitle">Gentle Meals to Help You Recover After a Migraine Attack</p>
+                            <p class="book-desc">The pain has passed, but you're wrung out — foggy, tender, drained. This is the cookbook for the postdrome, the forgotten "hangover" phase almost no one writes about. Gentle, restoring recipes to rehydrate, replenish, and ease you back to yourself — rebuilding energy without triggering the next attack. The final book in the phase trilogy: before, during, and after.</p>
+                            <a href="https://www.amazon.com/dp/B0H2PB276D" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
                         </div>
-                    </a>
-                    <div class="book-info">
-                        <span class="book-badge">Kindle &amp; Paperback</span>
-                        <h2>The Migraine on Your Plate</h2>
-                        <p class="book-subtitle">Food, Fuel, and the Hidden Deficiencies Behind Your Attacks</p>
-                        <p class="book-desc">You cut out chocolate, cheese, and wine — and the attacks kept coming. For many people, most of that list is innocent. This book reveals how blood-sugar swings, the deficiencies your "normal" bloodwork quietly missed, and your own genetics shape your attacks — and how to find the two or three triggers that are truly yours.</p>
-                        <a href="https://www.amazon.com/dp/B0H2V81FQR" target="_blank" rel="noopener" class="amazon-btn">
-                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
-                            Available on Amazon
-                        </a>
                     </div>
-                </div>
 
-                <!-- BOOK: The Migraine That Wakes You -->
-                <div class="book-item">
-                    <a href="https://www.amazon.com/dp/B0H6V8LXFF" target="_blank" rel="noopener" class="large-book-container">
-                        <div class="large-book right-tilt">
-                            <img src="images/book-that-wakes-you.jpg" alt="The Migraine That Wakes You">
-                        </div>
-                    </a>
-                    <div class="book-info">
-                        <span class="book-badge">Kindle &amp; Paperback</span>
-                        <h2>The Migraine That Wakes You</h2>
-                        <p class="book-subtitle">Sleep, the Brain's Night Shift, and the Hours That Decide Tomorrow</p>
-                        <p class="book-desc">Attacks that begin at 3 a.m. Waking already in pain. Paying for a weekend lie-in. Almost nothing is written for the migraines that rise from sleep itself. This book explores what your brain does in the dark, why your own rest can turn against you — and how to take the night back.</p>
-                        <a href="https://www.amazon.com/dp/B0H6V8LXFF" target="_blank" rel="noopener" class="amazon-btn">
-                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
-                            Available on Amazon
-                        </a>
-                    </div>
                 </div>
-
-                <!-- BOOK: The Brain That Won't Be Quiet -->
-                <div class="book-item">
-                    <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="large-book-container">
-                        <div class="large-book">
-                            <img src="images/book-brain-quiet.jpg" alt="The Brain That Won't Be Quiet">
-                        </div>
-                    </a>
-                    <div class="book-info">
-                        <span class="book-badge">Kindle &amp; Paperback</span>
-                        <h2>The Brain That Won't Be Quiet</h2>
-                        <p class="book-subtitle">Understanding Migraine After 30 Years of Listening</p>
-                        <p class="book-desc">Migraine isn't just a headache — it's a completely different way your brain processes the world. Dive into the neuroscience of the hyperexcitable mind and the emotional toll of invisible pain. Using narrative therapy, learn to separate your true self from the condition.</p>
-                        <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="amazon-btn">
-                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
-                            Available on Amazon
-                        </a>
-                    </div>
-                </div>
-
-                <!-- BOOK: The Third Person in Every Room -->
-                <div class="book-item">
-                    <a href="https://www.amazon.com/dp/B0GT2RMCSR" target="_blank" rel="noopener" class="large-book-container">
-                        <div class="large-book right-tilt">
-                            <img src="images/book-third-person.png" alt="The Third Person in Every Room">
-                        </div>
-                    </a>
-                    <div class="book-info">
-                        <span class="book-badge">Kindle &amp; Paperback</span>
-                        <h2>The Third Person in Every Room</h2>
-                        <p class="book-subtitle">How Migraine Lives in Your Relationships — and How to Live Back</p>
-                        <p class="book-desc">Migraine doesn't just live in your head — it sits at your dinner table, joins your conversations, and rewrites your plans. This book explores how chronic pain reshapes relationships and offers narrative therapy tools to reclaim the connection migraine tries to steal.</p>
-                        <a href="https://www.amazon.com/dp/B0GT2RMCSR" target="_blank" rel="noopener" class="amazon-btn">
-                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
-                            Available on Amazon
-                        </a>
-                    </div>
-                </div>
-
-                <!-- BOOK: The Migraine Pocket Guide -->
-                <div class="book-item">
-                    <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="large-book-container">
-                        <div class="large-book">
-                            <img src="images/book-pocket-guide.jpg" alt="The Migraine Pocket Guide">
-                        </div>
-                    </a>
-                    <div class="book-info">
-                        <span class="book-badge">Kindle &amp; Paperback</span>
-                        <h2>The Migraine Pocket Guide</h2>
-                        <p class="book-subtitle">What to Pack · What to Do · What to Ask</p>
-                        <p class="book-desc">A no-fluff, highly practical toolkit built for the moments you need it most. Immediate relief techniques, clear trigger identification, and science-backed prevention strategies — readable even through the fog of an attack.</p>
-                        <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="amazon-btn">
-                            <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
-                            Available on Amazon
-                        </a>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- ============ COLLECTION: THE NAVIGATORS ============ -->
+            <div class="collection">
+                <div class="collection-header">
+                    <div class="collection-diamonds"><span></span><span></span><span></span></div>
+                    <h2 class="collection-title">The Navigators</h2>
+                    <p class="collection-desc">Eating well anywhere but your own kitchen — the restaurant, the store, and the freezer.</p>
+                </div>
+                <div class="books-grid">
+
+                    <!-- The Migraine Menu -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0H4RDZNS8" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book">
+                                <img src="images/book-menu.jpg" alt="The Migraine Menu">
+                            </div>
+                        </a>
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Migraine Menu</h2>
+                            <p class="book-subtitle">What to Order When Eating Out — Cuisine by Cuisine, Without Fear</p>
+                            <p class="book-desc">The menu arrives — and so does the fear. Which dish is safe, which is a trigger in disguise? This is your companion for eating out: 125 dishes across 13 cuisines, each marked Safe, Ask, or Avoid, so you order with confidence instead of interrogating the waiter. Not a list of forbidden foods — a way to read any menu, anywhere.</p>
+                            <a href="https://www.amazon.com/dp/B0H4RDZNS8" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- The Migraine Grocery Run -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0H8FG7Q7J" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book right-tilt">
+                                <img src="images/book-grocery-run.jpg" alt="The Migraine Grocery Run">
+                            </div>
+                        </a>
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Migraine Grocery Run</h2>
+                            <p class="book-subtitle">A Shelf-Side Navigator, Not a Shopping List</p>
+                            <p class="book-desc">The middle aisle is where triggers hide — buried in thirty-word ingredient lists you don't have the energy to decode. This is a shelf-side navigator, not a shopping list: scan a label in seconds, spot the handful of flag words that matter, and fill your cart without fear. Walk any store, read any box, trust what you buy.</p>
+                            <a href="https://www.amazon.com/dp/B0H8FG7Q7J" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- The Migraine Freezer -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0H8K1CD2T" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book">
+                                <img src="images/book-freezer.jpg" alt="The Migraine Freezer">
+                            </div>
+                        </a>
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Migraine Freezer</h2>
+                            <p class="book-subtitle">Stock It Once. Eat Safely on Your Worst Days.</p>
+                            <p class="book-desc">You can't cook on your worst days — this book means you don't have to. Turn your freezer into a quiet ally: 20 always-safe staples, rescue meals you assemble instead of cook, and grab-and-go kits labeled MORNING, NAUSEA, BRAIN FOG. Stock it once, on a good day, and eat safely when everything else feels impossible.</p>
+                            <a href="https://www.amazon.com/dp/B0H8K1CD2T" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============ COLLECTION: DEEP DIVES ============ -->
+            <div class="collection">
+                <div class="collection-header">
+                    <div class="collection-diamonds"><span></span><span></span><span></span></div>
+                    <h2 class="collection-title">Deep Dives</h2>
+                    <p class="collection-desc">The science beneath your attacks — the food on your plate and the sleep you're losing.</p>
+                </div>
+                <div class="books-grid">
+
+                    <!-- The Migraine on Your Plate -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0H2V81FQR" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book">
+                                <img src="images/book-on-your-plate.jpg" alt="The Migraine on Your Plate">
+                            </div>
+                        </a>
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Migraine on Your Plate</h2>
+                            <p class="book-subtitle">Food, Fuel, and the Hidden Deficiencies Behind Your Attacks</p>
+                            <p class="book-desc">You cut out chocolate, cheese, and wine — and the attacks kept coming. For many people, most of that list is innocent. This book reveals how blood-sugar swings, the deficiencies your "normal" bloodwork quietly missed, and your own genetics shape your attacks — and how to find the two or three triggers that are truly yours.</p>
+                            <a href="https://www.amazon.com/dp/B0H2V81FQR" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- The Migraine That Wakes You -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0H6V8LXFF" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book right-tilt">
+                                <img src="images/book-that-wakes-you.jpg" alt="The Migraine That Wakes You">
+                            </div>
+                        </a>
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Migraine That Wakes You</h2>
+                            <p class="book-subtitle">Sleep, the Brain's Night Shift, and the Hours That Decide Tomorrow</p>
+                            <p class="book-desc">Attacks that begin at 3 a.m. Waking already in pain. Paying for a weekend lie-in. Almost nothing is written for the migraines that rise from sleep itself. This book explores what your brain does in the dark, why your own rest can turn against you — and how to take the night back.</p>
+                            <a href="https://www.amazon.com/dp/B0H6V8LXFF" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============ COLLECTION: THE MIND TRILOGY ============ -->
+            <div class="collection">
+                <div class="collection-header">
+                    <div class="collection-diamonds"><span></span><span></span><span></span></div>
+                    <h2 class="collection-title">The Mind Trilogy</h2>
+                    <p class="collection-desc">Narrative therapy for what migraine rewrites — your mind, your relationships, and the self beneath the pain.</p>
+                </div>
+                <div class="books-grid">
+
+                    <!-- The Brain That Won't Be Quiet -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book">
+                                <img src="images/book-brain-quiet.jpg" alt="The Brain That Won't Be Quiet">
+                            </div>
+                        </a>
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Brain That Won't Be Quiet</h2>
+                            <p class="book-subtitle">Understanding Migraine After 30 Years of Listening</p>
+                            <p class="book-desc">Migraine isn't just a headache — it's a completely different way your brain processes the world. Dive into the neuroscience of the hyperexcitable mind and the emotional toll of invisible pain. Using narrative therapy, learn to separate your true self from the condition.</p>
+                            <a href="https://www.amazon.com/dp/B0GSXMP1VZ" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- The Third Person in Every Room -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0GT2RMCSR" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book right-tilt">
+                                <img src="images/book-third-person.png" alt="The Third Person in Every Room">
+                            </div>
+                        </a>
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Third Person in Every Room</h2>
+                            <p class="book-subtitle">How Migraine Lives in Your Relationships — and How to Live Back</p>
+                            <p class="book-desc">Migraine doesn't just live in your head — it sits at your dinner table, joins your conversations, and rewrites your plans. This book explores how chronic pain reshapes relationships and offers narrative therapy tools to reclaim the connection migraine tries to steal.</p>
+                            <a href="https://www.amazon.com/dp/B0GT2RMCSR" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- The Migraine That Rewrote You -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0H6XQ58WP" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book">
+                                <img src="images/book-that-rewrote-you.jpg" alt="The Migraine That Rewrote You">
+                            </div>
+                        </a>
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Migraine That Rewrote You</h2>
+                            <p class="book-subtitle">Reclaiming Your Identity, Your Emotions, and the Self Beneath the Pain</p>
+                            <p class="book-desc">Thirty years of pain doesn't just take your days — it quietly edits who you think you are. You apologize for resting; you call yourself flaky, lazy, "too much." Using narrative therapy, this book separates you from the illness, untangles the cruel inner voice from your own, and hands you back the pen — completing a trilogy on the mind, your relationships, and the self.</p>
+                            <a href="https://www.amazon.com/dp/B0H6XQ58WP" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ============ COLLECTION: QUICK REFERENCE ============ -->
+            <div class="collection">
+                <div class="collection-header">
+                    <div class="collection-diamonds"><span></span><span></span><span></span></div>
+                    <h2 class="collection-title">Quick Reference</h2>
+                    <p class="collection-desc">One pocket-sized toolkit, readable even through the fog of an attack.</p>
+                </div>
+                <div class="books-grid">
+
+                    <!-- The Migraine Pocket Guide -->
+                    <div class="book-item">
+                        <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="large-book-container">
+                            <div class="large-book">
+                                <img src="images/book-pocket-guide.jpg" alt="The Migraine Pocket Guide">
+                            </div>
+                        </a>
+                        <div class="book-info">
+                            <span class="book-badge">Kindle &amp; Paperback</span>
+                            <h2>The Migraine Pocket Guide</h2>
+                            <p class="book-subtitle">What to Pack · What to Do · What to Ask</p>
+                            <p class="book-desc">A no-fluff, highly practical toolkit built for the moments you need it most. Immediate relief techniques, clear trigger identification, and science-backed prevention strategies — readable even through the fog of an attack.</p>
+                            <a href="https://www.amazon.com/dp/B0GSXTZN2Q" target="_blank" rel="noopener" class="amazon-btn">
+                                <svg class="amazon-icon" viewBox="0 0 24 24"><path d="M14.24,19.34a21.46,21.46,0,0,1-6.15,1c-4.47,0-7-2-7-5.32,0-3.37,2.83-5.35,7.57-5.35a16.31,16.31,0,0,1,5.32.91V9.32c0-2-1.12-3.13-3.46-3.13-2,0-4,.78-5.37,2L3.71,5.81C5.74,4.1,8.69,3.1,11.5,3.1c4.54,0,7.1,2.44,7.1,7.24V18.6h-4.3ZM14.3,13.2a11.5,11.5,0,0,0-4.6-.9c-2.65,0-3.86.83-3.86,2.2,0,1.35,1.17,2.15,3.17,2.15a13.3,13.3,0,0,0,5.3-1.28Z"/></svg>
+                                Available on Amazon
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </section>
     </main>
 
