@@ -1697,6 +1697,87 @@
             .validation-item::after,.credential-card::after{display:none}
         }
 
+        /* ════════════════════════════════════════════════════════
+           EDGES · luminous gradient hairlines (radius-safe)
+        ════════════════════════════════════════════════════════ */
+        /* Signature panels: rich fill + glowing gradient border that follows corners */
+        .constellation-card{border:1px solid transparent!important;
+            background:
+                linear-gradient(135deg,rgba(122,91,168,0.16),rgba(234,203,128,0.06)) padding-box,
+                linear-gradient(130deg,rgba(234,203,128,.6),rgba(156,139,194,.32) 55%,rgba(255,255,255,.05)) border-box!important}
+        .merged-step{border:1px solid transparent!important;
+            background:
+                linear-gradient(135deg,rgba(234,203,128,0.13),rgba(122,91,168,0.10)) padding-box,
+                linear-gradient(120deg,rgba(234,203,128,.62),rgba(156,139,194,.3),rgba(255,255,255,.05)) border-box!important}
+        .proof-card{border:1px solid transparent!important;
+            background:
+                linear-gradient(135deg,rgba(234,203,128,0.10),rgba(122,91,168,0.05)) padding-box,
+                linear-gradient(125deg,rgba(234,203,128,.5),rgba(156,139,194,.22),rgba(255,255,255,.04)) border-box!important}
+        .validation-card{border:1px solid transparent!important;
+            background:
+                linear-gradient(180deg,rgba(156,139,194,0.09),rgba(156,139,194,0.03)) padding-box,
+                linear-gradient(135deg,rgba(156,139,194,.5),rgba(234,203,128,.3),rgba(255,255,255,.05)) border-box!important}
+        .story-card{border:1px solid transparent!important;
+            background:
+                linear-gradient(rgba(22,28,42,.72),rgba(22,28,42,.72)) padding-box,
+                linear-gradient(130deg,rgba(234,203,128,.42),rgba(156,139,194,.22),rgba(255,255,255,.05)) border-box!important}
+
+        /* Standard cards: crisper top-lit hairline */
+        .step-card,.therapy-card,.feature-group-card,.profile-card,.audience-card,
+        .timeline-card,.tools-summary,.credential-card{border-color:rgba(255,255,255,.10)!important}
+
+        /* Left-accent bars → gradient, fading down */
+        .honest-beta-card{border-left:0!important;border-image:linear-gradient(180deg,var(--lavender-light),rgba(156,139,194,.15)) 1;border-left:3px solid var(--lavender-light)}
+        .while-mi-learns{border-left:0!important;border-image:linear-gradient(180deg,var(--green-mi),rgba(130,187,144,.15)) 1;border-left:3px solid var(--green-mi)}
+        .games-hint{border-left:0!important;border-image:linear-gradient(180deg,var(--lavender-light),rgba(156,139,194,.12)) 1;border-left:3px solid var(--lavender-light)}
+        .story-highlight{border-left:0!important;border-image:linear-gradient(180deg,var(--antique-gold),rgba(234,203,128,.12)) 1;border-left:3px solid var(--antique-gold)}
+
+        /* Header & footer: centered gold gradient hairline */
+        header{border-bottom:1px solid transparent!important;border-image:linear-gradient(90deg,transparent,rgba(234,203,128,.4),transparent) 1}
+        footer{border-top:1px solid transparent!important;border-image:linear-gradient(90deg,transparent,rgba(234,203,128,.3),transparent) 1}
+
+        /* Track headers: two-tone edges (gold path vs lavender path) */
+        .track-header.track-bio{border-color:var(--bd-lavender)!important}
+        .track-header.track-watch{border-color:var(--bd-gold)!important}
+
+        /* ── Both alert cards → clean neutral navy glass (match other cards) ── */
+        .ax-card{
+            background:rgba(255,255,255,0.035)!important;
+            border:1px solid rgba(255,255,255,0.09)!important;
+            box-shadow:0 16px 44px -14px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05)!important}
+        .ax-card:hover{border-color:rgba(255,255,255,0.14)!important}
+        .ax-lockscreen{
+            background:rgba(255,255,255,0.035)!important;
+            border:1px solid rgba(255,255,255,0.09)!important;
+            box-shadow:0 16px 44px -14px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05)!important}
+        .ax-lockscreen:hover{border-color:rgba(255,255,255,0.14)!important}
+
+        /* ── Calmer, larger icons: one refined gold accent (no parrot colors) ── */
+        .feature-group-icon,.profile-icon,.universal-icon,.ax-card-icon{
+            width:54px!important;height:54px!important;border-radius:15px!important;font-size:1.5rem!important;
+            background:linear-gradient(150deg,rgba(234,203,128,.16),rgba(234,203,128,.03))!important;
+            border:.5px solid var(--bd-gold)!important;color:var(--antique-gold)!important}
+        .feature-group-icon svg,.profile-icon svg,.universal-icon svg,.ax-card-icon svg{
+            width:25px;height:25px;stroke:var(--antique-gold)!important;fill:none}
+        .feature-group-card:hover .feature-group-icon,.profile-card:hover .profile-icon{
+            border-color:var(--antique-gold)!important}
+        /* Roomier cards */
+        .feature-group-card{padding:32px 28px!important}
+        .profile-card{padding:26px 22px!important}
+        .audience-card{padding:32px 30px!important}
+
+        /* ── −46% stat: slow, calm pulse ── */
+        .path-stat-num,.sc-proof-num{animation:pulse46 3.4s ease-in-out infinite;will-change:transform,opacity}
+        @keyframes pulse46{0%,100%{transform:scale(1);opacity:.9;text-shadow:0 0 20px rgba(234,203,128,.14)}50%{transform:scale(1.05);opacity:1;text-shadow:0 0 34px rgba(234,203,128,.4)}}
+        @media (prefers-reduced-motion:reduce){.path-stat-num,.sc-proof-num{animation:none}}
+
+        /* ── Refined line-icon rendering for all SVG icons ── */
+        .feature-group-icon svg,.profile-icon svg,.universal-icon svg,.ax-card-icon svg,.ax-push-icon svg,.notification-icon svg{
+            width:26px!important;height:26px!important;fill:none!important;
+            stroke:var(--antique-gold)!important;stroke-width:1.6!important;
+            stroke-linecap:round!important;stroke-linejoin:round!important;vector-effect:non-scaling-stroke}
+        .notification-icon svg{stroke:#182130!important}
+
 </style>
 </head>
 <body>
