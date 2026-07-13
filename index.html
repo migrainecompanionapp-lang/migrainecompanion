@@ -2034,6 +2034,24 @@
         .ml-lead a,.fc-lead a,.poem-verse a,.sc-honesty-text a{transition:color .3s;color:var(--antique-gold)}
         a:focus-visible,button:focus-visible{outline:2px solid rgba(234,203,128,.6);outline-offset:3px;border-radius:6px}
 
+        /* ── Hairline system: threaded gold lines across the page ── */
+        /* 1 · navbar hairline, revealed on scroll */
+        header::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(234,203,128,.6) 25%,rgba(234,203,128,.85) 50%,rgba(234,203,128,.6) 75%,transparent);box-shadow:0 0 12px rgba(234,203,128,.4);opacity:0;transition:opacity .45s ease}
+        header.scrolled::after{opacity:1}
+        /* 4 · reading-progress thread */
+        #reading-progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:300;background:linear-gradient(90deg,rgba(234,203,128,.45),rgba(234,203,128,.95));box-shadow:0 0 10px rgba(234,203,128,.5);transition:width .12s linear;pointer-events:none}
+        /* 5 · running highlight along the How-it-works thread */
+        .hiw-line{overflow:hidden}
+        .hiw-line::after{content:'';position:absolute;top:0;left:-90px;height:100%;width:90px;background:linear-gradient(90deg,transparent,rgba(234,203,128,.95),transparent);animation:hiw-run 9s linear infinite}
+        @keyframes hiw-run{0%{left:-90px;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:100%;opacity:0}}
+        /* 2 · top thread mirroring the poem divider */
+        .poem-divider-top{width:44px;height:1px;background:rgba(197,160,89,.6);margin:0 auto 24px;box-shadow:0 0 10px rgba(197,160,89,.4)}
+        /* 6 · vertical hairlines between footer links */
+        .footer-links a:not(:last-child){position:relative}
+        .footer-links a:not(:last-child)::after{content:'';position:absolute;right:-14px;top:50%;transform:translateY(-50%);width:1px;height:13px;background:linear-gradient(180deg,transparent,rgba(234,203,128,.4),transparent)}
+        @media (max-width:600px){.footer-links a:not(:last-child)::after{display:none}}
+        @media (prefers-reduced-motion:reduce){.hiw-line::after{animation:none;opacity:0}}
+
         /* ── Honesty accent + elongated quote box → dense green, dimensional ── */
         .sc-title-accent{color:var(--green-mi)!important}
         .problem-quote{background:linear-gradient(160deg,#7CC495 0%,#4E9E72 100%)!important;border:none!important;
@@ -2046,9 +2064,17 @@
         .rm-milestone .rm-milestone-title{color:#0E2417!important}
         .rm-milestone .rm-milestone-sub{color:rgba(14,36,23,.72)!important}
 
+        /* ── Hairline section dividers (centered, fading gold) ── */
+        .hairline{width:min(58%,660px);height:1px;margin:0 auto;position:relative;
+            background:linear-gradient(90deg,transparent,rgba(219,187,117,.26),transparent)}
+        .hairline::before{content:"";position:absolute;top:50%;left:50%;width:4px;height:4px;
+            transform:translate(-50%,-50%) rotate(45deg);background:rgba(219,187,117,.5);
+            box-shadow:0 0 8px rgba(219,187,117,.4)}
+        @media(max-width:640px){.hairline{width:78%}}
 </style>
 </head>
 <body>
+    <div id="reading-progress"></div>
     <div class="mouse-glow"></div>
     <div class="fireflies"></div>
 
@@ -2272,6 +2298,7 @@
     </div>
 </section>
 
+        <div class="hairline"></div>
         <!-- ═══ solution ═══ -->
         <section class="solution">
     <div class="container">
@@ -2320,6 +2347,7 @@
         <section class="poem-band poem-whisper">
             <div class="poem-overlay"></div>
             <div class="poem-inner">
+                <div class="poem-divider-top"></div>
                 <p class="poem-verse">Mi whispers signs the mind can read,<br>before the pain outgrows its seed.<br>It leaves its marks before the ache,<br>so mind may choose the paths to take.</p>
                 <div class="poem-divider"></div>
             </div>
@@ -2380,6 +2408,7 @@
         </div>
     </div>
 </section>
+<div class="hairline"></div>
 <section class="whatyouneed">
     <div class="container">
         <div class="wyn-head">
@@ -2493,6 +2522,7 @@
         <section class="poem-band poem-stones">
             <div class="poem-overlay"></div>
             <div class="poem-inner">
+                <div class="poem-divider-top"></div>
                 <p class="poem-verse">In ordered lines the numbers stand,<br>like stones once scattered, set by hand.<br>What once was wild, we start to know,<br>in garden lines the patterns grow.</p>
                 <div class="poem-divider"></div>
             </div>
@@ -2568,6 +2598,7 @@
     </div>
 </section>
 
+        <div class="hairline"></div>
         <!-- ═══ milab ═══ -->
         <section class="milab">
     <div class="container">
@@ -2620,6 +2651,7 @@
     </div>
 </section>
 
+        <div class="hairline"></div>
         <!-- ═══ morethan ═══ -->
         <section class="morethan">
     <div class="container">
@@ -2680,6 +2712,7 @@
     </div>
 </section>
 
+        <div class="hairline"></div>
         <!-- ═══ science ═══ -->
         <section class="science">
     <div class="container">
@@ -3107,7 +3140,8 @@
     (function(){
         var h=document.querySelector('header');
         if(!h)return;
-        function upd(){ if(window.pageYOffset>44) h.classList.add('scrolled'); else h.classList.remove('scrolled'); }
+        var pb=document.getElementById('reading-progress');
+        function upd(){ if(window.pageYOffset>44) h.classList.add('scrolled'); else h.classList.remove('scrolled'); if(pb){var st=window.pageYOffset||document.documentElement.scrollTop;var dh=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=(dh>0?Math.min(100,st/dh*100):0)+'%';} }
         addEventListener('scroll',upd,{passive:true}); upd();
     })();
     </script>
