@@ -12,22 +12,22 @@
     gtag('js', new Date());
     gtag('config', 'G-0KRM61SRSJ');
 </script>
-    <meta name="description" content="The first migraine app to combine wearable biomarker prodrome alerts with personal trigger profiles. Feel a migraine coming 12–24h before the pain using Apple Watch. Built by someone who has lived with migraine for 30 years.">
-    <meta name="keywords" content="migraine prediction, prodrome alerts, Apple Watch migraine, personal trigger profiles, migraine triggers, narrative therapy, migraine app, biomarker tracking, migraine companion, Mi">
+    <meta name="description" content="First migraine app combining wearable biomarker monitoring with biochemical phenotype profiling (CYP1A2, ALDH2, MAO). Predict attacks 12-24h before pain hits using Apple Watch. Built by someone who has lived with migraines for 30 years.">
+    <meta name="keywords" content="migraine prediction, prodrome alerts, Apple Watch migraine, phenotype profiles, CYP1A2, ALDH2, narrative therapy, migraine app, biomarker tracking, migraine companion, biochemical profiling, Mi">
     <meta name="author" content="Rustam Iuldashov, Marina Mochalova">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="MIgraine Companion — Prodrome Alerts + Personal Trigger Profiles">
-    <meta property="og:description" content="Feel a migraine coming 12–24h before the pain. Apple Watch reads your biomarkers; Mi learns your personal triggers — coffee, alcohol, foods, sleep, light.">
+    <meta property="og:title" content="MIgraine Companion — First App Combining Biomarker Alerts + Phenotype Profiling">
+    <meta property="og:description" content="Predict migraine 12-24h before pain. Apple Watch reads 9 biomarkers; 5 phenotype profiles personalize predictions to your biochemistry.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mi-companion.com/">
     <meta property="og:image" content="https://mi-companion.com/images/mi-icon.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MIgraine Companion — Prodrome Alerts + Personal Trigger Profiles">
-    <meta name="twitter:description" content="Feel a migraine coming 12–24h before the pain. Apple Watch biomarkers + your personal trigger profiles + narrative therapy.">
+    <meta name="twitter:title" content="MIgraine Companion — Biomarker Alerts + Phenotype Profiling">
+    <meta name="twitter:description" content="Predict attacks 12-24h before pain. Apple Watch + 5 phenotype profiles + narrative therapy.">
     <meta name="twitter:image" content="https://mi-companion.com/images/mi-icon.png">
     <link rel="icon" type="image/png" href="images/mi-icon.png">
     <link rel="canonical" href="https://mi-companion.com/">
-    <title>MIgraine Companion | Biomarker Prodrome Alerts + Personal Trigger Profiles</title>
+    <title>MIgraine Companion | First App Combining Biomarker Prodrome Alerts + Phenotype Profiling</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "MIgraine Companion",
-    "description": "The first migraine app to combine real-time biomarker prodrome alerts with personal trigger profiles and narrative therapy. Feel a migraine coming 12–24h before the pain using Apple Watch, and learn your own triggers — coffee, alcohol, foods, missed meals, light and sound.",
+    "description": "The first migraine app combining real-time biomarker prodrome alerts with biochemical phenotype profiling and narrative therapy. Predicts attacks 12-24h before pain using Apple Watch + 5 phenotype profiles (CYP1A2, ALDH2, MAO, hypoglycemia, sensory).",
     "operatingSystem": "iOS",
     "applicationCategory": "HealthApplication",
     "image": "https://mi-companion.com/images/mi-icon.png",
@@ -203,7 +203,8 @@
         .hero{padding:140px 0 100px;text-align:center;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;z-index:2}
         .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('images/mystic-garden-bg.png') center center/cover no-repeat;opacity:.2;z-index:0;mix-blend-mode:soft-light}
         .hero::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom,rgba(19,19,20,.25) 0%,rgba(19,19,20,.65) 42%,var(--malachite) 72%,var(--charcoal) 100%);z-index:1}
-        .hero-content{position:relative;z-index:2;width:100%}
+        .hero-content{position:relative;z-index:2;width:100%;pointer-events:none}
+        .hero-content>*{pointer-events:auto}
         .hero-mi{width:160px;height:160px;border-radius:32px;margin:0 auto 28px;box-shadow:0 20px 60px rgba(139,122,168,.3);animation:float 6s ease-in-out infinite}
         @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
         h1,h2,h3,.section-title{font-family:'Cormorant Garamond',serif!important;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);text-shadow:0 0 15px rgba(197,160,89,.3)}
@@ -1875,6 +1876,36 @@
         .hdna-genes{display:flex;flex-direction:column;gap:18px}
         .hdna-right .hdna-genes{text-align:right}
         .hdna-genes span{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.2em;color:rgba(160,230,182,.62)}
+        /* ── Interactive DNA + genes ── */
+        .hdna img{cursor:pointer;transition:filter .3s;pointer-events:auto}
+        .hdna img:hover{filter:drop-shadow(0 0 22px rgba(143,230,172,.5))}
+        @keyframes dna-spin-once{from{transform:var(--dna-base) rotateY(0deg)}to{transform:var(--dna-base) rotateY(360deg)}}
+        .hdna-left img{--dna-base:rotate(14deg)}
+        .hdna-right img{--dna-base:rotate(-14deg)}
+        .hdna img.dna-spinning{animation:dna-spin-once 1.5s cubic-bezier(.45,.05,.25,1)}
+        .hdna-genes span{cursor:pointer;transition:color .3s,text-shadow .3s,transform .3s;pointer-events:auto;position:relative}
+        .hdna-genes span::after{content:"click to learn";position:absolute;top:50%;left:calc(100% + 10px);transform:translateY(-50%) translateX(-4px);
+            font-size:.56rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(234,203,128,.9);white-space:nowrap;
+            padding:3px 8px;border-radius:20px;background:rgba(28,32,46,.9);border:1px solid rgba(234,203,128,.28);
+            -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+        .hdna-right .hdna-genes span::after{left:auto;right:calc(100% + 10px);transform:translateY(-50%) translateX(4px)}
+        .hdna-genes span:hover::after{opacity:1;transform:translateY(-50%) translateX(0)}
+        .hdna-genes span.gene-active::after{opacity:0}
+        .hdna-genes span:hover{color:#EACB80;text-shadow:0 0 14px rgba(234,203,128,.65);transform:translateX(2px)}
+        .hdna-right .hdna-genes span:hover{transform:translateX(-2px)}
+        .hdna-genes span.gene-active{color:#EACB80;text-shadow:0 0 16px rgba(234,203,128,.75)}
+        .gene-pop{position:fixed;z-index:400;max-width:290px;padding:16px 18px 17px;border-radius:16px;
+            background:linear-gradient(158deg,rgba(44,49,66,.98),rgba(28,32,46,.98));
+            border:1px solid rgba(234,203,128,.32);
+            box-shadow:0 20px 54px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.03),inset 0 1px 0 rgba(255,255,255,.09);
+            -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
+            opacity:0;transform:translateY(8px) scale(.95);transition:opacity .28s cubic-bezier(.16,1,.3,1),transform .28s cubic-bezier(.16,1,.3,1);pointer-events:none}
+        .gene-pop.show{opacity:1;transform:translateY(0) scale(1)}
+        .gene-pop-name{display:flex;align-items:center;gap:7px;font-family:'Inter',sans-serif;font-size:.98rem;font-weight:700;color:#EACB80;letter-spacing:.04em;margin-bottom:7px}
+        .gene-pop-name svg{width:15px;height:15px;flex:none;opacity:.9}
+        .gene-pop-role{display:block;font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(160,230,182,.75);margin-bottom:8px}
+        .gene-pop p{font-size:.84rem;line-height:1.62;color:rgba(255,255,255,.85);margin:0}
+        @media (prefers-reduced-motion:reduce){.hdna img.dna-spinning{animation-duration:.01s}}
         @media (max-width:820px){.hdna{display:none}}
         @media (prefers-reduced-motion:reduce){.cst-star,.cst-halo{animation:none}}
         .hero-dna{position:absolute;z-index:1;top:50%;transform:translateY(-50%);height:80%;width:auto;
@@ -3145,6 +3176,73 @@
         var pb=document.getElementById('reading-progress');
         function upd(){ if(window.pageYOffset>44) h.classList.add('scrolled'); else h.classList.remove('scrolled'); if(pb){var st=window.pageYOffset||document.documentElement.scrollTop;var dh=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=(dh>0?Math.min(100,st/dh*100):0)+'%';} }
         addEventListener('scroll',upd,{passive:true}); upd();
+    })();
+    </script>
+    <script>
+    /* Interactive hero DNA: click helix to spin, click gene for plain-English role */
+    (function(){
+        var GENES = {
+            'CYP1A2':  {role:'Caffeine metabolism', text:'The liver enzyme that breaks down caffeine. If yours is slow, one afternoon coffee can linger for hours and tip you toward an attack; if it\u2019s fast, caffeine clears quickly and may even help.'},
+            'ALDH2':   {role:'Alcohol processing', text:'Clears acetaldehyde, the toxic by-product of alcohol. A slower version means wine and spirits hit harder and are far more likely to trigger a migraine.'},
+            'DAO':     {role:'Histamine breakdown', text:'The gut enzyme that clears histamine from aged, fermented, and cured foods. Low activity lets histamine build up \u2014 a hidden trigger behind cheese, wine, and leftovers.'},
+            'MAO-A':   {role:'Serotonin regulation', text:'Breaks down serotonin and related brain chemicals tied to mood and pain signalling. Its activity shapes how sensitive your brain is to migraine triggers.'},
+            'MAO-B':   {role:'Dopamine breakdown', text:'Clears dopamine in the brain. It\u2019s linked to the yawning, mood shifts, and food cravings that quietly announce an attack hours before the pain.'},
+            'TAAR1':   {role:'Trace-amine sensing', text:'A receptor that detects trace amines like the tyramine in aged cheese and cured meats, then signals the brain \u2014 part of why those classic \u201Ctrigger foods\u201D affect some people and not others.'},
+            'ADORA2A': {role:'Adenosine receptor', text:'The receptor caffeine latches onto. Its genetics help decide whether caffeine calms your head or winds it up \u2014 and how badly caffeine withdrawal bites.'}
+        };
+        var SPARK = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6z"/></svg>';
+        var pop = null, activeSpan = null;
+
+        function closePop(){
+            if(!pop) return;
+            pop.classList.remove('show');
+            if(activeSpan){ activeSpan.classList.remove('gene-active'); activeSpan = null; }
+            var p = pop; setTimeout(function(){ if(p&&p.parentNode&&!p.classList.contains('show')) p.parentNode.removeChild(p); }, 300);
+            pop = null;
+        }
+
+        function showPop(span, key){
+            var g = GENES[key]; if(!g) return;
+            closePop();
+            span.classList.add('gene-active'); activeSpan = span;
+            pop = document.createElement('div');
+            pop.className = 'gene-pop';
+            pop.innerHTML = '<div class="gene-pop-name">'+SPARK+key+'</div>'+
+                            '<span class="gene-pop-role">'+g.role+'</span>'+
+                            '<p>'+g.text+'</p>';
+            document.body.appendChild(pop);
+            var r = span.getBoundingClientRect();
+            var pw = pop.offsetWidth, ph = pop.offsetHeight;
+            var left = r.left + r.width/2 - pw/2;
+            left = Math.max(12, Math.min(left, innerWidth - pw - 12));
+            var top = r.bottom + 12;
+            if(top + ph > innerHeight - 12) top = r.top - ph - 12;
+            pop.style.left = left + 'px';
+            pop.style.top = Math.max(12, top) + 'px';
+            requestAnimationFrame(function(){ pop.classList.add('show'); });
+        }
+
+        document.querySelectorAll('.hdna-genes span').forEach(function(span){
+            span.addEventListener('click', function(e){
+                e.stopPropagation();
+                var key = span.textContent.trim();
+                if(activeSpan === span){ closePop(); return; }
+                showPop(span, key);
+            });
+        });
+
+        document.querySelectorAll('.hdna img').forEach(function(img){
+            img.addEventListener('click', function(e){
+                e.stopPropagation();
+                if(img.classList.contains('dna-spinning')) return;
+                img.classList.add('dna-spinning');
+                img.addEventListener('animationend', function h(){ img.classList.remove('dna-spinning'); img.removeEventListener('animationend', h); });
+            });
+        });
+
+        addEventListener('click', closePop);
+        addEventListener('scroll', closePop, {passive:true});
+        addEventListener('keydown', function(e){ if(e.key === 'Escape') closePop(); });
     })();
     </script>
 </body>
