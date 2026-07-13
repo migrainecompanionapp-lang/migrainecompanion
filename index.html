@@ -1988,6 +1988,52 @@
                 linear-gradient(130deg,rgba(234,203,128,.5),rgba(156,139,194,.24) 55%,rgba(255,255,255,.05)) border-box!important;
             box-shadow:0 22px 58px -16px rgba(0,0,0,.5),0 0 64px rgba(234,203,128,.06),inset 0 1px 0 rgba(255,255,255,.06)!important}
 
+        /* ── Mobile safety net ── */
+        @media (max-width:768px){
+            html,body{overflow-x:hidden;max-width:100%}
+            .hero{min-height:auto;padding:120px 0 70px}
+            .hero h1{font-size:2.3rem}
+            .hero-tagline{font-size:1.25rem!important}
+            .hero .description{font-size:1rem!important}
+            .download-buttons{flex-direction:column;align-items:center}
+            .download-btn{width:100%;max-width:300px;justify-content:center}
+            .download-buttons .download-btn:first-child{width:100%;max-width:300px}
+            .hero-constellations,.hdna{display:none!important}
+        }
+        @media (max-width:480px){
+            .hero h1{font-size:1.95rem}
+            .section-title,.mi-watch-section .section-title,.how-mi-knows .section-title{font-size:1.7rem!important}
+            section{padding:56px 0}
+            .container{padding:0 18px}
+        }
+
+        /* ════════════════════════════════════════════════════════
+           HEADER + HERO POLISH (non-breaking)
+        ════════════════════════════════════════════════════════ */
+        header{transition:height .35s cubic-bezier(.4,0,.2,1),background .35s ease,box-shadow .35s ease}
+        header.scrolled{height:54px!important;background:rgba(19,19,20,.9)!important;
+            box-shadow:0 8px 30px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.04)!important}
+        .logo img{box-shadow:0 0 0 1px rgba(234,203,128,.4),0 0 14px rgba(234,203,128,.24)!important}
+        /* Active nav → soft gold capsule */
+        .nav>a{transition:color .3s cubic-bezier(.4,0,.2,1),background .3s,box-shadow .3s}
+        .nav>a.active{color:var(--antique-gold)!important;
+            background:linear-gradient(180deg,rgba(234,203,128,.16),rgba(234,203,128,.05));
+            padding:6px 13px;border-radius:980px;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+        .nav>a.active::after{display:none!important}
+        /* DOWNLOAD → filled gold glass (matches hero pill) */
+        .nav-cta{background:linear-gradient(160deg,#ECD290,#C9A24E)!important;color:#241A08!important;
+            border-color:transparent!important;text-shadow:none!important;
+            box-shadow:inset 0 1.5px 0 rgba(255,255,255,.42),inset 0 -2px 4px rgba(0,0,0,.2),0 4px 14px rgba(234,203,128,.26)!important}
+        .nav-download-wrapper:hover .nav-cta{background:linear-gradient(160deg,#F1D89C,#D3A954)!important;color:#241A08!important;
+            box-shadow:inset 0 1.5px 0 rgba(255,255,255,.5),0 7px 22px rgba(234,203,128,.42)!important}
+        /* Hero Mi icon → dimensional glow */
+        .hero-mi{box-shadow:0 0 0 1px rgba(234,203,128,.3),0 20px 60px rgba(156,139,194,.32),0 0 48px rgba(234,203,128,.15)!important}
+        /* Scroll indicator → gold tone (if present) */
+        .scroll-indicator{color:rgba(234,203,128,.6)!important}
+        /* Unified content-link hover + focus */
+        .ml-lead a,.fc-lead a,.poem-verse a,.sc-honesty-text a{transition:color .3s;color:var(--antique-gold)}
+        a:focus-visible,button:focus-visible{outline:2px solid rgba(234,203,128,.6);outline-offset:3px;border-radius:6px}
+
 </style>
 </head>
 <body>
@@ -3042,6 +3088,15 @@
                 }, { passive: true });
             }
         }
+    })();
+    </script>
+    <script>
+    /* Header shrink on scroll */
+    (function(){
+        var h=document.querySelector('header');
+        if(!h)return;
+        function upd(){ if(window.pageYOffset>44) h.classList.add('scrolled'); else h.classList.remove('scrolled'); }
+        addEventListener('scroll',upd,{passive:true}); upd();
     })();
     </script>
 </body>
