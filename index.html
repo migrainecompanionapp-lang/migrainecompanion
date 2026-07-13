@@ -1339,6 +1339,20 @@
   .fc-btn{width:100%;max-width:280px;justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){.fc-btn{transition:none}}
+
+/* ═══════ POETRY INTERLUDES · atmospheric breathing bands ═══════ */
+.poem-band{position:relative;z-index:2;min-height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat}
+.poem-whisper{background-image:url('images/mi-prediction.png')}
+.poem-stones{background-image:url('images/mi-stones.png')}
+.poem-overlay{position:absolute;inset:0;background:radial-gradient(ellipse 900px 400px at 50% 50%,rgba(19,19,20,0.45) 0%,rgba(19,19,20,0.78) 100%);pointer-events:none}
+.poem-inner{position:relative;z-index:2;text-align:center;padding:0 24px;max-width:640px}
+.poem-verse{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:1.7rem;line-height:1.55;color:#F0EAD6;text-shadow:0 2px 24px rgba(0,0,0,0.85),0 1px 4px rgba(0,0,0,0.9);margin:0}
+.poem-divider{width:44px;height:1px;background:rgba(197,160,89,0.55);margin:22px auto 0}
+@media(max-width:768px){
+  .poem-band{min-height:280px}
+  .poem-verse{font-size:1.25rem;line-height:1.5}
+}
+
 </style>
 </head>
 <body>
@@ -1514,6 +1528,16 @@
 </section>
 
         <!-- ═══ howitworks ═══ -->
+        
+        <!-- ═══ poetry interlude · whisper (prediction) ═══ -->
+        <section class="poem-band poem-whisper">
+            <div class="poem-overlay"></div>
+            <div class="poem-inner">
+                <p class="poem-verse">Mi whispers signs the mind can read,<br>before the pain outgrows its seed.<br>It leaves its marks before the ache,<br>so mind may choose the paths to take.</p>
+                <div class="poem-divider"></div>
+            </div>
+        </section>
+
         <section class="howitworks">
     <div class="container">
         <div class="hiw-head">
@@ -1677,6 +1701,16 @@
 </section>
 
         <!-- ═══ alertex ═══ -->
+        
+        <!-- ═══ poetry interlude · stones (patterns) ═══ -->
+        <section class="poem-band poem-stones">
+            <div class="poem-overlay"></div>
+            <div class="poem-inner">
+                <p class="poem-verse">In ordered lines the numbers stand,<br>like stones once scattered, set by hand.<br>What once was wild, we start to know,<br>in garden lines the patterns grow.</p>
+                <div class="poem-divider"></div>
+            </div>
+        </section>
+
         <section class="alertex">
     <div class="container">
         <div class="ax-head">
