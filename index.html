@@ -1359,6 +1359,344 @@
     radial-gradient(ellipse 420px 260px at 50% 50%,rgba(19,19,20,0.62) 0%,rgba(19,19,20,0.25) 55%,transparent 80%)}
 }
 
+        /* ════════════════════════════════════════════════════════
+           PREMIUM REDESIGN LAYER · navy + cream-gold (screenshot vibe)
+           Wins the cascade — defines final palette, type, motion.
+        ════════════════════════════════════════════════════════ */
+
+        /* ── Palette: deep navy-slate canvas + warm cream-gold ── */
+        :root{
+            --charcoal:#1B2536; --charcoal-light:#232F45;
+            --malachite:#1E2A3D; --malachite-light:#27334C; --malachite-dark:#18212F;
+            --gold:#DBBB75; --antique-gold:#EACB80;
+            --paper:#F0DEB0; --cream:#FBF3E0;
+            --text:#E7EBF2; --text-light:#AAB5C7; --text-dark:#82909F;
+            --lavender:#9C8BC2; --lavender-light:#C4B2E4; --green-mi:#82BB90;
+        }
+
+        /* ── Global readability nudge (scales every rem-based size) ── */
+        html{font-size:16.5px}
+
+        /* ── Navy gradient canvas + warm amber ambient (animated) ── */
+        body{background:radial-gradient(circle at 50% 12%,#31405C 0%,#212E43 46%,#161E2C 100%)!important;background-attachment:fixed!important;color:var(--text)!important;line-height:1.65}
+        body::before{background:
+            radial-gradient(ellipse 1050px 720px at 50% 2%,rgba(234,203,128,0.09) 0%,transparent 58%),
+            radial-gradient(ellipse 900px 640px at 50% 62%,transparent 40%,rgba(0,0,0,0.42) 100%)!important;
+            animation:aurora 18s ease-in-out infinite}
+        @keyframes aurora{0%,100%{transform:translate(0,0)}50%{transform:translate(-2.5%,1.8%)}}
+
+        /* ── Headings: rounded Comfortaa, cream-gold, soft glow, mixed-case ── */
+        h1,h2,h3,.section-title,.merged-step h4,.constellation-card h3,.audience-universal h4,
+        .notification-title-big,.validation-item-value,.credential-card h4,.story-header h2,
+        .validation-card h2,.phase-card h4,.system-step h4,.track-header h3,.audience-card h3,
+        .profile-card h4,.feature-group-card h3,.tools-summary-header h4{
+            font-family:'Comfortaa',cursive!important;text-transform:none!important;
+            letter-spacing:-.015em!important;color:var(--antique-gold)!important;font-weight:600!important;
+            text-shadow:0 0 42px rgba(234,203,128,.16)!important}
+        .credential-card h4{letter-spacing:.01em!important}
+
+        /* Card sub-titles: keep cream-gold but a touch lighter for hierarchy */
+        .phase-card h4,.system-step h4,.track-header h3,.profile-card h4,
+        .feature-group-card h3,.tools-summary-header h4,.audience-card h3{color:var(--paper)!important;font-size:1.22rem!important}
+
+        /* Divider under section titles */
+        .section-title::after{width:64px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.7}
+
+        /* ── HERO: shimmering cream-gold headline + warm halo ── */
+        .hero h1{
+            background:linear-gradient(100deg,#F3E3B4 18%,#FFF6DA 42%,var(--antique-gold) 58%,#F3E3B4 82%);
+            -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+            background-size:220% auto;animation:shine 6.5s linear infinite;
+            text-shadow:none!important;filter:drop-shadow(0 4px 34px rgba(234,203,128,.28));font-size:4.1rem}
+        .hero h1 em{-webkit-text-fill-color:var(--gold);color:var(--gold)}
+        @keyframes shine{to{background-position:220% center}}
+        .hero::after{background:
+            radial-gradient(ellipse 640px 480px at 50% 46%,rgba(234,203,128,0.16) 0%,transparent 60%),
+            linear-gradient(to bottom,rgba(22,28,42,.30) 0%,rgba(22,28,42,.58) 42%,var(--malachite) 74%,var(--charcoal) 100%)!important}
+        .hero-tagline{font-size:2rem!important;color:var(--cream)!important}
+        .hero .description{font-size:1.14rem!important;color:var(--text)!important;line-height:1.78!important}
+
+        /* ── Eyebrows / straps: consistent wide-tracked gold ── */
+        .section-eyebrow{color:var(--gold)!important;font-size:.8rem!important;letter-spacing:.24em!important}
+        .section-strap{color:var(--antique-gold)!important;font-size:1.25rem!important}
+        .section-subtitle{font-size:1.18rem!important;color:var(--text-light)!important}
+
+        /* ── Readability: lift small body text + neutralize color noise ── */
+        .step-card p,.therapy-card p,.feature-group-desc,.audience-desc,.audience-universal-intro,
+        .honest-beta-card p,.while-mi-learns li,.system-step p,.track-header p,.profile-card p:last-child,
+        .universal-feature p,.constellation-card p,.proof-card-intro,.merged-step-text,.phase-card p,
+        .mi-watch-description,.mi-lab-description,.timeline-card p{
+            font-size:1rem!important;color:var(--text)!important;line-height:1.72!important}
+        .feature-bullet,.audience-features div,.action-title,.notification-desc,.notification-title{
+            font-size:.94rem!important;color:var(--text-light)!important}
+        .tool-title{font-size:.92rem!important;color:var(--text)!important}
+        .tool-list,.validation-item-desc,.merged-step-note,.proof-explanation,.action-sub,
+        .profile-science,.validation-footnote,.credential-card p{font-size:.86rem!important;color:var(--text-light)!important}
+
+        /* ── Calmer cards: unify tints to one navy glass, keep accent dots/labels ── */
+        .feature-group-card,.profile-card,.audience-card,.system-step,.phase-card,.validation-item{
+            background:rgba(255,255,255,0.035)!important}
+        .step-card,.therapy-card,.feature-group-card,.profile-card,.audience-card,.timeline-card,
+        .tools-summary,.validation-card,.proof-card,.credential-card,.constellation-card,.story-card,
+        .honest-beta-mini,.mi-watch-screenshot{
+            box-shadow:0 12px 40px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.05)!important}
+        .step-card:hover,.therapy-card:hover,.feature-group-card:hover,.profile-card:hover,.audience-card:hover{
+            box-shadow:0 24px 60px rgba(0,0,0,.44),inset 0 1px 0 rgba(255,255,255,.08)!important;border-color:var(--bd-gold)!important}
+
+        /* ── Buttons: warm gold CTA + light sweep ── */
+        .download-btn:hover:not(.disabled){background:var(--antique-gold)!important;border-color:var(--antique-gold)!important}
+        .download-btn::after{content:'';position:absolute;top:0;left:-120%;width:55%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.22),transparent);transform:skewX(-18deg);transition:left .7s cubic-bezier(.4,0,.2,1);pointer-events:none}
+        .download-btn:hover::after{left:150%}
+
+        /* ── Reveal + gold count-up in stats ── */
+        .fade-in{filter:blur(6px);transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1),filter .8s ease}
+        .fade-in.visible{filter:blur(0)}
+        .stats-block .stat-number{color:var(--antique-gold)!important}
+
+        /* ── Detail polish ── */
+        .screenshots-grid::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--gold),var(--lavender))!important;border-radius:4px}
+        :focus-visible{outline:2px solid rgba(234,203,128,.6);outline-offset:3px;border-radius:6px}
+
+        @media (max-width:768px){
+            html{font-size:16px}
+            .hero h1{font-size:2.7rem}
+            .hero-tagline{font-size:1.45rem!important}
+            .section-title{font-size:2.15rem}
+        }
+        @media (prefers-reduced-motion:reduce){
+            body::before,.hero h1,.hero-mi{animation:none!important}
+            .fade-in{filter:none}
+            .hero h1{-webkit-text-fill-color:var(--antique-gold);background:none}
+        }
+
+        /* ════════════════════════════════════════════════════════
+           REFINEMENT · weight · line-height · shadow depth
+        ════════════════════════════════════════════════════════ */
+
+        /* ── Weight hierarchy: confident heads, clean body (de-muddy the 500s) ── */
+        .hero h1{font-weight:700!important}
+        h2,.section-title,.validation-card h2,.story-header h2{font-weight:600!important}
+        h3,h4,.constellation-card h3,.audience-card h3,.feature-group-card h3,.track-header h3,
+        .phase-card h4,.system-step h4,.profile-card h4,.tools-summary-header h4,
+        .audience-universal h4,.merged-step h4,.notification-title-big,.validation-item-value{font-weight:600!important}
+        body,p,.hero .description,.section-subtitle,.step-card p,.therapy-card p,.feature-group-desc,
+        .audience-desc,.system-step p,.track-header p,.profile-card p:last-child,.universal-feature p,
+        .constellation-card p,.merged-step-text,.phase-card p,.mi-watch-description,.mi-lab-description,
+        .feature-bullet,.audience-features div,.tool-list,.while-mi-learns li{font-weight:400!important}
+        strong,.hero .description strong,.audience-desc strong{font-weight:600!important}
+
+        /* ── Line-height: tight airy heads, relaxed body ── */
+        .hero h1{line-height:1.08!important}
+        h2,.section-title,.validation-card h2,.story-header h2{line-height:1.14!important}
+        h3,h4,.audience-card h3,.feature-group-card h3,.constellation-card h3,
+        .phase-card h4,.system-step h4,.profile-card h4{line-height:1.28!important}
+        p,.hero .description,.step-card p,.therapy-card p,.feature-group-desc,.audience-desc,
+        .system-step p,.constellation-card p,.merged-step-text,.mi-watch-description,
+        .mi-lab-description,.while-mi-learns li{line-height:1.72!important}
+
+        /* ── Glow discipline: strong only on hero, crisp everywhere else ── */
+        h2,.section-title,.validation-card h2,.story-header h2{text-shadow:0 0 30px rgba(234,203,128,.10)!important}
+        h3,h4,.phase-card h4,.system-step h4,.profile-card h4,.feature-group-card h3,
+        .track-header h3,.tools-summary-header h4,.audience-card h3,.constellation-card h3,
+        .merged-step h4,.notification-title-big,.validation-item-value,.audience-universal h4{text-shadow:none!important}
+
+        /* ── Shadow system: soft, layered, warm — not hard black drops ── */
+        /* Tier 1 · standard cards */
+        .step-card,.therapy-card,.feature-group-card,.profile-card,.audience-card,.timeline-card,
+        .tools-summary,.credential-card,.honest-beta-mini{
+            box-shadow:0 12px 32px -10px rgba(0,0,0,.5),0 2px 6px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.05)!important}
+        .step-card:hover,.therapy-card:hover,.feature-group-card:hover,.profile-card:hover,.audience-card:hover{
+            box-shadow:0 26px 56px -14px rgba(0,0,0,.6),0 0 44px rgba(234,203,128,.06),inset 0 1px 0 rgba(255,255,255,.09)!important}
+        /* Tier 2 · elevated / premium blocks — warm ambient bloom */
+        .constellation-card,.merged-step,.proof-card,.validation-card,.story-card{
+            box-shadow:0 24px 64px -16px rgba(0,0,0,.55),0 0 70px rgba(122,91,168,.08),inset 0 1px 0 rgba(255,255,255,.06)!important}
+        .constellation-card{box-shadow:0 24px 64px -16px rgba(0,0,0,.55),0 0 80px rgba(234,203,128,.09),inset 0 1px 0 rgba(255,255,255,.07)!important}
+        /* Media · softer, warmer than pure black */
+        .mi-watch-screenshot,.screenshot-card img{
+            box-shadow:0 22px 50px -14px rgba(10,14,24,.7),inset 0 1px 0 rgba(255,255,255,.06)!important}
+        .hero-mi{box-shadow:0 24px 64px -12px rgba(122,91,168,.4),0 0 50px rgba(234,203,128,.1)!important}
+        /* Buttons · gold glow lift */
+        .download-btn:hover:not(.disabled){box-shadow:0 14px 34px -8px rgba(0,0,0,.5),0 0 30px rgba(234,203,128,.28)!important}
+        .nav-download-wrapper:hover .nav-cta{box-shadow:0 0 26px rgba(234,203,128,.22)!important}
+
+        /* ════════════════════════════════════════════════════════
+           TOP-PREMIUM · rhythm · palette discipline · motion · CTA
+        ════════════════════════════════════════════════════════ */
+
+        /* ── Reading rhythm: cap measure, balance heads, center leads ── */
+        h1,h2,.section-title,.story-header h2,.validation-card h2{text-wrap:balance}
+        .hero .description,.section-subtitle,.section-strap,.mi-watch-description,
+        .mi-lab-description,.audience-universal-intro,.validation-footnote{text-wrap:pretty;max-width:62ch;margin-left:auto;margin-right:auto}
+        section{padding:112px 0}
+        @media (max-width:768px){section{padding:72px 0}}
+
+        /* ── Type scale contrast: hero + key heads dominate ── */
+        .section-title{font-size:2.75rem}
+        .mi-watch-section .section-title,.how-mi-knows .section-title{font-size:3rem}
+        @media (max-width:768px){.section-title,.mi-watch-section .section-title,.how-mi-knows .section-title{font-size:2.15rem}}
+
+        /* ── Palette discipline: collapse to gold · lavender · green ── */
+        :root{--paprika:#CBA46B;--wine:var(--lavender-light);--amethyst:var(--lavender);
+               --verdigris:var(--green-mi);--storm:var(--lavender-light)}
+        .system-step.step-paprika,.system-step.step-amethyst,.system-step.step-green{
+            background:rgba(255,255,255,0.035)!important;border-color:rgba(255,255,255,0.08)!important}
+        .system-step.step-gold-em{background:rgba(234,203,128,0.06)!important;border-color:var(--bd-gold)!important}
+
+        /* ── Unified easing on everything interactive ── */
+        a,button,.u-card,.step-card,.therapy-card,.feature-group-card,.profile-card,
+        .audience-card,.download-btn,.credential-card,.nav-cta,.screenshot-card img{
+            transition-timing-function:cubic-bezier(.4,0,.2,1)!important}
+
+        /* ── One primary CTA (App Store gold), secondary stays glass ── */
+        .download-buttons .download-btn:first-child{
+            background:linear-gradient(135deg,var(--antique-gold),var(--gold))!important;
+            border-color:transparent!important;box-shadow:0 12px 30px -8px rgba(234,203,128,.4)!important;
+            backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+        .download-buttons .download-btn:first-child svg{fill:#182130!important}
+        .download-buttons .download-btn:first-child .btn-text small{color:rgba(24,33,48,.72)!important}
+        .download-buttons .download-btn:first-child .btn-text strong{color:#182130!important}
+        .download-buttons .download-btn:first-child:hover{transform:translateY(-3px);box-shadow:0 18px 40px -8px rgba(234,203,128,.5)!important}
+
+        /* ── Scroll-spy active nav ── */
+        .nav > a.active{color:var(--paper)!important}
+        .nav > a.active::after{width:100%!important}
+
+        /* ── Choreography: timeline draws in, dots stagger ── */
+        .timeline-bar::before{transform:scaleX(0);transform-origin:left;transition:transform 1.5s cubic-bezier(.22,1,.36,1)}
+        .timeline-bar.drawn::before{transform:scaleX(1)}
+        .timeline-dot{opacity:0;transition:opacity .5s ease}
+        .timeline-bar.drawn .timeline-dot{opacity:1}
+        .timeline-bar.drawn .timeline-dot.dot-green{transition-delay:.35s}
+        .timeline-bar.drawn .timeline-dot.dot-gold{transition-delay:.75s}
+        .timeline-bar.drawn .timeline-dot.dot-pain{transition-delay:1.15s}
+        .mi-watch-screenshot{transition:transform .12s linear,box-shadow var(--t-lift)}
+
+        /* ── Signature: constellation gets a live gold hairline sheen ── */
+        .constellation-card{border-color:var(--bd-gold)!important}
+
+        @media (prefers-reduced-motion:reduce){
+            .timeline-bar::before{transform:scaleX(1)}
+            .timeline-dot{opacity:1}
+        }
+
+        /* ════════════════════════════════════════════════════════
+           TOP-PREMIUM · icons · icon-tiles · dots · badges/chips
+        ════════════════════════════════════════════════════════ */
+
+        /* ── Icon TILES: dimensional glass, ring, inner light, lift on hover ── */
+        .feature-group-icon,.profile-icon,.notification-icon{
+            position:relative;border:.5px solid rgba(255,255,255,.14)!important;
+            box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -1px 2px rgba(0,0,0,.25),0 5px 14px rgba(0,0,0,.28)!important;
+            transition:transform var(--t-lift),box-shadow var(--t-lift)}
+        .feature-group-icon::after,.profile-icon::after{content:'';position:absolute;inset:0;border-radius:inherit;
+            background:linear-gradient(160deg,rgba(255,255,255,.18),transparent 55%);pointer-events:none}
+        .feature-group-card:hover .feature-group-icon,.profile-card:hover .profile-icon{
+            transform:translateY(-2px) scale(1.04);
+            box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 10px 22px rgba(0,0,0,.36),0 0 22px rgba(234,203,128,.14)!important}
+
+        /* ── Emoji icons → refined rounded glass tiles ── */
+        .step-icon{width:66px;height:66px;font-size:2rem;display:flex;align-items:center;justify-content:center;
+            margin:0 auto 24px;border-radius:18px;filter:none;
+            background:linear-gradient(150deg,rgba(234,203,128,.16),rgba(234,203,128,.03));
+            border:.5px solid var(--bd-gold);
+            box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 8px 20px rgba(0,0,0,.3),0 0 26px rgba(234,203,128,.08);
+            transition:transform var(--t-lift),box-shadow var(--t-lift)}
+        .step-card:hover .step-icon{transform:translateY(-3px) scale(1.05);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 12px 26px rgba(0,0,0,.38),0 0 34px rgba(234,203,128,.16)}
+        .universal-icon{width:52px;height:52px;font-size:1.55rem;display:flex;align-items:center;justify-content:center;
+            margin-bottom:14px;border-radius:14px;
+            background:linear-gradient(150deg,rgba(156,139,194,.16),rgba(156,139,194,.03));
+            border:.5px solid var(--bd-lavender);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 6px 16px rgba(0,0,0,.28)}
+
+        /* ── Step number: coin with ring + warm glow ── */
+        .step-number{box-shadow:0 8px 22px rgba(234,203,128,.4),inset 0 1px 0 rgba(255,255,255,.45),0 0 0 6px rgba(234,203,128,.07)!important}
+
+        /* ── Status dots: soft outer ring + glow halo ── */
+        .phase-dot,.track-tag-dot,.audience-tag-dot{position:relative;box-shadow:0 0 0 4px rgba(255,255,255,.045),0 0 9px rgba(0,0,0,.35)}
+        .phase-dot.green,.audience-primary .audience-tag-dot,.track-bio .track-tag-dot{box-shadow:0 0 0 4px rgba(130,187,144,.12),0 0 10px rgba(130,187,144,.5)}
+        .phase-dot.gold,.audience-secondary .audience-tag-dot,.track-watch .track-tag-dot{box-shadow:0 0 0 4px rgba(234,203,128,.14),0 0 10px rgba(234,203,128,.5)}
+        .tool-bullet{filter:drop-shadow(0 0 5px currentColor)}
+
+        /* ── Section badge: refined glass pill + top sheen ── */
+        .section-badge{position:relative;overflow:hidden;padding:6px 16px!important;
+            background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02))!important;
+            border:.5px solid rgba(255,255,255,.12)!important;
+            box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 3px 12px rgba(0,0,0,.22)}
+        .section-badge-gold{background:linear-gradient(180deg,rgba(234,203,128,.16),rgba(234,203,128,.04))!important;border-color:var(--bd-gold)!important;color:var(--antique-gold)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 3px 14px rgba(234,203,128,.1)}
+        .section-badge-lavender{background:linear-gradient(180deg,rgba(156,139,194,.16),rgba(156,139,194,.04))!important;border-color:var(--bd-lavender)!important;color:var(--lavender-light)!important}
+        .section-badge-green{background:linear-gradient(180deg,rgba(130,187,144,.15),rgba(130,187,144,.04))!important;border-color:var(--bd-green)!important;color:var(--green-mi)!important}
+
+        /* ── Hero badges: dimensional, primary glows, beta pulses ── */
+        .hero-badge-primary{background:linear-gradient(180deg,rgba(234,203,128,.22),rgba(234,203,128,.08))!important;
+            border:1px solid var(--antique-gold)!important;padding:6px 18px!important;
+            box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 4px 18px rgba(234,203,128,.16),0 0 24px rgba(234,203,128,.1)}
+        .hero-badge-beta{position:relative;padding-left:22px!important}
+        .hero-badge-beta::before{content:'';position:absolute;left:9px;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--lavender-light);box-shadow:0 0 8px var(--lavender-light);animation:beta-pulse 2s ease-in-out infinite}
+        @keyframes beta-pulse{0%,100%{opacity:.5;transform:translateY(-50%) scale(.85)}50%{opacity:1;transform:translateY(-50%) scale(1.15)}}
+        .hero-badge-secondary{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+
+        /* ── Step chips on screenshots: gradient + depth ── */
+        .screenshot-badge{padding:4px 15px!important;box-shadow:0 5px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.35)!important}
+        .badge-step-lavender{background:linear-gradient(135deg,#C4B2E4,#9C8BC2)!important}
+        .badge-step-green{background:linear-gradient(135deg,#9AD0A7,#82BB90)!important}
+        .badge-step-gold{background:linear-gradient(135deg,#F0DEB0,#DBBB75)!important}
+        .badge-step-wine{background:linear-gradient(135deg,#D8C2EC,#B49AD6)!important}
+
+        /* ── Small pill chips (LIVE IN APP · state · tags) unified gold glass ── */
+        .mi-watch-screenshot::before,.notification-state-pill,.constellation-tag{
+            background:linear-gradient(180deg,rgba(234,203,128,.22),rgba(234,203,128,.08))!important;
+            border:.5px solid var(--bd-gold)!important;color:var(--antique-gold)!important;
+            box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 3px 12px rgba(0,0,0,.3)!important}
+        .constellation-tag{display:inline-block;padding:5px 13px;border-radius:var(--r-pill)}
+
+        /* ── Notification icon: crisp gradient + ring ── */
+        .notification-icon{background:linear-gradient(150deg,var(--lavender-light),#4A3D5E)!important;border:.5px solid rgba(196,178,228,.4)!important}
+
+        /* ════════════════════════════════════════════════════════
+           MOTION LAYER · tasteful, restrained, beautiful
+        ════════════════════════════════════════════════════════ */
+        /* Reveal: softer settle with micro-scale + will-change */
+        .fade-in{transform:translateY(28px) scale(.99);will-change:transform,opacity,filter}
+        .fade-in.visible{transform:translateY(0) scale(1)}
+
+        /* Section-title divider gently breathes */
+        .section-title::after{animation:divider-breathe 5.5s ease-in-out infinite}
+        @keyframes divider-breathe{0%,100%{opacity:.5;width:52px}50%{opacity:.85;width:72px}}
+
+        /* Constellation ✦ glyphs twinkle */
+        .constellation-card::before{animation:twinkle 4s ease-in-out infinite}
+        .constellation-card::after{animation:twinkle 4s ease-in-out infinite 1.6s}
+        @keyframes twinkle{0%,100%{opacity:.28;transform:scale(1)}50%{opacity:.6;transform:scale(1.12)}}
+
+        /* Premium cards: light sheen sweeps across on hover */
+        .step-card,.therapy-card,.audience-card,.validation-item,.credential-card{position:relative;overflow:hidden}
+        .step-card::after,.therapy-card::after,.audience-card::after,.validation-item::after,.credential-card::after{
+            content:'';position:absolute;top:0;left:-140%;width:70%;height:100%;pointer-events:none;
+            background:linear-gradient(115deg,transparent,rgba(255,255,255,.07),transparent);
+            transform:skewX(-18deg);transition:left .85s cubic-bezier(.4,0,.2,1)}
+        .step-card:hover::after,.therapy-card:hover::after,.audience-card:hover::after,
+        .validation-item:hover::after,.credential-card:hover::after{left:160%}
+
+        /* Nav links: refined slide-in underline already; add color ease */
+        .nav > a{transition:color .3s cubic-bezier(.4,0,.2,1),transform .3s cubic-bezier(.4,0,.2,1)}
+
+        /* Download dropdown items: smooth reveal on open */
+        .download-dropdown a{transition:background .25s ease,color .25s ease,padding-left .3s cubic-bezier(.4,0,.2,1),transform .3s ease}
+
+        /* Screenshot cards: gentle zoom + glow already; smooth the frame */
+        .screenshot-card{transition:transform .5s cubic-bezier(.16,1,.3,1)}
+        .screenshot-card:hover{transform:translateY(-4px)}
+
+        /* Stat numbers: subtle glow pulse once revealed */
+        .stats-block .stat-item.visible .stat-number{animation:stat-glow 3.5s ease-in-out 1.2s infinite}
+        @keyframes stat-glow{0%,100%{text-shadow:0 0 18px rgba(234,203,128,.12)}50%{text-shadow:0 0 30px rgba(234,203,128,.32)}}
+
+        @media (prefers-reduced-motion:reduce){
+            .section-title::after,.constellation-card::before,.constellation-card::after,
+            .stats-block .stat-item.visible .stat-number,.hero-badge-beta::before{animation:none!important}
+            .step-card::after,.therapy-card::after,.audience-card::after,
+            .validation-item::after,.credential-card::after{display:none}
+        }
+
 </style>
 </head>
 <body>
@@ -2265,6 +2603,61 @@
         }, { threshold: 0.6 });
         statNums.forEach(n => countObserver.observe(n));
     });
+    </script>
+    <script>
+    /* ── TOP-PREMIUM motion: scroll-spy · timeline draw · parallax ── */
+    (function(){
+        var rm = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+        // Active nav link per section in view
+        var links = [].slice.call(document.querySelectorAll('.nav > a[href^="#"]'));
+        var map = new Map();
+        links.forEach(function(a){
+            var el = document.getElementById(a.getAttribute('href').slice(1));
+            if (el) map.set(el, a);
+        });
+        if (map.size) {
+            var spy = new IntersectionObserver(function(entries){
+                entries.forEach(function(e){
+                    if (e.isIntersecting) {
+                        links.forEach(function(l){ l.classList.remove('active'); });
+                        var a = map.get(e.target);
+                        if (a) a.classList.add('active');
+                    }
+                });
+            }, { rootMargin: '-45% 0px -50% 0px' });
+            map.forEach(function(a, el){ spy.observe(el); });
+        }
+
+        // Timeline draws itself in when scrolled into view
+        var bar = document.querySelector('.timeline-bar');
+        if (bar) {
+            var tio = new IntersectionObserver(function(entries){
+                entries.forEach(function(e){
+                    if (e.isIntersecting){ e.target.classList.add('drawn'); tio.unobserve(e.target); }
+                });
+            }, { threshold: 0.4 });
+            tio.observe(bar);
+        }
+
+        // Subtle parallax on the Mi Watch screenshot
+        if (!rm) {
+            var ph = document.querySelector('.mi-watch-screenshot');
+            if (ph) {
+                var ticking = false;
+                addEventListener('scroll', function(){
+                    if (ticking) return;
+                    ticking = true;
+                    requestAnimationFrame(function(){
+                        var r = ph.getBoundingClientRect();
+                        var off = (r.top + r.height/2 - innerHeight/2) / innerHeight;
+                        ph.style.transform = 'translateY(' + (off * -16).toFixed(1) + 'px)';
+                        ticking = false;
+                    });
+                }, { passive: true });
+            }
+        }
+    })();
     </script>
 </body>
 </html>
