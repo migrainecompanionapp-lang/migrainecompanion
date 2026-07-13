@@ -68,6 +68,76 @@
 }
     </script>
     <style>
+/* ═══════════ DESIGN TOKENS (injected) ═══════════ */
+:root{
+  /* ─── SPACING · 8px base (Atlassian) · всё кратно 8 ─── */
+  --sp-1:8px; --sp-2:16px; --sp-3:24px; --sp-4:32px;
+  --sp-6:48px; --sp-8:64px; --sp-12:96px;
+  --sp-section:96px;        /* вертикальный padding секций · desktop */
+  --sp-section-mobile:64px; /* · mobile */
+
+  /* ─── RADIUS · semantic scale (golden formula: inner = outer − padding) ─── */
+  --r-chip:8px;    /* чипы, мелкие метки */
+  --r-icon:11px;   /* иконки-квадраты */
+  --r-card:16px;   /* карточки, панели */
+  --r-hero:20px;   /* крупные hero-карточки, телефоны */
+  --r-pill:980px;  /* пилюли, бейджи */
+
+  /* ─── BORDER HIERARCHY (Supabase: в dark UI глубина = граница, не тень) ─── */
+  --bd-faint:rgba(255,255,255,0.05);   /* еле видно · дефолт секций */
+  --bd-soft:rgba(255,255,255,0.08);    /* стандарт · карточки */
+  --bd-gold:rgba(197,160,89,0.30);     /* elevated · важное (золото) */
+  --bd-lavender:rgba(139,122,168,0.28);/* elevated · вторичное (лаванда) */
+  --bd-green:rgba(106,170,122,0.25);   /* elevated · успех/финал */
+
+  /* ─── SURFACE (глубина через тон фона, не тени · dark-mode) ─── */
+  --surf-0:var(--charcoal);        /* канва секции */
+  --surf-1:var(--charcoal-light);  /* приподнятая карточка */
+  --surf-2:rgba(255,255,255,0.02); /* тонкая приподнятость */
+  --surf-tint:rgba(255,255,255,0.04); /* чипы, вложенные плашки */
+
+  /* ─── ATMOSPHERIC GLOW (диффузная глубина, не hard-shadow) ─── */
+  --glow-lavender:radial-gradient(ellipse 700px 440px at 50% 20%,rgba(139,122,168,0.08) 0%,transparent 62%);
+  --glow-gold:radial-gradient(ellipse 700px 400px at 30% 20%,rgba(197,160,89,0.06) 0%,transparent 60%);
+  --glow-green:radial-gradient(ellipse 700px 400px at 50% 0%,rgba(106,170,122,0.05) 0%,transparent 60%);
+
+  /* ─── TRANSITIONS (Cursor: цвет 150ms · elevation 200ms · без layout-shift) ─── */
+  --t-color:150ms ease;
+  --t-lift:220ms cubic-bezier(.4,0,.2,1);
+
+  /* ─── TYPE SCALE (модульная · serif-заголовки + sans-body) ─── */
+  --fs-eyebrow:.72rem;    /* + положительный tracking (раскрыть буквы) */
+  --fs-body:1rem;
+  --fs-lead:1.05rem;
+  --fs-h3:1.7rem;
+  --fs-h2:2.4rem;         /* заголовки секций · − letter-spacing (компрессия) */
+  --fs-h1:3.4rem;
+  --tracking-eyebrow:.2em;
+  --tracking-head:-0.01em;
+}
+
+/* ─── УНИВЕРСАЛЬНЫЕ УТИЛИТЫ (переиспользуются всеми блоками) ─── */
+
+/* Eyebrow-метка над заголовком секции */
+.section-eyebrow{display:block;text-align:center;font-size:var(--fs-eyebrow);color:var(--lavender);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;margin-bottom:var(--sp-2);font-weight:500}
+.section-eyebrow-left{text-align:left}
+
+/* Приподнятая карточка · глубина через границу, hover без layout-shift */
+.u-card{background:var(--surf-1);border:.5px solid var(--bd-soft);border-radius:var(--r-card);transition:transform var(--t-lift),border-color var(--t-color)}
+.u-card:hover{transform:translateY(-3px)}
+
+/* Секция · единый вертикальный ритм + атмосферное свечение */
+.u-section{padding:var(--sp-section) 0;position:relative;z-index:2;background:var(--surf-0);overflow:hidden}
+.u-section::before{content:"";position:absolute;inset:0;pointer-events:none;background:var(--glow-lavender)}
+.u-section>.container{position:relative;z-index:2}
+
+@media(max-width:768px){
+  .u-section{padding:var(--sp-section-mobile) 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .u-card{transition:none}
+}
+
         *{margin:0;padding:0;box-sizing:border-box}
         :root{--malachite:#191A1B;--malachite-light:#242426;--malachite-dark:#161617;--charcoal:#131314;--charcoal-light:#1A1A1C;--lavender:#8b7aa8;--lavender-light:#B099C9;--gold:#C5A059;--antique-gold:#D5B069;--text:#C9BDA8;--text-light:#9A8EA6;--text-dark:#6E6580;--paper:#F0EAD6;--cream:#F5F0E8;--green-mi:#6AAA7A;--wine:#C089A0;--paprika:#C58575;--verdigris:#6FA995;--storm:#8AA0BD;--amethyst:#7A5BA8}
         body{font-family:'Inter',-apple-system,sans-serif;background:#131314;background-attachment:fixed;color:#fff;min-height:100vh;line-height:1.6;overflow-x:hidden;font-weight:400;-webkit-font-smoothing:antialiased;position:relative}
@@ -764,7 +834,492 @@
             .fade-in{filter:none;transform:none}
             .scroll-indicator .mouse::before,.hero-mi{animation:none}
         }
-    </style>
+    
+/* ═══════════ PITCH BLOCKS (injected) ═══════════ */
+/* ═══════ hero ═══════ */
+/* ═══ БЛОК 1 · NEW HERO (headline-first) ═══ */
+.hero-headline{font-family:'Cormorant Garamond',serif;font-size:3.4rem;font-weight:500;line-height:1.08;letter-spacing:-0.01em;color:var(--paper);margin-bottom:22px;max-width:640px;margin-left:auto;margin-right:auto;text-shadow:0 2px 16px rgba(0,0,0,0.5);animation:title-glow 4s ease-in-out infinite}
+.headline-gold{color:var(--antique-gold);font-style:italic}
+.hero .hero-tagline{font-family:'Inter',sans-serif;font-size:1.12rem;font-style:normal;font-weight:400;line-height:1.65;color:var(--text);max-width:540px;margin:0 auto 38px;text-shadow:none}
+.badge-pulse{width:6px;height:6px;border-radius:50%;background:var(--green-mi);display:inline-block;animation:badgePulse 2.6s ease-in-out infinite}
+@keyframes badgePulse{0%,100%{opacity:.5;box-shadow:0 0 0 0 rgba(106,170,122,0.4)}50%{opacity:1;box-shadow:0 0 8px 2px rgba(106,170,122,0.3)}}
+@media(max-width:768px){.hero-headline{font-size:2.4rem}.hero .hero-tagline{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){.badge-pulse,.hero-headline{animation:none}}
+/* ═══════ problem ═══════ */
+/* ═══ БЛОК 2 · THE PROBLEM ═══ */
+.problem{padding:96px 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.problem::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 600px 400px at 50% 0%,rgba(139,122,168,0.07) 0%,transparent 60%)}
+.problem .container{position:relative;z-index:2}
+
+.section-eyebrow{display:block;text-align:center;font-size:.72rem;color:var(--lavender);letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;font-weight:500}
+
+.problem-head{max-width:660px;margin:0 auto}
+.problem-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.6rem;line-height:1.15;color:var(--paper);text-align:center;margin-bottom:22px}
+.problem-title-accent{color:var(--lavender);font-style:italic}
+.problem-lead{font-family:'Inter',sans-serif;font-size:1.05rem;line-height:1.7;color:var(--text);text-align:center;max-width:560px;margin:0 auto}
+
+.problem-stats{display:flex;align-items:center;justify-content:center;gap:36px;margin:44px auto 0;flex-wrap:wrap}
+.pstat{text-align:center}
+.pstat-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--gold);line-height:1}
+.pstat-label{font-size:.8rem;color:var(--text-light);max-width:160px;line-height:1.45;margin:8px auto 0}
+.pstat-divider{width:1px;height:52px;background:rgba(255,255,255,0.1)}
+
+.problem-quote{text-align:center;margin:48px auto 0;max-width:600px}
+.problem-quote span{display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--paper);padding:16px 28px;background:rgba(106,170,122,0.07);border:.5px solid rgba(106,170,122,0.22);border-radius:16px;line-height:1.5}
+
+.problem-bridge{text-align:center;font-size:.9rem;color:var(--text);letter-spacing:.02em;margin:48px auto 26px}
+
+.problem-paths{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:720px;margin:0 auto}
+.path-card{background:var(--charcoal-light);border:.5px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px 26px;transition:transform .35s cubic-bezier(.4,0,.2,1),border-color .35s cubic-bezier(.4,0,.2,1)}
+.path-card:hover{transform:translateY(-3px);border-color:rgba(197,160,89,0.4)}
+.path-card-gold{border-color:rgba(197,160,89,0.25)}
+
+.path-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.path-icon{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.path-icon svg{width:22px;height:22px}
+.path-icon-green{background:rgba(106,170,122,0.15);color:var(--green-mi)}
+.path-icon-gold{background:rgba(197,160,89,0.15);color:var(--gold)}
+.path-title{font-family:'Inter',sans-serif;font-size:1.02rem;font-weight:600;color:var(--paper);line-height:1.25}
+
+.path-desc{font-size:.88rem;color:var(--text);line-height:1.6;margin-bottom:16px}
+.path-list{list-style:none;padding:0;margin:0}
+.path-list li{font-size:.85rem;color:var(--text-light);line-height:2;padding-left:20px;position:relative}
+.path-list li::before{content:"";position:absolute;left:0;top:.85em;width:6px;height:6px;border-radius:50%;background:var(--green-mi)}
+
+.path-stat{background:rgba(197,160,89,0.08);border-radius:12px;padding:16px 16px;text-align:center}
+.path-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:600;color:var(--gold);line-height:1}
+.path-stat-label{font-size:.78rem;color:var(--text-light);line-height:1.45;margin-top:6px}
+.path-stat-source{font-size:.66rem;color:var(--text-dark);margin-top:8px;letter-spacing:.02em}
+
+@media(max-width:768px){
+  .problem{padding:64px 0}
+  .problem-title{font-size:2rem}
+  .problem-lead{font-size:.98rem}
+  .problem-stats{gap:24px}
+  .pstat-num{font-size:2.4rem}
+  .problem-quote span{font-size:1.12rem;padding:14px 20px}
+  .problem-paths{grid-template-columns:1fr;gap:14px}
+}
+@media(prefers-reduced-motion:reduce){.path-card{transition:none}}
+/* ═══════ solution ═══════ */
+/* ═══ БЛОК 3 · THE SOLUTION ═══ */
+.solution{padding:96px 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.solution::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 500px 500px at 82% 45%,rgba(139,122,168,0.09) 0%,transparent 60%)}
+.solution .container{position:relative;z-index:2}
+
+.solution-grid{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:center;max-width:900px;margin:0 auto}
+
+.section-eyebrow-left{text-align:left;margin-bottom:18px}
+.solution-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.5rem;line-height:1.15;color:var(--paper);margin-bottom:20px}
+.solution-lead{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.7;color:var(--text);margin-bottom:30px;max-width:460px}
+
+.solution-steps{display:flex;flex-direction:column;gap:16px}
+.sstep{display:flex;align-items:flex-start;gap:14px}
+.sstep-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sstep-icon svg{width:20px;height:20px}
+.sstep-icon-teal{background:rgba(111,169,149,0.15);color:var(--verdigris)}
+.sstep-icon-lavender{background:rgba(139,122,168,0.15);color:var(--lavender)}
+.sstep-icon-gold{background:rgba(197,160,89,0.15);color:var(--gold)}
+.sstep-text{display:flex;flex-direction:column;gap:2px}
+.sstep-text strong{font-size:.95rem;font-weight:600;color:var(--paper)}
+.sstep-text span{font-size:.85rem;color:var(--text-light);line-height:1.5}
+
+.solution-visual{justify-self:center}
+.phone-frame{width:290px;background:#0D0D0E;border-radius:40px;padding:11px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 30px 70px rgba(0,0,0,0.5);animation:float 6s ease-in-out infinite}
+.phone-screen{background:#16181C;border-radius:32px;overflow:hidden;aspect-ratio:9/19.5}
+.phone-screen img{width:100%;height:100%;object-fit:cover;display:block}
+
+@media(max-width:768px){
+  .solution{padding:64px 0}
+  .solution-grid{grid-template-columns:1fr;gap:40px}
+  .section-eyebrow-left{text-align:center}
+  .solution-title{font-size:2rem;text-align:center}
+  .solution-lead{font-size:.95rem;text-align:center;margin-left:auto;margin-right:auto}
+  .solution-steps{max-width:400px;margin:0 auto}
+  .phone-frame{width:260px}
+}
+@media(prefers-reduced-motion:reduce){.phone-frame{animation:none}}
+/* ═══════ howitworks ═══════ */
+/* ═══ БЛОК 4 · HOW IT WORKS ═══ */
+.howitworks{padding:96px 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.howitworks::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 700px 400px at 50% 0%,rgba(106,170,122,0.05) 0%,transparent 60%)}
+.howitworks .container{position:relative;z-index:2}
+
+.hiw-head{text-align:center;max-width:560px;margin:0 auto 48px}
+.hiw-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.4rem;line-height:1.15;color:var(--paper);margin-bottom:14px}
+.hiw-lead{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.65;color:var(--text)}
+
+.hiw-flow{position:relative;max-width:840px;margin:0 auto}
+.hiw-line{position:absolute;top:34px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,rgba(197,160,89,0.3) 15%,rgba(197,160,89,0.3) 85%,transparent);z-index:1}
+.hiw-steps{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.hiw-step{text-align:center}
+.hiw-icon{width:68px;height:68px;border-radius:20px;background:var(--charcoal-light);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;transition:border-color .35s ease}
+.hiw-icon svg{width:30px;height:30px}
+.hiw-icon-teal{border:.5px solid rgba(111,169,149,0.3);color:var(--verdigris)}
+.hiw-icon-lavender{border:.5px solid rgba(139,122,168,0.3);color:var(--lavender)}
+.hiw-icon-gold{border:.5px solid rgba(197,160,89,0.4);color:var(--gold)}
+.hiw-icon-glow{box-shadow:0 0 24px rgba(197,160,89,0.12)}
+.hiw-step:hover .hiw-icon{border-color:rgba(197,160,89,0.5)}
+.hiw-num{font-size:.62rem;color:var(--text-dark);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.hiw-num-gold{color:var(--gold)}
+.hiw-step-title{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;color:var(--paper);margin-bottom:6px}
+.hiw-step-desc{font-size:.78rem;color:var(--text-light);line-height:1.55}
+.hiw-step-desc em{color:var(--text);font-style:italic}
+
+.hiw-honesty{display:flex;align-items:center;justify-content:center;gap:10px;max-width:560px;margin:44px auto 0;padding:12px 20px;background:rgba(255,255,255,0.03);border:.5px solid rgba(255,255,255,0.08);border-radius:14px}
+.hiw-honesty svg{width:18px;height:18px;color:var(--green-mi);flex-shrink:0}
+.hiw-honesty span{font-size:.8rem;color:var(--text);line-height:1.5}
+.conf-learning{color:var(--lavender);font-style:normal}
+.conf-calibrating{color:var(--gold);font-style:normal}
+.conf-reliable{color:var(--green-mi);font-style:normal}
+
+/* ═══ БЛОК 4b · WHAT YOU NEED ═══ */
+.whatyouneed{padding:88px 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.whatyouneed::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 600px 340px at 50% 0%,rgba(197,160,89,0.05) 0%,transparent 60%)}
+.whatyouneed .container{position:relative;z-index:2}
+
+.wyn-head{text-align:center;max-width:480px;margin:0 auto 38px}
+.wyn-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2rem;line-height:1.15;color:var(--paper);margin-bottom:10px}
+.wyn-lead{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;color:var(--text)}
+
+.wyn-row{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;max-width:760px;margin:0 auto}
+.wyn-card{background:var(--charcoal-light);border-radius:16px;padding:26px 20px;text-align:center;transition:transform .35s cubic-bezier(.4,0,.2,1),border-color .35s ease}
+.wyn-card:hover{transform:translateY(-3px);border-color:rgba(197,160,89,0.4)}
+.wyn-card-teal{border:.5px solid rgba(111,169,149,0.28)}
+.wyn-card-lavender{border:.5px solid rgba(139,122,168,0.28)}
+.wyn-card-gold{border:.5px solid rgba(197,160,89,0.32)}
+.wyn-icon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.wyn-icon svg{width:30px;height:30px}
+.wyn-icon-teal{background:rgba(111,169,149,0.12);color:var(--verdigris)}
+.wyn-icon-lavender{background:rgba(139,122,168,0.12);color:var(--lavender)}
+.wyn-icon-gold{background:rgba(197,160,89,0.12);color:var(--gold)}
+.wyn-name{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;color:var(--paper);margin-bottom:6px}
+.wyn-req{display:inline-block;font-size:.62rem;border-radius:6px;padding:2px 8px;margin-bottom:10px}
+.wyn-req-teal{color:var(--verdigris);background:rgba(111,169,149,0.12)}
+.wyn-req-lavender{color:var(--lavender);background:rgba(139,122,168,0.12)}
+.wyn-req-gold{color:var(--gold);background:rgba(197,160,89,0.12)}
+.wyn-desc{font-size:.78rem;color:var(--text-light);line-height:1.5}
+.wyn-plus{display:flex;align-items:center;justify-content:center;padding:0 10px}
+.wyn-plus svg{width:20px;height:20px;color:var(--text-dark)}
+
+.wyn-note{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;background:rgba(255,255,255,0.03);border:.5px solid rgba(255,255,255,0.07);border-radius:12px;margin:28px auto 0;left:50%;position:relative;transform:translateX(-50%)}
+.wyn-note svg{width:16px;height:16px;color:var(--lavender);flex-shrink:0}
+.wyn-note span{font-size:.76rem;color:var(--text-light);line-height:1.5}
+.wyn-note em{color:var(--text);font-style:normal}
+
+@media(max-width:768px){
+  .howitworks{padding:64px 0}
+  .hiw-title{font-size:1.9rem}
+  .hiw-line{display:none}
+  .hiw-steps{grid-template-columns:1fr;gap:26px;max-width:340px;margin:0 auto}
+  .whatyouneed{padding:56px 0}
+  .wyn-row{grid-template-columns:1fr;gap:6px;max-width:340px}
+  .wyn-plus{padding:6px 0}
+  .wyn-note{max-width:340px}
+}
+@media(prefers-reduced-motion:reduce){.wyn-card,.hiw-icon{transition:none}}
+/* ═══════ twosig ═══════ */
+/* ═══ БЛОК 5 · TWO SIGNATURES ═══ */
+.twosig{padding:96px 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.twosig::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 700px 460px at 50% 30%,rgba(139,122,168,0.07) 0%,transparent 62%)}
+.twosig .container{position:relative;z-index:2}
+
+.twosig-head{text-align:center;max-width:600px;margin:0 auto}
+.twosig-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.5rem;line-height:1.15;color:var(--paper);margin-bottom:18px}
+.twosig-title-accent{color:var(--lavender);font-style:italic}
+.twosig-lead{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.65;color:var(--text);max-width:540px;margin:0 auto}
+
+.twosig-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:720px;margin:36px auto 0}
+.tsig-card{background:var(--charcoal-light);border:.5px solid rgba(139,122,168,0.26);border-radius:16px;padding:26px 24px;transition:transform .35s cubic-bezier(.4,0,.2,1),border-color .35s ease}
+.tsig-card:hover{transform:translateY(-3px)}
+.tsig-card-gold{border-color:rgba(197,160,89,0.26)}
+.tsig-card-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tsig-icon{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tsig-icon svg{width:22px;height:22px}
+.tsig-icon-lavender{background:rgba(139,122,168,0.15);color:var(--lavender)}
+.tsig-icon-gold{background:rgba(197,160,89,0.15);color:var(--gold)}
+.tsig-kicker{font-size:.62rem;color:var(--text-dark);letter-spacing:.08em;text-transform:uppercase}
+.tsig-name{font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;color:var(--paper)}
+.tsig-desc{font-size:.85rem;color:var(--text-light);line-height:1.6}
+.tsig-desc em{color:var(--text);font-style:italic}
+
+.tsig-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tsig-chip{display:inline-flex;align-items:center;gap:5px;font-size:.66rem;color:var(--text);background:rgba(255,255,255,0.04);border-radius:7px;padding:4px 9px}
+.tsig-chip svg{width:13px;height:13px;color:var(--gold)}
+
+.twosig-meet{display:flex;flex-direction:column;align-items:center;gap:3px;margin:18px 0}
+.twosig-meet-line{width:1px;height:18px;background:rgba(197,160,89,0.35)}
+.twosig-meet span{font-size:.72rem;color:var(--lavender);letter-spacing:.04em}
+
+.twosig-payoff{background:linear-gradient(180deg,rgba(197,160,89,0.10),rgba(197,160,89,0.04));border:.5px solid rgba(197,160,89,0.3);border-radius:18px;padding:34px 30px;text-align:center;max-width:640px;margin:0 auto}
+.twosig-payoff-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.7rem;line-height:1.25;color:var(--paper);margin-bottom:12px}
+.twosig-payoff-accent{color:var(--gold)}
+.twosig-payoff-desc{font-size:.92rem;color:var(--text);line-height:1.65;max-width:480px;margin:0 auto}
+.twosig-payoff-desc em{color:var(--paper);font-style:italic}
+
+.twosig-claim{text-align:center;font-size:.72rem;color:var(--text-dark);line-height:1.6;margin:24px auto 0;max-width:540px}
+
+@media(max-width:768px){
+  .twosig{padding:64px 0}
+  .twosig-title{font-size:2rem}
+  .twosig-lead{font-size:.95rem}
+  .twosig-cards{grid-template-columns:1fr;gap:14px;max-width:400px}
+  .twosig-payoff-title{font-size:1.4rem}
+}
+@media(prefers-reduced-motion:reduce){.tsig-card{transition:none}}
+/* ═══════ alertex ═══════ */
+/* ═══ БЛОК 6 · ПРИМЕР АЛЕРТА ═══ */
+.alertex{padding:var(--sp-section) 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.alertex::before{content:"";position:absolute;inset:0;pointer-events:none;background:var(--glow-lavender)}
+.alertex .container{position:relative;z-index:2}
+
+.ax-head{text-align:center;max-width:520px;margin:0 auto var(--sp-6)}
+.ax-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.1rem;line-height:1.15;color:var(--paper);letter-spacing:var(--tracking-head);margin-bottom:var(--sp-2)}
+.ax-lead{font-family:'Inter',sans-serif;font-size:var(--fs-body);line-height:1.65;color:var(--text)}
+
+.ax-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-4);align-items:center;max-width:720px;margin:0 auto}
+.ax-col{text-align:center}
+.ax-step-label{font-size:.66rem;color:var(--text-dark);letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--sp-2)}
+
+/* — lock screen push — */
+.ax-lockscreen{background:linear-gradient(160deg,#2A2438,#171520);border-radius:var(--r-hero);padding:26px 16px 30px;border:.5px solid var(--bd-soft)}
+.ax-clock{font-family:'Inter',sans-serif;font-size:2.6rem;font-weight:300;color:rgba(255,255,255,0.92);line-height:1;letter-spacing:-0.02em}
+.ax-date{font-size:.78rem;color:rgba(255,255,255,0.6);margin-top:4px;margin-bottom:26px}
+.ax-push{background:rgba(255,255,255,0.11);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:var(--r-card);padding:13px 14px;text-align:left;border:.5px solid var(--bd-soft)}
+.ax-push-head{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.ax-push-icon{width:19px;height:19px;border-radius:5px;background:linear-gradient(135deg,var(--green-mi),var(--lavender));display:flex;align-items:center;justify-content:center}
+.ax-push-icon svg{width:12px;height:12px;color:#fff}
+.ax-push-app{font-size:.68rem;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:.02em}
+.ax-push-time{margin-left:auto;font-size:.62rem;color:rgba(255,255,255,0.5)}
+.ax-push-title{font-family:'Inter',sans-serif;font-size:.84rem;font-weight:600;color:#fff;line-height:1.35;margin-bottom:3px}
+.ax-push-body{font-size:.78rem;color:rgba(255,255,255,0.8);line-height:1.4}
+.ax-push-sub{font-size:.66rem;color:var(--antique-gold);margin-top:6px}
+
+/* — opened Hub card — */
+.ax-card{background:linear-gradient(180deg,#2A1F3A,#1A1525);border:1px solid var(--bd-gold);border-radius:var(--r-hero);padding:20px 18px 18px;text-align:left}
+.ax-card-head{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.ax-card-icon{width:28px;height:28px;border-radius:var(--r-chip);background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+.ax-card-icon svg{width:16px;height:16px;color:#E8D5A8}
+.ax-card-app{flex:1;font-family:'Comfortaa',sans-serif;font-size:.75rem;font-weight:600;color:rgba(255,255,255,0.85)}
+.ax-card-pill{background:rgba(212,182,121,0.16);border:.5px solid rgba(212,182,121,0.4);border-radius:var(--r-pill);padding:3px 9px;font-family:'Comfortaa',sans-serif;font-size:.53rem;font-weight:700;letter-spacing:.06em;color:#D4B679}
+.ax-card-title{font-family:'Comfortaa',sans-serif;font-size:1.2rem;font-weight:800;color:#E8D5A8;letter-spacing:-0.3px;margin-bottom:7px}
+.ax-card-sub{font-family:'Comfortaa',sans-serif;font-size:.72rem;color:var(--text-light);line-height:1.45;margin-bottom:14px}
+
+.ax-learned{background:var(--surf-tint);border:.5px solid var(--bd-soft);border-radius:var(--r-card);padding:12px 13px;margin-bottom:12px}
+.ax-learned-label{font-family:'Comfortaa',sans-serif;font-size:.56rem;color:rgba(255,255,255,0.5);letter-spacing:.06em;text-transform:uppercase;margin-bottom:9px}
+.ax-learned-intro{font-family:'Comfortaa',sans-serif;font-size:.7rem;color:rgba(255,255,255,0.72);line-height:1.4;margin-bottom:9px}
+.ax-learned-rows{display:flex;flex-direction:column;gap:6px}
+.ax-learned-row{display:flex;align-items:center;gap:8px}
+.ax-arrow{width:13px;height:13px;color:#D8956C;flex-shrink:0}
+.ax-learned-row span{font-family:'Comfortaa',sans-serif;font-size:.7rem;color:rgba(255,255,255,0.8)}
+
+.ax-whynow{display:flex;align-items:center;justify-content:space-between}
+.ax-whynow span{font-family:'Comfortaa',sans-serif;font-size:.66rem;color:rgba(255,255,255,0.5)}
+.ax-whynow-time{color:#D4B679!important}
+
+.ax-caption{font-size:.72rem;color:var(--text-light);line-height:1.5;margin:var(--sp-2) auto 0;max-width:240px}
+
+.ax-closer{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--lavender-light);margin:var(--sp-4) auto 0;max-width:460px;line-height:1.5}
+
+@media(max-width:768px){
+  .alertex{padding:var(--sp-section-mobile) 0}
+  .ax-grid{grid-template-columns:1fr;gap:var(--sp-6);max-width:320px}
+}
+/* ═══════ milab ═══════ */
+/* ═══ БЛОК 7 · MI LAB ═══ */
+.milab{padding:var(--sp-section) 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.milab::before{content:"";position:absolute;inset:0;pointer-events:none;background:var(--glow-gold)}
+.milab .container{position:relative;z-index:2}
+
+.ml-top{display:grid;grid-template-columns:1fr 300px;gap:var(--sp-8);align-items:center;max-width:900px;margin:0 auto var(--sp-8)}
+.ml-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:var(--fs-h2);line-height:1.15;color:var(--paper);letter-spacing:var(--tracking-head);margin-bottom:var(--sp-2)}
+.ml-title-strike{text-decoration:line-through;text-decoration-color:var(--text-dark);color:var(--text-light)}
+.ml-title-accent{color:var(--gold);font-style:italic}
+.ml-lead{font-family:'Inter',sans-serif;font-size:var(--fs-body);line-height:1.7;color:var(--text);margin-bottom:var(--sp-2);max-width:460px}
+.ml-freedom{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.75;color:var(--text-light);max-width:460px}
+.ml-freedom em{color:var(--paper);font-style:italic}
+
+.ml-visual{justify-self:center}
+.ml-phone{width:280px;background:#0D0D0E;border-radius:38px;padding:11px;border:1px solid var(--bd-soft);box-shadow:0 30px 70px rgba(0,0,0,0.5);animation:float 6s ease-in-out infinite}
+.ml-phone-screen{background:#16181C;border-radius:30px;overflow:hidden;aspect-ratio:9/19.5}
+.ml-phone-screen img{width:100%;height:100%;object-fit:cover;display:block}
+
+.ml-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-2);max-width:900px;margin:0 auto}
+.ml-benefit{padding:26px 22px}
+.ml-benefit-icon{width:42px;height:42px;border-radius:var(--r-icon);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.ml-benefit-icon svg{width:22px;height:22px}
+.ml-icon-green{background:rgba(106,170,122,0.15);color:var(--green-mi)}
+.ml-icon-lavender{background:rgba(139,122,168,0.15);color:var(--lavender)}
+.ml-icon-gold{background:rgba(197,160,89,0.15);color:var(--gold)}
+.ml-benefit-title{font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;color:var(--paper);margin-bottom:8px;line-height:1.3}
+.ml-benefit-desc{font-size:.85rem;color:var(--text-light);line-height:1.6}
+
+.ml-honest{text-align:center;font-size:.76rem;color:var(--text-dark);line-height:1.6;margin:var(--sp-4) auto 0;max-width:560px}
+
+@media(max-width:768px){
+  .milab{padding:var(--sp-section-mobile) 0}
+  .ml-top{grid-template-columns:1fr;gap:var(--sp-6);text-align:center}
+  .section-eyebrow-left{text-align:center}
+  .ml-title{font-size:1.9rem}
+  .ml-lead,.ml-freedom{margin-left:auto;margin-right:auto}
+  .ml-phone{width:250px}
+  .ml-benefits{grid-template-columns:1fr;gap:var(--sp-2);max-width:400px}
+}
+@media(prefers-reduced-motion:reduce){.ml-phone{animation:none}}
+/* ═══════ morethan ═══════ */
+/* ═══ БЛОК 8 · БОЛЬШЕ ЧЕМ ПРОГНОЗЫ ═══ */
+.morethan{padding:var(--sp-section) 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.morethan::before{content:"";position:absolute;inset:0;pointer-events:none;background:var(--glow-lavender)}
+.morethan .container{position:relative;z-index:2}
+
+.mt-head{text-align:center;max-width:620px;margin:0 auto var(--sp-6)}
+.mt-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:var(--fs-h2);line-height:1.15;color:var(--paper);letter-spacing:var(--tracking-head);margin-bottom:var(--sp-2)}
+.mt-title-accent{color:var(--lavender);font-style:italic}
+.mt-lead{font-family:'Inter',sans-serif;font-size:var(--fs-body);line-height:1.7;color:var(--text)}
+
+.mt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-2);max-width:900px;margin:0 auto}
+.mt-feat{padding:24px 20px}
+.mt-feat-icon{width:40px;height:40px;border-radius:var(--r-icon);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.mt-feat-icon svg{width:21px;height:21px}
+.mt-icon-lavender{background:rgba(139,122,168,0.15);color:var(--lavender)}
+.mt-icon-teal{background:rgba(111,169,149,0.15);color:var(--verdigris)}
+.mt-icon-green{background:rgba(106,170,122,0.15);color:var(--green-mi)}
+.mt-icon-gold{background:rgba(197,160,89,0.15);color:var(--gold)}
+.mt-feat-title{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;color:var(--paper);margin-bottom:8px;line-height:1.3}
+.mt-feat-desc{font-size:.82rem;color:var(--text-light);line-height:1.6}
+
+@media(max-width:768px){
+  .morethan{padding:var(--sp-section-mobile) 0}
+  .mt-title{font-size:1.9rem}
+  .mt-grid{grid-template-columns:1fr;gap:var(--sp-2);max-width:400px}
+}
+/* ═══════ science ═══════ */
+/* ═══ БЛОК 9 · НАУКА И ЧЕСТНОСТЬ ═══ */
+.science{padding:var(--sp-section) 0 var(--sp-6);position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.science::before{content:"";position:absolute;inset:0;pointer-events:none;background:var(--glow-green)}
+.science .container{position:relative;z-index:2}
+
+.sc-head{text-align:center;max-width:600px;margin:0 auto var(--sp-6)}
+.sc-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:var(--fs-h2);line-height:1.15;color:var(--paper);letter-spacing:var(--tracking-head);margin-bottom:var(--sp-2)}
+.sc-title-accent{color:var(--green-mi);font-style:italic}
+.sc-lead{font-family:'Inter',sans-serif;font-size:var(--fs-body);line-height:1.65;color:var(--text)}
+
+.sc-proofs{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-2);max-width:840px;margin:0 auto var(--sp-4)}
+.sc-proof{padding:24px 22px;text-align:center}
+.sc-proof-num{font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:600;color:var(--gold);line-height:1.05;margin-bottom:10px}
+.sc-proof-text{font-size:.85rem;color:var(--text);line-height:1.55;margin-bottom:10px}
+.sc-proof-src{font-size:.66rem;color:var(--text-dark);line-height:1.4;letter-spacing:.01em}
+
+.sc-honesty{display:flex;gap:16px;align-items:flex-start;max-width:720px;margin:0 auto;background:var(--surf-2);border:.5px solid var(--bd-green);border-radius:var(--r-card);padding:24px 26px}
+.sc-honesty-icon{flex-shrink:0;width:40px;height:40px;border-radius:var(--r-icon);background:rgba(106,170,122,0.12);display:flex;align-items:center;justify-content:center}
+.sc-honesty-icon svg{width:22px;height:22px;color:var(--green-mi)}
+.sc-honesty-title{font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;color:var(--paper);margin-bottom:8px}
+.sc-honesty-text{font-size:.88rem;color:var(--text);line-height:1.65}
+.sc-honesty-text em{color:var(--paper);font-style:italic}
+
+@media(max-width:768px){
+  .science{padding:var(--sp-section-mobile) 0 var(--sp-4)}
+  .sc-title{font-size:1.9rem}
+  .sc-proofs{grid-template-columns:1fr;gap:var(--sp-2);max-width:400px}
+  .sc-honesty{flex-direction:column;gap:12px;padding:20px}
+}
+/* ═══════ roadmap ═══════ */
+/* ═══ БЛОК · ROADMAP ═══ */
+.roadmap{padding:96px 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.roadmap::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 700px 400px at 30% 20%,rgba(197,160,89,0.06) 0%,transparent 60%)}
+.roadmap .container{position:relative;z-index:2}
+
+.rm-head{text-align:center;max-width:560px;margin:0 auto 20px}
+.rm-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.4rem;line-height:1.15;color:var(--paper);margin-bottom:14px}
+.rm-lead{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.65;color:var(--text)}
+
+.rm-milestone{display:inline-flex;align-items:center;gap:12px;background:rgba(197,160,89,0.1);border:.5px solid rgba(197,160,89,0.3);border-radius:14px;padding:14px 22px;margin:0 auto 44px;position:relative;left:50%;transform:translateX(-50%);max-width:560px}
+.rm-milestone-icon{width:22px;height:22px;color:var(--gold);flex-shrink:0}
+.rm-milestone-title{font-size:.85rem;font-weight:600;color:var(--paper);line-height:1.4}
+.rm-milestone-sub{font-size:.75rem;color:var(--text-light);margin-top:3px;line-height:1.4}
+
+.rm-flow{position:relative;max-width:860px;margin:0 auto}
+.rm-line{position:absolute;top:20px;left:9%;right:9%;height:2px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold) 22%,rgba(139,122,168,0.25) 30%,rgba(139,122,168,0.18) 100%);z-index:1}
+.rm-phases{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+
+.rm-dot-wrap{display:flex;justify-content:center;margin-bottom:16px}
+.rm-dot{width:13px;height:13px;border-radius:50%;background:#2A2733;border:2px solid rgba(139,122,168,0.5)}
+.rm-dot-green{border-color:rgba(106,170,122,0.5)}
+.rm-dot-active{width:16px;height:16px;background:var(--gold);border:3px solid var(--charcoal);animation:rmPulse 2.6s ease-in-out infinite}
+@keyframes rmPulse{0%,100%{box-shadow:0 0 0 0 rgba(197,160,89,0.35)}50%{box-shadow:0 0 0 7px rgba(197,160,89,0)}}
+
+.rm-card{background:rgba(255,255,255,0.02);border:.5px solid rgba(255,255,255,0.07);border-radius:14px;padding:18px 15px}
+.rm-card-active{background:linear-gradient(180deg,rgba(197,160,89,0.12),rgba(197,160,89,0.03));border-color:rgba(197,160,89,0.35)}
+.rm-card-green{border-color:rgba(106,170,122,0.18)}
+.rm-now-badge{display:inline-block;font-size:.56rem;font-weight:700;color:#0D0D0E;background:var(--gold);border-radius:5px;padding:2px 8px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:9px}
+.rm-when{font-size:.66rem;color:var(--lavender);margin-bottom:4px}
+.rm-when-gold{color:var(--antique-gold)}
+.rm-when-green{color:var(--green-mi)}
+.rm-phase-title{font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;color:var(--paper);line-height:1.3;margin-bottom:7px}
+.rm-phase:not(.rm-phase-active) .rm-phase-title{color:#E8E0D0}
+.rm-phase-desc{font-size:.75rem;color:var(--text-light);line-height:1.5}
+.rm-phase-active .rm-phase-desc{color:var(--text)}
+
+.rm-disclaimer{text-align:center;font-size:.74rem;color:var(--text-dark);line-height:1.6;margin:34px auto 0;max-width:520px}
+
+@media(max-width:768px){
+  .roadmap{padding:64px 0}
+  .rm-title{font-size:1.9rem}
+  .rm-milestone{max-width:100%;padding:12px 16px}
+  .rm-line{display:none}
+  .rm-phases{grid-template-columns:1fr;gap:14px}
+  .rm-dot-wrap{margin-bottom:10px}
+}
+@media(prefers-reduced-motion:reduce){.rm-dot-active{animation:none}}
+/* ═══════ foundercta ═══════ */
+/* ═══ БЛОК 10 · FOUNDER STORY ═══ */
+.founder{padding:var(--sp-section) 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.founder::before{content:"";position:absolute;inset:0;pointer-events:none;background:var(--glow-lavender)}
+.founder .container{position:relative;z-index:2}
+
+.fo-grid{display:grid;grid-template-columns:280px 1fr;gap:var(--sp-8);align-items:center;max-width:860px;margin:0 auto}
+.fo-portrait{position:relative}
+.fo-portrait img{width:100%;border-radius:var(--r-hero);display:block;border:.5px solid var(--bd-soft)}
+.fo-portrait-cap{margin-top:14px;text-align:center}
+.fo-portrait-name{display:block;font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--paper)}
+.fo-portrait-role{display:block;font-size:.72rem;color:var(--lavender);letter-spacing:.06em;margin-top:2px}
+
+.fo-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:var(--fs-h2);line-height:1.15;color:var(--paper);letter-spacing:var(--tracking-head);margin-bottom:var(--sp-2)}
+.fo-title-accent{color:var(--lavender);font-style:italic}
+.fo-text{font-family:'Inter',sans-serif;font-size:.95rem;line-height:1.75;color:var(--text);margin-bottom:14px;max-width:500px}
+.fo-text-quiet{color:var(--text-light);font-style:italic}
+
+/* ═══ ФИНАЛЬНЫЙ CTA ═══ */
+.finalcta{padding:var(--sp-12) 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
+.finalcta::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 700px 500px at 50% 50%,rgba(197,160,89,0.08) 0%,transparent 62%)}
+.fc-inner{position:relative;z-index:2;text-align:center;max-width:600px;margin:0 auto}
+.fc-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:var(--fs-h1);line-height:1.1;color:var(--paper);letter-spacing:var(--tracking-head);margin-bottom:var(--sp-2)}
+.fc-title-accent{color:var(--antique-gold);font-style:italic}
+.fc-lead{font-family:'Inter',sans-serif;font-size:var(--fs-lead);line-height:1.65;color:var(--text);max-width:480px;margin:0 auto var(--sp-4)}
+.fc-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.fc-btn{display:flex;align-items:center;gap:12px;padding:12px 28px;background:rgba(255,255,255,.05);backdrop-filter:blur(15px) saturate(180%);-webkit-backdrop-filter:blur(15px) saturate(180%);border:1px solid var(--bd-soft);border-radius:18px;text-decoration:none;transition:transform var(--t-lift),border-color var(--t-color)}
+.fc-btn:hover{transform:translateY(-2px);border-color:var(--bd-gold)}
+.fc-btn svg{width:26px;height:26px;color:var(--paper)}
+.fc-btn-text{text-align:left}
+.fc-btn-text small{display:block;font-size:.62rem;color:var(--text-light)}
+.fc-btn-text strong{display:block;font-size:1rem;color:var(--paper)}
+.fc-note{margin-top:var(--sp-3);font-size:.7rem;color:var(--text-dark);letter-spacing:.02em;line-height:1.6}
+.fc-note-hw{color:var(--antique-gold);font-weight:500}
+
+@media(max-width:768px){
+  .founder{padding:var(--sp-section-mobile) 0}
+  .fo-grid{grid-template-columns:1fr;gap:var(--sp-4);text-align:center}
+  .fo-portrait{max-width:240px;margin:0 auto}
+  .section-eyebrow-left{text-align:center}
+  .fo-title{font-size:1.9rem}
+  .fo-text{margin-left:auto;margin-right:auto}
+  .finalcta{padding:var(--sp-8) 0}
+  .fc-title{font-size:2.4rem}
+  .fc-buttons{flex-direction:column;align-items:center}
+  .fc-btn{width:100%;max-width:280px;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){.fc-btn{transition:none}}
+</style>
 </head>
 <body>
     <div class="mouse-glow"></div>
@@ -810,809 +1365,612 @@
     </header>
 
     <main>
+        
+        <!-- ═══ hero ═══ -->
         <section class="hero">
-            <div class="hero-content">
-                <img src="images/mi-icon.png" alt="Mi — your migraine companion in Mystic Garden" class="hero-mi">
-                <div class="hero-badges">
-                    <span class="hero-badge-primary">✦ Real-time Prodrome Alerts <span class="hero-badge-beta">Beta</span></span>
-                    <span class="hero-badge-secondary">Biomarker monitoring · Phenotype profiling · Narrative therapy</span>
-                </div>
-                <h1>M<em>I</em>graine Companion</h1>
-                <p class="hero-tagline">Predict your migraine hours before pain.<br><span class="tagline-gold">Stay gentle while doing it.</span></p>
-                <p class="description"><strong>The first consumer app combining</strong> Apple Watch biomarker monitoring with biochemical phenotype profiling. 9 biomarkers tracked in real time. 5 phenotype profiles personalize predictions to your unique pharmacogenomic makeup. Narrative therapy treats migraine as your companion, not your enemy.</p>
-                <div class="download-buttons">
-                    <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                        <div class="btn-text"><small>Download on the</small><strong>App Store</strong></div>
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
-                        <div class="btn-text"><small>Get it on</small><strong>Google Play</strong></div>
-                    </a>
-                </div>
-                <p class="hero-disclaimer"><span class="hw-req">Apple Watch Series 8+ required for prodrome alerts</span><br>All other features work on iPhone alone · Android coming 2026</p>
+    <div class="hero-content">
+        <img src="images/mi-icon.png" alt="Mi — your migraine companion in Mystic Garden" class="hero-mi">
+        <div class="hero-badges">
+            <span class="hero-badge-primary"><span class="badge-pulse"></span> Prodrome Alerts <span class="hero-badge-beta">Beta</span></span>
+        </div>
+        <h1 class="hero-headline">Feel the migraine coming —<br><span class="headline-gold">hours before the pain.</span></h1>
+        <p class="hero-tagline">Your Apple Watch reads the quiet signals your body sends before an attack. Mi learns your pattern — and warns you while there's still time to act.</p>
+        <div class="download-buttons">
+            <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <div class="btn-text"><small>Download on the</small><strong>App Store</strong></div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                <div class="btn-text"><small>Get it on</small><strong>Google Play</strong></div>
+            </a>
+        </div>
+        <p class="hero-disclaimer"><span class="hw-req">Apple Watch Series 8+ for prodrome alerts</span><br>Everything else works on iPhone alone · Android coming 2026</p>
+    </div>
+    <div class="scroll-indicator"><div class="mouse"></div><span>Scroll</span></div>
+</section>
+
+        <!-- ═══ problem ═══ -->
+        <section class="problem">
+    <div class="container">
+        <div class="problem-head">
+            <span class="section-eyebrow">The problem</span>
+            <h2 class="problem-title">The warning was always there.<br><span class="problem-title-accent">You just couldn't hear it.</span></h2>
+            <p class="problem-lead">Most migraine attacks begin quietly — hours before the pain, your body shifts. Heart rate, sleep, temperature, HRV. These signals are real, but far too subtle to notice on your own.</p>
+        </div>
+
+        <div class="problem-stats">
+            <div class="pstat">
+                <div class="pstat-num">77%</div>
+                <div class="pstat-label">of attacks are preceded by a prodrome phase</div>
             </div>
-            <div class="scroll-indicator"><div class="mouse"></div><span>Scroll</span></div>
-        </section>
-
-        <section class="stats-block">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Phenotype<br>Profiles</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">22</div>
-                        <div class="stat-label">Personal<br>Subtypes</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">12-24<span class="stat-unit">h</span></div>
-                        <div class="stat-label">Vulnerable<br>Warning</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">1-6<span class="stat-unit">h</span></div>
-                        <div class="stat-label">Alert<br>Window</div>
-                    </div>
-                </div>
+            <div class="pstat-divider"></div>
+            <div class="pstat">
+                <div class="pstat-num">~24h</div>
+                <div class="pstat-label">median lead time before pain hits</div>
             </div>
-        </section>
+        </div>
 
-        <section class="social-proof">
-            <div class="social-proof-grid">
-                <div class="social-proof-item">
-                    <span class="social-proof-icon">✦</span>
-                    <span><strong>103+ peer-reviewed articles</strong> · 1,200+ citations</span>
+        <div class="problem-quote">
+            <span>“Mi sees the storm gathering — and gives you those hours back.”</span>
+        </div>
+
+        <p class="problem-bridge">When you know hours ahead, you get two ways to act</p>
+
+        <div class="problem-paths">
+            <div class="path-card">
+                <div class="path-head">
+                    <span class="path-icon path-icon-green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M12 3v18"/></svg>
+                    </span>
+                    <h3 class="path-title">Soften it — or stop it</h3>
                 </div>
-                <div class="social-proof-item">
-                    <span class="social-proof-icon">✦</span>
-                    <span><strong>3 published books</strong> on migraine</span>
-                </div>
-                <div class="social-proof-item">
-                    <span class="social-proof-icon">✦</span>
-                    <span><strong>Validating in 2026</strong> · peer-reviewed study underway</span>
-                </div>
+                <p class="path-desc">Change the conditions before the storm builds. Small actions, taken early, can blunt an attack or head it off.</p>
+                <ul class="path-list">
+                    <li>Hydrate and rest early</li>
+                    <li>Lower stress, calm your system</li>
+                    <li>Avoid your known triggers</li>
+                </ul>
             </div>
-        </section>
 
-        <section class="poetry poetry-1">
-            <p class="poetry-text">In the Mystic Garden, Mi waits for you.<br>Not to track. Not to judge.<br>Just to understand.</p>
-        </section>
-
-        <section class="screenshots" id="screenshots">
-            <div class="container">
-                <span class="section-badge section-badge-lavender">✦ Inside the App</span>
-                <h2 class="section-title fade-in">Discover Mi's Garden</h2>
-                <p class="section-strap fade-in">Meet Mi. Decode yourself. Watch the system learn you.<br>Find calm whenever you need.</p>
-                <div class="screenshots-wrapper">
-                    <button class="carousel-arrow prev" aria-label="Previous">
-                        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-                    </button>
-                    <div class="screenshots-grid">
-                        <article class="screenshot-card">
-                            <div class="screenshot-frame">
-                                <span class="screenshot-badge badge-step-lavender">Step 1</span>
-                                <img src="images/screen-mi-watch-setup.png" alt="Mi's Garden, Care Tools, and Mi Watch setup on Home screen">
-                            </div>
-                            <h3 class="screenshot-label label-lavender">Meet Mi</h3>
-                            <p>Mi's Garden, Care Tools, and Mi Watch setup live on Home.</p>
-                        </article>
-                        <article class="screenshot-card">
-                            <div class="screenshot-frame">
-                                <span class="screenshot-badge badge-step-green">Step 2</span>
-                                <img src="images/screen-mi-lab.png" alt="MI Lab Caffeine Science with 5 phenotype profiles">
-                            </div>
-                            <h3 class="screenshot-label label-green">Decode yourself</h3>
-                            <p>MI Lab with 5 profiles and tools inside each one.</p>
-                        </article>
-                        <article class="screenshot-card">
-                            <div class="screenshot-frame">
-                                <span class="screenshot-badge badge-step-lavender">Step 3</span>
-                                <img src="images/screen-mi-watch-learning.png" alt="Mi Watch learning state — Mi is recognizing your patterns">
-                            </div>
-                            <h3 class="screenshot-label label-lavender">Mi Watch learns you</h3>
-                            <p>Mi Watch quietly forms your unique migraine pattern.</p>
-                        </article>
-                        <article class="screenshot-card">
-                            <div class="screenshot-frame">
-                                <span class="screenshot-badge badge-step-gold">Step 4</span>
-                                <img src="images/screen-mi-watch-vulnerable.png" alt="Mi Watch Vulnerable state — Storm gathering, 12-24h ahead">
-                            </div>
-                            <h3 class="screenshot-label label-gold">Mi Watch alerts you</h3>
-                            <p>Vulnerable warning opens 12-24h before pain hits.</p>
-                        </article>
-                        <article class="screenshot-card">
-                            <div class="screenshot-frame">
-                                <span class="screenshot-badge badge-step-wine">Always</span>
-                                <img src="images/screen-breathing.jpeg" alt="Breathing Garden — 4-7-8 vagus breathing technique">
-                            </div>
-                            <h3 class="screenshot-label label-wine">Breathing Garden</h3>
-                            <p>4-7-8 vagus breathing. Mi's gentle companion during attacks.</p>
-                        </article>
-                        <article class="screenshot-card">
-                            <div class="screenshot-frame">
-                                <span class="screenshot-badge badge-step-wine">Always</span>
-                                <img src="images/screen-monster.jpeg" alt="Migraine Monster therapeutic game with 21 achievements">
-                            </div>
-                            <h3 class="screenshot-label label-wine">Migraine Monster</h3>
-                            <p>Gamified self-care with 21 achievements.</p>
-                        </article>
-                    </div>
-                    <button class="carousel-arrow next" aria-label="Next">
-                        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
-                    </button>
+            <div class="path-card path-card-gold">
+                <div class="path-head">
+                    <span class="path-icon path-icon-gold">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5"/><path d="M9 2h6"/></svg>
+                    </span>
+                    <h3 class="path-title">Medicate at the right moment</h3>
                 </div>
-                <div class="games-hint">
-                    <p><span class="hint-arrow">↗</span>Scroll past Step 4 to find <strong>Breathing Garden</strong> and <strong>Migraine Monster</strong> — Mi's gentle companions for when attacks come.</p>
+                <p class="path-desc">Modern migraine drugs work far better taken early — in the prodrome, before pain fully sets in.</p>
+                <div class="path-stat">
+                    <div class="path-stat-num">−46%</div>
+                    <div class="path-stat-label">less progression to moderate-severe pain when a gepant is taken in the prodrome</div>
+                    <div class="path-stat-source">PRODROME trial · Nature Medicine, 2024</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <section class="how-it-works" id="how-it-works">
-            <div class="container">
-                <h2 class="section-title fade-in">How Mi Works</h2>
-                <p class="section-subtitle fade-in">A gentle journey from pain to understanding — in three steps.</p>
-                <div class="steps-container">
-                    <div class="step-card fade-in fade-in-delay-1">
-                        <div class="step-number">1</div>
-                        <span class="step-icon">🌱</span>
-                        <h3>Meet Mi</h3>
-                        <p>Mi is your migraine, externalized. Not a monster to fight — a companion to understand. Give your pain a name, and it becomes something you can relate to.</p>
+        <!-- ═══ solution ═══ -->
+        <section class="solution">
+    <div class="container">
+        <div class="solution-grid">
+            <div class="solution-copy">
+                <span class="section-eyebrow section-eyebrow-left">The solution · Mi Watch</span>
+                <h2 class="solution-title">An early-warning system<br>for your migraines.</h2>
+                <p class="solution-lead">Mi Watch quietly watches your Apple Watch biomarkers, learns what a normal day looks like for you, then recognizes the shift that comes before an attack — and opens your warning window.</p>
+
+                <div class="solution-steps">
+                    <div class="sstep">
+                        <span class="sstep-icon sstep-icon-teal">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg>
+                        </span>
+                        <div class="sstep-text"><strong>Reads</strong><span>the quiet signals — HRV, heart rate, sleep, temperature</span></div>
                     </div>
-                    <div class="step-card fade-in fade-in-delay-2">
-                        <div class="step-number">2</div>
-                        <span class="step-icon">📝</span>
-                        <h3>Track &amp; Care</h3>
-                        <p>Log your meals, sleep, stress, weather. Every act of self-care is visible. Mi notices everything — and learns your unique patterns.</p>
+                    <div class="sstep">
+                        <span class="sstep-icon sstep-icon-lavender">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 4a2.5 2.5 0 0 0-2.5 2.5A2.5 2.5 0 0 0 5 9a2.5 2.5 0 0 0 1.5 2.3A2.5 2.5 0 0 0 9.5 15 2.5 2.5 0 0 0 12 12.5V4a2.5 2.5 0 0 0-2.5 0z"/><path d="M14.5 4a2.5 2.5 0 0 1 2.5 2.5A2.5 2.5 0 0 1 19 9a2.5 2.5 0 0 1-1.5 2.3A2.5 2.5 0 0 1 14.5 15 2.5 2.5 0 0 1 12 12.5V4"/></svg>
+                        </span>
+                        <div class="sstep-text"><strong>Learns</strong><span>your body's normal, then your unique pre-attack pattern</span></div>
                     </div>
-                    <div class="step-card fade-in fade-in-delay-3">
-                        <div class="step-number">3</div>
-                        <span class="step-icon">💜</span>
-                        <h3>Mi Responds</h3>
-                        <p>When you care for yourself, Mi calms down. When you struggle, Mi struggles with you. You're not alone anymore. Together.</p>
+                    <div class="sstep">
+                        <span class="sstep-icon sstep-icon-gold">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></svg>
+                        </span>
+                        <div class="sstep-text"><strong>Warns</strong><span>12–24h ahead, while there's still time to act</span></div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="poetry poetry-2">
-            <p class="poetry-text">"The problem is the problem.<br>The person is not the problem."<br><span style="font-size:.85em;opacity:.8">— Michael White, co-founder of narrative therapy</span></p>
-        </section>
-
-        <section class="different" id="different">
-            <div class="container">
-                <h2 class="section-title fade-in">What Makes Us Different</h2>
-                <p class="section-subtitle fade-in">Most migraine apps are digital diaries. MIgraine Companion takes a fundamentally different approach — one rooted in narrative therapy.</p>
-                <div class="therapy-grid">
-                    <article class="therapy-card fade-in"><h3>🌙 Externalization</h3><p>Mi represents your migraine as something separate from you. You're not "a migraine sufferer" — you're a person who lives with Mi. This reduces self-blame and increases your sense of control.</p></article>
-                    <article class="therapy-card fade-in"><h3>💜 Companionization</h3><p>Instead of fighting your migraine, you learn to understand it. Mi is not a villain to defeat. When you struggle, Mi struggles too. You're companions, not adversaries.</p></article>
-                    <article class="therapy-card fade-in"><h3>✨ Your Actions Matter</h3><p>Every action has a visible effect. Drink water — Mi calms down. Rest — Mi relaxes. Skip a meal — Mi grows restless. You see the direct connection between self-care and your condition.</p></article>
-                    <article class="therapy-card fade-in"><h3>💫 Sparkling Moments</h3><p>Your calm days aren't just statistics — they're proof that you can manage this. Each peaceful day is a "sparkling moment," evidence that the problem doesn't always win.</p></article>
-                    <article class="therapy-card fade-in"><h3>🛏️ Crisis Support</h3><p>When migraine strikes, Mi doesn't demand anything. Mi sleeps beside you, sends gentle reminders, asks how you're feeling. The app becomes comfort, not pressure.</p></article>
-                </div>
-                <div class="therapy-note fade-in"><p>Based on narrative therapy developed by <strong>Michael White</strong> and <strong>David Epston</strong> — a scientifically validated approach used for chronic pain, depression, and anxiety for over <strong>40 years</strong>. You don't need a therapist to benefit. Mi is with you, in your pocket, ready whenever you need.</p></div>
-            </div>
-        </section>
-
-        <section class="poetry poetry-3">
-            <p class="poetry-text">Mi whispers: "I see the storm coming.<br>Let's prepare together."</p>
-        </section>
-
-        <section class="mi-watch-section" id="mi-watch">
-            <div class="container">
-                <span class="section-badge section-badge-gold">✦ The Breakthrough</span>
-                <h2 class="section-title fade-in">The Prodrome Window</h2>
-                <p class="section-strap fade-in">Hours before pain hits, your body whispers.<br>Mi Watch listens.</p>
-                <p class="mi-watch-description fade-in">Mi Watch reads 9 biomarkers from your Apple Watch — HRV, heart rate, resting HR, respiratory rate, blood oxygen, wrist temperature, sleep stages, sleep duration, activity. First, it learns your baseline — what's normal for YOUR body. Then, with each migraine you log, Mi Watch learns how your body shifts <em>before</em> pain hits — your unique migraine signature. The pattern starts forming after 5 logged migraines; accuracy sharpens dramatically after 15+. When that signature emerges again, the Prodrome Window opens.</p>
-
-                <div class="mi-watch-grid fade-in">
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <span>24h ahead</span>
-                            <span>Pain</span>
-                        </div>
-                        <div class="timeline-bar">
-                            <div class="timeline-dot dot-green"></div>
-                            <div class="timeline-dot dot-gold"></div>
-                            <div class="timeline-dot dot-pain">⚠</div>
-                        </div>
-                        <div class="phase-cards">
-                            <div class="phase-card phase-card-green">
-                                <div class="phase-header">
-                                    <span class="phase-dot green"></span>
-                                    <span class="phase-label green">Phase 1</span>
-                                </div>
-                                <h4>Vulnerable Warning</h4>
-                                <p class="phase-time green">12–24h ahead</p>
-                                <p>Body is at higher risk. Time to prepare — hydrate, regulate sleep, lower stress.</p>
-                            </div>
-                            <div class="phase-card phase-card-gold">
-                                <div class="phase-header">
-                                    <span class="phase-dot gold"></span>
-                                    <span class="phase-label gold">Phase 2</span>
-                                </div>
-                                <h4>Golden Window</h4>
-                                <p class="phase-time gold">1–6h before pain</p>
-                                <p>Choose your defense. Your prescribed treatment works strongest now.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mi-watch-screenshot">
-                        <img src="images/screen-mi-watch-vulnerable.png" alt="Mi Watch Vulnerable state — Storm gathering 12-24h ahead">
-                    </div>
-                </div>
-
-                <div class="honest-beta-card fade-in">
-                    <div class="honest-beta-grid">
-                        <div>
-                            <div class="honest-beta-header">
-                                <span>🔄</span>
-                                <span>Beta — Honest by Design</span>
-                            </div>
-                            <p>Mi Watch tells you its confidence at every stage — <strong style="color:var(--lavender-light)">Learning</strong>, <strong style="color:var(--antique-gold)">Calibrating</strong>, or <strong style="color:var(--green-mi)">Reliable</strong>. The signature starts forming at 5 logged migraines; predictions become reliable after 15+.</p>
-                        </div>
-                        <div class="honest-beta-mini">
-                            <img src="images/screen-mi-watch-learning.png" alt="Mi Watch Learning state — Mi is recognizing your patterns">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="while-mi-learns fade-in">
-                    <div class="while-mi-learns-header">
-                        <span>While Mi Watch learns · You get value from day one</span>
-                    </div>
-                    <ul>
-                        <li><strong>All 5 phenotype profiles</strong> work immediately — no waiting period</li>
-                        <li><strong>Your Constellation</strong> personalizes Ask Mi advisor from your first profile</li>
-                        <li><strong>Mi Watch shows what it's learning</strong> — transparent Learning state, no hidden warmup</li>
-                        <li><strong>Care Tools, Migraine Manifesto, Breathing Garden</strong> available throughout</li>
-                    </ul>
-                </div>
-
-                <p class="mi-watch-disclaimer">Apple Watch + iOS · Android coming 2026</p>
-            </div>
-        </section>
-
-        <section class="how-mi-knows" id="how-mi-knows">
-            <div class="container">
-                <span class="section-badge section-badge-gold">✦ Two Signatures, One Alert</span>
-                <h2 class="section-title fade-in">How Mi Knows You</h2>
-                <p class="section-strap fade-in">Two different fingerprints work in parallel.<br>They meet at the moment of alert.</p>
-
-                <div class="tracks-system fade-in">
-                    <div class="tracks-headers">
-                        <div class="track-header track-bio">
-                            <div class="track-tag">
-                                <div class="track-tag-dot"></div>
-                                <span>Path 1 · Static · From genetics</span>
-                            </div>
-                            <h3>Your Biochemical Fingerprint</h3>
-                            <p>Decoded from quizzes about how your body reacts to substances. <strong>Answers WHAT triggers you.</strong></p>
-                        </div>
-                        <div class="track-header track-watch">
-                            <div class="track-tag">
-                                <div class="track-tag-dot"></div>
-                                <span>Path 2 · Dynamic · From your body</span>
-                            </div>
-                            <h3>Your Migraine Signature</h3>
-                            <p>Learned by Mi Watch from your real migraine attacks. <strong>Answers WHEN to warn you.</strong></p>
-                        </div>
-                    </div>
-
-                    <div class="tracks-grid">
-                        <div class="track-column">
-                            <div class="system-step step-paprika">
-                                <div class="system-step-label">
-                                    <span>Step 1 · 5 Profiles</span>
-                                </div>
-                                <h4>Decode biochemistry</h4>
-                                <p>CYP1A2, ALDH2, MAO, glucose response, sensory thresholds.</p>
-                            </div>
-                            <div class="track-arrow lavender">↓</div>
-                            <div class="system-step step-amethyst">
-                                <div class="system-step-label">
-                                    <span>Step 2 · Constellation</span>
-                                </div>
-                                <h4>Synthesize biochemistry</h4>
-                                <p>Cross-profile patterns: how your phenotypes stack and interact.</p>
-                            </div>
-                        </div>
-
-                        <div class="track-column">
-                            <div class="system-step step-green">
-                                <div class="system-step-label">
-                                    <span>Step 1 · Apple Watch baseline</span>
-                                </div>
-                                <h4>Learn your baseline</h4>
-                                <p>9 biomarkers tracked: HRV, resting HR, respiratory rate, blood oxygen, wrist temperature, sleep stages, more.</p>
-                            </div>
-                            <div class="track-arrow gold">↓</div>
-                            <div class="system-step step-gold-em">
-                                <div class="system-step-label">
-                                    <span>Step 2 · 5+ migraines · 15+ for accuracy</span>
-                                </div>
-                                <h4>Form migraine signature</h4>
-                                <p>Mi Watch sees what shifts in your body <em>before</em> each migraine. The pattern sharpens with every logged attack.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tracks-merge-arrows">
-                        <div class="tracks-merge-arrow left">↘</div>
-                        <div class="tracks-merge-arrow right">↙</div>
-                    </div>
-
-                    <div class="merged-step">
-                        <div class="merged-step-label">
-                            <span>✦ Step 3 · Combined · Your Prodrome Alert</span>
-                        </div>
-                        <h4>Together, more accurate than either alone</h4>
-                        <p class="merged-step-text">
-                            <strong class="merged-step-when">Mi Watch decides WHEN</strong> based on your migraine signature.<br>
-                            <strong class="merged-step-what">Your Constellation shapes WHAT</strong> Mi suggests — drawn from your phenotype profiles.
-                        </p>
-                        <p class="merged-step-note">Profiles also feed Mi Watch context — making the prodrome prediction sharper than biomarkers alone could give.</p>
-                    </div>
-                </div>
-
-                <div class="proof-card fade-in">
-                    <div class="proof-card-header">
-                        <p class="proof-card-eyebrow">✦ See it in action</p>
-                        <h3>Mi Doesn't Send Generic Advice</h3>
-                        <p class="proof-card-intro">Every notification draws from both signatures. Real example below:</p>
-                    </div>
-
-                    <div class="notification-mockup">
-                        <div class="notification-header">
-                            <div class="notification-icon">🌙</div>
-                            <div class="notification-meta">
-                                <div class="notification-tag">Urgent</div>
-                                <div class="notification-title">Mi Watch senses early migraine signals</div>
-                                <div class="notification-sub">HRV shift · Resting HR shift · 12-24h ahead</div>
-                            </div>
-                        </div>
-                        <div class="notification-state-pill">⚡ Vulnerable · 12-24h ahead</div>
-                        <h4 class="notification-title-big">Storm gathering</h4>
-                        <p class="notification-desc">Mi Watch recognized your prodrome pattern from past migraines.</p>
-                        <p class="notification-eyebrow">What you can do now</p>
-                        <div class="action-list">
-                            <div class="action-item action-item-green">
-                                <span class="action-icon green">💧</span>
-                                <div class="action-content">
-                                    <div class="action-title">Hydrate intentionally</div>
-                                    <div class="action-sub">Big glass now, then sip every hour</div>
-                                </div>
-                            </div>
-                            <div class="action-item action-item-lavender">
-                                <span class="action-icon lavender">🌙</span>
-                                <div class="action-content">
-                                    <div class="action-title">Rest if you can</div>
-                                    <div class="action-sub">Even 20 min lying down helps</div>
-                                </div>
-                            </div>
-                            <div class="action-item action-item-green-strong">
-                                <span class="action-icon green">☕</span>
-                                <div class="action-content">
-                                    <div class="action-title">Skip caffeine after 2pm</div>
-                                    <div class="action-sub green">↳ From your Speed Marathon profile</div>
-                                </div>
-                            </div>
-                            <div class="action-item action-item-paprika">
-                                <span class="action-icon paprika">🧀</span>
-                                <div class="action-content">
-                                    <div class="action-title">Skip aged cheese, cured meat</div>
-                                    <div class="action-sub paprika">↳ Tyramine Reactor profile</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p class="proof-explanation">↑ The alert <strong style="color:var(--antique-gold);font-weight:500;">timing</strong> came from Mi Watch reading your body. The <strong style="color:var(--green-mi);font-weight:500;">Speed Marathon caffeine type</strong> and <strong style="color:var(--paprika);font-weight:500;">Tyramine Reactor</strong> actions came from your Constellation. Two signatures, one personalized alert.</p>
-                </div>
-
-                <div class="tools-summary fade-in">
-                    <div class="tools-summary-header">
-                        <span class="tools-summary-icon">🛠</span>
-                        <h4>The 13 tools, briefly</h4>
-                    </div>
-                    <div class="tools-grid">
-                        <div class="tool-group">
-                            <span class="tool-bullet green">●</span>
-                            <div>
-                                <div class="tool-title">Caffeine — 3</div>
-                                <div class="tool-list">Coffee Shop Card · What's in My Cup · Gentle Exit</div>
-                            </div>
-                        </div>
-                        <div class="tool-group">
-                            <span class="tool-bullet wine">●</span>
-                            <div>
-                                <div class="tool-title">Alcohol — 3</div>
-                                <div class="tool-list">What Can I Drink · My Drink Card · Pre-Event Protocol</div>
-                            </div>
-                        </div>
-                        <div class="tool-group">
-                            <span class="tool-bullet paprika">●</span>
-                            <div>
-                                <div class="tool-title">Amine — 2</div>
-                                <div class="tool-list">Food Card · Reintroduction Plan</div>
-                            </div>
-                        </div>
-                        <div class="tool-group">
-                            <span class="tool-bullet verdigris">●</span>
-                            <div>
-                                <div class="tool-title">Energy — 2</div>
-                                <div class="tool-list">Crash Predictor · Glucose Rescue</div>
-                            </div>
-                        </div>
-                        <div class="tool-group">
-                            <span class="tool-bullet storm">●</span>
-                            <div>
-                                <div class="tool-title">Sensory — 2</div>
-                                <div class="tool-list">Should I Go? · What's Happening?</div>
-                            </div>
-                        </div>
-                        <div class="tool-group">
-                            <span class="tool-bullet lavender">●</span>
-                            <div>
-                                <div class="tool-title">Growing</div>
-                                <div class="tool-list">More tools per profile in 2026</div>
-                            </div>
-                        </div>
+            <div class="solution-visual">
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <img src="images/screen-mi-watch-vulnerable.png" alt="Mi Watch Vulnerable alert — Storm gathering, 12–24 hours ahead of a migraine" loading="lazy">
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <section class="beta-validation">
-            <div class="container">
-                <div class="validation-card fade-in">
-                    <span class="section-badge section-badge-lavender">✦ Validating in 2026</span>
-                    <h2 class="section-title">The Science Behind Mi</h2>
-                    <p class="strap">Beta cohort study running June–December 2026.<br>Honest by design — results targeting peer-reviewed publication.</p>
-                    <div class="validation-grid">
-                        <div class="validation-item">
-                            <div class="validation-item-label">Study Period</div>
-                            <div class="validation-item-value">6 months</div>
-                            <div class="validation-item-desc">June–December 2026, prospective observational cohort</div>
-                        </div>
-                        <div class="validation-item">
-                            <div class="validation-item-label">Target Cohort</div>
-                            <div class="validation-item-value">15–50 testers</div>
-                            <div class="validation-item-desc">Apple Watch Series 8+, episodic migraine 4–14 per month</div>
-                        </div>
-                        <div class="validation-item">
-                            <div class="validation-item-label">Target Journals</div>
-                            <div class="validation-item-value">Peer-reviewed</div>
-                            <div class="validation-item-desc">Cephalalgia, Neurology, or Journal of Medical Internet Research</div>
-                        </div>
+        <!-- ═══ howitworks ═══ -->
+        <section class="howitworks">
+    <div class="container">
+        <div class="hiw-head">
+            <span class="section-eyebrow">How it works</span>
+            <h2 class="hiw-title">Mi learns you — then warns you.</h2>
+            <p class="hiw-lead">The more you use it, the sharper it gets. Here's the whole idea in four steps.</p>
+        </div>
+
+        <div class="hiw-flow">
+            <div class="hiw-line"></div>
+            <div class="hiw-steps">
+                <div class="hiw-step">
+                    <div class="hiw-icon hiw-icon-teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 2h6M9 22h6"/><circle cx="12" cy="12" r="2.2"/></svg>
                     </div>
-                    <p class="validation-footnote"><strong>Honest framing:</strong> Mi is BETA. Per-user prediction accuracy targets 70% (consumer wearable standard), with the system adapting its thresholds based on your real outcomes. Validation study results will be published openly — including limitations, confounders, and what we got wrong.</p>
+                    <div class="hiw-num">Step 1</div>
+                    <div class="hiw-step-title">Your watch reads you</div>
+                    <div class="hiw-step-desc">Apple Watch tracks your biomarkers — mostly while you sleep, when signals are cleanest.</div>
+                </div>
+
+                <div class="hiw-step">
+                    <div class="hiw-icon hiw-icon-lavender">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 3 3 6-7 4 4"/><path d="M3 21h18"/></svg>
+                    </div>
+                    <div class="hiw-num">Step 2</div>
+                    <div class="hiw-step-title">Mi learns your normal</div>
+                    <div class="hiw-step-desc">It builds a baseline of what a calm, healthy day looks like for your body.</div>
+                </div>
+
+                <div class="hiw-step">
+                    <div class="hiw-icon hiw-icon-lavender">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-2.5 0-4.5 2-4.5 4.5 0 3 2 4 2 7.5"/><path d="M12 3c2.5 0 4.5 2 4.5 4.5 0 3-2 4-2 7.5"/><path d="M9.5 18.5h5M10.5 21h3"/></svg>
+                    </div>
+                    <div class="hiw-num">Step 3</div>
+                    <div class="hiw-step-title">Mi learns your pattern</div>
+                    <div class="hiw-step-desc">With each migraine you log, it learns how your body shifts <em>before</em> the pain.</div>
+                </div>
+
+                <div class="hiw-step">
+                    <div class="hiw-icon hiw-icon-gold hiw-icon-glow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></svg>
+                    </div>
+                    <div class="hiw-num hiw-num-gold">Step 4</div>
+                    <div class="hiw-step-title">Your warning opens</div>
+                    <div class="hiw-step-desc">When the pattern returns, Mi opens your Vulnerable window — 12–24h before pain.</div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="who-its-for">
-            <div class="container">
-                <span class="section-badge section-badge-gold">✦ Who Mi Watch Is For</span>
-                <h2 class="section-title fade-in">Mi Watch · Built for Episodic Migraine</h2>
-                <p class="section-strap fade-in">Mi Watch's prediction works best for 3–14 attacks per month.<br>The rest of Mi works for everyone, regardless of frequency.</p>
+        <div class="hiw-honesty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span>Honest by design — Mi always shows its confidence: <em class="conf-learning">Learning</em> → <em class="conf-calibrating">Calibrating</em> → <em class="conf-reliable">Reliable</em>. No hidden warm-up.</span>
+        </div>
+    </div>
+</section>
+<section class="whatyouneed">
+    <div class="container">
+        <div class="wyn-head">
+            <span class="section-eyebrow">What you need</span>
+            <h2 class="wyn-title">Three things to get started.</h2>
+            <p class="wyn-lead">That's it. If you already have an Apple Watch and iPhone, you're ready.</p>
+        </div>
 
-                <div class="audience-grid fade-in">
-                    <div class="audience-card audience-primary">
-                        <div class="audience-tag">
-                            <span class="audience-tag-dot"></span>
-                            <span>Best fit · Primary design target</span>
-                        </div>
-                        <h3>Episodic Migraine</h3>
-                        <p class="audience-frequency">3–14 attacks per month</p>
-                        <p class="audience-desc">Mi Watch's four-layer personalization works best for episodic migraine — <strong>enough attacks to learn your signature, enough recovery between attacks to establish a clean baseline.</strong> This is what Mi was designed for.</p>
-                        <div class="audience-features">
-                            <div>Full prodrome prediction · 12-24h vulnerable + 1-6h alert</div>
-                            <div>Four-layer personalization fully active</div>
-                            <div>Adaptive threshold calibration · learns your accuracy</div>
-                            <div>Phenotype priors personalize every alert</div>
-                        </div>
-                    </div>
+        <div class="wyn-row">
+            <div class="wyn-card wyn-card-teal">
+                <div class="wyn-icon wyn-icon-teal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 2h6M9 22h6"/><circle cx="12" cy="12" r="2.2"/></svg>
+                </div>
+                <div class="wyn-name">Apple Watch</div>
+                <span class="wyn-req wyn-req-teal">Series 8 or newer</span>
+                <div class="wyn-desc">Reads the biomarkers that reveal an attack is coming.</div>
+            </div>
 
-                    <div class="audience-card audience-secondary">
-                        <div class="audience-tag">
-                            <span class="audience-tag-dot"></span>
-                            <span>Clinical complement · Not a replacement</span>
-                        </div>
-                        <h3>Chronic Migraine</h3>
-                        <p class="audience-frequency">15+ attacks per month</p>
-                        <p class="audience-desc">Mi Watch's prediction is <strong>less precise with chronic patterns</strong> — overlapping prodrome and recovery windows challenge baseline detection. Mi still helps in important ways alongside <strong>specialist care from a headache neurologist.</strong></p>
-                        <div class="audience-features">
-                            <div>Medication limit tracking · prevents MOH</div>
-                            <div>CGRP therapy effectiveness monitoring</div>
-                            <div>Pattern documentation for your neurologist</div>
-                            <div>Mi Lab phenotype profiles work fully</div>
-                        </div>
+            <div class="wyn-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+
+            <div class="wyn-card wyn-card-lavender">
+                <div class="wyn-icon wyn-icon-lavender">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+                </div>
+                <div class="wyn-name">iPhone</div>
+                <span class="wyn-req wyn-req-lavender">iOS 16 or newer</span>
+                <div class="wyn-desc">Where Mi lives — your alerts, tools, and daily companion.</div>
+            </div>
+
+            <div class="wyn-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+
+            <div class="wyn-card wyn-card-gold">
+                <div class="wyn-icon wyn-icon-gold">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 3 5 4 5 8a5 5 0 0 1-10 0c0-4 3-5 5-8z"/><path d="M12 21v-5"/></svg>
+                </div>
+                <div class="wyn-name">MIgraine Companion</div>
+                <span class="wyn-req wyn-req-gold">Free to start</span>
+                <div class="wyn-desc">The app that learns you and opens your warning window.</div>
+            </div>
+        </div>
+
+        <div class="wyn-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+            <span>The <em>Watch</em> is only needed for prodrome alerts. Everything else works on <em>iPhone alone</em> — Android coming 2026.</span>
+        </div>
+    </div>
+</section>
+
+        <!-- ═══ twosig ═══ -->
+        <section class="twosig">
+    <div class="container">
+        <div class="twosig-head">
+            <span class="section-eyebrow">Why Mi is different</span>
+            <h2 class="twosig-title">Most apps just say “careful.”<br><span class="twosig-title-accent">Mi tells you what to do.</span></h2>
+            <p class="twosig-lead">Think of a weather forecast paired with your own list of what harms you. Mi has both — and they meet the moment you're warned.</p>
+        </div>
+
+        <div class="twosig-cards">
+            <div class="tsig-card">
+                <div class="tsig-card-head">
+                    <span class="tsig-icon tsig-icon-lavender">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                    </span>
+                    <div>
+                        <div class="tsig-kicker">The forecast</div>
+                        <div class="tsig-name">When to warn you</div>
                     </div>
                 </div>
+                <p class="tsig-desc">Your Apple Watch learns your body's pattern and spots the shift before an attack. This answers <em>when</em>.</p>
+            </div>
 
-                <div class="audience-universal fade-in">
-                    <div class="audience-universal-tag">
-                        <span class="audience-tag-dot"></span>
-                        <span>For everyone · Always active</span>
+            <div class="tsig-card tsig-card-gold">
+                <div class="tsig-card-head">
+                    <span class="tsig-icon tsig-icon-gold">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11M4 12h11M4 18h7"/><circle cx="19" cy="16" r="3"/><path d="M21.5 18.5L23 20"/></svg>
+                    </span>
+                    <div>
+                        <div class="tsig-kicker">Your triggers</div>
+                        <div class="tsig-name">What harms you</div>
                     </div>
-                    <h4>Universal safety tracking</h4>
-                    <p class="audience-universal-intro">Regardless of attack frequency, these features work for every user — built into Mi from day one.</p>
-                    <div class="audience-universal-grid">
-                        <div class="universal-feature">
-                            <span class="universal-icon">💊</span>
-                            <h5>MOH Prevention</h5>
-                            <p>Medication limit tracking prevents <strong>medication overuse headache</strong> — the most common but invisible trap for frequent users (triptans &gt;10 days/month, gepants &gt;15 days/month).</p>
-                        </div>
-                        <div class="universal-feature">
-                            <span class="universal-icon">📊</span>
-                            <h5>CGRP Effectiveness</h5>
-                            <p>Before/after tracking for <strong>CGRP therapy</strong> (Aimovig, Ajovy, Emgality, Vyepti, Ubrelvy, Nurtec) — see what's actually working, share the data with your neurologist.</p>
-                        </div>
-                        <div class="universal-feature">
-                            <span class="universal-icon">🩺</span>
-                            <h5>Specialist Support</h5>
-                            <p>Mi is <strong>not a replacement</strong> for medical care. If you have 15+ attacks per month, please work with a headache specialist — Mi complements, never replaces.</p>
-                        </div>
-                    </div>
+                </div>
+                <p class="tsig-desc">A few quick quizzes reveal what <em>your</em> body reacts to. Everyone's list is different.</p>
+                <div class="tsig-chips">
+                    <span class="tsig-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v4a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M17 9h1a2 2 0 0 1 0 4h-1"/><path d="M7 3v2M10 3v2M13 3v2"/></svg>Coffee</span>
+                    <span class="tsig-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l-1 6a3 3 0 0 1-6 0z"/><path d="M12 15v5M9 21h6"/></svg>Alcohol</span>
+                    <span class="tsig-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13l8-8 8 8-8 6z"/><circle cx="10" cy="11" r="1"/><circle cx="13" cy="14" r="1"/></svg>Certain foods</span>
+                    <span class="tsig-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Skipping meals</span>
+                    <span class="tsig-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Light &amp; sound</span>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="mi-lab-section" id="mi-lab">
-            <div class="container">
-                <span class="section-badge section-badge-lavender">✦ The Personalization Engine</span>
-                <div class="mi-lab-h2">
-                    <h2 class="section-title fade-in">M<em>I</em> Lab</h2>
-                </div>
-                <p class="section-strap fade-in">Decode your biochemistry.<br>Build your Constellation.</p>
-                <p class="mi-lab-description fade-in">Five science-backed profiles decode your unique biochemistry. Each one is free, instant, and grounded in peer-reviewed research. Together, they answer one question — <em>what triggers you</em>. That answer shapes every action Mi suggests.</p>
+        <div class="twosig-meet">
+            <div class="twosig-meet-line"></div>
+            <span>they meet here</span>
+            <div class="twosig-meet-line"></div>
+        </div>
 
-                <div class="profile-grid fade-in">
-                    <div class="profile-card green">
-                        <div class="profile-header">
-                            <div class="profile-icon">☕</div>
-                            <span class="profile-num">Profile 01</span>
-                        </div>
-                        <h4>Caffeine</h4>
-                        <p class="profile-science">CYP1A2 metabolism</p>
-                        <p>Find your personal coffee deadline. 4 metabolizer types.</p>
-                    </div>
-                    <div class="profile-card wine">
-                        <div class="profile-header">
-                            <div class="profile-icon">🍷</div>
-                            <span class="profile-num">Profile 02</span>
-                        </div>
-                        <h4>Alcohol</h4>
-                        <p class="profile-science">ALDH2 · histamine · quercetin</p>
-                        <p>4 reactor types. Leiden University research, n=2,197.</p>
-                    </div>
-                    <div class="profile-card paprika">
-                        <div class="profile-header">
-                            <div class="profile-icon">🧬</div>
-                            <span class="profile-num">Profile 03</span>
-                        </div>
-                        <h4>Amine</h4>
-                        <p class="profile-science">MAO · TAAR1 · DAO function</p>
-                        <p>Tyramine and histamine reactivity. 4 types + safety screening.</p>
-                    </div>
-                </div>
+        <div class="twosig-payoff">
+            <h3 class="twosig-payoff-title">Knowing early is half of it.<br><span class="twosig-payoff-accent">Knowing what to do — that's the other half.</span></h3>
+            <p class="twosig-payoff-desc">Not generic advice from the internet. A specific action for <em>your</em> body, at <em>your</em> moment. That's the difference between an alarm — and a companion who knows you.</p>
+        </div>
 
-                <div class="profile-grid-bottom fade-in">
-                    <div class="profile-card verdigris">
-                        <div class="profile-header">
-                            <div class="profile-icon">⚡</div>
-                            <span class="profile-num">Profile 04</span>
+        <p class="twosig-claim">To our knowledge, MIgraine Companion is the first consumer app to combine wearable biomarker prediction with personal trigger profiles — not a black box, but explainable and yours.</p>
+    </div>
+</section>
+
+        <!-- ═══ alertex ═══ -->
+        <section class="alertex">
+    <div class="container">
+        <div class="ax-head">
+            <span class="section-eyebrow">See it in action</span>
+            <h2 class="ax-title">What an alert actually looks like.</h2>
+            <p class="ax-lead">A gentle heads-up arrives — and when you open it, Mi shows exactly what it noticed and why.</p>
+        </div>
+
+        <div class="ax-grid">
+
+            
+            <div class="ax-col">
+                <div class="ax-step-label">1 · The heads-up</div>
+                <div class="ax-lockscreen">
+                    <div class="ax-clock">9:41</div>
+                    <div class="ax-date">Tuesday, 14 July</div>
+                    <div class="ax-push">
+                        <div class="ax-push-head">
+                            <span class="ax-push-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 3 5 4 5 8a5 5 0 0 1-10 0c0-4 3-5 5-8z"/></svg>
+                            </span>
+                            <span class="ax-push-app">MIGRAINE COMPANION</span>
+                            <span class="ax-push-time">now</span>
                         </div>
-                        <h4>Energy Crash</h4>
-                        <p class="profile-science">Reactive hypoglycemia</p>
-                        <p>Hidden glucose-driven trigger. 5 metabolic phenotypes.</p>
-                    </div>
-                    <div class="profile-card storm">
-                        <div class="profile-header">
-                            <div class="profile-icon">🌪</div>
-                            <span class="profile-num">Profile 05</span>
-                        </div>
-                        <h4>Sensory</h4>
-                        <p class="profile-science">Cortical · vestibular thresholds</p>
-                        <p>Light, sound, smell, motion, weather. 5 types.</p>
+                        <div class="ax-push-title">Mi senses early migraine signals</div>
+                        <div class="ax-push-body">Take gentle care today.</div>
+                        <div class="ax-push-sub">12–24h ahead</div>
                     </div>
                 </div>
-
-                <div class="constellation-card fade-in">
-                    <div class="constellation-tag">✦ Premium · After all 5 profiles</div>
-                    <h3>Your Migraine Constellation</h3>
-                    <p>Complete all 5 profiles and Mi reveals the cross-system patterns no single profile can show — how your phenotypes stack, how your triggers interact, the rare combinations that are uniquely you. <strong>Your Constellation is the biochemical fingerprint that personalizes every recommendation, every notification action, every Ask Mi answer.</strong></p>
-                    <div class="constellation-points">
-                        <div class="constellation-point"><span>●</span> 14 detectable patterns</div>
-                        <div class="constellation-point"><span>●</span> Clinical PDF export</div>
-                        <div class="constellation-point"><span>●</span> Personalizes every alert</div>
-                    </div>
-                </div>
+                <p class="ax-caption">The push that reaches you — quiet, kind, no panic.</p>
             </div>
-        </section>
 
-        <section class="poetry poetry-4">
-            <p class="poetry-text">Where others see charts, Mi sees your story.<br>Where others count attacks, Mi counts peaceful days.</p>
-        </section>
-
-        <section class="features" id="features">
-            <div class="container">
-                <span class="section-badge section-badge-green">✦ Everything Else Mi Offers</span>
-                <h2 class="section-title fade-in">More Than Predictions</h2>
-                <p class="section-strap fade-in">Everything you need between attacks,<br>during them, and after.</p>
-
-                <div class="features-grid">
-                    <article class="feature-group-card green fade-in">
-                        <div class="feature-group-header">
-                            <div class="feature-group-icon">🕊</div>
-                            <h3>Effortless tracking</h3>
-                        </div>
-                        <p class="feature-group-desc">Log migraines, food, sleep, stress, weather — with minimal effort. Mi finds the patterns.</p>
-                        <div class="feature-bullets">
-                            <div class="feature-bullet"><span>●</span>Smart food parsing</div>
-                            <div class="feature-bullet"><span>●</span>Visual calendars + heatmaps</div>
-                            <div class="feature-bullet"><span>●</span>Auto-detect timing patterns</div>
-                        </div>
-                    </article>
-
-                    <article class="feature-group-card lavender fade-in">
-                        <div class="feature-group-header">
-                            <div class="feature-group-icon">🎙</div>
-                            <h3>Migraine Manifesto</h3>
-                        </div>
-                        <p class="feature-group-desc">Explaining migraine during an attack is impossible. Let the Manifesto do it for you.</p>
-                        <div class="feature-bullets">
-                            <div class="feature-bullet"><span>●</span>7 pre-written shareable cards</div>
-                            <div class="feature-bullet"><span>●</span>Partner, work, parents, friends</div>
-                            <div class="feature-bullet"><span>●</span>Editable + unlimited custom cards</div>
-                        </div>
-                    </article>
-
-                    <article class="feature-group-card gold fade-in">
-                        <div class="feature-group-header">
-                            <div class="feature-group-icon">🤖</div>
-                            <h3>Ask Mi — AI advisor</h3>
-                        </div>
-                        <p class="feature-group-desc">Your personal migraine advisor — knows your Constellation, answers in YOUR context, not generic tips.</p>
-                        <div class="feature-bullets">
-                            <div class="feature-bullet"><span>●</span>Trained on 103 peer-reviewed articles</div>
-                            <div class="feature-bullet"><span>●</span>Uses your phenotype profiles</div>
-                            <div class="feature-bullet"><span>●</span>3 free questions · $2.99/30 days</div>
-                        </div>
-                    </article>
-
-                    <article class="feature-group-card paprika fade-in">
-                        <div class="feature-group-header">
-                            <div class="feature-group-icon">🌸</div>
-                            <h3>In-attack support</h3>
-                        </div>
-                        <p class="feature-group-desc">Dark interface, one-handed in the dark. Therapeutic distraction without demands or guilt.</p>
-                        <div class="feature-bullets">
-                            <div class="feature-bullet"><span>●</span>Urgent Care + 4-7-8 breathing</div>
-                            <div class="feature-bullet"><span>●</span>Mi's Garden + Breathing Garden</div>
-                            <div class="feature-bullet"><span>●</span>Migraine Monster — 21 achievements</div>
-                        </div>
-                    </article>
-
-                    <article class="feature-group-card storm fade-in">
-                        <div class="feature-group-header">
-                            <div class="feature-group-icon">📋</div>
-                            <h3>Clinical-grade exports</h3>
-                        </div>
-                        <p class="feature-group-desc">Professional reports your neurologist actually wants. Designed with clinical workflows in mind.</p>
-                        <div class="feature-bullets">
-                            <div class="feature-bullet"><span>●</span>Medication safety alerts</div>
-                            <div class="feature-bullet"><span>●</span>CGRP therapy tracking</div>
-                            <div class="feature-bullet"><span>●</span>Auto-fill MIDAS assessment</div>
-                        </div>
-                    </article>
-
-                    <article class="feature-group-card verdigris fade-in">
-                        <div class="feature-group-header">
-                            <div class="feature-group-icon">🔒</div>
-                            <h3>Your data is yours</h3>
-                        </div>
-                        <p class="feature-group-desc">Zero ads. We never sell your health data. App works offline by default — cloud features opt-in only.</p>
-                        <div class="feature-bullets">
-                            <div class="feature-bullet"><span>●</span>No advertising, ever</div>
-                            <div class="feature-bullet"><span>●</span>Health data never sold</div>
-                            <div class="feature-bullet"><span>●</span>Built by a migraineur, for migraineurs</div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="creator-story" id="story">
-            <div class="container">
-                <div class="story-wrapper">
-                    <div class="story-header fade-in">
-                        <h2>Built from 30 Years of Living with Migraine</h2>
-                        <p class="subtitle">A letter from the creator</p>
+            
+            <div class="ax-col">
+                <div class="ax-step-label">2 · When you open it</div>
+                <div class="ax-card">
+                    <div class="ax-card-head">
+                        <span class="ax-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2 6 4-14 2 8h4"/></svg>
+                        </span>
+                        <span class="ax-card-app">Mi Watch</span>
+                        <span class="ax-card-pill">VULNERABLE</span>
                     </div>
-                    <div class="story-card fade-in">
-                        <div class="story-glow"></div>
-                        <div class="story-glow-2"></div>
-                        <div class="story-content">
-                            <div class="story-quote">
-                                <p>I've lived with migraines for 30 years. I built MIgraine Companion not as a developer — but as someone who needed it to exist.</p>
-                                <p>This app was created in Ukraine during wartime, often with only 8 hours of electricity per day. Sometimes less. In those dark hours — both literal and metaphorical — I worked on something that would bring light to others who live with chronic pain.</p>
-                            </div>
-                            <div class="credentials-grid">
-                                <div class="credential-card">
-                                    <h4>🌙 Personal Experience</h4>
-                                    <p>30 years living with chronic migraine. Reduced attacks from 15-20 per month to 3-4 using the same therapeutic approach built into this app.</p>
-                                </div>
-                                <div class="credential-card">
-                                    <h4>📚 Evidence-Based</h4>
-                                    <p>Built on narrative therapy principles by Michael White &amp; David Epston. Uses WHO medication guidelines and medical research on migraine triggers.</p>
-                                </div>
-                                <div class="credential-card">
-                                    <h4>✨ Transparency</h4>
-                                    <p>Rustam is not a medical doctor. This app is a self-help tool based on personal experience and research — it supplements, not replaces, professional medical care.</p>
-                                </div>
-                                <div class="credential-card">
-                                    <h4>💜 Built in Wartime</h4>
-                                    <p>Developed in Ukraine during 2024-2026. Often working through 10-16 hour power outages. Created with hope that understanding can help others.</p>
-                                </div>
-                            </div>
-                            <div class="story-highlight">
-                                <p>I didn't know I was building a narrative therapy tool. I was building what I wished existed — something that would make me feel less alone, less defined by my condition, more in control.</p>
-                            </div>
-                            <div class="story-quote">
-                                <p>Mi isn't just a cute character. Mi is how I learned to live with my migraine — not as an enemy to fight, but as a companion to understand.</p>
-                                <p>If you're reading this, you probably know what it's like. The invisible pain. The canceled plans. The fear of the next attack. I see you. Mi sees you too.</p>
-                            </div>
-                            <div class="story-authors">
-                                <div class="story-author">
-                                    <div class="author-avatar"><img src="images/rustam.jpeg" alt="Rustam Iuldashov"></div>
-                                    <div class="author-info">
-                                        <h4>Rustam Iuldashov</h4>
-                                        <p>Creator &amp; Developer</p>
-                                        <span class="author-tagline">30 years living with migraine. Built what I wished existed.</span>
-                                    </div>
-                                </div>
-                                <div class="story-author">
-                                    <div class="author-avatar"><img src="images/marina.jpeg" alt="Marina Mochalova"></div>
-                                    <div class="author-info">
-                                        <h4>Marina Mochalova</h4>
-                                        <p>Designer</p>
-                                        <span class="author-tagline">She made Mi feel like home.</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="medical-disclaimer">
-                                <p>
-                                    <strong>Medical Disclaimer:</strong>
-                                    Migraine Companion is a self-help tool, not medical advice. Always consult your doctor before making changes to medication or treatment. In case of emergency symptoms, seek immediate medical attention.
-                                    <a href="disclaimer.html">Read full disclaimer</a>
-                                </p>
-                            </div>
+                    <div class="ax-card-title">Storm gathering</div>
+                    <div class="ax-card-sub">Resting heart rate is up and your HRV has dropped — the same shift Mi saw before past migraines.</div>
+
+                    <div class="ax-learned">
+                        <div class="ax-learned-label">What Mi has learned</div>
+                        <div class="ax-learned-intro">Before your last 8 migraines, Mi noticed:</div>
+                        <div class="ax-learned-rows">
+                            <div class="ax-learned-row"><svg class="ax-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 17V9M17 17H9"/></svg><span>HRV typically drops 18%</span></div>
+                            <div class="ax-learned-row"><svg class="ax-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7v8M17 7H9"/></svg><span>Resting heart rate rises ~8%</span></div>
+                            <div class="ax-learned-row"><svg class="ax-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 17V9M17 17H9"/></svg><span>Sleep quality decreases</span></div>
                         </div>
+                    </div>
+
+                    <div class="ax-whynow">
+                        <span>Why Mi sensed this</span>
+                        <span class="ax-whynow-time">12–24h ahead ›</span>
+                    </div>
+                </div>
+                <p class="ax-caption">The full picture — what shifted, and how it matches your history.</p>
+            </div>
+
+        </div>
+
+        <p class="ax-closer">Not a number on a dashboard. A warning in Mi's voice — written for you, not for everyone.</p>
+    </div>
+</section>
+
+        <!-- ═══ milab ═══ -->
+        <section class="milab">
+    <div class="container">
+
+        <div class="ml-top">
+            <div class="ml-copy">
+                <span class="section-eyebrow section-eyebrow-left">Mi Lab · your triggers</span>
+                <h2 class="ml-title">Most advice says <span class="ml-title-strike">quit</span>.<br><span class="ml-title-accent">Mi shows you how to keep going.</span></h2>
+                <p class="ml-lead">A few quick quizzes read how your body actually reacts — to coffee, alcohol, certain foods, missed meals, light and sound. Not generic rules. Your body's real thresholds.</p>
+                <p class="ml-freedom">Not “stop drinking coffee” — but <em>your last cup by early afternoon.</em> Not “give up wine” — but <em>dry whites over reds.</em> You don't lose what you love. You learn how <em>your</em> body handles it.</p>
+            </div>
+
+            <div class="ml-visual">
+                <div class="ml-phone">
+                    <div class="ml-phone-screen">
+                        <img src="images/screen-mi-lab.png" alt="Mi Lab — your caffeine profile, Nervous Sprinter, inside the app" loading="lazy">
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="cta">
-            <div class="container">
-                <h2>Begin Your Journey with Mi</h2>
-                <p>Not just tracking migraines. Predicting them — and learning to live with them.</p>
-                <div class="download-buttons">
-                    <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="download-btn" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                        <div class="btn-text"><small>Download on the</small><strong>App Store</strong></div>
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="download-btn" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
-                        <div class="btn-text"><small>Get it on</small><strong>Google Play</strong></div>
-                    </a>
-                </div>
-                <p class="cta-disclaimer"><span class="hw-req">Apple Watch Series 8+ required for prodrome alerts</span> · All other features work on iPhone alone</p>
+        <div class="ml-benefits">
+            <div class="u-card ml-benefit">
+                <span class="ml-benefit-icon ml-icon-green">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </span>
+                <h3 class="ml-benefit-title">Freedom, not a ban list</h3>
+                <p class="ml-benefit-desc">Knowing your type means tailoring, not quitting. Enjoy what works for your body — and sidestep what doesn't.</p>
             </div>
-        </section>
+
+            <div class="u-card ml-benefit">
+                <span class="ml-benefit-icon ml-icon-lavender">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                </span>
+                <h3 class="ml-benefit-title">Stop guessing your triggers</h3>
+                <p class="ml-benefit-desc">Years of “was it the cheese? the wine? the coffee?” — answered. You finally know what's yours, and can act before it hits.</p>
+            </div>
+
+            <div class="u-card ml-benefit">
+                <span class="ml-benefit-icon ml-icon-gold">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </span>
+                <h3 class="ml-benefit-title">The insight, without the lab</h3>
+                <p class="ml-benefit-desc">Genetic panels mapping these traits run $200–400 and take weeks by mail. Mi's quizzes read your real reactions — free, in minutes.</p>
+            </div>
+        </div>
+
+        <p class="ml-honest">Mi's quizzes read your body's reactions, not your DNA — a different, practical path to the same answer: what to enjoy, and what to watch.</p>
+
+    </div>
+</section>
+
+        <!-- ═══ morethan ═══ -->
+        <section class="morethan">
+    <div class="container">
+        <div class="mt-head">
+            <span class="section-eyebrow">More than predictions</span>
+            <h2 class="mt-title">Mi doesn't fight your migraine.<br><span class="mt-title-accent">Mi keeps you company through it.</span></h2>
+            <p class="mt-lead">The prediction is the heart of it — but a migraine is more than a forecast. Mi is built on narrative therapy: your migraine isn't an enemy to battle, it's a companion to understand. That reframing, grounded in the work of Michael White, changes how the whole thing feels.</p>
+        </div>
+
+        <div class="mt-grid">
+            <div class="u-card mt-feat">
+                <span class="mt-feat-icon mt-icon-lavender">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5-2.5-8-5.5-8-10a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4.5-3.5 7.5-8 10z"/></svg>
+                </span>
+                <h3 class="mt-feat-title">Mi, your companion</h3>
+                <p class="mt-feat-desc">A character, not a chatbot. Mi's calm reflects your care — a gentler way to relate to something you live with every day.</p>
+            </div>
+
+            <div class="u-card mt-feat">
+                <span class="mt-feat-icon mt-icon-teal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h8M8 8h5M8 16h6"/><path d="M4 4h16v13H7l-3 3z"/></svg>
+                </span>
+                <h3 class="mt-feat-title">Ask Mi</h3>
+                <p class="mt-feat-desc">A knowledgeable guide that has read the research — and knows your patterns. Ask about triggers, timing, what to try next.</p>
+            </div>
+
+            <div class="u-card mt-feat">
+                <span class="mt-feat-icon mt-icon-green">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2"/></svg>
+                </span>
+                <h3 class="mt-feat-title">Calm on demand</h3>
+                <p class="mt-feat-desc">Guided 4-7-8 breathing and gentle tools to steady your system — for the moments the storm is close.</p>
+            </div>
+
+            <div class="u-card mt-feat">
+                <span class="mt-feat-icon mt-icon-gold">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l1 4H8zM8 7h8v13H8z"/><path d="M10 11h4M10 15h4"/></svg>
+                </span>
+                <h3 class="mt-feat-title">A diary that speaks doctor</h3>
+                <p class="mt-feat-desc">Track attacks, then hand your neurologist a clear report — the single most useful thing you can bring to an appointment.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- ═══ science ═══ -->
+        <section class="science">
+    <div class="container">
+        <div class="sc-head">
+            <span class="section-eyebrow">The science — and the honesty</span>
+            <h2 class="sc-title">Built on real research.<br><span class="sc-title-accent">Honest about what's still unproven.</span></h2>
+            <p class="sc-lead">Mi stands on published science — and we're just as clear about the parts still being validated. No overclaiming.</p>
+        </div>
+
+        <div class="sc-proofs">
+            <div class="u-card sc-proof">
+                <div class="sc-proof-num">77%</div>
+                <div class="sc-proof-text">of attacks are preceded by a prodrome phase — subtle physiological shifts, median 24h before pain.</div>
+                <div class="sc-proof-src">Eigenbrodt et al., Cephalalgia 2022 · meta-analysis, n=2,711</div>
+            </div>
+            <div class="u-card sc-proof">
+                <div class="sc-proof-num">−46%</div>
+                <div class="sc-proof-text">less progression to moderate-severe pain when a gepant is taken in the prodrome, not after.</div>
+                <div class="sc-proof-src">PRODROME trial · Dodick et al., Nature Medicine 2024</div>
+            </div>
+            <div class="u-card sc-proof">
+                <div class="sc-proof-num">Hypothalamus</div>
+                <div class="sc-proof-text">drives the prodrome — producing autonomic shifts in HRV, heart rate and temperature a wearable can read.</div>
+                <div class="sc-proof-src">Schulte &amp; May, Brain 2016 · biological basis</div>
+            </div>
+        </div>
+
+        <div class="sc-honesty">
+            <div class="sc-honesty-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M12 8v4M12 15.5v.5"/></svg>
+            </div>
+            <div class="sc-honesty-body">
+                <h3 class="sc-honesty-title">What we won't pretend</h3>
+                <p class="sc-honesty-text">Mi can be wrong — it misses some attacks and flags some quiet days. Its accuracy is still being validated, and it learns from every migraine you log. We'd rather tell you that plainly than sell certainty we haven't earned. The prodrome science is settled; that <em>your</em> personal engine is accurate enough is what we're proving now.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- ═══ roadmap ═══ -->
+        <section class="roadmap">
+    <div class="container">
+        <div class="rm-head">
+            <span class="section-eyebrow">The roadmap</span>
+            <h2 class="rm-title">Where Mi is — and where it's going.</h2>
+            <p class="rm-lead">We're early, and honest about it. Mi is in beta — here's the real path from today to a validated, out-of-beta product.</p>
+        </div>
+
+        <div class="rm-milestone">
+            <svg class="rm-milestone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+            <div class="rm-milestone-text">
+                <div class="rm-milestone-title">July 11, 2026 · Mi's engine fired its first real prediction — and it was right.</div>
+                <div class="rm-milestone-sub">A live prodrome warning, from real biometrics. Proof the engine works.</div>
+            </div>
+        </div>
+
+        <div class="rm-flow">
+            <div class="rm-line"></div>
+            <div class="rm-phases">
+
+                <div class="rm-phase rm-phase-active">
+                    <div class="rm-dot-wrap"><span class="rm-dot rm-dot-active"></span></div>
+                    <div class="rm-card rm-card-active">
+                        <span class="rm-now-badge">Now</span>
+                        <div class="rm-when rm-when-gold">Through Oct 2026</div>
+                        <div class="rm-phase-title">Collect &amp; tune</div>
+                        <div class="rm-phase-desc">Gathering real biometric data and finishing the engine's tuning on the founder's own migraines.</div>
+                    </div>
+                </div>
+
+                <div class="rm-phase">
+                    <div class="rm-dot-wrap"><span class="rm-dot"></span></div>
+                    <div class="rm-card">
+                        <div class="rm-when">Oct 2026 – Mar 2027</div>
+                        <div class="rm-phase-title">Test on a cohort</div>
+                        <div class="rm-phase-desc">Bring in a wider group of people with migraine and check how accurately Mi predicts for them.</div>
+                    </div>
+                </div>
+
+                <div class="rm-phase">
+                    <div class="rm-dot-wrap"><span class="rm-dot"></span></div>
+                    <div class="rm-card">
+                        <div class="rm-when">Mar – Jun 2027</div>
+                        <div class="rm-phase-title">Refine on real results</div>
+                        <div class="rm-phase-desc">Tune the engine using what the cohort's data shows — sharpening accuracy where it matters.</div>
+                    </div>
+                </div>
+
+                <div class="rm-phase">
+                    <div class="rm-dot-wrap"><span class="rm-dot rm-dot-green"></span></div>
+                    <div class="rm-card rm-card-green">
+                        <div class="rm-when rm-when-green">Jun 2027</div>
+                        <div class="rm-phase-title">Out of beta</div>
+                        <div class="rm-phase-desc">As validation holds, Mi graduates from beta into a fully-fledged product.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <p class="rm-disclaimer">Dates are targets, not promises. Removing “beta” depends on the accuracy holding up on real people — we won't call it done until it is.</p>
+    </div>
+</section>
+
+        <!-- ═══ foundercta ═══ -->
+        <section class="founder">
+    <div class="container">
+        <div class="fo-grid">
+            <div class="fo-portrait">
+                <img src="images/rustam.jpeg" alt="Rustam Iuldashov, founder of MIgraine Companion" loading="lazy">
+                <div class="fo-portrait-cap">
+                    <span class="fo-portrait-name">Rustam Iuldashov</span>
+                    <span class="fo-portrait-role">Founder · patient zero</span>
+                </div>
+            </div>
+
+            <div class="fo-copy">
+                <span class="section-eyebrow section-eyebrow-left">Why this exists</span>
+                <h2 class="fo-title">Thirty years of migraine.<br><span class="fo-title-accent">Built into an app, during a war.</span></h2>
+                <p class="fo-text">My first migraine came at twelve, with aura. For thirty years it ran my life — up to fifteen or twenty attacks a month. Slowly, by tracking and learning my own patterns, I brought that down to three or four.</p>
+                <p class="fo-text">I built MIgraine Companion solo, from Dnipro, through the war — some nights writing code by candlelight when the power was out. I'm patient zero: every prediction was tested on my own body first. My wife Marina designed it photophobia-first, because she's watched what light does to me during an attack.</p>
+                <p class="fo-text fo-text-quiet">There's no team, no big funding. Just thirty years of pain turned into something that might spare someone else a little of it.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="finalcta">
+    <div class="container">
+        <div class="fc-inner">
+            <h2 class="fc-title">Feel the migraine coming —<br><span class="fc-title-accent">before the pain.</span></h2>
+            <p class="fc-lead">Mi is free to start. If you have an Apple Watch and iPhone, you can begin today — and let Mi start learning your pattern.</p>
+            <div class="fc-buttons">
+                <a href="https://apps.apple.com/app/migraine-companion/id6757784441" class="fc-btn" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    <div class="fc-btn-text"><small>Download on the</small><strong>App Store</strong></div>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.micompanion.app" class="fc-btn" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                    <div class="fc-btn-text"><small>Get it on</small><strong>Google Play</strong></div>
+                </a>
+            </div>
+            <p class="fc-note"><span class="fc-note-hw">Apple Watch Series 8+ for prodrome alerts</span> · Everything else works on iPhone alone · Android coming 2026</p>
+        </div>
+    </div>
+</section>
+
+    
     </main>
 
     <footer>
