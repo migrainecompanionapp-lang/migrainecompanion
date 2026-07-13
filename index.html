@@ -1187,6 +1187,19 @@
 .mt-icon-gold{background:rgba(197,160,89,0.15);color:var(--gold)}
 .mt-feat-title{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;color:var(--paper);margin-bottom:8px;line-height:1.3}
 .mt-feat-desc{font-size:.82rem;color:var(--text-light);line-height:1.6}
+/* narrative therapy feature */
+.mt-narrative{max-width:720px;margin:0 auto var(--sp-4)}
+.mt-narrative-card{display:flex;gap:18px;align-items:flex-start;background:var(--surf-2);border:.5px solid var(--bd-lavender);border-radius:var(--r-card);padding:26px 28px}
+.mt-narrative-icon{flex-shrink:0;width:44px;height:44px;border-radius:var(--r-icon);background:rgba(139,122,168,0.14);display:flex;align-items:center;justify-content:center}
+.mt-narrative-icon svg{width:24px;height:24px;color:var(--lavender)}
+.mt-narrative-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.4rem;color:var(--paper);margin-bottom:8px;line-height:1.2}
+.mt-narrative-text{font-size:.9rem;color:var(--text);line-height:1.7}
+.mt-narrative-text em{color:var(--lavender-light);font-style:italic}
+.mt-sub{text-align:center;font-size:.88rem;color:var(--text-light);margin:0 auto var(--sp-3);max-width:520px}
+@media(max-width:768px){
+  .mt-narrative-card{flex-direction:column;gap:14px;padding:22px}
+  .mt-narrative-title{font-size:1.25rem}
+}
 
 @media(max-width:768px){
   .morethan{padding:var(--sp-section-mobile) 0}
@@ -1288,6 +1301,13 @@
 .fo-title-accent{color:var(--lavender);font-style:italic}
 .fo-text{font-family:'Inter',sans-serif;font-size:.95rem;line-height:1.75;color:var(--text);margin-bottom:14px;max-width:500px}
 .fo-text-quiet{color:var(--text-light);font-style:italic}
+/* team · two portraits */
+.fo-team{display:flex;flex-direction:column;gap:18px}
+.fo-team .fo-portrait img{border-radius:var(--r-card)}
+@media(max-width:768px){
+  .fo-team{flex-direction:row;justify-content:center;gap:16px;max-width:360px;margin:0 auto}
+  .fo-team .fo-portrait{flex:1}
+}
 
 /* ═══ ФИНАЛЬНЫЙ CTA ═══ */
 .finalcta{padding:var(--sp-12) 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
@@ -1783,12 +1803,27 @@
         <section class="morethan">
     <div class="container">
         <div class="mt-head">
-            <span class="section-eyebrow">More than predictions</span>
+            <span class="section-eyebrow">More than predictions · the philosophy</span>
             <h2 class="mt-title">Mi doesn't fight your migraine.<br><span class="mt-title-accent">Mi keeps you company through it.</span></h2>
-            <p class="mt-lead">The prediction is the heart of it — but a migraine is more than a forecast. Mi is built on narrative therapy: your migraine isn't an enemy to battle, it's a companion to understand. That reframing, grounded in the work of Michael White, changes how the whole thing feels.</p>
+            <p class="mt-lead">Most apps — and most of us — treat migraine as an enemy to battle. But the research on chronic illness points the other way: combat language (“fighting,” “battling,” “victim of”) deepens helplessness and turns up the body's stress response. A companion frame does the opposite.</p>
         </div>
 
+        <div class="mt-narrative">
+            <div class="mt-narrative-card">
+                <div class="mt-narrative-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5-2.5-8-5.5-8-10a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4.5-3.5 7.5-8 10z"/></svg>
+                </div>
+                <div class="mt-narrative-body">
+                    <h3 class="mt-narrative-title">You are not your migraine.</h3>
+                    <p class="mt-narrative-text">Mi is built on <em>narrative therapy</em> — the approach of Michael White and David Epston. Its core move is <em>externalization</em>: separating the person from the problem. You're not “a migraineur.” You're someone who experiences migraine — and that small shift in language loosens the grip, lowers self-blame, and gives back a sense of agency. Mi is that idea made into a character: not an enemy to defeat, but a companion whose calm reflects your own care.</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-sub">Around that philosophy, Mi gives you tools for the hard moments:</p>
+
         <div class="mt-grid">
+
             <div class="u-card mt-feat">
                 <span class="mt-feat-icon mt-icon-lavender">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5-2.5-8-5.5-8-10a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4.5-3.5 7.5-8 10z"/></svg>
@@ -1932,11 +1967,20 @@
         <section class="founder">
     <div class="container">
         <div class="fo-grid">
-            <div class="fo-portrait">
-                <img src="images/rustam.jpeg" alt="Rustam Iuldashov, founder of MIgraine Companion" loading="lazy">
-                <div class="fo-portrait-cap">
-                    <span class="fo-portrait-name">Rustam Iuldashov</span>
-                    <span class="fo-portrait-role">Founder · patient zero</span>
+            <div class="fo-team">
+                <div class="fo-portrait">
+                    <img src="images/rustam.jpeg" alt="Rustam Iuldashov, founder of MIgraine Companion" loading="lazy">
+                    <div class="fo-portrait-cap">
+                        <span class="fo-portrait-name">Rustam</span>
+                        <span class="fo-portrait-role">Founder · patient zero</span>
+                    </div>
+                </div>
+                <div class="fo-portrait">
+                    <img src="images/marina.jpeg" alt="Marina Mochalova, co-founder and creative director of MIgraine Companion" loading="lazy">
+                    <div class="fo-portrait-cap">
+                        <span class="fo-portrait-name">Marina</span>
+                        <span class="fo-portrait-role">Co-founder · design</span>
+                    </div>
                 </div>
             </div>
 
@@ -1944,8 +1988,8 @@
                 <span class="section-eyebrow section-eyebrow-left">Why this exists</span>
                 <h2 class="fo-title">Thirty years of migraine.<br><span class="fo-title-accent">Built into an app, during a war.</span></h2>
                 <p class="fo-text">My first migraine came at twelve, with aura. For thirty years it ran my life — up to fifteen or twenty attacks a month. Slowly, by tracking and learning my own patterns, I brought that down to three or four.</p>
-                <p class="fo-text">I built MIgraine Companion solo, from Dnipro, through the war — some nights writing code by candlelight when the power was out. I'm patient zero: every prediction was tested on my own body first. My wife Marina designed it photophobia-first, because she's watched what light does to me during an attack.</p>
-                <p class="fo-text fo-text-quiet">There's no team, no big funding. Just thirty years of pain turned into something that might spare someone else a little of it.</p>
+                <p class="fo-text">I build MIgraine Companion from Dnipro, through the war — some nights writing code by candlelight when the power is out. I'm patient zero: every prediction is tested on my own body first. My wife and co-founder Marina leads the design — she made it photophobia-first, because she's watched what light does to me during an attack.</p>
+                <p class="fo-text fo-text-quiet">Just the two of us. Thirty years of pain turned into something that might spare someone else a little of it.</p>
             </div>
         </div>
     </div>
