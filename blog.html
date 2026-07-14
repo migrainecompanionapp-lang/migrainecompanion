@@ -249,11 +249,11 @@
             align-items: center;
         }
         .nav-cta {
-            background: transparent;
-            border: 1.5px solid rgba(197, 160, 89, 0.45);
+            background: linear-gradient(160deg, #ECD290, #C9A24E);
+            border: 1.5px solid transparent;
             padding: 7px 18px;
             border-radius: 980px;
-            color: #D5B069;
+            color: #241A08;
             font-weight: 700;
             font-size: 0.75rem;
             letter-spacing: 0.08em;
@@ -266,6 +266,8 @@
             text-decoration: none;
             position: relative;
             overflow: hidden;
+            text-shadow: none;
+            box-shadow: inset 0 1.5px 0 rgba(255,255,255,.42), inset 0 -2px 4px rgba(0,0,0,.2), 0 4px 14px rgba(234,203,128,.26);
             transition: all 0.35s cubic-bezier(.4,0,.2,1);
         }
         .nav-cta::before {
@@ -279,11 +281,11 @@
             transition: 0.7s cubic-bezier(.4,0,.2,1);
         }
         .nav-download-wrapper:hover .nav-cta {
-            background: rgba(197, 160, 89, 0.1);
-            border-color: var(--gold);
-            color: #F0EAD6;
-            box-shadow: 0 0 24px rgba(197,160,89,0.18), 0 0 6px rgba(197,160,89,0.08);
-            text-shadow: 0 0 8px rgba(213,176,105,0.25);
+            background: linear-gradient(160deg, #F1D89C, #D3A954);
+            border-color: transparent;
+            color: #241A08;
+            box-shadow: inset 0 1.5px 0 rgba(255,255,255,.5), 0 7px 22px rgba(234,203,128,.42);
+            text-shadow: none;
             transform: translateY(-1px);
         }
         .nav-download-wrapper:hover .nav-cta::before {
@@ -927,6 +929,26 @@
             .subscribe-form button { border-radius: 12px; padding: 14px; }
             .newsletter { padding: var(--sp-8) var(--sp-6); }
         }
+        /* === HEADER POLISH (match index) === */
+        header { transition: height .35s cubic-bezier(.4,0,.2,1), background .35s ease, box-shadow .35s ease; }
+        header.scrolled {
+            height: 54px;
+            background: rgba(19,19,20,.9);
+            box-shadow: 0 8px 30px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.04);
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 1px;
+            pointer-events: none;
+            background: linear-gradient(90deg, transparent, rgba(234,203,128,.6) 25%, rgba(234,203,128,.85) 50%, rgba(234,203,128,.6) 75%, transparent);
+            box-shadow: 0 0 12px rgba(234,203,128,.4);
+            opacity: 0;
+            transition: opacity .45s ease;
+        }
+        header.scrolled::after { opacity: 1; }
+        .logo img { box-shadow: 0 0 0 1px rgba(234,203,128,.4), 0 0 14px rgba(234,203,128,.24); }
     </style>
 </head>
 <body>
@@ -939,8 +961,6 @@
                 <span>M<em>I</em>graine Companion</span>
             </a>
             <nav class="nav">
-                <a href="index.html">App</a>
-                <a href="index.html#features">Features</a>
                 <a href="index.html#story">Story</a>
                 <a href="faq.html">FAQ</a>
                 <a href="collaborate.html">Collaborate</a>
@@ -2185,6 +2205,15 @@
             fireflyContainer.appendChild(firefly);
         }
     }
+    </script>
+    <script>
+    (function(){
+        var h = document.querySelector('header');
+        if (!h) return;
+        function upd(){ if (window.pageYOffset > 44) h.classList.add('scrolled'); else h.classList.remove('scrolled'); }
+        addEventListener('scroll', upd, { passive: true });
+        upd();
+    })();
     </script>
 </body>
 </html>
