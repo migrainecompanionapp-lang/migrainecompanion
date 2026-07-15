@@ -940,6 +940,39 @@
   .phone-frame{width:260px}
 }
 @media(prefers-reduced-motion:reduce){.phone-frame{animation:none}}
+/* ═══ live alert demo in phone ═══ */
+.phone-screen{position:relative}
+.phone-frame.demo-active{animation-play-state:paused}
+.mwd-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:22px 16px;background:linear-gradient(to top,rgba(13,13,14,0.92) 0%,rgba(13,13,14,0.55) 34%,transparent 62%);cursor:pointer;border:0;width:100%}
+.mwd-overlay-label{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;color:var(--paper);background:rgba(139,122,168,0.24);border:1px solid rgba(139,122,168,0.5);border-radius:999px;padding:10px 18px;animation:mwdPulse 2.4s ease-in-out infinite}
+@keyframes mwdPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(139,122,168,0.35)}50%{transform:scale(1.04);box-shadow:0 0 0 9px rgba(139,122,168,0)}}
+.mwd-screen{position:absolute;inset:0;background:#101318;display:none;flex-direction:column;padding:14px 12px 16px;z-index:2;font-family:'Inter',sans-serif}
+.mwd-screen.active{display:flex}
+.mwd-back{position:absolute;top:8px;left:8px;z-index:3;background:none;border:0;color:var(--paper);font-size:1.15rem;line-height:1;cursor:pointer;padding:6px 10px}
+.mwd-date{text-align:center;font-size:.8rem;color:#B8C0CE;margin-top:34px}
+.mwd-clock{text-align:center;font-size:2.9rem;font-weight:500;color:#E8ECF2;line-height:1.05;letter-spacing:-1px}
+.mwd-push{margin-top:26px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.10);border-radius:16px;padding:11px 12px;cursor:pointer;opacity:0;transform:translateY(-160%);transition:transform .55s cubic-bezier(.2,1.1,.3,1),opacity .4s ease}
+.mwd-push.in{opacity:1;transform:translateY(0)}
+.mwd-push-row{display:flex;align-items:flex-start;gap:9px}
+.mwd-push .mwd-push-icon{width:30px;height:30px;border-radius:8px;flex-shrink:0;object-fit:cover}
+.mwd-push-head{display:flex;justify-content:space-between;align-items:baseline;gap:6px}
+.mwd-push-app{font-size:.6rem;color:#9AA3B2;letter-spacing:.4px}
+.mwd-push-title{font-size:.74rem;font-weight:600;color:#E8ECF2;margin-top:2px;line-height:1.3}
+.mwd-push-body{font-size:.68rem;color:#B8C0CE;line-height:1.4;margin-top:2px}
+.mwd-hint{text-align:center;font-size:.66rem;color:#9AA3B2;margin-top:18px;opacity:0;transition:opacity .5s ease}
+.mwd-hint.in{opacity:1}
+@media(prefers-reduced-motion:reduce){.mwd-overlay-label{animation:none}.mwd-push{transition:none}.mwd-hint{transition:none}}
+.mwd-card{display:none;flex-direction:column;overflow-y:auto;min-height:0;margin-top:30px}
+.mwd-card.active{display:flex}
+.mwd-card-badge{align-self:flex-end;font-size:.56rem;font-weight:700;letter-spacing:.06em;color:#16181C;background:var(--gold);border-radius:999px;padding:4px 10px}
+.mwd-card-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--paper);margin-top:8px}
+.mwd-card-body{font-size:.7rem;color:var(--text);line-height:1.55;margin-top:6px}
+.mwd-learned{background:rgba(106,170,122,0.10);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:10px 11px;margin-top:12px}
+.mwd-learned-h{font-size:.58rem;letter-spacing:.06em;color:var(--text-light);text-transform:uppercase;margin-bottom:6px}
+.mwd-learned li{list-style:none;font-size:.68rem;color:var(--text);line-height:1.5}
+.mwd-card-foot{font-size:.62rem;color:var(--text-light);margin-top:10px}
+.mwd-legend{font-size:.62rem;color:var(--lavender-light);line-height:1.55;border-top:1px solid rgba(255,255,255,0.08);margin-top:12px;padding-top:10px}
+.mwd-replay{background:none;border:1px solid rgba(255,255,255,0.15);border-radius:999px;color:var(--text);font-family:'Inter',sans-serif;font-size:.68rem;padding:9px 16px;cursor:pointer;margin:12px auto 4px;min-height:40px}
 /* ═══════ howitworks ═══════ */
 /* ═══ БЛОК 4 · HOW IT WORKS ═══ */
 .howitworks{padding:96px 0;position:relative;z-index:2;background:var(--charcoal);overflow:hidden}
@@ -1144,6 +1177,39 @@
 .ml-phone{width:280px;background:#0D0D0E;border-radius:38px;padding:11px;border:1px solid var(--bd-soft);box-shadow:0 30px 70px rgba(0,0,0,0.5);animation:float 6s ease-in-out infinite}
 .ml-phone-screen{background:#16181C;border-radius:30px;overflow:hidden;aspect-ratio:9/19.5}
 .ml-phone-screen img{width:100%;height:100%;object-fit:cover;display:block}
+/* ═══ caffeine quiz in phone ═══ */
+.ml-phone-screen{position:relative}
+.ml-phone.quiz-active{animation-play-state:paused}
+.mlq-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:22px 16px;background:linear-gradient(to top,rgba(13,13,14,0.92) 0%,rgba(13,13,14,0.55) 34%,transparent 62%);cursor:pointer;border:0;width:100%}
+.mlq-overlay-label{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;color:var(--paper);background:rgba(106,170,122,0.22);border:1px solid rgba(106,170,122,0.45);border-radius:999px;padding:10px 18px;animation:mlqPulse 2.4s ease-in-out infinite}
+@keyframes mlqPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(106,170,122,0.35)}50%{transform:scale(1.04);box-shadow:0 0 0 9px rgba(106,170,122,0)}}
+@media(prefers-reduced-motion:reduce){.mlq-overlay-label{animation:none}}
+.mlq-screen{position:absolute;inset:0;background:#16181C;display:none;flex-direction:column;padding:14px 14px 12px;z-index:2;font-family:'Inter',sans-serif}
+.mlq-screen.active{display:flex}
+.mlq-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.mlq-back{background:none;border:0;color:var(--paper);font-size:1.15rem;line-height:1;cursor:pointer;padding:4px 8px 4px 0}
+.mlq-progress{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,0.12);overflow:hidden}
+.mlq-progress-fill{height:100%;width:20%;background:var(--green-mi);border-radius:2px;transition:width .3s ease}
+.mlq-count{font-size:.68rem;color:var(--text-light)}
+.mlq-body{display:flex;flex-direction:column;min-height:0;flex:1}
+.mlq-question{font-size:.88rem;font-weight:600;line-height:1.4;color:var(--paper);margin-bottom:6px}
+.mlq-hint{font-size:.68rem;font-style:italic;line-height:1.45;color:var(--text-light);margin-bottom:12px}
+.mlq-options{display:flex;flex-direction:column;gap:8px;overflow-y:auto}
+.mlq-option{font-family:'Inter',sans-serif;text-align:left;font-size:.76rem;line-height:1.35;color:var(--text);background:rgba(106,170,122,0.10);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:11px 12px;cursor:pointer;transition:background .2s,border-color .2s;min-height:40px}
+.mlq-option:hover{background:rgba(106,170,122,0.18);border-color:rgba(106,170,122,0.4)}
+.mlq-result{display:none;flex:1;flex-direction:column;align-items:center;text-align:center;overflow-y:auto;min-height:0}
+.mlq-result.active{display:flex}
+.mlq-r-emoji{font-size:1.9rem;margin-top:4px}
+.mlq-r-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--gold);line-height:1.15;margin-top:4px}
+.mlq-r-tag{font-size:.72rem;font-style:italic;color:var(--text-light);margin:4px 0 12px}
+.mlq-rules{width:100%;display:flex;flex-direction:column;gap:7px;margin-bottom:11px}
+.mlq-rule{display:flex;justify-content:space-between;align-items:center;gap:8px;background:rgba(106,170,122,0.10);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:9px 11px;text-align:left}
+.mlq-rule span{font-size:.6rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.04em}
+.mlq-rule b{font-size:.72rem;color:var(--paper);font-weight:600;text-align:right}
+.mlq-r-note{font-size:.66rem;color:var(--lavender-light);line-height:1.5;margin-bottom:10px}
+.mlq-cta{display:block;width:100%;background:var(--gold);color:#16181C;font-weight:600;font-size:.8rem;text-align:center;padding:11px;border-radius:999px;text-decoration:none;margin-bottom:7px}
+.mlq-retake{background:none;border:0;color:var(--text-light);font-size:.68rem;cursor:pointer;text-decoration:underline}
+.mlq-r-disclaimer{font-size:.56rem;color:var(--text-dark);line-height:1.4;margin-top:auto;padding-top:6px}
 
 .ml-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-2);max-width:900px;margin:0 auto}
 .ml-benefit{padding:26px 22px}
@@ -2367,6 +2433,43 @@
                 <div class="phone-frame">
                     <div class="phone-screen">
                         <img src="images/screen-mi-watch-vulnerable.png" alt="Mi Watch Vulnerable alert — Storm gathering, 12–24 hours ahead of a migraine" loading="lazy">
+                        <button class="mwd-overlay" id="mwdStart" aria-label="See how a live alert works">
+                            <span class="mwd-overlay-label">Tap to see a live alert</span>
+                        </button>
+                        <div class="mwd-screen" id="mwdScreen" aria-live="polite">
+                            <button class="mwd-back" id="mwdBack" aria-label="Back">‹</button>
+                            <div id="mwdLock">
+                                <div class="mwd-date">Tuesday, July 14</div>
+                                <div class="mwd-clock">08:44</div>
+                                <div class="mwd-push" id="mwdPush" role="button" tabindex="0" aria-label="Open the alert">
+                                    <div class="mwd-push-row">
+                                        <img class="mwd-push-icon" src="images/mi-icon.png" alt="">
+                                        <div style="min-width:0;flex:1">
+                                            <div class="mwd-push-head"><span class="mwd-push-app">MIGRAINE COMPANION</span><span class="mwd-push-app">now</span></div>
+                                            <div class="mwd-push-title">Mi senses early migraine signals</div>
+                                            <div class="mwd-push-body">Signals like the hours before past migraines — often 12–24h ahead. Take gentle care today.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mwd-hint" id="mwdHint">tap the notification</div>
+                            </div>
+                            <div class="mwd-card" id="mwdCard">
+                                <span class="mwd-card-badge">VULNERABLE</span>
+                                <div class="mwd-card-title">Storm gathering</div>
+                                <div class="mwd-card-body">Resting heart rate is up and your HRV has dropped — the same shift Mi saw before past migraines.</div>
+                                <div class="mwd-learned">
+                                    <div class="mwd-learned-h">What Mi has learned</div>
+                                    <ul style="margin:0;padding:0">
+                                        <li>↘ HRV typically drops 18%</li>
+                                        <li>↗ Resting heart rate rises ~8%</li>
+                                        <li>↘ Sleep quality decreases</li>
+                                    </ul>
+                                </div>
+                                <div class="mwd-card-foot">Why Mi sensed this · 12–24h ahead</div>
+                                <p class="mwd-legend">Not a concept: Mi fired its first live prediction on July 11, 2026 — 17 hours ahead, and it was right. Since July 14, alerts like this land on the phone in real time.</p>
+                                <button class="mwd-replay" id="mwdReplay">Replay</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2648,6 +2751,35 @@
                 <div class="ml-phone">
                     <div class="ml-phone-screen">
                         <img src="images/screen-mi-lab.png" alt="Mi Lab — your caffeine profile, Nervous Sprinter, inside the app" loading="lazy">
+                        <button class="mlq-overlay" id="mlqStart" aria-label="Take the caffeine quiz">
+                            <span class="mlq-overlay-label">Tap to find your caffeine profile</span>
+                        </button>
+                        <div class="mlq-screen" id="mlqScreen" aria-live="polite">
+                            <div class="mlq-top">
+                                <button class="mlq-back" id="mlqBack" aria-label="Back">‹</button>
+                                <div class="mlq-progress"><div class="mlq-progress-fill" id="mlqFill"></div></div>
+                                <span class="mlq-count" id="mlqCount">1/5</span>
+                            </div>
+                            <div class="mlq-body" id="mlqBody">
+                                <div class="mlq-question" id="mlqQuestion"></div>
+                                <div class="mlq-hint" id="mlqHint"></div>
+                                <div class="mlq-options" id="mlqOptions"></div>
+                            </div>
+                            <div class="mlq-result" id="mlqResult">
+                                <div class="mlq-r-emoji" id="mlqREmoji"></div>
+                                <div class="mlq-r-name" id="mlqRName"></div>
+                                <div class="mlq-r-tag" id="mlqRTag"></div>
+                                <div class="mlq-rules">
+                                    <div class="mlq-rule"><span>Coffee deadline</span><b id="mlqRDeadline"></b></div>
+                                    <div class="mlq-rule"><span>Max daily dose</span><b id="mlqRDose"></b></div>
+                                    <div class="mlq-rule"><span>Main enemy</span><b id="mlqREnemy"></b></div>
+                                </div>
+                                <p class="mlq-r-note">3 more personal rules + your exact timing — in the app</p>
+                                <a class="mlq-cta" href="https://apps.apple.com/app/migraine-companion/id6757784441" target="_blank" rel="noopener">Get your full profile</a>
+                                <button class="mlq-retake" id="mlqRetake">Retake quiz</button>
+                                <p class="mlq-r-disclaimer">A behavioral self-assessment — not medical advice.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3245,6 +3377,140 @@
         addEventListener('scroll', closePop, {passive:true});
         addEventListener('keydown', function(e){ if(e.key === 'Escape') closePop(); });
     })();
+    </script>
+    <script>
+(function(){
+  var QUESTIONS=[
+    {q:'If you drink a cup of coffee at 4 PM, how does it affect your sleep?',
+     hint:'the strongest clue about how fast your body processes caffeine',
+     opts:[
+       {t:'No effect \u2014 I sleep fine',s:2,x:0},
+       {t:'I might take a bit longer to fall asleep',s:1,x:0},
+       {t:'I\u2019d have real trouble sleeping',s:-1,x:0},
+       {t:'I would never drink coffee that late',s:-2,x:0}]},
+    {q:'After one cup of coffee, how quickly does the energy boost fade?',
+     hint:'caffeine can last anywhere from 2 to 9 hours in the body',
+     opts:[
+       {t:'Within 1\u20132 hours \u2014 I need another cup fast',s:2,x:0},
+       {t:'About 3\u20134 hours',s:1,x:0},
+       {t:'5\u20136 hours or more',s:-1,x:0},
+       {t:'I barely notice any boost',s:0,x:0}]},
+    {q:'After just one serving of coffee, do you feel anxious, jittery, or restless?',
+     hint:'this shows how strongly your brain reacts \u2014 separate from speed',
+     opts:[
+       {t:'Yes \u2014 even one cup makes me anxious or jittery',s:0,x:2},
+       {t:'Only if I drink more than usual',s:0,x:1},
+       {t:'Rarely \u2014 I feel calm after coffee',s:0,x:-1},
+       {t:'Never \u2014 caffeine doesn\u2019t affect my mood',s:0,x:-2}]},
+    {q:'Do you notice a stimulating effect from chocolate, green tea, or cola?',
+     hint:'these have only 20\u201350mg of caffeine \u2014 feeling them means high sensitivity',
+     opts:[
+       {t:'Yes \u2014 even these give me a noticeable boost',s:0,x:2},
+       {t:'Only from strong tea or large amounts',s:0,x:1},
+       {t:'No \u2014 I need real coffee to feel anything',s:0,x:-1}]},
+    {q:'When you first started drinking coffee, how did it affect you?',
+     hint:'your first reaction is your baseline \u2014 before tolerance built up',
+     opts:[
+       {t:'Intense \u2014 wired, anxious, couldn\u2019t sleep',s:-1,x:2},
+       {t:'Strong energy boost, but manageable',s:0,x:1},
+       {t:'Mild effect \u2014 nothing dramatic',s:1,x:-1},
+       {t:'I barely noticed anything',s:2,x:-2}]}
+  ];
+  var PROFILES={
+    speedMarathon:{name:'Speed Marathon',emoji:'\u{1F3CE}\u{FE0F}',tag:'Fast engine, smooth ride',deadline:'4:00 PM',dose:'~400mg (~4 cups)',enemy:'Withdrawal headaches'},
+    nervousSprinter:{name:'Nervous Sprinter',emoji:'\u26A1',tag:'Quick but intense',deadline:'2:00 PM',dose:'~200mg (~2 cups)',enemy:'Anxiety overload'},
+    quietAccumulator:{name:'Quiet Accumulator',emoji:'\u{1F422}',tag:'Slow burn, long tail',deadline:'12:00 PM',dose:'~200mg (~2 cups)',enemy:'Sleep disruption'},
+    hypersensitive:{name:'Hypersensitive',emoji:'\u{1F52E}',tag:'Your brain feels everything',deadline:'10:00 AM or decaf',dose:'~100mg (~1 cup)',enemy:'Double hit \u2014 duration + intensity'}
+  };
+  var start=document.getElementById('mlqStart'),screen=document.getElementById('mlqScreen'),
+      back=document.getElementById('mlqBack'),fill=document.getElementById('mlqFill'),
+      count=document.getElementById('mlqCount'),body=document.getElementById('mlqBody'),
+      qEl=document.getElementById('mlqQuestion'),hintEl=document.getElementById('mlqHint'),
+      optsEl=document.getElementById('mlqOptions'),result=document.getElementById('mlqResult'),
+      retake=document.getElementById('mlqRetake'),phone=document.querySelector('.ml-phone');
+  if(!start||!screen)return;
+  var idx=0,speed=0,sens=0;
+  function renderQ(){
+    body.style.display='flex';result.classList.remove('active');
+    var q=QUESTIONS[idx];
+    fill.style.width=(((idx+1)/QUESTIONS.length)*100)+'%';
+    count.textContent=(idx+1)+'/'+QUESTIONS.length;
+    qEl.textContent=q.q;hintEl.textContent=q.hint;
+    optsEl.innerHTML='';
+    q.opts.forEach(function(o){
+      var b=document.createElement('button');
+      b.type='button';b.className='mlq-option';b.textContent=o.t;
+      b.addEventListener('click',function(){
+        speed+=o.s;sens+=o.x;idx++;
+        if(idx<QUESTIONS.length){renderQ();}else{renderResult();}
+      });
+      optsEl.appendChild(b);
+    });
+  }
+  function renderResult(){
+    var key=speed>0?(sens>0?'nervousSprinter':'speedMarathon'):(sens>0?'hypersensitive':'quietAccumulator');
+    var p=PROFILES[key];
+    fill.style.width='100%';count.textContent='5/5';
+    body.style.display='none';result.classList.add('active');
+    document.getElementById('mlqREmoji').textContent=p.emoji;
+    document.getElementById('mlqRName').textContent=p.name;
+    document.getElementById('mlqRTag').textContent=p.tag;
+    document.getElementById('mlqRDeadline').textContent=p.deadline;
+    document.getElementById('mlqRDose').textContent=p.dose;
+    document.getElementById('mlqREnemy').textContent=p.enemy;
+  }
+  function reset(){idx=0;speed=0;sens=0;}
+  start.addEventListener('click',function(){
+    reset();screen.classList.add('active');start.style.display='none';
+    if(phone)phone.classList.add('quiz-active');
+    renderQ();
+  });
+  back.addEventListener('click',function(){
+    screen.classList.remove('active');start.style.display='flex';
+    if(phone)phone.classList.remove('quiz-active');
+    reset();
+  });
+  retake.addEventListener('click',function(){reset();renderQ();});
+})();
+    </script>
+    <script>
+(function(){
+  var start=document.getElementById('mwdStart'),screen=document.getElementById('mwdScreen'),
+      back=document.getElementById('mwdBack'),lock=document.getElementById('mwdLock'),
+      push=document.getElementById('mwdPush'),hint=document.getElementById('mwdHint'),
+      card=document.getElementById('mwdCard'),replay=document.getElementById('mwdReplay'),
+      frame=document.querySelector('.phone-frame');
+  if(!start||!screen)return;
+  var t1=null,t2=null;
+  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function clearTimers(){if(t1){clearTimeout(t1);t1=null}if(t2){clearTimeout(t2);t2=null}}
+  function playLock(){
+    clearTimers();
+    card.classList.remove('active');lock.style.display='block';
+    push.classList.remove('in');hint.classList.remove('in');
+    if(reduced){push.classList.add('in');hint.classList.add('in');return;}
+    t1=setTimeout(function(){push.classList.add('in');},1100);
+    t2=setTimeout(function(){hint.classList.add('in');},2000);
+  }
+  function openCard(){
+    if(!push.classList.contains('in'))return;
+    clearTimers();lock.style.display='none';card.classList.add('active');
+  }
+  start.addEventListener('click',function(){
+    screen.classList.add('active');start.style.display='none';
+    if(frame)frame.classList.add('demo-active');
+    playLock();
+  });
+  push.addEventListener('click',openCard);
+  push.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openCard();}});
+  replay.addEventListener('click',playLock);
+  back.addEventListener('click',function(){
+    clearTimers();screen.classList.remove('active');start.style.display='flex';
+    card.classList.remove('active');lock.style.display='block';
+    push.classList.remove('in');hint.classList.remove('in');
+    if(frame)frame.classList.remove('demo-active');
+  });
+})();
     </script>
 </body>
 </html>
