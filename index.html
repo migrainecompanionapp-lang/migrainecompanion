@@ -908,7 +908,10 @@
 .solution::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 500px 500px at 82% 45%,rgba(139,122,168,0.09) 0%,transparent 60%)}
 .solution .container{position:relative;z-index:2}
 
-.solution-grid{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:center;max-width:900px;margin:0 auto}
+.solution-grid{max-width:600px;margin:0 auto;text-align:center}
+.solution-grid .section-eyebrow-left{text-align:center;margin-left:auto;margin-right:auto}
+.solution-grid .solution-lead{margin-left:auto;margin-right:auto}
+.solution-grid .solution-steps{max-width:400px;margin:0 auto;text-align:left}
 
 .section-eyebrow-left{text-align:left;margin-bottom:18px}
 .solution-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.5rem;line-height:1.19;color:var(--paper);margin-bottom:20px}
@@ -1112,6 +1115,10 @@
 .ax-lead{font-family:'Inter',sans-serif;font-size:var(--fs-body);line-height:1.65;color:var(--text)}
 
 .ax-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-4);align-items:center;max-width:720px;margin:0 auto}
+.ax-layout{display:flex;gap:44px;align-items:center;justify-content:center;max-width:1000px;margin:0 auto}
+.ax-main{flex:1;min-width:0}
+.ax-main .ax-grid{max-width:none;margin:0}
+.ax-layout .solution-visual{flex:0 0 auto}
 .ax-col{text-align:center}
 .ax-step-label{font-size:.66rem;color:var(--text-dark);letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--sp-2)}
 
@@ -1158,6 +1165,8 @@
 @media(max-width:768px){
   .alertex{padding:var(--sp-section-mobile) 0}
   .ax-grid{grid-template-columns:1fr;gap:var(--sp-6);max-width:320px}
+  .ax-layout{flex-direction:column}
+  .ax-main .ax-grid{max-width:320px;margin:0 auto}
 }
 /* ═══════ milab ═══════ */
 /* ═══ БЛОК 7 · MI LAB ═══ */
@@ -2429,51 +2438,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="solution-visual">
-                <div class="phone-frame">
-                    <div class="phone-screen">
-                        <img src="images/screen-mi-watch-vulnerable.png" alt="Mi Watch Vulnerable alert — Storm gathering, 12–24 hours ahead of a migraine" loading="lazy">
-                        <button class="mwd-overlay" id="mwdStart" aria-label="See how a live alert works">
-                            <span class="mwd-overlay-label">Tap to see a live alert</span>
-                        </button>
-                        <div class="mwd-screen" id="mwdScreen" aria-live="polite">
-                            <button class="mwd-back" id="mwdBack" aria-label="Back">‹</button>
-                            <div id="mwdLock">
-                                <div class="mwd-date">Tuesday, July 14</div>
-                                <div class="mwd-clock">08:44</div>
-                                <div class="mwd-push" id="mwdPush" role="button" tabindex="0" aria-label="Open the alert">
-                                    <div class="mwd-push-row">
-                                        <img class="mwd-push-icon" src="images/mi-icon.png" alt="">
-                                        <div style="min-width:0;flex:1">
-                                            <div class="mwd-push-head"><span class="mwd-push-app">MIGRAINE COMPANION</span><span class="mwd-push-app">now</span></div>
-                                            <div class="mwd-push-title">Mi senses early migraine signals</div>
-                                            <div class="mwd-push-body">Signals like the hours before past migraines — often 12–24h ahead. Take gentle care today.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mwd-hint" id="mwdHint">tap the notification</div>
-                            </div>
-                            <div class="mwd-card" id="mwdCard">
-                                <span class="mwd-card-badge">VULNERABLE</span>
-                                <div class="mwd-card-title">Storm gathering</div>
-                                <div class="mwd-card-body">Resting heart rate is up and your HRV has dropped — the same shift Mi saw before past migraines.</div>
-                                <div class="mwd-learned">
-                                    <div class="mwd-learned-h">What Mi has learned</div>
-                                    <ul style="margin:0;padding:0">
-                                        <li>↘ HRV typically drops 18%</li>
-                                        <li>↗ Resting heart rate rises ~8%</li>
-                                        <li>↘ Sleep quality decreases</li>
-                                    </ul>
-                                </div>
-                                <div class="mwd-card-foot">Why Mi sensed this · 12–24h ahead</div>
-                                <p class="mwd-legend">Not a concept: Mi fired its first live prediction on July 11, 2026 — 17 hours ahead, and it was right. Since July 14, alerts like this land on the phone in real time.</p>
-                                <button class="mwd-replay" id="mwdReplay">Replay</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -2486,6 +2450,8 @@
             <p class="ax-lead">A gentle heads-up arrives — and when you open it, Mi shows exactly what it noticed and why.</p>
         </div>
 
+        <div class="ax-layout">
+        <div class="ax-main">
         <div class="ax-grid">
 
             
@@ -2542,6 +2508,52 @@
                 <p class="ax-caption">The full picture — what shifted, and how it matches your history.</p>
             </div>
 
+        </div>
+        </div>
+            <div class="solution-visual">
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <img src="images/screen-mi-watch-vulnerable.png" alt="Mi Watch Vulnerable alert — Storm gathering, 12–24 hours ahead of a migraine" loading="lazy">
+                        <button class="mwd-overlay" id="mwdStart" aria-label="See how a live alert works">
+                            <span class="mwd-overlay-label">Tap to see a live alert</span>
+                        </button>
+                        <div class="mwd-screen" id="mwdScreen" aria-live="polite">
+                            <button class="mwd-back" id="mwdBack" aria-label="Back">‹</button>
+                            <div id="mwdLock">
+                                <div class="mwd-date">Tuesday, July 14</div>
+                                <div class="mwd-clock">08:44</div>
+                                <div class="mwd-push" id="mwdPush" role="button" tabindex="0" aria-label="Open the alert">
+                                    <div class="mwd-push-row">
+                                        <img class="mwd-push-icon" src="images/mi-icon.png" alt="">
+                                        <div style="min-width:0;flex:1">
+                                            <div class="mwd-push-head"><span class="mwd-push-app">MIGRAINE COMPANION</span><span class="mwd-push-app">now</span></div>
+                                            <div class="mwd-push-title">Mi senses early migraine signals</div>
+                                            <div class="mwd-push-body">Signals like the hours before past migraines — often 12–24h ahead. Take gentle care today.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mwd-hint" id="mwdHint">tap the notification</div>
+                            </div>
+                            <div class="mwd-card" id="mwdCard">
+                                <span class="mwd-card-badge">VULNERABLE</span>
+                                <div class="mwd-card-title">Storm gathering</div>
+                                <div class="mwd-card-body">Resting heart rate is up and your HRV has dropped — the same shift Mi saw before past migraines.</div>
+                                <div class="mwd-learned">
+                                    <div class="mwd-learned-h">What Mi has learned</div>
+                                    <ul style="margin:0;padding:0">
+                                        <li>↘ HRV typically drops 18%</li>
+                                        <li>↗ Resting heart rate rises ~8%</li>
+                                        <li>↘ Sleep quality decreases</li>
+                                    </ul>
+                                </div>
+                                <div class="mwd-card-foot">Why Mi sensed this · 12–24h ahead</div>
+                                <p class="mwd-legend">Not a concept: Mi fired its first live prediction on July 11, 2026 — 17 hours ahead, and it was right. Since July 14, alerts like this land on the phone in real time.</p>
+                                <button class="mwd-replay" id="mwdReplay">Replay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <p class="ax-closer">Not a number on a dashboard. A warning in Mi's voice — written for you, not for everyone.</p>
