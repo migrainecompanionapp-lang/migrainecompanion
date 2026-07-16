@@ -911,20 +911,20 @@
 .solution-grid{max-width:600px;margin:0 auto;text-align:center}
 .solution-grid .section-eyebrow-left{text-align:center;margin-left:auto;margin-right:auto}
 .solution-grid .solution-lead{margin-left:auto;margin-right:auto}
-.solution-grid .solution-steps{max-width:400px;margin:0 auto;text-align:left}
+.solution-grid .solution-steps{max-width:700px;margin:0 auto;text-align:center}
 
 .section-eyebrow-left{text-align:left;margin-bottom:18px}
 .solution-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.5rem;line-height:1.19;color:var(--paper);margin-bottom:20px}
 .solution-lead{font-family:'Inter',sans-serif;font-size:1rem;line-height:1.7;color:var(--text);margin-bottom:30px;max-width:460px}
 
-.solution-steps{display:flex;flex-direction:column;gap:16px}
-.sstep{display:flex;align-items:flex-start;gap:14px}
+.solution-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.sstep{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
 .sstep-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sstep-icon svg{width:20px;height:20px}
 .sstep-icon-teal{background:rgba(111,169,149,0.15);color:var(--verdigris)}
 .sstep-icon-lavender{background:rgba(139,122,168,0.15);color:var(--lavender)}
 .sstep-icon-gold{background:rgba(197,160,89,0.15);color:var(--gold)}
-.sstep-text{display:flex;flex-direction:column;gap:2px}
+.sstep-text{display:flex;flex-direction:column;gap:4px}
 .sstep-text strong{font-size:.95rem;font-weight:600;color:var(--paper)}
 .sstep-text span{font-size:.85rem;color:var(--text-light);line-height:1.5}
 
@@ -936,10 +936,10 @@
 @media(max-width:768px){
   .solution{padding:64px 0}
   .solution-grid{grid-template-columns:1fr;gap:40px}
-  .section-eyebrow-left{text-align:center}
+  .section-eyebrow-left{text-align:center;margin-left:auto;margin-right:auto}
   .solution-title{font-size:2rem;text-align:center}
   .solution-lead{font-size:.95rem;text-align:center;margin-left:auto;margin-right:auto}
-  .solution-steps{max-width:400px;margin:0 auto}
+  .solution-steps{max-width:400px;margin:0 auto;grid-template-columns:1fr;gap:22px}
   .phone-frame{width:260px}
 }
 @media(prefers-reduced-motion:reduce){.phone-frame{animation:none}}
@@ -1236,7 +1236,7 @@
 @media(max-width:768px){
   .milab{padding:var(--sp-section-mobile) 0}
   .ml-top{grid-template-columns:1fr;gap:var(--sp-6);text-align:center}
-  .section-eyebrow-left{text-align:center}
+  .section-eyebrow-left{text-align:center;margin-left:auto;margin-right:auto}
   .ml-title{font-size:1.9rem}
   .ml-lead,.ml-freedom{margin-left:auto;margin-right:auto}
   .ml-phone{width:250px}
@@ -1409,7 +1409,7 @@
   .founder{padding:var(--sp-section-mobile) 0}
   .fo-grid{grid-template-columns:1fr;gap:var(--sp-4);text-align:center}
   .fo-portrait{max-width:240px;margin:0 auto}
-  .section-eyebrow-left{text-align:center}
+  .section-eyebrow-left{text-align:center;margin-left:auto;margin-right:auto}
   .fo-title{font-size:1.9rem}
   .fo-text{margin-left:auto;margin-right:auto}
   .finalcta{padding:var(--sp-8) 0}
@@ -2407,6 +2407,15 @@
     </div>
 </section>
 
+        <!-- ═══ poetry interlude · whisper (prediction) ═══ -->
+        <section class="poem-band poem-whisper">
+            <div class="poem-overlay"></div>
+            <div class="poem-inner">
+                <div class="poem-divider-top"></div>
+                <p class="poem-verse">Mi whispers signs the mind can read,<br>before the pain outgrows its seed.<br>It leaves its marks before the ache,<br>so mind may choose the paths to take.</p>
+                <div class="poem-divider"></div>
+            </div>
+        </section>
         <div class="hairline"></div>
         <!-- ═══ solution ═══ -->
         <section class="solution">
@@ -2437,11 +2446,113 @@
                         <div class="sstep-text"><strong>Warns</strong><span>12–24h ahead, while there's still time to act</span></div>
                     </div>
                 </div>
+
+                <div class="sol-anim" role="img" aria-label="Three biomarker lines shift and a warning window opens 12 to 24 hours before pain">
+                <style>
+                .sol-anim{max-width:880px;margin:48px auto;font-family:'Inter',sans-serif;text-align:left}
+                .sol-anim__card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px 16px}
+                .sol-anim__top{display:flex;justify-content:space-between;align-items:center;gap:10px 18px;flex-wrap:wrap;margin-bottom:12px}
+                .sol-anim__eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--antique-gold)}
+                .sol-anim__legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.72rem;color:var(--text-light);letter-spacing:.02em}
+                .sol-anim__dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:middle}
+                .sol-anim__stage{position:relative;width:100%}
+                .sol-anim__stage svg{display:block;width:100%;height:auto}
+                .sol-anim__lbl{position:absolute;pointer-events:none}
+                .sol-anim__shift{left:63.2%;top:1%;transform:translateX(-50%);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light)}
+                .sol-anim__win{left:63.2%;right:2.5%;top:16%;text-align:center}
+                .sol-anim__win-h{font-size:.82rem;font-weight:600;color:var(--antique-gold);line-height:1.3}
+                .sol-anim__win-s{font-size:.72rem;color:var(--text-light);margin-top:3px}
+                .sol-anim__caps{position:relative;height:20px;margin-top:2px}
+                .sol-anim__cap{position:absolute;left:0;right:0;text-align:center;font-size:.74rem;color:var(--text-dark);letter-spacing:.03em}
+                .sol-anim__close{text-align:center;margin-top:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.08rem;color:var(--lavender-light)}
+                .sol-anim__note{text-align:center;margin-top:8px;font-size:.66rem;line-height:1.5;color:var(--text-dark);letter-spacing:.02em;max-width:520px;margin-left:auto;margin-right:auto}
+                .sol-line{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;opacity:0;animation:solDraw 11s ease-in-out infinite}
+                .sol-line--hrv{stroke:var(--lavender-light)}
+                .sol-line--hr{stroke:var(--verdigris)}
+                .sol-line--temp{stroke:var(--gold)}
+                .sol-band-el{opacity:0;animation:solBand 11s ease-in-out infinite}
+                .sol-ring{fill:none;stroke:var(--antique-gold);stroke-width:1.4;transform-box:view-box;transform-origin:430px 130px;opacity:0;animation:solRing 11s ease-in-out infinite}
+                .sol-ring--2{stroke-width:1;animation-name:solRing2}
+                .sol-spark{animation:solSpark 6s ease-in-out infinite}
+                .sol-cap--1{animation:solCap1 11s ease-in-out infinite}
+                .sol-cap--2{opacity:0;animation:solCap2 11s ease-in-out infinite}
+                @keyframes solDraw{0%{stroke-dashoffset:100;opacity:0}6%{stroke-dashoffset:100;opacity:1}52%{stroke-dashoffset:0;opacity:1}90%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+                @keyframes solBand{0%{opacity:0}48%{opacity:0}60%{opacity:1}90%{opacity:1}100%{opacity:0}}
+                @keyframes solRing{0%{opacity:0;transform:scale(.15)}44%{opacity:0;transform:scale(.15)}50%{opacity:.5}70%{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+                @keyframes solRing2{0%{opacity:0;transform:scale(.15)}50%{opacity:0;transform:scale(.15)}56%{opacity:.4}80%{opacity:0;transform:scale(1.18)}100%{opacity:0;transform:scale(1.18)}}
+                @keyframes solCap1{0%{opacity:0}6%{opacity:1}42%{opacity:1}52%{opacity:0}100%{opacity:0}}
+                @keyframes solCap2{0%{opacity:0}52%{opacity:0}62%{opacity:1}90%{opacity:1}100%{opacity:0}}
+                @keyframes solSpark{0%,100%{opacity:.12}50%{opacity:.62}}
+                .sol-anim.is-paused *{animation-play-state:paused}
+                @media (prefers-reduced-motion:reduce){
+                  .sol-anim *{animation:none!important}
+                  .sol-line{stroke-dashoffset:0;opacity:1}
+                  .sol-band-el{opacity:1}
+                  .sol-ring{opacity:0}
+                  .sol-cap--1{opacity:0}
+                  .sol-cap--2{opacity:1}
+                }
+                @media (max-width:560px){
+                  .sol-anim__win-h{font-size:.78rem}
+                  .sol-anim__win-s{font-size:.68rem}
+                  .sol-anim__shift{display:none}
+                  .sol-anim__win{position:static;left:auto;right:auto;top:auto;width:auto;max-width:none;margin:8px auto 0}
+                }
+                </style>
+                <div class="sol-anim__card">
+                    <div class="sol-anim__top">
+                        <span class="sol-anim__eyebrow">Mi Watch · how your window opens</span>
+                        <span class="sol-anim__legend">
+                            <span><span class="sol-anim__dot" style="background:var(--lavender-light)"></span>HRV</span>
+                            <span><span class="sol-anim__dot" style="background:var(--verdigris)"></span>Resting HR</span>
+                            <span><span class="sol-anim__dot" style="background:var(--gold)"></span>Wrist temp</span>
+                        </span>
+                    </div>
+                    <div class="sol-anim__stage">
+                        <svg viewBox="0 0 680 260" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+                            <line x1="30" y1="80" x2="650" y2="80" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+                            <line x1="30" y1="140" x2="650" y2="140" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+                            <line x1="30" y1="200" x2="650" y2="200" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+                            <g>
+                                <circle class="sol-spark" style="animation-duration:5s" cx="120" cy="52" r="1.4" fill="var(--paper)"/>
+                                <circle class="sol-spark" style="animation-duration:7s" cx="300" cy="44" r="1.2" fill="var(--lavender-light)"/>
+                                <circle class="sol-spark" style="animation-duration:6s" cx="560" cy="58" r="1.4" fill="var(--paper)"/>
+                                <circle class="sol-spark" style="animation-duration:6.5s" cx="620" cy="214" r="1.2" fill="var(--lavender-light)"/>
+                                <circle class="sol-spark" style="animation-duration:5.5s" cx="80" cy="222" r="1.2" fill="var(--paper)"/>
+                            </g>
+                            <g class="sol-band-el">
+                                <rect x="430" y="46" width="220" height="178" fill="var(--antique-gold)" fill-opacity="0.08" rx="4"/>
+                                <line x1="430" y1="46" x2="430" y2="224" stroke="var(--antique-gold)" stroke-width="1" stroke-dasharray="4 5" stroke-opacity="0.6"/>
+                            </g>
+                            <circle class="sol-ring" cx="430" cy="130" r="6"/>
+                            <circle class="sol-ring sol-ring--2" cx="430" cy="130" r="6"/>
+                            <path class="sol-line sol-line--hrv" pathLength="100" d="M30 80 q16 -8 32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 C 458 84, 486 106, 520 120 q 30 10 60 13 t 60 6 l 10 1"/>
+                            <path class="sol-line sol-line--hr" pathLength="100" d="M30 140 q16 -7 32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 C 458 136, 486 120, 520 110 q 30 -7 60 -9 t 60 -4 l 10 -1"/>
+                            <path class="sol-line sol-line--temp" pathLength="100" d="M30 200 q16 -5 32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 C 458 197, 490 188, 530 181 q 30 -5 60 -6 t 60 -3 l 10 -1"/>
+                        </svg>
+                        <div class="sol-anim__lbl sol-anim__shift sol-band-el" aria-hidden="true">the shift</div>
+                        <div class="sol-anim__lbl sol-anim__win sol-band-el" aria-hidden="true">
+                            <div class="sol-anim__win-h">Vulnerable window opens</div>
+                            <div class="sol-anim__win-s">12–24h before the pain</div>
+                        </div>
+                    </div>
+                    <div class="sol-anim__caps" aria-hidden="true">
+                        <div class="sol-anim__cap sol-cap--1">Mi learns your normal</div>
+                        <div class="sol-anim__cap sol-cap--2">Mi opens your warning window</div>
+                    </div>
+                    <div class="sol-anim__close">Three quiet signals. One shift. Hours to act.</div>
+                    <p class="sol-anim__note">A simplified illustration, not real data — Mi reads many more signals and learns your pattern, not this one.</p>
+                </div>
+                </div>
+                <script>(function(){var n=document.querySelector('.sol-anim');if(!n||!('IntersectionObserver' in window))return;new IntersectionObserver(function(es){es.forEach(function(e){n.classList.toggle('is-paused',!e.isIntersecting)})},{threshold:0.05}).observe(n);})();</script>
+
+
             </div>
         </div>
     </div>
 </section>
 
+        <!-- ═══ alertex ═══ -->
         <section class="alertex">
     <div class="container">
         <div class="ax-head">
@@ -2561,17 +2672,6 @@
 </section>
 
         <!-- ═══ howitworks ═══ -->
-        
-        <!-- ═══ poetry interlude · whisper (prediction) ═══ -->
-        <section class="poem-band poem-whisper">
-            <div class="poem-overlay"></div>
-            <div class="poem-inner">
-                <div class="poem-divider-top"></div>
-                <p class="poem-verse">Mi whispers signs the mind can read,<br>before the pain outgrows its seed.<br>It leaves its marks before the ache,<br>so mind may choose the paths to take.</p>
-                <div class="poem-divider"></div>
-            </div>
-        </section>
-
         <section class="howitworks">
     <div class="container">
         <div class="hiw-head">
@@ -2676,8 +2776,6 @@
     </div>
 </section>
 
-        <!-- ═══ alertex ═══ -->
-        
         <!-- ═══ poetry interlude · stones (patterns) ═══ -->
         <section class="poem-band poem-stones">
             <div class="poem-overlay"></div>
