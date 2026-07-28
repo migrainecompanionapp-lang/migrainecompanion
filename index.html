@@ -33,7 +33,9 @@
     <title>MIgraine Companion | Biomarker Prodrome Alerts + Personal Trigger Profiles</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"></noscript>
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -3421,8 +3423,18 @@
         var h=document.querySelector('header');
         if(!h)return;
         var pb=document.getElementById('reading-progress');
-        function upd(){ if(window.pageYOffset>44) h.classList.add('scrolled'); else h.classList.remove('scrolled'); if(pb){var st=window.pageYOffset||document.documentElement.scrollTop;var dh=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=(dh>0?Math.min(100,st/dh*100):0)+'%';} }
-        addEventListener('scroll',upd,{passive:true}); upd();
+        var ticking=false;
+        function upd(){
+            var st=window.pageYOffset||document.documentElement.scrollTop;
+            var dh=document.documentElement.scrollHeight-window.innerHeight;
+            requestAnimationFrame(function(){
+                if(st>44) h.classList.add('scrolled'); else h.classList.remove('scrolled');
+                if(pb){ pb.style.width=(dh>0?Math.min(100,st/dh*100):0)+'%'; }
+                ticking=false;
+            });
+        }
+        addEventListener('scroll',function(){ if(ticking)return; ticking=true; upd(); },{passive:true});
+        upd();
     })();
     </script>
     <script>
