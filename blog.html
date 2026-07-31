@@ -476,6 +476,21 @@
             color: var(--cream);
             text-shadow: 0 4px 24px rgba(0,0,0,0.4);
             line-height: 1.15;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-eyebrow {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: var(--sp-3);
+            text-shadow: none;
         }
         
         .blog-hero p {
@@ -931,7 +946,8 @@
         @media (max-width: 1280px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 960px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
-            .blog-hero h1 { font-size: 2.2rem; letter-spacing: -0.5px; }
+            .blog-hero h1 { font-size: 2.2rem; letter-spacing: -0.5px; max-width: 100%; }
+            .hero-eyebrow { font-size: 0.7rem; letter-spacing: 1.8px; }
             .blog-hero { padding: 120px 0 60px; min-height: 340px; }
             .blog-grid { grid-template-columns: 1fr; gap: var(--sp-4); }
             .blog-card { padding: var(--sp-6); border-radius: 16px; }
@@ -1789,7 +1805,7 @@
                 </a>
             </div>
             <div class="container">
-                <h1>Migraine Blog: Stories from the Mystic Garden</h1>
+                <h1><span class="hero-eyebrow">Migraine Blog</span>Stories from the Mystic Garden</h1>
                 <p>Science-backed articles on migraine triggers, treatments, and living with chronic migraine — plus honest personal stories, from those who understand.</p>
                 <form class="subscribe-form" action="https://formspree.io/f/mjgezgbq" method="POST">
                     <input type="email" name="email" placeholder="Enter your email for new articles..." required aria-label="Email address for newsletter">
