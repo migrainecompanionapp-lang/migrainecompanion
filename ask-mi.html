@@ -1601,10 +1601,33 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(requestBody)
             });
-            const data = await response.json();
+
             typingEl.remove();
-            const answer = data.answer || data.message || 'Something went wrong.';
-            addMessage('mi', answer);
+
+            if (!response.ok || !response.body) {
+                addMessage('mi', 'Connection error. Please try again.');
+                return;
+            }
+
+            const msgEl = addMessage('mi', '');
+            const bubble = msgEl.querySelector('.msg-bubble');
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let answer = '';
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                answer += decoder.decode(value, { stream: true });
+                bubble.innerHTML = formatMiText(answer);
+                document.getElementById('chatArea').scrollTop = document.getElementById('chatArea').scrollHeight;
+            }
+
+            if (!answer) {
+                bubble.innerHTML = formatMiText('Something went wrong.');
+                answer = 'Something went wrong.';
+            }
+
             chatHistory.push({ role: 'user', text }, { role: 'mi', text: answer });
             if (!isProActive && !paymentGracePeriod) { addUsed(); updateTrialUI(false); }
         } catch (e) {
@@ -1613,16 +1636,19 @@
         }
     }
 
-    function addMessage(role, text) {
-        const msg = document.createElement('div');
-        msg.className = 'message ' + role;
-        const formatted = text
+    function formatMiText(text) {
+        return text
             .replace(/##\s*(.*?)(?:\n|$)/g, '<h2>$1</h2>')
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color:var(--lavender);text-decoration:underline;text-underline-offset:2px;">$1</a>')
             .replace(/\n\n/g, '<br><br>')
             .replace(/\n/g, '<br>');
-        msg.innerHTML = `<div class="msg-bubble">${formatted}</div>`;
+    }
+
+    function addMessage(role, text) {
+        const msg = document.createElement('div');
+        msg.className = 'message ' + role;
+        msg.innerHTML = `<div class="msg-bubble">${formatMiText(text)}</div>`;
         chatMessages.appendChild(msg);
         document.getElementById('chatArea').scrollTop = document.getElementById('chatArea').scrollHeight;
         return msg;
