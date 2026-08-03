@@ -1691,6 +1691,7 @@
     // ─── ЧАТ ───
     let chatHistory = [];
     const chatMessages = document.getElementById('chatMessages');
+    const chatArea = document.getElementById('chatArea');
     const welcome = document.getElementById('welcome');
     const sendBtn = document.getElementById('sendBtn');
 
@@ -1726,7 +1727,8 @@
         }
 
         if (welcome) welcome.style.display = 'none';
-        addMessage('user', text);
+        const userMsgEl = addMessage('user', text);
+        requestAnimationFrame(() => { chatArea.scrollTop = userMsgEl.offsetTop - 12; });
         inputBox.value = '';
         inputBox.style.height = 'auto';
         sendBtn.classList.remove('active');
@@ -1765,7 +1767,6 @@
                 if (done) break;
                 answer += decoder.decode(value, { stream: true });
                 bubble.innerHTML = formatMiText(answer);
-                document.getElementById('chatArea').scrollTop = document.getElementById('chatArea').scrollHeight;
             }
 
             if (!answer) {
@@ -1795,7 +1796,6 @@
         msg.className = 'message ' + role;
         msg.innerHTML = `<div class="msg-bubble">${formatMiText(text)}</div>`;
         chatMessages.appendChild(msg);
-        document.getElementById('chatArea').scrollTop = document.getElementById('chatArea').scrollHeight;
         return msg;
     }
 
@@ -1810,7 +1810,6 @@
             </span>
         </div>`;
         chatMessages.appendChild(msg);
-        document.getElementById('chatArea').scrollTop = document.getElementById('chatArea').scrollHeight;
 
         if (!document.getElementById('typing-style')) {
             const s = document.createElement('style');
