@@ -75,6 +75,9 @@
         .logo span { color: var(--triggers); }
         .back-link { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
         .back-link:hover { color: var(--lavender); }
+        .header-nav-links { display: flex; align-items: center; gap: 20px; }
+        .ask-mi-link { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
+        .ask-mi-link:hover { color: var(--lavender); }
 
         /* === HERO === */
         .article-hero { margin-top: 70px; position: relative; overflow: hidden; border-radius: 0 0 24px 24px; height: 500px; display: flex; align-items: center; justify-content: center; }
@@ -211,7 +214,10 @@
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">M<span>I</span>graine Companion</a>
-            <a href="blog.html" class="back-link">&larr; Back to Blog</a>
+            <div class="header-nav-links">
+                <a href="ask-mi.html" class="ask-mi-link">✨ Ask Mi</a>
+                <a href="blog.html" class="back-link">&larr; Back to Blog</a>
+            </div>
         </div>
     </header>
 
