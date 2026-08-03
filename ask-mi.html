@@ -274,6 +274,7 @@
         /* ─── CONSTELLATION BADGE (Mi memory) ─── */
         .constellation-area {
             flex-shrink: 0;
+            width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;
             padding: 8px var(--sp-md) var(--sp-xs);
             position: relative;
             z-index: 9;
@@ -290,8 +291,8 @@
             pointer-events: none;
         }
         .constellation-badge {
-            max-width: 800px; margin: 0 auto;
-            display: flex; align-items: center; justify-content: space-between;
+            width: fit-content; max-width: 100%; margin: 0 0 0 auto;
+            display: flex; align-items: center;
             gap: var(--sp-sm);
             padding: 10px 14px;
             border-radius: 14px;
@@ -431,7 +432,7 @@
         }
         .constellation-left {
             display: flex; align-items: center; gap: 10px;
-            flex: 1; min-width: 0;
+            flex: 0 1 auto; min-width: 0;
         }
         .constellation-icon {
             width: 28px; height: 28px;
@@ -451,7 +452,7 @@
         .constellation-badge.loaded .constellation-icon svg { fill: var(--green); }
         .constellation-text {
             display: flex; flex-direction: column; gap: 2px;
-            min-width: 0; flex: 1;
+            min-width: 0; flex: 0 1 auto;
         }
         .constellation-title {
             font-size: var(--fs-sm);
@@ -702,7 +703,12 @@
             .restore-card { border-radius:18px; padding:var(--sp-sm) var(--sp-md) var(--sp-md); margin:var(--sp-sm); }
             .help-popup { width:calc(100vw - 32px); max-width:280px; right:-8px; }
             .constellation-area { padding: 10px var(--sp-sm) var(--sp-xs); }
-            .constellation-badge { padding: 8px 10px; gap: 8px; }
+            .constellation-badge {
+                width: 100%; max-width: 100%; margin: 0 auto;
+                justify-content: space-between;
+                padding: 8px 10px; gap: 8px;
+            }
+            .constellation-left, .constellation-text { flex: 1; }
             .constellation-icon { width: 24px; height: 24px; }
             .constellation-icon svg { width: 12px; height: 12px; }
             .constellation-title { font-size: var(--fs-xs); }
