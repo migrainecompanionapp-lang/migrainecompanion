@@ -333,6 +333,16 @@
             from { opacity: 0; transform: scale(0.6); }
             to { opacity: 1; transform: scale(1); }
         }
+        .constellation-star.empty {
+            background: linear-gradient(135deg, rgba(122, 91, 168, 0.20), rgba(122, 91, 168, 0.08));
+            border-color: rgba(122, 91, 168, 0.35);
+            box-shadow: 0 0 8px rgba(122, 91, 168, 0.15);
+        }
+        .constellation-star.empty:hover {
+            background: linear-gradient(135deg, rgba(122, 91, 168, 0.30), rgba(122, 91, 168, 0.14));
+            border-color: rgba(122, 91, 168, 0.50);
+        }
+        .constellation-star.empty svg { fill: var(--lavender); }
 
         /* Star popup — fixed positioning controlled by JS (like info-tooltip) */
         .constellation-popup {
@@ -350,6 +360,13 @@
             border-top: 1px solid rgba(106, 170, 122, 0.20);
         }
         .constellation-popup.visible { display: block; animation: help-in 0.2s ease forwards; }
+        .constellation-popup.empty {
+            border-color: rgba(122, 91, 168, 0.20);
+        }
+        .constellation-popup.empty::before {
+            border-left-color: rgba(122, 91, 168, 0.20);
+            border-top-color: rgba(122, 91, 168, 0.20);
+        }
         .constellation-popup-title {
             font-family: 'Comfortaa', cursive;
             font-size: var(--fs-sm);
@@ -359,6 +376,7 @@
             display: flex; align-items: center; gap: 6px;
         }
         .constellation-popup-title svg { width: 12px; height: 12px; fill: var(--green); }
+        .constellation-popup.empty .constellation-popup-title svg { fill: var(--lavender); }
         .constellation-popup-text {
             font-size: var(--fs-sm);
             color: var(--text-secondary);
@@ -915,10 +933,10 @@
     <div class="constellation-popup" id="constellationPopup">
         <div class="constellation-popup-title">
             <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.27 5.79 21l2.39-7.15L2 9.36h7.61L12 2z"/></svg>
-            <span>Mi knows you</span>
+            <span id="constellationPopupTitleText">Mi knows you</span>
         </div>
         <div class="constellation-popup-text" id="constellationPopupText">Your Constellation is loaded · 3 of 5 profiles</div>
-        <div class="constellation-popup-actions">
+        <div class="constellation-popup-actions" id="constellationPopupActions">
             <button class="constellation-popup-btn" id="constellationPopupUpdate">Update</button>
             <button class="constellation-popup-btn danger" id="constellationPopupClear" aria-label="Clear">×</button>
         </div>
@@ -1112,10 +1130,11 @@
         `;
         document.getElementById('constellationReuploadBtn').addEventListener('click', () => constellationInput.click());
         document.getElementById('constellationClearBtn').addEventListener('click', clearConstellation);
-        // Sync popup text if star is visible (user is in chat)
+        // Sync popup text + star color if star is visible (user is in chat)
         if (constellationPopupText) {
             constellationPopupText.textContent = `Your Constellation is loaded · ${profileText}`;
         }
+        updateStarState();
     }
 
     function setConstellationEmpty() {
@@ -1126,6 +1145,7 @@
         constellationSubtitle.textContent = 'Upload your Constellation from MI Lab';
         constellationActions.innerHTML = `<button class="constellation-btn" id="constellationUploadBtn">Upload</button>`;
         document.getElementById('constellationUploadBtn').addEventListener('click', () => constellationInput.click());
+        updateStarState();
     }
 
     async function checkConstellationStatus() {
@@ -1260,21 +1280,59 @@
     const constellationPopup = document.getElementById('constellationPopup');
     const constellationPopupText = document.getElementById('constellationPopupText');
 
+    const constellationPopupTitleText = document.getElementById('constellationPopupTitleText');
+    const constellationPopupActions = document.getElementById('constellationPopupActions');
+
+    // Reflects hasConstellation onto the star's color (green = loaded, purple = empty)
+    function updateStarState() {
+        constellationStar.classList.toggle('empty', !hasConstellation);
+    }
+
     function hideBadgeShowStar() {
-        if (!hasConstellation) return;
         constellationArea.classList.add('hidden');
+        updateStarState();
         constellationStar.classList.add('visible');
     }
 
     function showBadgeHideStar() {
         constellationArea.classList.remove('hidden');
-        constellationStar.classList.remove('visible');
+        constellationStar.classList.remove('visible', 'empty');
         constellationPopup.classList.remove('visible');
     }
 
-    function updatePopupText() {
-        const subtitle = document.getElementById('constellationSubtitle').textContent;
-        constellationPopupText.textContent = subtitle || 'Your Constellation is loaded';
+    // Fills the popup with the right copy/buttons for the current state
+    function updateConstellationPopup() {
+        if (hasConstellation) {
+            constellationPopup.classList.remove('empty');
+            constellationPopupTitleText.textContent = 'Mi knows you';
+            const subtitle = document.getElementById('constellationSubtitle').textContent;
+            constellationPopupText.textContent = subtitle || 'Your Constellation is loaded';
+            constellationPopupActions.innerHTML = `
+                <button class="constellation-popup-btn" id="constellationPopupUpdate">Update</button>
+                <button class="constellation-popup-btn danger" id="constellationPopupClear" aria-label="Clear">×</button>
+            `;
+            document.getElementById('constellationPopupUpdate').addEventListener('click', (e) => {
+                e.stopPropagation();
+                constellationPopup.classList.remove('visible');
+                constellationInput.click();
+            });
+            document.getElementById('constellationPopupClear').addEventListener('click', async (e) => {
+                e.stopPropagation();
+                constellationPopup.classList.remove('visible');
+                await clearConstellation();
+                updateStarState();
+            });
+        } else {
+            constellationPopup.classList.add('empty');
+            constellationPopupTitleText.textContent = 'Make Mi personal';
+            constellationPopupText.textContent = 'Upload your Constellation from MI Lab for personalized insights';
+            constellationPopupActions.innerHTML = `<button class="constellation-popup-btn" id="constellationPopupUpload">Upload</button>`;
+            document.getElementById('constellationPopupUpload').addEventListener('click', (e) => {
+                e.stopPropagation();
+                constellationPopup.classList.remove('visible');
+                constellationInput.click();
+            });
+        }
     }
 
     // Position popup relative to star (clamps to viewport on mobile)
@@ -1304,7 +1362,7 @@
         if (constellationPopup.classList.contains('visible')) {
             constellationPopup.classList.remove('visible');
         } else {
-            updatePopupText();
+            updateConstellationPopup();
             positionConstellationPopup();
             constellationPopup.classList.add('visible');
         }
@@ -1317,23 +1375,6 @@
         }
     });
     window.addEventListener('resize', () => { constellationPopup.classList.remove('visible'); });
-
-    // Popup buttons
-    document.getElementById('constellationPopupUpdate').addEventListener('click', (e) => {
-        e.stopPropagation();
-        constellationPopup.classList.remove('visible');
-        constellationInput.click();
-    });
-    document.getElementById('constellationPopupClear').addEventListener('click', async (e) => {
-        e.stopPropagation();
-        constellationPopup.classList.remove('visible');
-        await clearConstellation();
-        // After clear: hide star and show badge again (it will show empty state)
-        if (!hasConstellation) {
-            constellationStar.classList.remove('visible');
-            constellationArea.classList.remove('hidden');
-        }
-    });
 
     // ─── ИНИЦИАЛИЗАЦИЯ ───
     window.addEventListener('load', async () => {
