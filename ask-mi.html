@@ -466,6 +466,41 @@
         .constellation-icon svg { width: 14px; height: 14px; fill: var(--lavender); }
         .constellation-badge.loaded .constellation-icon svg { fill: var(--green); }
         .constellation-badge.loaded .info-tooltip-wrap { display: none; }
+
+        /* Compact pill treatment once Constellation is loaded (mirrors .hero-badge-primary + .badge-pulse on the homepage) */
+        .constellation-badge.compact {
+            padding: 6px 8px 6px 14px;
+            border-radius: 980px;
+            gap: 8px;
+            background: rgba(106, 170, 122, 0.12);
+            border-color: rgba(106, 170, 122, 0.35);
+            box-shadow: none;
+        }
+        .constellation-badge.compact .constellation-icon { display: none; }
+        .constellation-badge.compact .constellation-left::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%;
+            background: var(--green); flex-shrink: 0;
+            animation: constellationPulse 2.6s ease-in-out infinite;
+        }
+        .constellation-badge.compact .constellation-title {
+            font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+            text-transform: uppercase; color: var(--green);
+        }
+        .constellation-badge.compact .constellation-subtitle { display: none; }
+        .constellation-badge.compact .constellation-actions {
+            gap: 2px; padding-left: 8px; position: relative;
+        }
+        .constellation-badge.compact .constellation-actions::before {
+            content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+            width: 1px; height: 12px; background: rgba(255,255,255,0.15);
+        }
+        .constellation-badge.compact .constellation-btn {
+            background: none; border: none; padding: 4px 6px; font-size: 11px;
+        }
+        @keyframes constellationPulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+        @media (prefers-reduced-motion: reduce) {
+            .constellation-badge.compact .constellation-left::before { animation: none; }
+        }
         .constellation-text {
             display: flex; flex-direction: column; gap: 2px;
             min-width: 0; flex: 0 1 auto;
@@ -504,6 +539,17 @@
             background: rgba(122, 91, 168, 0.20);
             border-color: rgba(122, 91, 168, 0.35);
             color: var(--cream);
+        }
+        .constellation-btn.upload-primary {
+            background: linear-gradient(135deg, var(--lavender), #A493C1);
+            border: none;
+            color: var(--surface-base);
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(139,122,168,0.25), inset 0 1px 0 rgba(255,255,255,0.15);
+        }
+        .constellation-btn.upload-primary:hover {
+            box-shadow: 0 4px 16px rgba(139,122,168,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+            transform: scale(1.03);
         }
         .constellation-btn.clear {
             color: var(--text-muted);
@@ -918,7 +964,7 @@
                 </div>
             </div>
             <div class="constellation-actions" id="constellationActions">
-                <button class="constellation-btn" id="constellationUploadBtn">Upload</button>
+                <button class="constellation-btn upload-primary" id="constellationUploadBtn">Upload</button>
             </div>
             <div class="info-tooltip-wrap">
                 <button class="info-tooltip-btn" id="constellationInfoBtn" aria-label="What is this?">
@@ -1238,8 +1284,9 @@
     function setConstellationLoaded(profilesCompleted, uploadedAt) {
         hasConstellation = true;
         constellationBadge.classList.add('loaded');
+        constellationBadge.classList.add('compact');
         constellationIcon.classList.remove('uploading');
-        constellationTitle.textContent = '✓ Your Constellation is loaded';
+        constellationTitle.textContent = `${profilesCompleted}/5 · Mi knows you`;
         const profileText = profilesCompleted === 1
             ? '1 profile · Mi knows you'
             : `${profilesCompleted} of 5 profiles · Mi knows you`;
@@ -1260,10 +1307,11 @@
     function setConstellationEmpty() {
         hasConstellation = false;
         constellationBadge.classList.remove('loaded');
+        constellationBadge.classList.remove('compact');
         constellationIcon.classList.remove('uploading');
         constellationTitle.textContent = 'Make Mi personal';
         constellationSubtitle.textContent = 'Upload your Constellation from MI Lab';
-        constellationActions.innerHTML = `<button class="constellation-btn" id="constellationUploadBtn">Upload</button>`;
+        constellationActions.innerHTML = `<button class="constellation-btn upload-primary" id="constellationUploadBtn">Upload</button>`;
         document.getElementById('constellationUploadBtn').addEventListener('click', () => constellationInput.click());
         updateStarState();
     }
