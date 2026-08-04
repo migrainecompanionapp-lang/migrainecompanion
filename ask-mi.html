@@ -200,6 +200,10 @@
             width:12px; height:12px; background:#1e1c24; border-left:1px solid rgba(139,122,168,0.18);
             border-top:1px solid rgba(139,122,168,0.18);
         }
+        .info-tooltip.tip-above::before {
+            top:auto; bottom:-6px; border-left:none; border-top:none;
+            border-right:1px solid rgba(139,122,168,0.18); border-bottom:1px solid rgba(139,122,168,0.18);
+        }
         @keyframes tip-in { from{opacity:0;transform:translateY(-4px)} to{opacity:1;transform:translateY(0)} }
         .info-tooltip.visible { display:block; animation:tip-in 0.2s ease forwards; }
         .info-tooltip-item { display:flex; gap:var(--sp-sm); align-items:flex-start; padding:var(--sp-xs) 0; }
@@ -915,6 +919,11 @@
             <div class="constellation-actions" id="constellationActions">
                 <button class="constellation-btn" id="constellationUploadBtn">Upload</button>
             </div>
+            <div class="info-tooltip-wrap">
+                <button class="info-tooltip-btn" id="constellationInfoBtn" aria-label="What is this?">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                </button>
+            </div>
         </div>
         <input type="file" class="constellation-input" id="constellationInput" accept=".json,application/json">
         <div class="constellation-msg" id="constellationMsg"></div>
@@ -1063,6 +1072,12 @@
         <div class="info-tooltip-item">
             <div class="info-tooltip-icon ic-d"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
             <div class="info-tooltip-text"><strong>Try free, then unlock</strong><br>3 free questions. Then $2.99 for 30 days.</div>
+        </div>
+    </div>
+    <div class="info-tooltip" id="constellationInfoTip">
+        <div class="info-tooltip-item">
+            <div class="info-tooltip-icon ic-l"><svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.27 5.79 21l2.39-7.15L2 9.36h7.61L12 2z"/></svg></div>
+            <div class="info-tooltip-text"><strong>What's a Constellation?</strong><br>A JSON file from the MI Lab section of the Migraine Companion app. It captures patterns unique to you, so Mi can personalize its answers instead of giving generic advice.</div>
         </div>
     </div>
     <script>
@@ -1622,6 +1637,7 @@
     infoTipBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         if (typeof helpPopup !== 'undefined') helpPopup.classList.remove('visible');
+        if (typeof constellationInfoTip !== 'undefined') constellationInfoTip.classList.remove('visible');
         if (infoTip.classList.contains('visible')) {
             infoTip.classList.remove('visible');
         } else {
@@ -1635,6 +1651,56 @@
         }
     });
     window.addEventListener('resize', () => { infoTip.classList.remove('visible'); });
+
+    // ─── CONSTELLATION INFO TOOLTIP (same pattern as above) ───
+    const constellationInfoBtn = document.getElementById('constellationInfoBtn');
+    const constellationInfoTip = document.getElementById('constellationInfoTip');
+
+    function positionConstellationInfoTip() {
+        const rect = constellationInfoBtn.getBoundingClientRect();
+        constellationInfoTip.style.visibility = 'hidden';
+        constellationInfoTip.style.display = 'block';
+        const tipW = constellationInfoTip.offsetWidth;
+        const tipH = constellationInfoTip.offsetHeight;
+        constellationInfoTip.style.display = '';
+        constellationInfoTip.style.visibility = '';
+
+        const btnCenterX = rect.left + rect.width / 2;
+        let left = btnCenterX - tipW / 2;
+        left = Math.max(16, Math.min(left, window.innerWidth - tipW - 16));
+
+        const spaceBelow = window.innerHeight - rect.bottom - 10;
+        const spaceAbove = rect.top - 10;
+        const openAbove = spaceBelow < tipH && spaceAbove > spaceBelow;
+
+        if (openAbove) {
+            constellationInfoTip.style.top = (rect.top - tipH - 10) + 'px';
+            constellationInfoTip.classList.add('tip-above');
+        } else {
+            constellationInfoTip.style.top = (rect.bottom + 10) + 'px';
+            constellationInfoTip.classList.remove('tip-above');
+        }
+        constellationInfoTip.style.left = left + 'px';
+        const arrowLeft = btnCenterX - left;
+        constellationInfoTip.style.setProperty('--arrow-left', arrowLeft + 'px');
+    }
+
+    constellationInfoBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (infoTip) infoTip.classList.remove('visible');
+        if (constellationInfoTip.classList.contains('visible')) {
+            constellationInfoTip.classList.remove('visible');
+        } else {
+            positionConstellationInfoTip();
+            constellationInfoTip.classList.add('visible');
+        }
+    });
+    document.addEventListener('click', (e) => {
+        if (!constellationInfoTip.contains(e.target) && !constellationInfoBtn.contains(e.target)) {
+            constellationInfoTip.classList.remove('visible');
+        }
+    });
+    window.addEventListener('resize', () => { constellationInfoTip.classList.remove('visible'); });
 
     // ─── HELP POPUP ───
     const helpBtn = document.getElementById('helpBtn');
