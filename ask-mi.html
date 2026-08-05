@@ -713,12 +713,25 @@
         .input-disclaimer { font-size:var(--fs-sm); color:var(--text-muted); opacity:0.6; font-style:italic; }
         .trial-info { font-size:var(--fs-sm); color:var(--text-muted); display:flex; align-items:center; gap:var(--sp-xs); cursor:pointer; }
         .trial-unlock {
-            font-size:var(--fs-sm); font-weight:600; color:var(--gold);
-            background:rgba(197,160,89,0.1); border:1px solid rgba(197,160,89,0.2);
-            padding:var(--sp-xs) var(--sp-sm); border-radius:20px; cursor:pointer;
-            transition:all 0.3s ease; opacity:0.6;
+            font-size:var(--fs-sm); font-weight:600;
+            color:#1a1610; letter-spacing:0.01em;
+            background:linear-gradient(160deg, #E8CC8A 0%, #D5B069 45%, #B8943F 100%);
+            border:0.5px solid rgba(255,255,255,0.3);
+            padding:6px 14px; border-radius:20px; cursor:pointer;
+            display:inline-flex; align-items:center; gap:3px;
+            box-shadow:
+                inset 0 1.5px 0 rgba(255,255,255,0.45),
+                inset 0 -2px 3px rgba(0,0,0,0.2),
+                0 3px 10px rgba(197,160,89,0.25);
+            transition:transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease;
         }
-        .trial-unlock:hover { background:rgba(197,160,89,0.18); border-color:rgba(197,160,89,0.35); opacity:1; }
+        .trial-unlock:hover {
+            transform:translateY(-1px) scale(1.02);
+            box-shadow:
+                inset 0 1.5px 0 rgba(255,255,255,0.5),
+                inset 0 -2px 3px rgba(0,0,0,0.2),
+                0 6px 18px rgba(197,160,89,0.4);
+        }
         .sub-badge {
             display:none; font-size:var(--fs-xs); font-weight:700;
             color:#1a1610; letter-spacing:0.02em;
