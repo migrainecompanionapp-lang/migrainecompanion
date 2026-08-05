@@ -311,17 +311,32 @@
             gap: var(--sp-sm);
             padding: 10px 14px;
             border-radius: 18px;
-            background: linear-gradient(135deg, rgba(245, 240, 232, 0.07), rgba(245, 240, 232, 0.04));
-            border: 1px solid rgba(245, 240, 232, 0.16);
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(150deg, rgba(245, 240, 232, 0.09), rgba(245, 240, 232, 0.03));
+            border: 1px solid rgba(245, 240, 232, 0.18);
             backdrop-filter: blur(20px) saturate(140%);
             -webkit-backdrop-filter: blur(20px) saturate(140%);
             box-shadow:
-                0 6px 20px rgba(0,0,0,0.28),
+                0 8px 24px rgba(0,0,0,0.32),
                 0 2px 6px rgba(0,0,0,0.2),
-                inset 0 1px 0 rgba(255,255,255,0.10),
-                inset 0 -1px 0 rgba(0,0,0,0.12);
+                inset 0 1px 0 rgba(255,255,255,0.14),
+                inset 0 -1px 0 rgba(0,0,0,0.14);
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
+        }
+        .constellation-badge::after {
+            content: ''; position: absolute; inset: 0; border-radius: inherit;
+            background: linear-gradient(160deg, rgba(255,255,255,0.14), transparent 55%);
+            pointer-events: none;
+        }
+        .constellation-badge:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.36),
+                0 3px 8px rgba(0,0,0,0.24),
+                inset 0 1px 0 rgba(255,255,255,0.18),
+                inset 0 -1px 0 rgba(0,0,0,0.14);
         }
 
         /* ─── STAR BADGE in header (after first chat message) ─── */
