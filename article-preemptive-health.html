@@ -769,7 +769,7 @@ footer a:hover { color: var(--lavender); }
 
         <div class="data-card">
             <h4>2. Hardware that can detect autonomic shifts</h4>
-            <p>Heart rate variability has been measurable on the wrist since the original Apple Watch in 2015. But meaningful prodrome detection requires multiple biomarkers — HRV alone is too noisy. Apple Watch Series 8 (2022) added a wrist temperature sensor; combined with HRV, resting heart rate, respiratory rate, and sleep architecture metrics, the wrist now produces enough channels to disambiguate prodrome from ordinary daily fluctuation.</p>
+            <p>Heart rate variability has been measurable on the wrist since the original Apple Watch in 2015. Apple Watch Series 8 (2022) added a wrist temperature sensor; together with HRV, resting heart rate, respiratory rate and sleep metrics, the wrist now records many channels around the clock. More channels are not automatically better, though — each one brings its own noise. On the founder's own data, one channel held up best: daytime HRV, compared with his own usual. That is what Mi Watch uses today.</p>
         </div>
 
         <div class="data-card">
@@ -789,8 +789,8 @@ footer a:hover { color: var(--lavender); }
         <h2>Three pillars of personalized preemptive health</h2>
         <p>Any system that does this seriously requires three components. Subtract any one and you have a tracking app at best.</p>
 
-        <h3>Pillar one · continuous multi-channel biomarker monitoring</h3>
-        <p>Not single-channel. Not occasional. Real-time, multi-biomarker, integrated across the daily cycle including sleep. The migraine prodrome is not visible in a single number — it emerges across HRV declining, resting heart rate elevating, wrist temperature shifting, sleep fragmenting. Any one channel produces too many false signals. The combination is what produces actionable confidence.</p>
+        <h3>Pillar one · continuous, personal biomarker monitoring</h3>
+        <p>Not occasional, and never against a population average. The prodrome can show up across several channels — HRV declining, resting heart rate rising, wrist temperature shifting, sleep fragmenting — but every extra channel also brings extra false alarms. What produces actionable confidence is a signal that holds up for <em>you</em>, measured against your own normal. In Mi Watch today that signal is daytime HRV, compared with your own last 3 months; other channels are studied in the background and join only if they add accuracy.</p>
 
         <h3>Pillar two · per-user adaptive learning</h3>
         <p>Population thresholds fail. The system has to learn each user's signature — the specific pattern that precedes their attacks — and adapt its sensitivity based on real-world outcome feedback. When the system alerts and the predicted event occurs, that is a positive update. When it alerts and the event does not occur, that is a negative update. Over weeks and months, the system converges toward thresholds that match the individual's signal-to-noise ratio.</p>
@@ -802,33 +802,33 @@ footer a:hover { color: var(--lavender); }
 
         <div class="insight-card">
             <h4>What Mi Watch is doing differently</h4>
-            <p>Mi Watch publishes its confidence at every stage. Users see whether the system is <em>listening</em> (no predictions yet), <em>calibrating</em> (preliminary predictions, learning user-specific signal-to-noise), or <em>fully tuned</em> (after sufficient ground-truth events). The state is visible in-product on every screen — not buried in marketing copy. No accuracy claims are made until validation data supports them.</p>
+            <p>Mi Watch shows where it is at every stage. Users see whether it is <em>learning</em> (20 days with daytime readings, no heads-ups yet), in a <em>trial forecast</em> (gentle heads-ups only), or in the <em>full forecast</em> (once its heads-ups have proved right for that person). Every heads-up is checked against the migraines the user logs, and the count is shown in the app — not buried in marketing copy. No accuracy claims are made until validation data supports them.</p>
         </div>
 
         <figure class="figure-single">
-            <img src="images/mi-watch-stage1-listening.webp" alt="Mi Watch Stage 1 screen — Mi is listening for your patterns, needs 5 migraines to start recognizing early signs">
-            <figcaption>Stage 1 in Mi Watch. The product is transparent about not yet being reliable — a deliberate departure from typical health-app design that presents an authoritative interface from day one.</figcaption>
+            <img src="images/mi-watch-learning.webp" alt="Mi Watch learning screen — Mi is learning your days: each day with daytime readings lights one of 20 stars">
+            <figcaption>The first stage in Mi Watch: learning. The product is transparent about not yet being reliable — a deliberate departure from typical health-app design that presents an authoritative interface from day one.</figcaption>
         </figure>
 
         <h3>Pillar three · action timing aligned with treatment windows</h3>
-        <p>Detection without action is just anxiety. Each alert must correspond to something a user can actually do — preventive action in longer windows, medication or behavioral intervention in shorter windows. The two-tier design separates "you might want to prepare" from "act now if you have medication available." Without this distinction, every alert feels equally urgent, and users develop alarm fatigue within weeks.</p>
+        <p>Detection without action is just anxiety. Each heads-up must correspond to something a user can actually do. The two-tier design separates "it may well pass you by — go gently" from "a migraine is likely — keep your plan within reach." Without this distinction, every alert feels equally urgent, and users develop alarm fatigue within weeks.</p>
 
         <figure class="figure-triptych">
             <div class="triptych-row">
                 <div class="triptych-item">
-                    <img src="images/mi-watch-state-steady.webp" alt="Mi Watch home card showing Patterns steady · All within your normal range — green active indicator">
-                    <div class="triptych-label">Steady</div>
+                    <img src="images/mi-watch-state-ordinary.webp" alt="Mi Watch screen showing An ordinary day — daytime HRV about usual">
+                    <div class="triptych-label">An ordinary day</div>
                 </div>
                 <div class="triptych-item">
-                    <img src="images/mi-watch-state-vulnerable.webp" alt="Mi Watch home card showing Storm gathering · HRV shifted · Resting HR shifted — gold vulnerable indicator with 12 to 24 hour window">
-                    <div class="triptych-label">Vulnerable · 12–24h</div>
+                    <img src="images/screen-mi-watch-stirring.webp" alt="Mi Watch screen showing Mi might be stirring — daytime HRV lower than usual, a gentle heads-up for the next two days">
+                    <div class="triptych-label">Mi might be stirring</div>
                 </div>
                 <div class="triptych-item">
-                    <img src="images/mi-watch-state-alert.webp" alt="Mi Watch home card showing Storm close — be gentle today · HRV shifted · Resting HR shifted — alert indicator with 1 to 6 hour window">
-                    <div class="triptych-label">Alert · 1–6h</div>
+                    <img src="images/mi-watch-state-close.webp" alt="Mi Watch screen showing Mi is close — daytime HRV much lower than usual, a migraine is likely within two days">
+                    <div class="triptych-label">Mi is close</div>
                 </div>
             </div>
-            <figcaption>Mi Watch communicates three confidence states in real time. <em>Steady</em> — no action needed. <em>Vulnerable</em> — long action window (12–24h), lifestyle nudges only. <em>Alert</em> — short window (1–6h), medication mention. Each state has distinct visual language so the difference is immediate.</figcaption>
+            <figcaption>After its evening check, Mi Watch speaks in three states. <em>An ordinary day</em> — nothing to do. <em>Mi might be stirring</em> — a gentle heads-up for the next 2 days; it may well pass you by. <em>Mi is close</em> — a migraine is likely within 2 days; keep your plan within reach. Heads-ups never suggest medication. Each state has distinct visual language so the difference is immediate.</figcaption>
         </figure>
 
         <div class="separator"></div>
@@ -902,7 +902,7 @@ footer a:hover { color: var(--lavender); }
     <!-- CTA BOX -->
     <div class="cta-box">
         <h3>Try Mi Companion</h3>
-        <p>Mi Watch prodrome detection lives inside the Mi Companion app, available on iOS and Android. Free tier includes tracking and articles; Mi Lab Premium adds personalized biochemical profiles and conversational AI guidance.</p>
+        <p>Mi Watch lives inside the MIgraine Companion app for iPhone and Apple Watch. Free tier includes tracking and articles; Mi Lab Premium adds personalized biochemical profiles and conversational AI guidance.</p>
         <a href="https://apps.apple.com/app/id6757784441" class="download-btn">Download on iOS</a>
     </div>
 
