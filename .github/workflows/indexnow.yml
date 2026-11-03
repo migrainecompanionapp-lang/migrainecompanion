@@ -1,0 +1,55 @@
+# Tells Bing, Yandex, Seznam and other IndexNow search engines about new or changed pages,
+# so they re-crawl within hours instead of weeks. Google does not use IndexNow.
+# On every push: submits the changed .html pages. Run manually ("Run workflow") to submit every page in sitemap.xml.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', 'sitemap.xml']
+  workflow_dispatch:
+
+env:
+  HOST: mi-companion.com
+  KEY: b290d7823f0923e79905e66584fd3833
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Collect URLs
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            grep -o '<loc>[^<]*</loc>' sitemap.xml | sed -e 's/<loc>//' -e 's#</loc>##' > urls.txt
+          else
+            git diff --name-only HEAD~1 HEAD -- '*.html' | while read -r f; do
+              case "$f" in
+                index.html) echo "https://$HOST/" ;;
+                */index.html) echo "https://$HOST/${f%index.html}" ;;
+                *) echo "https://$HOST/$f" ;;
+              esac
+            done > urls.txt
+          fi
+          echo "URLs to submit: $(wc -l < urls.txt)"
+          cat urls.txt
+      - name: Wait for GitHub Pages to publish
+        run: sleep 90
+      - name: Submit to IndexNow
+        run: |
+          [ -s urls.txt ] || { echo "Nothing to submit"; exit 0; }
+          python3 - <<'PY'
+          import json, os, urllib.request
+          urls = [u.strip() for u in open('urls.txt') if u.strip()][:10000]
+          host, key = os.environ['HOST'], os.environ['KEY']
+          body = json.dumps({'host': host, 'key': key, 'keyLocation': f'https://{host}/{key}.txt', 'urlList': urls}).encode()
+          req = urllib.request.Request('https://api.indexnow.org/indexnow', data=body, headers={'Content-Type': 'application/json; charset=utf-8'})
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  print('IndexNow answered', r.status, 'for', len(urls), 'URLs')
+          except urllib.error.HTTPError as e:
+              print('IndexNow answered', e.code, e.read().decode()[:300])
+              raise SystemExit(0 if e.code == 202 else 1)
+          PY
