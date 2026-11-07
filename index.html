@@ -1947,6 +1947,9 @@
         @keyframes cst-halo{0%,100%{opacity:.4;r:11px}50%{opacity:.85;r:15px}}
         @keyframes cst-core{0%,100%{opacity:.85}50%{opacity:1}}
         .cst-label{fill:rgba(196,224,206,.66);font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.04em}
+        .cst-title{fill:rgba(234,203,128,.78);font-family:'Inter',sans-serif;font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+        .cst-testing .cst-line{stroke-dasharray:3 4}
+        .cst-testing .cst-star,.cst-testing .cst-halo{fill-opacity:.7}
         @media (max-width:680px){.hero-constellations{display:none}}
 
         /* ── Angled DNA helices mid-sides + their genes ── */
@@ -2237,7 +2240,7 @@
         <!-- ═══ hero ═══ -->
         <section class="hero">
     <div class="hero-constellations">
-        <svg class="cst cst-bigdipper" viewBox="0 0 340 175" fill="none" preserveAspectRatio="xMidYMid meet">
+        <svg class="cst cst-bigdipper cst-testing" viewBox="0 0 340 175" fill="none" preserveAspectRatio="xMidYMid meet">
             <line class="cst-line" x1="34" y1="44" x2="104" y2="32"/>
             <line class="cst-line" x1="104" y1="32" x2="162" y2="60"/>
             <line class="cst-line" x1="162" y1="60" x2="128" y2="102"/>
@@ -2252,13 +2255,11 @@
             <circle class="cst-halo" cx="60" cy="98" r="10"/><circle class="cst-star" cx="60" cy="98" r="3.4"/>
             <circle class="cst-halo" cx="214" cy="86" r="10"/><circle class="cst-star" cx="214" cy="86" r="3.4"/>
             <circle class="cst-halo" cx="276" cy="116" r="10"/><circle class="cst-star" cx="276" cy="116" r="3.4"/>
-            <text class="cst-label" x="34" y="27" text-anchor="middle">Sleep duration</text>
-            <text class="cst-label" x="118" y="17" text-anchor="middle">Restorative sleep</text>
-            <text class="cst-label" x="172" y="56" text-anchor="start">REM sleep</text>
-            <text class="cst-label" x="136" y="120" text-anchor="middle">Deep sleep</text>
-            <text class="cst-label" x="28" y="136" text-anchor="start">Sleep awakenings</text>
-            <text class="cst-label" x="214" y="72" text-anchor="middle">Deep/REM ratio</text>
-            <text class="cst-label" x="288" y="120" text-anchor="start">Cycle day</text>
+            <text class="cst-label" x="34" y="27" text-anchor="middle">Deep sleep shift</text>
+            <text class="cst-label" x="118" y="17" text-anchor="middle">Sleep transitions</text>
+            <text class="cst-label" x="172" y="56" text-anchor="start">Wrist temperature</text>
+            <text class="cst-label" x="94" y="122" text-anchor="middle">Waking time</text>
+            <text class="cst-title" x="214" y="150" text-anchor="middle">Being tested</text>
         </svg>
         <svg class="cst cst-cassiopeia" viewBox="0 0 300 150" fill="none" preserveAspectRatio="xMidYMid meet">
             <line class="cst-line" x1="24" y1="54" x2="86" y2="104"/>
@@ -2628,7 +2629,7 @@
             <div class="solution-visual">
                 <div class="phone-frame">
                     <div class="phone-screen">
-                        <img src="images/screen-mi-watch-stirring.webp" width="591" height="1280" alt="Mi Watch screen — Mi might be stirring: daytime HRV lower than usual, a gentle heads-up for the next two days" loading="lazy" decoding="async">
+                        <img src="images/screen-mi-watch-stirring.webp?v=2" width="591" height="1280" alt="Mi Watch screen — Mi might be stirring: daytime HRV lower than usual, a gentle heads-up for the next two days" loading="lazy" decoding="async">
                         <button class="mwd-overlay" id="mwdStart" aria-label="See how a heads-up works">
                             <span class="mwd-overlay-label">Tap to see a heads-up</span>
                         </button>
